@@ -9,28 +9,28 @@ import {
 } from "@mui/material";
 import Snackbar from "./components/SnackBar";
 
-const theme = createTheme({
-  typography: {
-    allVariants: {
-      fontFamily: 'Calibri',
-      textTransform: 'none',
-      fontSize: 16,
-      caretColor: "transparent"
-    },
-  },
-});
+// const theme = createTheme({
+//   typography: {
+//     allVariants: {
+//       fontFamily: 'Calibri',
+//       textTransform: 'none',
+//       fontSize: 16,
+//       caretColor: "transparent"
+//     },
+//   },
+// });
 
 function App() {
   return (
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <StyledEngineProvider injectFirst>
-          {/* <Snackbar /> */}
-          <CssBaseline />
-          <ScrollToTop />
-          <AppRoutes />
-        </StyledEngineProvider>
-      </ThemeProvider>
+      {/* <ThemeProvider theme={theme}> */}
+      <StyledEngineProvider injectFirst>
+        <Snackbar />
+        <CssBaseline />
+        <ScrollToTop />
+        <AppRoutes />
+      </StyledEngineProvider>
+      {/* </ThemeProvider> */}
     </BrowserRouter>
   );
 }
