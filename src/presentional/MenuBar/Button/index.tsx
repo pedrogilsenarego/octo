@@ -7,12 +7,15 @@ interface Props {
 
 export const Button = ({ title }: Props) => {
   return (
+
     <Typography
+      mt="5px"
       color={Colors.PRETTY_CREAM}
-      style={{ textTransform: "uppercase", fontWeight: 700, fontSize: "20px", fontFamily: "Avalanche" }}
+      style={{ textTransform: "uppercase", fontWeight: 700, fontSize: "20px", fontFamily: "Avalanche", cursor: "pointer" }}
     >
       {title}
     </Typography>
+
   );
 };
 

@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import MenuBar from "../presentional/MenuBar";
 
-export const MainLayout = () => {
+export const MainLayout = (props: any) => {
   const Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRudm_2pz9c0RXiY9TkkEziaoRQE5w5gNZj_g&usqp=CAU"
   return (
     <Box
@@ -18,6 +18,7 @@ export const MainLayout = () => {
       }}
     >
       <MenuBar />
+      {props.children}
     </Box>
   );
 };
