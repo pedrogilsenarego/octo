@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import { useState } from "react";
 import { Colors } from "../../../constants/pallete";
 
 interface Props {
@@ -6,12 +7,16 @@ interface Props {
 }
 
 export const Button = ({ title }: Props) => {
+
+  const [hover, setHover] = useState<boolean>(false)
   return (
 
     <Typography
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
       mt="5px"
-      color={Colors.PRETTY_CREAM}
-      style={{ textTransform: "uppercase", fontWeight: 700, fontSize: "20px", fontFamily: "Avalanche", cursor: "pointer" }}
+      color={hover ? "#ffffffE6" : Colors.PRETTY_CREAM}
+      style={{ textTransform: "uppercase", fontSize: "20px", fontFamily: "Avalanche", cursor: "pointer" }}
     >
       {title}
     </Typography>

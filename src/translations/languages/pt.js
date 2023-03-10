@@ -9,7 +9,10 @@ export const content = {
       footer: {},
       adminSideBar: {},
       modules: {
-        home: {},
+        home: {
+          mainText: "Nascer\n Octomistic",
+          discover: "Descobre a nova coleção",
+        },
 
         about: {},
         books: {
