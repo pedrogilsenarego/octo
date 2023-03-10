@@ -1,5 +1,5 @@
 export const content = {
-  pt: {
+  en: {
     translations: {
       menuBar: {
         store: "Shop",
