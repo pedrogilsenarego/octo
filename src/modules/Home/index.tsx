@@ -9,6 +9,7 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { Colors } from "../../constants/pallete";
 import { i18n } from "../../translations/i18n";
 import Label from "../../assets/images/label.png";
+import Carousel from "../../components/Carousel";
 
 const Home = () => {
   const theme = useTheme();
@@ -69,12 +70,15 @@ const Home = () => {
             <AiFillCaretRight color={Colors.NEON_YELLOW} size='30px' />
           </Box>
         </Container>
+
+        <Carousel />
+
       </Box>
     );
   };
   const renderMobile = () => {
     return (
-      <Box>
+      <Box display="flex" flexDirection="column" alignItems="center" >
         <Box
           display='flex'
           style={{
@@ -149,6 +153,8 @@ const Home = () => {
           >
             {i18n.t("modules.home.maternityBags")}
           </Typography>
+
+
         </Box>
       </Box>
     );
