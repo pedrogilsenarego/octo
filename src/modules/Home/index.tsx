@@ -1,4 +1,10 @@
-import { Typography, Box, Container, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Typography,
+  Box,
+  Container,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { AiFillCaretRight } from "react-icons/ai";
 import { Colors } from "../../constants/pallete";
 import { i18n } from "../../translations/i18n";
@@ -65,77 +71,89 @@ const Home = () => {
         </Container>
       </Box>
     );
-  }
+  };
   const renderMobile = () => {
     return (
-      <Box
-        display='flex'
-        style={{
-
-          width: "100vw",
-          height: "60vh",
-
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
-          backgroundImage: `url(${Image})`,
-          backgroundSize: "cover",
-
-        }}
-      >
+      <Box>
         <Box
-          width='120px'
-          height='120px'
+          display='flex'
           style={{
-            position: "absolute",
-            left: -15,
-            padding: "0px",
-            top: "20px",
+            width: "100vw",
+            height: "60vh",
 
             backgroundPosition: "center center",
             backgroundRepeat: "no-repeat",
-            backgroundImage: `url(${Label})`,
+            backgroundImage: `url(${Image})`,
             backgroundSize: "cover",
           }}
-        ></Box>
-
-
-        <Typography
-          fontSize='40px'
-          color={Colors.PRETTY_CREAM}
-          fontFamily='Avalanche'
-          style={{
-            marginLeft: "22px",
-            whiteSpace: "pre-line",
-            lineHeight: "36px",
-            marginTop: "60%",
-          }}
         >
-          {i18n.t("modules.home.mainText")}
-        </Typography>
-        <Box
-          marginLeft='10px'
-          marginTop='40px'
-          display='flex'
-          columnGap='20px'
-          alignItems='center'
-          style={{ cursor: "pointer" }}
-        >
-          <Typography
-            color={Colors.NEON_YELLOW}
-            fontSize='10px'
-            style={{ textTransform: "uppercase" }}
-          >
-            {i18n.t("modules.home.discover")}
-          </Typography>
-          <AiFillCaretRight color={Colors.NEON_YELLOW} size='10px' />
+          <Box
+            width='120px'
+            height='120px'
+            style={{
+              position: "absolute",
+              left: -15,
+              padding: "0px",
+              top: "20px",
+
+              backgroundPosition: "center center",
+              backgroundRepeat: "no-repeat",
+              backgroundImage: `url(${Label})`,
+              backgroundSize: "cover",
+            }}
+          ></Box>
+
+          <Box style={{ marginTop: "60%" }}>
+            <Typography
+              fontSize='40px'
+              color={Colors.PRETTY_CREAM}
+              fontFamily='Avalanche'
+              style={{
+                marginLeft: "22px",
+                whiteSpace: "pre-line",
+                lineHeight: "36px",
+              }}
+            >
+              {i18n.t("modules.home.mainText")}
+            </Typography>
+            <Box
+              marginLeft='32px'
+              marginTop='20px'
+              display='flex'
+              columnGap='20px'
+              alignItems='center'
+              style={{ cursor: "pointer" }}
+            >
+              <Typography
+                color={Colors.NEON_YELLOW}
+                fontSize='10px'
+                style={{ textTransform: "uppercase" }}
+              >
+                {i18n.t("modules.home.discover")}
+              </Typography>
+              <AiFillCaretRight color={Colors.NEON_YELLOW} size='10px' />
+            </Box>
+          </Box>
         </Box>
-
+        <Box display='flex' justifyContent='center' mt='50px'>
+          <Typography
+            fontFamily="Avalanche"
+            style={{
+              fontSize: "24px",
+              whiteSpace: "pre-line",
+              textAlign: "center",
+              fontWeight: 500,
+              lineHeight: "22px"
+            }}
+            color={Colors.BLACKISH}
+          >
+            {i18n.t("modules.home.maternityBags")}
+          </Typography>
+        </Box>
       </Box>
-    )
-  }
-  return (
-    mobile ? renderMobile() : renderLaptop()
-  )
+    );
+  };
+  return mobile ? renderMobile() : renderLaptop();
 };
 
 export default Home;

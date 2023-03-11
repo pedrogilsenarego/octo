@@ -12,6 +12,7 @@ export const content = {
         home: {
           mainText: "Born\n Octomistic",
           discover: "Discover the new collection",
+          maternityBags: "Maternity\n Bags",
         },
 
         about: {},
