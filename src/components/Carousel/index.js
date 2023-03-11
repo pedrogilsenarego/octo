@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import { EffectCoverflow, Pagination, Navigation } from "swiper";
 import "./styles.css";
+import { Colors } from "../../constants/pallete";
 
 const Carousel = () => {
   const Image =
@@ -34,7 +35,7 @@ const Carousel = () => {
           prevEl: ".swiper-button-prev",
           clickable: "true",
         }}
-        loop={true}
+        loop={false}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -45,7 +46,22 @@ const Carousel = () => {
         className='swiper_container'
       >
         <SwiperSlide>
-          <img src={Image} alt='' />
+          <Box
+            className='image'
+            display='flex'
+            flexDirection='column'
+            justifyContent='center'
+            alignItems='center'
+            style={{ backgroundImage: `url(${Image})` }}
+          >
+            <Typography
+              style={{ marginTop: "100%" }}
+              color={Colors.NEON_YELLOW}
+            >
+              Human Bag
+            </Typography>
+            <Typography color={Colors.NEON_YELLOW}>30</Typography>
+          </Box>
         </SwiperSlide>
         <SwiperSlide>
           <img src={Image1} alt='' />
