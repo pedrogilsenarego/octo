@@ -7,7 +7,11 @@ export const content = {
         about: "A história da Octomistic",
       },
       footer: {},
-      adminSideBar: {},
+      adminSideBar: {
+        back: "Home",
+        submitItem: "Submeter Item",
+        manageCollections: "Colecções",
+      },
       modules: {
         home: {
           mainText: "Nascer\n Octomistic",

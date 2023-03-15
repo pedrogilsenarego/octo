@@ -3,6 +3,7 @@ import { AppRoute } from "./types";
 import { ROUTE_PATHS } from "../constants/routes";
 import { lazyWithRetryAndLoader } from "../utils/lazyWithRetry";
 import { MainLayout } from "../layouts/MainLayout";
+import AdminLayout from "../layouts/AdminLayout"
 
 const Home = lazyWithRetryAndLoader(() => import("../modules/Home"));
 
@@ -25,11 +26,11 @@ export const routes: AppRoute[] = [
       <About />
     </MainLayout>,
   },
-  // {
-  //   path: ROUTE_PATHS.ADMIN,
-  //   component: <AdminLayout>
-  //     <AdminManageBooks />
-  //   </AdminLayout>,
-  // },
+  {
+    path: ROUTE_PATHS.ADMIN,
+    component: <AdminLayout>
+      <>Teste</>
+    </AdminLayout>,
+  },
 
 ];
