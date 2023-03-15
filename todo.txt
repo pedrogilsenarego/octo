@@ -1,0 +1,27 @@
+mobile etiqueta lado
+about 
+instagram
+discover the collection vai para collection
+footer
+cookie policy
+
+paginas 
+about
+coleçoes
+Shop
+produto
+
+admin -
+new Collection {
+  titulo
+  fotos
+  descricao 
+}
+new product {
+  colecao
+  categoria/titulo
+  tecido
+  preco
+  DESCRIÇÃO
+  imagens
+}

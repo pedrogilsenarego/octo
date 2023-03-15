@@ -11,7 +11,7 @@ export const content = {
       modules: {
         home: {
           mainText: "Born\n Octomistic",
-          discover: "Discover the new collection",
+          discover: "Discover the collection",
           maternityBags: "Maternity\n Bags",
         },
 

@@ -9,7 +9,7 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { Colors } from "../../constants/pallete";
 import { i18n } from "../../translations/i18n";
 import Label from "../../assets/images/label.png";
-import Carousel from "../../components/Carousel";
+import labelEsq from "../../assets/images/labelEsq.png"
 
 const Home = () => {
   const theme = useTheme();
@@ -31,9 +31,10 @@ const Home = () => {
       >
         <Container maxWidth='xl'>
           <Box
-            width='200px'
-            height='200px'
+            width='250px'
+            height='250px'
             style={{
+              marginTop: "-22px",
               backgroundPosition: "center center",
               backgroundRepeat: "no-repeat",
               backgroundImage: `url(${Label})`,
@@ -71,7 +72,7 @@ const Home = () => {
           </Box>
         </Container>
 
-        <Carousel />
+
 
       </Box>
     );
@@ -102,7 +103,7 @@ const Home = () => {
 
               backgroundPosition: "center center",
               backgroundRepeat: "no-repeat",
-              backgroundImage: `url(${Label})`,
+              backgroundImage: `url(${labelEsq})`,
               backgroundSize: "cover",
             }}
           ></Box>
