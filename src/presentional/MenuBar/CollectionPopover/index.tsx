@@ -1,5 +1,5 @@
 import { Grid, Box } from "@mui/material";
-import "./index.css";
+import Image from "./Image"
 
 import { Colors } from "../../../constants/pallete";
 import icon1 from "../../../assets/icons/icon1.png";
@@ -50,16 +50,7 @@ const CollectionPopover = () => {
                   boxShadow: "2px 2px 10px 2px #00000066",
                 }}
               >
-                <img
-                  src={item}
-                  alt=''
-                  style={{
-                    margin: "-10px",
-                    height: "120px",
-                    width: "120px",
-                    color: "black",
-                  }}
-                />
+                <Image item={item} />
               </Box>
             </Grid>
           );
