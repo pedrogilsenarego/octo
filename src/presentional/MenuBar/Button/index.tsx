@@ -36,6 +36,7 @@ export const Button = ({ title, link, setAnchorPopover, collection }: Props) => 
         style={{
           textTransform: "uppercase",
           fontSize: "20px",
+
         }}
       >
         {title}
