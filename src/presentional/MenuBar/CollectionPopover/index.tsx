@@ -23,11 +23,11 @@ const CollectionPopover = () => {
     >
       <Grid
         container
-        style={{ padding: "10px", borderRadius: "10px" }}
+        style={{ padding: "10px", borderRadius: "10px", maxWidth: "480px" }}
         columnSpacing={1}
         rowSpacing={1}
 
-      //rowSpacing={3}
+
       >
         {listOfIcons.map((item, pos) => {
           return (
@@ -36,13 +36,15 @@ const CollectionPopover = () => {
               item
               justifyContent='center'
               alignItems='center'
-              style={{ cursor: "pointer" }}
+              xs={3}
+              style={{ cursor: "pointer", }}
             >
               <Box
                 display='flex'
                 justifyContent='center'
                 alignItems='center'
                 style={{
+
                   backgroundColor: Colors.BLACKISH,
                   borderRadius: "2px",
                   boxShadow: "2px 2px 10px 2px #00000066",
