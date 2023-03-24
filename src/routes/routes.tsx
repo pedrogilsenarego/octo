@@ -15,7 +15,7 @@ export const routes: AppRoute[] = [
   {
     path: ROUTE_PATHS.HOME,
     component: (
-      <MainLayout >
+      <MainLayout noMarginBottom>
         <Home />
       </MainLayout>
     ),
