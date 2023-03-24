@@ -4,7 +4,7 @@ export const content = {
       menuBar: {
         store: "Loja",
         collection: "Coleção",
-        about: "A história da Octomistic",
+        about: "A história da Octo",
       },
       footer: {},
       adminSideBar: {

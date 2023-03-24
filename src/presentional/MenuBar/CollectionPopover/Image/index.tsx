@@ -28,6 +28,7 @@ const Image = ({ item }: Props) => {
         />
       )}
       <img
+        className="imgd"
         onLoad={() => setImageLoading(false)}
         src={item}
         alt=''

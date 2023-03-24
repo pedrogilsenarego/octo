@@ -8,7 +8,7 @@ import {
 import { AiFillCaretRight } from "react-icons/ai";
 import { Colors } from "../../constants/pallete";
 import { i18n } from "../../translations/i18n";
-import Label from "../../assets/images/label.png";
+
 import labelEsq from "../../assets/images/labelEsq.png"
 
 const Home = () => {
@@ -30,25 +30,15 @@ const Home = () => {
         }}
       >
         <Container maxWidth='xl'>
-          <Box
-            width='250px'
-            height='250px'
-            style={{
-              marginTop: "-22px",
-              backgroundPosition: "center center",
-              backgroundRepeat: "no-repeat",
-              backgroundImage: `url(${Label})`,
-              backgroundSize: "100%",
-            }}
-          ></Box>
+
           <Typography
-            fontSize='160px'
+            fontSize='10em'
             color={Colors.PRETTY_CREAM}
             fontFamily='Avalanche'
             style={{
               whiteSpace: "pre-line",
               lineHeight: "140px",
-              marginTop: "10%",
+              marginTop: "38%",
             }}
           >
             {i18n.t("modules.home.mainText")}

@@ -45,7 +45,7 @@ const CollectionPopover = () => {
                 alignItems='center'
                 style={{
 
-                  backgroundColor: Colors.BLACKISH,
+                  backgroundColor: Colors.PRETTY_CREAM,
                   borderRadius: "2px",
                   boxShadow: "2px 2px 10px 2px #00000066",
                 }}

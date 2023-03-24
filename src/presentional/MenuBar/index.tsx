@@ -26,7 +26,7 @@ const MenuBar = () => {
           display='flex'
           columnGap='40px'
           alignItems='center'
-          style={{ position: "absolute", top: "60px", right: "80px" }}
+          style={{ position: "absolute", top: "40px", right: "80px" }}
         >
           <Button title={i18n.t("menuBar.about")} link={ROUTE_PATHS.ABOUT} setAnchorPopover={setAnchorPopover} />
 
@@ -37,7 +37,7 @@ const MenuBar = () => {
             collection
           />
 
-          <Button title={i18n.t("menuBar.store")} link={ROUTE_PATHS.STORE} setAnchorPopover={setAnchorPopover} />
+          <Button title={i18n.t("menuBar.store")} link={ROUTE_PATHS.SHOP} setAnchorPopover={setAnchorPopover} />
           <Box display='flex' columnGap='12px' alignItems='center'>
             <BiSearch
               size='25px'

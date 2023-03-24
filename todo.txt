@@ -18,10 +18,11 @@ new Collection {
   descricao 
 }
 new product {
-  colecao
-  categoria/titulo
+  titulo
   tecido
   preco
   DESCRIÇÃO
+  Materiais
+  Instruçoes de cuidado
   imagens
 }

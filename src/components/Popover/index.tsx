@@ -49,7 +49,7 @@ export default function BasicPopover({ anchorEl, setAnchorEl, children }: Props)
 
             pointerEvents: "auto",
             marginTop: "10px",
-            backgroundColor: Colors.NEON_YELLOW_TRANSPARENT
+            backgroundColor: "transparent"
           }
         }}
       >
