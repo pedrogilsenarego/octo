@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { CardMedia as MuiCardMedia, Typography } from "@mui/material";
+import { CardMedia as MuiCardMedia } from "@mui/material";
+import { Ellipsis } from "react-spinners-css";
 
 interface Props {
   image: string | undefined;
@@ -27,8 +28,9 @@ const CardMedia = ({
   return (
     <div style={{ position: "relative" }}>
       {imageLoading && (
-        <Typography
-          color='black'
+        <Ellipsis
+          size={40}
+          color='#ffffff66'
           style={{
             position: "absolute",
             top: 0,
@@ -40,9 +42,7 @@ const CardMedia = ({
             marginLeft: "auto",
             marginRight: "auto",
           }}
-        >
-          Loading...
-        </Typography>
+        />
       )}
 
 

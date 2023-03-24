@@ -1,11 +1,14 @@
 import { Container, Grid, Typography } from "@mui/material";
 import CardMedia from "../../components/CardMedia";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../constants/routes";
 
 const Shop = () => {
+  const navigate = useNavigate()
   const mokData = [
     {
       title: "Moking Bag",
-
+      uid: "ihihiojioo",
       fabric: ["Nylon", "Wool"],
       price: 34,
       detail: "somehgth",
@@ -22,7 +25,7 @@ const Shop = () => {
     },
     {
       title: "Moking Bag",
-
+      uid: "ihihiojioo",
       fabric: ["Nylon", "Wool"],
       price: 34,
       detail: "somehgth",
@@ -39,7 +42,7 @@ const Shop = () => {
     },
     {
       title: "Moking Bag",
-
+      uid: "ihihiojioo",
       fabric: ["Nylon", "Wool"],
       price: 34,
       detail: "somehgth",
@@ -56,7 +59,7 @@ const Shop = () => {
     },
     {
       title: "Moking Bag",
-
+      uid: "ihihiojioo",
       fabric: ["Nylon", "Wool"],
       price: 34,
       detail: "somehgth",
@@ -83,8 +86,15 @@ const Shop = () => {
       >
         {mokData.map((item, pos) => {
           return (
-            <Grid item xs={4} key={pos}>
-              <CardMedia image={item.images[0]} height='600px' />
+            <Grid item xs={12} sm={4} key={pos}>
+              <CardMedia image={item.images[0]} height='600px' onClick={() =>
+                navigate(
+                  ROUTE_PATHS.PRODUCT.replace(
+                    ":id",
+                    mokData[pos].uid
+                  )
+                )
+              } />
               <Typography>{item.title}</Typography>
               <Typography>£ {item.price}</Typography>
             </Grid>

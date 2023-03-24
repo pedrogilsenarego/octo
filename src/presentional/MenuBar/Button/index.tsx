@@ -12,7 +12,7 @@ interface Props {
 
 export const Button = ({ title, link, setAnchorPopover, collection }: Props) => {
   const [hover, setHover] = useState<boolean>(false);
-  console.log(hover)
+
   const navigate = useNavigate();
   return (
     <Box
