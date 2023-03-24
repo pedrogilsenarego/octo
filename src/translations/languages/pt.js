@@ -20,27 +20,11 @@ export const content = {
         },
 
         about: {},
-        books: {
-          book: {
-            bookTitle: "Título",
-            text: "Texto:",
-            price: "Preço:",
-            design: "Ilustração:",
-            translation: "Tradução:",
-            pages: "Número de páginas:",
-            language: "Language:",
-            weight: "Peso:",
-            size: "Dimensões:",
-            collectionBrowser: "Mais da Coleção",
-            bookBrowser: "FOLHEAR\n O LIVRO",
-            new: "Novo",
-            title: "DESCRIÇÃO",
-            writer: "AUTOR",
-            designer: "ILUSTRADOR",
-            translator: "TRADUTOR",
-          },
-          viewBook: {
-            page: "PÁGINAS",
+        product: {
+          quantity: "Quantidade",
+          detail: {
+            instructions: "Instruções",
+            materials: "Materiais",
           },
         },
       },

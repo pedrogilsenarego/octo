@@ -20,6 +20,13 @@ export const content = {
         },
 
         about: {},
+        product: {
+          quantity: "Quantity",
+          detail: {
+            instructions: "Instructions",
+            materials: "Materials",
+          },
+        },
       },
       notifications: {
         success: {},
