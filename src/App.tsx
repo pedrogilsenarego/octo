@@ -8,6 +8,7 @@ import {
   ThemeProvider, createTheme
 } from "@mui/material";
 import Snackbar from "./components/SnackBar";
+import { Colors } from "./constants/pallete";
 
 const theme = createTheme({
   typography: {
@@ -15,6 +16,7 @@ const theme = createTheme({
       fontFamily: 'Termina',
       textTransform: 'none',
       fontSize: 16,
+      color: Colors.BLACKISH,
       caretColor: "transparent"
     },
   },

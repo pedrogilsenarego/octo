@@ -82,7 +82,7 @@ const Shop = () => {
         columnSpacing={3}
         rowSpacing={3}
 
-        mt='30vh'
+        mt='20vh'
       >
         {mokData.map((item, pos) => {
           return (

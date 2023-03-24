@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import "./index.css";
 import { useState } from "react";
+import { Colors } from "../../constants/pallete";
 
 const Incrementor = () => {
   const [value, setValue] = useState<number>(0);
@@ -15,7 +16,7 @@ const Incrementor = () => {
       <Box
         style={{
           cursor: value === 0 ? "default" : "pointer",
-          border: value === 0 ? "solid 2px lightGrey" : "solid 2px black",
+          border: value === 0 ? "solid 2px lightGrey" : `solid 2px ${Colors.BLACKISH}`,
         }}
         className='box'
         onClick={() => handleValue("minus")}

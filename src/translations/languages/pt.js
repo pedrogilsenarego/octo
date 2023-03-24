@@ -21,6 +21,7 @@ export const content = {
 
         about: {},
         product: {
+          addCart: "Adicionar ao carrinho",
           quantity: "Quantidade",
           detail: {
             instructions: "Instruções",

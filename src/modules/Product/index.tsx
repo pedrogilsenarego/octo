@@ -1,8 +1,9 @@
-import { Card, Container, Grid, Typography, Divider, Box } from "@mui/material";
+import { Card, Container, Grid, Typography, Divider } from "@mui/material";
 import CardMedia from "../../components/CardMedia";
 import Detail from "./Detail";
 import { i18n } from "../../translations/i18n";
 import Incrementor from "../../components/Incrementor";
+import Button from "../../components/Buttons/Button";
 
 const Product = () => {
   const mokData = {
@@ -26,8 +27,8 @@ const Product = () => {
   };
 
   return (
-    <Container maxWidth={"xl"}>
-      <Grid container mt='30vh' columnSpacing={3}>
+    <Container maxWidth={"xl"} >
+      <Grid container mt='23vh' columnSpacing={3} rowSpacing={3}>
         <Grid item xs={12} sm={7}>
           <Card>
             <CardMedia image={mokData.images[0]} height='600px' />
@@ -35,7 +36,7 @@ const Product = () => {
         </Grid>
         <Grid item xs={12} sm={5}>
           <Card style={{ padding: "20px", }} >
-            <Typography>{mokData.title}</Typography>
+            <Typography fontWeight={800}>{mokData.title}</Typography>
             <Typography>£ {mokData.price}</Typography>
             <Typography mt='40px'>{mokData.detail}</Typography>
             <Divider style={{ marginTop: '40px' }} />
@@ -43,6 +44,9 @@ const Product = () => {
               <Typography>{i18n.t("modules.product.quantity")}</Typography>
               <div style={{ marginTop: "10px" }}>
                 <Incrementor />
+              </div>
+              <div style={{ marginTop: "20px" }}>
+                <Button borderRadiusRight label={i18n.t("modules.product.addCart")} />
               </div>
             </div>
             <div style={{ marginTop: "40px" }}>

@@ -3,7 +3,7 @@ import { i18n } from "../../translations/i18n";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineShopping } from "react-icons/ai";
 import { VscMenu } from "react-icons/vsc";
-import { BsInstagram } from "react-icons/bs"
+import { BsInstagram } from "react-icons/bs";
 
 import Button from "./Button";
 import { Colors } from "../../constants/pallete";
@@ -17,18 +17,15 @@ const MenuBar = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [anchorPopover, setAnchorPopover] = useState<any>(null);
 
-
-
   const renderLaptop = () => {
     return (
       <>
-        <Box
-          display='flex'
-          columnGap='40px'
-          alignItems='center'
-          style={{ position: "absolute", top: "40px", right: "80px" }}
-        >
-          <Button title={i18n.t("menuBar.about")} link={ROUTE_PATHS.ABOUT} setAnchorPopover={setAnchorPopover} />
+        <Box mt="20px" display='flex' columnGap='40px' alignItems='center' >
+          <Button
+            title={i18n.t("menuBar.about")}
+            link={ROUTE_PATHS.ABOUT}
+            setAnchorPopover={setAnchorPopover}
+          />
 
           <Button
             title={i18n.t("menuBar.collection")}
@@ -37,7 +34,11 @@ const MenuBar = () => {
             collection
           />
 
-          <Button title={i18n.t("menuBar.store")} link={ROUTE_PATHS.SHOP} setAnchorPopover={setAnchorPopover} />
+          <Button
+            title={i18n.t("menuBar.store")}
+            link={ROUTE_PATHS.SHOP}
+            setAnchorPopover={setAnchorPopover}
+          />
           <Box display='flex' columnGap='12px' alignItems='center'>
             <BiSearch
               size='25px'
@@ -56,7 +57,7 @@ const MenuBar = () => {
             />
           </Box>
         </Box>
-        <BasicPopover anchorEl={anchorPopover} setAnchorEl={setAnchorPopover} >
+        <BasicPopover anchorEl={anchorPopover} setAnchorEl={setAnchorPopover}>
           <CollectionPopover />
         </BasicPopover>
       </>
