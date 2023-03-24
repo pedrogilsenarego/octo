@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 interface Props {
   title: string;
   link?: string;
-  setAnchorPopover: any;
+  setAnchorPopover?: any;
   collection?: boolean
 }
 

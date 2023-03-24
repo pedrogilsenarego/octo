@@ -8,9 +8,7 @@ import { BsInstagram } from "react-icons/bs";
 import Button from "./Button";
 import { Colors } from "../../constants/pallete";
 import { ROUTE_PATHS } from "../../constants/routes";
-import BasicPopover from "../../components/Popover";
-import { useState } from "react";
-import CollectionPopover from "./CollectionPopover";
+
 import { useNavigate } from "react-router-dom";
 import Label from "../../assets/images/label.png";
 
@@ -18,7 +16,7 @@ const MenuBar = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const [anchorPopover, setAnchorPopover] = useState<any>(null);
+
 
   const renderLaptop = () => {
     return (
@@ -59,20 +57,20 @@ const MenuBar = () => {
                 <Button
                   title={i18n.t("menuBar.about")}
                   link={ROUTE_PATHS.ABOUT}
-                  setAnchorPopover={setAnchorPopover}
+
                 />
 
                 <Button
                   title={i18n.t("menuBar.collection")}
                   link={ROUTE_PATHS.COLLECTION}
-                  setAnchorPopover={setAnchorPopover}
+
                   collection
                 />
 
                 <Button
                   title={i18n.t("menuBar.store")}
                   link={ROUTE_PATHS.SHOP}
-                  setAnchorPopover={setAnchorPopover}
+
                 />
                 <Box display='flex' columnGap='12px' alignItems='center'>
                   <BiSearch
@@ -92,9 +90,7 @@ const MenuBar = () => {
                   />
                 </Box>
               </Box>
-              <BasicPopover anchorEl={anchorPopover} setAnchorEl={setAnchorPopover}>
-                <CollectionPopover />
-              </BasicPopover>
+
 
             </Grid>
           </Grid>

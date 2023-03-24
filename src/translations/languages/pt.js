@@ -20,6 +20,9 @@ export const content = {
         },
 
         about: {},
+        shopCategory: {
+          title: "Escolha a categoria:",
+        },
         product: {
           fabrics: "Fabrics Available",
           addCart: "Adicionar ao carrinho",

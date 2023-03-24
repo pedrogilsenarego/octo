@@ -3,6 +3,7 @@ export const ROUTE_PATHS = {
   ABOUT: '/about',
   ADMIN: '/admin',
   SHOP:"/shop",
+  SHOP_CATEGORIES: "/shop/categories",
   PRODUCT: "/product/:id",
   COLLECTION:"/collections"
 }

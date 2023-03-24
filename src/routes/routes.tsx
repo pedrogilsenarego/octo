@@ -7,8 +7,10 @@ import AdminLayout from "../layouts/AdminLayout"
 
 const Home = lazyWithRetryAndLoader(() => import("../modules/Home"));
 const Shop = lazyWithRetryAndLoader(() => import("../modules/Shop"));
+const ShopCategories = lazyWithRetryAndLoader(() => import("../modules/Shop/FilterCategory"));
 const About = lazyWithRetryAndLoader(() => import("../modules/About"));
 const Product = lazyWithRetryAndLoader(() => import("../modules/Product"));
+
 
 
 export const routes: AppRoute[] = [
@@ -32,6 +34,14 @@ export const routes: AppRoute[] = [
     component: (
       <MainLayout >
         <Shop />
+      </MainLayout>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.SHOP_CATEGORIES,
+    component: (
+      <MainLayout noMarginBottom>
+        <ShopCategories />
       </MainLayout>
     ),
   },

@@ -20,6 +20,10 @@ export const content = {
         },
 
         about: {},
+        shopCategory: {
+          title: "Choose the category:",
+        },
+
         product: {
           fabrics: "Fabrics Available",
           addCart: "Add to Cart",

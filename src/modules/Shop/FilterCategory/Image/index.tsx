@@ -35,8 +35,8 @@ const Image = ({ item }: Props) => {
         style={{
           opacity: imageLoading ? 0 : 1,
           margin: "-10px",
-          height: "120px",
-          width: "120px",
+          height: "200px",
+          width: "200px",
           color: "black",
         }}
       />
