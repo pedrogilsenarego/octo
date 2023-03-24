@@ -28,7 +28,7 @@ const Product = () => {
 
   return (
     <Container maxWidth={"xl"} >
-      <Grid container mt='23vh' columnSpacing={3} rowSpacing={3}>
+      <Grid container mt='15vh' columnSpacing={3} rowSpacing={3}>
         <Grid item xs={12} sm={7}>
           <Card>
             <CardMedia image={mokData.images[0]} height='600px' />

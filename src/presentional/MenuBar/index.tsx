@@ -27,8 +27,8 @@ const MenuBar = () => {
         style={{
           top: 0,
           width: "100vw",
-
-          position: "absolute",
+          zIndex: 2000,
+          position: "fixed",
         }}
       >
         <Container maxWidth='xl'>
