@@ -1,10 +1,11 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import CardMedia from "../../components/CardMedia";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../constants/routes";
 import { useSelector } from "react-redux";
 import { State } from "../../slicer/types";
 import { Filters } from "../../slicer/shop/shop.types"
+import Element from "../../presentional/SharedComponents/Element";
 
 const Shop = () => {
   const navigate = useNavigate()
@@ -12,7 +13,7 @@ const Shop = () => {
     {
       title: "Moking Bag",
       uid: "ihihiojioo",
-      fabric: ["Nylon", "Wool"],
+      fabric: ["0", "2"],
       price: 34,
       detail: "somehgth",
       instructions: "Ihiohiohoi",
@@ -30,7 +31,7 @@ const Shop = () => {
     {
       title: "Moking Bag",
       uid: "ihihiojioo",
-      fabric: ["Nylon", "Wool"],
+      fabric: ["1", "2"],
       price: 34,
       detail: "somehgth",
       category: "2",
@@ -48,7 +49,7 @@ const Shop = () => {
     {
       title: "Moking Bag",
       uid: "ihihiojioo",
-      fabric: ["Nylon", "Wool"],
+      fabric: ["1", "0"],
       price: 34,
       detail: "somehgth",
       category: "0",
@@ -66,7 +67,7 @@ const Shop = () => {
     {
       title: "Moking Bag",
       uid: "ihihiojioo",
-      fabric: ["Nylon", "Wool"],
+      fabric: ["0"],
       price: 34,
       detail: "somehgth",
       category: "5",
@@ -87,9 +88,14 @@ const Shop = () => {
   );
 
   const filterData = () => {
+    if (filters?.category !== "" && filters?.fabric.length !== 0) {
+      const filterFabric = mokData.filter(obj => obj.fabric.some(fabric => filters.fabric.includes(fabric)))
+      return filterFabric.filter(obj => obj.category === filters?.category)
+    }
     if (filters?.category !== "") {
       return mokData.filter(obj => obj.category === filters?.category)
     }
+    if (filters?.fabric.length !== 0) { return mokData.filter(obj => obj.fabric.some(fabric => filters.fabric.includes(fabric))) }
     else return mokData
   }
 
@@ -104,7 +110,7 @@ const Shop = () => {
       >
         {filterData().map((item, pos) => {
           return (
-            <Grid item xs={12} sm={4} key={pos}>
+            <Grid item xs={12} sm={4} key={pos} style={{ position: "relative" }}>
               <CardMedia image={item.images[0]} height='600px' onClick={() =>
                 navigate(
                   ROUTE_PATHS.PRODUCT.replace(
@@ -113,6 +119,15 @@ const Shop = () => {
                   )
                 )
               } />
+              <Box display='flex' columnGap={1} style={{ position: "absolute", bottom: 60, right: 10 }}>
+                {item.fabric.map((item: string, pos: number) => {
+                  return (
+                    <div key={pos}>
+                      <Element size="40px" valuee={item} />
+                    </div>
+                  );
+                })}
+              </Box>
               <Typography>{item.title}</Typography>
               <Typography>£ {item.price}</Typography>
             </Grid>
