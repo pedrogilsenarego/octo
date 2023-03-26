@@ -2,6 +2,9 @@ import { Container, Grid, Typography } from "@mui/material";
 import CardMedia from "../../components/CardMedia";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../constants/routes";
+import { useSelector } from "react-redux";
+import { State } from "../../slicer/types";
+import { Filters } from "../../slicer/shop/shop.types"
 
 const Shop = () => {
   const navigate = useNavigate()
@@ -13,6 +16,7 @@ const Shop = () => {
       price: 34,
       detail: "somehgth",
       instructions: "Ihiohiohoi",
+      category: "0",
       images: [
         "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
         "https://www.indiewire.com/wp-content/uploads/2017/11/screen-shot-2017-11-16-at-1-08-00-pm.png?w=780",
@@ -29,6 +33,7 @@ const Shop = () => {
       fabric: ["Nylon", "Wool"],
       price: 34,
       detail: "somehgth",
+      category: "2",
       instructions: "Ihiohiohoi",
       images: [
         "https://cdn.pixabay.com/photo/2013/03/02/02/41/alley-89197__340.jpg",
@@ -46,6 +51,7 @@ const Shop = () => {
       fabric: ["Nylon", "Wool"],
       price: 34,
       detail: "somehgth",
+      category: "0",
       instructions: "Ihiohiohoi",
       images: [
         "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
@@ -63,6 +69,7 @@ const Shop = () => {
       fabric: ["Nylon", "Wool"],
       price: 34,
       detail: "somehgth",
+      category: "5",
       instructions: "Ihiohiohoi",
       images: [
         "https://www.indiewire.com/wp-content/uploads/2017/11/screen-shot-2017-11-16-at-1-08-00-pm.png?w=780",
@@ -75,6 +82,17 @@ const Shop = () => {
     },
   ];
 
+  const filters = useSelector<State, Filters>(
+    (state) => state?.shop.filters
+  );
+
+  const filterData = () => {
+    if (filters?.category !== "") {
+      return mokData.filter(obj => obj.category === filters?.category)
+    }
+    else return mokData
+  }
+
   return (
     <Container maxWidth='xl'>
       <Grid
@@ -84,7 +102,7 @@ const Shop = () => {
 
         mt='15vh'
       >
-        {mokData.map((item, pos) => {
+        {filterData().map((item, pos) => {
           return (
             <Grid item xs={12} sm={4} key={pos}>
               <CardMedia image={item.images[0]} height='600px' onClick={() =>
