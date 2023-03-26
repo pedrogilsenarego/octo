@@ -7,24 +7,26 @@ interface Props {
   title: string;
   link?: string;
   setAnchorPopover?: any;
-  collection?: boolean
+  collection?: boolean;
 }
 
-export const Button = ({ title, link, setAnchorPopover, collection }: Props) => {
+export const Button = ({
+  title,
+  link,
+  setAnchorPopover,
+  collection,
+}: Props) => {
   const [hover, setHover] = useState<boolean>(false);
 
   const navigate = useNavigate();
   return (
     <Box
       style={{ cursor: "pointer" }}
-      onMouseEnter={(e: any) => {
+      onMouseEnter={() => {
         setHover(true);
-        if (collection) { setAnchorPopover(e.currentTarget) }
-        else setAnchorPopover(false)
       }}
       onMouseLeave={() => {
         setHover(false);
-        //setTimeout(() => setAnchorPopover(null), 500)
       }}
       onClick={() => {
         if (link) navigate(link);
@@ -36,7 +38,6 @@ export const Button = ({ title, link, setAnchorPopover, collection }: Props) => 
         style={{
           textTransform: "uppercase",
           fontSize: "20px",
-
         }}
       >
         {title}

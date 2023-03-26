@@ -10,7 +10,9 @@ const FabricSelector = ({ listFabric }: Props) => {
     <Box display='flex' columnGap={1}>
       {listFabric.map((item: string, pos: number) => {
         return (
-          <Element pos={pos} item={item} />
+          <div key={pos}>
+            <Element item={item} />
+          </div>
         );
       })}
     </Box>

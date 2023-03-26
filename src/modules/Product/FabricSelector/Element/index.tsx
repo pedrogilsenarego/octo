@@ -4,15 +4,15 @@ import { Fabrics } from "../../../../constants/fabrics"
 import { useState } from "react"
 
 interface Props {
-  pos: number
+
   item: string
 }
 
-const Element = ({ pos, item }: Props) => {
+const Element = ({ item }: Props) => {
   const [click, setClick] = useState<boolean>(false)
   return (
     <Box
-      key={pos}
+
       onClick={() => setClick(!click)}
       style={{
         cursor: "pointer",
