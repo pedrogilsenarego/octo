@@ -1,20 +1,24 @@
 import { Paper, Grid, Box, Typography } from "@mui/material";
 import Image from "./Image";
 import { i18n } from "../../../translations/i18n";
-
-import icon1 from "../../../assets/icons/icon1.png";
-import icon2 from "../../../assets/icons/OCTO_Icones-02.png";
-import icon3 from "../../../assets/icons/OCTO_Icones-03.png";
-import icon4 from "../../../assets/icons/OCTO_Icones-04.png";
-import icon5 from "../../../assets/icons/OCTO_Icones-05.png";
-import icon6 from "../../../assets/icons/OCTO_Icones-06.png";
-import icon7 from "../../../assets/icons/OCTO_Icones-07.png";
-import icon8 from "../../../assets/icons/OCTO_Icones-08.png";
+import { useDispatch } from "react-redux";
 import { Colors } from "../../../constants/pallete";
 import { Container } from "@mui/system";
+import { updateFilters } from "../../../slicer/shop/shop.actions";
+import { categories } from "../../../constants/category";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../../constants/routes";
 
 const FilterCategory = () => {
-  const listOfIcons = [icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8];
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const handleChooseCategory = (category: string) => {
+    dispatch(updateFilters({
+      category,
+      fabric: []
+    }))
+    navigate(ROUTE_PATHS.SHOP)
+  }
   return (
     <Container
       maxWidth='xl'
@@ -32,11 +36,11 @@ const FilterCategory = () => {
         </Typography>
         <Grid
           container
-          style={{ borderRadius: "10px", marginTop: "0px" }}
-          columnSpacing={4}
-          rowSpacing={4}
+          style={{ borderRadius: "10px", marginTop: "-30px" }}
+          columnSpacing="50px"
+          rowSpacing="50px"
         >
-          {listOfIcons.map((item, pos) => {
+          {categories.map((item, pos) => {
             return (
               <Grid
                 key={pos}
@@ -47,6 +51,7 @@ const FilterCategory = () => {
                 style={{ cursor: "pointer" }}
               >
                 <Box
+                  onClick={() => handleChooseCategory(item.value)}
                   display='flex'
                   justifyContent='center'
                   alignItems='center'
@@ -56,7 +61,7 @@ const FilterCategory = () => {
                     boxShadow: "2px 2px 10px 2px #00000066",
                   }}
                 >
-                  <Image item={item} />
+                  <Image item={item.image} />
                 </Box>
               </Grid>
             );
