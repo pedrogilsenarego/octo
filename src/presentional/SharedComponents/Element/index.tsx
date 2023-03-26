@@ -1,26 +1,32 @@
 import { Box } from "@mui/material"
-import { Colors } from "../../../../constants/pallete"
-import { Fabrics } from "../../../../constants/fabrics"
+import { Colors } from "../../../constants/pallete"
+import { fabrics } from "../../../constants/fabrics"
 import { useState } from "react"
 
 interface Props {
+  size: string
+  valuee: string
 
-  item: string
 }
 
-const Element = ({ item }: Props) => {
+const Element = ({ size, valuee }: Props) => {
   const [click, setClick] = useState<boolean>(false)
+
+  const findElement = () => {
+    const result = fabrics.find(({ value }) => value === valuee);
+    return result?.image
+  }
   return (
     <Box
 
       onClick={() => setClick(!click)}
       style={{
         cursor: "pointer",
-        height: "70px",
-        width: "70px",
+        height: size,
+        width: size,
         border: click ? `solid 3px ${Colors.BLACKISH}` : `solid 3px ${Colors.PRETTY_CREAM}`,
         borderRadius: "50%",
-        backgroundImage: `url(${Fabrics[item]})`,
+        backgroundImage: `url(${findElement()})`,
         backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",

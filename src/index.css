@@ -28,7 +28,12 @@ html,body {
   user-select: none;
   overflow-x: hidden !important;
   background-color: #C09D9D !important;
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}
 
+body::-webkit-scrollbar{
+  display: none;
 }
 
 code {

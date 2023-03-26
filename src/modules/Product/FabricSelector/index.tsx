@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Element from "./Element";
+import Element from "../../../presentional/SharedComponents/Element"
 
 interface Props {
   listFabric: string[];
@@ -11,7 +11,7 @@ const FabricSelector = ({ listFabric }: Props) => {
       {listFabric.map((item: string, pos: number) => {
         return (
           <div key={pos}>
-            <Element item={item} />
+            <Element size="70px" valuee={item} />
           </div>
         );
       })}

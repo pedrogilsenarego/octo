@@ -10,42 +10,42 @@ import { i18n } from "../translations/i18n";
 
 export const categories = [
   {
-    value: "1",
+    value: "0",
     title: i18n.t("constants.categories.1"),
     image: icon1,
   },
   {
-    value: "2",
+    value: "1",
     title: i18n.t("constants.categories.2"),
     image: icon2,
   },
   {
-    value: "3",
+    value: "2",
     title: i18n.t("constants.categories.3"),
     image: icon3,
   },
   {
-    value: "4",
+    value: "3",
     title: i18n.t("constants.categories.4"),
     image: icon4,
   },
   {
-    value: "5",
+    value: "4",
     title: i18n.t("constants.categories.5"),
     image: icon5,
   },
   {
-    value: "6",
+    value: "5",
     title: i18n.t("constants.categories.6"),
     image: icon6,
   },
   {
-    value: "7",
+    value: "6",
     title: i18n.t("constants.categories.7"),
     image: icon7,
   },
   {
-    value: "8",
+    value: "7",
     title: i18n.t("constants.categories.8"),
     image: icon8,
   }

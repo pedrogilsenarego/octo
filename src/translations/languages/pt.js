@@ -21,7 +21,11 @@ export const content = {
 
         about: {},
         shopCategory: {
-          title: "Escolha a categoria:",
+          title: "Escolha a Categoria:",
+        },
+        shopFabric: {
+          title: "Escolha os tecidos:",
+          nextButton: "Seguinte",
         },
         product: {
           fabrics: "Fabrics Available",
