@@ -9,6 +9,7 @@ export interface CartState {
 
 export interface CartProduct {
   uid:string
+  name:string
   fabric:string
   amount:number
 }

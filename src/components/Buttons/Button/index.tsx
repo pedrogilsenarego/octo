@@ -9,16 +9,18 @@ interface Props {
   borderRadius?: string;
   children?: JSX.Element;
   borderRadiusRight?: boolean
+  disabled?: boolean
 }
 
-const Button = ({ label, onClick, borderRadius, children, borderRadiusRight }: Props) => {
+const Button = ({ label, onClick, borderRadius, children, borderRadiusRight, disabled }: Props) => {
   return (
     <>
       <MuiButton
         style={{
           boxShadow: "2px 2px 16px 2px #00000066",
-          backgroundColor: Colors.BLACKISH,
+          backgroundColor: disabled ? Colors.PRETTY_CREAM : Colors.BLACKISH,
           color: "white",
+          cursor: disabled ? "default" : "pointer",
           borderRadius: borderRadius && !borderRadiusRight ? borderRadius || "40px" : "default",
           borderBottomRightRadius: borderRadiusRight ? borderRadius || "40px" : "default",
           borderTopRightRadius: borderRadiusRight ? borderRadius || "40px" : "default",
@@ -27,7 +29,7 @@ const Button = ({ label, onClick, borderRadius, children, borderRadiusRight }: P
           paddingLeft: "60px",
           paddingRight: "60px",
         }}
-        onClick={onClick}
+        onClick={() => disabled ? onClick : null}
       >
         {children}
         <Typography

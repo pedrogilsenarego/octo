@@ -54,16 +54,6 @@ const Product = () => {
                 <FabricSelector listFabric={mokData?.fabric} />
               </div>
             </div>
-            <Divider style={{ marginTop: '40px' }} />
-            <div style={{ marginTop: "40px" }}>
-              <Typography>{i18n.t("modules.product.quantity")}</Typography>
-              <div style={{ marginTop: "10px" }}>
-                <Incrementor />
-              </div>
-              <div style={{ marginTop: "20px" }}>
-                <Button borderRadiusRight label={i18n.t("modules.product.addCart")} />
-              </div>
-            </div>
             <div style={{ marginTop: "40px" }}>
               <Detail title={i18n.t("modules.product.detail.instructions")} detail={mokData.instructions} />
               <Detail title={i18n.t("modules.product.detail.materials")} detail={mokData.materials} />
