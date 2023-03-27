@@ -4,10 +4,11 @@ import { BiSearch } from "react-icons/bi";
 import { AiOutlineShopping } from "react-icons/ai";
 import { VscMenu } from "react-icons/vsc";
 import { BsInstagram } from "react-icons/bs";
-
+import BasicPopover from "../../components/Popover";
 import Button from "./Button";
 import { Colors } from "../../constants/pallete";
 import { ROUTE_PATHS } from "../../constants/routes";
+import { useState } from "react"
 
 import { useNavigate } from "react-router-dom";
 import Label from "../../assets/images/label.png";
@@ -16,7 +17,7 @@ const MenuBar = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-
+  const [shopPopover, setShopPopover] = useState<HTMLButtonElement | null>(null)
 
   const renderLaptop = () => {
     return (
@@ -25,7 +26,7 @@ const MenuBar = () => {
         style={{
           top: 0,
           width: "100vw",
-          zIndex: 2000,
+          zIndex: 1000,
           position: "fixed",
         }}
       >
@@ -66,12 +67,14 @@ const MenuBar = () => {
 
                   collection
                 />
+                <div onClick={(event: any) => setShopPopover(event.currentTarget)}>
+                  <Button
+                    title={i18n.t("menuBar.store")}
 
-                <Button
-                  title={i18n.t("menuBar.store")}
-                  link={ROUTE_PATHS.SHOP}
 
-                />
+
+                  />
+                </div>
                 <Box display='flex' columnGap='12px' alignItems='center'>
                   <BiSearch
                     size='25px'
@@ -95,6 +98,25 @@ const MenuBar = () => {
             </Grid>
           </Grid>
         </Container>
+        <BasicPopover anchorEl={shopPopover} setAnchorEl={setShopPopover}>
+          <>
+            <Button
+              title={i18n.t("menuBar.shopSublink.viewAll")}
+              link={ROUTE_PATHS.SHOP}
+              setAnchorPopover={setShopPopover}
+            />
+            <Button
+              title={i18n.t("menuBar.shopSublink.category")}
+              link={ROUTE_PATHS.SHOP_CATEGORIES}
+              setAnchorPopover={setShopPopover}
+            />
+            <Button
+              title={i18n.t("menuBar.shopSublink.fabrics")}
+              link={ROUTE_PATHS.SHOP_FABRICS}
+              setAnchorPopover={setShopPopover}
+            />
+          </>
+        </BasicPopover>
       </div>
 
 

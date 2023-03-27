@@ -200,7 +200,7 @@ const Shop = () => {
                       backgroundImage: `url(${item?.image})`,
                       border: item?.value === filters?.category ? `solid 2px ${Colors.BLACKISH}` : `solid 2px ${Colors.PRETTY_CREAM}`,
                       backgroundSize: "contain",
-                      borderRadius: "10%",
+                      borderRadius: "50%",
                       backgroundPosition: "center center",
                       cursor: "pointer",
                       backgroundRepeat: "no-repeat",

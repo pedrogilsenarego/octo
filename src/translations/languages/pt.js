@@ -5,6 +5,11 @@ export const content = {
         store: "Loja",
         collection: "Coleção",
         about: "A história da Octo",
+        shopSublink: {
+          viewAll: "Ver todos",
+          category: "Categorias",
+          fabrics: "Tecidos",
+        },
       },
       footer: {},
       adminSideBar: {

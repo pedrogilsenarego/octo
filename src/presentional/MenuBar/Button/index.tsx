@@ -8,6 +8,7 @@ interface Props {
   link?: string;
   setAnchorPopover?: any;
   collection?: boolean;
+
 }
 
 export const Button = ({
@@ -15,6 +16,7 @@ export const Button = ({
   link,
   setAnchorPopover,
   collection,
+
 }: Props) => {
   const [hover, setHover] = useState<boolean>(false);
 
@@ -29,6 +31,7 @@ export const Button = ({
         setHover(false);
       }}
       onClick={() => {
+        if (setAnchorPopover) setAnchorPopover(null)
         if (link) navigate(link);
       }}
     >
@@ -36,6 +39,7 @@ export const Button = ({
         mt='5px'
         color={hover ? Colors.NEON_YELLOW : Colors.PRETTY_CREAM}
         style={{
+          cursor: "pointer",
           textTransform: "uppercase",
           fontSize: "20px",
         }}

@@ -5,6 +5,11 @@ export const content = {
         store: "Shop",
         collection: "Collection",
         about: "The octo story",
+        shopSublink: {
+          viewAll: "View All",
+          category: "Categories",
+          fabrics: "Fabrics",
+        },
       },
       footer: {},
       adminSideBar: {
