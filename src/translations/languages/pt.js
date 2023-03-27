@@ -37,7 +37,7 @@ export const content = {
           nextButton: "Seguinte",
         },
         product: {
-          fabrics: "Fabrics Available",
+          fabrics: "Teçidos disponíveis:",
           addCart: "Adicionar ao carrinho",
           quantity: "Quantidade",
           detail: {

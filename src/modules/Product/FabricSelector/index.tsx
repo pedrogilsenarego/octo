@@ -34,7 +34,7 @@ const FabricSelector = ({ listFabric }: Props) => {
         {listFabric.map((item: string, pos: number) => {
           if (selectedFabrics.includes(item))
             return (
-              <Box display="flex" key={pos} columnGap={2} alignItems="center">
+              <Box display="flex" key={pos} columnGap={2} alignItems="center" style={{ marginLeft: "20px" }}>
                 <Element size="30px" valuee={item} />
                 <Incrementor minimumOne />
               </Box>
@@ -43,7 +43,7 @@ const FabricSelector = ({ listFabric }: Props) => {
           else return null
         })}
       </Box>
-      <div style={{ marginTop: "20px" }}>
+      <div style={{ marginTop: "40px" }}>
         <Button borderRadiusRight label={i18n.t("modules.product.addCart")} disabled={selectedFabrics.length <= 0} />
       </div>
     </Box>
