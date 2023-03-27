@@ -6,10 +6,13 @@ import { useState } from "react"
 interface Props {
   size: string
   valuee: string
+  noClick?: boolean
+
+  stateHighLightStatus?: boolean
 
 }
 
-const Element = ({ size, valuee }: Props) => {
+const Element = ({ size, valuee, noClick, stateHighLightStatus }: Props) => {
   const [click, setClick] = useState<boolean>(false)
 
   const findElement = () => {
@@ -19,12 +22,12 @@ const Element = ({ size, valuee }: Props) => {
   return (
     <Box
 
-      onClick={() => setClick(!click)}
+      onClick={() => !noClick ? setClick(!click) : null}
       style={{
         cursor: "pointer",
         height: size,
         width: size,
-        border: click ? `solid 3px ${Colors.BLACKISH}` : `solid 3px ${Colors.PRETTY_CREAM}`,
+        border: click || stateHighLightStatus ? `solid 3px ${Colors.BLACKISH}` : `solid 3px ${Colors.PRETTY_CREAM}`,
         borderRadius: "50%",
         backgroundImage: `url(${findElement()})`,
         backgroundSize: "cover",

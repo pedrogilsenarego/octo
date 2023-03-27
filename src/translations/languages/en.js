@@ -20,6 +20,10 @@ export const content = {
         },
 
         about: {},
+        shop: {
+          filtersTitle: "Filters",
+          resetFilters: "Reset Filters",
+        },
         shopCategory: {
           title: "Choose the Category:",
         },
