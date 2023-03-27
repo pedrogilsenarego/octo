@@ -18,8 +18,6 @@ const Shop = () => {
   const dispatch = useDispatch();
   const filters = useSelector<State, Filters>((state) => state?.shop.filters);
 
-
-
   const mokData = [
     {
       title: "Moking Bag",
@@ -113,7 +111,6 @@ const Shop = () => {
 
   const handleSelectFabrics = (fabric: string) => {
     if (!filters?.fabric.includes(fabric)) {
-
       dispatch(
         updateFilters({
           ...filters,
@@ -121,22 +118,31 @@ const Shop = () => {
         })
       );
     } else {
-
       dispatch(
         updateFilters({
           ...filters,
           fabric: filters?.fabric.filter(function (e) {
             return e !== fabric;
           }),
-
         })
       );
     }
   };
 
+  const handleSelectCategory = (category: string) => {
+    if (category === filters.category) {
+      dispatch(updateFilters({
+        ...filters, category: ""
+      }))
+    }
+    else {
+      dispatch(updateFilters({
+        ...filters, category
+      }))
+    }
+  }
+
   const handleResetFilters = () => {
-
-
     dispatch(updateFilters({ fabric: [], category: "" }));
   };
 
@@ -169,7 +175,9 @@ const Shop = () => {
                       size='60px'
                       valuee={item.value}
                       noClick
-                      stateHighLightStatus={filters?.fabric.includes(item.value)}
+                      stateHighLightStatus={filters?.fabric.includes(
+                        item.value
+                      )}
                     />
                   </Box>
                 );
@@ -186,10 +194,11 @@ const Shop = () => {
               {categories.map((item, pos) => {
                 return (
                   <Box
+                    onClick={() => handleSelectCategory(item?.value)}
                     key={pos}
                     style={{
-                      backgroundImage: `url(${item.image})`,
-                      border: `solid 2px ${Colors.BLACKISH}`,
+                      backgroundImage: `url(${item?.image})`,
+                      border: item?.value === filters?.category ? `solid 2px ${Colors.BLACKISH}` : `solid 2px ${Colors.PRETTY_CREAM}`,
                       backgroundSize: "contain",
                       borderRadius: "10%",
                       backgroundPosition: "center center",
