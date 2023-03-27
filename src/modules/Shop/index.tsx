@@ -11,20 +11,15 @@ import { fabrics } from "../../constants/fabrics";
 import { categories } from "../../constants/category";
 import { useDispatch } from "react-redux";
 import { updateFilters } from "../../slicer/shop/shop.actions";
-import { useState, useEffect } from "react";
 import { Colors } from "../../constants/pallete";
 
 const Shop = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const filters = useSelector<State, Filters>((state) => state?.shop.filters);
-  const [selectedFabric, setSelectedFabric] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
-  useEffect(() => {
-    setSelectedCategory(filters.category);
-    setSelectedFabric(filters.fabric);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
+
+
   const mokData = [
     {
       title: "Moking Bag",
@@ -117,34 +112,31 @@ const Shop = () => {
   };
 
   const handleSelectFabrics = (fabric: string) => {
-    if (!selectedFabric.includes(fabric)) {
-      setSelectedFabric([...selectedFabric, fabric]);
+    if (!filters?.fabric.includes(fabric)) {
+
       dispatch(
         updateFilters({
-          fabric: [...selectedFabric, fabric],
-          category: selectedCategory,
+          ...filters,
+          fabric: [...filters?.fabric, fabric],
         })
       );
     } else {
-      setSelectedFabric(
-        selectedFabric.filter(function (e) {
-          return e !== fabric;
-        })
-      );
+
       dispatch(
         updateFilters({
-          fabric: selectedFabric.filter(function (e) {
+          ...filters,
+          fabric: filters?.fabric.filter(function (e) {
             return e !== fabric;
           }),
-          category: selectedCategory,
+
         })
       );
     }
   };
 
   const handleResetFilters = () => {
-    setSelectedCategory("");
-    setSelectedFabric([]);
+
+
     dispatch(updateFilters({ fabric: [], category: "" }));
   };
 
@@ -159,6 +151,7 @@ const Shop = () => {
           style={{ padding: "20px" }}
         >
           <Typography
+            fontWeight={800}
             style={{ cursor: "pointer" }}
             onClick={() => handleResetFilters()}
           >
@@ -176,7 +169,7 @@ const Shop = () => {
                       size='60px'
                       valuee={item.value}
                       noClick
-                      stateHighLightStatus={selectedFabric.includes(item.value)}
+                      stateHighLightStatus={filters?.fabric.includes(item.value)}
                     />
                   </Box>
                 );
