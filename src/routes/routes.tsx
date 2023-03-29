@@ -9,7 +9,6 @@ const Home = lazyWithRetryAndLoader(() => import("../modules/Home"));
 const Shop = lazyWithRetryAndLoader(() => import("../modules/Shop"));
 const ShopCategories = lazyWithRetryAndLoader(() => import("../modules/Shop/FilterCategory"));
 const ShopFabrics = lazyWithRetryAndLoader(() => import("../modules/Shop/FilterFabric"));
-const About = lazyWithRetryAndLoader(() => import("../modules/About"));
 const Product = lazyWithRetryAndLoader(() => import("../modules/Product"));
 const Collections = lazyWithRetryAndLoader(() => import("../modules/Collections"))
 
@@ -25,12 +24,7 @@ export const routes: AppRoute[] = [
     ),
   },
 
-  {
-    path: ROUTE_PATHS.ABOUT,
-    component: <MainLayout>
-      <About />
-    </MainLayout>,
-  },
+
   {
     path: ROUTE_PATHS.COLLECTION,
     component: <MainLayout>

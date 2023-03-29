@@ -1,6 +1,8 @@
 
 import Initial from "./Initial";
 import "./index.css"
+import About from "./About";
+import Collections from "./Collections";
 
 const Home = () => {
   return (
@@ -9,10 +11,10 @@ const Home = () => {
         <Initial />
       </div>
       <div className="initial">
-        <Initial />
+        <About />
       </div>
       <div className="initial">
-        <Initial />
+        <Collections />
       </div>
       <div className="initial">
         <Initial />
