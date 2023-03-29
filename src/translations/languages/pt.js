@@ -50,6 +50,18 @@ export const content = {
         success: {},
         fail: {},
       },
+      constants: {
+        categories: {
+          1: "Babete",
+          2: "Clip para Chupeta",
+          3: "Mala de Maternidade",
+          4: "Saco-Cama",
+          5: "Manta",
+          6: "Bolsa de Carrinho",
+          7: "Organizador de Berço",
+          8: "Protetor de Berço",
+        },
+      },
     },
   },
 };

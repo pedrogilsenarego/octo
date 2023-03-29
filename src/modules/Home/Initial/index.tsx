@@ -10,6 +10,7 @@ import { Colors } from "../../../constants/pallete";
 import { i18n } from "../../../translations/i18n";
 
 import labelEsq from "../../../assets/images/labelEsq.png";
+import MenuBar from "../../../presentional/MenuBar";
 
 const Initial = () => {
   const theme = useTheme();
@@ -18,8 +19,8 @@ const Initial = () => {
     "https://images.pexels.com/photos/786220/pexels-photo-786220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
   const renderLaptop = () => {
     return (
-      <>
-
+      <div style={{ position: "relative" }}>
+        <MenuBar />
         <Box
           display='flex'
           style={{
@@ -64,88 +65,91 @@ const Initial = () => {
             </Box>
           </Container>
         </Box>
-      </>
+      </div>
     );
   };
   const renderMobile = () => {
     return (
-      <Box display='flex' flexDirection='column' alignItems='center'>
-        <Box
-          display='flex'
-          style={{
-            width: "100vw",
-            height: "60vh",
+      <>
 
-            backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat",
-            backgroundImage: `url(${Image})`,
-            backgroundSize: "cover",
-          }}
-        >
+        <Box display='flex' flexDirection='column' alignItems='center'>
           <Box
-            width='120px'
-            height='120px'
+            display='flex'
             style={{
-              position: "absolute",
-              left: -15,
-              padding: "0px",
-              top: "20px",
+              width: "100vw",
+              height: "60vh",
 
               backgroundPosition: "center center",
               backgroundRepeat: "no-repeat",
-              backgroundImage: `url(${labelEsq})`,
+              backgroundImage: `url(${Image})`,
               backgroundSize: "cover",
             }}
-          ></Box>
-
-          <Box style={{ marginTop: "60%" }}>
-            <Typography
-              fontSize='40px'
-              color={Colors.PRETTY_CREAM}
-              fontFamily='Avalanche'
-              style={{
-                marginLeft: "22px",
-                whiteSpace: "pre-line",
-                lineHeight: "36px",
-              }}
-            >
-              {i18n.t("modules.home.mainText")}
-            </Typography>
+          >
             <Box
-              marginLeft='32px'
-              marginTop='20px'
-              display='flex'
-              columnGap='20px'
-              alignItems='center'
-              style={{ cursor: "pointer" }}
-            >
+              width='120px'
+              height='120px'
+              style={{
+                position: "absolute",
+                left: -15,
+                padding: "0px",
+                top: "20px",
+
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+                backgroundImage: `url(${labelEsq})`,
+                backgroundSize: "cover",
+              }}
+            ></Box>
+
+            <Box style={{ marginTop: "60%" }}>
               <Typography
-                color={Colors.NEON_YELLOW}
-                fontSize='10px'
-                style={{ textTransform: "uppercase" }}
+                fontSize='40px'
+                color={Colors.PRETTY_CREAM}
+                fontFamily='Avalanche'
+                style={{
+                  marginLeft: "22px",
+                  whiteSpace: "pre-line",
+                  lineHeight: "36px",
+                }}
               >
-                {i18n.t("modules.home.discover")}
+                {i18n.t("modules.home.mainText")}
               </Typography>
-              <AiFillCaretRight color={Colors.NEON_YELLOW} size='10px' />
+              <Box
+                marginLeft='32px'
+                marginTop='20px'
+                display='flex'
+                columnGap='20px'
+                alignItems='center'
+                style={{ cursor: "pointer" }}
+              >
+                <Typography
+                  color={Colors.NEON_YELLOW}
+                  fontSize='10px'
+                  style={{ textTransform: "uppercase" }}
+                >
+                  {i18n.t("modules.home.discover")}
+                </Typography>
+                <AiFillCaretRight color={Colors.NEON_YELLOW} size='10px' />
+              </Box>
             </Box>
           </Box>
+          <Box display='flex' justifyContent='center' mt='50px'>
+            <Typography
+              fontFamily='Avalanche'
+              style={{
+                fontSize: "24px",
+                whiteSpace: "pre-line",
+                textAlign: "center",
+                fontWeight: 500,
+                lineHeight: "22px",
+              }}
+              color={Colors.BLACKISH}
+            >
+              {i18n.t("modules.home.maternityBags")}
+            </Typography>
+          </Box>
         </Box>
-        <Box display='flex' justifyContent='center' mt='50px'>
-          <Typography
-            fontFamily='Avalanche'
-            style={{
-              fontSize: "24px",
-              whiteSpace: "pre-line",
-              textAlign: "center",
-              fontWeight: 500,
-              lineHeight: "22px",
-            }}
-            color={Colors.BLACKISH}
-          >
-            {i18n.t("modules.home.maternityBags")}
-          </Typography>
-        </Box>
-      </Box>
+      </>
     );
   };
   return mobile ? renderMobile() : renderLaptop();

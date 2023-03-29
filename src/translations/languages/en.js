@@ -51,6 +51,18 @@ export const content = {
         success: {},
         fail: {},
       },
+      constants: {
+        categories: {
+          1: "Bib",
+          2: "Pacifier clip",
+          3: "Maternity Bag",
+          4: "Sleeping Bag",
+          5: "Blanket",
+          6: "Stroller Pocket",
+          7: "Bed Pocket",
+          8: "Bed Bumper",
+        },
+      },
     },
   },
 };

@@ -1,8 +1,8 @@
-
 import Initial from "./Initial";
 import "./index.css"
 import About from "./About";
 import Collections from "./Collections";
+import Shop from "./Shop";
 
 const Home = () => {
   return (
@@ -17,7 +17,7 @@ const Home = () => {
         <Collections />
       </div>
       <div className="initial">
-        <Initial />
+        <Shop />
       </div>
     </div>
   )
