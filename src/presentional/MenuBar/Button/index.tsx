@@ -7,7 +7,6 @@ interface Props {
   title: string;
   link?: string;
   setAnchorPopover?: any;
-  collection?: boolean;
 
 }
 
@@ -15,8 +14,6 @@ export const Button = ({
   title,
   link,
   setAnchorPopover,
-  collection,
-
 }: Props) => {
   const [hover, setHover] = useState<boolean>(false);
 
@@ -37,11 +34,12 @@ export const Button = ({
     >
       <Typography
         mt='5px'
-        color={hover ? Colors.NEON_YELLOW : Colors.PRETTY_CREAM}
+        color={hover ? Colors.NEON_YELLOW : Colors.WHITE_SMUDGE}
         style={{
+          fontWeight: 800,
           cursor: "pointer",
           textTransform: "uppercase",
-          fontSize: "20px",
+          fontSize: "1rem",
         }}
       >
         {title}
