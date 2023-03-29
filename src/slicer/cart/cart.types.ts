@@ -12,6 +12,7 @@ export interface CartProduct {
   name:string
   fabric:string
   amount:number
+  price:number
 }
 
 

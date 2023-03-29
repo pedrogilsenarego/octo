@@ -4,6 +4,7 @@ instagram
 discover the collection vai para collection
 footer
 cookie policy
+retirar search
 
 paginas 
 about
@@ -26,3 +27,4 @@ new product {
   Instruçoes de cuidado
   imagens
 }
+
