@@ -1,9 +1,8 @@
 import { Box } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import { State } from "../../slicer/types";
 import Ball from "./Ball";
-import "./index.css";
 
 const SideBar = () => {
   const arr = [...Array(4)];
