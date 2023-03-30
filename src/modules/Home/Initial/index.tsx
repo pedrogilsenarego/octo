@@ -11,6 +11,7 @@ import { i18n } from "../../../translations/i18n";
 
 import labelEsq from "../../../assets/images/labelEsq.png";
 import MenuBar from "../../../presentional/MenuBar";
+import { generalConstants } from "../../../constants/general";
 
 const Initial = () => {
   const theme = useTheme();
@@ -23,47 +24,49 @@ const Initial = () => {
         <MenuBar />
         <Box
           display='flex'
+          flexDirection="column"
           style={{
-
+            paddingLeft: generalConstants.PADDING,
+            paddingRight: generalConstants.PADDING,
             width: "100vw",
             height: "100vh",
             backgroundPosition: "center center",
             backgroundRepeat: "no-repeat",
             backgroundImage: `url(${Image})`,
-            backgroundSize: "100%",
+            backgroundSize: "cover",
           }}
         >
-          <Container maxWidth='xl'>
+
+          <Typography
+            fontSize='12rem'
+            color={Colors.PRETTY_CREAM}
+            fontFamily='Avalanche'
+            style={{
+              whiteSpace: "pre-line",
+              lineHeight: "10rem",
+              marginTop: "31.5%",
+            }}
+          >
+            {i18n.t("modules.home.mainText")}
+          </Typography>
+          <Box
+            marginLeft='10px'
+            marginTop='1.6rem'
+            display='flex'
+            columnGap={3}
+            alignItems='center'
+            style={{ cursor: "pointer" }}
+          >
             <Typography
-              fontSize='12rem'
-              color={Colors.PRETTY_CREAM}
-              fontFamily='Avalanche'
-              style={{
-                whiteSpace: "pre-line",
-                lineHeight: "10rem",
-                marginTop: "31.5%",
-              }}
+              color={Colors.NEON_YELLOW}
+              fontSize='22px'
+              style={{ textTransform: "uppercase" }}
             >
-              {i18n.t("modules.home.mainText")}
+              {i18n.t("modules.home.discover")}
             </Typography>
-            <Box
-              marginLeft='10px'
-              marginTop='1.6rem'
-              display='flex'
-              columnGap={3}
-              alignItems='center'
-              style={{ cursor: "pointer" }}
-            >
-              <Typography
-                color={Colors.NEON_YELLOW}
-                fontSize='22px'
-                style={{ textTransform: "uppercase" }}
-              >
-                {i18n.t("modules.home.discover")}
-              </Typography>
-              <AiFillCaretRight color={Colors.NEON_YELLOW} size='30px' />
-            </Box>
-          </Container>
+            <AiFillCaretRight color={Colors.NEON_YELLOW} size='30px' />
+          </Box>
+
         </Box>
       </div>
     );

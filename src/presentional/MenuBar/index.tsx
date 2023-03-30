@@ -12,6 +12,7 @@ import Label from "../../assets/images/label.png";
 import "./index.css"
 import { useDispatch } from "react-redux";
 import { scrollTo } from "../../slicer/general/general.actions";
+import { generalConstants } from "../../constants/general";
 
 const MenuBar = () => {
   const ICON_SIZE = "1.6rem";
@@ -36,83 +37,83 @@ const MenuBar = () => {
           width: "100vw",
           zIndex: 1000,
           position: "absolute",
+          paddingLeft: generalConstants.PADDING,
+          paddingRight: generalConstants.PADDING
         }}
       >
-        <Container maxWidth='xl'>
-          <Grid
-            container
-            display='flex'
-            justifyContent='space-between'
-            alignItems='start'
-          >
-            <Grid item>
-              <Box
-                onClick={() => navigate(ROUTE_PATHS.HOME)}
-                width={LABEL_SIZE}
-                height={LABEL_SIZE}
-                style={{
-                  cursor: "pointer",
-                  marginTop: "-24px",
-                  marginLeft: "-22px",
-                  backgroundPosition: "center center",
-                  backgroundRepeat: "no-repeat",
-                  backgroundImage: `url(${Label})`,
-                  backgroundSize: "100%",
-                }}
-              ></Box>
-            </Grid>
-            <Grid item>
-              <Box
-                mt='4.2rem'
-                style={{
-                  marginRight: "-6rem",
-                }}
-                display='flex'
-                columnGap='40px'
-                alignItems='center'
-              >
-                <Button
-                  title={i18n.t("menuBar.about")}
-                  onClick={() => handleClick(1)}
-                />
 
-                <Button
-                  title={i18n.t("menuBar.collection")}
-                  onClick={() => handleClick(2)}
-
-                />
-
-                <Button
-                  title={i18n.t("menuBar.store")}
-                  onClick={() => handleClick(3)}
-
-                />
-
-                <Box display='flex' columnGap='12px' alignItems='center'>
-                  <BiSearch
-                    className="icon"
-                    size={ICON_SIZE}
-                    color={MENU_COLOR}
-                    style={{ cursor: "pointer" }}
-
-                  />
-                  <BsInstagram
-                    className="icon"
-                    size={ICON_SIZE}
-                    color={MENU_COLOR}
-                    style={{ cursor: "pointer" }}
-                  />
-                  <AiOutlineShopping
-                    className="icon"
-                    size={ICON_SIZE}
-                    color={MENU_COLOR}
-                    style={{ marginTop: "-3px", cursor: "pointer" }}
-                  />
-                </Box>
-              </Box>
-            </Grid>
+        <Grid
+          container
+          display='flex'
+          justifyContent='space-between'
+          alignItems='start'
+        >
+          <Grid item>
+            <Box
+              onClick={() => navigate(ROUTE_PATHS.HOME)}
+              width={LABEL_SIZE}
+              height={LABEL_SIZE}
+              style={{
+                cursor: "pointer",
+                marginTop: "-24px",
+                marginLeft: "-22px",
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+                backgroundImage: `url(${Label})`,
+                backgroundSize: "100%",
+              }}
+            ></Box>
           </Grid>
-        </Container>
+          <Grid item>
+            <Box
+              mt='4.2rem'
+
+              display='flex'
+              columnGap='40px'
+              alignItems='center'
+            >
+              <Button
+                title={i18n.t("menuBar.about")}
+                onClick={() => handleClick(1)}
+              />
+
+              <Button
+                title={i18n.t("menuBar.collection")}
+                onClick={() => handleClick(2)}
+
+              />
+
+              <Button
+                title={i18n.t("menuBar.store")}
+                onClick={() => handleClick(3)}
+
+              />
+
+              <Box display='flex' columnGap='12px' alignItems='center'>
+                <BiSearch
+                  className="icon"
+                  size={ICON_SIZE}
+                  color={MENU_COLOR}
+                  style={{ cursor: "pointer" }}
+
+                />
+                <BsInstagram
+                  className="icon"
+                  size={ICON_SIZE}
+                  color={MENU_COLOR}
+                  style={{ cursor: "pointer" }}
+                />
+                <AiOutlineShopping
+                  className="icon"
+                  size={ICON_SIZE}
+                  color={MENU_COLOR}
+                  style={{ marginTop: "-3px", cursor: "pointer" }}
+                />
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+
       </div>
     );
   };

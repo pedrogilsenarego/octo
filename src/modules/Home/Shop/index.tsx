@@ -1,4 +1,5 @@
-import { Box, Container } from "@mui/material"
+import { Box } from "@mui/material"
+import { generalConstants } from "../../../constants/general"
 
 import { Colors } from "../../../constants/pallete"
 
@@ -15,14 +16,16 @@ const Shop = () => {
           backgroundColor: Colors.WHITE_SMUDGE,
           width: "100vw",
           height: "100vh",
-
+          paddingLeft: generalConstants.PADDING,
+          paddingRight: generalConstants.PADDING,
+          flexDirection: "column",
         }}
       >
-        <Container maxWidth='xl'>
-          <FilterCategory />
+
+        <FilterCategory />
 
 
-        </Container>
+
       </Box></>
   )
 }

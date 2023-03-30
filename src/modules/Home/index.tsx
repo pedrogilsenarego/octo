@@ -20,6 +20,7 @@ const Home = () => {
   }
 
   return (
+
     <ReactPageScroller
 
       animationTimer={400}
