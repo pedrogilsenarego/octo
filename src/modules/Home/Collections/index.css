@@ -14,4 +14,6 @@
   object-fit: cover;
   object-position: 100% center;
   border-radius: 1%;
+  transition: all 1.6s cubic-bezier(0.0, 0.0, 0.05, 1.7);
+  transition-delay: 0.5s
 }
