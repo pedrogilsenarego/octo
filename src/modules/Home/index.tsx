@@ -7,17 +7,24 @@ import { State } from "../../slicer/types";
 import ReactPageScroller from "react-page-scroller";
 import { scrollTo } from "../../slicer/general/general.actions";
 
+
 const Home = () => {
   const dispatch = useDispatch();
+
   const scrollToL = useSelector<State, number>(
     (state) => state.general.scrollTo
   );
 
+  const handlePageChange = (e: number) => {
+    dispatch(scrollTo(e))
+  }
+
   return (
     <ReactPageScroller
+
       animationTimer={400}
       customPageNumber={scrollToL}
-      pageOnChange={(e) => { dispatch(scrollTo(e)) }}
+      pageOnChange={(e) => handlePageChange(e)}
     >
       <Initial />
       <About />
