@@ -15,16 +15,8 @@ const Ball = ({ pos }: Props) => {
     dispatch(scrollTo(pos));
   };
   return (
-    <Box
-      style={{
-        cursor: "pointer",
-        display: "flex",
-
-        justifyContent: "center",
-        alignItems: "center",
-        width: "25px",
-        height: "25px",
-      }}
+    <div
+      style={{ cursor: "pointer" }}
       onClick={() => handleClick(pos)}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
@@ -32,16 +24,29 @@ const Ball = ({ pos }: Props) => {
       <Box
         key={pos}
         style={{
-          margin: hover ? "0px" : "15px",
-          width: hover ? "20px" : "15px",
-          height: hover ? "20px" : "5px",
-          borderRadius: "50%",
+          position: "relative",
+          width: "25px",
+          height: "25px",
           backgroundColor: "transparent",
-          border: `solid 5px ${Colors.BLACKISH}`,
-          transition: "all 0.2s ease-in-out",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          transition: "border-color 0.3s ease-in-out",
         }}
-      ></Box>
-    </Box>
+      >
+        <Box
+          style={{
+            position: "absolute",
+            border: `solid 5px ${Colors.BLACKISH}`,
+            width: hover ? "20px" : "5px",
+            height: hover ? "20px" : "5px",
+            borderRadius: "50%",
+            backgroundColor: "transparent",
+            transition: "all 0.3s ease-in-out",
+          }}
+        />
+      </Box>
+    </div>
   );
 };
 
