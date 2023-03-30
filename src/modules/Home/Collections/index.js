@@ -1,6 +1,7 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { Colors } from "../../../constants/pallete";
 import "./index.css";
+import { i18n } from "../../../translations/i18n";
 
 const Collections = () => {
   const track = document.getElementById("image-track");
@@ -122,6 +123,15 @@ const Collections = () => {
                 alt=''
               />
             </Box>
+          </Box>
+          <Box display='flex' justifyContent='center' marginTop='-50px'>
+            <Typography
+              color={Colors.NEON_YELLOW}
+              fontSize='22px'
+              style={{ textTransform: "uppercase" }}
+            >
+              {i18n.t("modules.home.discover")}
+            </Typography>
           </Box>
         </Container>
       </Box>
