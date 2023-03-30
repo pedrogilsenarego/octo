@@ -86,6 +86,7 @@ const Collections = () => {
           width='100%'
           height='80vh'
           style={{
+            cursor: "pointer",
             position: "relative",
             opacity: scrollToL === 2 ? 1 : 0,
             transform:
@@ -139,7 +140,7 @@ const Collections = () => {
           <Typography
             color={Colors.NEON_YELLOW}
             fontSize='22px'
-            style={{ textTransform: "uppercase" }}
+            style={{ textTransform: "uppercase", cursor: "pointer" }}
           >
             {i18n.t("modules.home.discover")}
           </Typography>
