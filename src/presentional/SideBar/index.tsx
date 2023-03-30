@@ -9,6 +9,7 @@ const SideBar = () => {
   const dispatch = useDispatch()
   const handleClick = (pos: number) => {
     dispatch(scrollTo(pos))
+
   }
   return (
     <Box

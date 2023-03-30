@@ -17,7 +17,7 @@ const Home = () => {
     <ReactPageScroller
       animationTimer={400}
       customPageNumber={scrollToL}
-      pageOnChange={() => dispatch(scrollTo(0))}
+      pageOnChange={(e) => { dispatch(scrollTo(e)) }}
     >
       <Initial />
       <About />
