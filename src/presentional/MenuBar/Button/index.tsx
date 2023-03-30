@@ -7,7 +7,7 @@ interface Props {
   title: string;
   link?: string;
   setAnchorPopover?: any;
-  onClick?: () => void
+  onClick?: any
 
 }
 

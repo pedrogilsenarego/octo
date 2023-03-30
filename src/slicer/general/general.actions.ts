@@ -58,13 +58,9 @@ export const updateLang = (lang:string) => ({
   payload: lang
 })
 
-export const scrollToShop = (signal:boolean) => ({
-  type: generalTypes.SCROLL_SHOP,
+export const scrollTo = (signal:number) => ({
+  type: generalTypes.SCROLL,
   payload: signal
 })
 
-export const disableSnap = (signal:boolean) => ({
-  type: generalTypes.DISABLE_SNAP,
-  payload: signal
-})
 

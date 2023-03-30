@@ -1,38 +1,30 @@
 import Initial from "./Initial";
-import "./index.css"
 import About from "./About";
 import Collections from "./Collections";
 import Shop from "./Shop";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { State } from "../../slicer/types";
-import { useEffect, useState } from "react";
+import ReactPageScroller from "react-page-scroller";
+import { scrollTo } from "../../slicer/general/general.actions";
 
 const Home = () => {
-  const disableSnap = useSelector<State, boolean>(
-    (state) => state.general.disableSnap
+  const dispatch = useDispatch();
+  const scrollToL = useSelector<State, number>(
+    (state) => state.general.scrollTo
   );
-  const [scrollSnapEnabled, setScrollSnapEnabled] = useState(false);
-
-  useEffect(() => {
-    setScrollSnapEnabled(disableSnap)
-  }, [disableSnap])
 
   return (
-    <div className={scrollSnapEnabled ? "" : "homeContainer"} >
-      <div className="initial">
-        <Initial />
-      </div>
-      <div className="initial">
-        <About />
-      </div>
-      <div className="initial">
-        <Collections />
-      </div>
-      <div className="initial">
-        <Shop />
-      </div>
-    </div>
-  )
+    <ReactPageScroller
+      animationTimer={400}
+      customPageNumber={scrollToL}
+      pageOnChange={() => dispatch(scrollTo(0))}
+    >
+      <Initial />
+      <About />
+      <Collections />
+      <Shop />
+    </ReactPageScroller>
+  );
 };
 
 export default Home;
