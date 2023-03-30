@@ -85,7 +85,6 @@ const Collections = () => {
         <Box
           width='100%'
           height='80vh'
-          marginTop='-50px'
           style={{
             position: "relative",
             opacity: scrollToL === 2 ? 1 : 0,
