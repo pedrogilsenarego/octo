@@ -1,0 +1,10 @@
+.ball {
+  cursor:pointer;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #1A2032;
+}
+.ball:hover {
+  background-color:#ffffffAE;
+}
