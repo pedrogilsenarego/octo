@@ -3,8 +3,11 @@ import { Colors } from "../../../constants/pallete";
 import "./index.css";
 import { i18n } from "../../../translations/i18n";
 import { generalConstants } from "../../../constants/general";
+import { useSelector } from "react-redux";
 
 const Collections = () => {
+  const scrollToL = useSelector((state) => state.general.scrollTo);
+
   const track = document.getElementById("image-track");
 
   const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
@@ -82,10 +85,16 @@ const Collections = () => {
         <Box
           width='100%'
           height='80vh'
+          marginTop='-50px'
           style={{
             position: "relative",
-
+            opacity: scrollToL === 2 ? 1 : 0,
+            transform:
+              scrollToL === 2
+                ? "scale(1) translate(0%, 0%) "
+                : " scale(0.3) translate(-2000px, -1000px) perspective(800px) rotateX(50deg)",
             overflow: "hidden",
+            transition: "all 0.5s ease-in-out",
           }}
         >
           <Box id='image-track'>
