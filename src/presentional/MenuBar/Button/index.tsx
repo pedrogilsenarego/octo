@@ -7,6 +7,7 @@ interface Props {
   title: string;
   link?: string;
   setAnchorPopover?: any;
+  onClick?: () => void
 
 }
 
@@ -14,6 +15,7 @@ export const Button = ({
   title,
   link,
   setAnchorPopover,
+  onClick
 }: Props) => {
   const [hover, setHover] = useState<boolean>(false);
 
@@ -28,6 +30,7 @@ export const Button = ({
         setHover(false);
       }}
       onClick={() => {
+        if (onClick) onClick()
         if (setAnchorPopover) setAnchorPopover(null)
         if (link) navigate(link);
       }}

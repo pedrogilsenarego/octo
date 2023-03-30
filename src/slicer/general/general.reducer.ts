@@ -9,6 +9,8 @@ const INITIAL_STATE = {
   apiRequestType: null,
   history: ["/"],
   lang: "EN",
+  scrollToShop: false,
+  disableSnap:false
   
 };
 
@@ -85,6 +87,16 @@ const generalReducer = (state = INITIAL_STATE, action: Action) => {
       return {
         ...state,
         lang: action.payload,
+      };
+      case generalTypes.SCROLL_SHOP:
+      return {
+        ...state,
+        scrollToShop: action.payload,
+      };
+      case generalTypes.DISABLE_SNAP:
+      return {
+        ...state,
+        disableSnap: action.payload,
       };
    
 

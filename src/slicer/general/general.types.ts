@@ -11,13 +11,16 @@ const generalTypes = {
   SAVE_LAST_ENDPOINT: "SAVE_LAST_ENDPOINT",
   REMOVE_LAST_ENDPOINT: "REMOVE_LAST_ENDPOINT",
   UPDATE_LANG: "UPDATE_LANG",
+  SCROLL_SHOP: "SCROLL_SHOP",
+  DISABLE_SNAP:"DISABLE_SNAP"
   
 };
 
 export interface GeneralState {
   lang: string,
-  
+  scrollToShop:boolean
   lastEndpoint: string
+  disableSnap:boolean
 
 }
 

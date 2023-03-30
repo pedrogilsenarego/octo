@@ -10,6 +10,8 @@ import { ROUTE_PATHS } from "../../constants/routes";
 import { useNavigate } from "react-router-dom";
 import Label from "../../assets/images/label.png";
 import "./index.css"
+import { useDispatch } from "react-redux";
+import { disableSnap, scrollToShop } from "../../slicer/general/general.actions";
 
 const MenuBar = () => {
   const ICON_SIZE = "1.6rem";
@@ -17,7 +19,16 @@ const MenuBar = () => {
   const LABEL_SIZE = "220px";
   const theme = useTheme();
   const navigate = useNavigate();
+  const dispatch = useDispatch()
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const handleShop = () => {
+    setTimeout(() => {
+      dispatch(scrollToShop(true));
+
+    }, 100)
+    dispatch(disableSnap(true))
+  };
 
   const renderLaptop = () => {
     return (
@@ -74,7 +85,8 @@ const MenuBar = () => {
 
                 <Button
                   title={i18n.t("menuBar.store")}
-                  link={ROUTE_PATHS.SHOP}
+                  onClick={handleShop}
+
                 />
 
                 <Box display='flex' columnGap='12px' alignItems='center'>
