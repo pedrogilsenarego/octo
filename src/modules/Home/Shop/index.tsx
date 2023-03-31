@@ -13,7 +13,7 @@ const Shop = () => {
         //ref={shopRef}
         display='flex'
         style={{
-          backgroundColor: Colors.WHITE_SMUDGE,
+
           width: "100vw",
           height: "100vh",
           paddingLeft: generalConstants.PADDING,

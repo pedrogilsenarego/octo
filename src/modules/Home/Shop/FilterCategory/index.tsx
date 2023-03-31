@@ -1,4 +1,4 @@
-import { Paper, Grid, Box, Typography } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
 import Image from "./Image";
 import { i18n } from "../../../../translations/i18n";
 import { useDispatch } from "react-redux";
@@ -20,7 +20,7 @@ const FilterCategory = () => {
   }
   return (
 
-    <Paper style={{ padding: "20px", marginTop: "60px" }}>
+    <Box style={{ padding: "20px", marginTop: "60px" }}>
       <Typography fontWeight={800}>
         {i18n.t("modules.shopCategory.title")}
       </Typography>
@@ -48,8 +48,9 @@ const FilterCategory = () => {
                 justifyContent='center'
                 alignItems='center'
                 style={{
-                  backgroundColor: Colors.PRETTY_CREAM,
-                  borderRadius: "2px",
+                  borderRadius: "50%",
+                  width: "120px",
+                  height: "120px",
                   boxShadow: "2px 2px 10px 2px #00000066",
                 }}
               >
@@ -64,7 +65,7 @@ const FilterCategory = () => {
           );
         })}
       </Grid>
-    </Paper>
+    </Box>
 
   );
 };

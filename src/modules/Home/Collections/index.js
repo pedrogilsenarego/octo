@@ -75,7 +75,7 @@ const Collections = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: Colors.BLACKISH,
+
           width: "100vw",
           height: "100vh",
           paddingLeft: generalConstants.PADDING,
@@ -174,7 +174,7 @@ const Collections = () => {
         </Box>
         <Box display='flex' justifyContent='center' marginTop='-50px'>
           <Typography
-            color={Colors.NEON_YELLOW}
+            color={Colors.BLACKISH}
             fontSize='22px'
             style={{ textTransform: "uppercase", cursor: "pointer" }}
           >

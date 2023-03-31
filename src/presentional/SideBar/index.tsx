@@ -28,7 +28,7 @@ const SideBar = () => {
     >
       {arr.map((item, pos) => {
         return (
-          <Ball pos={pos} scrollPos={scrollToL} />
+          <Ball pos={pos} />
         );
       })}
 

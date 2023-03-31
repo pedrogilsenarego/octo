@@ -6,10 +6,10 @@ import { scrollTo } from "../../../slicer/general/general.actions";
 
 interface Props {
   pos: number;
-  scrollPos: number
+
 }
 
-const Ball = ({ pos, scrollPos }: Props) => {
+const Ball = ({ pos, }: Props) => {
   const [hover, setHover] = useState(false);
   const dispatch = useDispatch();
   const handleClick = (pos: number) => {
@@ -38,7 +38,7 @@ const Ball = ({ pos, scrollPos }: Props) => {
         <Box
           style={{
             position: "absolute",
-            border: scrollPos === 2 ? `solid 5px ${Colors.WHITE_SMUDGE}` : `solid 5px ${Colors.BLACKISH}`,
+            border: `solid 5px ${Colors.BLACKISH}`,
             width: hover ? "20px" : "5px",
             height: hover ? "20px" : "5px",
             borderRadius: "50%",
