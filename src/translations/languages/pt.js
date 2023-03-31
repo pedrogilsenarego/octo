@@ -20,6 +20,7 @@ export const content = {
       modules: {
         home: {
           mainText: "Nascer\n Octomistic",
+          about: "The story of Octo",
           discover: "Descobre a coleção",
           maternityBags: "Sacos\n Maternindade",
         },
