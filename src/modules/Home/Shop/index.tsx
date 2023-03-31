@@ -1,16 +1,14 @@
-import { Box } from "@mui/material"
+import { Box, Grid } from "@mui/material"
 import { generalConstants } from "../../../constants/general"
-
-import { Colors } from "../../../constants/pallete"
-
 import FilterCategory from "./FilterCategory"
+import Description from "./Description"
+import ImageShow from "./ImageShow"
 
 const Shop = () => {
 
   return (
     <>
       <Box
-        //ref={shopRef}
         display='flex'
         style={{
 
@@ -21,8 +19,23 @@ const Shop = () => {
           flexDirection: "column",
         }}
       >
+        <div style={{ marginTop: "30px" }}>
+          <body style={{ height: "100%" }}>
+            <Grid container columnSpacing={4} style={{ display: "flex", }}>
+              <Grid item xs={5} style={{ height: "94vh" }}>
+                <Box display="flex" flexDirection="column" justifyContent="space-between" style={{ height: "100%" }}>
+                  <FilterCategory />
+                  <ImageShow />
+                </Box>
+              </Grid>
+              <Grid item xs={7} >
+                <Description />
+              </Grid>
+            </Grid>
+          </body>
 
-        <FilterCategory />
+
+        </div>
 
 
 
