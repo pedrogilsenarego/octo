@@ -12,6 +12,7 @@ import {
 import { Actions } from "./types";
 import Button from "./ButtonPopup";
 import { Colors } from "../../constants/pallete";
+import { useRef } from "react";
 
 interface Props {
   children: JSX.Element;
@@ -36,6 +37,12 @@ const Popup = ({
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
 
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+  };
+
   return (
     <div>
       <Dialog
@@ -46,7 +53,6 @@ const Popup = ({
             backgroundColor: "#e4e4e4",
             minWidth: fullScreen ? "100vw" : mobile ? "90vw" : "80vw",
             minHeight: fullScreen ? "100vh" : mobile ? "auto" : "89vh",
-
           },
         }}
         onClose={onClose}
@@ -72,12 +78,12 @@ const Popup = ({
           dividers
           style={{
             color: "white",
-            overflow: "hidden",
-            msOverflowStyle: "none",
             scrollbarWidth: "none",
           }}
         >
           <Box
+            ref={contentRef}
+            onWheel={handleWheel}
             style={{ width: "100%", display: "flex", justifyContent: "center" }}
           >
             {children}
@@ -114,4 +120,5 @@ const Popup = ({
     </div>
   );
 };
+
 export default Popup;

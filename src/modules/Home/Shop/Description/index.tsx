@@ -7,6 +7,7 @@ import { useContext, useState } from "react";
 import { Colors } from "../../../../constants/pallete";
 import Popup from "../../../../components/Popup";
 import { ProductContext } from "../ProductContext";
+import MoreInfoPopup from "./MoreInfoPopup";
 
 const Description = () => {
   const { product } = useContext(ProductContext)
@@ -31,13 +32,11 @@ const Description = () => {
       <div style={{ marginTop: "20px", cursor: "pointer" }} onClick={() => setInfoPopup(true)}>
         <Typography>{i18n.t("modules.product.moreInfo")}</Typography>
       </div>
-      <Popup openPopup={infoPopup} title="teste" setOpenPopup={setInfoPopup}
+      <Popup openPopup={infoPopup} title={categories[parseInt(product)].title} setOpenPopup={setInfoPopup}
         onClose={() => setInfoPopup(false)}
 
       >
-        <Typography>
-          teste
-        </Typography>
+        <MoreInfoPopup />
       </Popup>
     </Box >
 

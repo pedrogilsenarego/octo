@@ -34,7 +34,7 @@ html,body {
   -ms-user-select: none;
   user-select: none;
   overflow-x: hidden !important;
-  background-color: #CDC8C2 !important;
+  background-color: #e4e4e4 !important;
   -ms-overflow-style: none !important;  /* IE and Edge */
   scrollbar-width: none !important;  /* Firefox */
 }
