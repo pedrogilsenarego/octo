@@ -1,23 +1,18 @@
 import { Grid, Box, Typography } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
-import { useDispatch } from "react-redux";
-import { updateFilters } from "../../../../slicer/shop/shop.actions";
 import { categories } from "../../../../constants/category";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { fabrics } from "../../../../constants/fabrics";
+import { ProductContext } from "../ProductContext";
 
 const FilterCategory = () => {
-  const dispatch = useDispatch()
+
+  const { setFabric, setProduct } = useContext(ProductContext);
   const [categoryText, setCategoryText] = useState("")
   const [filterText, setFilterText] = useState("")
 
 
-  const handleChooseCategory = (category: string) => {
-    dispatch(updateFilters({
-      category,
-      fabric: []
-    }))
-  }
+
   return (
     <Box>
       <Box display="flex" columnGap={2} alignItems="center" >
@@ -48,7 +43,7 @@ const FilterCategory = () => {
               style={{ cursor: "pointer" }}
             >
               <Box
-                onClick={() => handleChooseCategory(item.value)}
+                onClick={() => setProduct(item.value)}
                 display="flex"
                 onMouseEnter={() => setCategoryText(item.title)}
                 onMouseLeave={() => setCategoryText("")}
@@ -99,7 +94,7 @@ const FilterCategory = () => {
 
 
               <Box
-                onClick={() => handleChooseCategory(item.value)}
+                onClick={() => setFabric(item.value)}
                 display="flex"
                 onMouseEnter={() => setFilterText(item.title)}
                 onMouseLeave={() => setFilterText("")}

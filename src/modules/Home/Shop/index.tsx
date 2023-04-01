@@ -3,11 +3,15 @@ import { generalConstants } from "../../../constants/general"
 import FilterCategory from "./FilterCategory"
 import Description from "./Description"
 import ImageShow from "./ImageShow"
+import React from "react"
+import { ProductContextProvider } from "./ProductContext"
+
+
 
 const Shop = () => {
 
   return (
-    <>
+    <ProductContextProvider>
       <Box
         display='flex'
         style={{
@@ -24,17 +28,13 @@ const Shop = () => {
             <Grid container columnSpacing={4} height="100vh" alignItems="spaceBetween">
               <Grid item xs={5} >
                 <FilterCategory />
-
-
               </Grid>
               <Grid item xs={7} >
-
               </Grid>
               <Grid item xs={6}>
                 <ImageShow />
               </Grid>
               <Grid item xs={6} >
-
                 <Description />
               </Grid>
             </Grid>
@@ -45,7 +45,7 @@ const Shop = () => {
 
 
 
-      </Box></>
+      </Box></ProductContextProvider>
   )
 }
 

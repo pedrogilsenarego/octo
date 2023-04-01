@@ -6,7 +6,7 @@ import { i18n } from "../../../../../translations/i18n";
 import Element from "./Element"
 
 interface Props {
-  listFabric: string[];
+  listFabric: { value: string, image: string }[];
 }
 
 const FabricSelector = ({ listFabric }: Props) => {
@@ -21,21 +21,21 @@ const FabricSelector = ({ listFabric }: Props) => {
   return (
     <Box >
       <Box display='flex' columnGap={1}>
-        {listFabric.map((item: string, pos: number) => {
+        {listFabric.map((item, pos: number) => {
           return (
-            <div key={pos} onClick={() => handleSelectFabrics(item)}>
-              <Element size="70px" valuee={item} />
+            <div key={pos} onClick={() => handleSelectFabrics(item.value)}>
+              <Element size="70px" valuee={item.value} />
             </div>
 
           );
         })}
       </Box>
       <Box marginTop="20px" display="flex" flexDirection="column" rowGap={2}>
-        {listFabric.map((item: string, pos: number) => {
-          if (selectedFabrics.includes(item))
+        {listFabric.map((item, pos: number) => {
+          if (selectedFabrics.includes(item.value))
             return (
               <Box display="flex" key={pos} columnGap={2} alignItems="center" style={{ marginLeft: "20px" }}>
-                <Element size="30px" valuee={item} />
+                <Element size="30px" valuee={item.value} />
                 <Incrementor minimumOne />
               </Box>
 
