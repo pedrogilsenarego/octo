@@ -40,6 +40,7 @@ export const content = {
         product: {
           fabrics: "Teçidos disponíveis:",
           addCart: "Adicionar ao carrinho",
+          moreInfo: "+ Info",
           quantity: "Quantidade",
           detail: {
             instructions: "Instruções",

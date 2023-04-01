@@ -1,4 +1,4 @@
-import { Card, Container, Grid, Typography, Divider, Box } from "@mui/material";
+import { Typography, Divider, Box } from "@mui/material";
 import CardMedia from "../../../../components/CardMedia";
 import Detail from "./Detail";
 import { i18n } from "../../../../translations/i18n";
@@ -6,9 +6,12 @@ import Incrementor from "../../../../components/Incrementor";
 import Button from "../../../../components/Buttons/Button";
 import FabricSelector from "./FabricSelector";
 import { useState } from "react";
+import { Colors } from "../../../../constants/pallete";
+import Popup from "../../../../components/Popup";
 
 const Description = () => {
   const [imageIndex, setImageIndex] = useState<number>(0)
+  const [infoPopup, setInfoPopup] = useState<boolean>(false)
   const mokData = {
     title: "Moking Bag",
 
@@ -28,22 +31,30 @@ const Description = () => {
   return (
 
 
-    <Card style={{ padding: "20px", height: "94vh" }} >
+    <Box style={{ padding: "20px", border: `solid 2px ${Colors.BLACKISH}`, borderRadius: "5px" }} display="flex" flexDirection="column" justifyContent="space-between" >
       <Typography fontWeight={800}>{mokData?.title}</Typography>
       <Typography>£ {mokData.price}</Typography>
-      <Typography mt='40px'>{mokData.detail}</Typography>
-      <Divider style={{ marginTop: '40px' }} />
-      <div style={{ marginTop: "40px" }}>
+
+      <Divider style={{ marginTop: '20px' }} />
+      <div style={{ marginTop: "20px" }}>
         <Typography>{i18n.t("modules.product.fabrics")}</Typography>
         <div style={{ marginTop: "10px" }}>
           <FabricSelector listFabric={mokData?.fabric} />
         </div>
       </div>
-      <div style={{ marginTop: "40px" }}>
-        <Detail title={i18n.t("modules.product.detail.instructions")} detail={mokData.instructions} />
-        <Detail title={i18n.t("modules.product.detail.materials")} detail={mokData.materials} />
+      <Divider style={{ marginTop: '40px' }} />
+      <div style={{ marginTop: "20px", cursor: "pointer" }} onClick={() => setInfoPopup(true)}>
+        <Typography>{i18n.t("modules.product.moreInfo")}</Typography>
       </div>
-    </Card>
+      <Popup openPopup={infoPopup} title="teste" setOpenPopup={setInfoPopup}
+        onClose={() => setInfoPopup(false)}
+
+      >
+        <Typography>
+          teste
+        </Typography>
+      </Popup>
+    </Box >
 
 
   );

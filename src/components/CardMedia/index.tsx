@@ -48,7 +48,6 @@ const CardMedia = ({
 
       <MuiCardMedia
         onLoad={() => setImageLoading(false)}
-
         style={{
           borderRadius: borderRadius ?? "0px",
           cursor: "pointer",
@@ -57,7 +56,6 @@ const CardMedia = ({
         }}
         component='img'
         height={height || "auto"}
-
         width={width || "auto"}
         image={image}
         alt={alt || ""}

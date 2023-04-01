@@ -21,14 +21,20 @@ const Shop = () => {
       >
         <div style={{ marginTop: "30px" }}>
           <body style={{ height: "100%" }}>
-            <Grid container columnSpacing={4} style={{ display: "flex", }}>
-              <Grid item xs={5} style={{ height: "94vh" }}>
-                <Box display="flex" flexDirection="column" justifyContent="space-between" style={{ height: "100%" }}>
-                  <FilterCategory />
-                  <ImageShow />
-                </Box>
+            <Grid container columnSpacing={4} height="100vh" alignItems="spaceBetween">
+              <Grid item xs={5} >
+                <FilterCategory />
+
+
               </Grid>
               <Grid item xs={7} >
+
+              </Grid>
+              <Grid item xs={6}>
+                <ImageShow />
+              </Grid>
+              <Grid item xs={6} >
+
                 <Description />
               </Grid>
             </Grid>

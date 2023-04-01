@@ -41,6 +41,7 @@ export const content = {
         product: {
           fabrics: "Fabrics Available:",
           addCart: "Add to Cart",
+          moreInfo: "+ Info",
           quantity: "Quantity",
           detail: {
             instructions: "Instructions",

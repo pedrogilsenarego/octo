@@ -1,5 +1,6 @@
-import { Card } from "@mui/material";
+import { Box } from "@mui/material";
 import CardMedia from "../../../../components/CardMedia";
+import { Colors } from "../../../../constants/pallete";
 
 
 
@@ -23,10 +24,9 @@ const ImageShow = () => {
 
   return (
 
-    <Card >
+    <Box style={{ borderRadius: "5px", border: `solid 2px ${Colors.BLACKISH}` }}>
       <CardMedia image={mokData?.images[0]} height='100%' />
-
-    </Card>
+    </Box >
 
 
 
