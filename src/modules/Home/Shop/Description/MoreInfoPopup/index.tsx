@@ -1,18 +1,30 @@
-import { Box, Grid } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import { useContext } from "react"
-import { categories } from "../../../../../constants/category"
+import Button from "../../../../../components/Buttons/Button"
+import { Product, products } from "../../../../../constants/category"
+import { Colors } from "../../../../../constants/pallete"
+import { i18n } from "../../../../../translations/i18n"
 import { ProductContext } from "../../ProductContext"
+import Carrousell from "./Carousell"
 
 const MoreInfoPopup = () => {
   const { product } = useContext(ProductContext)
 
-  return (
-    <Box height="100%" width="100%" style={{ border: "solid 2px black" }}>
+  const productsAvailable: Product[] = products.filter((category) => category.category === product);
 
-      {categories[parseInt(product)].patterns.map((item, pos) => {
+  return (
+    <Box width="100%" display="flex" flexDirection="column" gap={0.5}>
+
+      {productsAvailable.map((item, pos) => {
         return (
-          <Box key={pos} width="100%">
-            <img src={item.images[0]} alt="" width="50%" height="40%" />
+          <Box key={pos} width="100%" style={{ height: "353px", display: "flex", border: `solid 2px ${Colors.BLACKISH}` }}>
+            <Carrousell images={item.images} />
+            <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" width="40%" rowGap={1.5}>
+              <img src={item.icon} alt={item.uid} style={{ height: "100px", width: "100px", objectFit: "cover" }} />
+              <Typography>{item.price} $</Typography>
+              <Button label={i18n.t("modules.product.addCart")} />
+              <Typography>{i18n.t("modules.product.moreInfo")}</Typography>
+            </Box>
           </Box>
         )
       })}

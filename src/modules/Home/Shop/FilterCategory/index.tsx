@@ -31,7 +31,7 @@ const FilterCategory = () => {
       >
         {categories.map((item, pos) => {
           const img = new Image();
-          img.src = item.image;
+          img.src = item.icon;
           const aspectRatio = img.naturalHeight / img.naturalWidth;
           return (
             <Grid
@@ -43,7 +43,7 @@ const FilterCategory = () => {
               style={{ cursor: "pointer" }}
             >
               <Box
-                onClick={() => setProduct(item.value)}
+                onClick={() => setProduct(item.id)}
                 display="flex"
                 onMouseEnter={() => setCategoryText(item.title)}
                 onMouseLeave={() => setCategoryText("")}
@@ -55,7 +55,7 @@ const FilterCategory = () => {
 
                   boxShadow: "0px 0px 10px 0px #0000001e",
                   paddingBottom: `${aspectRatio * 100}%`,
-                  backgroundImage: `url(${item.image})`,
+                  backgroundImage: `url(${item.icon})`,
                   backgroundSize: "cover"
                 }}
               >
@@ -94,7 +94,7 @@ const FilterCategory = () => {
 
 
               <Box
-                onClick={() => setFabric(item.value)}
+                onClick={() => setFabric(item.id)}
                 display="flex"
                 onMouseEnter={() => setFilterText(item.title)}
                 onMouseLeave={() => setFilterText("")}

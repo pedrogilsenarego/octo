@@ -20,7 +20,7 @@ const FabricSelector = ({ listFabric }: Props) => {
   }
   return (
     <Box >
-      <Box display='flex' columnGap={1}>
+      {/* <Box display='flex' columnGap={1}>
         {listFabric.map((item: string, pos: number) => {
           return (
             <div key={pos} onClick={() => handleSelectFabrics(item)}>
@@ -45,7 +45,7 @@ const FabricSelector = ({ listFabric }: Props) => {
       </Box>
       <div style={{ marginTop: "40px" }}>
         <Button borderRadiusRight label={i18n.t("modules.product.addCart")} disabled={selectedFabrics.length <= 0} />
-      </div>
+      </div> */}
     </Box>
 
   );

@@ -5,7 +5,7 @@ import { useState } from "react"
 
 interface Props {
   size: string
-  valuee: string
+  valuee: number
 
 
   stateHighLightStatus?: boolean
@@ -16,7 +16,7 @@ const Element = ({ size, valuee, stateHighLightStatus }: Props) => {
   const [click, setClick] = useState<boolean>(false)
 
   const findElement = () => {
-    const result = fabrics.find(({ value }) => value === valuee);
+    const result = fabrics[valuee];
     return result?.image
   }
   return (

@@ -31,14 +31,7 @@ export const routes: AppRoute[] = [
       <Collections />
     </MainLayout>,
   },
-  {
-    path: ROUTE_PATHS.SHOP,
-    component: (
-      <MainLayout >
-        <Shop />
-      </MainLayout>
-    ),
-  },
+
   {
     path: ROUTE_PATHS.SHOP_CATEGORIES,
     component: (

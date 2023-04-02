@@ -9,44 +9,44 @@ import fabric7 from "../assets/fabrics/waffleStone.png";
 
 export const fabrics: FabricsType[] = [
   {
-    value: "0",
+    id: 0,
     title: i18n.t("constants.fabrics.1"),
     image: fabric1,
   },
   {
-    value: "1",
+    id: 1,
     title: i18n.t("constants.fabrics.2"),
     image: fabric2,
   },
   {
-    value: "2",
+    id: 2,
     title: i18n.t("constants.fabrics.3"),
     image: fabric3,
   },
   {
-    value: "3",
+    id: 3,
     title: i18n.t("constants.fabrics.4"),
     image: fabric4,
   },
   {
-    value: "4",
+    id: 4,
     title: i18n.t("constants.fabrics.5"),
     image: fabric5,
   },
   {
-    value: "5",
+    id: 5,
     title: i18n.t("constants.fabrics.6"),
     image: fabric6,
   },
   {
-    value: "6",
+    id: 6,
     title: i18n.t("constants.fabrics.7"),
     image: fabric7,
   },
 ];
 
 type FabricsType = {
-  value: string;
+  id: number;
   title: string;
   image: string;
 };

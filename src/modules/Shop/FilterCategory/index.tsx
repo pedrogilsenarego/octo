@@ -30,7 +30,7 @@ const FilterCategory = () => {
         justifyContent: "center",
       }}
     >
-      <Paper style={{ padding: "40px", marginTop: "100px" }}>
+      {/* <Paper style={{ padding: "40px", marginTop: "100px" }}>
         <Typography fontWeight={800}>
           {i18n.t("modules.shopCategory.title")}
         </Typography>
@@ -67,7 +67,7 @@ const FilterCategory = () => {
             );
           })}
         </Grid>
-      </Paper>
+      </Paper> */}
     </Container>
   );
 };

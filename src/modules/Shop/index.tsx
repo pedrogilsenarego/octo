@@ -148,7 +148,7 @@ const Shop = () => {
 
   return (
     <Container maxWidth='xl'>
-      <Card style={{ marginTop: "25vh" }}>
+      {/* <Card style={{ marginTop: "25vh" }}>
         <Box
           display='flex'
           justifyContent='space-between'
@@ -236,7 +236,7 @@ const Shop = () => {
                 columnGap={1}
                 style={{ position: "absolute", bottom: 60, right: 10 }}
               >
-                {item.fabric.map((item: string, pos: number) => {
+                {item.fabric.map((item: number, pos: number) => {
                   return (
                     <div key={pos}>
                       <Element size='40px' valuee={item} noClick />
@@ -249,7 +249,7 @@ const Shop = () => {
             </Grid>
           );
         })}
-      </Grid>
+      </Grid> */}
     </Container>
   );
 };

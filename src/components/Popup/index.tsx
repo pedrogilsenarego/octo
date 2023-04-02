@@ -51,8 +51,8 @@ const Popup = ({
         PaperProps={{
           style: {
             backgroundColor: "#e4e4e4",
-            minWidth: fullScreen ? "100vw" : mobile ? "90vw" : "80vw",
-            minHeight: fullScreen ? "100vh" : mobile ? "auto" : "89vh",
+            minWidth: mobile ? "90vw" : "80vw",
+            minHeight: mobile ? "auto" : "89vh",
           },
         }}
         onClose={onClose}

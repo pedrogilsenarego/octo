@@ -1,16 +1,20 @@
 import { Box } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Button from "../../../../../components/Buttons/Button";
 import Incrementor from "../../../../../components/Incrementor";
 import { i18n } from "../../../../../translations/i18n";
+import { ProductContext } from "../../ProductContext";
 import Element from "./Element"
+import { Product, products } from "../../../../../constants/category";
 
-interface Props {
-  listFabric: { value: string, image: string }[];
-}
 
-const FabricSelector = ({ listFabric }: Props) => {
+
+const FabricSelector = () => {
+  const { product } = useContext(ProductContext)
   const [selectedFabrics, setSelectedFabrics] = useState<string[]>([])
+
+  const fabricsAvailable: Product[] = products.filter((category) => category.category === product);
+
 
   const handleSelectFabrics = (fabric: string) => {
     if (selectedFabrics.includes(fabric)) {
@@ -21,21 +25,21 @@ const FabricSelector = ({ listFabric }: Props) => {
   return (
     <Box >
       <Box display='flex' columnGap={1}>
-        {listFabric.map((item, pos: number) => {
+        {fabricsAvailable.map((item, pos: number) => {
           return (
-            <div key={pos} onClick={() => handleSelectFabrics(item.value)}>
-              <Element size="70px" valuee={item.value} />
+            <div key={pos} onClick={() => handleSelectFabrics(item.uid)}>
+              <Element size="70px" valuee={item.icon} />
             </div>
 
           );
         })}
       </Box>
       <Box marginTop="20px" display="flex" flexDirection="column" rowGap={2}>
-        {listFabric.map((item, pos: number) => {
-          if (selectedFabrics.includes(item.value))
+        {fabricsAvailable.map((item, pos: number) => {
+          if (selectedFabrics.includes(item.uid))
             return (
               <Box display="flex" key={pos} columnGap={2} alignItems="center" style={{ marginLeft: "20px" }}>
-                <Element size="30px" valuee={item.value} />
+                <Element size="30px" valuee={item.icon} />
                 <Incrementor minimumOne />
               </Box>
 

@@ -42,7 +42,7 @@ const FilterFabric = () => {
         justifyContent: "center",
       }}
     >
-      <Paper style={{ padding: "40px", marginTop: "100px" }}>
+      {/* <Paper style={{ padding: "40px", marginTop: "100px" }}>
         <Typography fontWeight={800}>
           {i18n.t("modules.shopFabric.title")}
         </Typography>
@@ -75,7 +75,7 @@ const FilterFabric = () => {
         <Box display="flex" justifyContent="flex-end" style={{ marginTop: "50px" }}>
           <Button onClick={() => handleChooseFabrics()} label={i18n.t("modules.shopFabric.nextButton")} />
         </Box>
-      </Paper>
+      </Paper> */}
     </Container>
   );
 };
