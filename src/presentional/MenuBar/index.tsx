@@ -1,4 +1,4 @@
-import { Box, Container, Grid, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Grid, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../translations/i18n";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineShopping } from "react-icons/ai";
@@ -13,8 +13,12 @@ import "./index.css"
 import { useDispatch } from "react-redux";
 import { scrollTo } from "../../slicer/general/general.actions";
 import { generalConstants } from "../../constants/general";
+import { useState } from "react";
+import Cart from "./Cart";
+import DrawerMine from "../../components/Drawer";
 
 const MenuBar = () => {
+  const [cartDrawer, setCartDrawer] = useState<boolean>(false)
   const ICON_SIZE = "1.6rem";
   const MENU_COLOR = Colors.WHITE_SMUDGE
   const LABEL_SIZE = "220px";
@@ -104,6 +108,7 @@ const MenuBar = () => {
                   style={{ cursor: "pointer" }}
                 />
                 <AiOutlineShopping
+                  onClick={() => { setCartDrawer(true) }}
                   className="icon"
                   size={ICON_SIZE}
                   color={MENU_COLOR}
@@ -113,7 +118,9 @@ const MenuBar = () => {
             </Box>
           </Grid>
         </Grid>
-
+        <DrawerMine width="40vw" fullHeight position="left" openDrawer={cartDrawer} setOpenDrawer={setCartDrawer}>
+          <Cart />
+        </DrawerMine>
       </div>
     );
   };

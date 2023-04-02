@@ -10,12 +10,10 @@ export interface CartState {
 export interface CartProduct {
   uid:string
   name:string
-  fabric:string
+  icon:string
   amount:number
   price:number
 }
-
-
 
 
 

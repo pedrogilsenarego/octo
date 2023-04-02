@@ -59,7 +59,7 @@ export const products:Product[] = [
     category: 1,
     icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
   
-    images:["https://mcdn.wallpapersafari.com/medium/48/92/e0ntXE.jpg"],
+    images:["https://mcdn.wallpapersafari.com/medium/48/92/e0ntXE.jpg","https://mcdn.wallpapersafari.com/medium/1/99/2z0L1F.jpg"],
    pattern: 2
   },
   {
