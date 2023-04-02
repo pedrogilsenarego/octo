@@ -17,6 +17,8 @@ const FabricSelector = () => {
     (category) => category.category === product
   );
 
+  console.log(selectedFabrics)
+
   const handleSelectFabrics = (item: Product) => {
     const index = selectedFabrics.findIndex((obj) => obj.uid === item.uid);
 

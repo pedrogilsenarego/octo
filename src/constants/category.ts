@@ -42,7 +42,7 @@ export const products:Product[] = [
     category: 0,
     icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
     images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
-   pattern: 0
+   pattern: 2
   },
   {
     uid: "strwqqing",
@@ -51,7 +51,7 @@ export const products:Product[] = [
     icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
   
     images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"],
-   pattern: 2
+   pattern: 3
   },
   {
     uid: "strindddg",
@@ -69,7 +69,7 @@ export const products:Product[] = [
     icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
   
     images:["https://mcdn.wallpapersafari.com/medium/14/73/mObqwW.jpg"],
-   pattern: 2
+   pattern: 0
   },
   {
     uid: "strding",

@@ -5,10 +5,11 @@ import { Colors } from "../../constants/pallete";
 
 interface Props {
   minimumOne?: boolean
+  initialValue?: number
 }
 
-const Incrementor = ({ minimumOne }: Props) => {
-  const [value, setValue] = useState<number>(minimumOne ? 1 : 0);
+const Incrementor = ({ minimumOne, initialValue }: Props) => {
+  const [value, setValue] = useState<number>(initialValue || 0);
 
   const handleValue = (signal: "minus" | "plus") => {
     if (signal === "minus" && value > (minimumOne ? 1 : 0)) setValue(value - 1);

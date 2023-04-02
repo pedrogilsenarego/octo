@@ -1,6 +1,9 @@
 export const content = {
   en: {
     translations: {
+      cartDrawer: {
+        title: "Cart",
+      },
       menuBar: {
         store: "Shop",
         collection: "Collection",
