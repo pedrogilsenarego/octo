@@ -8,17 +8,25 @@ import { Product, products } from "../../../../../constants/category";
 
 const FabricSelector = () => {
   const { product } = useContext(ProductContext);
-  const [selectedFabrics, setSelectedFabrics] = useState<string[]>([]);
+  const [selectedFabrics, setSelectedFabrics] = useState<Product[]>([]);
 
   const fabricsAvailable: Product[] = products.filter(
     (category) => category.category === product
   );
 
-  const handleSelectFabrics = (fabric: string) => {
-    if (selectedFabrics.includes(fabric)) {
-      setSelectedFabrics(selectedFabrics.filter((obj) => obj !== fabric));
-    } else setSelectedFabrics([...selectedFabrics, fabric]);
+  const handleSelectFabrics = (item: Product) => {
+    const index = selectedFabrics.findIndex((obj) => obj.uid === item.uid);
+
+    if (index !== -1) {
+      // If item exists, remove it
+      setSelectedFabrics(selectedFabrics.filter((obj) => obj.uid !== item.uid));
+    } else {
+      // Otherwise, add it
+      setSelectedFabrics(selectedFabrics.concat(item));
+    }
   };
+
+  console.log(selectedFabrics)
   return (
     <Box>
       <Box display='flex' columnGap={2}>
@@ -32,7 +40,7 @@ const FabricSelector = () => {
               rowGap={2}
               key={pos}
 
-              onClick={() => handleSelectFabrics(item.uid)}
+              onClick={() => handleSelectFabrics(item)}
             >
               <Element size='70px' valuee={item.icon} />
               <Typography>{item.price} $</Typography>

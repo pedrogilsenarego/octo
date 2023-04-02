@@ -29,7 +29,7 @@ image:string
 
 export const products:Product[] = [
   {
-    uid: "string",
+    uid: "ddwwqwdq",
     price: 34,
     category: 0,
     icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
@@ -37,7 +37,7 @@ export const products:Product[] = [
    pattern: 0
   },
   {
-    uid: "string",
+    uid: "strddqwing",
     price: 345,
     category: 0,
     icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
@@ -45,7 +45,7 @@ export const products:Product[] = [
    pattern: 0
   },
   {
-    uid: "string",
+    uid: "strwqqing",
     price: 67,
     category: 0,
     icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
@@ -54,7 +54,7 @@ export const products:Product[] = [
    pattern: 2
   },
   {
-    uid: "string",
+    uid: "strindddg",
     price: 45,
     category: 1,
     icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
@@ -63,7 +63,7 @@ export const products:Product[] = [
    pattern: 2
   },
   {
-    uid: "string",
+    uid: "stqwdwqdqring",
     price: 45,
     category: 1,
     icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
@@ -72,7 +72,7 @@ export const products:Product[] = [
    pattern: 2
   },
   {
-    uid: "string",
+    uid: "strding",
     price: 78,
     category: 3,
     icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
