@@ -1,27 +1,30 @@
+
 import cartTypes, { CartState } from "./cart.types";
+import { handleAddToCart } from "./cart.utils";
 
 const INITIAL_STATE: CartState = {
-  cartProducts: []
+  cartItems: []
 };
 
 interface Action {
   type: string;
   payload: any;
-}
+} 
 
-//TODO o cart tem de ter em conta se ja existe os produtos 
-
-const shopReducer = (state = INITIAL_STATE, action: Action) => {
+const cartReducer = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case cartTypes.ADD_PRODUCT_TO_CART:
       return {
-        ...state,
-        cartProducts: [...state.cartProducts, action.payload]
-      };
+				...state,
+				cartItems: handleAddToCart({
+					prevCartItems: state.cartItems,
+					nextCartItems: action.payload
+				})
+			};
 
     default:
       return state;
   }
 };
 
-export default shopReducer;
+export default cartReducer;

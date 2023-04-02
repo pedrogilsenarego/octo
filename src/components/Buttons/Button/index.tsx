@@ -29,7 +29,7 @@ const Button = ({ label, onClick, borderRadius, children, borderRadiusRight, dis
           paddingLeft: "60px",
           paddingRight: "60px",
         }}
-        onClick={() => disabled ? onClick : null}
+        onClick={() => !disabled && onClick ? onClick() : null}
       >
         {children}
         <Typography

@@ -1,12 +1,14 @@
 import { combineReducers } from "redux";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; 
+import cartReducer from "./cart/cart.reducer";
 import generalReducer from "./general/general.reducer";
 import shopReducer from "./shop/shop.reducer";
 
 export const rootReducer = combineReducers({
   general: generalReducer,
-  shop: shopReducer
+  shop: shopReducer,
+  cart: cartReducer
   
 });
 

@@ -1,19 +1,20 @@
+import { Product } from "../../constants/category";
+
 export const cartTypes = {
   ADD_PRODUCT_TO_CART: "ADD_PRODUCT_TO_CART"
   
 };
 
-export interface CartState {
-  cartProducts: CartProduct[]
+export interface CartProduct {
+  product:Product;
+  value:number
 }
 
-export interface CartProduct {
-  uid:string
-  name:string
-  icon:string
-  amount:number
-  price:number
+export interface CartState {
+  cartItems: CartProduct[]
 }
+
+
 
 
 

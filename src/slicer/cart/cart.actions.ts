@@ -1,7 +1,8 @@
-import  cartTypes, { CartProduct } from "./cart.types";
+import { Product } from "../../constants/category";
+import  cartTypes from "./cart.types";
 
 
-export const addProductToCart = (product: CartProduct) => ({
+export const addProductToCart = (product: Product[]) => ({
   type: cartTypes.ADD_PRODUCT_TO_CART,
   payload: product,
 });

@@ -5,12 +5,15 @@ import { i18n } from "../../../../../translations/i18n";
 import { ProductContext } from "../../ProductContext";
 import Element from "./Element";
 import { Product, products } from "../../../../../constants/category";
+import { useDispatch } from "react-redux";
+import { addProductToCart } from "../../../../../slicer/cart/cart.actions";
 
 const FabricSelector = () => {
   const { product } = useContext(ProductContext);
   const [selectedFabrics, setSelectedFabrics] = useState<Product[]>([]);
+  const dispatch = useDispatch()
 
-  const fabricsAvailable: Product[] = products.filter(
+  const productsAvailable: Product[] = products.filter(
     (category) => category.category === product
   );
 
@@ -26,11 +29,10 @@ const FabricSelector = () => {
     }
   };
 
-  console.log(selectedFabrics)
   return (
     <Box>
       <Box display='flex' columnGap={2}>
-        {fabricsAvailable.map((item, pos: number) => {
+        {productsAvailable.map((item, pos: number) => {
           return (
             <Box
               display='flex'
@@ -40,7 +42,7 @@ const FabricSelector = () => {
               rowGap={2}
               key={pos}
 
-              onClick={() => handleSelectFabrics(item)}
+              onClick={() => { handleSelectFabrics(item) }}
             >
               <Element size='70px' valuee={item.icon} />
               <Typography>{item.price} $</Typography>
@@ -51,6 +53,7 @@ const FabricSelector = () => {
 
       <div style={{ marginTop: "40px" }}>
         <Button
+          onClick={() => { dispatch(addProductToCart(selectedFabrics)) }}
           borderRadiusRight
           label={i18n.t("modules.product.addCart")}
           disabled={selectedFabrics.length <= 0}
