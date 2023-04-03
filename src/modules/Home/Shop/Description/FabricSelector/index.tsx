@@ -7,17 +7,18 @@ import Element from "./Element";
 import { Product, products } from "../../../../../constants/category";
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../../../../../slicer/cart/cart.actions";
+import { updateSuccessNotification } from "../../../../../slicer/general/general.actions";
 
 const FabricSelector = () => {
   const { product } = useContext(ProductContext);
   const [selectedFabrics, setSelectedFabrics] = useState<Product[]>([]);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const productsAvailable: Product[] = products.filter(
     (category) => category.category === product
   );
 
-  console.log(selectedFabrics)
+  console.log(selectedFabrics);
 
   const handleSelectFabrics = (item: Product) => {
     const index = selectedFabrics.findIndex((obj) => obj.uid === item.uid);
@@ -40,11 +41,12 @@ const FabricSelector = () => {
               display='flex'
               flexDirection='column'
               justifyContent='center'
-              alignItems="center"
+              alignItems='center'
               rowGap={2}
               key={pos}
-
-              onClick={() => { handleSelectFabrics(item) }}
+              onClick={() => {
+                handleSelectFabrics(item);
+              }}
             >
               <Element size='70px' valuee={item.icon} />
               <Typography>{item.price} $</Typography>
@@ -55,7 +57,14 @@ const FabricSelector = () => {
 
       <div style={{ marginTop: "40px" }}>
         <Button
-          onClick={() => { dispatch(addProductToCart(selectedFabrics)) }}
+          onClick={() => {
+            dispatch(addProductToCart(selectedFabrics));
+            dispatch(
+              updateSuccessNotification(
+                i18n.t("notifications.success.updateCart")
+              )
+            );
+          }}
           borderRadiusRight
           label={i18n.t("modules.product.addCart")}
           disabled={selectedFabrics.length <= 0}

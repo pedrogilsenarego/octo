@@ -8,6 +8,7 @@ import {
 import { AiFillCaretRight } from "react-icons/ai";
 import { Colors } from "../../../constants/pallete";
 import { i18n } from "../../../translations/i18n";
+import t7 from "../../../assets/t7.jpeg"
 
 import labelEsq from "../../../assets/images/labelEsq.png";
 import MenuBar from "../../../presentional/MenuBar";
@@ -32,8 +33,9 @@ const Initial = () => {
             height: "100vh",
             backgroundPosition: "center center",
             backgroundRepeat: "no-repeat",
-            backgroundImage: `url(${Image})`,
+            backgroundImage: `url(${t7})`,
             backgroundSize: "cover",
+            filter: "brightness(90%)"
           }}
         >
 

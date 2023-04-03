@@ -39,7 +39,7 @@ const Ball = ({ pos, scrollPos }: Props) => {
         <Box
           style={{
             position: "absolute",
-            border: scrollPos !== pos ? `solid 5px ${Colors.BLACKISH}` : `solid 5px #ffffff66`,
+            border: scrollPos !== pos ? `solid 5px ${Colors.BLACKISH}` : `solid 5px ${Colors.NEON_YELLOW}`,
             width: hover && scrollPos !== pos ? "20px" : "5px",
             height: hover && scrollPos !== pos ? "20px" : "5px",
             borderRadius: "50%",

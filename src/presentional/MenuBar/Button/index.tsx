@@ -39,7 +39,7 @@ export const Button = ({
         mt='5px'
         color={hover ? Colors.NEON_YELLOW : Colors.WHITE_SMUDGE}
         style={{
-          fontWeight: 800,
+          fontWeight: 500,
           cursor: "pointer",
           textTransform: "uppercase",
           fontSize: "1rem",

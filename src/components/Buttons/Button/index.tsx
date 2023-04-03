@@ -1,4 +1,5 @@
 import { Button as MuiButton, Typography } from "@mui/material";
+import { useState } from "react";
 import { Colors } from "../../../constants/pallete";
 
 
@@ -10,15 +11,20 @@ interface Props {
   children?: JSX.Element;
   borderRadiusRight?: boolean
   disabled?: boolean
+  color?: string
+  colorHover?: string
 }
 
-const Button = ({ label, onClick, borderRadius, children, borderRadiusRight, disabled }: Props) => {
+const Button = ({ label, onClick, borderRadius, children, borderRadiusRight, disabled, color, colorHover }: Props) => {
+  const [buttonHover, setButtonHover] = useState<boolean>(false)
+  const bgColor = buttonHover ? colorHover : color
   return (
     <>
       <MuiButton
+        onMouseEnter={() => setButtonHover(true)} onMouseLeave={() => setButtonHover(false)}
         style={{
           boxShadow: "2px 2px 16px 2px #00000066",
-          backgroundColor: disabled ? Colors.PRETTY_CREAM : Colors.BLACKISH,
+          backgroundColor: disabled ? Colors.PRETTY_CREAM : bgColor || Colors.BLACKISH,
           color: "white",
           cursor: disabled ? "default" : "pointer",
           borderRadius: borderRadius && !borderRadiusRight ? borderRadius || "40px" : "default",

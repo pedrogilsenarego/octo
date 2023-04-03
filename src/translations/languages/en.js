@@ -26,7 +26,9 @@ export const content = {
       modules: {
         home: {
           mainText: "Born\n Octomistic",
-          about: "The story of Octo",
+          about: "The Octo Story",
+          discoverCollection: "Discover our Collection",
+          viewMore: "View More",
           discover: "Discover the collection",
           maternityBags: "Maternity\n Bags",
         },
@@ -37,10 +39,10 @@ export const content = {
           resetFilters: "Reset Filters",
         },
         shopCategory: {
-          title: "Choose the Category:",
+          title: "PRODUCTS",
         },
         shopFabric: {
-          title: "Choose the Fabrics:",
+          title: "PATTERNS",
           nextButton: "Next",
         },
 
@@ -56,12 +58,14 @@ export const content = {
         },
       },
       notifications: {
-        success: {},
+        success: {
+          updateCart: "The cart was updated",
+        },
         fail: {},
       },
       constants: {
         categories: {
-          1: "Bib",
+          1: "Bandana Bib",
           2: "Pacifier clip",
           3: "Maternity Bag",
           4: "Sleeping Bag",
@@ -69,6 +73,7 @@ export const content = {
           6: "Stroller Pocket",
           7: "Bed Pocket",
           8: "Bed Bumper",
+          9: "Collar Bib",
         },
         fabrics: {
           1: "Vichy Powder Pink",
@@ -76,8 +81,9 @@ export const content = {
           3: "Floral Powder Pink",
           4: "Floral Classic",
           5: "Octo's",
-          6: "Waffle Cream",
+          6: "Pure White",
           7: "Waffle Stone",
+          8: "Waffle Cream",
         },
       },
     },

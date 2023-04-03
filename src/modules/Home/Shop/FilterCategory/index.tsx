@@ -17,9 +17,9 @@ const FilterCategory = () => {
     <Box>
       <Box display="flex" columnGap={2} alignItems="center" >
         <Typography fontWeight={800}>
-          {i18n.t("modules.shopCategory.title")}
+          {i18n.t("modules.shopCategory.title")}&#0094;
         </Typography>
-        <Typography >
+        <Typography style={{ textTransform: "uppercase" }}>
           {categoryText}
         </Typography>
       </Box>
@@ -68,7 +68,7 @@ const FilterCategory = () => {
         <Typography fontWeight={800}>
           {i18n.t("modules.shopFabric.title")}
         </Typography>
-        <Typography >
+        <Typography style={{ textTransform: "uppercase" }}>
           {filterText}
         </Typography>
       </Box>

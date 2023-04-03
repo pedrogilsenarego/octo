@@ -24,7 +24,7 @@ const ImageShow = () => {
 
   return (
 
-    <Box style={{ borderRadius: "5px", border: `solid 2px ${Colors.BLACKISH}` }}>
+    <Box style={{ borderRadius: "5px", }}>
       <CardMedia image={mokData?.images[0]} height='100%' />
     </Box >
 

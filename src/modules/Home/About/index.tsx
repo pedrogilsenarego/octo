@@ -1,9 +1,12 @@
 import { Box, Typography } from "@mui/material";
+import t4 from "../../../assets/t4.jpeg"
+import Button from "../../../components/Buttons/Button";
 import { generalConstants } from "../../../constants/general";
 import { Colors } from "../../../constants/pallete";
 import { i18n } from "../../../translations/i18n";
 
 const About = () => {
+
   return (
     <>
       <Box
@@ -14,45 +17,62 @@ const About = () => {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
+
           paddingLeft: generalConstants.PADDING,
           paddingRight: generalConstants.PADDING,
           width: "100vw",
           height: "100vh",
-
         }}
       >
-        <Box style={{
-          width: "35vw",
-          height: "35vw",
-          backgroundColor: "red",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: "50%",
-          backgroundImage: "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkaQA6PkIR_hCrT0E_3ksrIemWd1_Rz7hD5zVB5CaBwosrml_B-rnZ-V5B330m0o4NWcg&usqp=CAU)"
-
-        }}>
+        <Box
+          columnGap={5}
+          rowGap={7}
+          style={{
+            width: "45vw",
+            height: "35vw",
+            flexDirection: "column",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <img
             style={{
-              width: "32vw",
-              height: "32vw",
-              borderRadius: "50%",
+              width: "87%",
+              height: "25vw",
+              borderRadius: "1%",
               objectFit: "cover",
               objectPosition: "center",
-              filter: "sepia(60%) blur(1px)"
+
             }}
-            src='https://tse2.mm.bing.net/th?id=OIP.1q22bdxzzLyWOu0seyXHKQHaHa&pid=Api&P=0'
+            src={t4}
             alt=''
           />
-        </Box>
-        <Box display='flex' justifyContent='center'>
-          <Typography
-            color={Colors.BLACKISH}
-            fontSize='22px'
-            style={{ textTransform: "uppercase", cursor: "pointer" }}
+          <Box
+            display='flex'
+            justifyContent='center'
+            flexDirection='column'
+            alignItems='center'
+            rowGap={2}
           >
-            {i18n.t("modules.home.about")}
-          </Typography>
+            <Typography
+              color={Colors.BLACKISH}
+              fontSize='22px'
+              style={{ textTransform: "uppercase", cursor: "pointer" }}
+            >
+              {i18n.t("modules.home.about")}
+            </Typography>
+            <Typography>
+              ry. Lorem Ipsum has been the industry's standard dummy text ever
+              since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not
+              only five centu
+            </Typography>
+            <div style={{ marginTop: "40px" }}>
+              <Button colorHover={Colors.NEON_YELLOW_TRANSPARENT} label={i18n.t("modules.home.viewMore")} />
+            </div>
+          </Box>
+
         </Box>
       </Box>
     </>

@@ -43,6 +43,11 @@ export const fabrics: FabricsType[] = [
     title: i18n.t("constants.fabrics.7"),
     image: fabric7,
   },
+  {
+    id: 7,
+    title: i18n.t("constants.fabrics.8"),
+    image: fabric7,
+  },
 ];
 
 type FabricsType = {

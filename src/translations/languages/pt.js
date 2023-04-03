@@ -25,8 +25,10 @@ export const content = {
       },
       modules: {
         home: {
-          mainText: "Nascer\n Octomistic",
+          mainText: "Born\n Octomistic",
           about: "The story of Octo",
+          viewMore: "View More",
+          discoverCollection: "Discover our Collection",
           discover: "Descobre a coleção",
           maternityBags: "Sacos\n Maternindade",
         },
@@ -55,7 +57,9 @@ export const content = {
         },
       },
       notifications: {
-        success: {},
+        success: {
+          updateCart: "The cart was updated",
+        },
         fail: {},
       },
       constants: {

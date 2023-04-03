@@ -1,12 +1,16 @@
-import icon1 from "../assets/icons/icon1.png";
-import icon2 from "../assets/icons/OCTO_Icones-02.png";
-import icon3 from "../assets/icons/OCTO_Icones-03.png";
-import icon4 from "../assets/icons/OCTO_Icones-04.png";
-import icon5 from "../assets/icons/OCTO_Icones-05.png";
-import icon6 from "../assets/icons/OCTO_Icones-06.png";
-import icon7 from "../assets/icons/OCTO_Icones-07.png";
-import icon8 from "../assets/icons/OCTO_Icones-08.png";
+import icon1 from "../assets/icons/categorias/icon1.png";
+import icon2 from "../assets/icons/categorias/OCTO_Icones-02.png";
+import icon3 from "../assets/icons/categorias/OCTO_Icones-03.png";
+import icon4 from "../assets/icons/categorias/OCTO_Icones-04.png";
+import icon5 from "../assets/icons/categorias/OCTO_Icones-05.png";
+import icon6 from "../assets/icons/categorias/OCTO_Icones-06.png";
+import icon7 from "../assets/icons/categorias/OCTO_Icones-07.png";
+import icon8 from "../assets/icons/categorias/OCTO_Icones-08.png";
 import { i18n } from "../translations/i18n";
+import iconBandanaVichyClassic from "../assets/icons/produtos/icones_padroes-bandana1.png"
+import iconBandanaFloralPowderPink from "../assets/icons/produtos/icones_padroes-bandana2.png"
+import iconBandanaOctos from "../assets/icons/produtos/icones_padroes-bandana3.png"
+
 
 export type Product = {
   uid: string
@@ -32,15 +36,15 @@ export const products:Product[] = [
     uid: "ddwwqwdq",
     price: 34,
     category: 0,
-    icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
+    icon:iconBandanaVichyClassic,
     images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
-   pattern: 0
+   pattern: 1
   },
   {
     uid: "strddqwing",
     price: 345,
     category: 0,
-    icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
+    icon:iconBandanaFloralPowderPink,
     images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
    pattern: 2
   },
@@ -48,8 +52,7 @@ export const products:Product[] = [
     uid: "strwqqing",
     price: 67,
     category: 0,
-    icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
-  
+    icon:iconBandanaOctos,
     images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"],
    pattern: 3
   },
@@ -132,5 +135,11 @@ export const categories:Category[] = [
     icon: icon8,
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
  
-  }
+  },
+  {
+    id: 8,
+    title: i18n.t("constants.categories.9"),
+    icon: icon8,
+    image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
+  },
 ]

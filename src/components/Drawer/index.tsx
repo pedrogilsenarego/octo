@@ -40,7 +40,7 @@ const DrawerMine = ({
       sx={{
         width: fullWidth ? "100vw" : width,
         height: fullHeight ? "100vh" : "auto",
-        backgroundColor: Colors.PRETTY_CREAM,
+        backgroundColor: Colors.PRETTY_CREAM_TRANSPARENT,
 
 
       }}
