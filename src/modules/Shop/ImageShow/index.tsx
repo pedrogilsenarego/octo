@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import CardMedia from "../../../../components/CardMedia";
-import { Colors } from "../../../../constants/pallete";
+import CardMedia from "../../../components/CardMedia";
+import { Colors } from "../../../constants/pallete";
 
 
 

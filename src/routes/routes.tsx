@@ -7,8 +7,6 @@ import AdminLayout from "../layouts/AdminLayout"
 
 const Home = lazyWithRetryAndLoader(() => import("../modules/Home"));
 const Shop = lazyWithRetryAndLoader(() => import("../modules/Shop"));
-const ShopCategories = lazyWithRetryAndLoader(() => import("../modules/Shop/FilterCategory"));
-const ShopFabrics = lazyWithRetryAndLoader(() => import("../modules/Shop/FilterFabric"));
 const Product = lazyWithRetryAndLoader(() => import("../modules/Product"));
 const Collections = lazyWithRetryAndLoader(() => import("../modules/Collections"))
 
@@ -23,30 +21,20 @@ export const routes: AppRoute[] = [
       </MainLayout>
     ),
   },
-
+  {
+    path: ROUTE_PATHS.SHOP,
+    component: (
+      <MainLayout noMarginBottom>
+        <Shop />
+      </MainLayout>
+    ),
+  },
 
   {
     path: ROUTE_PATHS.COLLECTION,
     component: <MainLayout>
       <Collections />
     </MainLayout>,
-  },
-
-  {
-    path: ROUTE_PATHS.SHOP_CATEGORIES,
-    component: (
-      <MainLayout noMarginBottom>
-        <ShopCategories />
-      </MainLayout>
-    ),
-  },
-  {
-    path: ROUTE_PATHS.SHOP_FABRICS,
-    component: (
-      <MainLayout noMarginBottom>
-        <ShopFabrics />
-      </MainLayout>
-    ),
   },
   {
     path: ROUTE_PATHS.ADMIN,

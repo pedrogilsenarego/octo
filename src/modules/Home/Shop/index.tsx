@@ -1,51 +1,114 @@
-import { Box, Grid } from "@mui/material"
+import { Box, Container, Grid } from "@mui/material"
 import { generalConstants } from "../../../constants/general"
-import FilterCategory from "./FilterCategory"
-import Description from "./Description"
-import ImageShow from "./ImageShow"
+
 import React from "react"
-import { ProductContextProvider } from "./ProductContext"
+import { categories } from "../../../constants/category"
+import { fabrics } from "../../../constants/fabrics"
+
 
 
 
 const Shop = () => {
 
   return (
-    <ProductContextProvider>
-      <Box
-        display='flex'
-        style={{
+    <Box
+      display='flex'
+      style={{
+        alignItems: "center",
+        justifyContent: "space-evenly",
+        width: "100vw",
+        height: "100vh",
+        padding: "15vw",
+        flexDirection: "column",
 
-          width: "100vw",
-          height: "100vh",
-          paddingLeft: generalConstants.PADDING,
-          paddingRight: generalConstants.PADDING,
-          flexDirection: "column",
-        }}
+      }}
+    >
+
+      <Grid
+        container
+        style={{ borderRadius: "10px", marginTop: "1px" }}
+        columnSpacing={5}
+        rowSpacing={1}
       >
-        <div style={{ marginTop: "30px" }}>
-          <body style={{ height: "100%" }}>
-            <Grid container columnSpacing={4} height="100vh" alignItems="spaceBetween">
-              <Grid item xs={5} >
-                <FilterCategory />
-              </Grid>
-              <Grid item xs={7} >
-              </Grid>
-              <Grid item xs={6}>
-                <ImageShow />
-              </Grid>
-              <Grid item xs={6} >
-                <Description />
-              </Grid>
+        {categories.map((item, pos) => {
+          const img = new Image();
+          img.src = item.icon;
+          const aspectRatio = img.naturalHeight / img.naturalWidth;
+          return (
+            <Grid
+              key={pos}
+              item
+              justifyContent='center'
+              alignItems='center'
+              xs={12 / 9}
+              style={{ cursor: "pointer" }}
+            >
+              <Box
+
+                display="flex"
+
+                justifyContent="center"
+                alignItems="center"
+                style={{
+                  borderRadius: "50%",
+                  width: "100%",
+
+                  boxShadow: "0px 0px 10px 0px #0000001e",
+                  paddingBottom: `${aspectRatio * 100}%`,
+                  backgroundImage: `url(${item.icon})`,
+                  backgroundSize: "cover"
+                }}
+              >
+              </Box>
             </Grid>
-          </body>
+          );
+        })}
+      </Grid>
+      <Grid
+        container
+        style={{ borderRadius: "10px", marginTop: "1px" }}
+        columnSpacing={5}
+        rowSpacing={2}
+      >
+        {fabrics.map((item, pos) => {
+          const img = new Image();
+          img.src = item.image;
+          const aspectRatio = img.naturalHeight / img.naturalWidth;
+          return (
+            <Grid
+              key={pos}
+              item
+              justifyContent='center'
+              alignItems='center'
+              xs={12 / 8}
+              style={{ cursor: "pointer" }}
+            >
 
 
-        </div>
+              <Box
+
+                display="flex"
+
+                justifyContent="center"
+                alignItems="center"
+                style={{
+                  borderRadius: "50%",
+                  width: "100%",
+
+                  boxShadow: "0px 0px 10px 0px #0000001e",
+                  paddingBottom: `${aspectRatio * 100}%`,
+                  backgroundImage: `url(${item.image})`,
+                  backgroundSize: "cover"
+                }}
+              >
+              </Box>
+            </Grid>
+          );
+        })}
+      </Grid>
 
 
-
-      </Box></ProductContextProvider>
+    </Box>
   )
 }
 

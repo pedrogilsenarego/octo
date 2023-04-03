@@ -1,11 +1,10 @@
 import { Typography, Divider, Box } from "@mui/material";
 
-import { i18n } from "../../../../translations/i18n";
-import { categories } from "../../../../constants/category";
+import { i18n } from "../../../translations/i18n";
+import { categories } from "../../../constants/category";
 import FabricSelector from "./FabricSelector";
 import { useContext, useState } from "react";
-import { Colors } from "../../../../constants/pallete";
-import Popup from "../../../../components/Popup";
+import Popup from "../../../components/Popup";
 import { ProductContext } from "../ProductContext";
 import MoreInfoPopup from "./MoreInfoPopup";
 

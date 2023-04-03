@@ -9,10 +9,9 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { Colors } from "../../../constants/pallete";
 import { i18n } from "../../../translations/i18n";
 import t7 from "../../../assets/t7.jpeg"
-
 import labelEsq from "../../../assets/images/labelEsq.png";
-import MenuBar from "../../../presentional/MenuBar";
 import { generalConstants } from "../../../constants/general";
+import MenuBar from "../../../presentional/MenuBar";
 
 const Initial = () => {
   const theme = useTheme();
@@ -64,7 +63,7 @@ const Initial = () => {
               fontSize='22px'
               style={{ textTransform: "uppercase" }}
             >
-              {i18n.t("modules.home.discover")}
+              {i18n.t("modules.home.discoverCollection")}
             </Typography>
             <AiFillCaretRight color={Colors.NEON_YELLOW} size='30px' />
           </Box>

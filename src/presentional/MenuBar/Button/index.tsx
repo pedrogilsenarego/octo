@@ -8,12 +8,14 @@ interface Props {
   link?: string;
   setAnchorPopover?: any;
   onClick?: any
+  color?: string
 
 }
 
 export const Button = ({
   title,
   link,
+  color,
   setAnchorPopover,
   onClick
 }: Props) => {
@@ -37,7 +39,7 @@ export const Button = ({
     >
       <Typography
         mt='5px'
-        color={hover ? Colors.NEON_YELLOW : Colors.WHITE_SMUDGE}
+        color={hover ? Colors.NEON_YELLOW : color || Colors.WHITE_SMUDGE}
         style={{
           fontWeight: 500,
           cursor: "pointer",

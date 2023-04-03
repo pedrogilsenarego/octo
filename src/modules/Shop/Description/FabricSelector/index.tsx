@@ -1,13 +1,13 @@
 import { Box, Typography } from "@mui/material";
 import { useContext, useState } from "react";
-import Button from "../../../../../components/Buttons/Button";
-import { i18n } from "../../../../../translations/i18n";
+import Button from "../../../../components/Buttons/Button";
+import { i18n } from "../../../../translations/i18n";
 import { ProductContext } from "../../ProductContext";
 import Element from "./Element";
-import { Product, products } from "../../../../../constants/category";
+import { Product, products } from "../../../../constants/category";
 import { useDispatch } from "react-redux";
-import { addProductToCart } from "../../../../../slicer/cart/cart.actions";
-import { updateSuccessNotification } from "../../../../../slicer/general/general.actions";
+import { addProductToCart } from "../../../../slicer/cart/cart.actions";
+import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
 
 const FabricSelector = () => {
   const { product } = useContext(ProductContext);

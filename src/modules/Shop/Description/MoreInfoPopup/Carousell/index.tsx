@@ -2,7 +2,7 @@ import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { useEffect, useState } from "react";
 import { Box, } from "@mui/material";
-import { Colors } from "../../../../../../constants/pallete";
+import { Colors } from "../../../../../constants/pallete";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 interface Props {

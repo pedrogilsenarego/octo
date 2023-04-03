@@ -1,74 +1,121 @@
-import { Paper, Grid, Box, Typography } from "@mui/material";
-import Image from "./Image";
+import { Grid, Box, Typography } from "@mui/material";
 import { i18n } from "../../../translations/i18n";
-import { useDispatch } from "react-redux";
-import { Colors } from "../../../constants/pallete";
-import { Container } from "@mui/system";
-import { updateFilters } from "../../../slicer/shop/shop.actions";
 import { categories } from "../../../constants/category";
-import { useNavigate } from "react-router-dom";
-import { ROUTE_PATHS } from "../../../constants/routes";
+import { useContext, useState } from "react";
+import { fabrics } from "../../../constants/fabrics";
+import { ProductContext } from "../ProductContext";
 
 const FilterCategory = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const handleChooseCategory = (category: string) => {
-    dispatch(updateFilters({
-      category,
-      fabric: []
-    }))
-    navigate(ROUTE_PATHS.SHOP)
-  }
+
+  const { setFabric, setProduct } = useContext(ProductContext);
+  const [categoryText, setCategoryText] = useState("")
+  const [filterText, setFilterText] = useState("")
+
+
+
   return (
-    <Container
-      maxWidth='xl'
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      {/* <Paper style={{ padding: "40px", marginTop: "100px" }}>
+    <Box>
+      <Box display="flex" columnGap={0} alignItems="center" >
         <Typography fontWeight={800}>
-          {i18n.t("modules.shopCategory.title")}
+          {i18n.t("modules.shopCategory.title")}&nbsp;&#183;&nbsp;
         </Typography>
-        <Grid
-          container
-          style={{ borderRadius: "10px", marginTop: "-30px" }}
-          columnSpacing="50px"
-          rowSpacing="50px"
-        >
-          {categories.map((item, pos) => {
-            return (
-              <Grid
-                key={pos}
-                item
-                justifyContent='center'
-                alignItems='center'
-                xs={3}
-                style={{ cursor: "pointer" }}
+        <Typography style={{ textTransform: "uppercase" }}>
+          {categoryText}
+        </Typography>
+      </Box>
+      <Grid
+        container
+        style={{ borderRadius: "10px", marginTop: "1px" }}
+        columnSpacing={1.5}
+        rowSpacing={1}
+      >
+        {categories.map((item, pos) => {
+          const img = new Image();
+          img.src = item.icon;
+          const aspectRatio = img.naturalHeight / img.naturalWidth;
+          return (
+            <Grid
+              key={pos}
+              item
+              justifyContent='center'
+              alignItems='center'
+              xs={12 / 8}
+              style={{ cursor: "pointer" }}
+            >
+              <Box
+                onClick={() => setProduct(item.id)}
+                display="flex"
+                onMouseEnter={() => setCategoryText(item.title)}
+                onMouseLeave={() => setCategoryText("")}
+                justifyContent="center"
+                alignItems="center"
+                style={{
+                  borderRadius: "50%",
+                  width: "100%",
+
+                  boxShadow: "0px 0px 10px 0px #0000001e",
+                  paddingBottom: `${aspectRatio * 100}%`,
+                  backgroundImage: `url(${item.icon})`,
+                  backgroundSize: "cover"
+                }}
               >
-                <Box
-                  onClick={() => handleChooseCategory(item.value)}
-                  display='flex'
-                  justifyContent='center'
-                  alignItems='center'
-                  style={{
-                    backgroundColor: Colors.PRETTY_CREAM,
-                    borderRadius: "2px",
-                    boxShadow: "2px 2px 10px 2px #00000066",
-                  }}
-                >
-                  <Image item={item.image} />
-                </Box>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Paper> */}
-    </Container>
+              </Box>
+            </Grid>
+          );
+        })}
+      </Grid>
+      <Box display="flex" columnGap={0} alignItems="center" mt="30px" >
+        <Typography fontWeight={800}>
+          {i18n.t("modules.shopFabric.title")}&nbsp;&#183;&nbsp;
+        </Typography>
+        <Typography style={{ textTransform: "uppercase" }}>
+          {filterText}
+        </Typography>
+      </Box>
+      <Grid
+        container
+        style={{ borderRadius: "10px", marginTop: "1px" }}
+        columnSpacing={1.5}
+        rowSpacing={2}
+      >
+        {fabrics.map((item, pos) => {
+          const img = new Image();
+          img.src = item.image;
+          const aspectRatio = img.naturalHeight / img.naturalWidth;
+          return (
+            <Grid
+              key={pos}
+              item
+              justifyContent='center'
+              alignItems='center'
+              xs={12 / 8}
+              style={{ cursor: "pointer" }}
+            >
+
+
+              <Box
+                onClick={() => setFabric(item.id)}
+                display="flex"
+                onMouseEnter={() => setFilterText(item.title)}
+                onMouseLeave={() => setFilterText("")}
+                justifyContent="center"
+                alignItems="center"
+                style={{
+                  borderRadius: "50%",
+                  width: "100%",
+
+                  boxShadow: "0px 0px 10px 0px #0000001e",
+                  paddingBottom: `${aspectRatio * 100}%`,
+                  backgroundImage: `url(${item.image})`,
+                  backgroundSize: "cover"
+                }}
+              >
+              </Box>
+            </Grid>
+          );
+        })}
+      </Grid>
+    </Box>
   );
 };
 

@@ -1,9 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
-import Button from "../../../../../components/Buttons/Button";
-import { Product, products } from "../../../../../constants/category";
-import { Colors } from "../../../../../constants/pallete";
-import { i18n } from "../../../../../translations/i18n";
+import Button from "../../../../components/Buttons/Button";
+import { Product, products } from "../../../../constants/category";
+import { i18n } from "../../../../translations/i18n";
 import { ProductContext } from "../../ProductContext";
 import Carrousell from "./Carousell";
 

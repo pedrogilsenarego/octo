@@ -7,7 +7,7 @@ import { BsInstagram } from "react-icons/bs";
 import Button from "./Button";
 import { Colors } from "../../constants/pallete";
 import { ROUTE_PATHS } from "../../constants/routes";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Label from "../../assets/images/label.png";
 import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,13 +21,18 @@ import { State } from "../../slicer/types";
 
 const MenuBar = () => {
   const [cartDrawer, setCartDrawer] = useState<boolean>(false);
-  const ICON_SIZE = "1.6rem";
-  const MENU_COLOR = Colors.WHITE_SMUDGE;
-  const LABEL_SIZE = "220px";
+
   const theme = useTheme();
   const navigate = useNavigate();
+  const location = useLocation();
   const dispatch = useDispatch();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const ICON_SIZE = "1.6rem";
+  const MENU_COLOR =
+    location.pathname === ROUTE_PATHS.HOME
+      ? Colors.WHITE_SMUDGE
+      : Colors.BLACKISH;
+  const LABEL_SIZE = "220px";
   const cartProducts = useSelector<State, CartProduct[]>(
     (state) => state.cart.cartItems
   );
@@ -55,20 +60,22 @@ const MenuBar = () => {
           alignItems='start'
         >
           <Grid item>
-            <Box
-              onClick={() => navigate(ROUTE_PATHS.HOME)}
-              width={LABEL_SIZE}
-              height={LABEL_SIZE}
-              style={{
-                cursor: "pointer",
-                marginTop: "-24px",
-                marginLeft: "-22px",
-                backgroundPosition: "center center",
-                backgroundRepeat: "no-repeat",
-                backgroundImage: `url(${Label})`,
-                backgroundSize: "100%",
-              }}
-            ></Box>
+            {location.pathname === ROUTE_PATHS.HOME && (
+              <Box
+                onClick={() => navigate(ROUTE_PATHS.HOME)}
+                width={LABEL_SIZE}
+                height={LABEL_SIZE}
+                style={{
+                  cursor: "pointer",
+                  marginTop: "-24px",
+                  marginLeft: "-22px",
+                  backgroundPosition: "center center",
+                  backgroundRepeat: "no-repeat",
+                  backgroundImage: `url(${Label})`,
+                  backgroundSize: "100%",
+                }}
+              ></Box>
+            )}
           </Grid>
           <Grid item>
             <Box
@@ -77,19 +84,30 @@ const MenuBar = () => {
               columnGap='40px'
               alignItems='center'
             >
+              {location.pathname !== ROUTE_PATHS.HOME && (
+                <Button
+                  title={i18n.t("menuBar.home")}
+                  color={MENU_COLOR}
+                  onClick={() => navigate(ROUTE_PATHS.HOME)}
+                />
+              )}
+
               <Button
+                color={MENU_COLOR}
                 title={i18n.t("menuBar.about")}
                 onClick={() => handleClick(1)}
               />
 
               <Button
+                color={MENU_COLOR}
                 title={i18n.t("menuBar.collection")}
                 onClick={() => handleClick(2)}
               />
 
               <Button
+                color={MENU_COLOR}
                 title={i18n.t("menuBar.store")}
-                onClick={() => handleClick(3)}
+                onClick={() => navigate(ROUTE_PATHS.SHOP)}
               />
 
               <Box display='flex' columnGap='12px' alignItems='center'>
@@ -118,10 +136,15 @@ const MenuBar = () => {
                         position: "absolute",
                         right: -7,
                         bottom: -7,
-
                       }}
                     >
-                      <Typography fontWeight={800} fontSize="12px" color='#ffffff8f'>{cartProducts.length}</Typography>
+                      <Typography
+                        fontWeight={800}
+                        fontSize='12px'
+                        color='#ffffff8f'
+                      >
+                        {cartProducts.length}
+                      </Typography>
                     </Box>
                   )}
                   <AiOutlineShopping

@@ -9,6 +9,7 @@ export const content = {
       },
       menuBar: {
         store: "Shop",
+        home: "Home",
         collection: "Collection",
         about: "The octo story",
         shopSublink: {
@@ -29,7 +30,7 @@ export const content = {
           about: "The Octo Story",
           discoverCollection: "Discover our Collection",
           viewMore: "View More",
-          discover: "Discover the collection",
+
           maternityBags: "Maternity\n Bags",
         },
 

@@ -12,6 +12,9 @@ export const MainLayout = ({ noMarginBottom, children }: Props) => {
     <>
 
       <div style={{ marginBottom: noMarginBottom ? "0px" : "100px" }}>
+
+
+
         <SideBar />
         {children}
       </div>

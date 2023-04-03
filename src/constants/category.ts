@@ -139,7 +139,7 @@ export const categories:Category[] = [
   {
     id: 8,
     title: i18n.t("constants.categories.9"),
-    icon: icon8,
+    icon: icon1,
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
   },
 ]

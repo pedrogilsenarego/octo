@@ -1,5 +1,5 @@
 import { Box } from "@mui/material"
-import { Colors } from "../../../../../../constants/pallete"
+import { Colors } from "../../../../../constants/pallete"
 import { useState } from "react"
 
 interface Props {
