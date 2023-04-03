@@ -7,3 +7,7 @@ export const addProductToCart = (product: Product[]) => ({
   payload: product,
 });
 
+export const clearCart = () => ({
+  type: cartTypes.CLEAR_CART
+});
+
