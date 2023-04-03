@@ -5,6 +5,7 @@ import { clearNotification } from "../../slicer/general/general.actions";
 import { BiErrorCircle } from "react-icons/bi";
 import { GiCheckMark } from "react-icons/gi";
 import * as Styled from "./styles";
+import { Colors } from "../../constants/pallete";
 
 interface SnackbarState {
   open: boolean;
@@ -12,14 +13,14 @@ interface SnackbarState {
   type: null | "success" | "fail";
   color: string;
   bgcolor: string;
-  icon: any;
+  icon?: any;
 }
 
 const INITIALSTATE = {
   open: false,
   message: "",
   type: null,
-  icon: <BiErrorCircle />,
+
   color: "",
   bgcolor: "",
 };
@@ -52,9 +53,9 @@ const DirectionSnackbar = () => {
         };
       case "success":
         return {
-          icon: <GiCheckMark />,
+
           color: "white",
-          bgcolor: "green",
+          bgcolor: Colors.BLACKISH,
         };
       default:
         return {

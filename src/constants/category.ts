@@ -10,6 +10,7 @@ import { i18n } from "../translations/i18n";
 import iconBandanaVichyClassic from "../assets/icons/produtos/icones_padroes-bandana1.png"
 import iconBandanaFloralPowderPink from "../assets/icons/produtos/icones_padroes-bandana2.png"
 import iconBandanaOctos from "../assets/icons/produtos/icones_padroes-bandana3.png"
+import iconBandanaPureWhite from "../assets/icons/produtos/icones_padroes-bandana4.png"
 
 
 export type Product = {
@@ -28,6 +29,7 @@ id:number
 title:string
 icon:string
 image:string
+price: number
 }
 
 
@@ -54,7 +56,15 @@ export const products:Product[] = [
     category: 0,
     icon:iconBandanaOctos,
     images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"],
-   pattern: 3
+   pattern: 4
+  },
+  {
+    uid: "strwqqing",
+    price: 67,
+    category: 0,
+    icon:iconBandanaPureWhite,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"],
+   pattern: 6
   },
   {
     uid: "strindddg",
@@ -91,28 +101,33 @@ export const categories:Category[] = [
     id: 0,
     title: i18n.t("constants.categories.1"),
     icon: icon1,
-    image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
+    price: 34,
+    image: "https://tse1.mm.bing.net/th?id=OIP.nc7wUe2uWZXx6ZwCnEYcbQHaFS&pid=Api&rs=1&c=1&qlt=95&w=150&h=107"
   },
   {
     id: 1,
     title: i18n.t("constants.categories.2"),
     icon: icon2,
+    price: 345,
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
   },
   {
     id: 2,
     title: i18n.t("constants.categories.3"),
     icon: icon3,
+    price: 34,
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
   },
   {
     id: 3,
     title: i18n.t("constants.categories.4"),
     icon: icon4,
+    price: 34,
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
  },
   {
     id: 4,
+    price: 34,
     title: i18n.t("constants.categories.5"),
     icon: icon5,
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
@@ -121,18 +136,21 @@ export const categories:Category[] = [
     id: 5,
       title: i18n.t("constants.categories.6"),
     icon: icon6,
+    price: 34,
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
    },
   {
     id: 6,
      title: i18n.t("constants.categories.7"),
     icon: icon7,
+    price: 34,
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
     },
   {
     id: 7,
      title: i18n.t("constants.categories.8"),
     icon: icon8,
+    price: 34,
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
  
   },
@@ -140,6 +158,7 @@ export const categories:Category[] = [
     id: 8,
     title: i18n.t("constants.categories.9"),
     icon: icon1,
+    price: 34,
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
   },
 ]

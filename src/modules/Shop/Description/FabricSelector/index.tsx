@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { useContext, useState } from "react";
 import Button from "../../../../components/Buttons/Button";
 import { i18n } from "../../../../translations/i18n";
@@ -18,8 +18,6 @@ const FabricSelector = () => {
     (category) => category.category === product
   );
 
-  console.log(selectedFabrics);
-
   const handleSelectFabrics = (item: Product) => {
     const index = selectedFabrics.findIndex((obj) => obj.uid === item.uid);
 
@@ -33,7 +31,7 @@ const FabricSelector = () => {
   };
 
   return (
-    <Box>
+    <Box mt="10px">
       <Box display='flex' columnGap={2}>
         {productsAvailable.map((item, pos: number) => {
           return (
@@ -42,20 +40,20 @@ const FabricSelector = () => {
               flexDirection='column'
               justifyContent='center'
               alignItems='center'
-              rowGap={2}
+              rowGap={3}
               key={pos}
               onClick={() => {
                 handleSelectFabrics(item);
               }}
             >
               <Element size='70px' valuee={item.icon} />
-              <Typography>{item.price} $</Typography>
+
             </Box>
           );
         })}
       </Box>
 
-      <div style={{ marginTop: "40px" }}>
+      <div style={{ marginTop: "60px" }}>
         <Button
           onClick={() => {
             dispatch(addProductToCart(selectedFabrics));
@@ -64,6 +62,7 @@ const FabricSelector = () => {
                 i18n.t("notifications.success.updateCart")
               )
             );
+            setSelectedFabrics([])
           }}
           borderRadiusRight
           label={i18n.t("modules.product.addCart")}

@@ -8,7 +8,7 @@ export const Box = styled(MuiBox)(({ bgcolor }: Props) => ({
   width: "100%",
   backgroundColor: bgcolor ? bgcolor : "black",
   padding: "10px",
-  borderRadius: "4px",
+  borderRadius: "3px",
   justifyContent: "center",
   alignItems: "center",
   color: "white"

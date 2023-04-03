@@ -48,7 +48,7 @@ export const content = {
         },
 
         product: {
-          fabrics: "Fabrics Available:",
+          fabrics: "Fabrics Available",
           addCart: "Add to Cart",
           moreInfo: "+ Info",
           quantity: "Quantity",

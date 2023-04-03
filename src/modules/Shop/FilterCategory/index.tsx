@@ -43,7 +43,7 @@ const FilterCategory = () => {
               style={{ cursor: "pointer" }}
             >
               <Box
-                onClick={() => setProduct(item.id)}
+                onClick={() => { setProduct(item.id); setFabric(null) }}
                 display="flex"
                 onMouseEnter={() => setCategoryText(item.title)}
                 onMouseLeave={() => setCategoryText("")}
@@ -94,7 +94,7 @@ const FilterCategory = () => {
 
 
               <Box
-                onClick={() => setFabric(item.id)}
+                onClick={() => { setFabric(item.id); setProduct(null) }}
                 display="flex"
                 onMouseEnter={() => setFilterText(item.title)}
                 onMouseLeave={() => setFilterText("")}
