@@ -26,21 +26,21 @@ const Shop = () => {
       >
 
         <div style={{ marginTop: "30px" }}>
-          <body style={{ height: "100%" }}>
-            <Grid container columnSpacing={4} height="100vh" alignItems="spaceBetween">
-              <Grid item xs={5} >
-                <FilterCategory />
-              </Grid>
-              <Grid item xs={7} >
-              </Grid>
-              <Grid item xs={6}>
-                <ImageShow />
-              </Grid>
-              <Grid item xs={6} >
-                <Description />
-              </Grid>
+
+          <Grid container columnSpacing={4} height="100vh" alignItems="spaceBetween">
+            <Grid item xs={5} >
+              <FilterCategory />
             </Grid>
-          </body>
+            <Grid item xs={7} >
+            </Grid>
+            <Grid item xs={6}>
+              <ImageShow />
+            </Grid>
+            <Grid item xs={6} >
+              <Description />
+            </Grid>
+          </Grid>
+
 
 
         </div>
