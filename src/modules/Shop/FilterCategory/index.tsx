@@ -39,7 +39,7 @@ const FilterCategory = () => {
               item
               justifyContent='center'
               alignItems='center'
-              xs={12 / 8}
+              xs={12 / 9}
               style={{ cursor: "pointer" }}
             >
               <Box

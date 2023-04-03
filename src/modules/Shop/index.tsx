@@ -24,7 +24,7 @@ const Shop = () => {
           flexDirection: "column",
         }}
       >
-        <MenuBar />
+
         <div style={{ marginTop: "30px" }}>
           <body style={{ height: "100%" }}>
             <Grid container columnSpacing={4} height="100vh" alignItems="spaceBetween">
