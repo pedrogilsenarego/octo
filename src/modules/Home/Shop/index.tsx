@@ -24,7 +24,7 @@ const Shop = () => {
       }}
     >
 
-      <Grid
+      {/* <Grid
         container
         style={{ borderRadius: "10px", marginTop: "1px" }}
         columnSpacing={5}
@@ -63,12 +63,12 @@ const Shop = () => {
             </Grid>
           );
         })}
-      </Grid>
+      </Grid> */}
       <Grid
         container
-        style={{ borderRadius: "10px", marginTop: "1px" }}
+        style={{ borderRadius: "10px", marginTop: "1px", paddingLeft: "200px", paddingRight: "200px" }}
         columnSpacing={5}
-        rowSpacing={2}
+        rowSpacing={5}
       >
         {fabrics.map((item, pos) => {
           const img = new Image();
@@ -80,7 +80,7 @@ const Shop = () => {
               item
               justifyContent='center'
               alignItems='center'
-              xs={12 / 8}
+              xs={3}
               style={{ cursor: "pointer" }}
             >
 

@@ -162,7 +162,7 @@ const MenuBar = () => {
           </Grid>
         </Grid>
         <DrawerMine
-          width='30vw'
+          minWidth='30vw'
           fullHeight
           position='left'
           openDrawer={cartDrawer}

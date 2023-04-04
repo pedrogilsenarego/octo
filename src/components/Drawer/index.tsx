@@ -17,6 +17,7 @@ type Props = {
   clearBackground?: boolean;
   topRadius?: boolean;
   width?: string;
+  minWidth?: string
   paddingLeft?: string;
 };
 
@@ -30,6 +31,7 @@ const DrawerMine = ({
   children,
   clearBackground,
   topRadius,
+  minWidth,
   width,
   paddingLeft
 }: Props) => {
@@ -38,6 +40,7 @@ const DrawerMine = ({
 
       component='div'
       sx={{
+        minWidth: minWidth ?? "30vw",
         width: fullWidth ? "100vw" : width,
         height: fullHeight ? "100vh" : "auto",
         backgroundColor: Colors.PRETTY_CREAM_TRANSPARENT,

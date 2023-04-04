@@ -37,11 +37,13 @@ const Cart = () => {
               columnGap={1}
               alignItems='center'
               justifyContent='space-between'
-            >
-              <Typography key={pos} style={{ textTransform: "uppercase" }}>
-                {categories[item.product.category].title}-
-                {fabrics[item.product.pattern].title}
-              </Typography>
+            ><Box display="flex" alignItems="center" columnGap={0.1}>
+                <img height="60px" width="60px" src={item.product.icon} alt="" />
+                <Typography key={pos} style={{ textTransform: "uppercase" }}>
+                  {categories[item.product.category].title}-
+                  {fabrics[item.product.pattern].title}
+                </Typography>
+              </Box>
               <Incrementor initialValue={item.value} />
             </Box>
           );
