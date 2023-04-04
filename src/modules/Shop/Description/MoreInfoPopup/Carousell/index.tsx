@@ -19,7 +19,6 @@ const Carrousell = ({ images }: Props) => {
     window.checkForDrag = e.clientX;
   };
   const clickOrDrag = (e: any) => {
-    console.log("here");
     const mouseUp = e.clientX;
     if (
       // @ts-ignore

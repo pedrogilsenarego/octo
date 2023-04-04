@@ -1,13 +1,11 @@
 import { Grid, Box, Typography } from "@mui/material";
 import { i18n } from "../../../translations/i18n";
 import { categories } from "../../../constants/category";
-import { useContext, useState } from "react";
 import { fabrics } from "../../../constants/fabrics";
-import { ProductContext } from "../ProductContext";
+import Element from "./Element";
+import { useState } from "react";
 
 const FilterCategory = () => {
-
-  const { setFabric, setProduct } = useContext(ProductContext);
   const [categoryText, setCategoryText] = useState("")
   const [filterText, setFilterText] = useState("")
 
@@ -42,24 +40,7 @@ const FilterCategory = () => {
               xs={12 / 9}
               style={{ cursor: "pointer" }}
             >
-              <Box
-                onClick={() => { setProduct(item.id); setFabric(null) }}
-                display="flex"
-                onMouseEnter={() => setCategoryText(item.title)}
-                onMouseLeave={() => setCategoryText("")}
-                justifyContent="center"
-                alignItems="center"
-                style={{
-                  borderRadius: "50%",
-                  width: "100%",
-
-                  boxShadow: "0px 0px 10px 0px #0000001e",
-                  paddingBottom: `${aspectRatio * 100}%`,
-                  backgroundImage: `url(${item.icon})`,
-                  backgroundSize: "cover"
-                }}
-              >
-              </Box>
+              <Element aspectRatio={aspectRatio} setText={setCategoryText} item={item} />
             </Grid>
           );
         })}
@@ -93,24 +74,7 @@ const FilterCategory = () => {
             >
 
 
-              <Box
-                onClick={() => { setFabric(item.id); setProduct(null) }}
-                display="flex"
-                onMouseEnter={() => setFilterText(item.title)}
-                onMouseLeave={() => setFilterText("")}
-                justifyContent="center"
-                alignItems="center"
-                style={{
-                  borderRadius: "50%",
-                  width: "100%",
-
-                  boxShadow: "0px 0px 10px 0px #0000001e",
-                  paddingBottom: `${aspectRatio * 100}%`,
-                  backgroundImage: `url(${item.image})`,
-                  backgroundSize: "cover"
-                }}
-              >
-              </Box>
+              <Element aspectRatio={aspectRatio} setText={setFilterText} item={item} />
             </Grid>
           );
         })}

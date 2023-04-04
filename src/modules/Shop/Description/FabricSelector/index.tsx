@@ -32,8 +32,6 @@ const FabricSelector = () => {
     }
   };
 
-  console.log(fabric)
-
   return (
     <Box mt="10px">
       <Box display='flex' columnGap={2}>

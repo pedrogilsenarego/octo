@@ -6,6 +6,8 @@ import icon5 from "../assets/icons/categorias/OCTO_Icones-05.png";
 import icon6 from "../assets/icons/categorias/OCTO_Icones-06.png";
 import icon7 from "../assets/icons/categorias/OCTO_Icones-07.png";
 import icon8 from "../assets/icons/categorias/OCTO_Icones-08.png";
+import icon9 from "../assets/icons/categorias/OCTO_Icones-09.png";
+
 import { i18n } from "../translations/i18n";
 import iconBandanaVichyClassic from "../assets/icons/produtos/icones_padroes-bandana1.png"
 import iconBandanaFloralPowderPink from "../assets/icons/produtos/icones_padroes-bandana2.png"
@@ -22,6 +24,11 @@ import iconCollarVichyClassic from "../assets/icons/produtos/icones_padroes-coll
 import iconCollarFloralClassic from "../assets/icons/produtos/icones_padroes-collar4.png"
 import iconCollarOctos from "../assets/icons/produtos/icones_padroes-collar5.png"
 import iconCollarPureWhite from "../assets/icons/produtos/icones_padroes-collar6.png"
+import iconBedBumperVichyPowderPink from "../assets/icons/produtos/icones_padroes-bedbumper1.png"
+import iconBedBumperVichyClassic from "../assets/icons/produtos/icones_padroes-bedbumper2.png"
+import iconBedBumperFloralPowderPink from "../assets/icons/produtos/icones_padroes-bedbumper3.png"
+import iconBedBumperFloralClassic from "../assets/icons/produtos/icones_padroes-bedbumper4.png"
+import iconBedBumperWaffleCream from "../assets/icons/produtos/icones_padroes-bedbumper5.png"
 
 
 export type Product = {
@@ -45,6 +52,7 @@ price: number
 
 
 export const products:Product[] = [
+  
   {
     uid: "ddwwqwdq",
     price: 34,
@@ -75,7 +83,7 @@ export const products:Product[] = [
     category: 0,
     icon:iconBandanaPureWhite,
     images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"],
-   pattern: 6
+   pattern: 5
   },
   {
     uid: "strisdndddg",
@@ -145,6 +153,46 @@ export const products:Product[] = [
    pattern: 4
   },
   {
+    uid: "ddwwgweqwdq",
+    price: 34,
+    category: 7,
+    icon:iconBedBumperVichyPowderPink,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 0
+  },
+  {
+    uid: "ddwawgweqwdq",
+    price: 34,
+    category: 7,
+    icon:iconBedBumperVichyClassic,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 1
+  },
+  {
+    uid: "ddwawdsdgweqwdq",
+    price: 34,
+    category: 7,
+    icon:iconBedBumperFloralPowderPink,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 2
+  },
+  {
+    uid: "ddwawsdadsdgweqwdq",
+    price: 34,
+    category: 7,
+    icon:iconBedBumperFloralClassic,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 3
+  },
+  {
+    uid: "ddwadswsdadsdgweqwdq",
+    price: 34,
+    category: 7,
+    icon:iconBedBumperWaffleCream,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 7
+  },
+  {
     uid: "strdfevcrfing",
     price: 748,
     category: 8,
@@ -200,7 +248,7 @@ export const categories:Category[] = [
   {
     id: 0,
     title: i18n.t("constants.categories.1"),
-    icon: icon1,
+    icon: icon9,
     price: 34,
     image: "https://tse1.mm.bing.net/th?id=OIP.nc7wUe2uWZXx6ZwCnEYcbQHaFS&pid=Api&rs=1&c=1&qlt=95&w=150&h=107"
   },
