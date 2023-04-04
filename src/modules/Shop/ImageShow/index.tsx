@@ -14,8 +14,8 @@ const ImageShow = () => {
   return (
 
     <Box style={{ borderRadius: "5px", }}>
-      {product !== null && (<CardMedia image={categories[product].image} height='100%' onClick={() => setInfoPopup(true)} />
-      )} {fabric !== null && (<CardMedia image={fabrics[fabric].image} height='100%' onClick={() => setInfoPopup(true)} />
+      {product !== null && (<CardMedia image={categories[product].image} height='700px' onClick={() => setInfoPopup(true)} />
+      )} {fabric !== null && (<CardMedia image={fabrics[fabric].image} height='700px' onClick={() => setInfoPopup(true)} />
       )}
     </Box >
 

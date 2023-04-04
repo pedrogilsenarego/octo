@@ -8,10 +8,9 @@ import { Colors } from "../../../../constants/pallete";
 interface Props {
   setText: (value: string) => void
   item: Category | FabricsType
-  aspectRatio: number
 }
 
-const Element = ({ item, setText, aspectRatio }: Props) => {
+const Element = ({ item, setText }: Props) => {
   const { setFabric, setProduct } = useContext(ProductContext);
   const [loading, setLoading] = useState<boolean>(true)
   console.log(loading)
@@ -39,9 +38,10 @@ const Element = ({ item, setText, aspectRatio }: Props) => {
         position: "relative",
         borderRadius: "50%",
         width: "100%",
-        opacity: loading ? 0 : 1,
+
         boxShadow: "0px 0px 10px 0px #0000001e",
-        paddingBottom: `${aspectRatio * 100}%`,
+        aspectRatio: 1,
+
 
       }}
     >{loading && (

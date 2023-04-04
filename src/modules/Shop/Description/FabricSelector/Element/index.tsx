@@ -33,6 +33,7 @@ const Element = ({ size, valuee, stateHighLightStatus }: Props) => {
         height: size,
         width: size,
         position: "relative",
+
         border:
           click || stateHighLightStatus
             ? `solid 3px ${Colors.BLACKISH}`
@@ -43,7 +44,7 @@ const Element = ({ size, valuee, stateHighLightStatus }: Props) => {
       {loading && (
         <Ellipsis
           size={40}
-          color='#ffffff66'
+          color={Colors.NEON_YELLOW}
           style={{
             position: "absolute",
             top: 0,
@@ -57,7 +58,7 @@ const Element = ({ size, valuee, stateHighLightStatus }: Props) => {
           }}
         />
       )}
-      <img onLoad={() => setLoading(false)} src={valuee} alt='' height='100%' width='100%' style={{ opacity: loading ? 0 : 1 }} />
+      <img onLoad={() => setLoading(false)} src={valuee} alt='' height='110%' width='110%' style={{ position: "absolute", top: "-5%", left: "-5%", opacity: loading ? 0 : 1 }} />
     </Box>
   );
 };

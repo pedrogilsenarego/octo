@@ -48,7 +48,7 @@ const FabricSelector = () => {
                 handleSelectFabrics(item);
               }}
             >
-              <Element size='70px' valuee={item.icon} />
+              <Element size='85px' valuee={item.icon} />
 
             </Box>
           );

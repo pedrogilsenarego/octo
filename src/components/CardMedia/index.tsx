@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CardMedia as MuiCardMedia } from "@mui/material";
 import { Ellipsis } from "react-spinners-css";
+import { Colors } from "../../constants/pallete";
 
 interface Props {
   image: string | undefined;
@@ -29,8 +30,8 @@ const CardMedia = ({
     <div style={{ position: "relative" }}>
       {imageLoading && (
         <Ellipsis
-          size={40}
-          color='#ffffff66'
+          size={100}
+          color={Colors.NEON_YELLOW}
           style={{
             position: "absolute",
             top: 0,

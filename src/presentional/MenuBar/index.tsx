@@ -124,6 +124,7 @@ const MenuBar = () => {
                   style={{ cursor: "pointer" }}
                 />
                 <div
+
                   style={{
                     position: "relative",
                     display: "flex",
@@ -139,9 +140,10 @@ const MenuBar = () => {
                       }}
                     >
                       <Typography
+
                         fontWeight={800}
                         fontSize='12px'
-                        color='#ffffff8f'
+                        color={MENU_COLOR}
                       >
                         {cartProducts.length}
                       </Typography>

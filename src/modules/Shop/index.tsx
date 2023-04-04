@@ -16,34 +16,35 @@ const Shop = () => {
       <Box
         display='flex'
         style={{
-
+          alignItems: "center",
+          justifyContent: "center",
           width: "100vw",
-          height: "100vh",
+
           paddingLeft: generalConstants.PADDING,
           paddingRight: generalConstants.PADDING,
           flexDirection: "column",
         }}
       >
+        <MenuBar />
 
-        <div style={{ marginTop: "30px" }}>
 
-          <Grid container columnSpacing={4} height="100vh" alignItems="spaceBetween">
-            <Grid item xs={5} >
-              <FilterCategory />
-            </Grid>
-            <Grid item xs={7} >
-            </Grid>
-            <Grid item xs={6}>
-              <ImageShow />
-            </Grid>
-            <Grid item xs={6} >
-              <Description />
-            </Grid>
+
+        <Grid mt="150px" container columnSpacing={2} rowSpacing="60px" alignItems="spaceBetween" >
+          <Grid item xs={12}>
+            <FilterCategory />
           </Grid>
 
+          <Grid item xs={9 * 12 / 17}>
+            <ImageShow />
+          </Grid>
+          <Grid item xs={8 * 12 / 17} >
+            <Description />
+          </Grid>
+        </Grid>
 
 
-        </div>
+
+
 
 
 

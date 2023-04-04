@@ -29,6 +29,12 @@ import iconBedBumperVichyClassic from "../assets/icons/produtos/icones_padroes-b
 import iconBedBumperFloralPowderPink from "../assets/icons/produtos/icones_padroes-bedbumper3.png"
 import iconBedBumperFloralClassic from "../assets/icons/produtos/icones_padroes-bedbumper4.png"
 import iconBedBumperWaffleCream from "../assets/icons/produtos/icones_padroes-bedbumper5.png"
+import iconBedPocketVichyPowderPink from "../assets/icons/produtos/icones_padroes-bedpocket1.png"
+import iconBedPocketVichyClassic from "../assets/icons/produtos/icones_padroes-bedpocket2.png"
+import iconBedPocketFloralPowderPink from "../assets/icons/produtos/icones_padroes-bedpocket3.png"
+import iconBedPocketFloralClassic from "../assets/icons/produtos/icones_padroes-bedpocket4.png"
+import iconBedPocketOctos from "../assets/icons/produtos/icones_padroes-bedpocket5.png"
+import iconBedPocketPureWhite from "../assets/icons/produtos/icones_padroes-bedpocket6.png"
 
 
 export type Product = {
@@ -52,7 +58,7 @@ price: number
 
 
 export const products:Product[] = [
-  
+ 
   {
     uid: "ddwwqwdq",
     price: 34,
@@ -151,6 +157,54 @@ export const products:Product[] = [
     icon:iconBlanketOctos,
     images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"],
    pattern: 4
+  },
+  {
+    uid: "ddwsadfewfewqwdq",
+    price: 34,
+    category: 6,
+    icon:iconBedPocketVichyPowderPink,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 0
+  },
+  {
+    uid: "ddwsadfewfaewqwdq",
+    price: 34,
+    category: 6,
+    icon:iconBedPocketVichyClassic,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 1
+  },
+  {
+    uid: "ddwsaAdfewfaewqwdq",
+    price: 34,
+    category: 6,
+    icon:iconBedPocketFloralPowderPink,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 2
+  },
+  {
+    uid: "ddwsaaAdfewfaewqwdq",
+    price: 34,
+    category: 6,
+    icon:iconBedPocketFloralClassic,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 3
+  },
+  {
+    uid: "ddwsaaaxAdfewfaewqwdq",
+    price: 34,
+    category: 6,
+    icon:iconBedPocketOctos,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 4
+  },
+  {
+    uid: "ddwsaaaxAdafewfaewqwdq",
+    price: 34,
+    category: 6,
+    icon:iconBedPocketPureWhite,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 5
   },
   {
     uid: "ddwwgweqwdq",
