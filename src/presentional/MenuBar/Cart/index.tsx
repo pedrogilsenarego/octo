@@ -18,15 +18,28 @@ const Cart = () => {
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     event.stopPropagation();
   };
+  const getTotalValue = () => {
+    let totalValue = 0;
+    for (const cartProduct of cartProducts) {
+      totalValue += cartProduct.product.price * cartProduct.value;
+    }
+    return totalValue;
+  }
+
   return (
     <Box
       onWheel={handleWheel}
       display='flex'
       flexDirection='column'
-      rowGap={2}
+      rowGap={1}
       padding='2rem'
     >
-      <Typography mb='20px' fontSize='2rem' fontWeight={800} style={{ textTransform: "uppercase" }}>
+      <Typography
+        mb='20px'
+        fontSize='2rem'
+        fontWeight={800}
+        style={{ textTransform: "uppercase" }}
+      >
         {i18n.t("cartDrawer.title")}
       </Typography>
       {cartProducts.length > 0 ? (
@@ -37,8 +50,14 @@ const Cart = () => {
               columnGap={1}
               alignItems='center'
               justifyContent='space-between'
-            ><Box display="flex" alignItems="center" columnGap={0.1}>
-                <img height="60px" width="60px" src={item.product.icon} alt="" />
+            >
+              <Box display='flex' alignItems='center' columnGap={0.1}>
+                <img
+                  height='60px'
+                  width='60px'
+                  src={item.product.icon}
+                  alt=''
+                />
                 <Typography key={pos} style={{ textTransform: "uppercase" }}>
                   {categories[item.product.category].title}-
                   {fabrics[item.product.pattern].title}
@@ -53,17 +72,20 @@ const Cart = () => {
       )}
 
       <Divider />
-      <Button
-        colorHover={Colors.NEON_YELLOW_TRANSPARENT}
-        label={i18n.t("cartDrawer.clearCart")}
-        onClick={() => dispatch(clearCart())}
-        disabled={cartProducts.length <= 0}
-      />
-      <Button
-        colorHover={Colors.NEON_YELLOW_TRANSPARENT}
-        label={i18n.t("cartDrawer.updateCart")}
-        disabled={cartProducts.length <= 0}
-      />
+      <Typography>Total Price: {getTotalValue()} $</Typography>
+      <div style={{ marginTop: "20px", display: "flex", flexDirection: "column", rowGap: "10px" }}>
+        <Button
+          colorHover={Colors.NEON_YELLOW_TRANSPARENT}
+          label={i18n.t("cartDrawer.clearCart")}
+          onClick={() => dispatch(clearCart())}
+          disabled={cartProducts.length <= 0}
+        />
+        <Button
+          colorHover={Colors.NEON_YELLOW_TRANSPARENT}
+          label={i18n.t("cartDrawer.updateCart")}
+          disabled={cartProducts.length <= 0}
+        />
+      </div>
     </Box>
   );
 };
