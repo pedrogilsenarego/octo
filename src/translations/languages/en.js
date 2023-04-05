@@ -31,6 +31,7 @@ export const content = {
           mainText: "Born\n Octomistic",
           about: "The Octo Story",
           discoverCollection: "Discover our Collection",
+          shopOurCollection: "Shop our Collection",
           viewMore: "View More",
 
           maternityBags: "Maternity\n Bags",

@@ -31,6 +31,7 @@ export const content = {
           about: "A história da Octo",
           viewMore: "Ver Mais",
           discoverCollection: "Descubra a nossa coleção",
+          shopOurCollection: "Compre a nossa Coleção",
           discover: "Descobre a coleção",
           maternityBags: "Sacos\n Maternindade",
         },

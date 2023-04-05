@@ -9,8 +9,6 @@ import MenuBar from "../../../presentional/MenuBar";
 const Initial = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const Image =
-    "https://images.pexels.com/photos/786220/pexels-photo-786220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
   const renderLaptop = () => {
     return (
       <div style={{ position: "relative" }}>
@@ -82,22 +80,27 @@ const Initial = () => {
       </div>
     );
   };
+
   const renderMobile = () => {
     return (
       <>
-        <Box display='flex' flexDirection='column' alignItems='center'>
+        <Box display='flex' flexDirection='column' alignItems='center' style={{ position: "relative" }}>
           <Box
             display='flex'
             style={{
               width: "100vw",
-              height: "60vh",
-
-              backgroundPosition: "center center",
-              backgroundRepeat: "no-repeat",
-              backgroundImage: `url(${Image})`,
-              backgroundSize: "cover",
+              height: "100vh",
+              overflow: "hidden",
+              zIndex: 500,
             }}
           >
+            <MenuBar />
+            <video autoPlay loop muted width="100%" height="100%" style={{ objectFit: "cover" }}>
+              <source
+                src="https://res.cloudinary.com/daantetcr/video/upload/v1680693360/Octo/era_oz7cne.mov"
+                type='video/mp4'
+              />
+            </video>
             <Box
               width='120px'
               height='120px'
@@ -114,7 +117,7 @@ const Initial = () => {
               }}
             ></Box>
 
-            <Box style={{ marginTop: "60%" }}>
+            <Box style={{ marginTop: "60%", position: "absolute" }}>
               <Typography
                 fontSize='40px'
                 color={Colors.PRETTY_CREAM}
