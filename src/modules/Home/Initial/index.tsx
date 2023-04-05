@@ -26,7 +26,7 @@ const Initial = () => {
 
           }}
         >
-          <video autoPlay loop muted width="115%" height="115%" style={{ objectFit: "cover" }}>
+          <video autoPlay loop muted width="100%" height="100%" style={{ objectFit: "cover" }}>
             <source
               src="https://res.cloudinary.com/daantetcr/video/upload/v1680693360/Octo/era_oz7cne.mov"
               type='video/mp4'
@@ -38,7 +38,7 @@ const Initial = () => {
           display='flex'
           flexDirection='column'
           style={{
-            zIndex: 1002,
+            zIndex: 500,
             position: "absolute",
             paddingLeft: generalConstants.PADDING,
             paddingRight: generalConstants.PADDING,
