@@ -7,9 +7,10 @@ import { useContext } from "react";
 import Popup from "../../../components/Popup";
 import { ProductContext } from "../ProductContext";
 import MoreInfoPopup from "./MoreInfoPopup";
+import { fabrics } from "../../../constants/fabrics";
 
 const Description = () => {
-  const { product, infoPopup, setInfoPopup } = useContext(ProductContext);
+  const { product, fabric, infoPopup, setInfoPopup } = useContext(ProductContext);
 
 
   return (
@@ -52,7 +53,14 @@ const Description = () => {
       >
         <MoreInfoPopup />
       </Popup>)}
-
+      {fabric !== null && (<Popup
+        openPopup={infoPopup}
+        title={fabrics[fabric].title}
+        setOpenPopup={setInfoPopup}
+        onClose={() => setInfoPopup(false)}
+      >
+        <MoreInfoPopup />
+      </Popup>)}
     </Box>
   );
 };

@@ -3,6 +3,7 @@ export const content = {
     translations: {
       cartDrawer: {
         title: "Cart",
+        checkout: "Checkout",
         clearCart: "Clear Cart",
         updateCart: "Update Cart",
         noProducts: "There are no products in the cart",

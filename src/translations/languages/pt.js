@@ -4,6 +4,7 @@ export const content = {
       cartDrawer: {
         title: "Cart",
         clearCart: "Clear Cart",
+        checkout: "Checkout",
         updateCart: "Update Cart",
         noProducts: "There are no products in the cart",
       },

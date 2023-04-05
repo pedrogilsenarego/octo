@@ -5,22 +5,26 @@ import { categories } from "../../../constants/category";
 import { fabrics } from "../../../constants/fabrics";
 import { ProductContext } from "../ProductContext";
 
-
-
 const ImageShow = () => {
-
-  const { product, setInfoPopup, fabric } = useContext(ProductContext)
+  const { product, setInfoPopup, fabric } = useContext(ProductContext);
 
   return (
-
-    <Box style={{ borderRadius: "5px", }}>
-      {product !== null && (<CardMedia image={categories[product].image} height='700px' onClick={() => setInfoPopup(true)} />
-      )} {fabric !== null && (<CardMedia image={fabrics[fabric].image} height='700px' onClick={() => setInfoPopup(true)} />
+    <Box style={{ borderRadius: "5px" }}>
+      {product !== null && (
+        <CardMedia
+          image={categories[product].image}
+          height='700px'
+          onClick={() => setInfoPopup(true)}
+        />
+      )}{" "}
+      {fabric !== null && (
+        <CardMedia
+          image={fabrics[fabric].image}
+          height='700px'
+          onClick={() => setInfoPopup(true)}
+        />
       )}
-    </Box >
-
-
-
+    </Box>
   );
 };
 

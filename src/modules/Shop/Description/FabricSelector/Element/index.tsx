@@ -58,7 +58,19 @@ const Element = ({ size, valuee, stateHighLightStatus }: Props) => {
           }}
         />
       )}
-      <img onLoad={() => setLoading(false)} src={valuee} alt='' height='110%' width='110%' style={{ position: "absolute", top: "-5%", left: "-5%", opacity: loading ? 0 : 1 }} />
+      <img
+        onLoad={() => setLoading(false)}
+        src={valuee}
+        alt=''
+        height='110%'
+        width='110%'
+        style={{
+          position: "absolute",
+          top: "-5%",
+          left: "-5%",
+          opacity: loading ? 0 : 1,
+        }}
+      />
     </Box>
   );
 };

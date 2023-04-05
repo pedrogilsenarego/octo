@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
 import { useDispatch } from "react-redux";
 import Button from "../../../../components/Buttons/Button";
@@ -12,10 +12,10 @@ import Carrousell from "./Carousell";
 
 const MoreInfoPopup = () => {
   const dispatch = useDispatch()
-  const { product } = useContext(ProductContext);
+  const { product, fabric } = useContext(ProductContext);
 
   const productsAvailable: Product[] = products.filter(
-    (category) => category.category === product
+    (value) => value[product !== null ? "category" : "pattern"] === (product !== null ? product : fabric)
   );
 
   return (
@@ -45,6 +45,9 @@ const MoreInfoPopup = () => {
                 alt={item.uid}
                 style={{ height: "100px", width: "100px", objectFit: "cover" }}
               />
+              {fabric !== null && (
+                <Typography>{item.price}$</Typography>
+              )}
 
               <Button onClick={() => {
                 dispatch(addProductToCart([item]));

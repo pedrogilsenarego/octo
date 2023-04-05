@@ -47,7 +47,7 @@ const Cart = () => {
           return (
             <Box
               display='flex'
-              columnGap={1}
+              columnGap={4}
               alignItems='center'
               justifyContent='space-between'
             >
@@ -73,16 +73,18 @@ const Cart = () => {
 
       <Divider />
       <Typography>Total Price: {getTotalValue()} $</Typography>
-      <div style={{ marginTop: "20px", display: "flex", flexDirection: "column", rowGap: "10px" }}>
+      <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", rowGap: "20px" }}>
         <Button
           colorHover={Colors.NEON_YELLOW_TRANSPARENT}
           label={i18n.t("cartDrawer.clearCart")}
           onClick={() => dispatch(clearCart())}
           disabled={cartProducts.length <= 0}
         />
+
         <Button
+          color={Colors.SOFT_PINK}
           colorHover={Colors.NEON_YELLOW_TRANSPARENT}
-          label={i18n.t("cartDrawer.updateCart")}
+          label={i18n.t("cartDrawer.checkout")}
           disabled={cartProducts.length <= 0}
         />
       </div>
