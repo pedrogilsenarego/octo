@@ -194,6 +194,7 @@ const MenuBar = () => {
         alignItems='center'
         justifyContent='flex-end'
         style={{
+          zIndex: 1000,
           position: "absolute",
           top: "30px",
           width: "100%",

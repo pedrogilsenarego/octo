@@ -71,7 +71,6 @@ const About = () => {
             </Typography>
             <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", rowGap: "10px" }}>
               <Button colorHover={Colors.NEON_YELLOW_TRANSPARENT} label={i18n.t("modules.home.viewMore")} />
-              <Button colorHover={Colors.NEON_YELLOW_TRANSPARENT} label={i18n.t("modules.home.shopOurCollection")} />
             </div>
 
           </Box>

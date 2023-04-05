@@ -5,34 +5,35 @@ import { i18n } from "../../../translations/i18n";
 import labelEsq from "../../../assets/images/labelEsq.png";
 import { generalConstants } from "../../../constants/general";
 import MenuBar from "../../../presentional/MenuBar";
+import "./index.css"
 
 const Initial = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const renderLaptop = () => {
     return (
-      <div style={{ position: "relative" }}>
+      <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
         <div
+          dangerouslySetInnerHTML={{
+            __html: `<video  playsinline autoBuffer autoPlay loop muted width="115%" height="115%" >
+            <source
+              src="https://res.cloudinary.com/daantetcr/video/upload/v1680693360/Octo/era_oz7cne.mov"
+              type='video/mp4'
+            />
+          </video>`,
+          }}
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             position: "absolute",
             zIndex: 500,
-            width: "100vw",
-            height: "100vh",
-            //para ter em consideração o tamanho do video estar cortado
-            overflow: "hidden"
-
+            width: "100%",
+            height: "100%",
+            // para ter em consideração o tamanho do video estar cortado
+            overflow: "hidden",
           }}
-        >
-          <video autoPlay loop muted width="115%" height="115%" style={{ objectFit: "cover" }}>
-            <source
-              src="https://res.cloudinary.com/daantetcr/video/upload/v1680693360/Octo/era_oz7cne.mov"
-              type='video/mp4'
-            />
-          </video>
-        </div>
+        ></div>
         <MenuBar />
         <Box
           display='flex'
@@ -51,8 +52,8 @@ const Initial = () => {
             color={Colors.PRETTY_CREAM}
             fontFamily='Avalanche'
             style={{
-              zIndex: 1003
-              , whiteSpace: "pre-line",
+              zIndex: 1003,
+              whiteSpace: "pre-line",
               lineHeight: "16.5vh",
               marginTop: "31.5%",
             }}
@@ -78,93 +79,89 @@ const Initial = () => {
           </Box>
         </Box>
       </div>
+
     );
   };
 
   const renderMobile = () => {
     return (
       <>
-        <Box display='flex' flexDirection='column' alignItems='center' style={{ position: "relative" }}>
-          <Box
-            display='flex'
-            style={{
-              width: "100vw",
-              height: "100vh",
-              overflow: "hidden",
-              zIndex: 500,
+        <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
+
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `<video  playsinline autoBuffer autoPlay loop muted width="115%" height="115%" >
+            <source
+              src="https://res.cloudinary.com/daantetcr/video/upload/v1680693360/Octo/era_oz7cne.mov"
+              type='video/mp4'
+            />
+          </video>`,
             }}
-          >
-            <MenuBar />
-            <video autoPlay loop muted width="100%" height="100%" style={{ objectFit: "cover" }}>
-              <source
-                src="https://res.cloudinary.com/daantetcr/video/upload/v1680693360/Octo/era_oz7cne.mov"
-                type='video/mp4'
-              />
-            </video>
-            <Box
-              width='120px'
-              height='120px'
-              style={{
-                position: "absolute",
-                left: -15,
-                padding: "0px",
-                top: "20px",
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              position: "absolute",
+              zIndex: 500,
+              width: "100%",
+              height: "100%",
+              // para ter em consideração o tamanho do video estar cortado
+              overflow: "hidden",
+            }}
+          ></div>
+          <MenuBar />
 
-                backgroundPosition: "center center",
-                backgroundRepeat: "no-repeat",
-                backgroundImage: `url(${labelEsq})`,
-                backgroundSize: "cover",
-              }}
-            ></Box>
 
-            <Box style={{ marginTop: "60%", position: "absolute" }}>
-              <Typography
-                fontSize='40px'
-                color={Colors.PRETTY_CREAM}
-                fontFamily='Avalanche'
-                style={{
-                  marginLeft: "22px",
-                  whiteSpace: "pre-line",
-                  lineHeight: "36px",
-                }}
-              >
-                {i18n.t("modules.home.mainText")}
-              </Typography>
-              <Box
-                marginLeft='32px'
-                marginTop='20px'
-                display='flex'
-                columnGap='20px'
-                alignItems='center'
-                style={{ cursor: "pointer" }}
-              >
-                <Typography
-                  color={Colors.NEON_YELLOW}
-                  fontSize='10px'
-                  style={{ textTransform: "uppercase" }}
-                >
-                  {i18n.t("modules.home.discover")}
-                </Typography>
-                <AiFillCaretRight color={Colors.NEON_YELLOW} size='10px' />
-              </Box>
-            </Box>
-          </Box>
-          <Box display='flex' justifyContent='center' mt='50px'>
+          <Box
+            width='120px'
+            height='120px'
+            style={{
+              position: "absolute",
+              left: -15,
+              padding: "0px",
+              top: "20px",
+              zIndex: 500,
+              backgroundPosition: "center center",
+              backgroundRepeat: "no-repeat",
+              backgroundImage: `url(${labelEsq})`,
+              backgroundSize: "cover",
+            }}
+          ></Box>
+
+          <Box style={{ marginTop: "100%", position: "absolute", zIndex: 500 }}>
             <Typography
+              fontSize='40px'
+              color={Colors.PRETTY_CREAM}
               fontFamily='Avalanche'
               style={{
-                fontSize: "24px",
+                marginLeft: "22px",
                 whiteSpace: "pre-line",
-                textAlign: "center",
-                fontWeight: 500,
-                lineHeight: "22px",
+                lineHeight: "36px",
               }}
-              color={Colors.BLACKISH}
             >
-              {i18n.t("modules.home.maternityBags")}
+              {i18n.t("modules.home.mainText")}
             </Typography>
+            <Box
+              marginLeft='32px'
+              marginTop='20px'
+              display='flex'
+              columnGap='20px'
+              alignItems='center'
+              style={{ cursor: "pointer" }}
+            >
+              <Typography
+                color={Colors.NEON_YELLOW}
+                fontSize='10px'
+                style={{ textTransform: "uppercase" }}
+              >
+                {i18n.t("modules.home.discoverCollection")}
+              </Typography>
+              <AiFillCaretRight color={Colors.NEON_YELLOW} size='10px' />
+            </Box>
           </Box>
-        </Box>
+        </div>
+
+
       </>
     );
   };

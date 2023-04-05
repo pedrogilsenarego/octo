@@ -1,9 +1,11 @@
 import { Box, Container, Grid } from "@mui/material"
 import { generalConstants } from "../../../constants/general"
-
+import Button from "../../../components/Buttons/Button"
 import React from "react"
 import { categories } from "../../../constants/category"
 import { fabrics } from "../../../constants/fabrics"
+import { Colors } from "../../../constants/pallete"
+import { i18n } from "../../../translations/i18n"
 
 
 
@@ -105,6 +107,10 @@ const Shop = () => {
             </Grid>
           );
         })}
+        <div style={{ marginTop: "100px", display: "flex", width: "100%", justifyContent: "center" }}>
+
+          <Button colorHover={Colors.NEON_YELLOW_TRANSPARENT} label={i18n.t("modules.home.shopOurCollection")} />
+        </div>
       </Grid>
 
 
