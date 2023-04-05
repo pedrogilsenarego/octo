@@ -1,14 +1,7 @@
-import {
-  Typography,
-  Box,
-
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Typography, Box, useMediaQuery, useTheme } from "@mui/material";
 import { AiFillCaretRight } from "react-icons/ai";
 import { Colors } from "../../../constants/pallete";
 import { i18n } from "../../../translations/i18n";
-import t7 from "../../../assets/t7.jpeg"
 import labelEsq from "../../../assets/images/labelEsq.png";
 import { generalConstants } from "../../../constants/general";
 import MenuBar from "../../../presentional/MenuBar";
@@ -21,30 +14,46 @@ const Initial = () => {
   const renderLaptop = () => {
     return (
       <div style={{ position: "relative" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            position: "absolute",
+            zIndex: 500,
+            width: "100vw",
+            height: "100vh",
+
+          }}
+        >
+          <video autoPlay loop muted width="115%" height="115%" style={{ objectFit: "cover" }}>
+            <source
+              src="https://res.cloudinary.com/daantetcr/video/upload/v1680693360/Octo/era_oz7cne.mov"
+              type='video/mp4'
+            />
+          </video>
+        </div>
         <MenuBar />
         <Box
           display='flex'
-          flexDirection="column"
+          flexDirection='column'
           style={{
+            zIndex: 1002,
+            position: "absolute",
             paddingLeft: generalConstants.PADDING,
             paddingRight: generalConstants.PADDING,
             width: "100vw",
             height: "100vh",
-            backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat",
-            backgroundImage: `url(${t7})`,
-            backgroundSize: "cover",
-            filter: "brightness(90%)"
           }}
         >
-
           <Typography
-            fontSize='12rem'
+            fontSize='10.5vw'
             color={Colors.PRETTY_CREAM}
             fontFamily='Avalanche'
             style={{
-              whiteSpace: "pre-line",
-              lineHeight: "10rem",
+              zIndex: 1003
+              , whiteSpace: "pre-line",
+              lineHeight: "16.5vh",
               marginTop: "31.5%",
             }}
           >
@@ -67,7 +76,6 @@ const Initial = () => {
             </Typography>
             <AiFillCaretRight color={Colors.NEON_YELLOW} size='30px' />
           </Box>
-
         </Box>
       </div>
     );
@@ -75,7 +83,6 @@ const Initial = () => {
   const renderMobile = () => {
     return (
       <>
-
         <Box display='flex' flexDirection='column' alignItems='center'>
           <Box
             display='flex'
