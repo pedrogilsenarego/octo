@@ -40,6 +40,12 @@ import iconMaternityBagVichyClassic from "../assets/icons/produtos/icones_padroe
 import iconMaternityBagOctos from "../assets/icons/produtos/icones_padroes-maternitybag3.png"
 import iconMaternityWaffleStone from "../assets/icons/produtos/icones_padroes-maternitybag5.png"
 import iconMaternityWaffleCream from "../assets/icons/produtos/icones_padroes-maternitybag4.png"
+import iconsPacifierVichyPowderPink from "../assets/icons/produtos/icones_padroes-pacifier1.png"
+import iconsPacifierVichyClassic from "../assets/icons/produtos/icones_padroes-pacifier2.png"
+import iconsPacifierFloralPowderPink from "../assets/icons/produtos/icones_padroes-pacifier3.png"
+import iconsPacifierFloralClassic from "../assets/icons/produtos/icones_padroes-pacifier4.png"
+import iconsPacifierOctos from "../assets/icons/produtos/icones_padroes-pacifier5.png"
+import iconsPacifierPureWhite from "../assets/icons/produtos/icones_padroes-pacifier6.png"
 
 
 export type Product = {
@@ -100,19 +106,49 @@ export const products:Product[] = [
     uid: "strisdndddg",
     price: 45,
     category: 1,
-    icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
-  
+    icon:iconsPacifierVichyPowderPink,
     images:["https://mcdn.wallpapersafari.com/medium/48/92/e0ntXE.jpg","https://mcdn.wallpapersafari.com/medium/1/99/2z0L1F.jpg"],
-   pattern: 2
+   pattern: 0
   },
   {
     uid: "stqwdwqdsdqring",
     price: 45,
     category: 1,
-    icon:"https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg",
-  
+    icon:iconsPacifierVichyClassic,
     images:["https://mcdn.wallpapersafari.com/medium/14/73/mObqwW.jpg"],
-   pattern: 0
+   pattern: 1
+  },
+  {
+    uid: "stqwdwqdvsdqring",
+    price: 45,
+    category: 1,
+    icon:iconsPacifierFloralPowderPink,
+    images:["https://mcdn.wallpapersafari.com/medium/14/73/mObqwW.jpg"],
+   pattern: 2
+  },
+  {
+    uid: "stqwdwasqdsdqring",
+    price: 45,
+    category: 1,
+    icon:iconsPacifierFloralClassic,
+    images:["https://mcdn.wallpapersafari.com/medium/14/73/mObqwW.jpg"],
+   pattern: 3
+  },
+  {
+    uid: "stqwdssxwasqdsdqring",
+    price: 45,
+    category: 1,
+    icon:iconsPacifierOctos,
+    images:["https://mcdn.wallpapersafari.com/medium/14/73/mObqwW.jpg"],
+   pattern: 4
+  },
+  {
+    uid: "stqwdqawasqdsdqring",
+    price: 45,
+    category: 1,
+    icon:iconsPacifierPureWhite,
+    images:["https://mcdn.wallpapersafari.com/medium/14/73/mObqwW.jpg"],
+   pattern: 5
   },
   {
     uid: "ddwwhkjqwdq",
