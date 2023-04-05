@@ -38,15 +38,16 @@ const MoreInfoPopup = () => {
               justifyContent='center'
               alignItems='center'
               width='40%'
-              rowGap={1.5}
+              rowGap="10px"
             >
               <img
                 src={item.icon}
                 alt={item.uid}
-                style={{ height: "100px", width: "100px", objectFit: "cover" }}
+                style={{ height: "200px", width: "200px", objectFit: "cover" }}
               />
+
               {fabric !== null && (
-                <Typography>{item.price}€</Typography>
+                <Typography mt="-20px">{item.price}€</Typography>
               )}
 
               <Button onClick={() => {

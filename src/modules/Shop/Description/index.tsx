@@ -8,6 +8,7 @@ import Popup from "../../../components/Popup";
 import { ProductContext } from "../ProductContext";
 import MoreInfoPopup from "./MoreInfoPopup";
 import { fabrics } from "../../../constants/fabrics";
+import { Colors } from "../../../constants/pallete";
 
 const Description = () => {
   const { product, fabric, infoPopup, setInfoPopup } = useContext(ProductContext);
@@ -17,8 +18,9 @@ const Description = () => {
     <Box
       style={{
         padding: "20px",
-
+        backgroundColor: Colors.PRETTY_CREAM,
         borderRadius: "5px",
+        minHeight: "500px",
       }}
       display='flex'
       flexDirection='column'
@@ -31,7 +33,7 @@ const Description = () => {
         </Box>
       )}
 
-      <Divider style={{ marginTop: "10px" }} />
+      <Divider style={{ marginTop: "-15px" }} />
       <div style={{ marginTop: "40px" }}>
         <Typography>{product !== null ? i18n.t("modules.product.fabrics") : i18n.t("modules.product.products")}&nbsp;&#183;</Typography>
         <div style={{ marginTop: "10px" }}>

@@ -8,6 +8,8 @@ import icon7 from "../assets/icons/categorias/OCTO_Icones-07.png";
 import icon8 from "../assets/icons/categorias/OCTO_Icones-08.png";
 import icon9 from "../assets/icons/categorias/OCTO_Icones-09.png";
 
+import t7 from "../assets/t7.jpeg"
+
 import { i18n } from "../translations/i18n";
 import iconBandanaVichyClassic from "../assets/icons/produtos/icones_padroes-bandana1.png"
 import iconBandanaFloralPowderPink from "../assets/icons/produtos/icones_padroes-bandana2.png"
@@ -413,7 +415,7 @@ export const categories:Category[] = [
     price: 34,
     title: i18n.t("constants.categories.5"),
     icon: icon5,
-    image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
+    image: t7
      },
   {
     id: 5,

@@ -13,14 +13,14 @@ const ImageShow = () => {
       {product !== null && (
         <CardMedia
           image={categories[product].image}
-          height='700px'
+          height='500px'
           onClick={() => setInfoPopup(true)}
         />
       )}{" "}
       {fabric !== null && (
         <CardMedia
           image={fabrics[fabric].image}
-          height='700px'
+          height='500px'
           onClick={() => setInfoPopup(true)}
         />
       )}

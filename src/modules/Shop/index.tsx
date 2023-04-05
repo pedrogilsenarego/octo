@@ -6,6 +6,7 @@ import ImageShow from "./ImageShow"
 import React from "react"
 import { ProductContextProvider } from "./ProductContext"
 import MenuBar from "../../presentional/MenuBar"
+import { Colors } from "../../constants/pallete"
 
 
 
@@ -29,7 +30,7 @@ const Shop = () => {
 
 
 
-        <Grid mt="150px" container columnSpacing={2} rowSpacing="60px" alignItems="spaceBetween" >
+        <Grid mt="110px" container columnSpacing={2} rowSpacing="40px" alignItems="spaceBetween" >
           <Grid item xs={12}>
             <FilterCategory />
           </Grid>
