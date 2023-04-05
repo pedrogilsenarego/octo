@@ -5,11 +5,20 @@ import { i18n } from "../../../translations/i18n";
 import labelEsq from "../../../assets/images/labelEsq.png";
 import { generalConstants } from "../../../constants/general";
 import MenuBar from "../../../presentional/MenuBar";
-import "./index.css"
+import "./index.css";
+import { useEffect, useState } from "react";
+import { Ellipsis } from "react-spinners-css";
 
 const Initial = () => {
+  const [loading, setLoading] = useState<boolean>(true);
+
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
   const renderLaptop = () => {
     return (
       <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
@@ -79,15 +88,36 @@ const Initial = () => {
           </Box>
         </Box>
       </div>
-
     );
   };
 
   const renderMobile = () => {
     return (
       <>
-        <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
-
+        <Ellipsis
+          size={100}
+          color={Colors.BLACKISH}
+          style={{
+            opacity: loading ? 1 : 0,
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            marginTop: "auto",
+            marginBottom: "auto",
+            left: 0,
+            right: 0,
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "100vw",
+            height: "100vh",
+            opacity: loading ? 0 : 1,
+          }}
+        >
           <div
             dangerouslySetInnerHTML={{
               __html: `<video  playsinline autoBuffer autoPlay loop muted width="115%" height="115%" >
@@ -105,12 +135,14 @@ const Initial = () => {
               zIndex: 500,
               width: "100%",
               height: "100%",
+
+
               // para ter em consideração o tamanho do video estar cortado
               overflow: "hidden",
             }}
           ></div>
-          <MenuBar />
 
+          <MenuBar />
 
           <Box
             width='120px'
@@ -125,6 +157,8 @@ const Initial = () => {
               backgroundRepeat: "no-repeat",
               backgroundImage: `url(${labelEsq})`,
               backgroundSize: "cover",
+              transform: loading ? "translate(-120px,0px)" : "translate(0px,0px)",
+              transition: "all 0.7s ease-in-out"
             }}
           ></Box>
 
@@ -160,8 +194,6 @@ const Initial = () => {
             </Box>
           </Box>
         </div>
-
-
       </>
     );
   };
