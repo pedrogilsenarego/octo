@@ -13,7 +13,6 @@ import { Colors } from "../../../constants/pallete";
 const Description = () => {
   const { product, fabric, infoPopup, setInfoPopup } = useContext(ProductContext);
 
-
   return (
     <Box
       style={{
@@ -32,6 +31,13 @@ const Description = () => {
           <Typography fontWeight={800}>{categories[product].price}&nbsp;&#183;&nbsp;€</Typography>
         </Box>
       )}
+      {fabric !== null && (
+        <Box display="flex" justifyContent="start">
+          <Typography fontWeight={800}>{fabrics[fabric].title}</Typography>
+
+        </Box>
+      )}
+
 
       <Divider style={{ marginTop: "-15px" }} />
       <div style={{ marginTop: "40px" }}>

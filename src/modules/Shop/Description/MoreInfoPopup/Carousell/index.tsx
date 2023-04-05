@@ -107,7 +107,7 @@ const Carrousell = ({ images }: Props) => {
       {!errorImage && (
         <CarouselProvider
           infinite
-          naturalSlideHeight={45}
+          naturalSlideHeight={50}
           naturalSlideWidth={100}
           totalSlides={images.length}
           currentSlide={indexMini}

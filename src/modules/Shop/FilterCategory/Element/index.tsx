@@ -13,7 +13,7 @@ interface Props {
 const Element = ({ item, setText }: Props) => {
   const { setFabric, setProduct } = useContext(ProductContext);
   const [loading, setLoading] = useState<boolean>(true);
-  console.log(loading);
+
   return (
     <Box
       onClick={() => {

@@ -3,13 +3,14 @@ import { useContext } from "react";
 import CardMedia from "../../../components/CardMedia";
 import { categories } from "../../../constants/category";
 import { fabrics } from "../../../constants/fabrics";
+import { Colors } from "../../../constants/pallete";
 import { ProductContext } from "../ProductContext";
 
 const ImageShow = () => {
   const { product, setInfoPopup, fabric } = useContext(ProductContext);
 
   return (
-    <Box style={{ borderRadius: "5px" }}>
+    <Box style={{ borderRadius: "5px", backgroundColor: Colors.PRETTY_CREAM }}>
       {product !== null && (
         <CardMedia
           image={categories[product].image}

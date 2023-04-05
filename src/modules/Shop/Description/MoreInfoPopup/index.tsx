@@ -28,7 +28,8 @@ const MoreInfoPopup = () => {
             style={{
               height: "353px",
               display: "flex",
-
+              backgroundColor: Colors.PRETTY_CREAM,
+              borderRadius: "4px"
             }}
           >
             <Carrousell images={item.images} />
