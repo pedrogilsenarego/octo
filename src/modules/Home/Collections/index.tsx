@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, useTheme, useMediaQuery } from "@mui/material";
 
 import { generalConstants } from "../../../constants/general";
 import teste from "../../../assets/teste.jpeg";
@@ -8,6 +8,8 @@ import firstCollection from "../../../assets/firstCollection.svg";
 import t5 from "../../../assets/t5.jpeg";
 
 const Collections = () => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
       <Box
@@ -19,8 +21,8 @@ const Collections = () => {
 
           width: "100vw",
           height: "100vh",
-          paddingLeft: generalConstants.PADDING,
-          paddingRight: generalConstants.PADDING,
+          paddingLeft: mobile ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
+          paddingRight: mobile ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
         }}
       >
         <Box
@@ -46,9 +48,9 @@ const Collections = () => {
               draggable={false}
               style={{
                 position: "absolute",
-                bottom: "-35%",
-                left: "10%",
-                width: "500px",
+                bottom: mobile ? "-15%" : "-35%",
+                left: mobile ? "13%" : "10%",
+                width: mobile ? "45vw" : "500px",
                 cursor: "pointer",
 
                 objectFit: "cover",
@@ -57,12 +59,12 @@ const Collections = () => {
               src={firstCollection}
               alt=''
             />
-            <Grid item xs={3}>
+            <Grid item xs={6} sm={3}>
               <img
                 draggable={false}
                 style={{
                   width: "100%",
-                  height: "25vw",
+                  height: mobile ? "25vh" : "25vw",
                   borderRadius: "1%",
                   objectFit: "cover",
                   objectPosition: "center",
@@ -71,12 +73,12 @@ const Collections = () => {
                 alt=''
               />
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={6} sm={3}>
               <img
                 draggable={false}
                 style={{
                   width: "100%",
-                  height: "25vw",
+                  height: mobile ? "25vh" : "25vw",
                   borderRadius: "1%",
                   objectFit: "cover",
                   objectPosition: "center",
@@ -85,12 +87,12 @@ const Collections = () => {
                 alt=''
               />
             </Grid>{" "}
-            <Grid item xs={3}>
+            <Grid item xs={6} sm={3}>
               <img
                 draggable={false}
                 style={{
                   width: "100%",
-                  height: "25vw",
+                  height: mobile ? "25vh" : "25vw",
                   borderRadius: "1%",
                   objectFit: "cover",
                   objectPosition: "center",
@@ -99,12 +101,12 @@ const Collections = () => {
                 alt=''
               />
             </Grid>{" "}
-            <Grid item xs={3}>
+            <Grid item xs={6} sm={3}>
               <img
                 draggable={false}
                 style={{
                   width: "100%",
-                  height: "25vw",
+                  height: mobile ? "25vh" : "25vw",
                   borderRadius: "1%",
                   objectFit: "cover",
                   objectPosition: "center",
