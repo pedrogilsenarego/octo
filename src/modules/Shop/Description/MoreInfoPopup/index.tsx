@@ -46,7 +46,7 @@ const MoreInfoPopup = () => {
                 style={{ height: "100px", width: "100px", objectFit: "cover" }}
               />
               {fabric !== null && (
-                <Typography>{item.price}$</Typography>
+                <Typography>{item.price}€</Typography>
               )}
 
               <Button onClick={() => {

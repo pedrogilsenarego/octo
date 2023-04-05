@@ -4,7 +4,7 @@ import backend from "i18next-http-backend";
 import { content } from "./languages";
 
 i18n
-  // .use(LanguageDetector)
+  .use(LanguageDetector)
   .use(backend)
   .init({
     debug: false,

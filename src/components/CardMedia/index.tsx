@@ -48,6 +48,7 @@ const CardMedia = ({
 
 
       <MuiCardMedia
+        draggable={false}
         onLoad={() => setImageLoading(false)}
         style={{
           borderRadius: borderRadius ?? "0px",

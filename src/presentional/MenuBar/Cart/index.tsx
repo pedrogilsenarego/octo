@@ -72,8 +72,11 @@ const Cart = () => {
       )}
 
       <Divider />
-      <Typography>Total Price: {getTotalValue()} $</Typography>
+      <Box display="flex" justifyContent="end" width="100%" mt="10px">
+        <Typography>{i18n.t("cartDrawer.totalPrice")} {getTotalValue()} €</Typography>
+      </Box>
       <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", rowGap: "20px" }}>
+
         <Button
           colorHover={Colors.NEON_YELLOW_TRANSPARENT}
           label={i18n.t("cartDrawer.clearCart")}

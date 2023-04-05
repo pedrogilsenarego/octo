@@ -7,6 +7,7 @@ export const content = {
         clearCart: "Clear Cart",
         updateCart: "Update Cart",
         noProducts: "There are no products in the cart",
+        totalPrice: "Total Price:",
       },
       menuBar: {
         store: "Shop",
@@ -50,6 +51,7 @@ export const content = {
 
         product: {
           fabrics: "Fabrics Available",
+          products: "Products Available",
           addCart: "Add to Cart",
           moreInfo: "+ Info",
           quantity: "Quantity",

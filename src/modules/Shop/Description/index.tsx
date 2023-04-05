@@ -27,13 +27,13 @@ const Description = () => {
       {product !== null && (
         <Box display="flex" justifyContent="space-between">
           <Typography fontWeight={800}>{categories[product].title}</Typography>
-          <Typography fontWeight={800}>{categories[product].price}&nbsp;&#183;&nbsp;$</Typography>
+          <Typography fontWeight={800}>{categories[product].price}&nbsp;&#183;&nbsp;€</Typography>
         </Box>
       )}
 
       <Divider style={{ marginTop: "10px" }} />
       <div style={{ marginTop: "40px" }}>
-        <Typography>{i18n.t("modules.product.fabrics")}&nbsp;&#183;</Typography>
+        <Typography>{product !== null ? i18n.t("modules.product.fabrics") : i18n.t("modules.product.products")}&nbsp;&#183;</Typography>
         <div style={{ marginTop: "10px" }}>
           <FabricSelector />
         </div>

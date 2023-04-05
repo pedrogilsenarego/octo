@@ -68,7 +68,7 @@ const FabricSelector = () => {
                 }}
               >
                 <Element size='70px' valuee={item.icon} />
-                <Typography>{item.price}$</Typography>
+                <Typography>{item.price}€</Typography>
               </Box>
             )
           })

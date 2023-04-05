@@ -1,13 +1,11 @@
-import { Box, Grid, Typography } from "@mui/material";
-import { Colors } from "../../../constants/pallete";
-import { i18n } from "../../../translations/i18n";
+import { Box, Grid } from "@mui/material";
+
 import { generalConstants } from "../../../constants/general";
-import Button from "../../../components/Buttons/Button";
-import teste from "../../../assets/teste.jpeg"
-import t1 from "../../../assets/t1.jpeg"
-import t2 from "../../../assets/t2.jpeg"
-import firstCollection from "../../../assets/firstCollection.svg"
-import t5 from "../../../assets/t5.jpeg"
+import teste from "../../../assets/teste.jpeg";
+import t1 from "../../../assets/t1.jpeg";
+import t2 from "../../../assets/t2.jpeg";
+import firstCollection from "../../../assets/firstCollection.svg";
+import t5 from "../../../assets/t5.jpeg";
 
 const Collections = () => {
   return (
@@ -26,9 +24,8 @@ const Collections = () => {
         }}
       >
         <Box
-
-
           style={{
+
             rowGap: "100px",
             width: "100%",
             height: "35vw",
@@ -38,8 +35,15 @@ const Collections = () => {
             alignItems: "center",
           }}
         >
-          <Grid container columnSpacing={2} width="100%" style={{ position: "relative", cursor: "pointer" }}>
+          <Grid
+
+            container
+            columnSpacing={2}
+            width='100%'
+            style={{ position: "relative", cursor: "pointer" }}
+          >
             <img
+              draggable={false}
               style={{
                 position: "absolute",
                 bottom: "-35%",
@@ -55,8 +59,8 @@ const Collections = () => {
             />
             <Grid item xs={3}>
               <img
+                draggable={false}
                 style={{
-
                   width: "100%",
                   height: "25vw",
                   borderRadius: "1%",
@@ -69,8 +73,8 @@ const Collections = () => {
             </Grid>
             <Grid item xs={3}>
               <img
+                draggable={false}
                 style={{
-
                   width: "100%",
                   height: "25vw",
                   borderRadius: "1%",
@@ -80,8 +84,10 @@ const Collections = () => {
                 src={t2}
                 alt=''
               />
-            </Grid>  <Grid item xs={3}>
+            </Grid>{" "}
+            <Grid item xs={3}>
               <img
+                draggable={false}
                 style={{
                   width: "100%",
                   height: "25vw",
@@ -92,8 +98,10 @@ const Collections = () => {
                 src={teste}
                 alt=''
               />
-            </Grid>  <Grid item xs={3}>
+            </Grid>{" "}
+            <Grid item xs={3}>
               <img
+                draggable={false}
                 style={{
                   width: "100%",
                   height: "25vw",
@@ -111,18 +119,10 @@ const Collections = () => {
             justifyContent='end'
             flexDirection='row'
             alignItems='center'
-            mt="-100px"
-            width="100%"
-
+            mt='-100px'
+            width='100%'
           >
 
-            {/* <div style={{ marginTop: "40px" }}>
-              <Button
-                color={Colors.BLACKISH}
-                colorHover={Colors.NEON_YELLOW}
-                label={i18n.t("modules.home.discoverCollection")}
-              />
-            </div> */}
           </Box>
         </Box>
       </Box>

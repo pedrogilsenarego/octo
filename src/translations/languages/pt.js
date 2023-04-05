@@ -2,11 +2,12 @@ export const content = {
   pt: {
     translations: {
       cartDrawer: {
-        title: "Cart",
-        clearCart: "Clear Cart",
+        title: "Carrinho",
+        clearCart: "Limpar Carrinho",
         checkout: "Checkout",
-        updateCart: "Update Cart",
-        noProducts: "There are no products in the cart",
+        updateCart: "Actualizar Carrinho",
+        noProducts: "Não existem produtos no carrinho",
+        totalPrice: "Preço Total:",
       },
       menuBar: {
         store: "Loja",
@@ -27,9 +28,9 @@ export const content = {
       modules: {
         home: {
           mainText: "Born\n Octomistic",
-          about: "The story of Octo",
-          viewMore: "View More",
-          discoverCollection: "Discover our Collection",
+          about: "A história da Octo",
+          viewMore: "Ver Mais",
+          discoverCollection: "Descubra a nossa coleção",
           discover: "Descobre a coleção",
           maternityBags: "Sacos\n Maternindade",
         },
@@ -40,14 +41,15 @@ export const content = {
           resetFilters: "Limpar Filtros",
         },
         shopCategory: {
-          title: "Escolha a Categoria:",
+          title: "Escolha a Categoria",
         },
         shopFabric: {
-          title: "Escolha os tecidos:",
+          title: "Escolha os tecidos",
           nextButton: "Seguinte",
         },
         product: {
           fabrics: "Teçidos disponíveis",
+          products: "Produtos Dísponiveis",
           addCart: "Adicionar ao carrinho",
           moreInfo: "+ Info",
           quantity: "Quantidade",
@@ -59,7 +61,7 @@ export const content = {
       },
       notifications: {
         success: {
-          updateCart: "The cart was updated",
+          updateCart: "O carrinho foi actualizado",
         },
         fail: {},
       },

@@ -37,6 +37,7 @@ const About = () => {
           }}
         >
           <img
+            draggable={false}
             style={{
               width: "87%",
               height: "25vw",

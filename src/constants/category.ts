@@ -35,6 +35,11 @@ import iconBedPocketFloralPowderPink from "../assets/icons/produtos/icones_padro
 import iconBedPocketFloralClassic from "../assets/icons/produtos/icones_padroes-bedpocket4.png"
 import iconBedPocketOctos from "../assets/icons/produtos/icones_padroes-bedpocket5.png"
 import iconBedPocketPureWhite from "../assets/icons/produtos/icones_padroes-bedpocket6.png"
+import iconMaternityBagVichyPowderPink from "../assets/icons/produtos/icones_padroes-maternitybag1.png"
+import iconMaternityBagVichyClassic from "../assets/icons/produtos/icones_padroes-maternitybag2.png"
+import iconMaternityBagOctos from "../assets/icons/produtos/icones_padroes-maternitybag3.png"
+import iconMaternityWaffleStone from "../assets/icons/produtos/icones_padroes-maternitybag5.png"
+import iconMaternityWaffleCream from "../assets/icons/produtos/icones_padroes-maternitybag4.png"
 
 
 export type Product = {
@@ -58,7 +63,7 @@ price: number
 
 
 export const products:Product[] = [
- 
+  
   {
     uid: "ddwwqwdq",
     price: 34,
@@ -108,6 +113,46 @@ export const products:Product[] = [
   
     images:["https://mcdn.wallpapersafari.com/medium/14/73/mObqwW.jpg"],
    pattern: 0
+  },
+  {
+    uid: "ddwwhkjqwdq",
+    price: 34,
+    category: 2,
+    icon:iconMaternityBagVichyPowderPink,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 0
+  },
+  {
+    uid: "ddwwhakjqwdq",
+    price: 34,
+    category: 2,
+    icon:iconMaternityBagVichyClassic,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 1
+  },
+  {
+    uid: "ddwzwhakjqwdq",
+    price: 34,
+    category: 2,
+    icon:iconMaternityBagOctos,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 4
+  },
+  {
+    uid: "ddwzzawhakjqwdq",
+    price: 34,
+    category: 2,
+    icon:iconMaternityWaffleStone,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 6
+  },
+  {
+    uid: "ddwzzanmwhakjqwdq",
+    price: 34,
+    category: 2,
+    icon:iconMaternityWaffleCream,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg","https://mcdn.wallpapersafari.com/medium/48/97/EoDR6c.jpg"],
+   pattern: 7
   },
   {
     uid: "strdffsring",

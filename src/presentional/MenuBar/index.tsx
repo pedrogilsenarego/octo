@@ -1,6 +1,5 @@
 import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../translations/i18n";
-import { BiSearch } from "react-icons/bi";
 import { AiOutlineShopping } from "react-icons/ai";
 import { VscMenu } from "react-icons/vsc";
 import { BsInstagram } from "react-icons/bs";
@@ -11,7 +10,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Label from "../../assets/images/label.png";
 import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
-import { scrollTo } from "../../slicer/general/general.actions";
+import { scrollTo, updateLang } from "../../slicer/general/general.actions";
 import { generalConstants } from "../../constants/general";
 import { useState } from "react";
 import Cart from "./Cart";
@@ -36,9 +35,24 @@ const MenuBar = () => {
   const cartProducts = useSelector<State, CartProduct[]>(
     (state) => state.cart.cartItems
   );
+  const lang = useSelector<State, string>(
+    (state) => state.general.lang || "EN"
+  );
 
   const handleClick = (value: number) => {
     dispatch(scrollTo(value));
+  };
+
+  const handleChangeLang = () => {
+    changeLanguage(lang === "PT" ? "en" : "pt");
+  };
+
+  const changeLanguage = (lng: string) => {
+    dispatch(updateLang(lng.toUpperCase()));
+    i18n.changeLanguage(lng);
+    setTimeout(() => {
+      window.location.reload();
+    }, 200);
   };
 
   const renderLaptop = () => {
@@ -110,16 +124,13 @@ const MenuBar = () => {
                 onClick={() => navigate(ROUTE_PATHS.SHOP)}
               />
 
-              <Box display='flex' columnGap='12px' alignItems='center'>
-                <BiSearch
-                  className='icon'
-                  size={ICON_SIZE}
-                  color={MENU_COLOR}
-                  style={{ cursor: "pointer" }}
-                />
+              <Box display='flex' columnGap='12px' alignItems='center' justifyContent="center">
+                <Typography color={MENU_COLOR} className="icon" style={{ cursor: "pointer" }} onClick={() => handleChangeLang()}>
+                  {lang}
+                </Typography>
                 <BsInstagram
                   className='icon'
-                  size={ICON_SIZE}
+                  size="1.4rem"
                   color={MENU_COLOR}
                   style={{ cursor: "pointer" }}
                 />
