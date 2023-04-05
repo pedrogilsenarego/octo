@@ -23,10 +23,12 @@ const Initial = () => {
             zIndex: 500,
             width: "100vw",
             height: "100vh",
+            //para ter em consideração o tamanho do video estar cortado
+            overflow: "hidden"
 
           }}
         >
-          <video autoPlay loop muted width="100%" height="100%" style={{ objectFit: "cover" }}>
+          <video autoPlay loop muted width="115%" height="115%" style={{ objectFit: "cover" }}>
             <source
               src="https://res.cloudinary.com/daantetcr/video/upload/v1680693360/Octo/era_oz7cne.mov"
               type='video/mp4'
