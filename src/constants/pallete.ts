@@ -8,5 +8,6 @@ export const Colors = {
   BLACKISH:"#1A2032",
   BLACKIST_TRANSPARENT:"#1A203266",
   WHITE_SMUDGE: "#ffffffAE",
+  SOFT_TAUPE:"rgb(179,173,164)"
 
 }

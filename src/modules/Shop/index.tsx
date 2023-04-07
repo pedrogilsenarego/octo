@@ -35,10 +35,10 @@ const Shop = () => {
             <FilterCategory />
           </Grid>
 
-          <Grid item xs={9 * 12 / 17}>
+          <Grid item xs={6}>
             <ImageShow />
           </Grid>
-          <Grid item xs={8 * 12 / 17} >
+          <Grid item xs={6} >
             <Description />
           </Grid>
         </Grid>

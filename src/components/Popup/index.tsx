@@ -64,7 +64,7 @@ const Popup = ({
                 component='div'
                 style={{
                   fontSize: "28px",
-                  color: Colors.PRETTY_CREAM,
+                  color: Colors.SOFT_TAUPE,
                   fontWeight: 700,
                   letterSpacing: "3px",
                 }}

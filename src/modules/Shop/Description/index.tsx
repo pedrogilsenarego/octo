@@ -39,7 +39,7 @@ const Description = () => {
       )}
 
 
-      <Divider style={{ marginTop: "-15px" }} />
+      <Divider style={{ marginTop: "0px" }} />
       <div >
         <div >
           <FabricSelector />

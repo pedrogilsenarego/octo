@@ -13,13 +13,12 @@ const FilterCategory = () => {
   return (
     <div
       style={{
-        borderBottom: `solid 3px ${Colors.PRETTY_CREAM}`,
-
+        borderBottom: `solid 2px ${Colors.PRETTY_CREAM}`,
         paddingLeft: "18vw",
         paddingRight: "18vw",
         paddingTop: "10px",
         paddingBottom: "60px",
-        marginBottom: "-20px"
+        marginBottom: "10px"
       }}
     >
       <Grid container columnSpacing='30px' rowGap={3} style={{ marginTop: "20px" }}>

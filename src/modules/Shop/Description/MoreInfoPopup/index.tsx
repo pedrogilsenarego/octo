@@ -44,11 +44,11 @@ const MoreInfoPopup = () => {
               <img
                 src={item.icon}
                 alt={item.uid}
-                style={{ height: "200px", width: "200px", objectFit: "cover" }}
+                style={{ height: "300px", width: "300px", objectFit: "cover" }}
               />
 
               {fabric !== null && (
-                <Typography mt="-20px">{item.price}€</Typography>
+                <Typography mt="-40px">{item.price}€</Typography>
               )}
 
               <Button onClick={() => {
