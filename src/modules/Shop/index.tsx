@@ -30,7 +30,7 @@ const Shop = () => {
 
 
 
-        <Grid mt="110px" container columnSpacing={2} rowSpacing="40px" alignItems="spaceBetween" >
+        <Grid mt="40px" container columnSpacing={2} rowSpacing="40px" alignItems="spaceBetween" >
           <Grid item xs={12}>
             <FilterCategory />
           </Grid>

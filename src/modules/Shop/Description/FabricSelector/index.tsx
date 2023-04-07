@@ -48,7 +48,7 @@ const FabricSelector = () => {
                 handleSelectFabrics(item);
               }}
             >
-              <Element size='85px' valuee={item.icon} />
+              <Element size='120px' valuee={item.icon} />
 
             </Box>
           );
@@ -61,13 +61,13 @@ const FabricSelector = () => {
                 flexDirection='column'
                 justifyContent='center'
                 alignItems='center'
-                rowGap={3}
+                rowGap={1}
                 key={pos}
                 onClick={() => {
                   handleSelectFabrics(item);
                 }}
               >
-                <Element size='70px' valuee={item.icon} />
+                <Element size='120px' valuee={item.icon} />
                 <Typography>{item.price}€</Typography>
               </Box>
             )

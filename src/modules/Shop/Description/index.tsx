@@ -17,7 +17,7 @@ const Description = () => {
     <Box
       style={{
         padding: "20px",
-        backgroundColor: Colors.PRETTY_CREAM,
+        //backgroundColor: Colors.PRETTY_CREAM,
         borderRadius: "5px",
         minHeight: "500px",
       }}
@@ -26,23 +26,22 @@ const Description = () => {
       justifyContent='space-between'
     >
       {product !== null && (
-        <Box display="flex" justifyContent="space-between">
-          <Typography fontWeight={800}>{categories[product].title}</Typography>
+        <Box display="flex" flexDirection="column" justifyContent="space-between">
+          <Typography style={{ textTransform: "uppercase" }} fontWeight={800}>{categories[product].title}</Typography>
           <Typography fontWeight={800}>{categories[product].price}&nbsp;&#183;&nbsp;€</Typography>
         </Box>
       )}
       {fabric !== null && (
         <Box display="flex" justifyContent="start">
-          <Typography fontWeight={800}>{fabrics[fabric].title}</Typography>
+          <Typography style={{ textTransform: "uppercase" }} fontWeight={800}>{fabrics[fabric].title}</Typography>
 
         </Box>
       )}
 
 
       <Divider style={{ marginTop: "-15px" }} />
-      <div style={{ marginTop: "40px" }}>
-        <Typography>{product !== null ? i18n.t("modules.product.fabrics") : i18n.t("modules.product.products")}&nbsp;&#183;</Typography>
-        <div style={{ marginTop: "10px" }}>
+      <div >
+        <div >
           <FabricSelector />
         </div>
       </div>

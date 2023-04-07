@@ -387,7 +387,7 @@ export const categories:Category[] = [
     title: i18n.t("constants.categories.1"),
     icon: icon9,
     price: 34,
-    image: "https://tse1.mm.bing.net/th?id=OIP.nc7wUe2uWZXx6ZwCnEYcbQHaFS&pid=Api&rs=1&c=1&qlt=95&w=150&h=107"
+    image: "https://res.cloudinary.com/daantetcr/image/upload/v1680907360/Octo/ProductBandana/WhatsApp_Image_2023-04-07_at_23.41.06_r9zoev.jpg"
   },
   {
     id: 1,
@@ -441,6 +441,13 @@ export const categories:Category[] = [
   },
   {
     id: 8,
+    title: i18n.t("constants.categories.9"),
+    icon: icon1,
+    price: 34,
+    image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
+  },
+  {
+    id: 9,
     title: i18n.t("constants.categories.9"),
     icon: icon1,
     price: 34,

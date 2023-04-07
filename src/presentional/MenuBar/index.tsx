@@ -105,24 +105,26 @@ const MenuBar = () => {
                   onClick={() => navigate(ROUTE_PATHS.HOME)}
                 />
               )}
+              {location.pathname === ROUTE_PATHS.HOME && (<>
+                <Button
+                  color={MENU_COLOR}
+                  title={i18n.t("menuBar.about")}
+                  onClick={() => handleClick(1)}
+                />
 
-              <Button
-                color={MENU_COLOR}
-                title={i18n.t("menuBar.about")}
-                onClick={() => handleClick(1)}
-              />
+                <Button
+                  color={MENU_COLOR}
+                  title={i18n.t("menuBar.collection")}
+                  onClick={() => handleClick(2)}
+                />
 
-              <Button
-                color={MENU_COLOR}
-                title={i18n.t("menuBar.collection")}
-                onClick={() => handleClick(2)}
-              />
+                <Button
+                  color={MENU_COLOR}
+                  title={i18n.t("menuBar.store")}
+                  onClick={() => navigate(ROUTE_PATHS.SHOP)}
+                />
+              </>)}
 
-              <Button
-                color={MENU_COLOR}
-                title={i18n.t("menuBar.store")}
-                onClick={() => navigate(ROUTE_PATHS.SHOP)}
-              />
 
               <Box display='flex' columnGap='12px' alignItems='center' justifyContent="center">
                 <Typography color={MENU_COLOR} className="icon" style={{ cursor: "pointer" }} onClick={() => handleChangeLang()}>

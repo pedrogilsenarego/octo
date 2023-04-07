@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from "@mui/material"
+import { Box, Container, Grid, Typography } from "@mui/material"
 import { generalConstants } from "../../../constants/general"
 import Button from "../../../components/Buttons/Button"
 import React from "react"
@@ -25,12 +25,13 @@ const Shop = () => {
 
       }}
     >
+      <Typography style={{ textTransform: "uppercase", fontWeight: 800, fontSize: "1.2rem" }}>Products</Typography>
 
-      {/* <Grid
+      <Grid
         container
-        style={{ borderRadius: "10px", marginTop: "1px" }}
-        columnSpacing={5}
-        rowSpacing={1}
+        style={{ borderRadius: "10px", marginTop: "10px" }}
+        columnSpacing="15px"
+        rowSpacing="20px"
       >
         {categories.map((item, pos) => {
           const img = new Image();
@@ -42,7 +43,7 @@ const Shop = () => {
               item
               justifyContent='center'
               alignItems='center'
-              xs={12 / 9}
+              xs={12 / 10}
               style={{ cursor: "pointer" }}
             >
               <Box
@@ -54,7 +55,6 @@ const Shop = () => {
                 style={{
                   borderRadius: "50%",
                   width: "100%",
-
                   boxShadow: "0px 0px 10px 0px #0000001e",
                   paddingBottom: `${aspectRatio * 100}%`,
                   backgroundImage: `url(${item.icon})`,
@@ -65,10 +65,11 @@ const Shop = () => {
             </Grid>
           );
         })}
-      </Grid> */}
+      </Grid>
+      <Typography mt="11vh" style={{ fontSize: "1.2rem", textTransform: "uppercase", fontWeight: 800 }}>Patterns</Typography>
       <Grid
         container
-        style={{ borderRadius: "10px", marginTop: "1px", paddingLeft: "200px", paddingRight: "200px" }}
+        style={{ borderRadius: "10px", marginTop: "-10px", }}
         columnSpacing={5}
         rowSpacing={5}
       >
@@ -82,7 +83,7 @@ const Shop = () => {
               item
               justifyContent='center'
               alignItems='center'
-              xs={3}
+              xs={12 / 8}
               style={{ cursor: "pointer" }}
             >
 

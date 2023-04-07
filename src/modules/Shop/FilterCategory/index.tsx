@@ -13,19 +13,19 @@ const FilterCategory = () => {
   return (
     <div
       style={{
-        //borderTop: `solid 3px ${Colors.PRETTY_CREAM}`,
         borderBottom: `solid 3px ${Colors.PRETTY_CREAM}`,
-        paddingLeft: "2px",
-        paddingRight: "2px",
-        paddingTop: "10px",
-        paddingBottom: "15px",
 
+        paddingLeft: "18vw",
+        paddingRight: "18vw",
+        paddingTop: "10px",
+        paddingBottom: "60px",
+        marginBottom: "-20px"
       }}
     >
-      <Grid container columnSpacing='30px'>
-        <Grid item xs={(9 * 12) / 17}>
+      <Grid container columnSpacing='30px' rowGap={3} style={{ marginTop: "20px" }}>
+        <Grid item xs={12}>
           <Box display='flex' flexDirection='column' rowGap={2}>
-            <Box display='flex' columnGap={0} alignItems='center'>
+            <Box display='flex' columnGap={0} alignItems='center' justifyContent="center">
               <Typography fontWeight={800}>
                 {i18n.t("modules.shopCategory.title")}&nbsp;&#183;&nbsp;
               </Typography>
@@ -36,7 +36,7 @@ const FilterCategory = () => {
             <Grid
               container
               style={{ borderRadius: "10px" }}
-              columnSpacing={1.5}
+              columnSpacing={2}
               rowSpacing={1}
             >
               {categories.map((item, pos) => {
@@ -46,7 +46,7 @@ const FilterCategory = () => {
                     item
                     justifyContent='center'
                     alignItems='center'
-                    xs={12 / 9}
+                    xs={12 / 10}
                     style={{ cursor: "pointer" }}
                   >
                     <Element setText={setCategoryText} item={item} />
@@ -56,9 +56,9 @@ const FilterCategory = () => {
             </Grid>
           </Box>
         </Grid>
-        <Grid item xs={(8 * 12) / 17}>
-          <Box display='flex' flexDirection='column' rowGap={2}>
-            <Box display='flex' columnGap={0} alignItems='center'>
+        <Grid item xs={12} mt="20px">
+          <Box display='flex' flexDirection='column' rowGap={2} >
+            <Box display='flex' columnGap={0} alignItems='center' justifyContent="center">
               <Typography fontWeight={800}>
                 {i18n.t("modules.shopFabric.title")}&nbsp;&#183;&nbsp;
               </Typography>
@@ -68,9 +68,9 @@ const FilterCategory = () => {
             </Box>
             <Grid
               container
-              style={{ borderRadius: "10px" }}
-              columnSpacing={1.5}
-              rowSpacing={2}
+              style={{ borderRadius: "10px", marginTop: "5px" }}
+              columnSpacing="30px"
+              rowGap={2}
             >
               {fabrics.map((item, pos) => {
                 return (

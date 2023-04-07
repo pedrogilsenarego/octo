@@ -36,8 +36,8 @@ const Element = ({ size, valuee, stateHighLightStatus }: Props) => {
 
         border:
           click || stateHighLightStatus
-            ? `solid 3px ${Colors.BLACKISH}`
-            : `solid 3px ${Colors.PRETTY_CREAM}`,
+            ? `solid 3px ${Colors.NEON_YELLOW}`
+            : `solid 3px transparent`,
         borderRadius: "50%",
       }}
     >
