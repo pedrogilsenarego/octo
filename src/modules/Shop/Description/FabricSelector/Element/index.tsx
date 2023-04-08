@@ -1,27 +1,30 @@
 import { Box } from "@mui/material";
 import { Colors } from "../../../../../constants/pallete";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { State } from "../../../../../slicer/types";
 import { CartProduct } from "../../../../../slicer/cart/cart.types";
 import { Ellipsis } from "react-spinners-css";
+import { ProductContext } from "../../../ProductContext";
 
 interface Props {
-  size: string;
+  size?: string;
   valuee: string;
   stateHighLightStatus?: boolean;
 }
 
-const Element = ({ size, valuee, stateHighLightStatus }: Props) => {
+const Element = ({ valuee, stateHighLightStatus }: Props) => {
   const [click, setClick] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
+  const { product, fabric } =
+    useContext(ProductContext);
   const cartProducts = useSelector<State, CartProduct[]>(
     (state) => state.cart.cartItems
   );
 
   useEffect(() => {
     setClick(false);
-  }, [cartProducts]);
+  }, [cartProducts, product, fabric]);
 
   return (
     <Box
@@ -30,8 +33,8 @@ const Element = ({ size, valuee, stateHighLightStatus }: Props) => {
       }}
       style={{
         cursor: "pointer",
-        height: size,
-        width: size,
+        height: "100%",
+        aspectRatio: 1,
         position: "relative",
 
         border:
@@ -62,12 +65,13 @@ const Element = ({ size, valuee, stateHighLightStatus }: Props) => {
         onLoad={() => setLoading(false)}
         src={valuee}
         alt=''
-        height='110%'
-        width='110%'
+
         style={{
           position: "absolute",
-          top: "-5%",
-          left: "-5%",
+          top: "-2.5%",
+          left: "-2.5%",
+          width: "105%",
+          height: "105%",
           opacity: loading ? 0 : 1,
         }}
       />

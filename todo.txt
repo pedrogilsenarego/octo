@@ -1,5 +1,3 @@
-limpar estado quando se troca de produto ou de tecido
-quando ha tecidos ou produtos a mais passa para a proxima fila
 bola amarela a volta do q se escolhe
 quando nao se seleciona nenhum item, as vezes ainda fica o cart disponivel para adicionar produtos
 +info Produto:{descrição, dimensoes, modo lavagem} 

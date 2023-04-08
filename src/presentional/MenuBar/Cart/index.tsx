@@ -46,6 +46,7 @@ const Cart = () => {
         cartProducts?.map((item, pos) => {
           return (
             <Box
+              key={pos}
               display='flex'
               columnGap={4}
               alignItems='center'
@@ -58,7 +59,7 @@ const Cart = () => {
                   src={item.product.icon}
                   alt=''
                 />
-                <Typography key={pos} style={{ textTransform: "uppercase" }}>
+                <Typography style={{ textTransform: "uppercase" }}>
                   {categories[item.product.category].title}-
                   {fabrics[item.product.pattern].title}
                 </Typography>

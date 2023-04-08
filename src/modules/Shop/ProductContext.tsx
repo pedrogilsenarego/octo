@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Product } from "../../constants/category";
 
 interface ProductContextType {
@@ -28,6 +28,10 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
   const [fabric, setFabric] = useState<number | null>(null);
   const [infoPopup, setInfoPopup] = useState<boolean>(false);
   const [selectedFabrics, setSelectedFabrics] = useState<Product[]>([]);
+
+  useEffect(() => {
+    setSelectedFabrics([])
+  }, [product, fabric])
 
   const contextValue: ProductContextType = {
     product,

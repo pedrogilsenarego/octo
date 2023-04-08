@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { useContext } from "react";
 import Button from "../../../../components/Buttons/Button";
 import { i18n } from "../../../../translations/i18n";
@@ -9,16 +9,18 @@ import { useDispatch } from "react-redux";
 import { addProductToCart } from "../../../../slicer/cart/cart.actions";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
 
-
 const FabricSelector = () => {
-  const { product, fabric, selectedFabrics, setSelectedFabrics } = useContext(ProductContext);
+  const { product, fabric, selectedFabrics, setSelectedFabrics } =
+    useContext(ProductContext);
   const dispatch = useDispatch();
 
   const productsAvailable: Product[] = products.filter(
     (category) => category.category === product
   );
 
-  const fabricsAvailable: Product[] = products.filter((product) => product.pattern === fabric)
+  const fabricsAvailable: Product[] = products.filter(
+    (product) => product.pattern === fabric
+  );
 
   const handleSelectFabrics = (item: Product) => {
     const index = selectedFabrics.findIndex((obj) => obj.uid === item.uid);
@@ -33,49 +35,49 @@ const FabricSelector = () => {
   };
 
   return (
-    <Box mt="10px">
-      <Box display='flex' columnGap={2}>
-        {product !== null && (productsAvailable.map((item, pos: number) => {
-          return (
-            <Box
-              display='flex'
-              flexDirection='column'
-              justifyContent='center'
-              alignItems='center'
-              rowGap={3}
-              key={pos}
-              onClick={() => {
-                handleSelectFabrics(item);
-              }}
-            >
-              <Element size='200px' valuee={item.icon} />
-
-            </Box>
-          );
-        }))}
-        {fabric !== null && (
-          fabricsAvailable.map((item, pos) => {
+    <Box mt='10px'>
+      <Grid container rowGap={3} columnSpacing={2}>
+        {product !== null &&
+          productsAvailable.map((item, pos: number) => {
             return (
-              <Box
-                display='flex'
-                flexDirection='column'
-                justifyContent='center'
-                alignItems='center'
-                rowGap={1}
+              <Grid
+                item
+                xs={3}
                 key={pos}
                 onClick={() => {
                   handleSelectFabrics(item);
                 }}
               >
-                <Element size='200px' valuee={item.icon} />
-                <Typography>{item.price}€</Typography>
-              </Box>
-            )
-          })
-
-        )}
-
-      </Box>
+                <Element valuee={item.icon} />
+              </Grid>
+            );
+          })}
+        {fabric !== null &&
+          fabricsAvailable.map((item, pos) => {
+            return (
+              <>
+                <Grid
+                  item
+                  xs={3}
+                  style={{ position: "relative" }}
+                  key={pos}
+                  onClick={() => {
+                    handleSelectFabrics(item);
+                  }}
+                >
+                  <Element valuee={item.icon} />
+                  <Box
+                    display='flex'
+                    justifyContent='center'
+                    style={{ position: "absolute", left: 0, right: 0 }}
+                  >
+                    <Typography>&nbsp;&nbsp;&nbsp;{item.price}€</Typography>
+                  </Box>
+                </Grid>
+              </>
+            );
+          })}
+      </Grid>
 
       <div style={{ marginTop: "60px" }}>
         <Button
@@ -86,7 +88,7 @@ const FabricSelector = () => {
                 i18n.t("notifications.success.updateCart")
               )
             );
-            setSelectedFabrics([])
+            setSelectedFabrics([]);
           }}
           borderRadiusRight
           label={i18n.t("modules.product.addCart")}
