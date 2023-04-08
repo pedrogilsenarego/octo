@@ -16,9 +16,11 @@ const Element = ({ item, setText }: Props) => {
   const [click, setClick] = useState<boolean>(false)
 
   useEffect(() => {
-    console.log("before")
-    setClick(false)
-    console.log("here")
+    if (click) {
+      console.log("before")
+      setClick(false)
+      console.log("here")
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [click])
 
