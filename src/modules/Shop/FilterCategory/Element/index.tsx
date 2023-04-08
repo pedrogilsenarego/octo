@@ -5,27 +5,22 @@ import { ProductContext } from "../../ProductContext";
 import { FabricsType } from "../../../../constants/fabrics";
 import { Ellipsis } from "react-spinners-css";
 import { Colors } from "../../../../constants/pallete";
+
 interface Props {
   setText: (value: string) => void;
   item: Category | FabricsType;
+
 }
 
 const Element = ({ item, setText }: Props) => {
   const { setFabric, setProduct, fabric, product } = useContext(ProductContext);
   const [loading, setLoading] = useState<boolean>(true);
-  const [click, setClick] = useState<boolean>(false)
 
-  useEffect(() => {
-    if (click) {
-      console.log("before")
-      setClick(false)
-      console.log("here")
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [click])
+
 
   return (
     <Box
+      key={item.title}
       onClick={() => {
         if ("price" in item) {
           setProduct(item.id);
@@ -34,7 +29,7 @@ const Element = ({ item, setText }: Props) => {
           setProduct(null);
           setFabric(item.id);
         }
-        setClick(true)
+
       }}
       display='flex'
       onLoad={() => setLoading(false)}
@@ -46,7 +41,7 @@ const Element = ({ item, setText }: Props) => {
         position: "relative",
         borderRadius: "50%",
         width: "100%",
-        border: click ? `solid 2px ${Colors.NEON_YELLOW}` : `solid 2px transparent}`,
+        border: item.id === ("price" in item ? product : fabric) ? `solid 2px ${Colors.NEON_YELLOW}` : `solid 0px black`,
         boxShadow: "0px 0px 10px 0px #0000001e",
         aspectRatio: 1,
       }}

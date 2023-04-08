@@ -81,7 +81,7 @@ const FilterCategory = () => {
                     xs={12 / 8}
                     style={{ cursor: "pointer" }}
                   >
-                    <Element setText={setFilterText} item={item} />
+                    <Element key={pos} setText={setFilterText} item={item} />
                   </Grid>
                 );
               })}
