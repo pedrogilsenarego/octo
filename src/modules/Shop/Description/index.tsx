@@ -1,18 +1,18 @@
 import { Typography, Divider, Box } from "@mui/material";
-
 import { i18n } from "../../../translations/i18n";
-import { categories } from "../../../constants/category";
 import FabricSelector from "./FabricSelector";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Popup from "../../../components/Popup";
 import { ProductContext } from "../ProductContext";
 import MoreInfoPopup from "./MoreInfoPopup";
 import { fabrics } from "../../../constants/fabrics";
-import { Colors } from "../../../constants/pallete";
+import Detail from "../../Product/Detail";
+import { categories } from "../../../constants/category";
 
 const Description = () => {
   const { product, fabric, infoPopup, setInfoPopup, selectedFabrics } =
     useContext(ProductContext);
+  const [moreInfo, setMoreInfo] = useState(false);
 
   return (
     <Box
@@ -49,7 +49,7 @@ const Description = () => {
           <Typography style={{ textTransform: "uppercase" }} fontWeight={800}>
             {fabrics[fabric].title}
           </Typography>
-          <Box display='flex' alignItems="center">
+          <Box display='flex' alignItems='center'>
             {selectedFabrics.map((item, pos) => {
               return <Typography key={pos}>&nbsp;{item.price} | </Typography>;
             })}
@@ -66,9 +66,23 @@ const Description = () => {
         </div>
       </div>
       <Divider style={{ marginTop: "20px" }} />
-      <div style={{ marginTop: "20px", cursor: "pointer" }}>
-        <Typography>{i18n.t("modules.product.moreInfo")}</Typography>
-      </div>
+      {product !== null && (
+        <>
+          <div
+            style={{ marginTop: "20px", cursor: "pointer" }}
+            onClick={() => setMoreInfo(!moreInfo)}
+          >
+            <Typography>{i18n.t("modules.product.moreInfo")}</Typography>
+          </div>
+          {moreInfo && (
+            <Detail
+              detail={categories[product].moreInfo.description}
+              title={i18n.t("modules.product.detail.description")}
+            />
+          )}
+        </>
+      )}
+
       {product !== null && (
         <Popup
           openPopup={infoPopup}

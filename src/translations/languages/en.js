@@ -57,6 +57,7 @@ export const content = {
           moreInfo: "+ Info",
           quantity: "Quantity",
           detail: {
+            description: "Description",
             instructions: "Instructions",
             materials: "Materials",
           },
