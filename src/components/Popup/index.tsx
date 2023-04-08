@@ -68,8 +68,9 @@ const Popup = ({
                   fontWeight: 700,
                   letterSpacing: "3px",
                 }}
+                dangerouslySetInnerHTML={{ __html: title }}
               >
-                {title}
+
               </Typography>
             </div>
           </DialogTitle>

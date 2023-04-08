@@ -26,7 +26,8 @@ const MoreInfoPopup = () => {
             key={pos}
             width='100%'
             style={{
-              height: "353px",
+              position: "relative",
+              height: "400px",
               display: "flex",
               backgroundColor: Colors.PRETTY_CREAM,
               borderRadius: "4px"
@@ -39,27 +40,31 @@ const MoreInfoPopup = () => {
               justifyContent='center'
               alignItems='center'
               width='40%'
-              rowGap="10px"
+              rowGap="0px"
+              style={{}}
             >
               <img
                 src={item.icon}
                 alt={item.uid}
-                style={{ height: "300px", width: "300px", objectFit: "cover" }}
+                style={{ height: "300px", width: "300px", objectFit: "contain", position: "absolute", top: "2%" }}
               />
 
-              {fabric !== null && (
-                <Typography mt="-40px">{item.price}€</Typography>
-              )}
 
-              <Button onClick={() => {
-                dispatch(addProductToCart([item]));
-                dispatch(
-                  updateSuccessNotification(
-                    i18n.t("notifications.success.updateCart")
-                  )
-                );
-              }} label={i18n.t("modules.product.addCart")} colorHover={Colors.NEON_YELLOW_TRANSPARENT} />
+              <div style={{ position: "absolute", rowGap: "10px", bottom: "10%", alignItems: "center", display: "flex", justifyContent: "center", flexDirection: "column" }}>
+                {fabric !== null && (
+                  <Typography >{item.price}&nbsp;&#183;&nbsp;€</Typography>
+                )}
+                <Button
 
+                  onClick={() => {
+                    dispatch(addProductToCart([item]));
+                    dispatch(
+                      updateSuccessNotification(
+                        i18n.t("notifications.success.updateCart")
+                      )
+                    );
+                  }} label={i18n.t("modules.product.addCart")} colorHover={Colors.NEON_YELLOW_TRANSPARENT} />
+              </div>
             </Box>
           </Box>
         );

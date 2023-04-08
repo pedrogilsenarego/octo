@@ -28,7 +28,7 @@ const Description = () => {
       {product !== null && (
         <Box display="flex" flexDirection="column" justifyContent="space-between">
           <Typography style={{ textTransform: "uppercase" }} fontWeight={800}>{categories[product].title}</Typography>
-          <Typography fontWeight={800}>{categories[product].price}&nbsp;&#183;&nbsp;€</Typography>
+          <Typography fontWeight={800}>{categories[product].price}&nbsp;€</Typography>
         </Box>
       )}
       {fabric !== null && (
@@ -54,7 +54,7 @@ const Description = () => {
       </div>
       {product !== null && (<Popup
         openPopup={infoPopup}
-        title={categories[product].title}
+        title={`${categories[product].title}&nbsp;&#183;&nbsp;${categories[product].price}€`}
         setOpenPopup={setInfoPopup}
         onClose={() => setInfoPopup(false)}
       >

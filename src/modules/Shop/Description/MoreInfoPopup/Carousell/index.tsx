@@ -107,7 +107,7 @@ const Carrousell = ({ images }: Props) => {
       {!errorImage && (
         <CarouselProvider
           infinite
-          naturalSlideHeight={50}
+          naturalSlideHeight={60}
           naturalSlideWidth={100}
           totalSlides={images.length}
           currentSlide={indexMini}
@@ -126,7 +126,7 @@ const Carrousell = ({ images }: Props) => {
                     style={{
                       width: "100%",
                       objectFit: "cover",
-                      height: "350px",
+                      height: "400px",
                       cursor: "Pointer",
                     }}
                     src={image}
