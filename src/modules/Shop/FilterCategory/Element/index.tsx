@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Category } from "../../../../constants/category";
 import { ProductContext } from "../../ProductContext";
 import { FabricsType } from "../../../../constants/fabrics";
@@ -11,8 +11,16 @@ interface Props {
 }
 
 const Element = ({ item, setText }: Props) => {
-  const { setFabric, setProduct } = useContext(ProductContext);
+  const { setFabric, setProduct, fabric, product } = useContext(ProductContext);
   const [loading, setLoading] = useState<boolean>(true);
+  const [click, setClick] = useState<boolean>(false)
+
+  useEffect(() => {
+    console.log("before")
+    setClick(false)
+    console.log("here")
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [click])
 
   return (
     <Box
@@ -24,6 +32,7 @@ const Element = ({ item, setText }: Props) => {
           setProduct(null);
           setFabric(item.id);
         }
+        setClick(true)
       }}
       display='flex'
       onLoad={() => setLoading(false)}
@@ -35,7 +44,7 @@ const Element = ({ item, setText }: Props) => {
         position: "relative",
         borderRadius: "50%",
         width: "100%",
-
+        border: click ? `solid 2px ${Colors.NEON_YELLOW}` : `solid 2px transparent}`,
         boxShadow: "0px 0px 10px 0px #0000001e",
         aspectRatio: 1,
       }}
@@ -64,10 +73,10 @@ const Element = ({ item, setText }: Props) => {
           borderRadius: "50%",
           opacity: loading ? 0 : 1,
           position: "absolute",
-          top: "-2.5%",
-          left: "-2.5%",
-          width: "105%",
-          height: "105%",
+          top: product !== null ? "-2.5%" : 0,
+          left: product !== null ? "-2.5%" : 0,
+          width: product !== null ? "105%" : "100%",
+          height: product !== null ? "105%" : "100%",
         }}
         onLoad={() => setLoading(false)}
       />

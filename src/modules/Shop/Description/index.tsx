@@ -75,10 +75,20 @@ const Description = () => {
             <Typography>{i18n.t("modules.product.moreInfo")}</Typography>
           </div>
           {moreInfo && (
-            <Detail
-              detail={categories[product].moreInfo.description}
-              title={i18n.t("modules.product.detail.description")}
-            />
+            <>
+              <Detail
+                detail={categories[product].moreInfo.description}
+                title={i18n.t("modules.product.detail.description")}
+              />
+              <Detail
+                detail={categories[product].moreInfo.dimensions}
+                title={i18n.t("modules.product.detail.dimensions")}
+              />
+              <Detail
+                detail={categories[product].moreInfo.washing}
+                title={i18n.t("modules.product.detail.washing")}
+              />
+            </>
           )}
         </>
       )}

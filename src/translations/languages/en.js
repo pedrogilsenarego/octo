@@ -58,8 +58,8 @@ export const content = {
           quantity: "Quantity",
           detail: {
             description: "Description",
-            instructions: "Instructions",
-            materials: "Materials",
+            dimensions: "Dimensions",
+            washing: "Washing",
           },
         },
       },
