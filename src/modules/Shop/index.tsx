@@ -20,7 +20,7 @@ const Shop = () => {
           alignItems: "center",
           justifyContent: "center",
           width: "100vw",
-
+          paddingBottom: "100px",
           paddingLeft: generalConstants.PADDING,
           paddingRight: generalConstants.PADDING,
           flexDirection: "column",

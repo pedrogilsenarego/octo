@@ -1,9 +1,7 @@
 limpar estado quando se troca de produto ou de tecido
 quando ha tecidos ou produtos a mais passa para a proxima fila
-pagina shop esta limitada no scrollPos
 bola amarela a volta do q se escolhe
 quando nao se seleciona nenhum item, as vezes ainda fica o cart disponivel para adicionar produtos
-o preco a escolher o tecido aparece 34$ | 45$
 +info Produto:{descrição, dimensoes, modo lavagem} 
 
 

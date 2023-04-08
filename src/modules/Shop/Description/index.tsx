@@ -11,7 +11,8 @@ import { fabrics } from "../../../constants/fabrics";
 import { Colors } from "../../../constants/pallete";
 
 const Description = () => {
-  const { product, fabric, infoPopup, setInfoPopup } = useContext(ProductContext);
+  const { product, fabric, infoPopup, setInfoPopup, selectedFabrics } =
+    useContext(ProductContext);
 
   return (
     <Box
@@ -26,48 +27,68 @@ const Description = () => {
       justifyContent='space-between'
     >
       {product !== null && (
-        <Box display="flex" flexDirection="column" justifyContent="space-between">
-          <Typography style={{ textTransform: "uppercase" }} fontWeight={800}>{categories[product].title}</Typography>
-          <Typography fontWeight={800}>{categories[product].price}&nbsp;€</Typography>
+        <Box
+          display='flex'
+          flexDirection='column'
+          justifyContent='space-between'
+        >
+          <Typography style={{ textTransform: "uppercase" }} fontWeight={800}>
+            {categories[product].title}
+          </Typography>
+          <Typography fontWeight={800}>
+            {categories[product].price}&nbsp;€
+          </Typography>
         </Box>
       )}
       {fabric !== null && (
-        <Box display="flex" justifyContent="start">
-          <Typography style={{ textTransform: "uppercase" }} fontWeight={800}>{fabrics[fabric].title}</Typography>
+        <Box
+          display='flex'
+          flexDirection='column'
+          justifyContent='space-between'
+        >
+          <Typography style={{ textTransform: "uppercase" }} fontWeight={800}>
+            {fabrics[fabric].title}
+          </Typography>
+          <Box display='flex' alignItems="center">
+            {selectedFabrics.map((item, pos) => {
+              return <Typography key={pos}>&nbsp;{item.price} | </Typography>;
+            })}
 
+            <Typography fontWeight={800}>&nbsp;€</Typography>
+          </Box>
         </Box>
       )}
 
-
       <Divider style={{ marginTop: "0px" }} />
-      <div >
-        <div >
+      <div>
+        <div>
           <FabricSelector />
         </div>
       </div>
       <Divider style={{ marginTop: "20px" }} />
-      <div
-        style={{ marginTop: "20px", cursor: "pointer" }}
-
-      >
+      <div style={{ marginTop: "20px", cursor: "pointer" }}>
         <Typography>{i18n.t("modules.product.moreInfo")}</Typography>
       </div>
-      {product !== null && (<Popup
-        openPopup={infoPopup}
-        title={`${categories[product].title}&nbsp;&#183;&nbsp;${categories[product].price}€`}
-        setOpenPopup={setInfoPopup}
-        onClose={() => setInfoPopup(false)}
-      >
-        <MoreInfoPopup />
-      </Popup>)}
-      {fabric !== null && (<Popup
-        openPopup={infoPopup}
-        title={fabrics[fabric].title}
-        setOpenPopup={setInfoPopup}
-        onClose={() => setInfoPopup(false)}
-      >
-        <MoreInfoPopup />
-      </Popup>)}
+      {product !== null && (
+        <Popup
+          openPopup={infoPopup}
+          title={`${categories[product].title}&nbsp;&#183;&nbsp;${categories[product].price}€`}
+          setOpenPopup={setInfoPopup}
+          onClose={() => setInfoPopup(false)}
+        >
+          <MoreInfoPopup />
+        </Popup>
+      )}
+      {fabric !== null && (
+        <Popup
+          openPopup={infoPopup}
+          title={fabrics[fabric].title}
+          setOpenPopup={setInfoPopup}
+          onClose={() => setInfoPopup(false)}
+        >
+          <MoreInfoPopup />
+        </Popup>
+      )}
     </Box>
   );
 };

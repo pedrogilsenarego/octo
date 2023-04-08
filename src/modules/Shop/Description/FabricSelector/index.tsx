@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Button from "../../../../components/Buttons/Button";
 import { i18n } from "../../../../translations/i18n";
 import { ProductContext } from "../../ProductContext";
@@ -9,9 +9,9 @@ import { useDispatch } from "react-redux";
 import { addProductToCart } from "../../../../slicer/cart/cart.actions";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
 
+
 const FabricSelector = () => {
-  const { product, fabric } = useContext(ProductContext);
-  const [selectedFabrics, setSelectedFabrics] = useState<Product[]>([]);
+  const { product, fabric, selectedFabrics, setSelectedFabrics } = useContext(ProductContext);
   const dispatch = useDispatch();
 
   const productsAvailable: Product[] = products.filter(
