@@ -17,6 +17,8 @@ import Cart from "./Cart";
 import DrawerMine from "../../components/Drawer";
 import { CartProduct } from "../../slicer/cart/cart.types";
 import { State } from "../../slicer/types";
+import { BiHomeAlt2 } from "react-icons/bi"
+
 
 const MenuBar = () => {
   const [cartDrawer, setCartDrawer] = useState<boolean>(false);
@@ -98,13 +100,6 @@ const MenuBar = () => {
               columnGap='40px'
               alignItems='center'
             >
-              {location.pathname !== ROUTE_PATHS.HOME && (
-                <Button
-                  title={i18n.t("menuBar.home")}
-                  color={MENU_COLOR}
-                  onClick={() => navigate(ROUTE_PATHS.HOME)}
-                />
-              )}
               {location.pathname === ROUTE_PATHS.HOME && (<>
                 <Button
                   color={MENU_COLOR}
@@ -126,16 +121,25 @@ const MenuBar = () => {
               </>)}
 
 
-              <Box display='flex' columnGap='12px' alignItems='center' justifyContent="center">
-                <Typography color={MENU_COLOR} className="icon" style={{ cursor: "pointer" }} onClick={() => handleChangeLang()}>
-                  {lang}
-                </Typography>
-                <BsInstagram
-                  className='icon'
-                  size="1.4rem"
-                  color={MENU_COLOR}
-                  style={{ cursor: "pointer" }}
-                />
+              <Box display='flex' columnGap='12px' alignItems='center' justifyContent="center">{
+                location.pathname === ROUTE_PATHS.HOME && (<>
+                  <Typography color={MENU_COLOR} className="icon" style={{ cursor: "pointer" }} onClick={() => handleChangeLang()}>
+                    {lang}
+                  </Typography>
+                  <BsInstagram
+                    className='icon'
+                    size="1.4rem"
+                    color={MENU_COLOR}
+                    style={{ cursor: "pointer" }}
+                  /></>)}
+                {location.pathname !== ROUTE_PATHS.HOME && (
+                  <BiHomeAlt2
+                    onClick={() => navigate(ROUTE_PATHS.HOME)}
+                    className='icon'
+                    size="1.4rem"
+                    color={MENU_COLOR}
+                    style={{ cursor: "pointer" }}
+                  />)}
                 <div
 
                   style={{
