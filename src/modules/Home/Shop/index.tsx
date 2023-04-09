@@ -1,16 +1,18 @@
-import { Box, Container, Grid, Typography } from "@mui/material"
-import { generalConstants } from "../../../constants/general"
-import Button from "../../../components/Buttons/Button"
-import React from "react"
-import { categories } from "../../../constants/category"
-import { fabrics } from "../../../constants/fabrics"
-import { Colors } from "../../../constants/pallete"
-import { i18n } from "../../../translations/i18n"
-
-
-
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import Button from "../../../components/Buttons/Button";
+import React from "react";
+import { categories } from "../../../constants/category";
+import { fabrics } from "../../../constants/fabrics";
+import { Colors } from "../../../constants/pallete";
+import { i18n } from "../../../translations/i18n";
+import Element from "./Element";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../../constants/routes";
 
 const Shop = () => {
+  const Theme = useTheme()
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
+  const navigate = useNavigate()
 
   return (
     <Box
@@ -22,101 +24,87 @@ const Shop = () => {
         height: "100vh",
         padding: "15vw",
         flexDirection: "column",
-
       }}
     >
-      <Typography style={{ textTransform: "uppercase", fontWeight: 800, fontSize: "1.2rem" }}>Products</Typography>
+      <Typography
+        style={{
+          textTransform: "uppercase",
+          fontWeight: 800,
+          fontSize: "1.2rem",
+        }}
+      >
+        Products
+      </Typography>
 
       <Grid
         container
         style={{ borderRadius: "10px", marginTop: "10px" }}
-        columnSpacing="15px"
-        rowSpacing="20px"
+        columnSpacing='15px'
+        rowSpacing='20px'
       >
         {categories.map((item, pos) => {
-          const img = new Image();
-          img.src = item.icon;
-          const aspectRatio = img.naturalHeight / img.naturalWidth;
+
           return (
             <Grid
               key={pos}
               item
               justifyContent='center'
               alignItems='center'
-              xs={12 / 10}
+              xs={12 / 5} sm={12 / 10}
               style={{ cursor: "pointer" }}
             >
-              <Box
-
-                display="flex"
-
-                justifyContent="center"
-                alignItems="center"
-                style={{
-                  borderRadius: "50%",
-                  width: "100%",
-                  boxShadow: "0px 0px 10px 0px #0000001e",
-                  paddingBottom: `${aspectRatio * 100}%`,
-                  backgroundImage: `url(${item.icon})`,
-                  backgroundSize: "cover"
-                }}
-              >
-              </Box>
+              <Element key={pos} item={item} />
             </Grid>
           );
         })}
       </Grid>
-      <Typography mt="11vh" style={{ fontSize: "1.2rem", textTransform: "uppercase", fontWeight: 800 }}>Patterns</Typography>
+      <Typography
+        mt={mobile ? "5vh" : '11vh'}
+        style={{
+          fontSize: "1.2rem",
+          textTransform: "uppercase",
+          fontWeight: 800,
+        }}
+      >
+        Patterns
+      </Typography>
       <Grid
         container
-        style={{ borderRadius: "10px", marginTop: "-10px", }}
-        columnSpacing={5}
-        rowSpacing={5}
+        style={{ borderRadius: "10px", marginTop: "-10px" }}
+        columnSpacing={mobile ? 2 : 5}
+        rowSpacing={mobile ? 3 : 5}
       >
         {fabrics.map((item, pos) => {
-          const img = new Image();
-          img.src = item.image;
-          const aspectRatio = img.naturalHeight / img.naturalWidth;
           return (
             <Grid
               key={pos}
               item
               justifyContent='center'
               alignItems='center'
-              xs={12 / 8}
+              xs={12 / 4} sm={12 / 8}
               style={{ cursor: "pointer" }}
             >
-
-
-              <Box
-
-                display="flex"
-
-                justifyContent="center"
-                alignItems="center"
-                style={{
-                  borderRadius: "50%",
-                  width: "100%",
-
-                  boxShadow: "0px 0px 10px 0px #0000001e",
-                  paddingBottom: `${aspectRatio * 100}%`,
-                  backgroundImage: `url(${item.image})`,
-                  backgroundSize: "cover"
-                }}
-              >
-              </Box>
+              <Element key={pos} item={item} />
             </Grid>
           );
         })}
-        <div style={{ marginTop: "100px", display: "flex", width: "100%", justifyContent: "center" }}>
-
-          <Button colorHover={Colors.NEON_YELLOW_TRANSPARENT} label={i18n.t("modules.home.shopOurCollection")} />
+        <div
+          style={{
+            marginTop: "100px",
+            display: "flex",
+            width: "100%",
+            justifyContent: "center",
+          }}
+        >
+          <Button
+            onClick={() => navigate(ROUTE_PATHS.SHOP)}
+            colorHover={Colors.NEON_YELLOW_TRANSPARENT}
+            label={i18n.t("modules.home.shopOurCollection")}
+          />
         </div>
       </Grid>
-
-
     </Box>
-  )
-}
+  );
+};
 
-export default Shop
+export default Shop;
