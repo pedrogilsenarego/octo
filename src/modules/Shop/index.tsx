@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material"
+import { Box, Grid, useTheme, useMediaQuery } from "@mui/material"
 import { generalConstants } from "../../constants/general"
 import FilterCategory from "./FilterCategory"
 import Description from "./Description"
@@ -6,11 +6,13 @@ import ImageShow from "./ImageShow"
 import React from "react"
 import { ProductContextProvider } from "./ProductContext"
 import MenuBar from "../../presentional/MenuBar"
-import { Colors } from "../../constants/pallete"
+
 
 
 
 const Shop = () => {
+  const Theme = useTheme()
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
 
   return (
     <ProductContextProvider>
@@ -30,15 +32,15 @@ const Shop = () => {
 
 
 
-        <Grid mt="40px" container columnSpacing={2} rowSpacing="40px" alignItems="spaceBetween" >
+        <Grid mt={mobile ? "0px" : "40px"} container columnSpacing={2} rowSpacing="40px" alignItems="spaceBetween" >
           <Grid item xs={12}>
             <FilterCategory />
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <ImageShow />
           </Grid>
-          <Grid item xs={6} >
+          <Grid item xs={12} sm={6}>
             <Description />
           </Grid>
         </Grid>

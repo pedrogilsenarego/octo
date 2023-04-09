@@ -1,4 +1,4 @@
-import { Button as MuiButton, Typography } from "@mui/material";
+import { Button as MuiButton, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import { Colors } from "../../../constants/pallete";
 
@@ -18,6 +18,9 @@ interface Props {
 const Button = ({ label, onClick, borderRadius, children, borderRadiusRight, disabled, color, colorHover }: Props) => {
   const [buttonHover, setButtonHover] = useState<boolean>(false)
   const bgColor = buttonHover ? colorHover : color
+  const Theme = useTheme()
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
+
   return (
     <>
       <MuiButton
@@ -40,7 +43,7 @@ const Button = ({ label, onClick, borderRadius, children, borderRadiusRight, dis
         {children}
         <Typography
           style={{
-            fontSize: "12px",
+            fontSize: mobile ? "10px" : "12px",
             marginLeft: "10px",
             textTransform: "uppercase",
             letterSpacing: "5px",

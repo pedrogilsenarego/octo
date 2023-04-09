@@ -1,4 +1,4 @@
-import { Grid, Box, Typography } from "@mui/material";
+import { Grid, Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { i18n } from "../../../translations/i18n";
 import { categories } from "../../../constants/category";
 import { fabrics } from "../../../constants/fabrics";
@@ -9,13 +9,16 @@ import { Colors } from "../../../constants/pallete";
 const FilterCategory = () => {
   const [categoryText, setCategoryText] = useState("");
   const [filterText, setFilterText] = useState("");
+  const Theme = useTheme()
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
+
 
   return (
     <div
       style={{
         borderBottom: `solid 2px ${Colors.PRETTY_CREAM}`,
-        paddingLeft: "18vw",
-        paddingRight: "18vw",
+        paddingLeft: mobile ? "0vw" : "18vw",
+        paddingRight: mobile ? "0vw" : "18vw",
         paddingTop: "10px",
         paddingBottom: "60px",
         marginBottom: "10px"
@@ -45,7 +48,8 @@ const FilterCategory = () => {
                     item
                     justifyContent='center'
                     alignItems='center'
-                    xs={12 / 10}
+                    xs={12 / 5}
+                    sm={12 / 10}
                     style={{ cursor: "pointer" }}
                   >
                     <Element key={pos} setText={setCategoryText} item={item} />
@@ -55,7 +59,7 @@ const FilterCategory = () => {
             </Grid>
           </Box>
         </Grid>
-        <Grid item xs={12} mt="20px">
+        <Grid item xs={12} mt={mobile ? "0px" : "20px"}>
           <Box display='flex' flexDirection='column' rowGap={2} >
             <Box display='flex' columnGap={0} alignItems='center' justifyContent="center">
               <Typography fontWeight={800}>
@@ -78,7 +82,8 @@ const FilterCategory = () => {
                     item
                     justifyContent='center'
                     alignItems='center'
-                    xs={12 / 8}
+                    xs={12 / 4}
+                    sm={12 / 8}
                     style={{ cursor: "pointer" }}
                   >
                     <Element key={pos} setText={setFilterText} item={item} />

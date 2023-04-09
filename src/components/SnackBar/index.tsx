@@ -6,6 +6,7 @@ import { BiErrorCircle } from "react-icons/bi";
 import { GiCheckMark } from "react-icons/gi";
 import * as Styled from "./styles";
 import { Colors } from "../../constants/pallete";
+import { Typography } from "@mui/material";
 
 interface SnackbarState {
   open: boolean;
@@ -96,7 +97,9 @@ const DirectionSnackbar = () => {
         autoHideDuration={4000}
       >
         <Styled.Box bgcolor={snackbar.bgcolor}>
-          {snackbar.icon} {snackbar.message}
+          <Typography color="white" fontSize="0.8rem">
+            {snackbar.icon} {snackbar.message}
+          </Typography>
         </Styled.Box>
       </Snackbar>
     </>
