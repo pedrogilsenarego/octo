@@ -5,7 +5,7 @@ import Incrementor from "../../../components/Incrementor";
 import { categories } from "../../../constants/category";
 import { fabrics } from "../../../constants/fabrics";
 import { Colors } from "../../../constants/pallete";
-import { clearCart } from "../../../slicer/cart/cart.actions";
+import { clearCart, updateCart } from "../../../slicer/cart/cart.actions";
 import { CartProduct } from "../../../slicer/cart/cart.types";
 import { State } from "../../../slicer/types";
 import { i18n } from "../../../translations/i18n";
@@ -24,7 +24,7 @@ const Cart = () => {
       totalValue += cartProduct.product.price * cartProduct.value;
     }
     return totalValue;
-  }
+  };
 
   return (
     <Box
@@ -64,7 +64,13 @@ const Cart = () => {
                   {fabrics[item.product.pattern].title}
                 </Typography>
               </Box>
-              <Incrementor initialValue={item.value} />
+              <Incrementor
+                key={item.product.uid}
+                updateValue={(value: number) => {
+                  dispatch(updateCart(value, item.product.uid))
+                }}
+                initialValue={item.value}
+              />
             </Box>
           );
         })
@@ -73,20 +79,23 @@ const Cart = () => {
       )}
 
       <Divider />
-      <Box display="flex" justifyContent="end" width="100%" mt="10px">
-        <Typography>{i18n.t("cartDrawer.totalPrice")} {getTotalValue()} €</Typography>
+      <Box display='flex' justifyContent='end' width='100%' mt='10px'>
+        <Typography>
+          {i18n.t("cartDrawer.totalPrice")} {getTotalValue()} €
+        </Typography>
       </Box>
-      <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", rowGap: "20px" }}>
-
+      <div
+        style={{
+          marginTop: "40px",
+          display: "flex",
+          flexDirection: "column",
+          rowGap: "20px",
+        }}
+      >
         <Button
           colorHover={Colors.NEON_YELLOW_TRANSPARENT}
           label={i18n.t("cartDrawer.clearCart")}
           onClick={() => dispatch(clearCart())}
-          disabled={cartProducts.length <= 0}
-        />
-        <Button
-          colorHover={Colors.NEON_YELLOW_TRANSPARENT}
-          label={i18n.t("cartDrawer.updateCart")}
           disabled={cartProducts.length <= 0}
         />
         <Button

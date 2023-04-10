@@ -7,6 +7,22 @@ export const addProductToCart = (product: Product[]) => ({
   payload: product,
 });
 
+export const updateCart = (value:number, id:string) => ({
+  type:cartTypes.UPDATE_CART,
+  payload:{value, id}
+})
+
+export const deleteProductCart = (id:string) => ({
+  type:cartTypes.DELETE_PRODUCT,
+  payload:id
+})
+
+export const changeValueProductCart = (value:number,id:string) =>({
+type:cartTypes.CHANGE_VALUE,
+payload:{value,id}
+})
+
+
 export const clearCart = () => ({
   type: cartTypes.CLEAR_CART
 });
