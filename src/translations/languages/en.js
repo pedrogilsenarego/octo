@@ -1,6 +1,16 @@
 export const content = {
   en: {
     translations: {
+      forms: {
+        required: "Required",
+        phoneVal: "Phone number not valid",
+        movePayment: "Move to payment",
+        name: "Name",
+        address: "Address",
+        postCode: "Post Code",
+        email: "email",
+        phone: "phone",
+      },
       cartDrawer: {
         title: "Cart",
         checkout: "Checkout",

@@ -1,6 +1,11 @@
 export const content = {
   pt: {
     translations: {
+      forms: {
+        required: "Required",
+        phone: "Phone number not valid",
+        movePayment: "Move to payment",
+      },
       cartDrawer: {
         title: "Carrinho",
         clearCart: "Limpar Carrinho",

@@ -19,7 +19,6 @@ interface Props {
   title?: string;
   openPopup: boolean;
   setOpenPopup?: (openPopup: boolean) => void;
-
   actions?: Actions[];
   onClose?: () => void;
   fullScreen?: boolean;

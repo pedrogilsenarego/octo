@@ -9,8 +9,11 @@ import { clearCart, updateCart } from "../../../slicer/cart/cart.actions";
 import { CartProduct } from "../../../slicer/cart/cart.types";
 import { State } from "../../../slicer/types";
 import { i18n } from "../../../translations/i18n";
+import Checkout from "./Checkout";
+import { useState } from "react";
 
 const Cart = () => {
+  const [checkoutInfo, setCheckoutInfo] = useState<boolean>(false);
   const cartProducts = useSelector<State, CartProduct[]>(
     (state) => state.cart.cartItems
   );
@@ -67,7 +70,7 @@ const Cart = () => {
               <Incrementor
                 key={item.product.uid}
                 updateValue={(value: number) => {
-                  dispatch(updateCart(value, item.product.uid))
+                  dispatch(updateCart(value, item.product.uid));
                 }}
                 initialValue={item.value}
               />
@@ -84,6 +87,7 @@ const Cart = () => {
           {i18n.t("cartDrawer.totalPrice")} {getTotalValue()} €
         </Typography>
       </Box>
+
       <div
         style={{
           marginTop: "40px",
@@ -92,18 +96,25 @@ const Cart = () => {
           rowGap: "20px",
         }}
       >
-        <Button
-          colorHover={Colors.NEON_YELLOW_TRANSPARENT}
-          label={i18n.t("cartDrawer.clearCart")}
-          onClick={() => dispatch(clearCart())}
-          disabled={cartProducts.length <= 0}
-        />
-        <Button
-          color={Colors.SOFT_PINK}
-          colorHover={Colors.NEON_YELLOW_TRANSPARENT}
-          label={i18n.t("cartDrawer.checkout")}
-          disabled={cartProducts.length <= 0}
-        />
+        {checkoutInfo ? (
+          <Checkout />
+        ) : (
+          <>
+            <Button
+              colorHover={Colors.NEON_YELLOW_TRANSPARENT}
+              label={i18n.t("cartDrawer.clearCart")}
+              onClick={() => dispatch(clearCart())}
+              disabled={cartProducts.length <= 0}
+            />
+            <Button
+              onClick={() => setCheckoutInfo(true)}
+              color={Colors.SOFT_PINK}
+              colorHover={Colors.NEON_YELLOW_TRANSPARENT}
+              label={i18n.t("cartDrawer.checkout")}
+              disabled={cartProducts.length <= 0}
+            />
+          </>
+        )}
       </div>
     </Box>
   );

@@ -41,8 +41,9 @@ const DrawerMine = ({
       component='div'
       sx={{
         minWidth: minWidth ?? "30vw",
-        width: fullWidth ? "100vw" : width,
-        height: fullHeight ? "100vh" : "auto",
+        minHeight: fullHeight ? "100vh" : "auto",
+        height: "auto",
+        overflowY: "auto",
         backgroundColor: Colors.PRETTY_CREAM_TRANSPARENT,
 
 
