@@ -3,8 +3,14 @@ export const content = {
     translations: {
       forms: {
         required: "Required",
-        phone: "Phone number not valid",
+        phoneVal: "Phone number not valid",
         movePayment: "Move to payment",
+        name: "Name",
+        address: "Address",
+        postCode: "Post Code",
+        email: "email",
+        emailVal: "Must be a valid Email",
+        phone: "phone",
       },
       cartDrawer: {
         title: "Carrinho",

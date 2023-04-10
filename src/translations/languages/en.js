@@ -8,8 +8,9 @@ export const content = {
         name: "Name",
         address: "Address",
         postCode: "Post Code",
-        email: "email",
-        phone: "phone",
+        email: "Email",
+        emailVal: "Must be a valid Email",
+        phone: "Phone",
       },
       cartDrawer: {
         title: "Cart",

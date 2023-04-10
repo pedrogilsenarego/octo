@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
 import ButtonForm from "../../../../components/Buttons/ButtonFormik";
 import Textfield from "../../../../components/Inputs/TextField";
+import { Colors } from "../../../../constants/pallete";
 
 const Checkout = () => {
   const INITIAL_FORM_STATE = {
@@ -49,7 +50,7 @@ const Checkout = () => {
               sx={{ mt: "20px" }}
               columnGap={2}
             >
-              <ButtonForm label={i18n.t("forms.movePayment")} />
+              <ButtonForm colorHover={Colors.NEON_YELLOW_TRANSPARENT} label={i18n.t("forms.movePayment")} />
             </Box>
           </Box>
         </>

@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 import { Colors } from "../../constants/pallete";
 import { useState } from "react";
+import "./index.css"
 
 
 type Anchor = "top" | "left" | "bottom" | "right";
@@ -37,6 +38,7 @@ const DrawerMine = ({
 }: Props) => {
   const list = () => (
     <Box
+      className="drawer"
 
       component='div'
       sx={{
