@@ -7,6 +7,10 @@ import Textfield from "../../../../components/Inputs/TextField";
 import { Colors } from "../../../../constants/pallete";
 import { useState } from "react";
 import Button from "../../../../components/Buttons/Button";
+import { useSelector } from "react-redux";
+import { State } from "../../../../slicer/types";
+import { CartProduct } from "../../../../slicer/cart/cart.types";
+import { getTotalValue } from "../Utils/totalValue";
 
 const Checkout = () => {
   const INITIAL_FORM_STATE = {
@@ -18,14 +22,39 @@ const Checkout = () => {
   };
   const [paymentMethods, setPaymentMethods] = useState<boolean>(false);
   const [details, setDetails] = useState({ ...INITIAL_FORM_STATE });
+  const cartProducts = useSelector<State, CartProduct[]>(
+    (state) => state.cart.cartItems
+  );
 
   const handleSubmit = (values: any) => {
     setPaymentMethods(true);
     setDetails(values);
   };
-  const handleMbWay = (values: any) => {
-    console.log(details.phone);
+  const handleMbWay = () => {
+    const data = {
+      chave: "xxxx-xxxx-xxxx-xxxx-xxxx",
+
+      alias: details.phone,
+      valor: 34.32,
+      id: "dfdeweeewwe",
+      descricao: "exemplo eu pago"
+    };
+
+    const options = {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+
+    fetch('https://sandbox.eupago.pt/clientes/rest_api/mbway/create', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
   };
+
   const renderPaymentMethods = () => {
     return (
       <Button

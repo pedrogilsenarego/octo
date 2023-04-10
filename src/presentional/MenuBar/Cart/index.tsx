@@ -18,6 +18,7 @@ import { i18n } from "../../../translations/i18n";
 import Checkout from "./Checkout";
 import { useState } from "react";
 import { AiFillCloseSquare } from "react-icons/ai";
+import { getTotalValue } from "./Utils/totalValue";
 interface Props {
   closeCart?: (signal: boolean) => void;
 }
@@ -34,13 +35,7 @@ const Cart = ({ closeCart }: Props) => {
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     event.stopPropagation();
   };
-  const getTotalValue = () => {
-    let totalValue = 0;
-    for (const cartProduct of cartProducts) {
-      totalValue += cartProduct.product.price * cartProduct.value;
-    }
-    return totalValue;
-  };
+
 
   return (
     <Box
@@ -112,7 +107,7 @@ const Cart = ({ closeCart }: Props) => {
       <Divider />
       <Box display='flex' justifyContent='end' width='100%' mt='10px'>
         <Typography>
-          {i18n.t("cartDrawer.totalPrice")} {getTotalValue()} €
+          {i18n.t("cartDrawer.totalPrice")} {getTotalValue(cartProducts)} €
         </Typography>
       </Box>
 

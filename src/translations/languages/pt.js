@@ -88,6 +88,8 @@ export const content = {
           6: "Bolsa de Carrinho",
           7: "Organizador de Berço",
           8: "Protetor de Berço",
+          9: "Babete Colar",
+          10: "Saco de bolsa",
         },
         fabrics: {
           1: "Vichy Powder Pink",

@@ -1,13 +1,3 @@
-import icon1 from "../assets/icons/categorias/icon1.png";
-import icon2 from "../assets/icons/categorias/OCTO_Icones-02.png";
-import icon3 from "../assets/icons/categorias/OCTO_Icones-03.png";
-import icon4 from "../assets/icons/categorias/OCTO_Icones-04.png";
-import icon5 from "../assets/icons/categorias/OCTO_Icones-05.png";
-import icon6 from "../assets/icons/categorias/OCTO_Icones-06.png";
-import icon7 from "../assets/icons/categorias/OCTO_Icones-07.png";
-import icon8 from "../assets/icons/categorias/OCTO_Icones-08.png";
-import icon9 from "../assets/icons/categorias/OCTO_Icones-09.png";
-
 import t7 from "../assets/t7.jpeg"
 
 import { i18n } from "../translations/i18n";
@@ -391,7 +381,7 @@ export const categories:Category[] = [
   {
     id: 0,
     title: i18n.t("constants.categories.1"),
-    icon: icon9,
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681156622/Octo/ProductBandana/OCTO_Icones-09_mgzqwg.png",
     price: 34,
     moreInfo: {
       description: "Teste",
@@ -403,7 +393,7 @@ export const categories:Category[] = [
   {
     id: 1,
     title: i18n.t("constants.categories.2"),
-    icon: icon2,
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681157030/Octo/pacifierClip/OCTO_Icones-02_i2gtuj.png",
     price: 345,
     moreInfo: {
       description: "Teste",
@@ -415,7 +405,7 @@ export const categories:Category[] = [
   {
     id: 2,
     title: i18n.t("constants.categories.3"),
-    icon: icon3,
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681157109/Octo/maternityBag/OCTO_Icon_maternity_bag_e8ckwo.png",
     price: 34,
     moreInfo: {
       description: "Teste",
@@ -427,7 +417,7 @@ export const categories:Category[] = [
   {
     id: 3,
     title: i18n.t("constants.categories.4"),
-    icon: icon4,
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681157251/Octo/sleepingBag/OCTO_Icones-04_bzp952.png",
     price: 34,
     moreInfo: {
       description: "Teste",
@@ -440,7 +430,7 @@ export const categories:Category[] = [
     id: 4,
     price: 34,
     title: i18n.t("constants.categories.5"),
-    icon: icon5,
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681157322/Octo/blanket/OCTO_Icones-05_r7tfdz.png",
     moreInfo: {
       description: "Teste",
       dimensions: "DIM",
@@ -451,7 +441,7 @@ export const categories:Category[] = [
   {
     id: 5,
       title: i18n.t("constants.categories.6"),
-    icon: icon6,
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681157429/Octo/strollerPocket/OCTO_Icones-06_pquc35.png",
     price: 34,
     moreInfo: {
       description: "Teste",
@@ -463,7 +453,7 @@ export const categories:Category[] = [
   {
     id: 6,
      title: i18n.t("constants.categories.7"),
-    icon: icon7,
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681157513/Octo/bedPocket/OCTO_Icones-07_linnwn.png",
     price: 34,
     moreInfo: {
       description: "Teste",
@@ -475,7 +465,7 @@ export const categories:Category[] = [
   {
     id: 7,
      title: i18n.t("constants.categories.8"),
-    icon: icon8,
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681157586/Octo/bedBumper/OCTO_Icones-08_xvw0tt.png",
     price: 34,
     moreInfo: {
       description: "Teste",
@@ -488,7 +478,7 @@ export const categories:Category[] = [
   {
     id: 8,
     title: i18n.t("constants.categories.9"),
-    icon: icon1,
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681156482/Octo/CollarBib/OCTO_Icon_folho_xhxyds.png",
     price: 34,
     moreInfo: {
       description: "Teste",
@@ -499,8 +489,8 @@ export const categories:Category[] = [
   },
   {
     id: 9,
-    title: i18n.t("constants.categories.9"),
-    icon: icon1,
+    title: i18n.t("constants.categories.10"),
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681157661/Octo/strollerBag/OCTO_Icones-03_leqgkn.png",
     price: 34,
     moreInfo: {
       description: "Teste",
