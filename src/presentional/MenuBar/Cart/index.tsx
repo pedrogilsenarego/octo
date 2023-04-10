@@ -1,4 +1,10 @@
-import { Box, Divider, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../../../components/Buttons/Button";
 import Incrementor from "../../../components/Incrementor";
@@ -11,12 +17,19 @@ import { State } from "../../../slicer/types";
 import { i18n } from "../../../translations/i18n";
 import Checkout from "./Checkout";
 import { useState } from "react";
+import { AiFillCloseSquare } from "react-icons/ai";
+interface Props {
+  closeCart?: (signal: boolean) => void;
+}
 
-const Cart = () => {
+const Cart = ({ closeCart }: Props) => {
   const [checkoutInfo, setCheckoutInfo] = useState<boolean>(false);
   const cartProducts = useSelector<State, CartProduct[]>(
     (state) => state.cart.cartItems
   );
+
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const dispatch = useDispatch();
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     event.stopPropagation();
@@ -34,24 +47,36 @@ const Cart = () => {
       onWheel={handleWheel}
       display='flex'
       flexDirection='column'
-      rowGap={1}
-      padding='2rem'
+      rowGap={mobile ? 0 : 1}
+      padding={mobile ? "1rem" : "2rem"}
     >
-      <Typography
-        mb='20px'
-        fontSize='2rem'
-        fontWeight={800}
-        style={{ textTransform: "uppercase" }}
-      >
-        {i18n.t("cartDrawer.title")}
-      </Typography>
+      <Box display='flex' justifyContent='space-between' alignItems='center' >
+        <Typography
+
+          mb={mobile ? "0px" : '20px'}
+          fontSize='2rem'
+          fontWeight={800}
+          style={{ textTransform: "uppercase" }}
+        >
+          {i18n.t("cartDrawer.title")}
+        </Typography>
+        {closeCart && (
+          <AiFillCloseSquare
+            onClick={() => closeCart(false)}
+            className='icon'
+            size='2rem'
+            color={Colors.BLACKISH}
+            style={{ cursor: "pointer" }}
+          />
+        )}
+      </Box>
       {cartProducts.length > 0 ? (
         cartProducts?.map((item, pos) => {
           return (
             <Box
               key={pos}
               display='flex'
-              columnGap={4}
+              columnGap={mobile ? 2 : 4}
               alignItems='center'
               justifyContent='space-between'
             >
@@ -62,7 +87,10 @@ const Cart = () => {
                   src={item.product.icon}
                   alt=''
                 />
-                <Typography style={{ textTransform: "uppercase" }}>
+                <Typography
+                  fontSize={mobile ? "0.7rem" : "1rem"}
+                  style={{ textTransform: "uppercase" }}
+                >
                   {categories[item.product.category].title}-
                   {fabrics[item.product.pattern].title}
                 </Typography>

@@ -6,7 +6,7 @@ import { Colors } from "../../../constants/pallete";
 
 interface Props {
   label: string;
-  onClick?: () => void;
+  onClick?: any;
   borderRadius?: string;
   children?: JSX.Element;
   borderRadiusRight?: boolean

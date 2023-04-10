@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Divider, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../translations/i18n";
 import { AiOutlineShopping } from "react-icons/ai";
 import { VscMenu } from "react-icons/vsc";
@@ -17,11 +17,11 @@ import Cart from "./Cart";
 import DrawerMine from "../../components/Drawer";
 import { CartProduct } from "../../slicer/cart/cart.types";
 import { State } from "../../slicer/types";
-import { BiHomeAlt2 } from "react-icons/bi"
-
+import { BiHomeAlt2 } from "react-icons/bi";
 
 const MenuBar = () => {
   const [cartDrawer, setCartDrawer] = useState<boolean>(false);
+  const [mobileDrawer, setMobileDrawer] = useState<boolean>(false);
 
   const theme = useTheme();
   const navigate = useNavigate();
@@ -100,48 +100,62 @@ const MenuBar = () => {
               columnGap='40px'
               alignItems='center'
             >
-              {location.pathname === ROUTE_PATHS.HOME && (<>
-                <Button
-                  color={MENU_COLOR}
-                  title={i18n.t("menuBar.about")}
-                  onClick={() => handleClick(1)}
-                />
-
-                <Button
-                  color={MENU_COLOR}
-                  title={i18n.t("menuBar.collection")}
-                  onClick={() => handleClick(2)}
-                />
-
-                <Button
-                  color={MENU_COLOR}
-                  title={i18n.t("menuBar.store")}
-                  onClick={() => navigate(ROUTE_PATHS.SHOP)}
-                />
-              </>)}
-
-
-              <Box display='flex' columnGap='12px' alignItems='center' justifyContent="center">{
-                location.pathname === ROUTE_PATHS.HOME && (<>
-                  <Typography color={MENU_COLOR} className="icon" style={{ cursor: "pointer" }} onClick={() => handleChangeLang()}>
-                    {lang}
-                  </Typography>
-                  <BsInstagram
-                    className='icon'
-                    size="1.4rem"
+              {location.pathname === ROUTE_PATHS.HOME && (
+                <>
+                  <Button
                     color={MENU_COLOR}
-                    style={{ cursor: "pointer" }}
-                  /></>)}
+                    title={i18n.t("menuBar.about")}
+                    onClick={() => handleClick(1)}
+                  />
+
+                  <Button
+                    color={MENU_COLOR}
+                    title={i18n.t("menuBar.collection")}
+                    onClick={() => handleClick(2)}
+                  />
+
+                  <Button
+                    color={MENU_COLOR}
+                    title={i18n.t("menuBar.store")}
+                    onClick={() => navigate(ROUTE_PATHS.SHOP)}
+                  />
+                </>
+              )}
+
+              <Box
+                display='flex'
+                columnGap='12px'
+                alignItems='center'
+                justifyContent='center'
+              >
+                {location.pathname === ROUTE_PATHS.HOME && (
+                  <>
+                    <Typography
+                      color={MENU_COLOR}
+                      className='icon'
+                      style={{ cursor: "pointer" }}
+                      onClick={() => handleChangeLang()}
+                    >
+                      {lang}
+                    </Typography>
+                    <BsInstagram
+                      className='icon'
+                      size='1.4rem'
+                      color={MENU_COLOR}
+                      style={{ cursor: "pointer" }}
+                    />
+                  </>
+                )}
                 {location.pathname !== ROUTE_PATHS.HOME && (
                   <BiHomeAlt2
                     onClick={() => navigate(ROUTE_PATHS.HOME)}
                     className='icon'
-                    size="1.4rem"
+                    size='1.4rem'
                     color={MENU_COLOR}
                     style={{ cursor: "pointer" }}
-                  />)}
+                  />
+                )}
                 <div
-
                   style={{
                     position: "relative",
                     display: "flex",
@@ -157,7 +171,6 @@ const MenuBar = () => {
                       }}
                     >
                       <Typography
-
                         fontWeight={800}
                         fontSize='12px'
                         color={MENU_COLOR}
@@ -195,20 +208,128 @@ const MenuBar = () => {
 
   const renderMobile = () => {
     return (
-      <Box
-        display='flex'
-        alignItems='center'
-        justifyContent='flex-end'
-        style={{
-          zIndex: 1000,
-          position: "absolute",
-          top: "30px",
-          width: "100%",
-          paddingRight: "30px",
-        }}
-      >
-        <VscMenu size='35px' color={Colors.PRETTY_CREAM} />
-      </Box>
+      <>
+        <Box
+          display='flex'
+          alignItems='center'
+          justifyContent='flex-end'
+          style={{
+            zIndex: 1000,
+            position: "absolute",
+            top: "30px",
+            width: "100%",
+            paddingRight: "30px",
+          }}
+        >
+          <VscMenu
+            size='35px'
+            color={Colors.PRETTY_CREAM}
+            onClick={() => setMobileDrawer(true)}
+          />
+        </Box>
+        <DrawerMine
+          fullHeight
+          position='right'
+          openDrawer={mobileDrawer}
+          setOpenDrawer={setMobileDrawer}
+        >
+          <Box mt="20px" padding='20px' display="flex" flexDirection="column" rowGap={4} justifyContent="center" alignItems="center">
+            <Divider style={{ width: "80%" }} />
+            <Typography
+              style={{ textTransform: "uppercase" }}
+              fontWeight={800}
+              onClick={() => {
+                navigate(ROUTE_PATHS.ABOUT);
+                setMobileDrawer(false);
+              }}
+            >
+              {i18n.t("menuBar.about")}
+            </Typography>
+            <Typography
+              style={{ textTransform: "uppercase" }}
+              fontWeight={800}
+              onClick={() => {
+                navigate(ROUTE_PATHS.COLLECTION);
+                setMobileDrawer(false);
+              }}
+            >
+              {i18n.t("menuBar.collection")}
+            </Typography>
+            <Typography
+              style={{ textTransform: "uppercase" }}
+              fontWeight={800}
+              onClick={() => {
+                navigate(ROUTE_PATHS.SHOP);
+                setMobileDrawer(false);
+              }}
+            >
+              {i18n.t("menuBar.store")}
+            </Typography>
+            <Divider style={{ width: "80%" }} />
+            <div
+              style={{
+                position: "relative",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              {cartProducts.length > 0 && (
+                <Box
+                  style={{
+                    position: "absolute",
+                    right: -7,
+                    bottom: -7,
+                  }}
+                >
+                  <Typography
+                    fontWeight={800}
+                    fontSize='12px'
+                    color={Colors.BLACKISH}
+                  >
+                    {cartProducts.length}
+                  </Typography>
+                </Box>
+              )}
+              <AiOutlineShopping
+                onClick={(e) => { e.preventDefault(); setMobileDrawer(false); setCartDrawer(true); }}
+
+                className='icon'
+                size={ICON_SIZE}
+                color={Colors.BLACKISH}
+                style={{ marginTop: "-3px", cursor: "pointer" }}
+              />
+            </div>
+
+            <Divider style={{ width: "80%" }} />
+            <BsInstagram
+              className='icon'
+              size='1.4rem'
+              color={Colors.BLACKISH}
+              style={{ cursor: "pointer" }}
+            />
+            <Divider style={{ width: "80%" }} />
+            <Typography
+              color={Colors.BLACKISH}
+              className='icon'
+              style={{ cursor: "pointer" }}
+              onClick={() => handleChangeLang()}
+            >
+              {lang}
+            </Typography>
+          </Box>
+
+        </DrawerMine>
+        <DrawerMine
+
+          minWidth='30vw'
+          fullHeight
+          position='left'
+          openDrawer={cartDrawer}
+          setOpenDrawer={setCartDrawer}
+        >
+          <Cart closeCart={setCartDrawer} />
+        </DrawerMine>
+      </>
     );
   };
 

@@ -11,6 +11,7 @@ export const content = {
         email: "Email",
         emailVal: "Must be a valid Email",
         phone: "Phone",
+        mbWay: "Mb Way",
       },
       cartDrawer: {
         title: "Cart",
@@ -25,6 +26,7 @@ export const content = {
         home: "Home",
         collection: "Collection",
         about: "The octo story",
+        cart: "Cart",
         shopSublink: {
           viewAll: "View All",
           category: "Categories",

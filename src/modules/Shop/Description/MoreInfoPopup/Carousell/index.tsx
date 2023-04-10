@@ -54,7 +54,7 @@ const Carrousell = ({ images }: Props) => {
   };
 
   return (
-    <div style={{ position: "relative", width: "60%", height: "350px" }}>
+    <div style={{ position: "relative", width: "100%", height: "400px" }}>
       <Box
         display='flex'
         justifyContent='space-between'
@@ -62,7 +62,7 @@ const Carrousell = ({ images }: Props) => {
           width: "95%",
           position: "absolute",
           left: "2.5%",
-          bottom: "42%",
+          top: "45%",
           zIndex: 1000,
         }}
       >
@@ -107,8 +107,8 @@ const Carrousell = ({ images }: Props) => {
       {!errorImage && (
         <CarouselProvider
           infinite
-          naturalSlideHeight={60}
-          naturalSlideWidth={100}
+          naturalSlideHeight={2}
+          naturalSlideWidth={1}
           totalSlides={images.length}
           currentSlide={indexMini}
           touchEnabled={true}

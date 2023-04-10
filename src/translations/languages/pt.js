@@ -24,6 +24,7 @@ export const content = {
         store: "Loja",
         collection: "Coleção",
         about: "A história da Octo",
+        cart: "Cart",
         shopSublink: {
           viewAll: "Ver todos",
           category: "Categorias",
