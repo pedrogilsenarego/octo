@@ -6,6 +6,8 @@ export const content = {
         mainText:
           "This website obtains information exclusively to increase the user experience. Visit our ",
         cookiePolicy: "Cookie Policy",
+        termsOfService: "Terms of Service",
+        manifest: "Manifest",
         secondText: " for more information",
       },
       forms: {

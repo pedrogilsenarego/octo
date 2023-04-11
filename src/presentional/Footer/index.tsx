@@ -16,6 +16,12 @@ const Footer = () => {
       <Typography style={{ cursor: "pointer" }} color='white'>
         {i18n.t("cookiePolicy.cookiePolicy")}
       </Typography>
+      <Typography style={{ cursor: "pointer" }} color='white'>
+        {i18n.t("cookiePolicy.termsOfService")}
+      </Typography>
+      <Typography style={{ cursor: "pointer" }} color='white'>
+        {i18n.t("cookiePolicy.manifest")}
+      </Typography>
       <div
         style={{
           display: "flex",
