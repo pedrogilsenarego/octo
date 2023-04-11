@@ -10,6 +10,7 @@ const Home = lazyWithRetryAndLoader(() => import("../modules/Home"));
 const Shop = lazyWithRetryAndLoader(() => import("../modules/Shop"));
 const Product = lazyWithRetryAndLoader(() => import("../modules/Product"));
 const Collections = lazyWithRetryAndLoader(() => import("../modules/Collections"))
+const Details = lazyWithRetryAndLoader(() => import("../modules/Details"))
 
 
 
@@ -36,6 +37,12 @@ export const routes: AppRoute[] = [
     component: <MainLayout>
       <Collections />
     </MainLayout>,
+  },
+  {
+    path: ROUTE_PATHS.DETAILS,
+    component: <PagesLayout noMarginBottom>
+      <Details />
+    </PagesLayout>,
   },
   {
     path: ROUTE_PATHS.ADMIN,

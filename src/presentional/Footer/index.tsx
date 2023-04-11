@@ -1,10 +1,13 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Colors } from "../../constants/pallete";
 import { i18n } from "../../translations/i18n";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../constants/routes";
 
 const Footer = () => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
+  const navigate = useNavigate()
   return (
     <div
       style={{
@@ -13,7 +16,7 @@ const Footer = () => {
         padding: "2rem",
       }}
     >
-      <Typography style={{ cursor: "pointer" }} color='white'>
+      <Typography onClick={() => navigate(ROUTE_PATHS.DETAILS)} style={{ cursor: "pointer" }} color='white'>
         {i18n.t("cookiePolicy.cookiePolicy")}
       </Typography>
       <Typography style={{ cursor: "pointer" }} color='white'>

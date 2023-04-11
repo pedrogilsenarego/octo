@@ -4,5 +4,6 @@ export const ROUTE_PATHS = {
   ADMIN: '/admin',
   SHOP:"/shop",
   PRODUCT: "/product/:id",
-  COLLECTION:"/collections"
+  COLLECTION:"/collections",
+  DETAILS:"/details"
 }

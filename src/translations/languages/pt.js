@@ -1,6 +1,9 @@
 export const content = {
   pt: {
     translations: {
+      footer: {
+        cookiePolicy: "CookiePolicy",
+      },
       cookiePolicy: {
         acceptTerms: "Accept Cookies",
         mainText:
@@ -40,7 +43,7 @@ export const content = {
           fabrics: "Tecidos",
         },
       },
-      footer: {},
+
       adminSideBar: {
         back: "Home",
         submitItem: "Submeter Item",

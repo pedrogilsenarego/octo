@@ -1,6 +1,21 @@
 export const content = {
   en: {
     translations: {
+      footer: {
+        cookiePolicy: "Cookie Policy",
+        customerCare: "Customer Care",
+        customerCareText:
+          "At Octo, we're always available to address any concerns or questions you may have. If you have any inquiries or requests for information, feel free to reach out to us at our designated email address: hello@octo.mistic.com. We're here to help and will promptly respond to any emails we receive",
+        paymentOption: "Payment Option",
+        paymentOptionText:
+          "At OCTO, the process of purchasing items is straightforward. Users simply need to add the items they want to their shopping cart and complete the checkout process. Shoppers have the flexibility to choose their preferred method of payment from the following options: Visa or Mastercard credit cards, PayPal, MBWay or Multibanco.",
+        conditionsUse: "Conditions of Use",
+        conditionsUseText:
+          "The user is accountable for using this website in compliance with legal regulations, refraining from any actions that are unethical, illegal, or infringe upon the rights of third parties. It's important to follow best practices for using the website, to ensure the safety and protection of all parties involved.",
+        productsPrices: "Products and Prices",
+        productsPricesText:
+          "OCTO´s prices are inclusive of all applicable taxes (VAT) as required by law. Any changes to the tax rate will be immediately reflected in the brand's prices. However, please note that OCTO reserves the right to change its prices at any time, and some items may only be available for a limited time period, as determined by the brand. The user is responsible for all shipping costs unless otherwise specified by OCTO. Due to the wide range of products available, labeling errors may occur. If any errors are found during the order processing, the buyer may choose to either confirm the order at the correct price or cancel it altogether",
+      },
       cookiePolicy: {
         acceptTerms: "Accept Cookies",
         mainText:
@@ -42,7 +57,7 @@ export const content = {
           fabrics: "Fabrics",
         },
       },
-      footer: {},
+
       adminSideBar: {
         back: "Home",
         submitItem: "Submit Item",
