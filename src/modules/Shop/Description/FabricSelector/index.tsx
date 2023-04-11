@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useContext } from "react";
 import Button from "../../../../components/Buttons/Button";
 import { i18n } from "../../../../translations/i18n";
@@ -13,6 +13,8 @@ const FabricSelector = () => {
   const { product, fabric, selectedFabrics, setSelectedFabrics } =
     useContext(ProductContext);
   const dispatch = useDispatch();
+  const Theme = useTheme()
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
 
   const productsAvailable: Product[] = products.filter(
     (category) => category.category === product
@@ -79,7 +81,7 @@ const FabricSelector = () => {
           })}
       </Grid>
 
-      <div style={{ marginTop: "60px" }}>
+      <div style={{ marginTop: "60px", display: "flex", justifyContent: mobile ? "center" : "start" }} >
         <Button
           onClick={() => {
             dispatch(addProductToCart(selectedFabrics));
@@ -90,7 +92,7 @@ const FabricSelector = () => {
             );
             setSelectedFabrics([]);
           }}
-          borderRadiusRight
+          borderRadiusRight={mobile ? false : true}
           label={i18n.t("modules.product.addCart")}
           disabled={selectedFabrics.length <= 0}
         />

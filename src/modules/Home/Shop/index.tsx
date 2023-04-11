@@ -1,6 +1,5 @@
 import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Button from "../../../components/Buttons/Button";
-import React from "react";
 import { categories } from "../../../constants/category";
 import { fabrics } from "../../../constants/fabrics";
 import { Colors } from "../../../constants/pallete";
@@ -9,12 +8,16 @@ import Element from "./Element";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../constants/routes";
 
+
 const Shop = () => {
   const Theme = useTheme()
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
   const navigate = useNavigate()
 
+
+
   return (
+
     <Box
       display='flex'
       style={{
@@ -104,6 +107,7 @@ const Shop = () => {
         </div>
       </Grid>
     </Box>
+
   );
 };
 

@@ -228,13 +228,26 @@ const MenuBar = () => {
           />
         </Box>
         <DrawerMine
+          fullWidth
           fullHeight
-          position='right'
+          position='left'
           openDrawer={mobileDrawer}
           setOpenDrawer={setMobileDrawer}
         >
           <Box mt="20px" padding='20px' display="flex" flexDirection="column" rowGap={4} justifyContent="center" alignItems="center">
             <Divider style={{ width: "80%" }} />
+            {location.pathname !== ROUTE_PATHS.HOME && (
+              <Typography
+                style={{ textTransform: "uppercase" }}
+                fontWeight={800}
+                onClick={() => {
+                  navigate(ROUTE_PATHS.HOME);
+                  setMobileDrawer(false);
+                }}
+              >
+                {i18n.t("menuBar.home")}
+              </Typography>
+            )}
             <Typography
               style={{ textTransform: "uppercase" }}
               fontWeight={800}
@@ -321,7 +334,7 @@ const MenuBar = () => {
         </DrawerMine>
         <DrawerMine
 
-          minWidth='30vw'
+
           fullHeight
           position='left'
           openDrawer={cartDrawer}

@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useContext } from "react";
 import { useDispatch } from "react-redux";
 import Button from "../../../../components/Buttons/Button";
@@ -13,6 +13,9 @@ import Carrousell from "./Carousell";
 const MoreInfoPopup = () => {
   const dispatch = useDispatch();
   const { product, fabric } = useContext(ProductContext);
+  const Theme = useTheme()
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
+
 
   const productsAvailable: Product[] = products.filter(
     (value) =>
@@ -50,7 +53,7 @@ const MoreInfoPopup = () => {
                 rowGap='0px'
                 style={{ position: "relative" }}
               >
-                <img
+                {!mobile && (<img
                   src={item.icon}
                   alt={item.uid}
                   style={{
@@ -61,7 +64,8 @@ const MoreInfoPopup = () => {
                     top: "2%",
                     zIndex: 4000
                   }}
-                />
+                />)}
+
 
                 <div
                   style={{

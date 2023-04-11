@@ -13,6 +13,7 @@ import { Actions } from "./types";
 import Button from "./ButtonPopup";
 import { Colors } from "../../constants/pallete";
 import { useRef } from "react";
+import { AiFillCloseSquare } from "react-icons/ai";
 
 interface Props {
   children: JSX.Element;
@@ -22,6 +23,7 @@ interface Props {
   actions?: Actions[];
   onClose?: () => void;
   fullScreen?: boolean;
+  closeButton?: boolean
 }
 
 const Popup = ({
@@ -32,6 +34,7 @@ const Popup = ({
   actions,
   onClose,
   fullScreen,
+  closeButton
 }: Props) => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -58,7 +61,7 @@ const Popup = ({
       >
         {title && (
           <DialogTitle>
-            <div style={{ textAlign: "center" }}>
+            <div style={{ textAlign: "center", display: "flex", justifyContent: "center" }}>
               <Typography
                 component='div'
                 style={{
@@ -71,6 +74,15 @@ const Popup = ({
               >
 
               </Typography>
+              {closeButton && (
+                <AiFillCloseSquare
+                  onClick={onClose}
+                  className='icon'
+                  size='3rem'
+                  color={Colors.BLACKISH}
+                  style={{ cursor: "pointer" }}
+                />
+              )}
             </div>
           </DialogTitle>
         )}

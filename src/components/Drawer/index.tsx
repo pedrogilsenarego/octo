@@ -42,7 +42,7 @@ const DrawerMine = ({
 
       component='div'
       sx={{
-        minWidth: minWidth ?? "30vw",
+        minWidth: fullWidth ? "100vw" : minWidth ?? "30vw",
         minHeight: fullHeight ? "100vh" : "auto",
         height: "auto",
         overflowY: "auto",

@@ -1,4 +1,4 @@
-import { Typography, Divider, Box } from "@mui/material";
+import { Typography, Divider, Box, useTheme, useMediaQuery } from "@mui/material";
 import { i18n } from "../../../translations/i18n";
 import FabricSelector from "./FabricSelector";
 import { useContext, useState } from "react";
@@ -13,6 +13,9 @@ const Description = () => {
   const { product, fabric, infoPopup, setInfoPopup, selectedFabrics } =
     useContext(ProductContext);
   const [moreInfo, setMoreInfo] = useState(false);
+  const Theme = useTheme()
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
+
 
   return (
     <Box
@@ -95,6 +98,7 @@ const Description = () => {
 
       {product !== null && (
         <Popup
+          closeButton={mobile ? true : false}
           openPopup={infoPopup}
           title={`${categories[product].title}&nbsp;&#183;&nbsp;${categories[product].price}€`}
           setOpenPopup={setInfoPopup}
@@ -105,6 +109,7 @@ const Description = () => {
       )}
       {fabric !== null && (
         <Popup
+          closeButton={mobile ? true : false}
           openPopup={infoPopup}
           title={fabrics[fabric].title}
           setOpenPopup={setInfoPopup}
