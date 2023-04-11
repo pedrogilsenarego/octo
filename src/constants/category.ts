@@ -490,7 +490,7 @@ export const categories:Category[] = [
   {
     id: 9,
     title: i18n.t("constants.categories.10"),
-    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681157661/Octo/strollerBag/OCTO_Icones-03_leqgkn.png",
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681207357/Octo/strollerBag/OCTO_Icon_stroller_bag_oujqtc.png",
     price: 34,
     moreInfo: {
       description: "Teste",
