@@ -37,22 +37,22 @@ const Checkout = () => {
       alias: details.phone,
       valor: 34.32,
       id: "dfdeweeewwe",
-      descricao: "exemplo eu pago"
+      descricao: "exemplo eu pago",
     };
 
     const options = {
-      method: 'POST',
+      method: "POST",
       headers: {
-        accept: 'application/json',
-        'content-type': 'application/json',
+        accept: "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify(data),
     };
 
-    fetch('https://sandbox.eupago.pt/clientes/rest_api/mbway/create', options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
+    fetch("https://sandbox.eupago.pt/clientes/rest_api/mbway/create", options)
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
   };
 
   const renderPaymentMethods = () => {
@@ -84,12 +84,7 @@ const Checkout = () => {
                 sx={{ mt: "20px", pb: "20px" }}
               >
                 <Textfield label={i18n.t("forms.name")} name='name' />
-                <Textfield
-                  label={i18n.t("forms.address")}
-                  name='address'
-                  multiline
-                  rows={2}
-                />
+                <Textfield label={i18n.t("forms.address")} name='address' />
                 <Textfield label={i18n.t("forms.postCode")} name='postCode' />
                 <Textfield label={i18n.t("forms.email")} name='email' />
                 <Textfield label={i18n.t("forms.phone")} name='phone' />

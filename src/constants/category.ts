@@ -10,11 +10,11 @@ import iconBlanketVichyClassic from "../assets/icons/produtos/icones_padroes-bla
 import iconBlanketPowderPink from "../assets/icons/produtos/icones_padroes-blanket3.png"
 import iconBlanketFloralClassic from "../assets/icons/produtos/icones_padroes-blanket4.png"
 import iconBlanketOctos from "../assets/icons/produtos/icones_padroes-blanket5.png"
-import iconCollarBibVichyPowderPink from "../assets/icons/produtos/icones_padroes-collar1.png"
-import iconCollarFloralPowderPink from "../assets/icons/produtos/icones_padroes-collar2.png"
+import iconCollarBibVichyPowderPink from "../assets/icons/produtos/icones_padroes-collar4.png"
+import iconCollarFloralPowderPink from "../assets/icons/produtos/icones_padroes-collar5.png"
 import iconCollarVichyClassic from "../assets/icons/produtos/icones_padroes-collar3.png"
-import iconCollarFloralClassic from "../assets/icons/produtos/icones_padroes-collar4.png"
-import iconCollarOctos from "../assets/icons/produtos/icones_padroes-collar5.png"
+import iconCollarFloralClassic from "../assets/icons/produtos/icones_padroes-collar2.png"
+import iconCollarOctos from "../assets/icons/produtos/icones_padroes-collar1.png"
 import iconCollarPureWhite from "../assets/icons/produtos/icones_padroes-collar6.png"
 import iconBedBumperVichyPowderPink from "../assets/icons/produtos/icones_padroes-bedbumper1.png"
 import iconBedBumperVichyClassic from "../assets/icons/produtos/icones_padroes-bedbumper2.png"
@@ -334,14 +334,6 @@ export const products:Product[] = [
    pattern: 0
   },
   {
-    uid: "strdsafevcrfing",
-    price: 748,
-    category: 8,
-    icon:iconCollarFloralPowderPink,
-    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"],
-   pattern: 2
-  },
-  {
     uid: "strsdsafevcrfing",
     price: 748,
     category: 8,
@@ -350,7 +342,16 @@ export const products:Product[] = [
    pattern: 1
   },
   {
-    uid: "strsdsafevcrfing",
+    uid: "strdsafevcrfing",
+    price: 748,
+    category: 8,
+    icon:iconCollarFloralPowderPink,
+    images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"],
+   pattern: 2
+  },
+  
+  {
+    uid: "strsdsafevdcrfing",
     price: 748,
     category: 8,
     icon:iconCollarFloralClassic,
