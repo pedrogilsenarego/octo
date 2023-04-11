@@ -10,6 +10,7 @@ const INITIAL_STATE = {
   history: ["/"],
   lang: "EN",
   scrollTo: 0,
+  cookiePolicy: true
   
   
 };
@@ -93,7 +94,11 @@ const generalReducer = (state = INITIAL_STATE, action: Action) => {
         ...state,
         scrollTo: action.payload,
       };
-     
+      case generalTypes.SET_COOKIE_POLICY:
+        return {
+          ...state,
+          cookiePolicy: action.payload
+        };
    
 
     default:

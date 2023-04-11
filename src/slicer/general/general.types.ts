@@ -12,6 +12,7 @@ const generalTypes = {
   REMOVE_LAST_ENDPOINT: "REMOVE_LAST_ENDPOINT",
   UPDATE_LANG: "UPDATE_LANG",
   SCROLL: "SCROLL",
+  SET_COOKIE_POLICY: "SET_COOKIE_POLICY",
 
   
 };
@@ -21,6 +22,7 @@ export interface GeneralState {
   scrollTo:number
   lastEndpoint: string
   disableSnap:boolean
+  cookiePolicy:boolean
 
 }
 

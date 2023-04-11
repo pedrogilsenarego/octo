@@ -63,4 +63,9 @@ export const scrollTo = (signal:number|null) => ({
   payload: signal
 })
 
+export const setCookiePolicy = (signal:boolean) => ({
+  type: generalTypes.SET_COOKIE_POLICY,
+  payload: signal
+})
+
 
