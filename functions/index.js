@@ -17,7 +17,7 @@ app.use(express.json());
 app.post("/payments/creditCard", async (req, res) => {
   let lineItems = [];
   const items = req.body.items;
-  console.log(items);
+
   if (typeof items !== "undefined") {
     items.forEach((item) => {
       lineItems.push({
@@ -37,7 +37,9 @@ app.post("/payments/creditCard", async (req, res) => {
     mode: "payment",
     success_url: "http://localhost:3000/success",
     cancel_url: "http://localhost:3000/cancel",
-
+    phone_number_collection: {
+      enabled: true,
+    },
     shipping_address_collection: {
       allowed_countries: ["PT"],
     },

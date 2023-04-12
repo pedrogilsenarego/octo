@@ -52,6 +52,8 @@ export const content = {
         updateCart: "Update Cart",
         noProducts: "There are no products in the cart",
         totalPrice: "Total Price:",
+        buyNow: "Buy Now",
+        successBuy: "Your order was placed",
       },
       menuBar: {
         store: "Shop",
