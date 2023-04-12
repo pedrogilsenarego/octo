@@ -1,4 +1,4 @@
-import { Box, Grid, useTheme, useMediaQuery, Typography } from "@mui/material";
+import { Box, useTheme, useMediaQuery, Typography } from "@mui/material";
 import { generalConstants } from "../../constants/general";
 
 import MenuBar from "../../presentional/MenuBar";

@@ -2,6 +2,21 @@ export const content = {
   en: {
     translations: {
       footer: {
+        termsOfService: "Terms of Service",
+        handMade: "Hand Made",
+        madePortugal: "Proudly made in Portugal",
+        certified: "Most Octomistic brand",
+        privacyPolicy: "Privacy Policy",
+        refunds: "Refunds & Exchanges",
+        customerService: "Custumer Service",
+        contact: "Contact Us",
+      },
+      cookiePolicy: {
+        acceptTerms: "Accept Cookies",
+        mainText:
+          "This website obtains information exclusively to increase the user experience. Visit our ",
+        manifest: "Manifest",
+        secondText: " for more information",
         cookiePolicy: "Cookie Policy",
         customerCare: "Customer Care",
         customerCareText:
@@ -15,15 +30,6 @@ export const content = {
         productsPrices: "Products and Prices",
         productsPricesText:
           "OCTO´s prices are inclusive of all applicable taxes (VAT) as required by law. Any changes to the tax rate will be immediately reflected in the brand's prices. However, please note that OCTO reserves the right to change its prices at any time, and some items may only be available for a limited time period, as determined by the brand. The user is responsible for all shipping costs unless otherwise specified by OCTO. Due to the wide range of products available, labeling errors may occur. If any errors are found during the order processing, the buyer may choose to either confirm the order at the correct price or cancel it altogether",
-      },
-      cookiePolicy: {
-        acceptTerms: "Accept Cookies",
-        mainText:
-          "This website obtains information exclusively to increase the user experience. Visit our ",
-        cookiePolicy: "Cookie Policy",
-        termsOfService: "Terms of Service",
-        manifest: "Manifest",
-        secondText: " for more information",
       },
       forms: {
         required: "Required",
