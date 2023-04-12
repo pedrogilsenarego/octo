@@ -37,10 +37,12 @@ export const content = {
         movePayment: "Move to payment",
         name: "Name",
         address: "Address",
+        city: "City",
         postCode: "Post Code",
         email: "Email",
         emailVal: "Must be a valid Email",
         phone: "Phone",
+        creditCard: "Credit Card",
         mbWay: "Mb Way",
       },
       cartDrawer: {

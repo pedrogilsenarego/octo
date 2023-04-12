@@ -19,9 +19,13 @@ import Checkout from "./Checkout";
 import { useState } from "react";
 import { AiFillCloseSquare } from "react-icons/ai";
 import { getTotalValue } from "./Utils/totalValue";
+import { Elements } from "@stripe/react-stripe-js";
+import { publishableKey } from "../../../stripe/config";
+import { loadStripe } from "@stripe/stripe-js";
 interface Props {
   closeCart?: (signal: boolean) => void;
 }
+const stripePromise = loadStripe(publishableKey)
 
 const Cart = ({ closeCart }: Props) => {
   const [checkoutInfo, setCheckoutInfo] = useState<boolean>(false);
@@ -120,7 +124,7 @@ const Cart = ({ closeCart }: Props) => {
         }}
       >
         {checkoutInfo ? (
-          <Checkout />
+          <Elements stripe={stripePromise}><Checkout /></Elements>
         ) : (
           <>
             <Button
