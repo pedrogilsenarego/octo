@@ -1,9 +1,9 @@
 import { Form, Formik } from "formik";
 import { FORM_VALIDATION } from "./validation";
-import { Box } from "@mui/material";
+// import { Box } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
-import ButtonForm from "../../../../components/Buttons/ButtonFormik";
-import Textfield from "../../../../components/Inputs/TextField";
+// import ButtonForm from "../../../../components/Buttons/ButtonFormik";
+// import Textfield from "../../../../components/Inputs/TextField";
 import { Colors } from "../../../../constants/pallete";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -12,8 +12,9 @@ import { CartProduct } from "../../../../slicer/cart/cart.types";
 import { getTotalValue } from "../Utils/totalValue";
 
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
-import { StripeCardElementOptions } from "@stripe/stripe-js"
+//import { StripeCardElementOptions } from "@stripe/stripe-js"
 import { apiInstance } from "../../../../utils";
+import Button from "../../../../components/Buttons/Button";
 
 interface FormProps {
   name: string,
@@ -41,42 +42,38 @@ const Checkout = () => {
     (state) => state.cart.cartItems
   );
 
-  const handleSubmitCard = (values: FormProps) => {
-    const cardElement = elements?.getElement("card")
-    console.log(getTotalValue(cartProducts))
-    apiInstance.post("/payments/creditCard", {
-      amount: getTotalValue(cartProducts),
-      shipping: {
-        name: values.name,
-        address: values.address
+
+
+  const handleSubmitCard = async (values: FormProps) => {
+    //const cardElement = elements?.getElement("card")
+    const items = [{
+      //id: "price_1Mw54gAJkp7H04iOOQRJzdyi",
+      title: "teste3",
+      amount: 5499,
+      quantity: 3,
+
+    }, {
+      //id: "price_1Mw54gAJkp7H04iOOQRJzdyi",
+      title: "testAae3",
+      amount: 599,
+      quantity: 6,
+
+    }]
+    await fetch("http://localhost:5001/octo-29041/us-central1/api/payments/creditCard", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ items })
+    }).then((res) => {
+      return res.json()
+    }).then((res) => {
+      if (res.url) {
+        window.location.assign(res.url)
       }
-    }).then(({
-      data: clientSecret
-    }) => {
-      stripe?.createPaymentMethod({
-        type: "card",
-        card: cardElement!,
-        billing_details: {
-          name: values.name,
-          address: {
-            line1: values.address,
-            city: values.city,
-            state: values.city,
-            postal_code: values.postCode,
-            country: "PT"
-          }
-        }
-      })
-    }).then(({
-      paymentMethod
-    }) => {
-      stripe?.confirmCardPayment(clientSecret, {
-        payment_method: paymentMethod.id
-      })
-    }).then(({ paymentIntent }) => {
-      console.log(paymentIntent)
     })
   };
+
   const handleMbWay = () => {
     const data = {
       chave: "xxxx-xxxx-xxxx-xxxx-xxxx",
@@ -102,21 +99,21 @@ const Checkout = () => {
       .catch((err) => console.error(err));
   };
 
-  const cardElementOptions: StripeCardElementOptions = {
-    hidePostalCode: true,
-    style: {
-      base: {
-        fontSize: '16px',
-      },
-    },
-    iconStyle: 'solid',
-  };
+  // const cardElementOptions: StripeCardElementOptions = {
+  //   hidePostalCode: true,
+  //   style: {
+  //     base: {
+  //       fontSize: '16px',
+  //     },
+  //   },
+  //   iconStyle: 'solid',
+  // };
 
 
 
   return (
     <>
-      <Formik
+      {/* <Formik
         initialValues={{ ...INITIAL_FORM_STATE }}
         onSubmit={(values, { resetForm }) => {
           handleSubmitCard(values);
@@ -146,19 +143,20 @@ const Checkout = () => {
               cardElementOptions
             } />
 
-            <ButtonForm
-              colorHover={Colors.NEON_YELLOW_TRANSPARENT}
-              label={i18n.t("forms.creditCard")}
-            />
-            <ButtonForm
+
+          </Box>
+        </Form>
+      </Formik> */}
+      <Button
+        onClick={handleSubmitCard}
+        colorHover={Colors.NEON_YELLOW_TRANSPARENT}
+        label={i18n.t("forms.creditCard")}
+      />
+      {/* <Button
 
               colorHover={Colors.NEON_YELLOW_TRANSPARENT}
               label={i18n.t("forms.mbWay")}
-            />
-          </Box>
-        </Form>
-      </Formik>
-
+            /> */}
     </>
   );
 };

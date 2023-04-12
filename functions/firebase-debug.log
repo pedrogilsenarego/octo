@@ -1,31 +1,31 @@
-[debug] [2023-04-12T10:44:04.315Z] ----------------------------------------------------------------------
-[debug] [2023-04-12T10:44:04.316Z] Command:       /usr/bin/node /home/pedro/.yarn/bin/firebase emulators:start --only functions
-[debug] [2023-04-12T10:44:04.317Z] CLI Version:   10.2.2
-[debug] [2023-04-12T10:44:04.317Z] Platform:      linux
-[debug] [2023-04-12T10:44:04.317Z] Node Version:  v14.19.1
-[debug] [2023-04-12T10:44:04.317Z] Time:          Wed Apr 12 2023 11:44:04 GMT+0100 (Western European Summer Time)
-[debug] [2023-04-12T10:44:04.317Z] ----------------------------------------------------------------------
+[debug] [2023-04-12T16:39:40.478Z] ----------------------------------------------------------------------
+[debug] [2023-04-12T16:39:40.480Z] Command:       /usr/bin/node /home/pedro/.yarn/bin/firebase emulators:start --only functions
+[debug] [2023-04-12T16:39:40.480Z] CLI Version:   10.2.2
+[debug] [2023-04-12T16:39:40.480Z] Platform:      linux
+[debug] [2023-04-12T16:39:40.480Z] Node Version:  v14.19.1
+[debug] [2023-04-12T16:39:40.481Z] Time:          Wed Apr 12 2023 17:39:40 GMT+0100 (Western European Summer Time)
+[debug] [2023-04-12T16:39:40.481Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-04-12T10:44:04.362Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-04-12T10:44:04.362Z] > authorizing via signed-in user (pedrogilsenarego@gmail.com)
+[debug] [2023-04-12T16:39:40.532Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-12T16:39:40.532Z] > authorizing via signed-in user (pedrogilsenarego@gmail.com)
 [info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
-[debug] [2023-04-12T10:44:04.381Z] [hub] writing locator at /tmp/hub-octo-29041.json
+[debug] [2023-04-12T16:39:40.549Z] [hub] writing locator at /tmp/hub-octo-29041.json
 [warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
 [info] ✔  functions: Using node@14 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@14 from host."}}
-[debug] [2023-04-12T10:44:04.395Z] defaultcredentials: writing to file /home/pedro/.config/firebase/pedrogilsenarego_gmail_com_application_default_credentials.json
-[debug] [2023-04-12T10:44:04.396Z] Setting GAC to /home/pedro/.config/firebase/pedrogilsenarego_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/pedro/.config/firebase/pedrogilsenarego_gmail_com_application_default_credentials.json"}}
-[debug] [2023-04-12T10:44:04.398Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/octo-29041/adminSdkConfig [none]
-[debug] [2023-04-12T10:44:04.733Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/octo-29041/adminSdkConfig 200
-[debug] [2023-04-12T10:44:04.734Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/octo-29041/adminSdkConfig {"projectId":"octo-29041","storageBucket":"octo-29041.appspot.com"}
-[debug] [2023-04-12T10:44:04.761Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
-[debug] [2023-04-12T10:44:04.761Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
-[debug] [2023-04-12T10:44:04.762Z] Starting Emulator UI with command {"binary":"node","args":["/home/pedro/.cache/firebase/emulators/ui-v1.6.5/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/pedro/.cache/firebase/emulators/ui-v1.6.5/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[debug] [2023-04-12T16:39:40.573Z] defaultcredentials: writing to file /home/pedro/.config/firebase/pedrogilsenarego_gmail_com_application_default_credentials.json
+[debug] [2023-04-12T16:39:40.574Z] Setting GAC to /home/pedro/.config/firebase/pedrogilsenarego_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/pedro/.config/firebase/pedrogilsenarego_gmail_com_application_default_credentials.json"}}
+[debug] [2023-04-12T16:39:40.576Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/octo-29041/adminSdkConfig [none]
+[debug] [2023-04-12T16:39:40.869Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/octo-29041/adminSdkConfig 200
+[debug] [2023-04-12T16:39:40.869Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/octo-29041/adminSdkConfig {"projectId":"octo-29041","storageBucket":"octo-29041.appspot.com"}
+[debug] [2023-04-12T16:39:40.896Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-04-12T16:39:40.897Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-04-12T16:39:40.897Z] Starting Emulator UI with command {"binary":"node","args":["/home/pedro/.cache/firebase/emulators/ui-v1.6.5/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/pedro/.cache/firebase/emulators/ui-v1.6.5/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
 [info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
-[debug] [2023-04-12T10:44:04.833Z] Web / API server started at localhost:4000
+[debug] [2023-04-12T16:39:40.969Z] Web / API server started at localhost:4000
  {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
 [info] i  functions: Watching "/home/pedro/Documents/octo/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/pedro/Documents/octo/functions\" for Cloud Functions..."}}
-[debug] [2023-04-12T10:44:05.024Z] Validating nodejs source
-[debug] [2023-04-12T10:44:06.038Z] > [functions] package.json contents: {
+[debug] [2023-04-12T16:39:41.160Z] Validating nodejs source
+[debug] [2023-04-12T16:39:42.226Z] > [functions] package.json contents: {
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
@@ -41,6 +41,7 @@
   "main": "index.js",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^4.2.1",
@@ -51,8 +52,8 @@
   },
   "private": true
 }
-[debug] [2023-04-12T10:44:06.038Z] Building nodejs source
-[debug] [2023-04-12T10:44:06.038Z] Analyzing nodejs backend spec
+[debug] [2023-04-12T16:39:42.226Z] Building nodejs source
+[debug] [2023-04-12T16:39:42.226Z] Analyzing nodejs backend spec
 [info] ✔  functions[us-central1-api]: http function initialized (http://localhost:5001/octo-29041/us-central1/api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/octo-29041/us-central1/api)."}}
 [info] 
 ┌─────────────────────────────────────────────────────────────┐
@@ -70,272 +71,57 @@
 
 Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
  
-[debug] [2023-04-12T10:44:08.079Z] [work-queue] {"queueLength":1,"workRunningCount":0}
-[debug] [2023-04-12T10:44:08.079Z] [work-queue] {"queueLength":0,"workRunningCount":1}
-[debug] [2023-04-12T10:44:08.079Z] Accepted request GET /octo-29041/us-central1/api --> us-central1-api
-[debug] [2023-04-12T10:44:08.089Z] [worker-pool] addWorker(us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-api)"}}
-[debug] [2023-04-12T10:44:08.089Z] [worker-pool] Adding worker with key us-central1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-api, total=1"}}
-[debug] [2023-04-12T10:44:08.089Z] [worker-pool] submitWork(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-api)"}}
-[debug] [2023-04-12T10:44:08.090Z] [worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: Assigning socketPath: /tmp/fire_emu_182590.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: Assigning socketPath: /tmp/fire_emu_182590.sock"}}
-[debug] [2023-04-12T10:44:08.090Z] [worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: BUSY"}}
-[debug] [2023-04-12T10:44:08.614Z] [runtime-status] [182590] Functions runtime initialized. {"cwd":"/home/pedro/Documents/octo/functions","node_version":"14.19.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Functions runtime initialized. {\"cwd\":\"/home/pedro/Documents/octo/functions\",\"node_version\":\"14.19.1\"}"}}
-[debug] [2023-04-12T10:44:08.615Z] [runtime-status] [182590] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Disabled runtime features: undefined"}}
-[debug] [2023-04-12T10:44:08.617Z] [runtime-status] [182590] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-admin/lib/index.js\"}"}}
-[debug] [2023-04-12T10:44:08.619Z] [runtime-status] [182590] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
-[debug] [2023-04-12T10:44:08.620Z] [runtime-status] [182590] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
-[debug] [2023-04-12T10:44:08.621Z] [runtime-status] [182590] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
-[debug] [2023-04-12T10:44:08.739Z] [runtime-status] [182590] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Checked functions.config() {\"config\":{}}"}}
-[debug] [2023-04-12T10:44:08.739Z] [runtime-status] [182590] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.2.1","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js\"}}"}}
-[debug] [2023-04-12T10:44:08.740Z] [runtime-status] [182590] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
-[debug] [2023-04-12T10:44:08.741Z] [runtime-status] [182590] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-admin/lib/index.js\"}"}}
-[debug] [2023-04-12T10:44:08.742Z] [runtime-status] [182590] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
-[debug] [2023-04-12T10:44:08.742Z] [runtime-status] [182590] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
-[debug] [2023-04-12T10:44:08.782Z] [runtime-status] [182590] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Beginning invocation function api!"}}
+[debug] [2023-04-12T16:39:51.232Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2023-04-12T16:39:51.233Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2023-04-12T16:39:51.234Z] Accepted request POST /octo-29041/us-central1/api/payments/creditCard --> us-central1-api
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2023-04-12T16:39:51.245Z] [worker-pool] addWorker(us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-api)"}}
+[debug] [2023-04-12T16:39:51.246Z] [worker-pool] Adding worker with key us-central1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-api, total=1"}}
+[debug] [2023-04-12T16:39:51.246Z] [worker-pool] submitWork(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-api)"}}
+[debug] [2023-04-12T16:39:51.246Z] [worker-us-central1-api-a91a84bf-e1d0-497c-ace8-278507237d36]: Assigning socketPath: /tmp/fire_emu_16702.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-a91a84bf-e1d0-497c-ace8-278507237d36]: Assigning socketPath: /tmp/fire_emu_16702.sock"}}
+[debug] [2023-04-12T16:39:51.246Z] [worker-us-central1-api-a91a84bf-e1d0-497c-ace8-278507237d36]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-a91a84bf-e1d0-497c-ace8-278507237d36]: BUSY"}}
+[debug] [2023-04-12T16:39:51.732Z] [runtime-status] [16702] Functions runtime initialized. {"cwd":"/home/pedro/Documents/octo/functions","node_version":"14.19.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Functions runtime initialized. {\"cwd\":\"/home/pedro/Documents/octo/functions\",\"node_version\":\"14.19.1\"}"}}
+[debug] [2023-04-12T16:39:51.734Z] [runtime-status] [16702] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Disabled runtime features: undefined"}}
+[debug] [2023-04-12T16:39:51.736Z] [runtime-status] [16702] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-04-12T16:39:51.738Z] [runtime-status] [16702] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-04-12T16:39:51.739Z] [runtime-status] [16702] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2023-04-12T16:39:51.740Z] [runtime-status] [16702] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-04-12T16:39:51.839Z] [runtime-status] [16702] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Checked functions.config() {\"config\":{}}"}}
+[debug] [2023-04-12T16:39:51.840Z] [runtime-status] [16702] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.2.1","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js\"}}"}}
+[debug] [2023-04-12T16:39:51.840Z] [runtime-status] [16702] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-04-12T16:39:51.841Z] [runtime-status] [16702] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-04-12T16:39:51.842Z] [runtime-status] [16702] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-04-12T16:39:51.842Z] [runtime-status] [16702] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/home/pedro/Documents/octo/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/home/pedro/Documents/octo/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2023-04-12T16:39:51.895Z] [runtime-status] [16702] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Beginning invocation function api!"}}
 [info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
-[debug] [2023-04-12T10:44:08.783Z] [runtime-status] [182590] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Running api in signature http"}}
-[debug] [2023-04-12T10:44:08.789Z] [runtime-status] [182590] Attempting to listen to socketPath: /tmp/fire_emu_182590.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Attempting to listen to socketPath: /tmp/fire_emu_182590.sock"}}
-[debug] [2023-04-12T10:44:08.792Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
-[debug] [2023-04-12T10:44:08.792Z] [functions] Got req.url=/octo-29041/us-central1/api, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/octo-29041/us-central1/api, mapping to path=/"}}
-[debug] [2023-04-12T10:44:08.796Z] [runtime-status] [182590] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Ephemeral server handling GET request"}}
-[debug] [2023-04-12T10:44:08.801Z] [runtime-status] [182590] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Ephemeral server survived."}}
+[debug] [2023-04-12T16:39:51.896Z] [runtime-status] [16702] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Running api in signature http"}}
+[debug] [2023-04-12T16:39:51.899Z] [runtime-status] [16702] Attempting to listen to socketPath: /tmp/fire_emu_16702.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Attempting to listen to socketPath: /tmp/fire_emu_16702.sock"}}
+[debug] [2023-04-12T16:39:51.912Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-04-12T16:39:51.913Z] [functions] Got req.url=/octo-29041/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/octo-29041/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard"}}
+[debug] [2023-04-12T16:39:51.924Z] [runtime-status] [16702] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Ephemeral server handling POST request"}}
+[info] >  [ { title: 'teste3', amount: 5499, quantity: 3 } ] {"user":"[ { title: 'teste3', amount: 5499, quantity: 3 } ]","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m [ { title: 'teste3', amount: 5499, quantity: 3 } ]"}}
+[debug] [2023-04-12T16:39:51.941Z] [runtime-status] [16702] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Ephemeral server survived."}}
 [info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"api\" in ~1s"}}
-[debug] [2023-04-12T10:44:08.804Z] [worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: IDLE"}}
-[debug] [2023-04-12T10:44:08.804Z] [work-queue] {"queueLength":0,"workRunningCount":0}
-[debug] [2023-04-12T10:51:12.943Z] [work-queue] {"queueLength":1,"workRunningCount":0}
-[debug] [2023-04-12T10:51:12.943Z] [work-queue] {"queueLength":0,"workRunningCount":1}
-[debug] [2023-04-12T10:51:12.943Z] Accepted request POST /octo-29041/us-central1/api/payments/creditCard --> us-central1-api
-[debug] [2023-04-12T10:51:12.944Z] [worker-pool] submitWork(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-api)"}}
-[debug] [2023-04-12T10:51:12.944Z] [worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: Assigning socketPath: /tmp/fire_emu_182590.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: Assigning socketPath: /tmp/fire_emu_182590.sock"}}
-[debug] [2023-04-12T10:51:12.944Z] [worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: BUSY"}}
-[debug] [2023-04-12T10:51:12.945Z] [runtime-status] [182590] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Beginning invocation function api!"}}
+[debug] [2023-04-12T16:39:52.780Z] [worker-us-central1-api-a91a84bf-e1d0-497c-ace8-278507237d36]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-a91a84bf-e1d0-497c-ace8-278507237d36]: IDLE"}}
+[debug] [2023-04-12T16:39:52.781Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2023-04-12T16:40:40.844Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2023-04-12T16:40:40.844Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2023-04-12T16:40:40.844Z] Accepted request POST /octo-29041/us-central1/api/payments/creditCard --> us-central1-api
+[debug] [2023-04-12T16:40:40.844Z] [worker-pool] submitWork(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-api)"}}
+[debug] [2023-04-12T16:40:40.844Z] [worker-us-central1-api-a91a84bf-e1d0-497c-ace8-278507237d36]: Assigning socketPath: /tmp/fire_emu_16702.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-a91a84bf-e1d0-497c-ace8-278507237d36]: Assigning socketPath: /tmp/fire_emu_16702.sock"}}
+[debug] [2023-04-12T16:40:40.845Z] [worker-us-central1-api-a91a84bf-e1d0-497c-ace8-278507237d36]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-a91a84bf-e1d0-497c-ace8-278507237d36]: BUSY"}}
+[debug] [2023-04-12T16:40:40.846Z] [runtime-status] [16702] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Beginning invocation function api!"}}
 [info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
-[debug] [2023-04-12T10:51:12.946Z] [runtime-status] [182590] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Running api in signature http"}}
-[debug] [2023-04-12T10:51:12.947Z] [runtime-status] [182590] Attempting to listen to socketPath: /tmp/fire_emu_182590.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Attempting to listen to socketPath: /tmp/fire_emu_182590.sock"}}
-[debug] [2023-04-12T10:51:12.949Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
-[debug] [2023-04-12T10:51:12.949Z] [functions] Got req.url=/octo-29041/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/octo-29041/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard"}}
-[debug] [2023-04-12T10:51:12.985Z] [runtime-status] [182590] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Ephemeral server handling POST request"}}
-[debug] [2023-04-12T10:51:12.991Z] [runtime-status] [182590] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [182590] Ephemeral server survived."}}
+[debug] [2023-04-12T16:40:40.847Z] [runtime-status] [16702] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Running api in signature http"}}
+[debug] [2023-04-12T16:40:40.848Z] [runtime-status] [16702] Attempting to listen to socketPath: /tmp/fire_emu_16702.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Attempting to listen to socketPath: /tmp/fire_emu_16702.sock"}}
+[debug] [2023-04-12T16:40:40.850Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-04-12T16:40:40.851Z] [functions] Got req.url=/octo-29041/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/octo-29041/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard"}}
+[debug] [2023-04-12T16:40:40.855Z] [runtime-status] [16702] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Ephemeral server handling POST request"}}
+[info] >  [ {"user":"[","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m ["}}
+[info] >    { title: 'teste3', amount: 5499, quantity: 3 }, {"user":"  { title: 'teste3', amount: 5499, quantity: 3 },","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m   { title: 'teste3', amount: 5499, quantity: 3 },"}}
+[info] >    { title: 'testAae3', amount: 599, quantity: 6 } {"user":"  { title: 'testAae3', amount: 599, quantity: 6 }","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m   { title: 'testAae3', amount: 599, quantity: 6 }"}}
+[info] >  ] {"user":"]","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m ]"}}
+[debug] [2023-04-12T16:40:40.857Z] [runtime-status] [16702] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [16702] Ephemeral server survived."}}
 [info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"api\" in ~1s"}}
-[debug] [2023-04-12T10:51:12.992Z] [worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: IDLE"}}
-[debug] [2023-04-12T10:51:12.993Z] [work-queue] {"queueLength":0,"workRunningCount":0}
-[debug] [2023-04-12T11:04:08.367Z] File /home/pedro/Documents/octo/functions/stripe/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/pedro/Documents/octo/functions/stripe/index.ts changed, reloading triggers"}}
-[debug] [2023-04-12T11:04:09.369Z] [worker-pool] Shutting down IDLE worker (us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-api)"}}
-[debug] [2023-04-12T11:04:09.369Z] [worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: FINISHING"}}
-[debug] [2023-04-12T11:04:09.371Z] Validating nodejs source
-[debug] [2023-04-12T11:04:10.509Z] > [functions] package.json contents: {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
-  "scripts": {
-    "serve": "firebase emulators:start --only functions",
-    "shell": "firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
-  },
-  "engines": {
-    "node": "14"
-  },
-  "main": "index.js",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "firebase-admin": "^10.0.2",
-    "firebase-functions": "^4.2.1",
-    "stripe": "^12.0.0"
-  },
-  "devDependencies": {
-    "firebase-functions-test": "^0.2.0"
-  },
-  "private": true
-}
-[debug] [2023-04-12T11:04:10.509Z] Building nodejs source
-[debug] [2023-04-12T11:04:10.510Z] Analyzing nodejs backend spec
-[debug] [2023-04-12T11:04:10.516Z] [worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: exited"}}
-[debug] [2023-04-12T11:04:10.516Z] [worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-019d92a6-f1b4-4d2b-bd39-c3aaca4e3b56]: FINISHED"}}
-[debug] [2023-04-12T11:06:02.420Z] File /home/pedro/Documents/octo/functions/package.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/pedro/Documents/octo/functions/package.json changed, reloading triggers"}}
-[debug] [2023-04-12T11:06:02.438Z] File /home/pedro/Documents/octo/functions/package-lock.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/pedro/Documents/octo/functions/package-lock.json changed, reloading triggers"}}
-[debug] [2023-04-12T11:06:03.440Z] Validating nodejs source
-[debug] [2023-04-12T11:06:04.500Z] > [functions] package.json contents: {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
-  "scripts": {
-    "serve": "firebase emulators:start --only functions",
-    "shell": "firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
-  },
-  "engines": {
-    "node": "14"
-  },
-  "main": "index.js",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "firebase-admin": "^10.0.2",
-    "firebase-functions": "^4.2.1",
-    "stripe": "^12.0.0"
-  },
-  "devDependencies": {
-    "firebase-functions-test": "^0.2.0"
-  },
-  "private": true
-}
-[debug] [2023-04-12T11:06:04.500Z] Building nodejs source
-[debug] [2023-04-12T11:06:04.500Z] Analyzing nodejs backend spec
-[debug] [2023-04-12T11:07:28.909Z] File /home/pedro/Documents/octo/functions/stripe/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/pedro/Documents/octo/functions/stripe/index.ts changed, reloading triggers"}}
-[debug] [2023-04-12T11:07:29.912Z] Validating nodejs source
-[debug] [2023-04-12T11:07:31.769Z] > [functions] package.json contents: {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
-  "scripts": {
-    "serve": "firebase emulators:start --only functions",
-    "shell": "firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
-  },
-  "engines": {
-    "node": "14"
-  },
-  "main": "index.js",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "firebase-admin": "^10.0.2",
-    "firebase-functions": "^4.2.1",
-    "stripe": "^12.0.0"
-  },
-  "devDependencies": {
-    "firebase-functions-test": "^0.2.0"
-  },
-  "private": true
-}
-[debug] [2023-04-12T11:07:31.769Z] Building nodejs source
-[debug] [2023-04-12T11:07:31.769Z] Analyzing nodejs backend spec
-[debug] [2023-04-12T11:11:58.333Z] File /home/pedro/Documents/octo/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/pedro/Documents/octo/functions/index.js changed, reloading triggers"}}
-[debug] [2023-04-12T11:11:59.334Z] Validating nodejs source
-[debug] [2023-04-12T11:12:00.451Z] > [functions] package.json contents: {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
-  "scripts": {
-    "serve": "firebase emulators:start --only functions",
-    "shell": "firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
-  },
-  "engines": {
-    "node": "14"
-  },
-  "main": "index.js",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "firebase-admin": "^10.0.2",
-    "firebase-functions": "^4.2.1",
-    "stripe": "^12.0.0"
-  },
-  "devDependencies": {
-    "firebase-functions-test": "^0.2.0"
-  },
-  "private": true
-}
-[debug] [2023-04-12T11:12:00.451Z] Building nodejs source
-[debug] [2023-04-12T11:12:00.451Z] Analyzing nodejs backend spec
-[debug] [2023-04-12T11:15:32.778Z] File /home/pedro/Documents/octo/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/pedro/Documents/octo/functions/index.js changed, reloading triggers"}}
-[debug] [2023-04-12T11:15:33.780Z] Validating nodejs source
-[debug] [2023-04-12T11:15:34.899Z] > [functions] package.json contents: {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
-  "scripts": {
-    "serve": "firebase emulators:start --only functions",
-    "shell": "firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
-  },
-  "engines": {
-    "node": "14"
-  },
-  "main": "index.js",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "firebase-admin": "^10.0.2",
-    "firebase-functions": "^4.2.1",
-    "stripe": "^12.0.0"
-  },
-  "devDependencies": {
-    "firebase-functions-test": "^0.2.0"
-  },
-  "private": true
-}
-[debug] [2023-04-12T11:15:34.899Z] Building nodejs source
-[debug] [2023-04-12T11:15:34.899Z] Analyzing nodejs backend spec
-[debug] [2023-04-12T11:16:52.836Z] File /home/pedro/Documents/octo/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/pedro/Documents/octo/functions/index.js changed, reloading triggers"}}
-[debug] [2023-04-12T11:16:53.839Z] Validating nodejs source
-[debug] [2023-04-12T11:16:54.815Z] > [functions] package.json contents: {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
-  "scripts": {
-    "serve": "firebase emulators:start --only functions",
-    "shell": "firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
-  },
-  "engines": {
-    "node": "14"
-  },
-  "main": "index.js",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "firebase-admin": "^10.0.2",
-    "firebase-functions": "^4.2.1",
-    "stripe": "^12.0.0"
-  },
-  "devDependencies": {
-    "firebase-functions-test": "^0.2.0"
-  },
-  "private": true
-}
-[debug] [2023-04-12T11:16:54.816Z] Building nodejs source
-[debug] [2023-04-12T11:16:54.816Z] Analyzing nodejs backend spec
-[debug] [2023-04-12T11:30:54.791Z] File /home/pedro/Documents/octo/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/pedro/Documents/octo/functions/index.js changed, reloading triggers"}}
-[debug] [2023-04-12T11:30:55.794Z] Validating nodejs source
-[debug] [2023-04-12T11:30:57.173Z] > [functions] package.json contents: {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
-  "scripts": {
-    "serve": "firebase emulators:start --only functions",
-    "shell": "firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
-  },
-  "engines": {
-    "node": "14"
-  },
-  "main": "index.js",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "firebase-admin": "^10.0.2",
-    "firebase-functions": "^4.2.1",
-    "stripe": "^12.0.0"
-  },
-  "devDependencies": {
-    "firebase-functions-test": "^0.2.0"
-  },
-  "private": true
-}
-[debug] [2023-04-12T11:30:57.173Z] Building nodejs source
-[debug] [2023-04-12T11:30:57.173Z] Analyzing nodejs backend spec
+[debug] [2023-04-12T16:40:41.602Z] [worker-us-central1-api-a91a84bf-e1d0-497c-ace8-278507237d36]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-a91a84bf-e1d0-497c-ace8-278507237d36]: IDLE"}}
+[debug] [2023-04-12T16:40:41.603Z] [work-queue] {"queueLength":0,"workRunningCount":0}
