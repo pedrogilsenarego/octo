@@ -11,25 +11,30 @@ export const content = {
         customerService: "Custumer Service",
         contact: "Contact Us",
       },
-      cookiePolicy: {
-        acceptTerms: "Accept Cookies",
-        mainText:
-          "This website obtains information exclusively to increase the user experience. Visit our ",
-        manifest: "Manifest",
-        secondText: " for more information",
-        cookiePolicy: "Cookie Policy",
-        customerCare: "Customer Care",
-        customerCareText:
-          "At Octo, we're always available to address any concerns or questions you may have. If you have any inquiries or requests for information, feel free to reach out to us at our designated email address: hello@octo.mistic.com. We're here to help and will promptly respond to any emails we receive",
-        paymentOption: "Payment Option",
-        paymentOptionText:
-          "At OCTO, the process of purchasing items is straightforward. Users simply need to add the items they want to their shopping cart and complete the checkout process. Shoppers have the flexibility to choose their preferred method of payment from the following options: Visa or Mastercard credit cards, PayPal, MBWay or Multibanco.",
-        conditionsUse: "Conditions of Use",
-        conditionsUseText:
-          "The user is accountable for using this website in compliance with legal regulations, refraining from any actions that are unethical, illegal, or infringe upon the rights of third parties. It's important to follow best practices for using the website, to ensure the safety and protection of all parties involved.",
-        productsPrices: "Products and Prices",
-        productsPricesText:
-          "OCTO´s prices are inclusive of all applicable taxes (VAT) as required by law. Any changes to the tax rate will be immediately reflected in the brand's prices. However, please note that OCTO reserves the right to change its prices at any time, and some items may only be available for a limited time period, as determined by the brand. The user is responsible for all shipping costs unless otherwise specified by OCTO. Due to the wide range of products available, labeling errors may occur. If any errors are found during the order processing, the buyer may choose to either confirm the order at the correct price or cancel it altogether",
+      policies: {
+        termsService: {
+          intellectualProperty: "Intellectual Property",
+          intellectualPropertyText:
+            "The Octo website, its content, and all associated intellectual property rights belong exclusively to Octo. This includes all text, images, sound, software, and other website content. Users are permitted to search and reproduce excerpts of the website for personal use only, such as by printing or downloading to a disc, but commercial use of any kind is strictly prohibited. None of the website's content can be used or distributed for commercial purposes, nor can it be modified or utilized in any publication or essay format. The intellectual property cannot be transferred to other websites, and accessing the Octo website does not grant users any rights or licenses to its intellectual property",
+          conditionsUse: "Conditions of use",
+          conditionsUseText:
+            "The user is accountable for using this website in compliance with legal regulations, refraining from any actions that are unethical, illegal, or infringe upon the rights of third parties. It's important to follow best practices for using the website, to ensure the safety and protection of all parties involved.",
+          productsAndPrices: "Products and prices",
+          productsAndPricesText:
+            "Octo´s prices are inclusive of all applicable taxes (VAT) as required by law. Any changes to the tax rate will be immediately reflected in the brand's prices. However, please note that Octo reserves the right to change its prices at any time, and some items may only be available for a limited time period, as determined by the brand. The user is responsible for all shipping costs unless otherwise specified by Octo. Due to the wide range of products available, labeling errors may occur. If any errors are found during the order processing, the buyer may choose to either confirm the order at the correct price or cancel it altogether.",
+          paymentOption: "Payment Option",
+          paymentOptionText:
+            "At Octo, the process of purchasing items is straightforward. Users simply need to add the items they want to their shopping cart and complete the checkout process. Shoppers have the flexibility to choose their preferred method of payment from the following options: Visa or Mastercard credit cards, PayPal, MBWay or Multibanco.",
+          costumerCare: "Costumer Care",
+          costumerCareText:
+            "At Octo, we're always available to address any concerns or questions you may have. If you have any inquiries or requests for information, feel free to reach out to us at our designated email address: hello@octo-mistic.com. We're here to help and will promptly respond to any emails we receive.",
+          responsability: "Responsability",
+          responsabilityText:
+            "Please note that Octo is not responsible for any viruses or other malicious content that may be present on its website, in electronic files or documents, or on your computer. It is your responsibility to take necessary precautions and protect your computer and software against any potential threats.",
+          legalRegulations: "Legal Regulations",
+          legalRegulationsText:
+            "We kindly remind you that the terms and conditions of Octo are governed by the laws of Portugal. In the event of any disputes or claims arising from our services, we respectfully request that you submit to the exclusive jurisdiction of the courts of Portugal. By using our services, you agree to these terms and conditions and to waive any right to bring legal action in any other jurisdiction or under any other law. We appreciate your understanding and cooperation in this matter.",
+        },
       },
       forms: {
         required: "Required",

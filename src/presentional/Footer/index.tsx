@@ -1,4 +1,11 @@
-import { Box, Divider, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { Colors } from "../../constants/pallete";
 import { i18n } from "../../translations/i18n";
 import { useNavigate } from "react-router-dom";
@@ -13,59 +20,82 @@ const Footer = () => {
     <div
       style={{
         width: window.innerWidth,
-        backgroundColor: Colors.BLACKISH,
+        backgroundColor: Colors.PRETTY_CREAM,
         padding: "2rem",
         paddingLeft: generalConstants.PADDING,
-        paddingRight: generalConstants.PADDING
+        paddingRight: generalConstants.PADDING,
       }}
     >
-      <Grid container style={{ paddingBottom: "40px", borderBottom: "solid 1px #ffffff66" }}>
+      <Grid
+        container
+        style={{ paddingBottom: "40px", borderBottom: "solid 1px #ffffff66" }}
+      >
         <Grid item xs={4}>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
             <img
               style={{ filter: "brightness(0) invert(1)" }}
-              height="100px"
+              height='100px'
               src='https://res.cloudinary.com/daantetcr/image/upload/v1681291017/Octo/footer/icones-ap-handmade_ltqxry.png'
               alt=''
             />
-            <Typography color="white">{i18n.t("footer.handMade")}</Typography>
+            <Typography color='white'>{i18n.t("footer.handMade")}</Typography>
           </div>
         </Grid>
         <Grid item xs={4}>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
             <img
               style={{ filter: "brightness(0) invert(1)" }}
-              height="100px"
+              height='100px'
               src='https://res.cloudinary.com/daantetcr/image/upload/v1681291017/Octo/footer/icones-ap-handmade2_rnajlu.png'
               alt=''
             />
-            <Typography color="white">{i18n.t("footer.madePortugal")}</Typography>
+            <Typography color='white'>
+              {i18n.t("footer.madePortugal")}
+            </Typography>
           </div>
         </Grid>
         <Grid item xs={4}>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
             <img
               style={{ filter: "brightness(0) invert(1)" }}
-              height="100px"
+              height='100px'
               src='https://res.cloudinary.com/daantetcr/image/upload/v1681291017/Octo/footer/icones-ap-certificado_ru2xmj.png'
               alt=''
             />
-            <Typography color="white">{i18n.t("footer.certified")}</Typography>
+            <Typography color='white'>{i18n.t("footer.certified")}</Typography>
           </div>
         </Grid>
       </Grid>
-      <Box mt="60px" display="flex" justifyContent="space-between">
-        <Typography style={{ cursor: "pointer" }} color='white'>
+      <Box mt='60px' display='flex' justifyContent='space-between'>
+        <Typography
+          onClick={() => navigate(ROUTE_PATHS.TERMS_OF_SERVICE)}
+          style={{ cursor: "pointer" }}
+          color='white'
+        >
           {i18n.t("footer.termsOfService")}
         </Typography>
         <Typography style={{ cursor: "pointer" }} color='white'>
           {i18n.t("footer.privacyPolicy")}
         </Typography>
-        <Typography
-          onClick={() => navigate(ROUTE_PATHS.DETAILS)}
-          style={{ cursor: "pointer" }}
-          color='white'
-        >
+        <Typography style={{ cursor: "pointer" }} color='white'>
           {i18n.t("footer.refunds")}
         </Typography>
 
