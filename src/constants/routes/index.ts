@@ -5,5 +5,6 @@ export const ROUTE_PATHS = {
   SHOP:"/shop",
   PRODUCT: "/product/:id",
   COLLECTION:"/collections",
-  TERMS_OF_SERVICE:"/terms-of-service"
+  TERMS_OF_SERVICE:"/terms-of-service",
+  COSTUMER_SERVICE:"/costumer-service"
 }

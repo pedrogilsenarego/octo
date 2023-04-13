@@ -8,7 +8,7 @@ export const content = {
         certified: "Most Octomistic brand",
         privacyPolicy: "Privacy Policy",
         refunds: "Refunds & Exchanges",
-        customerService: "Custumer Service",
+        customerService: "Costumer Service",
         contact: "Contact Us",
       },
       policies: {
@@ -34,6 +34,42 @@ export const content = {
           legalRegulations: "Legal Regulations",
           legalRegulationsText:
             "We kindly remind you that the terms and conditions of Octo are governed by the laws of Portugal. In the event of any disputes or claims arising from our services, we respectfully request that you submit to the exclusive jurisdiction of the courts of Portugal. By using our services, you agree to these terms and conditions and to waive any right to bring legal action in any other jurisdiction or under any other law. We appreciate your understanding and cooperation in this matter.",
+        },
+        costumerService: {
+          orders: "Orders",
+          cancelOrder: "Is it possible to cancel my order?",
+          cancelOrderText:
+            "We understand that sometimes plans change, and we are happy to accommodate any changes or cancellations to your order. Please reach out to us promptly at hello@octo-mistic.com if you need to modify or cancel your order. Please note that once your order has been processed by our warehouse, we regret that we will be unable to accommodate any further changes.",
+          whatSteps:
+            "What steps should I take if I receive the wrong items in my package?",
+          whatStepsText:
+            "We sincerely apologize for any confusion with your order. To resolve this issue, please kindly send an email to hello@octo-mistic.com. Please include your order number and photographs of the products that you did receive.",
+          whatStepsText2:
+            "It's important to note that any issues with your order must be reported within 14 days of delivery. We appreciate your cooperation and look forward to resolving this matter for you as soon as possible.",
+          returnPolicy: "Return Policy",
+          returnPolicyText:
+            "We have a 15-day return policy, from the moment you received your order. The item must be in its original condition, unused and with tags still attached. Please ensure that the item is also in its original packaging, and that you have the receipt or proof of purchase available.",
+          howToReturn:
+            "What do I need to do if I want to return or exchange an item?",
+          howToReturnText:
+            "To initiate a return, please complete our online form, print it, and include it in the package with the item you wish to return. The item must be in pristine, unused condition, with the original hand tag and packaging. Please note that the cost of shipping for returns is the responsibility of the customer.",
+          howToReturnText2:
+            "Additionally, kindly notify us of your intention to return or exchange an item by sending an email to hello@octo-mistic.com. We will provide you the return address and hold the desired replacement item for you.",
+          howToReturnText3:
+            "Once we receive the returned item and confirm that it meets our return policy requirements, we will either ship the replacement item to you (at no additional charge) or issue a refund. Refunds will be processed using the original payment method used to purchase the item.",
+          howToGetReturn: "What do i need to get a refund?",
+          howToGetReturnText:
+            "Upon receiving and verifying your return, we will update you on the status of your refund and inform you of whether it has been approved or not. If your refund is approved, it will be processed automatically to your original payment method. Please keep in mind that it may take some time for the refund to show up on your account, depending on your bank or credit card company's processing times.",
+          shippingPolicy: "Shipping Policy",
+          shippingPolicyText:
+            "After placing your order, you will receive a confirmation email from us acknowledging receipt of your order. You will receive a follow-up email with your tracking information once your order is shipped. Please note that shipping fees are non-refundable in the event of a return, even if your order qualified for free shipping.",
+          shipOversees: "Do you ship overseas?",
+          shipOverseesText:
+            "We ship our products worldwide, and shipping fees will be calculated and added to your total during the checkout process.",
+          problemsDelivering:
+            "My package says delivered, but i didn’t receive it. What do I do?",
+          problemsDeliveringText:
+            "We understand that sometimes tracking information can be misleading, causing packages to be marked as delivered before they actually arrive. If this happens, we suggest waiting a few days for the package to arrive. You can also check with your neighbors and local post office for additional information! If your package still hasn't arrived after a few days, please reach out to us at hello@octo-mistic.com with your order number and tracking information so we can assist you further.",
         },
       },
       forms: {

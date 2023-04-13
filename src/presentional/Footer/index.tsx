@@ -99,7 +99,7 @@ const Footer = () => {
           {i18n.t("footer.refunds")}
         </Typography>
 
-        <Typography style={{ cursor: "pointer" }} color='white'>
+        <Typography onClick={() => navigate(ROUTE_PATHS.COSTUMER_SERVICE)} style={{ cursor: "pointer" }} color='white'>
           {i18n.t("footer.customerService")}
         </Typography>
 

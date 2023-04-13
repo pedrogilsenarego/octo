@@ -11,7 +11,7 @@ const Shop = lazyWithRetryAndLoader(() => import("../modules/Shop"));
 const Product = lazyWithRetryAndLoader(() => import("../modules/Product"));
 const Collections = lazyWithRetryAndLoader(() => import("../modules/Collections"))
 const TermsOfService = lazyWithRetryAndLoader(() => import("../modules/TermsOfService"))
-
+const CostumerService = lazyWithRetryAndLoader(() => import("../modules/CostumerService"))
 
 
 export const routes: AppRoute[] = [
@@ -42,6 +42,12 @@ export const routes: AppRoute[] = [
     path: ROUTE_PATHS.TERMS_OF_SERVICE,
     component: <PagesLayout noMarginBottom>
       <TermsOfService />
+    </PagesLayout>,
+  },
+  {
+    path: ROUTE_PATHS.COSTUMER_SERVICE,
+    component: <PagesLayout noMarginBottom>
+      <CostumerService />
     </PagesLayout>,
   },
   {
