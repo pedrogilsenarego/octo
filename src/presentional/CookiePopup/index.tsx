@@ -6,12 +6,15 @@ import { i18n } from "../../translations/i18n";
 import { useDispatch, useSelector } from "react-redux";
 import { State } from "../../slicer/types";
 import { setCookiePolicy } from "../../slicer/general/general.actions";
+import { ROUTE_PATHS } from "../../constants/routes";
+import { useNavigate } from "react-router-dom";
 
 const CookiePolicy = () => {
   const [cookiePolicyClick, setCookiePolicyClick] = useState<boolean>(false);
   const cookiePolicySignal = useSelector<State, boolean>(
     (state) => state?.general?.cookiePolicy);
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -39,6 +42,7 @@ const CookiePolicy = () => {
             <Typography style={{ fontSize: mobile ? "0.6rem" : "1rem" }}>
               {i18n.t("cookiePolicy.mainText")}
               <b
+                onClick={() => navigate(ROUTE_PATHS.PRIVACY_POLICY)}
                 onMouseEnter={() => setCookiePolicyClick(true)}
                 onMouseLeave={() => setCookiePolicyClick(false)}
                 style={{

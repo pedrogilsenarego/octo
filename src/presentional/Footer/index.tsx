@@ -92,7 +92,7 @@ const Footer = () => {
         >
           {i18n.t("footer.termsOfService")}
         </Typography>
-        <Typography style={{ cursor: "pointer" }} color='white'>
+        <Typography onClick={() => navigate(ROUTE_PATHS.PRIVACY_POLICY)} style={{ cursor: "pointer" }} color='white'>
           {i18n.t("footer.privacyPolicy")}
         </Typography>
         <Typography style={{ cursor: "pointer" }} color='white'>

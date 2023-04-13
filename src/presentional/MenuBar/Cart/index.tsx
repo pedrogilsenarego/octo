@@ -23,7 +23,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { publishableKey } from "../../../stripe/config";
 import { loadStripe } from "@stripe/stripe-js";
 interface Props {
-  closeCart?: (signal: boolean) => void;
+  closeCart: (signal: boolean) => void;
 }
 const stripePromise = loadStripe(publishableKey)
 
@@ -124,7 +124,7 @@ const Cart = ({ closeCart }: Props) => {
         }}
       >
         {checkoutInfo ? (
-          <Elements stripe={stripePromise}><Checkout /></Elements>
+          <Elements stripe={stripePromise}><Checkout closeCart={closeCart} /></Elements>
         ) : (
           <>
             <Button

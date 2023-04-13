@@ -1,6 +1,6 @@
 
 import Footer from "../presentional/Footer";
-import SideBar from "../presentional/SideBar";
+import MenuBar from "../presentional/MenuBar";
 
 interface Props {
   noMarginBottom?: boolean
@@ -17,7 +17,7 @@ export const PagesLayout = ({ noMarginBottom, children }: Props) => {
 
 
 
-        <SideBar />
+        <MenuBar />
         {children}
         <Footer />
       </div>

@@ -12,6 +12,8 @@ const Product = lazyWithRetryAndLoader(() => import("../modules/Product"));
 const Collections = lazyWithRetryAndLoader(() => import("../modules/Collections"))
 const TermsOfService = lazyWithRetryAndLoader(() => import("../modules/TermsOfService"))
 const CostumerService = lazyWithRetryAndLoader(() => import("../modules/CostumerService"))
+const PrivacyPolicy = lazyWithRetryAndLoader(() => import("../modules/PrivacyPolicy"))
+const BuySuccess = lazyWithRetryAndLoader(() => import("../modules/BuySuccess"))
 
 
 export const routes: AppRoute[] = [
@@ -42,6 +44,18 @@ export const routes: AppRoute[] = [
     path: ROUTE_PATHS.TERMS_OF_SERVICE,
     component: <PagesLayout noMarginBottom>
       <TermsOfService />
+    </PagesLayout>,
+  },
+  {
+    path: ROUTE_PATHS.BUY_SUCCESS,
+    component: <PagesLayout noMarginBottom>
+      <BuySuccess />
+    </PagesLayout>,
+  },
+  {
+    path: ROUTE_PATHS.PRIVACY_POLICY,
+    component: <PagesLayout noMarginBottom>
+      <PrivacyPolicy />
     </PagesLayout>,
   },
   {

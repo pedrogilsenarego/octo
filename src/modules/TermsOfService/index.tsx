@@ -22,7 +22,7 @@ const TermsOfService = () => {
         flexDirection: "column",
       }}
     >
-      <MenuBar />
+
       <Typography fontSize={mobile ? "1.5rem" : "2rem"} style={{ fontWeight: 800 }}>
         {i18n.t("footer.termsOfService")}
       </Typography>

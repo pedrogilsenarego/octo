@@ -17,6 +17,10 @@ import { clearCart } from "../../../../slicer/cart/cart.actions";
 import { stripeProduction } from "../../../../constants/stripe";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
 
+interface Props {
+  closeCart: (signal: boolean) => void
+}
+
 interface FormProps {
   name: string;
   address: string;
@@ -26,7 +30,7 @@ interface FormProps {
   phone: string;
 }
 
-const Checkout = () => {
+const Checkout = ({ closeCart }: Props) => {
   // const INITIAL_FORM_STATE: FormProps = {
   //   name: "",
   //   address: "",
@@ -43,7 +47,7 @@ const Checkout = () => {
     (state) => state.cart.cartItems
   );
 
-  const handleSubmitCard = async (values: FormProps) => {
+  const handleSubmitCard = async () => {
     let items: {
       title: string;
       amount: number;
@@ -58,8 +62,6 @@ const Checkout = () => {
         quantity: item.value,
       });
     });
-
-
     await fetch(
       stripeProduction,
       {
@@ -77,6 +79,7 @@ const Checkout = () => {
         if (res.url) {
           dispatch(clearCart())
           dispatch(updateSuccessNotification(i18n.t("cartDrawer.successBuy")))
+          closeCart(false)
           window.location.assign(res.url);
 
         }

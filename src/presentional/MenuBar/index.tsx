@@ -200,7 +200,7 @@ const MenuBar = () => {
           openDrawer={cartDrawer}
           setOpenDrawer={setCartDrawer}
         >
-          <Cart />
+          <Cart closeCart={setCartDrawer} />
         </DrawerMine>
       </div>
     );

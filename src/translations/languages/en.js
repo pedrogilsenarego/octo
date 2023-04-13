@@ -1,6 +1,14 @@
 export const content = {
   en: {
     translations: {
+      cookiePolicy: {
+        acceptTerms: "Accept Cookies",
+        mainText:
+          "This website obtains information exclusively to increase the user experience. Visit our ",
+
+        secondText: " for more information",
+        cookiePolicy: "Cookie Policy",
+      },
       footer: {
         termsOfService: "Terms of Service",
         handMade: "Hand Made",
@@ -70,6 +78,10 @@ export const content = {
             "My package says delivered, but i didn’t receive it. What do I do?",
           problemsDeliveringText:
             "We understand that sometimes tracking information can be misleading, causing packages to be marked as delivered before they actually arrive. If this happens, we suggest waiting a few days for the package to arrive. You can also check with your neighbors and local post office for additional information! If your package still hasn't arrived after a few days, please reach out to us at hello@octo-mistic.com with your order number and tracking information so we can assist you further.",
+        },
+        privacyPolicy: {
+          mainText:
+            "At Octo, the security and transparency of our users data is our top priority. To ensure this, we have implemented data protection measures in compliance with the New General Data Protection Regulation. We use the data provided by our users to offer personalized recommendations and exclusive offers, while adhering to legal requirements and maintaining the highest level of trust and security.",
         },
       },
       forms: {
