@@ -28,7 +28,7 @@ const Shop = () => {
           flexDirection: "column",
         }}
       >
-        <MenuBar />
+
 
 
 

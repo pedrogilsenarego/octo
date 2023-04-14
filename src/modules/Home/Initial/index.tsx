@@ -22,6 +22,7 @@ const Initial = () => {
   const renderLaptop = () => {
     return (
       <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
+
         <div
           dangerouslySetInnerHTML={{
             __html: `<video  playsinline autoBuffer autoPlay loop muted width="115%" height="115%" >
@@ -136,7 +137,6 @@ const Initial = () => {
               width: "100%",
               height: "100%",
 
-
               // para ter em consideração o tamanho do video estar cortado
               overflow: "hidden",
             }}
@@ -157,8 +157,10 @@ const Initial = () => {
               backgroundRepeat: "no-repeat",
               backgroundImage: `url(${labelEsq})`,
               backgroundSize: "cover",
-              transform: loading ? "translate(-120px,0px)" : "translate(0px,0px)",
-              transition: "all 0.7s ease-in-out"
+              transform: loading
+                ? "translate(-120px,0px)"
+                : "translate(0px,0px)",
+              transition: "all 0.7s ease-in-out",
             }}
           ></Box>
 
