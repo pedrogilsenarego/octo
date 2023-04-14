@@ -1,5 +1,4 @@
 import { i18n } from "../translations/i18n";
-import fabric6 from "../assets/fabrics/white.png";
 
 export const fabrics: FabricsType[] = [
   {
@@ -35,8 +34,8 @@ export const fabrics: FabricsType[] = [
   {
     id: 5,
     title: i18n.t("constants.fabrics.6"),
-    image: fabric6,
-    icon: fabric6,
+    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681473670/Octo/patterns/white_efwsto.png",
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681473670/Octo/patterns/white_efwsto.png",
   },
   {
     id: 6,
