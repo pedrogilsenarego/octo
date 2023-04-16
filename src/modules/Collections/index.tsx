@@ -157,7 +157,9 @@ const Collections = () => {
           rowGap: "5px",
         }}
       >
-        <Typography style={{ letterSpacing: "10px", textAlign: "right", fontFamily: "Avalanche", fontSize: "50px", marginTop: "90px", marginBottom: "80px" }}>Cool moms, easy dads, happy kids!</Typography>
+        <Typography style={{ textAlign: "right", fontFamily: "Avalanche", fontSize: "60px", marginTop: "70px" }}>Cool moms, easy dads,</Typography>
+        <Typography style={{ textAlign: "right", fontFamily: "Avalanche", fontSize: "80px", marginTop: "-25px", marginBottom: "70px", paddingBottom: "-10px" }}>happy kids!</Typography>
+
         <Grid container columnSpacing='5px' style={{}}>
           <Grid
             item
