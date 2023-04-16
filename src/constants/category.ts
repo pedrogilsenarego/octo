@@ -373,6 +373,14 @@ export const products:Product[] = [
     icon:iconCollarPureWhite,
     images:["https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"],
    pattern: 5
+  },
+  {
+    uid: "strsdsassaaaafevcrfing",
+    price: 748,
+    category: 9,
+    icon:iconCollarPureWhite,
+    images:["https://res.cloudinary.com/daantetcr/image/upload/v1681642953/Octo/strollerBag/originais/OCTO_SS23_517_fiorck.webp","https://res.cloudinary.com/daantetcr/image/upload/v1681642953/Octo/strollerBag/originais/OCTO_SS23_480_hgaxny.webp","https://res.cloudinary.com/daantetcr/image/upload/v1681642953/Octo/strollerBag/originais/OCTO_SS23_492_xh6zbz.webp","https://res.cloudinary.com/daantetcr/image/upload/v1681642953/Octo/strollerBag/originais/OCTO_SS23_501_q3qljp.webp","https://res.cloudinary.com/daantetcr/image/upload/v1681642953/Octo/strollerBag/originais/OCTO_SS23_753_oi9ttb.webp","https://res.cloudinary.com/daantetcr/image/upload/v1681642953/Octo/strollerBag/originais/OCTO_SS23_482_okn1cn.webp","https://res.cloudinary.com/daantetcr/image/upload/v1681642953/Octo/strollerBag/originais/OCTO_SS23_777_fjjxrx.webp"],
+   pattern: 5
   }
 
 

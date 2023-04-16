@@ -14,6 +14,7 @@ const TermsOfService = lazyWithRetryAndLoader(() => import("../modules/TermsOfSe
 const CostumerService = lazyWithRetryAndLoader(() => import("../modules/CostumerService"))
 const PrivacyPolicy = lazyWithRetryAndLoader(() => import("../modules/PrivacyPolicy"))
 const BuySuccess = lazyWithRetryAndLoader(() => import("../modules/BuySuccess"))
+const Admin = lazyWithRetryAndLoader(() => import("../modules/Admin/ManageProducts"))
 
 
 export const routes: AppRoute[] = [
@@ -67,7 +68,7 @@ export const routes: AppRoute[] = [
   {
     path: ROUTE_PATHS.ADMIN,
     component: <AdminLayout>
-      <>Teste</>
+      <Admin />
     </AdminLayout>,
   },
   {

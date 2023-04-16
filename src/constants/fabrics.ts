@@ -4,32 +4,32 @@ export const fabrics: FabricsType[] = [
   {
     id: 0,
     title: i18n.t("constants.fabrics.1"),
-    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681473276/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.00_hzsfc5.jpg",
-    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681473276/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.00_hzsfc5.jpg",
+    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.00_va3rjj.webp",
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.00_va3rjj.webp",
   },
   {
     id: 1,
     title: i18n.t("constants.fabrics.2"),
-    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681473275/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.04_ymwdcd.jpg",
-    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681473275/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.04_ymwdcd.jpg",
+    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.04_hjuaa2.webp",
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.04_hjuaa2.webp",
   },
   {
     id: 2,
     title: i18n.t("constants.fabrics.3"),
-    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681473275/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.02_sg9xr6.jpg",
-    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681473275/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.02_sg9xr6.jpg",
+    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.02_cjqkjp.webp",
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.02_cjqkjp.webp",
   },
   {
     id: 3,
     title: i18n.t("constants.fabrics.4"),
-    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681473275/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.01_zpjgxc.jpg",
-    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681473275/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.01_zpjgxc.jpg",
+    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.01_uy5wx4.webp",
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.01_uy5wx4.webp",
   },
   {
     id: 4,
     title: i18n.t("constants.fabrics.5"),
-    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681473275/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.02_1_zi6ewy.jpg",
-    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681473275/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.02_1_zi6ewy.jpg",
+    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.02_1_kf3e8m.webp",
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.02_1_kf3e8m.webp",
   },
   {
     id: 5,
@@ -40,14 +40,14 @@ export const fabrics: FabricsType[] = [
   {
     id: 6,
     title: i18n.t("constants.fabrics.7"),
-    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681473275/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.03_yc3mzj.jpg",
-    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681473275/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.03_yc3mzj.jpg",
+    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.03_evugam.webp",
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.03_evugam.webp",
   },
   {
     id: 7,
     title: i18n.t("constants.fabrics.8"),
-    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681473276/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.03_1_bvuo1p.jpg",
-    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681473276/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.03_1_bvuo1p.jpg",
+    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.03_1_wjecr7.webp",
+    icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681646708/Octo/patterns/WhatsApp_Image_2023-04-13_at_16.32.03_1_wjecr7.webp",
   },
 ];
 

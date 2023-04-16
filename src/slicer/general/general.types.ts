@@ -23,6 +23,7 @@ export interface GeneralState {
   lastEndpoint: string
   disableSnap:boolean
   cookiePolicy:boolean
+  loading:boolean
 
 }
 
