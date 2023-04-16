@@ -18,7 +18,8 @@ const theme = createTheme({
       textTransform: 'none',
       fontSize: 16,
       color: Colors.BLACKISH,
-      caretColor: "transparent"
+      caretColor: "transparent",
+
     },
   },
 });

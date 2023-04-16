@@ -127,6 +127,9 @@ export const content = {
         manageCollections: "Collections",
       },
       modules: {
+        collections: {
+          title: "First Collection",
+        },
         home: {
           mainText: "Born\n Octomistic",
           about: "The Octo Story",

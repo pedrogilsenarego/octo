@@ -6,10 +6,13 @@ import t1 from "../../../assets/t1.jpeg";
 import t2 from "../../../assets/t2.jpeg";
 import firstCollection from "../../../assets/firstCollection.svg";
 import t5 from "../../../assets/t5.jpeg";
+import { ROUTE_PATHS } from "../../../constants/routes";
+import { useNavigate } from "react-router";
 
 const Collections = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const navigate = useNavigate()
   return (
     <>
       <Box
@@ -38,7 +41,7 @@ const Collections = () => {
           }}
         >
           <Grid
-
+            onClick={() => navigate(ROUTE_PATHS.COLLECTION)}
             container
             columnSpacing={2}
             width='100%'

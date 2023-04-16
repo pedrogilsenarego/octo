@@ -37,9 +37,9 @@ export const routes: AppRoute[] = [
 
   {
     path: ROUTE_PATHS.COLLECTION,
-    component: <MainLayout>
+    component: <PagesLayout noMarginBottom>
       <Collections />
-    </MainLayout>,
+    </PagesLayout>,
   },
   {
     path: ROUTE_PATHS.TERMS_OF_SERVICE,
