@@ -1,6 +1,5 @@
 import {
   Box,
-  Divider,
   Grid,
   Typography,
   useMediaQuery,
@@ -16,94 +15,131 @@ const Footer = () => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const navigate = useNavigate();
+
+  const iconMobileSize = "70px"
+  const iconTextSize = "14px"
   return (
     <div
       style={{
+        marginTop: "100px",
         width: window.innerWidth,
-        backgroundColor: Colors.PRETTY_CREAM,
-        padding: "2rem",
+        backgroundColor: Colors.TAUPE,
+        paddingTop: "50px",
         paddingLeft: generalConstants.PADDING,
         paddingRight: generalConstants.PADDING,
+        paddingBottom: "20px",
       }}
     >
       <Grid
         container
-        style={{ paddingBottom: "40px", borderBottom: "solid 1px #ffffff66" }}
+        rowGap={3}
+        style={{ paddingBottom: "40px", borderBottom: "solid 2px #ffffff66" }}
       >
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              rowGap: mobile ? "6px" : "0px"
             }}
           >
             <img
-              style={{ filter: "brightness(0) invert(1)" }}
-              height='100px'
+              style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }}
+              height={mobile ? iconMobileSize : '100px'}
               src='https://res.cloudinary.com/daantetcr/image/upload/v1681291017/Octo/footer/icones-ap-handmade_ltqxry.png'
               alt=''
             />
-            <Typography color='white'>{i18n.t("footer.handMade")}</Typography>
+            <Typography fontSize={mobile ? iconTextSize : "16px"} color='white' style={{ opacity: 0.8, textAlign: "center" }}>
+              {i18n.t("footer.handMade")}
+            </Typography>
           </div>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              rowGap: mobile ? "6px" : "0px"
             }}
           >
             <img
-              style={{ filter: "brightness(0) invert(1)" }}
-              height='100px'
+              style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }}
+              height={mobile ? iconMobileSize : '100px'}
               src='https://res.cloudinary.com/daantetcr/image/upload/v1681291017/Octo/footer/icones-ap-handmade2_rnajlu.png'
               alt=''
             />
-            <Typography color='white'>
+            <Typography fontSize={mobile ? iconTextSize : "16px"} color='white' style={{ opacity: 0.8, textAlign: "center" }}>
               {i18n.t("footer.madePortugal")}
             </Typography>
           </div>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              rowGap: mobile ? "6px" : "0px"
             }}
           >
             <img
-              style={{ filter: "brightness(0) invert(1)" }}
-              height='100px'
+              style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }}
+              height={mobile ? iconMobileSize : '100px'}
               src='https://res.cloudinary.com/daantetcr/image/upload/v1681291017/Octo/footer/icones-ap-certificado_ru2xmj.png'
               alt=''
             />
-            <Typography color='white'>{i18n.t("footer.certified")}</Typography>
+            <Typography fontSize={mobile ? iconTextSize : "16px"} color='white' style={{ opacity: 0.8, textAlign: "center" }}>
+              {i18n.t("footer.certified")}
+            </Typography>
           </div>
         </Grid>
       </Grid>
-      <Box mt='60px' display='flex' justifyContent='space-between'>
+      <Box
+        mt='20px'
+        display='flex'
+        flexDirection={mobile ? "column" : "row"}
+        justifyContent='space-between'
+        style={{
+          borderBottom: "solid 2px #ffffff66",
+          paddingBottom: "20px",
+          paddingLeft: "20px",
+          paddingRight: "20px",
+          alignItems: "center",
+          rowGap: "12px"
+        }}
+      >
         <Typography
+          fontSize={mobile ? iconTextSize : "16px"}
           onClick={() => navigate(ROUTE_PATHS.TERMS_OF_SERVICE)}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", opacity: 0.8 }}
           color='white'
         >
           {i18n.t("footer.termsOfService")}
         </Typography>
-        <Typography onClick={() => navigate(ROUTE_PATHS.PRIVACY_POLICY)} style={{ cursor: "pointer" }} color='white'>
+        <Typography
+          fontSize={mobile ? iconTextSize : "16px"}
+          onClick={() => navigate(ROUTE_PATHS.PRIVACY_POLICY)}
+          style={{ cursor: "pointer", opacity: 0.8 }}
+          color='white'
+        >
           {i18n.t("footer.privacyPolicy")}
         </Typography>
-        <Typography style={{ cursor: "pointer" }} color='white'>
+        <Typography fontSize={mobile ? iconTextSize : "16px"} style={{ cursor: "pointer", opacity: 0.8 }} color='white'>
           {i18n.t("footer.refunds")}
         </Typography>
 
-        <Typography onClick={() => navigate(ROUTE_PATHS.COSTUMER_SERVICE)} style={{ cursor: "pointer" }} color='white'>
+        <Typography
+          fontSize={mobile ? iconTextSize : "16px"}
+          onClick={() => navigate(ROUTE_PATHS.COSTUMER_SERVICE)}
+          style={{ cursor: "pointer", opacity: 0.8 }}
+          color='white'
+        >
           {i18n.t("footer.customerService")}
         </Typography>
 
-        <Typography style={{ cursor: "pointer" }} color='white'>
+        <Typography fontSize={mobile ? iconTextSize : "16px"} style={{ cursor: "pointer", opacity: 0.8 }} color='white'>
           {i18n.t("footer.contact")}
         </Typography>
       </Box>
@@ -113,8 +149,7 @@ const Footer = () => {
           justifyContent: "center",
           width: "100%",
           alignItems: "center",
-          marginTop: "160px",
-          marginBottom: "-1.5rem",
+          marginTop: "80px",
         }}
       >
         <Typography

@@ -90,8 +90,8 @@ const Cart = ({ closeCart }: Props) => {
                   fontSize={mobile ? "0.7rem" : "1rem"}
                   style={{ textTransform: "uppercase" }}
                 >
-                  {categories[item.product.category].title}-
-                  {fabrics[item.product.pattern].title}
+                  {categories[item.product.category]?.title}-
+                  {fabrics[item.product.pattern]?.title}
                 </Typography>
               </Box>
               <Incrementor
