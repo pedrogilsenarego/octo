@@ -60,13 +60,13 @@ export const configBlackish: BlockProps = {
       <img
         draggable={false}
         style={{
-          width: "100%",
+          height: "140%",
           cursor: "pointer",
 
           objectFit: "cover",
           objectPosition: "center",
         }}
-        src={firstCollection}
+        src="https://res.cloudinary.com/daantetcr/image/upload/v1681749831/Octo/collections/Blackish/OCTO_Logotipo_transp-octo_bcwyg9.png"
         alt=''
       />
     ),
@@ -109,6 +109,127 @@ export const configSoftPink: BlockProps = {
           lineHeight='40px'
         >
           Octomistic
+        </Typography>
+      </div>
+    ),
+  },
+  thirdRow: [
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_007a_wkat6t.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681682851/Octo/collections/OCTO_SS23_073a_nakdt6.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_039a_ers2yz.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_026a_u6hita.webp",
+  ],
+};
+
+export const configAnthracite: BlockProps = {
+  pantoneProps: {
+    title: "Anthracite",
+    pantoneNumber: "445 C",
+    rgb: [81, 84, 86],
+    cymk: [66, 56, 54, 31],
+  },
+  firstRow: [
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_280a_vpistr.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_287a_jk0bwf.webp",
+  ],
+  secondRow: {
+    image:
+      "https://res.cloudinary.com/daantetcr/image/upload/v1681685727/Octo/collections/OCTO_SS23_643a_amrbgz.webp",
+    jsx: (
+      <img
+        draggable={false}
+        style={{
+          width: "130%",
+          cursor: "pointer",
+
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+        src="https://res.cloudinary.com/daantetcr/image/upload/v1681750302/Octo/collections/Anthracite/OCTO_Logotipo_transp-babybrand_jvfwz7.png"
+        alt=''
+      />
+    ),
+  },
+  thirdRow: [
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_007a_wkat6t.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681682851/Octo/collections/OCTO_SS23_073a_nakdt6.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_039a_ers2yz.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_026a_u6hita.webp",
+  ],
+};
+
+export const configTaupe: BlockProps = {
+  pantoneProps: {
+    title: "Taupe",
+    pantoneNumber: "877 C",
+    rgb: [131, 128, 128],
+    cymk: [50, 44, 43, 7],
+  },
+  firstRow: [
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_280a_vpistr.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_287a_jk0bwf.webp",
+  ],
+  secondRow: {
+    image:
+      "https://res.cloudinary.com/daantetcr/image/upload/v1681685727/Octo/collections/OCTO_SS23_643a_amrbgz.webp",
+    jsx: (
+      <div>
+        <Typography
+          fontSize='6rem'
+          color={Colors.TAUPE}
+          fontFamily='Avalanche'
+        >
+          We are
+        </Typography>
+        <Typography
+          fontSize='6rem'
+          color={Colors.TAUPE}
+          fontFamily='Avalanche'
+          lineHeight='40px'
+        >
+          Octomistic
+        </Typography>
+      </div>
+    ),
+  },
+  thirdRow: [
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_007a_wkat6t.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681682851/Octo/collections/OCTO_SS23_073a_nakdt6.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_039a_ers2yz.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_026a_u6hita.webp",
+  ],
+};
+
+export const configPrettyCream: BlockProps = {
+  pantoneProps: {
+    title: "Pretty Cream",
+    pantoneNumber: "400 C",
+    rgb: [205, 200, 194],
+    cymk: [20, 17, 20, 0],
+  },
+  firstRow: [
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_280a_vpistr.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_287a_jk0bwf.webp",
+  ],
+  secondRow: {
+    image:
+      "https://res.cloudinary.com/daantetcr/image/upload/v1681685727/Octo/collections/OCTO_SS23_643a_amrbgz.webp",
+    jsx: (
+      <div>
+        <Typography
+          fontSize='6rem'
+          color={Colors.PRETTY_CREAM}
+          fontFamily='Avalanche'
+        >
+          Proudly made
+        </Typography>
+        <Typography
+          fontSize='6rem'
+          color={Colors.PRETTY_CREAM}
+          fontFamily='Avalanche'
+          lineHeight='40px'
+        >
+          in Portugal
         </Typography>
       </div>
     ),
