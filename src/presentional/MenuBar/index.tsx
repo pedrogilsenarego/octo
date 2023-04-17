@@ -111,7 +111,7 @@ const MenuBar = () => {
                   <Button
                     color={MENU_COLOR}
                     title={i18n.t("menuBar.collection")}
-                    onClick={() => handleClick(2)}
+                    onClick={() => navigate(ROUTE_PATHS.COLLECTION)}
                   />
 
                   <Button
