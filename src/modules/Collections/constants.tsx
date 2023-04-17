@@ -57,18 +57,20 @@ export const configBlackish: BlockProps = {
     image:
       "https://res.cloudinary.com/daantetcr/image/upload/v1681685727/Octo/collections/OCTO_SS23_643a_amrbgz.webp",
     jsx: (
-      <img
-        draggable={false}
-        style={{
-          height: "140%",
-          cursor: "pointer",
+      <div style={{ overflow: "hidden", height: window.innerHeight * 0.55, display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <img
+          draggable={false}
+          style={{
+            height: "140%",
+            cursor: "pointer",
 
-          objectFit: "cover",
-          objectPosition: "center",
-        }}
-        src="https://res.cloudinary.com/daantetcr/image/upload/v1681749831/Octo/collections/Blackish/OCTO_Logotipo_transp-octo_bcwyg9.png"
-        alt=''
-      />
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+          src="https://res.cloudinary.com/daantetcr/image/upload/v1681751224/Octo/collections/Blackish/OCTO_Logotipo_transp-octo_ixffst.png"
+          alt=''
+        />
+      </div>
     ),
   },
   thirdRow: [
