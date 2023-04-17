@@ -69,7 +69,7 @@ const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
           />
         </Grid>
 
-        <Grid xs={6}>
+        <Grid xs={6} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           {secondRow.jsx}
         </Grid>
       </Grid>

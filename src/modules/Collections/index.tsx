@@ -1,6 +1,6 @@
-import { useMediaQuery, useTheme } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import { generalConstants } from "../../constants/general";
-import { configBlackish } from "./constants";
+import { configBlackish, configNeonYellow, configSoftPink } from "./constants";
 import Block from "./Block";
 
 
@@ -22,21 +22,17 @@ const Collections = () => {
           paddingRight: generalConstants.PADDING,
         }}
       >
+        <Block {...configNeonYellow} />
+        <div>
+          <Typography style={{ textAlign: "right", fontFamily: "Avalanche", fontSize: "60px", marginTop: "70px" }}>Cool moms, easy dads,</Typography>
+          <Typography style={{ textAlign: "right", fontFamily: "Avalanche", fontSize: "80px", marginTop: "-25px", marginBottom: "70px", paddingBottom: "-10px" }}>happy kids!</Typography>
+        </div>
         <Block {...configBlackish} />
-
-        {/* <Typography
-      fontSize='10.5vw'
-      color={Colors.BLACKISH}
-      fontFamily='Avalanche'
-      style={{
-        zIndex: 1003,
-        whiteSpace: "pre-line",
-        lineHeight: "16.5vh",
-
-      }}
-    >
-      {i18n.t("modules.collections.title")}
-    </Typography> */}
+        <div>
+          <Typography style={{ textAlign: "right", fontFamily: "Avalanche", fontSize: "60px", marginTop: "70px" }}>Cool moms, easy dads,</Typography>
+          <Typography style={{ textAlign: "right", fontFamily: "Avalanche", fontSize: "80px", marginTop: "-25px", marginBottom: "70px", paddingBottom: "-10px" }}>happy kids!</Typography>
+        </div>
+        <Block {...configSoftPink} />
       </div>
     </>
   );
