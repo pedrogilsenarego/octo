@@ -1,13 +1,15 @@
-import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import { generalConstants } from "../../constants/general";
-import { Colors } from "../../constants/pallete";
-import { i18n } from "../../translations/i18n";
-import firstCollection from "../../assets/firstCollection.svg";
+import { configBlackish } from "./constants";
 import Block from "./Block";
+
+
+
 
 const Collections = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+
 
 
 
@@ -20,7 +22,7 @@ const Collections = () => {
           paddingRight: generalConstants.PADDING,
         }}
       >
-        <Block />
+        <Block {...configBlackish} />
 
         {/* <Typography
       fontSize='10.5vw'
