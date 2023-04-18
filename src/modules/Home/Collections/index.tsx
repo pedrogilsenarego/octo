@@ -1,13 +1,10 @@
 import { Box, Grid, useTheme, useMediaQuery } from "@mui/material";
 
 import { generalConstants } from "../../../constants/general";
-import teste from "../../../assets/teste.jpeg";
-import t1 from "../../../assets/t1.jpeg";
-import t2 from "../../../assets/t2.jpeg";
 import firstCollection from "../../../assets/firstCollection.svg";
-import t5 from "../../../assets/t5.jpeg";
 import { ROUTE_PATHS } from "../../../constants/routes";
 import { useNavigate } from "react-router";
+import { Colors } from "../../../constants/pallete";
 
 const Collections = () => {
   const theme = useTheme();
@@ -45,13 +42,14 @@ const Collections = () => {
             container
             columnSpacing="5px"
             width='100%'
-            style={{ position: "relative", cursor: "pointer" }}
+            style={{ position: "relative", cursor: "pointer", }}
           >
             <img
               draggable={false}
               style={{
+
                 position: "absolute",
-                bottom: mobile ? "-15%" : "-35%",
+                bottom: mobile ? "-15%" : "-28%",
                 left: mobile ? "13%" : "10%",
                 width: mobile ? "45vw" : "500px",
                 cursor: "pointer",
@@ -66,13 +64,16 @@ const Collections = () => {
               <img
                 draggable={false}
                 style={{
+                  borderBottom: `solid 60px ${Colors.BLACKISH}`,
+                  paddingBottom: "5px",
+
                   width: "100%",
-                  height: mobile ? "25vh" : "25vw",
+                  height: mobile ? "25vh" : "60vh",
 
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
-                src={t1}
+                src="https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_256a_a2edk9.webp"
                 alt=''
               />
             </Grid>
@@ -80,13 +81,15 @@ const Collections = () => {
               <img
                 draggable={false}
                 style={{
+                  borderBottom: `solid 60px ${Colors.TAUPE}`,
+                  paddingBottom: "5px",
                   width: "100%",
-                  height: mobile ? "25vh" : "25vw",
+                  height: mobile ? "25vh" : "60vh",
 
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
-                src={t2}
+                src="https://res.cloudinary.com/daantetcr/image/upload/v1681822112/Octo/collections/Taupe/OCTO_SS23_482a_qhurtx.webp"
                 alt=''
               />
             </Grid>{" "}
@@ -94,13 +97,15 @@ const Collections = () => {
               <img
                 draggable={false}
                 style={{
+                  borderBottom: `solid 60px ${Colors.SOFT_PINK}`,
+                  paddingBottom: "5px",
                   width: "100%",
-                  height: mobile ? "25vh" : "25vw",
+                  height: mobile ? "25vh" : "60vh",
 
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
-                src={teste}
+                src="https://res.cloudinary.com/daantetcr/image/upload/v1681808237/Octo/collections/SoftPink/OCTO_SS23_606a_bmxgb7.webp"
                 alt=''
               />
             </Grid>{" "}
@@ -108,13 +113,15 @@ const Collections = () => {
               <img
                 draggable={false}
                 style={{
+                  borderBottom: `solid 60px ${Colors.PRETTY_CREAM}`,
+                  paddingBottom: "5px",
                   width: "100%",
-                  height: mobile ? "25vh" : "25vw",
+                  height: mobile ? "25vh" : "60vh",
 
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
-                src={t5}
+                src="https://res.cloudinary.com/daantetcr/image/upload/v1681821797/Octo/collections/PrettyCream/OCTO_SS23_109a_oz8yqj.webp"
                 alt=''
               />
             </Grid>

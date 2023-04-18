@@ -7,6 +7,7 @@ import { Colors } from "../../../constants/pallete";
 interface Props {
   label: string;
   onClick?: any;
+  width?: string
   borderRadius?: string;
   children?: JSX.Element;
   borderRadiusRight?: boolean
@@ -15,7 +16,7 @@ interface Props {
   colorHover?: string
 }
 
-const Button = ({ label, onClick, borderRadius, children, borderRadiusRight, disabled, color, colorHover }: Props) => {
+const Button = ({ label, onClick, borderRadius, children, borderRadiusRight, width, disabled, color, colorHover }: Props) => {
   const [buttonHover, setButtonHover] = useState<boolean>(false)
   const bgColor = buttonHover ? colorHover : color
   const Theme = useTheme()
@@ -26,6 +27,7 @@ const Button = ({ label, onClick, borderRadius, children, borderRadiusRight, dis
       <MuiButton
         onMouseEnter={() => setButtonHover(true)} onMouseLeave={() => setButtonHover(false)}
         style={{
+          width: width || "auto",
           boxShadow: "2px 2px 16px 2px #00000066",
           backgroundColor: disabled ? Colors.PRETTY_CREAM : bgColor || Colors.BLACKISH,
           color: "white",

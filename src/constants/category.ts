@@ -1,4 +1,4 @@
-import t7 from "../assets/t7.jpeg"
+
 
 import { i18n } from "../translations/i18n";
 import iconBandanaVichyClassic from "../assets/icons/produtos/icones_padroes-bandana1.png"
@@ -445,7 +445,7 @@ export const categories:Category[] = [
       dimensions: "DIM",
       washing: "washing"
      },
-    image: t7
+    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681157429/Octo/strollerPocket/OCTO_Icones-06_pquc35.png"
      },
   {
     id: 5,

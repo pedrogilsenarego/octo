@@ -30,7 +30,7 @@ const Element = ({ item }: Props) => {
         position: "relative",
         borderRadius: "50%",
         width: "100%",
-        boxShadow: "0px 0px 10px 0px #0000001e",
+        boxShadow: loading ? "0px 0px 0px 0px" : "0px 0px 10px 0px #0000001e",
         aspectRatio: 1,
       }}
     >
@@ -55,9 +55,11 @@ const Element = ({ item }: Props) => {
         src={item.icon}
         alt=''
         style={{
+          backgroundColor: loading ? "transparent" : "#F5F5F5",
           borderRadius: "50%",
           opacity: loading ? 0 : 1,
           position: "absolute",
+          objectFit: "cover",
           top: 0,
           left: 0,
           width: "100%",
