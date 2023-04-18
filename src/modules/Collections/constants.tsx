@@ -35,10 +35,10 @@ export const configNeonYellow: BlockProps = {
     ),
   },
   thirdRow: [
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/NeonYellow/OCTO_SS23_007a_wkat6t.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682851/Octo/collections/NeonYellow/OCTO_SS23_073a_nakdt6.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/NeonYellow/OCTO_SS23_039a_ers2yz.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/NeonYellow/OCTO_SS23_026a_u6hita.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681845605/Octo/collections/NeonYellow/WhatsApp_Image_2023-04-18_at_20.18.59_xjpyep.jpg",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681845605/Octo/collections/NeonYellow/WhatsApp_Image_2023-04-18_at_20.18.58_r94vuw.jpg",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681845605/Octo/collections/NeonYellow/WhatsApp_Image_2023-04-18_at_20.18.59_1_icqakb.jpg",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681845605/Octo/collections/NeonYellow/WhatsApp_Image_2023-04-18_at_20.19.00_lspmpp.jpg",
   ],
 };
 
@@ -102,14 +102,14 @@ export const configSoftPink: BlockProps = {
     jsx: (
       <div>
         <Typography
-          fontSize='6rem'
+          fontSize='10vw'
           color={Colors.SOFT_PINK}
           fontFamily='Avalanche'
         >
           Born
         </Typography>
         <Typography
-          fontSize='6rem'
+          fontSize='7vw'
           color={Colors.SOFT_PINK}
           fontFamily='Avalanche'
           lineHeight='40px'
@@ -189,19 +189,19 @@ export const configTaupe: BlockProps = {
     jsx: (
       <div>
         <Typography
-          fontSize='6rem'
+          fontSize='5.5vw'
           color={Colors.TAUPE}
           fontFamily='Avalanche'
         >
-          We are
+          Embrace
         </Typography>
         <Typography
-          fontSize='6rem'
+          fontSize='7vw'
           color={Colors.TAUPE}
           fontFamily='Avalanche'
-          lineHeight='40px'
+          lineHeight='70px'
         >
-          Octomistic
+          Octomism
         </Typography>
       </div>
     ),

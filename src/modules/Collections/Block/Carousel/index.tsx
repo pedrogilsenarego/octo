@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
+import { Colors } from "../../../../constants/pallete";
 
 interface Props {
   thirdRow: string[];
@@ -13,6 +15,7 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
+  console.log(slideIndex)
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({ width: window.innerWidth, height: window.innerHeight });
@@ -24,6 +27,7 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
     };
   }, []);
   const handleNextClick = (direction: number) => {
+    if (slideIndex === 0 && direction === -1) return
     if (direction === 1 && slideIndex > thirdRow.length - 5) return;
 
     setSlideIndex((prevIndex) => (prevIndex + 1 * direction) % thirdRow.length);
@@ -31,7 +35,7 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
   const containerWidth = windowSize.width - 2 * (windowSize.width * padding);
   const childWidth = (containerWidth - gap * 3) / 4;
   const slideWidth = childWidth + gap;
-  const slideWidthPercentage = slideWidth / containerWidth * 100;
+  const slideWidthPercentage = (slideWidth / containerWidth) * 100;
   return (
     <div
       style={{
@@ -56,9 +60,17 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
               width: "40px",
               height: "40px",
               borderRadius: "50%",
+
               backgroundColor: `rgb(${rgb[0]},${rgb[1]},${rgb[2]}`,
             }}
-          ></div>
+          >
+            {" "}
+            <BiRightArrow
+              style={{ position: "absolute", left: "9px", top: "7px" }}
+              size='1.7rem'
+              color={slideIndex !== thirdRow.length / 2 ? Colors.BLACKISH : "transparent"}
+            />
+          </div>
           <div
             onClick={() => handleNextClick(-1)}
             style={{
@@ -74,10 +86,15 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
               borderRadius: "50%",
               backgroundColor: `rgb(${rgb[0]},${rgb[1]},${rgb[2]}`,
             }}
-          ></div>
+          >
+            <BiLeftArrow
+              style={{ position: "absolute", left: "4px", top: "7px" }}
+              size='1.7rem'
+              color={slideIndex !== 0 ? Colors.BLACKISH : "transparent"}
+            />
+          </div>
         </>
       )}
-
 
       <div
         style={{

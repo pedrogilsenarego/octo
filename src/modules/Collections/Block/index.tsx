@@ -80,7 +80,7 @@ const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
           {secondRow.jsx}
         </Grid>
       </Grid>
-      <Carousel thirdRow={thirdRow} gap={5} rgb={pantoneProps.rgb} padding={0.07} />
+      <Carousel thirdRow={thirdRow} gap={5} rgb={[210, 229, 0]} padding={0.07} />
     </div>
   );
 };
