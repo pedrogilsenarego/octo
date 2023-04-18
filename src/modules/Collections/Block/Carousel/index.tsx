@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
   thirdRow: string[];
@@ -9,13 +9,26 @@ interface Props {
 
 const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
-  console.log(thirdRow.length);
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const handleNextClick = (direction: number) => {
     if (direction === 1 && slideIndex > thirdRow.length - 5) return;
 
     setSlideIndex((prevIndex) => (prevIndex + 1 * direction) % thirdRow.length);
   };
-  const containerWidth = window.innerWidth - 2 * (window.innerWidth * padding);
+  const containerWidth = windowSize.width - 2 * (windowSize.width * padding);
   const childWidth = (containerWidth - gap * 3) / 4;
   const slideWidth = childWidth + gap;
   const slideWidthPercentage = slideWidth / containerWidth * 100;

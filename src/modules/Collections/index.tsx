@@ -18,7 +18,7 @@ const Collections = () => {
       <div
         style={{
           marginTop: "150px",
-          width: window.innerWidth,
+          width: "100vw",
           paddingLeft: generalConstants.PADDING,
           paddingRight: generalConstants.PADDING,
         }}
