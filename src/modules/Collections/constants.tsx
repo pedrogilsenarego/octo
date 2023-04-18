@@ -139,12 +139,12 @@ export const configAnthracite: BlockProps = {
     cymk: [66, 56, 54, 31],
   },
   firstRow: [
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_280a_vpistr.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_287a_jk0bwf.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821165/Octo/collections/Anthracite/OCTO_SS23_436a_d0o3ok.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821163/Octo/collections/Anthracite/OCTO_SS23_432a_zjh2li.webp",
   ],
   secondRow: {
     image:
-      "https://res.cloudinary.com/daantetcr/image/upload/v1681685727/Octo/collections/OCTO_SS23_643a_amrbgz.webp",
+      "https://res.cloudinary.com/daantetcr/image/upload/v1681821165/Octo/collections/Anthracite/OCTO_SS23_582a_ucndi7.webp",
     jsx: (
       <img
         draggable={false}
@@ -161,10 +161,14 @@ export const configAnthracite: BlockProps = {
     ),
   },
   thirdRow: [
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_007a_wkat6t.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682851/Octo/collections/OCTO_SS23_073a_nakdt6.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_039a_ers2yz.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_026a_u6hita.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821164/Octo/collections/Anthracite/OCTO_SS23_053a_e0c7wc.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821165/Octo/collections/Anthracite/OCTO_SS23_775a_kuipvj.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821164/Octo/collections/Anthracite/OCTO_SS23_378a_wqsask.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821164/Octo/collections/Anthracite/OCTO_SS23_732a_gvlrhi.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821164/Octo/collections/Anthracite/OCTO_SS23_073a_aau0yy.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821164/Octo/collections/Anthracite/OCTO_SS23_212a_cgmjwy.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821163/Octo/collections/Anthracite/OCTO_SS23_748a_b2kq8w.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821164/Octo/collections/Anthracite/OCTO_SS23_792a_ne9nhx.webp"
   ],
 };
 

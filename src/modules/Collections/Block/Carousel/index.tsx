@@ -80,6 +80,7 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
         {thirdRow?.map((item: string, pos: number) => {
           return (
             <div
+              draggable={false}
               key={pos}
               style={{
                 flex: `0 0 ${childWidth}px`,
@@ -88,6 +89,7 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
               }}
             >
               <img
+                draggable={false}
                 src={item}
                 alt=''
                 style={{ objectFit: "cover", height: "100%", width: "100%" }}

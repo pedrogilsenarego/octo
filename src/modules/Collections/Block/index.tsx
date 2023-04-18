@@ -56,7 +56,7 @@ const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
         </Grid>
       </Grid>
 
-      {/* <Grid container columnSpacing='5px' style={{}}>
+      <Grid container columnSpacing='5px' style={{}}>
         <Grid
           item
           xs={6}
@@ -79,7 +79,7 @@ const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
         >
           {secondRow.jsx}
         </Grid>
-      </Grid> */}
+      </Grid>
       <Carousel thirdRow={thirdRow} gap={5} rgb={pantoneProps.rgb} padding={0.07} />
     </div>
   );
