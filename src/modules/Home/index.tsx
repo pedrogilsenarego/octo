@@ -28,8 +28,9 @@ const Home = () => {
       pageOnChange={(e) => handlePageChange(e)}
     >
       <Initial />
-      <About />
+
       <Collections />
+      <About />
       <Shop />
     </ReactPageScroller>
   );
