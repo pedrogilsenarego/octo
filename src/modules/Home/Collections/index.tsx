@@ -43,7 +43,7 @@ const Collections = () => {
           <Grid
             onClick={() => navigate(ROUTE_PATHS.COLLECTION)}
             container
-            columnSpacing={2}
+            columnSpacing="5px"
             width='100%'
             style={{ position: "relative", cursor: "pointer" }}
           >
@@ -68,7 +68,7 @@ const Collections = () => {
                 style={{
                   width: "100%",
                   height: mobile ? "25vh" : "25vw",
-                  borderRadius: "1%",
+
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
@@ -82,7 +82,7 @@ const Collections = () => {
                 style={{
                   width: "100%",
                   height: mobile ? "25vh" : "25vw",
-                  borderRadius: "1%",
+
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
@@ -96,7 +96,7 @@ const Collections = () => {
                 style={{
                   width: "100%",
                   height: mobile ? "25vh" : "25vw",
-                  borderRadius: "1%",
+
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
@@ -110,7 +110,7 @@ const Collections = () => {
                 style={{
                   width: "100%",
                   height: mobile ? "25vh" : "25vw",
-                  borderRadius: "1%",
+
                   objectFit: "cover",
                   objectPosition: "center",
                 }}

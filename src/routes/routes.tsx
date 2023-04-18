@@ -15,6 +15,7 @@ const CostumerService = lazyWithRetryAndLoader(() => import("../modules/Costumer
 const PrivacyPolicy = lazyWithRetryAndLoader(() => import("../modules/PrivacyPolicy"))
 const BuySuccess = lazyWithRetryAndLoader(() => import("../modules/BuySuccess"))
 const Admin = lazyWithRetryAndLoader(() => import("../modules/Admin/ManageProducts"))
+const About = lazyWithRetryAndLoader(() => import("../modules/About"))
 
 
 export const routes: AppRoute[] = [
@@ -39,6 +40,12 @@ export const routes: AppRoute[] = [
     path: ROUTE_PATHS.COLLECTION,
     component: <PagesLayout noMarginBottom>
       <Collections />
+    </PagesLayout>,
+  },
+  {
+    path: ROUTE_PATHS.ABOUT,
+    component: <PagesLayout noMarginBottom>
+      <About />
     </PagesLayout>,
   },
   {

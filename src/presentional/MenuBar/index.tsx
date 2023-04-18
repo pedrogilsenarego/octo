@@ -41,10 +41,6 @@ const MenuBar = () => {
     (state) => state.general.lang || "EN"
   );
 
-  const handleClick = (value: number) => {
-    dispatch(scrollTo(value));
-  };
-
   const handleChangeLang = () => {
     changeLanguage(lang === "PT" ? "en" : "pt");
   };
@@ -105,7 +101,7 @@ const MenuBar = () => {
                   <Button
                     color={MENU_COLOR}
                     title={i18n.t("menuBar.about")}
-                    onClick={() => handleClick(1)}
+                    onClick={() => navigate(ROUTE_PATHS.ABOUT)}
                   />
 
                   <Button

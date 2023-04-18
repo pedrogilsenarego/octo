@@ -4,10 +4,13 @@ import Button from "../../../components/Buttons/Button";
 import { generalConstants } from "../../../constants/general";
 import { Colors } from "../../../constants/pallete";
 import { i18n } from "../../../translations/i18n";
+import { ROUTE_PATHS } from "../../../constants/routes";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
   const Theme = useTheme()
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
+  const navigate = useNavigate()
 
   const renderLaptop = () => {
     return (
@@ -44,7 +47,7 @@ const About = () => {
               style={{
                 width: "87%",
                 height: "25vw",
-                borderRadius: "1%",
+
                 objectFit: "cover",
                 objectPosition: "center",
 
@@ -73,7 +76,7 @@ const About = () => {
                 only five centu
               </Typography>
               <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", rowGap: "10px" }}>
-                <Button colorHover={Colors.NEON_YELLOW_TRANSPARENT} label={i18n.t("modules.home.viewMore")} />
+                <Button onClick={() => navigate(ROUTE_PATHS.ABOUT)} colorHover={Colors.NEON_YELLOW_TRANSPARENT} label={i18n.t("modules.home.viewMore")} />
               </div>
 
             </Box>
