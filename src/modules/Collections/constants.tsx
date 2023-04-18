@@ -180,12 +180,12 @@ export const configTaupe: BlockProps = {
     cymk: [50, 44, 43, 7],
   },
   firstRow: [
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_280a_vpistr.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_287a_jk0bwf.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681822111/Octo/collections/Taupe/OCTO_SS23_517a_klgb88.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681822111/Octo/collections/Taupe/OCTO_SS23_510a_ibnjbm.webp",
   ],
   secondRow: {
     image:
-      "https://res.cloudinary.com/daantetcr/image/upload/v1681685727/Octo/collections/OCTO_SS23_643a_amrbgz.webp",
+      "https://res.cloudinary.com/daantetcr/image/upload/v1681822112/Octo/collections/Taupe/OCTO_SS23_504a_gxrgud.webp",
     jsx: (
       <div>
         <Typography
@@ -207,10 +207,14 @@ export const configTaupe: BlockProps = {
     ),
   },
   thirdRow: [
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_007a_wkat6t.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682851/Octo/collections/OCTO_SS23_073a_nakdt6.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_039a_ers2yz.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_026a_u6hita.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681822112/Octo/collections/Taupe/OCTO_SS23_112a_llygpx.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681822112/Octo/collections/Taupe/OCTO_SS23_482a_qhurtx.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681822111/Octo/collections/Taupe/OCTO_SS23_721a_ifo4p7.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681822112/Octo/collections/Taupe/OCTO_SS23_411a_mtg2oq.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681822112/Octo/collections/Taupe/OCTO_SS23_037a_dd20bj.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681822111/Octo/collections/Taupe/OCTO_SS23_533a_rimk8f.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681822111/Octo/collections/Taupe/OCTO_SS23_716a_ikxrtc.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681822111/Octo/collections/Taupe/OCTO_SS23_528a_h5c1s9.webp"
   ],
 };
 
@@ -222,12 +226,12 @@ export const configPrettyCream: BlockProps = {
     cymk: [20, 17, 20, 0],
   },
   firstRow: [
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_280a_vpistr.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_287a_jk0bwf.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821796/Octo/collections/PrettyCream/OCTO_SS23_692a_hflbzc.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821796/Octo/collections/PrettyCream/OCTO_SS23_666a_p6bau2.webp",
   ],
   secondRow: {
     image:
-      "https://res.cloudinary.com/daantetcr/image/upload/v1681685727/Octo/collections/OCTO_SS23_643a_amrbgz.webp",
+      "https://res.cloudinary.com/daantetcr/image/upload/v1681821797/Octo/collections/PrettyCream/OCTO_SS23_341a_zfyt6h.webp",
     jsx: (
       <div>
         <Typography
@@ -249,9 +253,13 @@ export const configPrettyCream: BlockProps = {
     ),
   },
   thirdRow: [
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_007a_wkat6t.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682851/Octo/collections/OCTO_SS23_073a_nakdt6.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_039a_ers2yz.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_026a_u6hita.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821797/Octo/collections/PrettyCream/OCTO_SS23_312a_gdiji7.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821797/Octo/collections/PrettyCream/OCTO_SS23_109a_oz8yqj.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821796/Octo/collections/PrettyCream/OCTO_SS23_675a_jmmrxn.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821796/Octo/collections/PrettyCream/OCTO_SS23_694a_thoip6.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821796/Octo/collections/PrettyCream/OCTO_SS23_680a_wssp71.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821797/Octo/collections/PrettyCream/OCTO_SS23_051a_z64grc.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821797/Octo/collections/PrettyCream/OCTO_SS23_035a_e0rcyq.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681821797/Octo/collections/PrettyCream/OCTO_SS23_078a_jqwkzi.webp"
   ],
 };
