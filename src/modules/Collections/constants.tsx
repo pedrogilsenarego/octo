@@ -17,7 +17,7 @@ export const configNeonYellow: BlockProps = {
   ],
   secondRow: {
     image:
-      "https://res.cloudinary.com/daantetcr/image/upload/v1681685727/Octo/collections/OCTO_SS23_643a_amrbgz.webp",
+      "https://res.cloudinary.com/daantetcr/image/upload/v1681685727/Octo/collections/NeonYellow/OCTO_SS23_643a_amrbgz.webp",
     jsx: (
       <div style={{ width: "100%" }}>
         <img
@@ -50,12 +50,12 @@ export const configBlackish: BlockProps = {
     cymk: [87, 78, 52, 62],
   },
   firstRow: [
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_280a_vpistr.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681686420/Octo/collections/OCTO_SS23_287a_jk0bwf.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_264a_of1g4a.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_256a_a2edk9.webp",
   ],
   secondRow: {
     image:
-      "https://res.cloudinary.com/daantetcr/image/upload/v1681685727/Octo/collections/OCTO_SS23_643a_amrbgz.webp",
+      "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_223a_dchn4k.webp",
     jsx: (
       <div style={{ overflow: "hidden", height: window.innerHeight * 0.55, display: "flex", justifyContent: "center", alignItems: "center" }}>
         <img
@@ -74,10 +74,14 @@ export const configBlackish: BlockProps = {
     ),
   },
   thirdRow: [
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_007a_wkat6t.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682851/Octo/collections/OCTO_SS23_073a_nakdt6.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_039a_ers2yz.webp",
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681682852/Octo/collections/OCTO_SS23_026a_u6hita.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_040a_alqvpf.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_365a_s3dia6.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_396a_w6uu6x.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_267a_r9p0xz.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_178a_qjqshy.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_537a_bat7e3.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_676a_uegbrh.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_464a_amlggx.webp"
   ],
 };
 
