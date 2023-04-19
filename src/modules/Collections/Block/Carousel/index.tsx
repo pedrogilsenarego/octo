@@ -15,7 +15,6 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  console.log(slideIndex)
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({ width: window.innerWidth, height: window.innerHeight });

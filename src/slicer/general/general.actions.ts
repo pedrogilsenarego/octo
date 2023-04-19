@@ -68,4 +68,12 @@ export const setCookiePolicy = (signal:boolean) => ({
   payload: signal
 })
 
+export type CollectionPositions = "NEON_YELLOW" |"BLACKISH" |"SOFT_PINK" | "ANTHRACITE" | "TAUPE" | "PRETTY_CREAM"
+
+
+export const setScrollCollections = (position:CollectionPositions) => ({
+  type: generalTypes.SCROLL_COLLECTIONS,
+  payload: position
+})
+
 

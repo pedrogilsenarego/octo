@@ -1,3 +1,5 @@
+import { CollectionPositions } from "./general.actions";
+
 const generalTypes = {
   ENABLE_LOADING: "ENABLE_LOADING",
   DISABLE_LOADING: "DISABLE_LOADING",
@@ -14,6 +16,8 @@ const generalTypes = {
   SCROLL: "SCROLL",
   SET_COOKIE_POLICY: "SET_COOKIE_POLICY",
 
+  SCROLL_COLLECTIONS:"SCROLL_COLLECTIONS"
+
   
 };
 
@@ -24,6 +28,7 @@ export interface GeneralState {
   disableSnap:boolean
   cookiePolicy:boolean
   loading:boolean
+  scrollCollections:CollectionPositions|null
 
 }
 

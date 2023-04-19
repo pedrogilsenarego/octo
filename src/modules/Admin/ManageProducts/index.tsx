@@ -16,7 +16,6 @@ const ManageStorys = () => {
     (state) => state?.products?.products?.data || []
   );
 
-  console.log(tableData)
 
   const { handleAction } = useList({ tableData })
 
