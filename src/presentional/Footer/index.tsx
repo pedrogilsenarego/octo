@@ -22,7 +22,7 @@ const Footer = () => {
     <div
       style={{
         marginTop: "100px",
-        width: window.innerWidth,
+        width: "100vw",
         backgroundColor: Colors.TAUPE,
         paddingTop: "50px",
         paddingLeft: generalConstants.PADDING,
