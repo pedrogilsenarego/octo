@@ -8,10 +8,12 @@ import MenuBar from "../../../presentional/MenuBar";
 import "./index.css";
 import { useEffect, useState } from "react";
 import { Ellipsis } from "react-spinners-css";
+import { ROUTE_PATHS } from "../../../constants/routes";
+import { useNavigate } from "react-router-dom";
 
 const Initial = () => {
   const [loading, setLoading] = useState<boolean>(true);
-
+  const navigate = useNavigate()
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   useEffect(() => {
@@ -71,6 +73,7 @@ const Initial = () => {
             {i18n.t("modules.home.mainText")}
           </Typography>
           <Box
+            onClick={() => navigate(ROUTE_PATHS.COLLECTION)}
             marginLeft='10px'
             marginTop='1.6rem'
             display='flex'

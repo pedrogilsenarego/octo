@@ -32,7 +32,7 @@ const UpScroller = () => {
         style={{
           position: "fixed",
           zIndex: 1000,
-          left: "2.5%",
+          right: "2.5%",
           top: "92vh",
           width: "35px",
           height: "35px",
