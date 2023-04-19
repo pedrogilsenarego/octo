@@ -1,11 +1,8 @@
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
-import Button from "../../../components/Buttons/Button";
-import { generalConstants } from "../../../constants/general";
 import { Colors } from "../../../constants/pallete";
-import { i18n } from "../../../translations/i18n";
 import { ROUTE_PATHS } from "../../../constants/routes";
 import { useNavigate } from "react-router-dom";
-import { AiFillCaretRight } from "react-icons/ai";
+
 
 const About = () => {
   const Theme = useTheme();
@@ -28,7 +25,7 @@ const About = () => {
             height: "100vh",
           }}
         >
-          <div style={{ position: "absolute", left: "3vw", bottom: "8vh", cursor: "pointer" }}>
+          <div style={{ position: "absolute", left: "3vw", bottom: "8vh", cursor: "pointer" }} onClick={() => navigate(ROUTE_PATHS.ABOUT)}>
             <Typography fontSize="4vw" fontFamily="Avalanche" color={Colors.NEON_YELLOW} style={{}} >
               Curious about
             </Typography>
