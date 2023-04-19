@@ -393,9 +393,9 @@ export const categories:Category[] = [
     icon: "https://res.cloudinary.com/daantetcr/image/upload/v1681156622/Octo/ProductBandana/OCTO_Icones-09_mgzqwg.png",
     price: 34,
     moreInfo: {
-      description: "Teste",
-      dimensions: "DIM",
-      washing: "washing"
+      description: "Our washcloth is an excellent way to keep your baby's clothes dry from drool, ensuring maximum comfort and avoiding potential irritation. It fastens with a snap button and offers two different positions to adjust the size of the neck circumference.<br/><br/> Crafted in cotton.",
+      dimensions: "N.A.",
+      washing: "N.A."
      },
     image: "https://res.cloudinary.com/daantetcr/image/upload/v1680907360/Octo/ProductBandana/WhatsApp_Image_2023-04-07_at_23.41.06_r9zoev.jpg"
   },

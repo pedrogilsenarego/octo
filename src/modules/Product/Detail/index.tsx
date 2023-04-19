@@ -16,7 +16,8 @@ const Detail = ({ title, detail }: Props) => {
       >
         {title}
       </Typography>
-      <Typography style={{ marginTop: "10px" }}>{detail}</Typography>
+      <Typography style={{ marginTop: "10px" }} dangerouslySetInnerHTML={{ __html: detail }} />
+
     </>
   );
 };
