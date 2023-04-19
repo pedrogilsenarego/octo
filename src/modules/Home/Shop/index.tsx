@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Button from "../../../components/Buttons/Button";
 import { categories } from "../../../constants/category";
 import { fabrics } from "../../../constants/fabrics";
@@ -34,16 +34,44 @@ const Shop = () => {
     },
   };
 
+  const newFabric = [{
+    id: 1,
+    title: "Sample Fabric",
+    image: "https://example.com/sample-image.jpg",
+    icon: ""
+  },
+  {
+    id: 1,
+    title: "Sample Fabric",
+    image: "https://example.com/sample-image.jpg",
+    icon: ""
+  },
+  {
+    id: 1,
+    title: "Sample Fabric",
+    image: "https://example.com/sample-image.jpg",
+    icon: ""
+  },
+  {
+    id: 1,
+    title: "Sample Fabric",
+    image: "https://example.com/sample-image.jpg",
+    icon: ""
+  },
+  ]
+
+
+
+
   const newCategories = [...categories]
   newCategories.splice(0, 0, newCategory);
   newCategories.splice(3, 0, newCategory);
-  console.log(newCategories);
 
   const newPatterns = [...fabrics]
 
-  const firstFour = newPatterns.splice(0, 4); // extract the first 4 elements
-
-  newPatterns.splice(4, 0, ...firstFour); // insert the first 4 elements after the 5th element
+  const firstFour = newPatterns.splice(0, 4);
+  newPatterns.splice(4, 0, ...firstFour);
+  newPatterns.splice(0, 0, ...newFabric)
 
 
   return (
@@ -60,7 +88,7 @@ const Shop = () => {
         height: "95vh",
       }}
     >
-      <div style={{ display: "flex", }}>
+      <div style={{ display: "flex", columnGap: "20px" }}>
         <Grid container columnSpacing="20px" style={{ width: "50%", display: "flex", }}>
           <Grid item xs={2} alignItems="flex-end" justifyContent="flex-start" style={{ display: "flex" }}>
             <Typography
@@ -79,7 +107,7 @@ const Shop = () => {
               Products
             </Typography>
           </Grid>
-          <Grid item xs={10} style={{ paddingLeft: "0px", paddingRight: "40px", transform: "translateY(7vh)" }}>
+          <Grid item xs={10} style={{ paddingLeft: "0px", paddingRight: "40px", transform: "translateY(7vh)", }}>
             <Grid
               container
               style={{ borderRadius: "10px", marginTop: "10px" }}
@@ -97,7 +125,7 @@ const Shop = () => {
                     xs={3}
                     style={{ cursor: "pointer" }}
                   >
-                    {item.title !== "Sample Category" && (<Element key={pos} item={item} />)}
+                    <Element key={pos} item={item} />
 
 
                   </Grid>
@@ -114,7 +142,9 @@ const Shop = () => {
               color={Colors.TAUPE}
               style={{
 
+
                 textOrientation: "mixed",
+                lineHeight: 1,
                 writingMode: "vertical-rl",
                 transform: "rotateX(180deg) rotateY(180deg)",
               }}
@@ -122,13 +152,12 @@ const Shop = () => {
               Patterns
             </Typography>
           </Grid>
-          <Grid item xs={10} style={{ paddingLeft: "20px", paddingRight: "20px", transform: "translateY(20vh)" }}>
+          <Grid item xs={10} style={{ paddingLeft: "0px", paddingRight: "40px", transform: "translateY(7vh)", }}>
             <Grid
               container
               style={{ borderRadius: "10px", marginTop: "10px" }}
-              columnSpacing='40px'
-              rowSpacing='40px'
-
+              columnSpacing='30px'
+              rowSpacing='20px'
             >
               {newPatterns.map((item, pos) => {
 
@@ -142,6 +171,7 @@ const Shop = () => {
                     style={{ cursor: "pointer" }}
                   >
                     <Element key={pos} item={item} />
+
 
                   </Grid>
                 );
@@ -181,96 +211,6 @@ const Shop = () => {
         />
       </div>
     </div>
-
-    // <Box
-    //   display='flex'
-    //   style={{
-    //     alignItems: "center",
-    //     justifyContent: "space-evenly",
-    //     width: "100vw",
-    //     height: "100vh",
-    //     padding: "15vw",
-    //     flexDirection: "column",
-    //   }}
-    // >
-    //   <Typography
-    //     style={{
-    //       textTransform: "uppercase",
-    //       fontWeight: 800,
-    //       fontSize: "1.2rem",
-    //     }}
-    //   >
-    //     Products
-    //   </Typography>
-
-    //   <Grid
-    //     container
-    //     style={{ borderRadius: "10px", marginTop: "10px" }}
-    //     columnSpacing='15px'
-    //     rowSpacing='20px'
-    //   >
-    //     {categories.map((item, pos) => {
-
-    //       return (
-    //         <Grid
-    //           key={pos}
-    //           item
-    //           justifyContent='center'
-    //           alignItems='center'
-    //           xs={12 / 5} sm={12 / 10}
-    //           style={{ cursor: "pointer" }}
-    //         >
-    //           <Element key={pos} item={item} />
-    //         </Grid>
-    //       );
-    //     })}
-    //   </Grid>
-    //   <Typography
-    //     mt={mobile ? "5vh" : '11vh'}
-    //     style={{
-    //       fontSize: "1.2rem",
-    //       textTransform: "uppercase",
-    //       fontWeight: 800,
-    //     }}
-    //   >
-    //     Patterns
-    //   </Typography>
-    //   <Grid
-    //     container
-    //     style={{ borderRadius: "10px", marginTop: "-10px" }}
-    //     columnSpacing={mobile ? 2 : 5}
-    //     rowSpacing={mobile ? 3 : 5}
-    //   >
-    //     {fabrics.map((item, pos) => {
-    //       return (
-    //         <Grid
-    //           key={pos}
-    //           item
-    //           justifyContent='center'
-    //           alignItems='center'
-    //           xs={12 / 4} sm={12 / 8}
-    //           style={{ cursor: "pointer" }}
-    //         >
-    //           <Element key={pos} item={item} />
-    //         </Grid>
-    //       );
-    //     })}
-    //     <div
-    //       style={{
-    //         marginTop: "100px",
-    //         display: "flex",
-    //         width: "100%",
-    //         justifyContent: "center",
-    //       }}
-    //     >
-    //       <Button
-    //         onClick={() => navigate(ROUTE_PATHS.SHOP)}
-    //         colorHover={Colors.NEON_YELLOW_TRANSPARENT}
-    //         label={i18n.t("modules.home.shopOurCollection")}
-    //       />
-    //     </div>
-    //   </Grid>
-    // </Box>
   );
 };
 

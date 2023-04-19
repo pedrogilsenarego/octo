@@ -12,7 +12,7 @@ interface Props {
 }
 
 const Element = ({ item }: Props) => {
-
+  const [hover, setHover] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(true);
 
 
@@ -20,7 +20,8 @@ const Element = ({ item }: Props) => {
   return (
     <Box
       key={item.title}
-
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
       display='flex'
       onLoad={() => setLoading(false)}
 
@@ -29,6 +30,7 @@ const Element = ({ item }: Props) => {
       style={{
         position: "relative",
         borderRadius: "50%",
+        border: hover && (item.title !== "Sample Fabric" && item.title !== "Sample Category") ? `solid 2px ${Colors.NEON_YELLOW}` : "solid 0px transparent",
         width: "100%",
         boxShadow: loading ? "0px 0px 0px 0px" : "0px 0px 10px 0px #0000001e",
         aspectRatio: 1,
@@ -37,7 +39,7 @@ const Element = ({ item }: Props) => {
       {loading && (
         <Ellipsis
           size={30}
-          color={Colors.NEON_YELLOW_TRANSPARENT}
+          color={item.title === "Sample Fabric" || item.title === "Sample Category" ? "transparent" : Colors.NEON_YELLOW_TRANSPARENT}
           style={{
             position: "absolute",
             top: 0,
@@ -54,6 +56,7 @@ const Element = ({ item }: Props) => {
       <img
         src={item.icon}
         alt=''
+        draggable={false}
         style={{
           backgroundColor: loading ? "transparent" : "#F5F5F5",
           borderRadius: "50%",
