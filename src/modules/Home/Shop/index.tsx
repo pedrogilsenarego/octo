@@ -15,9 +15,7 @@ const Shop = () => {
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const navigate = useNavigate();
 
-
-
-  console.log('6');
+  console.log("6");
 
   const listOfImages = [
     "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_365a_s3dia6.webp",
@@ -26,39 +24,38 @@ const Shop = () => {
     "https://res.cloudinary.com/daantetcr/image/upload/v1681845605/Octo/collections/NeonYellow/WhatsApp_Image_2023-04-18_at_20.18.58_r94vuw.jpg",
   ];
 
-  const newFabric = [{
-    id: 1,
-    title: "Sample Fabric",
-    image: "https://example.com/sample-image.jpg",
-    icon: ""
-  },
-  {
-    id: 1,
-    title: "Sample Fabric",
-    image: "https://example.com/sample-image.jpg",
-    icon: ""
-  },
-  {
-    id: 1,
-    title: "Sample Fabric",
-    image: "https://example.com/sample-image.jpg",
-    icon: ""
-  },
-  {
-    id: 1,
-    title: "Sample Fabric",
-    image: "https://example.com/sample-image.jpg",
-    icon: ""
-  },
-  ]
+  const newFabric = [
+    {
+      id: 1,
+      title: "Sample Fabric",
+      image: "https://example.com/sample-image.jpg",
+      icon: "",
+    },
+    {
+      id: 1,
+      title: "Sample Fabric",
+      image: "https://example.com/sample-image.jpg",
+      icon: "",
+    },
+    {
+      id: 1,
+      title: "Sample Fabric",
+      image: "https://example.com/sample-image.jpg",
+      icon: "",
+    },
+    {
+      id: 1,
+      title: "Sample Fabric",
+      image: "https://example.com/sample-image.jpg",
+      icon: "",
+    },
+  ];
 
-
-  const newPatterns = [...fabrics]
+  const newPatterns = [...fabrics];
 
   const firstFour = newPatterns.splice(0, 4);
   newPatterns.splice(4, 0, ...firstFour);
-  newPatterns.splice(0, 0, ...newFabric)
-
+  newPatterns.splice(0, 0, ...newFabric);
 
   return (
     <div
@@ -70,20 +67,31 @@ const Shop = () => {
         rowGap: "20px",
         paddingLeft: generalConstants.PADDING,
         paddingRight: generalConstants.PADDING,
+        paddingTop: "4vh",
+        paddingBottom: "4vh",
         width: "100vw",
-        height: "95vh",
+        height: "100vh",
+
       }}
     >
-      <div style={{ display: "flex", columnGap: "20px" }}>
-        <Grid container columnSpacing="20px" style={{ width: "50%", display: "flex", }}>
-          <Grid item xs={2} alignItems="flex-end" justifyContent="flex-start" style={{ display: "flex" }}>
+      <div style={{ display: "flex", columnGap: "20px", }}>
+        <Grid
+          container
+          columnSpacing='20px'
+          style={{ width: "50%", display: "flex" }}
+        >
+          <Grid
+            item
+            xs={2}
+            alignItems='flex-end'
+            justifyContent='flex-start'
+            style={{ display: "flex" }}
+          >
             <Typography
               fontFamily='Avalanche'
               fontSize='4vw'
               color={Colors.SOFT_PINK}
               style={{
-
-
                 textOrientation: "mixed",
                 lineHeight: 1,
                 writingMode: "vertical-rl",
@@ -93,8 +101,29 @@ const Shop = () => {
               Products
             </Typography>
           </Grid>
-          <Grid item xs={10} style={{ paddingLeft: "0px", paddingRight: "40px", transform: "translateY(7vh)", width: "100%" }}>
-            {/* <Carousel gap={20} images={categories.map(category => category.icon)} padding={0.07} heightImage={0.2} /> */}
+          <Grid
+            item
+            xs={10}
+            style={{
+              paddingLeft: "0px",
+              paddingRight: "40px",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "100%",
+            }}
+          >
+            <div >
+              <Carousel
+                outsideButtons
+                width='32vw'
+                gap={20}
+                images={categories.map((category, pos) => <Element key={pos} item={category} />)}
+                padding='3vw'
+                heightImage={0.35}
+              />
+            </div>
             {/* <Grid
               container
               style={{ borderRadius: "10px", marginTop: "10px" }}
@@ -121,15 +150,23 @@ const Shop = () => {
             </Grid> */}
           </Grid>
         </Grid>
-        <Grid container columnSpacing="20px" style={{ width: "50%", display: "flex" }}>
-          <Grid item xs={2} alignItems="flex-end" justifyContent="flex-start" style={{ display: "flex" }}>
+        <Grid
+          container
+          columnSpacing='20px'
+          style={{ width: "50%", display: "flex" }}
+        >
+          <Grid
+            item
+            xs={2}
+            alignItems='flex-end'
+            justifyContent='flex-start'
+            style={{ display: "flex" }}
+          >
             <Typography
               fontFamily='Avalanche'
               fontSize='4vw'
               color={Colors.TAUPE}
               style={{
-
-
                 textOrientation: "mixed",
                 lineHeight: 1,
                 writingMode: "vertical-rl",
@@ -139,7 +176,15 @@ const Shop = () => {
               Patterns
             </Typography>
           </Grid>
-          <Grid item xs={10} style={{ paddingLeft: "0px", paddingRight: "40px", transform: "translateY(7vh)", }}>
+          <Grid
+            item
+            xs={10}
+            style={{
+              paddingLeft: "0px",
+              paddingRight: "40px",
+              transform: "translateY(7vh)",
+            }}
+          >
             <Grid
               container
               style={{ borderRadius: "10px", marginTop: "10px" }}
@@ -147,7 +192,6 @@ const Shop = () => {
               rowSpacing='20px'
             >
               {newPatterns.map((item, pos) => {
-
                 return (
                   <Grid
                     key={pos}
@@ -158,8 +202,6 @@ const Shop = () => {
                     style={{ cursor: "pointer" }}
                   >
                     <Element key={pos} item={item} />
-
-
                   </Grid>
                 );
               })}
@@ -191,7 +233,7 @@ const Shop = () => {
           Endless combinations
         </Typography>
         <Button
-          width="calc(25% - 5px)"
+          width='calc(25% - 5px)'
           onClick={() => navigate(ROUTE_PATHS.SHOP)}
           colorHover={Colors.NEON_YELLOW_TRANSPARENT}
           label={i18n.t("modules.home.shopOurCollection")}

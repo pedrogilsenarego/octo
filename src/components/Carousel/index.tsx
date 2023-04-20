@@ -1,17 +1,18 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { Colors } from "../../constants/pallete";
 
 interface Props {
-  images: string[];
+  images: string[] | JSX.Element[]
   colorBgArrow?: string
   gap: number;
   padding: string;
   heightImage: number
   width: string
+  outsideButtons?: boolean
 }
 
-const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width }: Props) => {
+const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outsideButtons }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -45,8 +46,6 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width }: Pr
     <div
       style={{
         width: `${containerWidthVW}vw`,
-
-        overflow: "hidden",
         position: "relative",
       }}
     >
@@ -57,7 +56,7 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width }: Pr
             style={{
               zIndex: 1000,
               position: "absolute",
-              right: "20px",
+              right: outsideButtons ? "-50px" : "20px",
               cursor: "pointer",
               top: "50%",
               transform: "translateY(-50%)",
@@ -81,7 +80,7 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width }: Pr
             style={{
               zIndex: 1000,
               position: "absolute",
-              left: "20px",
+              left: outsideButtons ? "-50px" : "20px",
               cursor: "pointer",
               top: "50%",
               transform: "translateY(-50%)",
@@ -100,38 +99,56 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width }: Pr
           </div>
         </>
       )}
+      <div style={{ overflow: "hidden" }}>
+        <div
+          style={{
 
-      <div
-        style={{
-          columnGap: "5px",
-          position: "relative",
-          display: "flex",
-          justifyContent: "flex-start",
-          transform: `translateX(-${slideIndex * slideWidthPercentage}%)`,
+            columnGap: "5px",
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            transform: `translateX(-${slideIndex * slideWidthPercentage}%)`,
+            transition: "transform 0.5s",
+          }}
+        >
+          {images.map((item: string | JSX.Element, pos: number) => {
+            if (typeof item === 'string') {
+              return (
+                <div
+                  draggable={false}
+                  key={pos}
+                  style={{
+                    flex: `0 0 ${childWidthVW}vw`,
+                    overflow: "hidden",
+                    height: window.innerHeight * heightImage,
+                  }}
+                >
+                  <img
+                    draggable={false}
+                    src={item}
+                    alt=''
+                    style={{ objectFit: "cover", height: "100%", width: "100%" }}
+                  />
+                </div>
+              );
+            } else {
+              return (
+                <div style={{
 
-          transition: "transform 0.5s",
-        }}
-      >
-        {images?.map((item: string, pos: number) => {
-          return (
-            <div
-              draggable={false}
-              key={pos}
-              style={{
-                flex: `0 0 ${childWidthVW}vw`,
-                overflow: "hidden",
-                height: window.innerHeight * heightImage,
-              }}
-            >
-              <img
-                draggable={false}
-                src={item}
-                alt=''
-                style={{ objectFit: "cover", height: "100%", width: "100%" }}
-              />
-            </div>
-          );
-        })}
+                  display: "flex",
+                  alignItems: "center",
+                  flex: `0 0 ${childWidthVW}vw`,
+                  overflow: "hidden",
+                  height: window.innerHeight * heightImage,
+                }}>{item}</div>
+              );
+            }
+          })}
+
+
+
+        </div>
       </div>
     </div>
   );
