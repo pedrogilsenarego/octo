@@ -23,38 +23,6 @@ const Shop = () => {
     "https://res.cloudinary.com/daantetcr/image/upload/v1681845605/Octo/collections/NeonYellow/WhatsApp_Image_2023-04-18_at_20.18.58_r94vuw.jpg",
   ];
 
-  const newFabric = [
-    {
-      id: 1,
-      title: "Sample Fabric",
-      image: "https://example.com/sample-image.jpg",
-      icon: "",
-    },
-    {
-      id: 1,
-      title: "Sample Fabric",
-      image: "https://example.com/sample-image.jpg",
-      icon: "",
-    },
-    {
-      id: 1,
-      title: "Sample Fabric",
-      image: "https://example.com/sample-image.jpg",
-      icon: "",
-    },
-    {
-      id: 1,
-      title: "Sample Fabric",
-      image: "https://example.com/sample-image.jpg",
-      icon: "",
-    },
-  ];
-
-  const newPatterns = [...fabrics];
-
-  const firstFour = newPatterns.splice(0, 4);
-  newPatterns.splice(4, 0, ...firstFour);
-  newPatterns.splice(0, 0, ...newFabric);
 
   return (
     <div
@@ -175,6 +143,7 @@ const Shop = () => {
               Patterns
             </Typography>
           </Grid>
+
           <Grid
             item
             xs={10}
@@ -184,7 +153,17 @@ const Shop = () => {
               transform: "translateY(7vh)",
             }}
           >
-            <Grid
+            <div >
+              <Carousel
+                outsideButtons
+                width='32vw'
+                gap={0}
+                images={fabrics.map((category, pos) => <Element key={pos} item={category} />)}
+                padding='3vw'
+                heightImage={0.35}
+              />
+            </div>
+            {/* <Grid
               container
               style={{ borderRadius: "10px", marginTop: "10px" }}
               columnSpacing='30px'
@@ -204,7 +183,7 @@ const Shop = () => {
                   </Grid>
                 );
               })}
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
       </div>
