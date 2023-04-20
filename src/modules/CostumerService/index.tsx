@@ -12,6 +12,7 @@ const CostumerService = () => {
     <Box
       display='flex'
       style={{
+        textAlign: "center",
         alignItems: "center",
         justifyContent: "center",
         width: "100vw",

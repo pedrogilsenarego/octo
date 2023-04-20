@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
-import { Colors } from "../../../../constants/pallete";
+import { Colors } from "../../constants/pallete";
 
 interface Props {
-  thirdRow: string[];
-  rgb: [number, number, number];
+  images: string[];
+  colorBgArrow?: string
   gap: number;
   padding: number;
+  heightImage: number
 }
 
-const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
+const Carousel = ({ images, colorBgArrow, gap, padding, heightImage }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -27,9 +28,9 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
   }, []);
   const handleNextClick = (direction: number) => {
     if (slideIndex === 0 && direction === -1) return
-    if (direction === 1 && slideIndex > thirdRow.length - 5) return;
+    if (direction === 1 && slideIndex > images.length - 5) return;
 
-    setSlideIndex((prevIndex) => (prevIndex + 1 * direction) % thirdRow.length);
+    setSlideIndex((prevIndex) => (prevIndex + 1 * direction) % images.length);
   };
   const containerWidth = windowSize.width - 2 * (windowSize.width * padding);
   const childWidth = (containerWidth - gap * 3) / 4;
@@ -44,7 +45,7 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
         position: "relative",
       }}
     >
-      {thirdRow.length > 4 && (
+      {images.length > 4 && (
         <>
           <div
             onClick={() => handleNextClick(1)}
@@ -60,14 +61,14 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
               height: "40px",
               borderRadius: "50%",
 
-              backgroundColor: `rgb(${rgb[0]},${rgb[1]},${rgb[2]}`,
+              backgroundColor: colorBgArrow || Colors.NEON_YELLOW,
             }}
           >
             {" "}
             <BiRightArrow
               style={{ position: "absolute", left: "9px", top: "7px" }}
               size='1.7rem'
-              color={slideIndex !== thirdRow.length / 2 ? Colors.BLACKISH : "transparent"}
+              color={slideIndex !== images.length / 2 ? Colors.BLACKISH : "transparent"}
             />
           </div>
           <div
@@ -83,7 +84,7 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
               width: "40px",
               height: "40px",
               borderRadius: "50%",
-              backgroundColor: `rgb(${rgb[0]},${rgb[1]},${rgb[2]}`,
+              backgroundColor: colorBgArrow || Colors.NEON_YELLOW,
             }}
           >
             <BiLeftArrow
@@ -106,7 +107,7 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
           transition: "transform 0.5s",
         }}
       >
-        {thirdRow?.map((item: string, pos: number) => {
+        {images?.map((item: string, pos: number) => {
           return (
             <div
               draggable={false}
@@ -114,7 +115,7 @@ const Carousel = ({ thirdRow, rgb, gap, padding }: Props) => {
               style={{
                 flex: `0 0 ${childWidth}px`,
                 overflow: "hidden",
-                height: window.innerHeight * 0.55,
+                height: window.innerHeight * heightImage,
               }}
             >
               <img

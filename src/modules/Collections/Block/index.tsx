@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import Pantone, { PantoneProps } from "./Pantone";
-import Carousel from "./Carousel";
+import Carousel from "../../../components/Carousel";
+import { Colors } from "../../../constants/pallete";
 
 
 export interface BlockProps {
@@ -80,7 +81,7 @@ const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
           {secondRow.jsx}
         </Grid>
       </Grid>
-      <Carousel thirdRow={thirdRow} gap={5} rgb={[210, 229, 0]} padding={0.07} />
+      <Carousel images={thirdRow} gap={5} colorBgArrow={Colors.NEON_YELLOW} padding={0.07} heightImage={0.55} />
     </div>
   );
 };

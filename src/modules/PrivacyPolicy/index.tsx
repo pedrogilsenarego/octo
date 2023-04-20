@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
       display='flex'
       style={{
         alignItems: "center",
-
+        textAlign: "center",
         minHeight: "100vh",
         width: "100vw",
         paddingTop: mobile ? "100px" : "140px",

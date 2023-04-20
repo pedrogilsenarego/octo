@@ -1,7 +1,5 @@
-ter atencao nem todos sao centrados por default
-ver imagens elemento padroes parecem esticadas para cima
-side menu nao desaparece
-tirar border radius collection home
-
+pantones a aaprecer quando se passa o rato
+alinhar centro text
+refunds
 
 

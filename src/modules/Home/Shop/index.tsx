@@ -8,6 +8,7 @@ import Element from "./Element";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../constants/routes";
 import { generalConstants } from "../../../constants/general";
+import Carousel from "../../../components/Carousel";
 
 const Shop = () => {
   const Theme = useTheme();
@@ -20,19 +21,6 @@ const Shop = () => {
     "https://res.cloudinary.com/daantetcr/image/upload/v1681808237/Octo/collections/SoftPink/OCTO_SS23_386a_y7chmt.webp",
     "https://res.cloudinary.com/daantetcr/image/upload/v1681845605/Octo/collections/NeonYellow/WhatsApp_Image_2023-04-18_at_20.18.58_r94vuw.jpg",
   ];
-
-  const newCategory = {
-    id: 1,
-    title: "Sample Category",
-    icon: "",
-    image: "https://example.com/sample-image.jpg",
-    price: 10,
-    moreInfo: {
-      description: "Sample description",
-      dimensions: "10x10x10",
-      washing: "Dry clean only",
-    },
-  };
 
   const newFabric = [{
     id: 1,
@@ -60,12 +48,6 @@ const Shop = () => {
   },
   ]
 
-
-
-
-  const newCategories = [...categories]
-  newCategories.splice(0, 0, newCategory);
-  newCategories.splice(3, 0, newCategory);
 
   const newPatterns = [...fabrics]
 
@@ -108,7 +90,8 @@ const Shop = () => {
             </Typography>
           </Grid>
           <Grid item xs={10} style={{ paddingLeft: "0px", paddingRight: "40px", transform: "translateY(7vh)", }}>
-            <Grid
+            <Carousel gap={20} images={categories.map(category => category.icon)} padding={0.07} heightImage={0.2} />
+            {/* <Grid
               container
               style={{ borderRadius: "10px", marginTop: "10px" }}
               columnSpacing='30px'
@@ -131,7 +114,7 @@ const Shop = () => {
                   </Grid>
                 );
               })}
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
         <Grid container columnSpacing="20px" style={{ width: "50%", display: "flex" }}>

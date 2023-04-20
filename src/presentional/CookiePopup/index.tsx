@@ -22,7 +22,7 @@ const CookiePolicy = () => {
     <div
       style={{
         width: window.innerWidth,
-        position: "absolute",
+        position: "fixed",
         bottom: 0,
         zIndex: 5000,
         padding: "1rem",

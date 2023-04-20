@@ -395,7 +395,7 @@ export const categories:Category[] = [
     moreInfo: {
       description: "Our washcloth is an excellent way to keep your baby's clothes dry from drool, ensuring maximum comfort and avoiding potential irritation. It fastens with a snap button and offers two different positions to adjust the size of the neck circumference.<br/><br/> Crafted in cotton.",
       dimensions: "N.A.",
-      washing: "N.A."
+      washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
      },
     image: "https://res.cloudinary.com/daantetcr/image/upload/v1680907360/Octo/ProductBandana/WhatsApp_Image_2023-04-07_at_23.41.06_r9zoev.jpg"
   },
@@ -407,7 +407,8 @@ export const categories:Category[] = [
     moreInfo: {
       description: "Teste",
       dimensions: "DIM",
-      washing: "washing"
+      washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
+    
      },
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
   },
@@ -419,7 +420,8 @@ export const categories:Category[] = [
     moreInfo: {
       description: "Teste",
       dimensions: "DIM",
-      washing: "washing"
+      washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
+    
      },
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
   },
@@ -431,7 +433,8 @@ export const categories:Category[] = [
     moreInfo: {
       description: "Teste",
       dimensions: "DIM",
-      washing: "washing"
+      washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
+    
      },
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
  },
@@ -443,7 +446,8 @@ export const categories:Category[] = [
     moreInfo: {
       description: "Teste",
       dimensions: "DIM",
-      washing: "washing"
+      washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
+    
      },
     image: "https://res.cloudinary.com/daantetcr/image/upload/v1681157429/Octo/strollerPocket/OCTO_Icones-06_pquc35.png"
      },
@@ -455,7 +459,8 @@ export const categories:Category[] = [
     moreInfo: {
       description: "Teste",
       dimensions: "DIM",
-      washing: "washing"
+      washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
+    
      },
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
    },
@@ -467,7 +472,8 @@ export const categories:Category[] = [
     moreInfo: {
       description: "Teste",
       dimensions: "DIM",
-      washing: "washing"
+      washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
+    
      },
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
     },
@@ -479,7 +485,8 @@ export const categories:Category[] = [
     moreInfo: {
       description: "Teste",
       dimensions: "DIM",
-      washing: "washing"
+      washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
+    
      },
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
  
@@ -492,7 +499,8 @@ export const categories:Category[] = [
     moreInfo: {
       description: "Teste",
       dimensions: "DIM",
-      washing: "washing"
+      washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
+    
      },
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
   },
@@ -504,7 +512,7 @@ export const categories:Category[] = [
     moreInfo: {
       description: "Teste",
       dimensions: "DIM",
-      washing: "washing"
+      washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
      },
     image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
   },

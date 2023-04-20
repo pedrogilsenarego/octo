@@ -40,7 +40,7 @@ const UpScroller = () => {
         }}
       >
         <div style={{ position: "relative" }}>
-          {hover && location.pathname === ROUTE_PATHS.COLLECTION && (
+          {location.pathname === ROUTE_PATHS.COLLECTION && (
             <div style={{
               position: "absolute",
               top: "-210px",
@@ -50,7 +50,7 @@ const UpScroller = () => {
                 style={{
                   height: "35px",
                   width: "35px",
-                  backgroundColor: Colors.NEON_YELLOW,
+                  backgroundColor: !hover ? "transparent" : Colors.NEON_YELLOW,
 
                 }}
               ></div>
@@ -59,7 +59,7 @@ const UpScroller = () => {
                 style={{
                   height: "35px",
                   width: "35px",
-                  backgroundColor: Colors.BLACKISH,
+                  backgroundColor: !hover ? "transparent" : Colors.BLACKISH,
 
                 }}
               ></div>
@@ -68,7 +68,7 @@ const UpScroller = () => {
                 style={{
                   height: "35px",
                   width: "35px",
-                  backgroundColor: Colors.SOFT_PINK,
+                  backgroundColor: !hover ? "transparent" : Colors.SOFT_PINK,
                 }}
               ></div>
               <div
@@ -76,7 +76,7 @@ const UpScroller = () => {
                 style={{
                   height: "35px",
                   width: "35px",
-                  backgroundColor: Colors.ANTHRACITE,
+                  backgroundColor: !hover ? "transparent" : Colors.ANTHRACITE,
                 }}
               ></div>
               <div
@@ -84,7 +84,7 @@ const UpScroller = () => {
                 style={{
                   height: "35px",
                   width: "35px",
-                  backgroundColor: Colors.TAUPE,
+                  backgroundColor: !hover ? "transparent" : Colors.TAUPE,
                 }}
               ></div>
               <div
@@ -92,7 +92,7 @@ const UpScroller = () => {
                 style={{
                   height: "35px",
                   width: "35px",
-                  backgroundColor: Colors.PRETTY_CREAM,
+                  backgroundColor: !hover ? "transparent" : Colors.PRETTY_CREAM,
                 }}
               ></div>
             </div>
