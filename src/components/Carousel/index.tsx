@@ -6,11 +6,12 @@ interface Props {
   images: string[];
   colorBgArrow?: string
   gap: number;
-  padding: number;
+  padding: string;
   heightImage: number
+  width: string
 }
 
-const Carousel = ({ images, colorBgArrow, gap, padding, heightImage }: Props) => {
+const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -32,14 +33,18 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage }: Props) =>
 
     setSlideIndex((prevIndex) => (prevIndex + 1 * direction) % images.length);
   };
-  const containerWidth = windowSize.width - 2 * (windowSize.width * padding);
-  const childWidth = (containerWidth - gap * 3) / 4;
-  const slideWidth = childWidth + gap;
-  const slideWidthPercentage = (slideWidth / containerWidth) * 100;
+  const containerWidth = width;
+  const paddingVW = padding
+  const containerWidthVW = parseInt(containerWidth, 10) - 2 * parseInt(paddingVW, 10);
+  const gapVW = (gap / windowSize.width) * 100;
+  const childWidthVW = (containerWidthVW - gapVW * 3) / 4;
+  const slideWidthVW = childWidthVW + gapVW;
+  const slideWidthPercentage = (slideWidthVW / containerWidthVW) * 100;
+  console.log(childWidthVW)
   return (
     <div
       style={{
-        width: window.innerWidth - 2 * (window.innerWidth * padding),
+        width: `${containerWidthVW}vw`,
 
         overflow: "hidden",
         position: "relative",
@@ -113,7 +118,7 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage }: Props) =>
               draggable={false}
               key={pos}
               style={{
-                flex: `0 0 ${childWidth}px`,
+                flex: `0 0 ${childWidthVW}vw`,
                 overflow: "hidden",
                 height: window.innerHeight * heightImage,
               }}

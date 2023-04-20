@@ -1,8 +1,7 @@
 import { Box, useTheme, useMediaQuery, Typography } from "@mui/material";
 import { generalConstants } from "../../constants/general";
-
-import MenuBar from "../../presentional/MenuBar";
 import { i18n } from "../../translations/i18n";
+
 
 const TermsOfService = () => {
   const Theme = useTheme();

@@ -15,6 +15,10 @@ const Shop = () => {
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const navigate = useNavigate();
 
+
+
+  console.log('6');
+
   const listOfImages = [
     "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_365a_s3dia6.webp",
     "https://res.cloudinary.com/daantetcr/image/upload/v1681822111/Octo/collections/Taupe/OCTO_SS23_721a_ifo4p7.webp",
@@ -89,8 +93,8 @@ const Shop = () => {
               Products
             </Typography>
           </Grid>
-          <Grid item xs={10} style={{ paddingLeft: "0px", paddingRight: "40px", transform: "translateY(7vh)", }}>
-            <Carousel gap={20} images={categories.map(category => category.icon)} padding={0.07} heightImage={0.2} />
+          <Grid item xs={10} style={{ paddingLeft: "0px", paddingRight: "40px", transform: "translateY(7vh)", width: "100%" }}>
+            {/* <Carousel gap={20} images={categories.map(category => category.icon)} padding={0.07} heightImage={0.2} /> */}
             {/* <Grid
               container
               style={{ borderRadius: "10px", marginTop: "10px" }}
