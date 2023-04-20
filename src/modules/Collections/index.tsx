@@ -58,7 +58,7 @@ const Collections = () => {
   useEffect(() => {
     if (positionScroll !== null) {
       handleMoveToPos(positionScroll);
-      console.log("here");
+
     }
   }, [positionScroll]);
 

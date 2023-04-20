@@ -15,7 +15,6 @@ const Shop = () => {
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const navigate = useNavigate();
 
-  console.log("6");
 
   const listOfImages = [
     "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_365a_s3dia6.webp",
@@ -118,7 +117,7 @@ const Shop = () => {
               <Carousel
                 outsideButtons
                 width='32vw'
-                gap={20}
+                gap={0}
                 images={categories.map((category, pos) => <Element key={pos} item={category} />)}
                 padding='3vw'
                 heightImage={0.35}

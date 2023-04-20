@@ -34,6 +34,7 @@ const Element = ({ item }: Props) => {
         width: "100%",
         boxShadow: loading ? "0px 0px 0px 0px" : "0px 0px 10px 0px #0000001e",
         aspectRatio: 1,
+
       }}
     >
       {loading && (

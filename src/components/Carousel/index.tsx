@@ -41,7 +41,7 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outs
   const childWidthVW = (containerWidthVW - gapVW * 3) / 4;
   const slideWidthVW = childWidthVW + gapVW;
   const slideWidthPercentage = (slideWidthVW / containerWidthVW) * 100;
-  console.log(childWidthVW)
+
   return (
     <div
       style={{
@@ -103,7 +103,7 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outs
         <div
           style={{
 
-            columnGap: "5px",
+            columnGap: `${gap}px`,
             position: "relative",
             display: "flex",
             alignItems: "center",
@@ -135,12 +135,12 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outs
             } else {
               return (
                 <div style={{
-
+                  padding: "5px",
                   display: "flex",
                   alignItems: "center",
                   flex: `0 0 ${childWidthVW}vw`,
                   overflow: "hidden",
-                  height: window.innerHeight * heightImage,
+
                 }}>{item}</div>
               );
             }
