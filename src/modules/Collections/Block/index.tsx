@@ -3,7 +3,6 @@ import Pantone, { PantoneProps } from "./Pantone";
 import Carousel from "../../../components/Carousel";
 import { Colors } from "../../../constants/pallete";
 
-
 export interface BlockProps {
   pantoneProps: PantoneProps;
   firstRow: [string, string];
@@ -15,7 +14,6 @@ export interface BlockProps {
 }
 
 const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
-
   return (
     <div
       style={{
@@ -81,8 +79,16 @@ const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
           {secondRow.jsx}
         </Grid>
       </Grid>
-      <div >
-        <Carousel width="100vw" images={thirdRow} gap={5} colorBgArrow={Colors.NEON_YELLOW} padding="7vw" heightImage={0.55} />
+      <div>
+        <Carousel
+          width='100vw'
+          images={thirdRow}
+          gap={5}
+          colorBgArrow={Colors.NEON_YELLOW}
+          padding='7vw'
+          heightImage={0.55}
+          noArrows={pantoneProps.title !== "Neon Yellow" ? false : true}
+        />
       </div>
     </div>
   );

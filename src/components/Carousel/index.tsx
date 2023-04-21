@@ -7,13 +7,14 @@ interface Props {
   colorBgArrow?: string;
   colorArrow?: string;
   gap: number;
-  padding: string;
+  padding?: string;
   heightImage: number;
   width: string;
   outsideButtons?: boolean;
   numberSlides?: number;
   focusCentral?: boolean;
   ghostEdges?: boolean
+  noArrows?: boolean
 }
 
 const Carousel = ({
@@ -27,7 +28,8 @@ const Carousel = ({
   numberSlides = 4,
   focusCentral,
   ghostEdges,
-  colorArrow
+  colorArrow,
+  noArrows
 }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [windowSize, setWindowSize] = useState({
@@ -78,7 +80,7 @@ const Carousel = ({
   const containerWidth = width;
   const paddingVW = padding;
   const containerWidthVW =
-    parseInt(containerWidth, 10) - 2 * parseInt(paddingVW, 10);
+    parseInt(containerWidth, 10) - 2 * parseInt(paddingVW || "0vw", 10);
   const gapVW = (gap / windowSize.width) * 100;
   const childWidthVW =
     (containerWidthVW - gapVW * (numberSlides - 1)) / numberSlides;
@@ -92,7 +94,7 @@ const Carousel = ({
         position: "relative",
       }}
     >
-      {images.length > 4 && (
+      {!noArrows && (
         <>
           <div
             onClick={() => handleNextClick(1)}
