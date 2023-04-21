@@ -14,7 +14,6 @@ const About = () => {
         columnGap={2}
         style={{
           position: "relative",
-
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
           backgroundSize: "cover",
@@ -27,10 +26,11 @@ const About = () => {
           style={{
             position: "absolute",
             left: mobile ? "10vw" : "3vw",
-            bottom: "8vh",
+            bottom: mobile ? "6vh" : "8vh",
             cursor: "pointer",
-            //backgroundColor: mobile ? "#ffffff6d" : "transparent",
-            padding: "5px"
+
+            backgroundColor: mobile ? "#0c0b0b49" : "transparent",
+            padding: "8px"
           }}
           onClick={() => navigate(ROUTE_PATHS.ABOUT)}
         >
@@ -46,7 +46,7 @@ const About = () => {
             fontSize={mobile ? "10vw" : '6vw'}
             fontFamily='Avalanche'
             color={mobile ? Colors.NEON_YELLOW : Colors.NEON_YELLOW}
-            style={{ lineHeight: mobile ? "8vh" : "10vh" }}
+            style={{ lineHeight: mobile ? "6vh" : "10vh" }}
           >
             Octo story?
           </Typography>

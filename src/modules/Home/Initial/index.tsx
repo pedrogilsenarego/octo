@@ -16,6 +16,7 @@ const Initial = () => {
   const navigate = useNavigate()
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -27,7 +28,7 @@ const Initial = () => {
 
         <div
           dangerouslySetInnerHTML={{
-            __html: `<video  playsinline autoBuffer autoPlay loop muted width="115%" height="115%" >
+            __html: `<video  playsinline autoBuffer autoPlay loop muted width="100%" height="100%" >
             <source
               src="https://res.cloudinary.com/daantetcr/video/upload/v1682079986/Octo/octo_site_20_04_wunsb6.mov"
               type='video/mp4'
@@ -124,7 +125,7 @@ const Initial = () => {
         >
           <div
             dangerouslySetInnerHTML={{
-              __html: `<video  playsinline autoBuffer autoPlay loop muted width="115%" height="115%" >
+              __html: `<video  playsinline autoBuffer autoPlay loop muted width="100%" height="100%" >
             <source
               src="https://res.cloudinary.com/daantetcr/video/upload/v1682079986/Octo/octo_site_20_04_wunsb6.mov"
               type='video/mp4'
@@ -167,7 +168,7 @@ const Initial = () => {
             }}
           ></Box>
 
-          <Box style={{ marginTop: "100%", position: "absolute", zIndex: 500 }}>
+          <Box style={{ bottom: "10vh", position: "absolute", zIndex: 500 }}>
             <Typography
               fontSize='40px'
               color={Colors.PRETTY_CREAM}
@@ -181,6 +182,7 @@ const Initial = () => {
               {i18n.t("modules.home.mainText")}
             </Typography>
             <Box
+              onClick={() => navigate(ROUTE_PATHS.COLLECTION)}
               marginLeft='32px'
               marginTop='20px'
               display='flex'

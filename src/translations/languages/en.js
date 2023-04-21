@@ -127,6 +127,7 @@ export const content = {
       menuBar: {
         store: "Shop",
         home: "Home",
+        manifest: "Manifest",
         collection: "Collection",
         about: "The octo story",
         cart: "Cart",

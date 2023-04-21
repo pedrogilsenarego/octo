@@ -17,7 +17,7 @@ const Shop = () => {
     <>
       <div>
         <Typography style={{ height: "100vh", width: "100vw", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          Under Construction
+          Coming Soon
         </Typography>
       </div>
       {/* <ProductContextProvider>

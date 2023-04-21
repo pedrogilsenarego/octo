@@ -9,11 +9,13 @@ import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../constants/routes";
 import { generalConstants } from "../../../constants/general";
 import Carousel from "../../../components/Carousel";
+import { useEffect, useState } from "react";
 
 const Shop = () => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const navigate = useNavigate();
+
 
   const listOfImages = [
     "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_365a_s3dia6.webp",
@@ -33,6 +35,8 @@ const Shop = () => {
   newPatterns.unshift(firstObjectCopy2);
   newPatterns.push(firstObjectCopy2);
   newPatterns.push(firstObjectCopy2);
+
+
 
   return (
     <div

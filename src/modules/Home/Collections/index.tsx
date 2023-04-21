@@ -10,6 +10,7 @@ const Collections = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const navigate = useNavigate()
+
   return (
     <>
       <Box

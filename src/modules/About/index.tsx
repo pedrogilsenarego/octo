@@ -3,7 +3,9 @@ import { generalConstants } from "../../constants/general";
 import { Colors } from "../../constants/pallete";
 import Carousel from "../../components/Carousel";
 
+
 const About = () => {
+
   const firstRowImages = [
     "https://res.cloudinary.com/daantetcr/image/upload/v1681930756/Octo/story/octo_RJ_7_ifjrxc.webp",
     "https://res.cloudinary.com/daantetcr/image/upload/v1681930756/Octo/story/octo_RJ_5_rnjbpi.webp",
@@ -12,6 +14,8 @@ const About = () => {
     "https://res.cloudinary.com/daantetcr/image/upload/v1681930756/Octo/story/OCTO_SS23_007a_d1mya4.webp",
     "https://res.cloudinary.com/daantetcr/image/upload/v1681930755/Octo/story/OCTO_SS23_287a_hdr3ca.webp",
   ];
+
+
 
   return (
     <div
@@ -58,36 +62,26 @@ const About = () => {
             <Typography
 
             >
-              However, when the founder returned to Lisbon in 2015 to pursue an
+              However, when Teresa returned to Lisbon in 2015 to pursue an
               interior design project, the brand could no longer operate in Brazil.
             </Typography>
             <Typography>
               Nevertheless, despite the founder's departure, her commitment to the
-
               Octo brand
-
               persisted, and she had a clear vision for its{" "}
-
               future
-
-              . Following the birth of her second daughter in 2021, the founder and
-              her husband decided to{" "}
-
+              . Following the birth of her second daughter in 2021, Teresa and
+              Pedro decided to{" "}
               revive the brand
-
               .
             </Typography>
             <Typography
 
             >
               The{" "}
-
               new
 
-              Octo brand reflects the founder's current role as a{" "}
-
-
-              relaxed, family-focused
+              Octo brand reflects Teresa's current role as a relaxed, family-focused
 
               mother and produces{" "}
 

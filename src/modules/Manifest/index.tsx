@@ -1,5 +1,5 @@
-import { Typography, Box, useTheme, useMediaQuery } from "@mui/material"
-import { Colors } from "../../constants/pallete"
+import { Typography, Box, useTheme, useMediaQuery, Grid } from "@mui/material";
+import { Colors } from "../../constants/pallete";
 import { generalConstants } from "../../constants/general";
 
 const Manifest = () => {
@@ -7,22 +7,58 @@ const Manifest = () => {
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
 
   return (
-    <Box
-      display='flex'
+    <div
       style={{
-        alignItems: "center",
-
-        minHeight: "100vh",
-        width: "100vw",
-        paddingTop: mobile ? "100px" : "140px",
-        paddingBottom: "100px",
-        paddingLeft: generalConstants.PADDING,
-        paddingRight: generalConstants.PADDING,
-        flexDirection: "column",
+        marginLeft: generalConstants.PADDING,
+        marginRight: generalConstants.PADDING,
+        marginTop: "150px",
+        display: "flex",
+        justifyContent: "center"
       }}
-    ><Typography color={Colors.BLACKISH} fontSize="3rem" fontWeight={800} mt="80px">
-        Congratulations, you are now part of the Octomistic Family!!</Typography></Box>
-  )
-}
+    >
+      <Grid container rowSpacing={"40px"}>
+        <Grid item xs={12}>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `<video  playsinline autoBuffer autoPlay loop muted width="80%" height="100%" >
+            <source
+              src="https://res.cloudinary.com/daantetcr/video/upload/v1682079986/Octo/octo_site_20_04_wunsb6.mov"
+              type='video/mp4'
+            />
+          </video>`,
+            }}
+            style={{ display: "flex", justifyContent: "center" }}
+          ></div>
+        </Grid><Grid item xs={12} style={{ textAlign: "center" }}>
+          <Typography>
+            Cool Moms,<br />
+            Easy dads,<br />
+            Happy Kids!<br /><br />
 
-export default Manifest
+            We believe that being a mom or a dad is one of the most fulfilling and rewarding experiences in life.
+
+            That’s why we embrace Octomism – the belief in a bright and promising future for both parents and babies.
+
+            We believe in adoring life’s precious moments and finding joy in the journey.
+
+            As parents ourselves, we know how quickly time passes and how important is to make the most of every moment.
+
+            We are passionate about helping families slow down, appreciate the present, and create memories that will last a lifetime.<br /><br />
+
+            Be Joy!<br />
+
+            Be Happiness!<br />
+
+            Empower the future!<br />
+
+            We are octomistic.<br />
+
+            We are moms, dads and kids with no strings attached.
+          </Typography>
+        </Grid>
+      </Grid>
+    </div>
+  );
+};
+
+export default Manifest;

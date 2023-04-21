@@ -103,7 +103,11 @@ const MenuBar = () => {
                     title={i18n.t("menuBar.about")}
                     onClick={() => navigate(ROUTE_PATHS.ABOUT)}
                   />
-
+                  <Button
+                    color={MENU_COLOR}
+                    title={i18n.t("menuBar.manifest")}
+                    onClick={() => navigate(ROUTE_PATHS.MANIFEST)}
+                  />
                   <Button
                     color={MENU_COLOR}
                     title={i18n.t("menuBar.collection")}
@@ -253,6 +257,16 @@ const MenuBar = () => {
               }}
             >
               {i18n.t("menuBar.about")}
+            </Typography>
+            <Typography
+              style={{ textTransform: "uppercase" }}
+              fontWeight={800}
+              onClick={() => {
+                navigate(ROUTE_PATHS.MANIFEST);
+                setMobileDrawer(false);
+              }}
+            >
+              {i18n.t("menuBar.manifest")}
             </Typography>
             <Typography
               style={{ textTransform: "uppercase" }}
