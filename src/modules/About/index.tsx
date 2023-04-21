@@ -94,18 +94,8 @@ const About = () => {
           could no longer operate in Brazil.
         </Typography>
       </div>
-      <img
-        src='https://res.cloudinary.com/daantetcr/image/upload/v1681933484/Octo/story/WhatsApp_Image_2023-04-19_at_20.40.25_ztf2ah.jpg'
-        alt=''
-        style={{
-          position: "absolute",
-          top: "-80px",
-          left: "-80px",
-          height: "400px",
-          transformStyle: "preserve-3d",
-          transform: "rotateZ(-90deg)",
-        }}
-      />
+
+
       <Grid
         container
         columnSpacing='5px'

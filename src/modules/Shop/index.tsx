@@ -20,7 +20,7 @@ const Shop = () => {
           Under Construction
         </Typography>
       </div>
-      <ProductContextProvider>
+      {/* <ProductContextProvider>
         <Box
           display='flex'
           style={{
@@ -56,7 +56,7 @@ const Shop = () => {
 
 
 
-        </Box></ProductContextProvider>
+        </Box></ProductContextProvider> */}
     </>
   )
 }

@@ -55,7 +55,7 @@ const Shop = () => {
           display: "flex",
           columnGap: "20px",
           backgroundColor: Colors.PRETTY_CREAM_TRANSPARENT,
-          padding: "35px",
+          padding: "30px",
         }}
       >
         <div
@@ -70,7 +70,7 @@ const Shop = () => {
         >
           <Typography
             fontFamily='Avalanche'
-            fontSize='2vw'
+            fontSize='1.6vw'
             color={Colors.BLACKISH}
           >
             Products
@@ -81,7 +81,7 @@ const Shop = () => {
               numberSlides={3}
               focusCentral
               outsideButtons
-              width='28vw'
+              width='26vw'
               colorArrow={Colors.NEON_YELLOW}
               colorBgArrow='#00000000'
               gap={0}
@@ -105,7 +105,7 @@ const Shop = () => {
         >
           <Typography
             fontFamily='Avalanche'
-            fontSize='2vw'
+            fontSize='1.6vw'
             color={Colors.BLACKISH}
           >
             Patterns
@@ -116,7 +116,7 @@ const Shop = () => {
               ghostEdges
               focusCentral
               outsideButtons
-              width='28vw'
+              width='26vw'
               colorArrow={Colors.NEON_YELLOW}
               colorBgArrow='#00000000'
               gap={0}
