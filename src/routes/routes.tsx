@@ -8,12 +8,13 @@ import AdminLayout from "../layouts/AdminLayout"
 
 const Home = lazyWithRetryAndLoader(() => import("../modules/Home"));
 const Shop = lazyWithRetryAndLoader(() => import("../modules/Shop"));
-const Product = lazyWithRetryAndLoader(() => import("../modules/Product"));
+//const Product = lazyWithRetryAndLoader(() => import("../modules/Product"));
 const Collections = lazyWithRetryAndLoader(() => import("../modules/Collections"))
 const TermsOfService = lazyWithRetryAndLoader(() => import("../modules/TermsOfService"))
 const CostumerService = lazyWithRetryAndLoader(() => import("../modules/CostumerService"))
 const RefundsExchanges = lazyWithRetryAndLoader(() => import("../modules/RefundsExchanges"))
 const PrivacyPolicy = lazyWithRetryAndLoader(() => import("../modules/PrivacyPolicy"))
+const Manifest = lazyWithRetryAndLoader(() => import("../modules/Manifest"))
 const BuySuccess = lazyWithRetryAndLoader(() => import("../modules/BuySuccess"))
 const Admin = lazyWithRetryAndLoader(() => import("../modules/Admin/ManageProducts"))
 const About = lazyWithRetryAndLoader(() => import("../modules/About"))
@@ -56,6 +57,12 @@ export const routes: AppRoute[] = [
     </PagesLayout>,
   },
   {
+    path: ROUTE_PATHS.MANIFEST,
+    component: <PagesLayout noMarginBottom>
+      <Manifest />
+    </PagesLayout>,
+  },
+  {
     path: ROUTE_PATHS.REFUNDS_EXCHANGES,
     component: <PagesLayout noMarginBottom>
       <RefundsExchanges />
@@ -85,13 +92,13 @@ export const routes: AppRoute[] = [
       <Admin />
     </AdminLayout>,
   },
-  {
-    path: ROUTE_PATHS.PRODUCT,
-    component: (
-      <MainLayout >
-        <Product />
-      </MainLayout>
-    ),
-  },
+  // {
+  //   path: ROUTE_PATHS.PRODUCT,
+  //   component: (
+  //     <MainLayout >
+  //       <Product />
+  //     </MainLayout>
+  //   ),
+  // },
 
 ];

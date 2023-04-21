@@ -6,7 +6,7 @@ import Popup from "../../../components/Popup";
 import { ProductContext } from "../ProductContext";
 import MoreInfoPopup from "./MoreInfoPopup";
 import { fabrics } from "../../../constants/fabrics";
-import Detail from "../../Product/Detail";
+import Detail from "../../Shop/Description/Detail"
 import { categories } from "../../../constants/category";
 
 const Description = () => {

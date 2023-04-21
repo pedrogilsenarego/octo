@@ -10,5 +10,6 @@ export const ROUTE_PATHS = {
   COSTUMER_SERVICE:"/costumer-service",
   PRIVACY_POLICY:"/privacy-policy",
   REFUNDS_EXCHANGES:"/refunds-exchanges",
-  BUY_SUCCESS:"/success"
+  BUY_SUCCESS:"/success",
+  MANIFEST:"/manifest"
 }

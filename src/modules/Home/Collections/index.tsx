@@ -8,7 +8,7 @@ import { Colors } from "../../../constants/pallete";
 
 const Collections = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const navigate = useNavigate()
   return (
     <>
@@ -60,11 +60,11 @@ const Collections = () => {
               src={firstCollection}
               alt=''
             />
-            <Grid item xs={6} sm={3}>
+            <Grid item xs={6} md={3}>
               <img
                 draggable={false}
                 style={{
-                  borderBottom: `solid 60px ${Colors.BLACKISH}`,
+                  borderBottom: mobile ? `solid 20px ${Colors.BLACKISH}` : `solid 60px ${Colors.BLACKISH}`,
                   paddingBottom: "5px",
 
                   width: "100%",
@@ -77,11 +77,11 @@ const Collections = () => {
                 alt=''
               />
             </Grid>
-            <Grid item xs={6} sm={3}>
+            <Grid item xs={6} md={3}>
               <img
                 draggable={false}
                 style={{
-                  borderBottom: `solid 60px ${Colors.TAUPE}`,
+                  borderBottom: mobile ? `solid 20px ${Colors.TAUPE}` : `solid 60px ${Colors.TAUPE}`,
                   paddingBottom: "5px",
                   width: "100%",
                   height: mobile ? "25vh" : "60vh",
@@ -93,11 +93,11 @@ const Collections = () => {
                 alt=''
               />
             </Grid>{" "}
-            <Grid item xs={6} sm={3}>
+            <Grid item xs={6} md={3}>
               <img
                 draggable={false}
                 style={{
-                  borderBottom: `solid 60px ${Colors.SOFT_PINK}`,
+                  borderBottom: mobile ? `solid 20px ${Colors.SOFT_PINK}` : `solid 60px ${Colors.SOFT_PINK}`,
                   paddingBottom: "5px",
                   width: "100%",
                   height: mobile ? "25vh" : "60vh",
@@ -109,11 +109,11 @@ const Collections = () => {
                 alt=''
               />
             </Grid>{" "}
-            <Grid item xs={6} sm={3}>
+            <Grid item xs={6} md={3}>
               <img
                 draggable={false}
                 style={{
-                  borderBottom: `solid 60px ${Colors.PRETTY_CREAM}`,
+                  borderBottom: mobile ? `solid 20px ${Colors.PRETTY_CREAM}` : `solid 60px ${Colors.PRETTY_CREAM}`,
                   paddingBottom: "5px",
                   width: "100%",
                   height: mobile ? "25vh" : "60vh",

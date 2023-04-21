@@ -14,7 +14,7 @@ import Button from "../../../../components/Buttons/Button";
 import { categories } from "../../../../constants/category";
 import { fabrics } from "../../../../constants/fabrics";
 import { clearCart } from "../../../../slicer/cart/cart.actions";
-import { stripeProduction } from "../../../../constants/stripe";
+import { stripeLocal, stripeProduction } from "../../../../constants/stripe";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
 
 interface Props {
