@@ -1,4 +1,4 @@
-import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Button from "../../../components/Buttons/Button";
 import { categories } from "../../../constants/category";
 import { fabrics } from "../../../constants/fabrics";
@@ -55,7 +55,7 @@ const Shop = () => {
           display: "flex",
           columnGap: "20px",
           backgroundColor: Colors.PRETTY_CREAM_TRANSPARENT,
-          padding: "25px",
+          padding: "35px",
         }}
       >
         <div
@@ -70,7 +70,7 @@ const Shop = () => {
         >
           <Typography
             fontFamily='Avalanche'
-            fontSize='1.5vw'
+            fontSize='2vw'
             color={Colors.BLACKISH}
           >
             Products
@@ -81,7 +81,7 @@ const Shop = () => {
               numberSlides={3}
               focusCentral
               outsideButtons
-              width='22vw'
+              width='28vw'
               colorArrow={Colors.NEON_YELLOW}
               colorBgArrow='#00000000'
               gap={0}
@@ -105,7 +105,7 @@ const Shop = () => {
         >
           <Typography
             fontFamily='Avalanche'
-            fontSize='1.5vw'
+            fontSize='2vw'
             color={Colors.BLACKISH}
           >
             Patterns
@@ -116,7 +116,7 @@ const Shop = () => {
               ghostEdges
               focusCentral
               outsideButtons
-              width='22vw'
+              width='28vw'
               colorArrow={Colors.NEON_YELLOW}
               colorBgArrow='#00000000'
               gap={0}

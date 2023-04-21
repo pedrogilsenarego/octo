@@ -29,7 +29,7 @@ const About = () => {
             left: mobile ? "10vw" : "3vw",
             bottom: "8vh",
             cursor: "pointer",
-            backgroundColor: mobile ? "#ffffff6d" : "transparent",
+            //backgroundColor: mobile ? "#ffffff6d" : "transparent",
             padding: "5px"
           }}
           onClick={() => navigate(ROUTE_PATHS.ABOUT)}
@@ -37,7 +37,7 @@ const About = () => {
           <Typography
             fontSize={mobile ? "7vw" : '4vw'}
             fontFamily='Avalanche'
-            color={mobile ? Colors.BLACKISH : Colors.NEON_YELLOW}
+            color={mobile ? Colors.NEON_YELLOW : Colors.NEON_YELLOW}
             style={{}}
           >
             Curious about
@@ -45,7 +45,7 @@ const About = () => {
           <Typography
             fontSize={mobile ? "10vw" : '6vw'}
             fontFamily='Avalanche'
-            color={mobile ? Colors.BLACKISH : Colors.NEON_YELLOW}
+            color={mobile ? Colors.NEON_YELLOW : Colors.NEON_YELLOW}
             style={{ lineHeight: mobile ? "8vh" : "10vh" }}
           >
             Octo story?
