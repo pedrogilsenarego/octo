@@ -22,18 +22,17 @@ const Shop = () => {
     "https://res.cloudinary.com/daantetcr/image/upload/v1681845605/Octo/collections/NeonYellow/WhatsApp_Image_2023-04-18_at_20.18.58_r94vuw.jpg",
   ];
 
-  const newCategories = [...categories]
+  const newCategories = [...categories];
   const firstObjectCopy = { ...newCategories[0] };
   newCategories.unshift(firstObjectCopy);
   newCategories.push(firstObjectCopy);
   newCategories.push(firstObjectCopy);
 
-  const newPatterns = [...fabrics]
+  const newPatterns = [...fabrics];
   const firstObjectCopy2 = { ...newPatterns[0] };
   newPatterns.unshift(firstObjectCopy2);
   newPatterns.push(firstObjectCopy2);
   newPatterns.push(firstObjectCopy2);
-
 
   return (
     <div
@@ -41,8 +40,8 @@ const Shop = () => {
         position: "relative",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "end",
-        rowGap: "20px",
+        justifyContent: "center",
+        rowGap: "5px",
         paddingLeft: generalConstants.PADDING,
         paddingRight: generalConstants.PADDING,
         paddingTop: "4vh",
@@ -51,12 +50,19 @@ const Shop = () => {
         height: "100vh",
       }}
     >
-      <div style={{ display: "flex", columnGap: "20px" }}>
+      <div
+        style={{
+          display: "flex",
+          columnGap: "20px",
+          backgroundColor: Colors.PRETTY_CREAM_TRANSPARENT,
+          padding: "25px",
+        }}
+      >
         <div
           style={{
             width: "50%",
             display: "flex",
-            rowGap: "10px",
+
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
@@ -64,8 +70,8 @@ const Shop = () => {
         >
           <Typography
             fontFamily='Avalanche'
-            fontSize='2vw'
-            color={Colors.SOFT_PINK}
+            fontSize='1.5vw'
+            color={Colors.BLACKISH}
           >
             Products
           </Typography>
@@ -75,8 +81,9 @@ const Shop = () => {
               numberSlides={3}
               focusCentral
               outsideButtons
-              width='25vw'
-              colorBgArrow="#00000000"
+              width='22vw'
+              colorArrow={Colors.NEON_YELLOW}
+              colorBgArrow='#00000000'
               gap={0}
               images={newCategories.map((category, pos) => (
                 <Element key={pos} item={category} />
@@ -90,7 +97,7 @@ const Shop = () => {
           style={{
             width: "50%",
             display: "flex",
-            rowGap: "10px",
+
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
@@ -98,8 +105,8 @@ const Shop = () => {
         >
           <Typography
             fontFamily='Avalanche'
-            fontSize='2vw'
-            color={Colors.SOFT_PINK}
+            fontSize='1.5vw'
+            color={Colors.BLACKISH}
           >
             Patterns
           </Typography>
@@ -109,8 +116,9 @@ const Shop = () => {
               ghostEdges
               focusCentral
               outsideButtons
-              width='25vw'
-              colorBgArrow="#00000000"
+              width='22vw'
+              colorArrow={Colors.NEON_YELLOW}
+              colorBgArrow='#00000000'
               gap={0}
               images={newPatterns.map((category, pos) => (
                 <Element key={pos} item={category} />
@@ -140,12 +148,18 @@ const Shop = () => {
           );
         })}
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography fontFamily='Avalanche' fontSize='2vw'>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "40px",
+        }}
+      >
+        {/* <Typography fontFamily='Avalanche' fontSize='2vw'>
           Endless combinations
-        </Typography>
+        </Typography> */}
         <Button
-          width='calc(25% - 5px)'
+
           onClick={() => navigate(ROUTE_PATHS.SHOP)}
           colorHover={Colors.NEON_YELLOW_TRANSPARENT}
           label={i18n.t("modules.home.shopOurCollection")}

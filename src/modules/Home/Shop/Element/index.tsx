@@ -23,6 +23,7 @@ const Element = ({ item }: Props) => {
       justifyContent='center'
       alignItems='center'
       style={{
+        cursor: "pointer",
         position: "relative",
         borderRadius: "50%",
         border:

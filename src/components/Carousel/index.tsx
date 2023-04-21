@@ -5,6 +5,7 @@ import { Colors } from "../../constants/pallete";
 interface Props {
   images: string[] | JSX.Element[];
   colorBgArrow?: string;
+  colorArrow?: string;
   gap: number;
   padding: string;
   heightImage: number;
@@ -25,7 +26,8 @@ const Carousel = ({
   outsideButtons,
   numberSlides = 4,
   focusCentral,
-  ghostEdges
+  ghostEdges,
+  colorArrow
 }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [windowSize, setWindowSize] = useState({
@@ -97,7 +99,7 @@ const Carousel = ({
             style={{
               zIndex: 1000,
               position: "absolute",
-              right: outsideButtons ? "-50px" : "20px",
+              right: outsideButtons ? "-30px" : "20px",
               cursor: "pointer",
               top: "50%",
               transform: "translateY(-50%)",
@@ -105,7 +107,6 @@ const Carousel = ({
               width: "40px",
               height: "40px",
               borderRadius: "50%",
-
               backgroundColor: colorBgArrow || Colors.NEON_YELLOW,
             }}
           >
@@ -115,7 +116,7 @@ const Carousel = ({
               size='1.7rem'
               color={
                 slideIndex !== images.length - (ghostEdges ? numberSlides + 1 : numberSlides)
-                  ? Colors.BLACKISH
+                  ? colorArrow || Colors.BLACKISH
                   : "transparent"
               }
             />
@@ -125,7 +126,7 @@ const Carousel = ({
             style={{
               zIndex: 1000,
               position: "absolute",
-              left: outsideButtons ? "-50px" : "20px",
+              left: outsideButtons ? "-30px" : "20px",
               cursor: "pointer",
               top: "50%",
               transform: "translateY(-50%)",
@@ -139,7 +140,7 @@ const Carousel = ({
             <BiLeftArrow
               style={{ position: "absolute", left: "4px", top: "7px" }}
               size='1.7rem'
-              color={slideIndex !== 0 ? Colors.BLACKISH : "transparent"}
+              color={slideIndex !== 0 ? colorArrow || Colors.BLACKISH : "transparent"}
             />
           </div>
         </>
