@@ -2,20 +2,31 @@ import React, { useEffect, useState } from "react";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { Colors } from "../../constants/pallete";
 
-
 interface Props {
-  images: string[] | JSX.Element[]
-  colorBgArrow?: string
+  images: string[] | JSX.Element[];
+  colorBgArrow?: string;
   gap: number;
   padding: string;
-  heightImage: number
-  width: string
-  outsideButtons?: boolean,
-  numberSlides?: number
-  focusCentral?: boolean
+  heightImage: number;
+  width: string;
+  outsideButtons?: boolean;
+  numberSlides?: number;
+  focusCentral?: boolean;
+  ghostEdges?: boolean
 }
 
-const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outsideButtons, numberSlides = 4, focusCentral }: Props) => {
+const Carousel = ({
+  images,
+  colorBgArrow,
+  gap,
+  padding,
+  heightImage,
+  width,
+  outsideButtons,
+  numberSlides = 4,
+  focusCentral,
+  ghostEdges
+}: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -32,16 +43,18 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outs
     };
   }, []);
   const handleNextClick = (direction: number) => {
-    if (slideIndex === 0 && direction === -1) return
+    if (slideIndex === 0 && direction === -1) return;
     if (direction === 1 && slideIndex > images.length - 5) return;
 
     setSlideIndex((prevIndex) => (prevIndex + 1 * direction) % images.length);
   };
   const containerWidth = width;
-  const paddingVW = padding
-  const containerWidthVW = parseInt(containerWidth, 10) - 2 * parseInt(paddingVW, 10);
+  const paddingVW = padding;
+  const containerWidthVW =
+    parseInt(containerWidth, 10) - 2 * parseInt(paddingVW, 10);
   const gapVW = (gap / windowSize.width) * 100;
-  const childWidthVW = (containerWidthVW - gapVW * (numberSlides - 1)) / numberSlides;
+  const childWidthVW =
+    (containerWidthVW - gapVW * (numberSlides - 1)) / numberSlides;
   const slideWidthVW = childWidthVW + gapVW;
   const slideWidthPercentage = (slideWidthVW / containerWidthVW) * 100;
 
@@ -75,7 +88,11 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outs
             <BiRightArrow
               style={{ position: "absolute", left: "9px", top: "7px" }}
               size='1.7rem'
-              color={slideIndex !== images.length - numberSlides ? Colors.BLACKISH : "transparent"}
+              color={
+                slideIndex !== images.length - (ghostEdges ? numberSlides + 1 : numberSlides)
+                  ? Colors.BLACKISH
+                  : "transparent"
+              }
             />
           </div>
           <div
@@ -105,7 +122,6 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outs
       <div style={{ overflow: "hidden" }}>
         <div
           style={{
-
             columnGap: `${gap}px`,
             position: "relative",
             display: "flex",
@@ -116,7 +132,7 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outs
           }}
         >
           {images.map((item: string | JSX.Element, pos: number) => {
-            if (typeof item === 'string') {
+            if (typeof item === "string") {
               return (
                 <div
                   draggable={false}
@@ -131,27 +147,43 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outs
                     draggable={false}
                     src={item}
                     alt=''
-                    style={{ objectFit: "cover", height: "100%", width: "100%" }}
+                    style={{
+                      objectFit: "cover",
+                      height: "100%",
+                      width: "100%",
+                    }}
                   />
                 </div>
               );
             } else {
               return (
-                <div style={{
-                  padding: "5px",
-                  display: "flex",
-                  alignItems: "center",
-                  flex: `0 0 ${childWidthVW}vw`,
-                  overflow: "hidden",
-                  transition: "all 0.4s ease-in-out",
-                  transform: focusCentral && pos !== slideIndex + Math.floor(numberSlides / 2) ? `scale(0.7)` : "none"
-                }}>{item}</div>
+                <div
+                  style={{
+                    padding: "5px",
+                    display: "flex",
+                    alignItems: "center",
+                    flex: `0 0 ${childWidthVW}vw`,
+                    overflow: "hidden",
+                    transition: "all 0.4s ease-in-out",
+
+                    opacity:
+                      ghostEdges && (pos === 0 || pos === images.length - 2) ? 0 :
+                        focusCentral &&
+                          pos !== slideIndex + Math.floor(numberSlides / 2)
+                          ? 0.4
+                          : 1,
+                    transform:
+                      focusCentral &&
+                        pos !== slideIndex + Math.floor(numberSlides / 2)
+                        ? `scale(0.6)`
+                        : "none",
+                  }}
+                >
+                  {item}
+                </div>
               );
             }
           })}
-
-
-
         </div>
       </div>
     </div>

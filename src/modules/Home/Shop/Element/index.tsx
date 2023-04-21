@@ -6,16 +6,12 @@ import { FabricsType } from "../../../../constants/fabrics";
 import { Colors } from "../../../../constants/pallete";
 
 interface Props {
-
   item: Category | FabricsType;
-
 }
 
 const Element = ({ item }: Props) => {
-  const [hover, setHover] = useState<boolean>(false)
+  const [hover, setHover] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
-
-
 
   return (
     <Box
@@ -24,17 +20,18 @@ const Element = ({ item }: Props) => {
       onMouseLeave={() => setHover(false)}
       display='flex'
       onLoad={() => setLoading(false)}
-
       justifyContent='center'
       alignItems='center'
       style={{
         position: "relative",
         borderRadius: "50%",
-        border: hover && (item.title !== "Sample Fabric" && item.title !== "Sample Category") ? `solid 2px ${Colors.NEON_YELLOW}` : "solid 0px transparent",
+        border:
+          hover
+            ? `solid 2px ${Colors.NEON_YELLOW}`
+            : "solid 0px transparent",
         width: "100%",
         boxShadow: loading ? "0px 0px 0px 0px" : "0px 0px 10px 0px #0000001e",
         aspectRatio: 1,
-
       }}
     >
       {/* {loading && (

@@ -22,6 +22,20 @@ const Shop = () => {
     "https://res.cloudinary.com/daantetcr/image/upload/v1681845605/Octo/collections/NeonYellow/WhatsApp_Image_2023-04-18_at_20.18.58_r94vuw.jpg",
   ];
 
+  const newCategories = [...categories]
+  const firstObjectCopy = { ...newCategories[0] };
+  newCategories.unshift(firstObjectCopy);
+  newCategories.push(firstObjectCopy);
+  newCategories.push(firstObjectCopy);
+
+  const newPatterns = [...fabrics]
+  const firstObjectCopy2 = { ...newPatterns[0] };
+  newPatterns.unshift(firstObjectCopy2);
+  newPatterns.push(firstObjectCopy2);
+  newPatterns.push(firstObjectCopy2);
+
+  console.log(newCategories)
+
   return (
     <div
       style={{
@@ -58,12 +72,14 @@ const Shop = () => {
           </Typography>
           <div>
             <Carousel
+              ghostEdges
               numberSlides={3}
               focusCentral
               outsideButtons
               width='25vw'
+              colorBgArrow="#00000000"
               gap={0}
-              images={categories.map((category, pos) => (
+              images={newCategories.map((category, pos) => (
                 <Element key={pos} item={category} />
               ))}
               padding='3vw'
@@ -71,59 +87,40 @@ const Shop = () => {
             />
           </div>
         </div>
-        <Grid
-          container
-          columnSpacing='20px'
-          style={{ width: "50%", display: "flex" }}
+        <div
+          style={{
+            width: "50%",
+            display: "flex",
+            rowGap: "10px",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          <Grid
-            item
-            xs={2}
-            alignItems='flex-end'
-            justifyContent='flex-start'
-            style={{ display: "flex" }}
+          <Typography
+            fontFamily='Avalanche'
+            fontSize='2vw'
+            color={Colors.SOFT_PINK}
           >
-            <Typography
-              fontFamily='Avalanche'
-              fontSize='4vw'
-              color={Colors.TAUPE}
-              style={{
-                textOrientation: "mixed",
-                lineHeight: 1,
-                writingMode: "vertical-rl",
-                transform: "rotateX(180deg) rotateY(180deg)",
-              }}
-            >
-              Patterns
-            </Typography>
-          </Grid>
-
-          <Grid
-            item
-            xs={10}
-            style={{
-              paddingLeft: "0px",
-              paddingRight: "40px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "100%",
-            }}
-          >
-            <div>
-              <Carousel
-                outsideButtons
-                width='32vw'
-                gap={0}
-                images={fabrics.map((category, pos) => (
-                  <Element key={pos} item={category} />
-                ))}
-                padding='3vw'
-                heightImage={0.35}
-              />
-            </div>
-          </Grid>
-        </Grid>
+            Patterns
+          </Typography>
+          <div>
+            <Carousel
+              numberSlides={3}
+              focusCentral
+              outsideButtons
+              ghostEdges
+              width='25vw'
+              colorBgArrow="#00000000"
+              gap={0}
+              images={newPatterns.map((category, pos) => (
+                <Element key={pos} item={category} />
+              ))}
+              padding='3vw'
+              heightImage={0.25}
+            />
+          </div>
+        </div>
       </div>
 
       <div style={{ display: "flex", columnGap: "5px" }}>
