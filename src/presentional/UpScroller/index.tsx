@@ -114,7 +114,8 @@ const UpScroller = () => {
               backgroundColor: !hover ? "transparent" : Colors.BLACKISH,
             }}
             onClick={() => {
-              moveTop();
+              if (location.pathname === ROUTE_PATHS.COLLECTION) { handleScrollCollections("NEON_YELLOW") }
+              else moveTop();
               setHover(false);
             }}
           >
