@@ -59,9 +59,10 @@ const Shop = () => {
           <div>
             <Carousel
               numberSlides={3}
+              focusCentral
               outsideButtons
               width='25vw'
-              gap={10}
+              gap={0}
               images={categories.map((category, pos) => (
                 <Element key={pos} item={category} />
               ))}

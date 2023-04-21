@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { Colors } from "../../constants/pallete";
-import { number } from "yup";
+
 
 interface Props {
   images: string[] | JSX.Element[]
@@ -12,9 +12,10 @@ interface Props {
   width: string
   outsideButtons?: boolean,
   numberSlides?: number
+  focusCentral?: boolean
 }
 
-const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outsideButtons, numberSlides = 4 }: Props) => {
+const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outsideButtons, numberSlides = 4, focusCentral }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -142,7 +143,8 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outs
                   alignItems: "center",
                   flex: `0 0 ${childWidthVW}vw`,
                   overflow: "hidden",
-
+                  transition: "all 0.4s ease-in-out",
+                  transform: focusCentral && pos !== slideIndex + Math.floor(numberSlides / 2) ? `scale(0.7)` : "none"
                 }}>{item}</div>
               );
             }
