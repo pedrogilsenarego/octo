@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { Colors } from "../../constants/pallete";
+import { number } from "yup";
 
 interface Props {
   images: string[] | JSX.Element[]
@@ -9,10 +10,11 @@ interface Props {
   padding: string;
   heightImage: number
   width: string
-  outsideButtons?: boolean
+  outsideButtons?: boolean,
+  numberSlides?: number
 }
 
-const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outsideButtons }: Props) => {
+const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outsideButtons, numberSlides = 4 }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -38,7 +40,7 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outs
   const paddingVW = padding
   const containerWidthVW = parseInt(containerWidth, 10) - 2 * parseInt(paddingVW, 10);
   const gapVW = (gap / windowSize.width) * 100;
-  const childWidthVW = (containerWidthVW - gapVW * 3) / 4;
+  const childWidthVW = (containerWidthVW - gapVW * (numberSlides - 1)) / numberSlides;
   const slideWidthVW = childWidthVW + gapVW;
   const slideWidthPercentage = (slideWidthVW / containerWidthVW) * 100;
 
@@ -72,7 +74,7 @@ const Carousel = ({ images, colorBgArrow, gap, padding, heightImage, width, outs
             <BiRightArrow
               style={{ position: "absolute", left: "9px", top: "7px" }}
               size='1.7rem'
-              color={slideIndex !== images.length / 2 ? Colors.BLACKISH : "transparent"}
+              color={slideIndex !== images.length - numberSlides ? Colors.BLACKISH : "transparent"}
             />
           </div>
           <div

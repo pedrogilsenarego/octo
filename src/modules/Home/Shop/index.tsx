@@ -91,30 +91,6 @@ const Shop = () => {
                 heightImage={0.35}
               />
             </div>
-            {/* <Grid
-              container
-              style={{ borderRadius: "10px", marginTop: "10px" }}
-              columnSpacing='30px'
-              rowSpacing='20px'
-            >
-              {newCategories.map((item, pos) => {
-
-                return (
-                  <Grid
-                    key={pos}
-                    item
-                    justifyContent='center'
-                    alignItems='center'
-                    xs={3}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <Element key={pos} item={item} />
-
-
-                  </Grid>
-                );
-              })}
-            </Grid> */}
           </Grid>
         </Grid>
         <Grid
@@ -150,7 +126,11 @@ const Shop = () => {
             style={{
               paddingLeft: "0px",
               paddingRight: "40px",
-              transform: "translateY(7vh)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "100%",
+
             }}
           >
             <div >
@@ -163,27 +143,7 @@ const Shop = () => {
                 heightImage={0.35}
               />
             </div>
-            {/* <Grid
-              container
-              style={{ borderRadius: "10px", marginTop: "10px" }}
-              columnSpacing='30px'
-              rowSpacing='20px'
-            >
-              {newPatterns.map((item, pos) => {
-                return (
-                  <Grid
-                    key={pos}
-                    item
-                    justifyContent='center'
-                    alignItems='center'
-                    xs={3}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <Element key={pos} item={item} />
-                  </Grid>
-                );
-              })}
-            </Grid> */}
+
           </Grid>
         </Grid>
       </div>

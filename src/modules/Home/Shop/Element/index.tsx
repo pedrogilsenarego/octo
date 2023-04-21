@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { useState } from "react";
 import { Category } from "../../../../constants/category";
 import { FabricsType } from "../../../../constants/fabrics";
-import { Ellipsis } from "react-spinners-css";
+
 import { Colors } from "../../../../constants/pallete";
 
 interface Props {
@@ -37,7 +37,7 @@ const Element = ({ item }: Props) => {
 
       }}
     >
-      {loading && (
+      {/* {loading && (
         <Ellipsis
           size={30}
           color={item.title === "Sample Fabric" || item.title === "Sample Category" ? "transparent" : Colors.NEON_YELLOW_TRANSPARENT}
@@ -53,7 +53,7 @@ const Element = ({ item }: Props) => {
             marginRight: "auto",
           }}
         />
-      )}
+      )} */}
       <img
         src={item.icon}
         alt=''
