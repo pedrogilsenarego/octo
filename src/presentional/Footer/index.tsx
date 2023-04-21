@@ -1,10 +1,4 @@
-import {
-  Box,
-  Grid,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Colors } from "../../constants/pallete";
 import { i18n } from "../../translations/i18n";
 import { useNavigate } from "react-router-dom";
@@ -16,8 +10,8 @@ const Footer = () => {
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const navigate = useNavigate();
 
-  const iconMobileSize = "70px"
-  const iconTextSize = "14px"
+  const iconMobileSize = "70px";
+  const iconTextSize = "14px";
   return (
     <div
       style={{
@@ -41,16 +35,20 @@ const Footer = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              rowGap: mobile ? "6px" : "0px"
+              rowGap: mobile ? "6px" : "0px",
             }}
           >
             <img
               style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }}
-              height={mobile ? iconMobileSize : '100px'}
+              height={mobile ? iconMobileSize : "100px"}
               src='https://res.cloudinary.com/daantetcr/image/upload/v1681291017/Octo/footer/icones-ap-handmade_ltqxry.png'
               alt=''
             />
-            <Typography fontSize={mobile ? iconTextSize : "16px"} color='white' style={{ opacity: 0.8, textAlign: "center" }}>
+            <Typography
+              fontSize={mobile ? iconTextSize : "16px"}
+              color='white'
+              style={{ opacity: 0.8, textAlign: "center" }}
+            >
               {i18n.t("footer.handMade")}
             </Typography>
           </div>
@@ -61,16 +59,20 @@ const Footer = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              rowGap: mobile ? "6px" : "0px"
+              rowGap: mobile ? "6px" : "0px",
             }}
           >
             <img
               style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }}
-              height={mobile ? iconMobileSize : '100px'}
+              height={mobile ? iconMobileSize : "100px"}
               src='https://res.cloudinary.com/daantetcr/image/upload/v1681291017/Octo/footer/icones-ap-handmade2_rnajlu.png'
               alt=''
             />
-            <Typography fontSize={mobile ? iconTextSize : "16px"} color='white' style={{ opacity: 0.8, textAlign: "center" }}>
+            <Typography
+              fontSize={mobile ? iconTextSize : "16px"}
+              color='white'
+              style={{ opacity: 0.8, textAlign: "center" }}
+            >
               {i18n.t("footer.madePortugal")}
             </Typography>
           </div>
@@ -81,16 +83,20 @@ const Footer = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              rowGap: mobile ? "6px" : "0px"
+              rowGap: mobile ? "6px" : "0px",
             }}
           >
             <img
               style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }}
-              height={mobile ? iconMobileSize : '100px'}
+              height={mobile ? iconMobileSize : "100px"}
               src='https://res.cloudinary.com/daantetcr/image/upload/v1681291017/Octo/footer/icones-ap-certificado_ru2xmj.png'
               alt=''
             />
-            <Typography fontSize={mobile ? iconTextSize : "16px"} color='white' style={{ opacity: 0.8, textAlign: "center" }}>
+            <Typography
+              fontSize={mobile ? iconTextSize : "16px"}
+              color='white'
+              style={{ opacity: 0.8, textAlign: "center" }}
+            >
               {i18n.t("footer.certified")}
             </Typography>
           </div>
@@ -107,7 +113,7 @@ const Footer = () => {
           paddingLeft: "20px",
           paddingRight: "20px",
           alignItems: "center",
-          rowGap: "12px"
+          rowGap: "12px",
         }}
       >
         <Typography
@@ -126,7 +132,12 @@ const Footer = () => {
         >
           {i18n.t("footer.privacyPolicy")}
         </Typography>
-        <Typography fontSize={mobile ? iconTextSize : "16px"} style={{ cursor: "pointer", opacity: 0.8 }} color='white'>
+        <Typography
+          onClick={() => navigate(ROUTE_PATHS.REFUNDS_EXCHANGES)}
+          fontSize={mobile ? iconTextSize : "16px"}
+          style={{ cursor: "pointer", opacity: 0.8 }}
+          color='white'
+        >
           {i18n.t("footer.refunds")}
         </Typography>
 
@@ -139,7 +150,11 @@ const Footer = () => {
           {i18n.t("footer.customerService")}
         </Typography>
 
-        <Typography fontSize={mobile ? iconTextSize : "16px"} style={{ cursor: "pointer", opacity: 0.8 }} color='white'>
+        <Typography
+          fontSize={mobile ? iconTextSize : "16px"}
+          style={{ cursor: "pointer", opacity: 0.8 }}
+          color='white'
+        >
           {i18n.t("footer.contact")}
         </Typography>
       </Box>

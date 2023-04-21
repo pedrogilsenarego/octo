@@ -83,6 +83,22 @@ export const content = {
           mainText:
             "At Octo, the security and transparency of our users data is our top priority. To ensure this, we have implemented data protection measures in compliance with the New General Data Protection Regulation. We use the data provided by our users to offer personalized recommendations and exclusive offers, while adhering to legal requirements and maintaining the highest level of trust and security.",
         },
+        refundsExchanges: {
+          firstQuestion: "What is your Return Policy? ",
+          firstAnswer:
+            "We have a 15-day return policy, from the moment you received your order. The item must be in its original condition, unused and whit tags still attached. Please ensure that the item is also in its original packaging, and that you have the receipt or proof of purchase available.",
+          secondQuestion:
+            "What do I need to do if I want to return or exchange an item?",
+          secondAnswer:
+            "To initiate a return, please complete our online form, print it, and include it in the package with the item you wish to return. The item must be in pristine, unused condition, with the original hand tag and packaging. Please note that the cost of shipping for returns is the responsibility of the customer.",
+          secondAnswer2:
+            "Additionally, kindly notify us of your intention to return or exchange an item by sending an email to hello@octo-mistic.com. We will provide you with the return address and hold the desired replacement item for you.",
+          secondAnswer3:
+            "Once we receive the returned item and confirm that it meets our return policy requirements, we will either ship the replacement item to you (at no additional charge) or issue a refund. Refunds will be processed using the original payment method used to purchase the item.",
+          thirdQuestion: "What do i need to get a refund?",
+          thirdAnswer:
+            "Upon receiving and verifying your return, we will update you on the status of your refund and inform you of whether it has been approved or not. If your refund is approved, it will be processed automatically to your original payment method. Please keep in mind that it may take some time for the refund to show up on your account, depending on your bank or credit card company's processing times.",
+        },
       },
       forms: {
         required: "Required",

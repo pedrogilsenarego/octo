@@ -126,7 +126,7 @@ const Initial = () => {
             dangerouslySetInnerHTML={{
               __html: `<video  playsinline autoBuffer autoPlay loop muted width="115%" height="115%" >
             <source
-              src="https://res.cloudinary.com/daantetcr/video/upload/v1680693360/Octo/era_oz7cne.mov"
+              src="https://res.cloudinary.com/daantetcr/video/upload/v1682070390/Octo/octo_site_20_04_3_ceb0al.webm"
               type='video/mp4'
             />
           </video>`,

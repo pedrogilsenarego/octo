@@ -106,6 +106,7 @@ const Shop = () => {
           <div>
             <Carousel
               numberSlides={3}
+              ghostEdges
               focusCentral
               outsideButtons
               width='25vw'

@@ -9,5 +9,6 @@ export const ROUTE_PATHS = {
   TERMS_OF_SERVICE:"/terms-of-service",
   COSTUMER_SERVICE:"/costumer-service",
   PRIVACY_POLICY:"/privacy-policy",
+  REFUNDS_EXCHANGES:"/refunds-exchanges",
   BUY_SUCCESS:"/success"
 }
