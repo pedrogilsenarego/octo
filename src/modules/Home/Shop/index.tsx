@@ -79,7 +79,7 @@ const Shop = () => {
           >
             Products
           </Typography>
-          <div style={{ marginTop: "-20px" }}>
+          <div >
             <Carousel
               ghostEdges
               numberSlides={3}
@@ -114,7 +114,7 @@ const Shop = () => {
           >
             Patterns
           </Typography>
-          <div style={{ marginTop: "-20px" }}>
+          <div >
             <Carousel
               numberSlides={3}
               ghostEdges
