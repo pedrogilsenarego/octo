@@ -73,11 +73,14 @@ export const content = {
             "After placing your order, you will receive a confirmation email from us acknowledging receipt of your order. You will receive a follow-up email with your tracking information once your order is shipped. Please note that shipping fees are non-refundable in the event of a return, even if your order qualified for free shipping.",
           shipOversees: "Do you ship overseas?",
           shipOverseesText:
-            "We ship our products worldwide, and shipping fees will be calculated and added to your total during the checkout process.",
+            "I'm sorry, but currently we only ship to the Iberian Peninsula. However, we do plan to expand our shipping to worldwide in the future",
           problemsDelivering:
             "My package says delivered, but i didn’t receive it. What do I do?",
           problemsDeliveringText:
             "We understand that sometimes tracking information can be misleading, causing packages to be marked as delivered before they actually arrive. If this happens, we suggest waiting a few days for the package to arrive. You can also check with your neighbors and local post office for additional information! If your package still hasn't arrived after a few days, please reach out to us at hello@octo-mistic.com with your order number and tracking information so we can assist you further.",
+          additionalTaxes:
+            "Am I responsible for paying any international taxes or duties?",
+          additionalTaxesText: "The final price includes taxes and duties",
         },
         privacyPolicy: {
           mainText:

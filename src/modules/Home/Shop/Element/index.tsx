@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 import { Category } from "../../../../constants/category";
 import { FabricsType } from "../../../../constants/fabrics";
@@ -14,28 +14,29 @@ const Element = ({ item }: Props) => {
   const [loading, setLoading] = useState<boolean>(true);
 
   return (
-    <Box
-      key={item.title}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      display='flex'
-      onLoad={() => setLoading(false)}
-      justifyContent='center'
-      alignItems='center'
-      style={{
-        cursor: "pointer",
-        position: "relative",
-        borderRadius: "50%",
-        border:
-          hover
-            ? `solid 2px ${Colors.NEON_YELLOW}`
-            : "solid 0px transparent",
-        width: "100%",
-        boxShadow: loading ? "0px 0px 0px 0px" : "0px 0px 10px 0px #0000001e",
-        aspectRatio: 1,
-      }}
-    >
-      {/* {loading && (
+    <div style={{ display: "flex", flexDirection: "column", textAlign: "center", justifyContent: "center", rowGap: "5px", position: "relative", paddingBottom: "20px", paddingTop: "20px" }}>
+      <Box
+        key={item.title}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        display='flex'
+        onLoad={() => setLoading(false)}
+        justifyContent='center'
+        alignItems='center'
+        style={{
+          cursor: "pointer",
+          position: "relative",
+          borderRadius: "50%",
+          border:
+            hover
+              ? `solid 2px ${Colors.NEON_YELLOW}`
+              : "solid 0px transparent",
+          width: "100%",
+          boxShadow: loading ? "0px 0px 0px 0px" : "0px 0px 10px 0px #0000001e",
+          aspectRatio: 1,
+        }}
+      >
+        {/* {loading && (
         <Ellipsis
           size={30}
           color={item.title === "Sample Fabric" || item.title === "Sample Category" ? "transparent" : Colors.NEON_YELLOW_TRANSPARENT}
@@ -52,24 +53,27 @@ const Element = ({ item }: Props) => {
           }}
         />
       )} */}
-      <img
-        src={item.icon}
-        alt=''
-        draggable={false}
-        style={{
-          backgroundColor: loading ? "transparent" : "#F5F5F5",
-          borderRadius: "50%",
-          opacity: loading ? 0 : 1,
-          position: "absolute",
-          objectFit: "cover",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-        }}
-        onLoad={() => setLoading(false)}
-      />
-    </Box>
+        <img
+          src={item.icon}
+          alt=''
+          draggable={false}
+          style={{
+            backgroundColor: loading ? "transparent" : "#F5F5F5",
+            borderRadius: "50%",
+            opacity: loading ? 0 : 1,
+
+            objectFit: "cover",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+          }}
+          onLoad={() => setLoading(false)}
+        />
+
+
+      </Box>
+      <Typography style={{ color: "#ffffff", fontSize: "0.7rem", position: "absolute", bottom: "-3px", textAlign: "center", left: 0, right: 0, lineHeight: "13px" }}>{item.title}</Typography></div>
   );
 };
 

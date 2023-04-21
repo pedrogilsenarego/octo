@@ -89,6 +89,12 @@ const CostumerService = () => {
       <Typography mt={mobile ? "10px" : "20px"} style={{ float: "left", width: "100%" }}>
         {i18n.t("policies.costumerService.problemsDeliveringText")}
       </Typography>
+      <Typography mt={mobile ? "40px" : "80px"} style={{ float: "left", width: "100%" }}>
+        {i18n.t("policies.costumerService.additionalTaxes")}
+      </Typography>
+      <Typography mt={mobile ? "10px" : "20px"} style={{ float: "left", width: "100%" }}>
+        {i18n.t("policies.costumerService.additionalTaxesText")}
+      </Typography>
 
     </Box >
   );

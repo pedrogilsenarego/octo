@@ -49,7 +49,7 @@ const Manifest = () => {
 
             Be Happiness!<br />
 
-            Empower the future!<br />
+            Empower the future!<br /><br />
 
             We are octomistic.<br />
 

@@ -58,7 +58,7 @@ const Shop = () => {
         style={{
           display: "flex",
           columnGap: "20px",
-          backgroundColor: Colors.PRETTY_CREAM_TRANSPARENT,
+          backgroundColor: Colors.PRETTY_CREAM,
           padding: "30px",
         }}
       >
@@ -79,7 +79,7 @@ const Shop = () => {
           >
             Products
           </Typography>
-          <div>
+          <div style={{ marginTop: "-20px" }}>
             <Carousel
               ghostEdges
               numberSlides={3}
@@ -114,7 +114,7 @@ const Shop = () => {
           >
             Patterns
           </Typography>
-          <div>
+          <div style={{ marginTop: "-20px" }}>
             <Carousel
               numberSlides={3}
               ghostEdges

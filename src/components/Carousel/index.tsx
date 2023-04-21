@@ -191,7 +191,7 @@ const Carousel = ({
                     display: "flex",
                     alignItems: "center",
                     flex: `0 0 ${childWidthVW}vw`,
-                    overflow: "hidden",
+
                     transition: "all 0.4s ease-in-out",
 
                     opacity:
