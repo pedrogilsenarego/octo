@@ -34,7 +34,6 @@ const Shop = () => {
   newPatterns.push(firstObjectCopy2);
   newPatterns.push(firstObjectCopy2);
 
-  console.log(newCategories)
 
   return (
     <div
@@ -109,7 +108,6 @@ const Shop = () => {
               numberSlides={3}
               focusCentral
               outsideButtons
-              ghostEdges
               width='25vw'
               colorBgArrow="#00000000"
               gap={0}
