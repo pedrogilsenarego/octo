@@ -71,9 +71,10 @@ const Carousel = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   const handleNextClick = (direction: number) => {
     if (slideIndex === 0 && direction === -1) return;
-    if (direction === 1 && slideIndex > images.length - 5) return;
+    if (direction === 1 && slideIndex > images.length - (numberSlides + (ghostEdges ? 2 : 1))) return;
 
     setSlideIndex((prevIndex) => (prevIndex + 1 * direction) % images.length);
   };
