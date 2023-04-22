@@ -1,6 +1,7 @@
 import { Box, useTheme, useMediaQuery, Typography } from "@mui/material";
 import { generalConstants } from "../../constants/general";
 import { i18n } from "../../translations/i18n";
+import { downloadForm } from "../../services";
 
 
 const RefundsExchanges = () => {
@@ -8,7 +9,8 @@ const RefundsExchanges = () => {
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
 
   const handleClickForm = () => {
-
+    console.log("t")
+    downloadForm()
   }
 
   return (
@@ -39,11 +41,15 @@ const RefundsExchanges = () => {
       <Typography mt={mobile ? "40px" : "80px"}>
         {i18n.t("policies.refundsExchanges.secondQuestion")}
       </Typography>
-      <Typography mt={mobile ? "20px" : "40px"} dangerouslySetInnerHTML={{
-        __html:
-          i18n.t("policies.refundsExchanges.secondAnswer", { handleClickForm })
-      }}>
+      <Typography mt={mobile ? "20px" : "40px"}>
+        To initiate a return, please complete our{" "}
+        <b style={{ cursor: "pointer" }} onClick={handleClickForm}>return form</b>,
+        print it, and include it in the package with the item you wish to return. The
+        item must be in pristine, unused condition, with the original hand tag and
+        packaging. Please note that the cost of shipping for returns is the
+        responsibility of the customer.
       </Typography>
+
       <Typography mt={mobile ? "20px" : "40px"}>
         {i18n.t("policies.refundsExchanges.secondAnswer2")}
       </Typography>
