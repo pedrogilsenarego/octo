@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
       style={{
         alignItems: "center",
         textAlign: "center",
-        minHeight: "100vh",
+        minHeight: "60vh",
         width: "100vw",
         paddingTop: mobile ? "100px" : "140px",
         paddingBottom: "100px",

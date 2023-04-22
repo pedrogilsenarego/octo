@@ -86,7 +86,7 @@ const Shop = () => {
               focusCentral
               outsideButtons
               width='26vw'
-              colorArrow={Colors.NEON_YELLOW}
+              colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
               colorBgArrow='#00000000'
               gap={0}
               images={newCategories.map((category, pos) => (
@@ -121,7 +121,7 @@ const Shop = () => {
               focusCentral
               outsideButtons
               width='26vw'
-              colorArrow={Colors.NEON_YELLOW}
+              colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
               colorBgArrow='#00000000'
               gap={0}
               images={newPatterns.map((category, pos) => (

@@ -7,6 +7,10 @@ const RefundsExchanges = () => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
 
+  const handleClickForm = () => {
+
+  }
+
   return (
     <Box
       display='flex'
@@ -35,8 +39,10 @@ const RefundsExchanges = () => {
       <Typography mt={mobile ? "40px" : "80px"}>
         {i18n.t("policies.refundsExchanges.secondQuestion")}
       </Typography>
-      <Typography mt={mobile ? "20px" : "40px"}>
-        {i18n.t("policies.refundsExchanges.secondAnswer")}
+      <Typography mt={mobile ? "20px" : "40px"} dangerouslySetInnerHTML={{
+        __html:
+          i18n.t("policies.refundsExchanges.secondAnswer", { handleClickForm })
+      }}>
       </Typography>
       <Typography mt={mobile ? "20px" : "40px"}>
         {i18n.t("policies.refundsExchanges.secondAnswer2")}

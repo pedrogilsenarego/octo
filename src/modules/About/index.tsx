@@ -7,8 +7,8 @@ import Carousel from "../../components/Carousel";
 const About = () => {
 
   const firstRowImages = [
-    "https://res.cloudinary.com/daantetcr/image/upload/v1681930756/Octo/story/octo_RJ_7_ifjrxc.webp",
     "https://res.cloudinary.com/daantetcr/image/upload/v1681930756/Octo/story/octo_RJ_5_rnjbpi.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681930756/Octo/story/octo_RJ_7_ifjrxc.webp",
     "https://res.cloudinary.com/daantetcr/image/upload/v1681930756/Octo/story/octo_RJ_2_c64t6w.webp",
     "https://res.cloudinary.com/daantetcr/image/upload/v1681930756/Octo/story/OCTO_SS23_507a_pchwc9.webp",
     "https://res.cloudinary.com/daantetcr/image/upload/v1681930756/Octo/story/OCTO_SS23_007a_d1mya4.webp",
@@ -40,7 +40,7 @@ const About = () => {
         style={{ display: "flex" }}
       >
         <Grid item xs={5}>
-          <Carousel gap={5} images={firstRowImages} width={"35vw"} heightImage={0.8} numberSlides={1} />
+          <Carousel gap={5} images={firstRowImages} width={"35vw"} heightImage={0.8} numberSlides={1} colorBgArrow={Colors.NEON_YELLOW_TRANSPARENT} />
         </Grid>
         <Grid item xs={7} style={{ position: "relative" }}>
           <Typography

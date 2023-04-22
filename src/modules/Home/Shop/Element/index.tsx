@@ -87,6 +87,7 @@ const Element = ({ item }: Props) => {
           fontSize: "0.7rem",
           display: "inline-block",
           verticalAlign: "bottom",
+          textTransform: "uppercase",
           bottom: "-7px",
           textAlign: "center",
           left: 0,

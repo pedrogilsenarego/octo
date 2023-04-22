@@ -93,7 +93,7 @@ export const content = {
           secondQuestion:
             "What do I need to do if I want to return or exchange an item?",
           secondAnswer:
-            "To initiate a return, please complete our online form, print it, and include it in the package with the item you wish to return. The item must be in pristine, unused condition, with the original hand tag and packaging. Please note that the cost of shipping for returns is the responsibility of the customer.",
+            'To initiate a return, please complete our <b style="cursor: pointer;" onClick="$handleClickForm">return form</b>, print it, and include it in the package with the item you wish to return. The item must be in pristine, unused condition, with the original hand tag and packaging. Please note that the cost of shipping for returns is the responsibility of the customer.',
           secondAnswer2:
             "Additionally, kindly notify us of your intention to return or exchange an item by sending an email to hello@octo-mistic.com. We will provide you with the return address and hold the desired replacement item for you.",
           secondAnswer3:
