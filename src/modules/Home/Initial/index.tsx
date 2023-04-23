@@ -103,7 +103,7 @@ const Initial = () => {
     return (
       <div style={{
         width: "100vw",
-        height: "100vh",
+        height: window.innerHeight,
       }}>
         <div style={{
           position: "absolute",

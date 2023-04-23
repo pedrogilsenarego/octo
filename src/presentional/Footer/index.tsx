@@ -168,7 +168,7 @@ const Footer = ({ noMarginTop }: Props) => {
           justifyContent: "center",
           width: "100%",
           alignItems: "center",
-          marginTop: "80px",
+          marginTop: mobile ? "20px" : "80px",
         }}
       >
         <Typography

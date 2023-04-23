@@ -17,21 +17,9 @@ const Shop = () => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const navigate = useNavigate();
-  const scrollTo = useSelector<State, number>((state) => state.general.scrollTo)
 
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
-  useEffect(() => {
-    function handleResize() {
-      setWindowHeight(window.innerHeight);
-    }
 
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [scrollTo]);
 
 
   const listOfImages = [
@@ -68,7 +56,7 @@ const Shop = () => {
         paddingTop: "4vh",
         paddingBottom: "4vh",
         width: "100vw",
-        height: windowHeight,
+        height: window.innerHeight,
       }}
     >
       <div

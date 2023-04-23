@@ -48,6 +48,7 @@ const Home = () => {
         <Collections />
         <About />
         <Shop />
+        <Footer />
       </>)
   }
 
