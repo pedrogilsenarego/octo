@@ -2,11 +2,30 @@ import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { Colors } from "../../../constants/pallete";
 import { ROUTE_PATHS } from "../../../constants/routes";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux/es/exports";
+import { State } from "../../../slicer/types";
+import { useEffect, useState } from "react";
 
 const About = () => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const navigate = useNavigate();
+
+  const scrollTo = useSelector<State, number>((state) => state.general.scrollTo)
+
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowHeight(window.innerHeight);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [scrollTo]);
 
   return (
     <>
@@ -19,7 +38,7 @@ const About = () => {
           backgroundSize: "cover",
           backgroundImage: `url(https://res.cloudinary.com/daantetcr/image/upload/v1681847724/Octo/Home/Story/WhatsApp_Image_2023-04-18_at_20.46.00_1_igtblc.jpg)`,
           width: "100vw",
-          height: "100vh",
+          height: windowHeight,
         }}
       >
         <div

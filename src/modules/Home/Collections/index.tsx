@@ -5,11 +5,29 @@ import firstCollection from "../../../assets/firstCollection.svg";
 import { ROUTE_PATHS } from "../../../constants/routes";
 import { useNavigate } from "react-router";
 import { Colors } from "../../../constants/pallete";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { State } from "../../../slicer/types";
 
 const Collections = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const navigate = useNavigate()
+  const scrollTo = useSelector<State, number>((state) => state.general.scrollTo)
+
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowHeight(window.innerHeight);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [scrollTo]);
 
   return (
     <>
@@ -21,7 +39,7 @@ const Collections = () => {
           alignItems: "center",
 
           width: "100vw",
-          height: "100vh",
+          height: windowHeight,
           paddingLeft: mobile ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
           paddingRight: mobile ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
         }}

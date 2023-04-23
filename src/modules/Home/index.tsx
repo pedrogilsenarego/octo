@@ -34,7 +34,7 @@ const Home = () => {
       <About />
       <Shop />
       <div style={{ backgroundColor: Colors.TAUPE, height: "100vh" }}>
-        <Footer />
+        <Footer noMarginTop />
       </div>
     </ReactPageScroller>
   );

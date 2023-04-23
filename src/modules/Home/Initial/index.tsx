@@ -10,12 +10,29 @@ import { useEffect, useState } from "react";
 import { Ellipsis } from "react-spinners-css";
 import { ROUTE_PATHS } from "../../../constants/routes";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { State } from "../../../slicer/types";
 
 const Initial = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const navigate = useNavigate()
   const theme = useTheme();
+  const scrollTo = useSelector<State, number>((state) => state.general.scrollTo)
+
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowHeight(window.innerHeight);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [scrollTo]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -98,28 +115,47 @@ const Initial = () => {
 
   const renderMobile = () => {
     return (
-      <>
-        <Ellipsis
-          size={100}
-          color={Colors.BLACKISH}
-          style={{
-            opacity: loading ? 1 : 0,
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            marginTop: "auto",
-            marginBottom: "auto",
-            left: 0,
-            right: 0,
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        />
+      <div style={{
+        width: "100vw",
+        height: windowHeight,
+      }}>
+        <div style={{
+          position: "absolute",
+          opacity: loading ? 1 : 0,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0
+        }}>
+
+          <img
+            draggable={false}
+            style={{
+              height: "40vh",
+              cursor: "pointer",
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+            src="https://res.cloudinary.com/daantetcr/image/upload/v1681751224/Octo/collections/Blackish/OCTO_Logotipo_transp-octo_ixffst.png"
+            alt=''
+          />
+          <Ellipsis
+            style={{ marginTop: "-10vh" }}
+            size={100}
+            color={Colors.BLACKISH}
+
+          />
+        </div>
+
         <div
           style={{
             position: "relative",
-            width: "100vw",
-            height: "100vh",
+            height: "100%",
+            width: "100%",
             opacity: loading ? 0 : 1,
           }}
         >
@@ -201,7 +237,7 @@ const Initial = () => {
             </Box>
           </Box>
         </div>
-      </>
+      </div>
     );
   };
   return mobile ? renderMobile() : renderLaptop();

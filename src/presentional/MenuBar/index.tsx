@@ -356,6 +356,7 @@ const MenuBar = () => {
 
             <Divider style={{ width: "80%" }} />
             <BsInstagram
+              onClick={() => handleInstagram()}
               className='icon'
               size='1.4rem'
               color={Colors.BLACKISH}

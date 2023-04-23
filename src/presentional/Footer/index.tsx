@@ -5,7 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../constants/routes";
 import { generalConstants } from "../../constants/general";
 
-const Footer = () => {
+interface Props {
+  noMarginTop?: boolean
+}
+
+const Footer = ({ noMarginTop }: Props) => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const navigate = useNavigate();
@@ -15,7 +19,7 @@ const Footer = () => {
   return (
     <div
       style={{
-        marginTop: "100px",
+        marginTop: noMarginTop ? "0px" : "100px",
         width: "100vw",
         backgroundColor: Colors.TAUPE,
         paddingTop: "50px",
