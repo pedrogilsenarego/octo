@@ -9,7 +9,6 @@ const RefundsExchanges = () => {
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
 
   const handleClickForm = () => {
-    console.log("t")
     downloadForm()
   }
 

@@ -1,12 +1,15 @@
 import { Box, useTheme, useMediaQuery, Typography } from "@mui/material";
 import { generalConstants } from "../../constants/general";
-
-import MenuBar from "../../presentional/MenuBar";
 import { i18n } from "../../translations/i18n";
+import { downloadForm } from "../../services";
 
 const CostumerService = () => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
+
+  const handleClickForm = () => {
+    downloadForm()
+  }
 
   return (
     <Box
@@ -51,12 +54,14 @@ const CostumerService = () => {
       </Typography>
       <Typography mt={mobile ? "20px" : "40px"} >
         {i18n.t("policies.costumerService.returnPolicyText")}
+
       </Typography>
       <Typography mt={mobile ? "40px" : "80px"} style={{ float: "left", width: "100%" }}>
         {i18n.t("policies.costumerService.howToReturn")}
       </Typography>
       <Typography mt={mobile ? "10px" : "20px"} >
-        {i18n.t("policies.costumerService.howToReturnText")}
+        To initiate a return, please complete our <b style={{ cursor: "pointer" }} onClick={handleClickForm}>return form</b>, print it, and include it in the package with the item you wish to return. The item must be in pristine, unused condition, with the original hand tag and packaging. Please note that the cost of shipping for returns is the responsibility of the customer.
+
       </Typography>
       <Typography mt={mobile ? "10px" : "20px"} >
         {i18n.t("policies.costumerService.howToReturnText2")}
