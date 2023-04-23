@@ -7,7 +7,6 @@ import { State } from "../../slicer/types";
 import ReactPageScroller from "react-page-scroller";
 import { scrollTo } from "../../slicer/general/general.actions";
 import Footer from "../../presentional/Footer";
-import { Colors } from "../../constants/pallete";
 
 
 const Home = () => {
@@ -33,9 +32,10 @@ const Home = () => {
       <Collections />
       <About />
       <Shop />
-      <div style={{ backgroundColor: Colors.TAUPE, height: "100vh" }}>
+      {/* <div style={{ display: "flex", alignItems: "end", height: window.innerHeight }}>
         <Footer noMarginTop />
-      </div>
+      </div> */}
+
     </ReactPageScroller>
   );
 };
