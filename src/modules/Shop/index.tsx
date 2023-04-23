@@ -1,23 +1,36 @@
-import { Box, Grid, useTheme, useMediaQuery, Typography } from "@mui/material"
-import { generalConstants } from "../../constants/general"
-import FilterCategory from "./FilterCategory"
-import Description from "./Description"
-import ImageShow from "./ImageShow"
-import React from "react"
-import { ProductContextProvider } from "./ProductContext"
-
-
-
+import { Box, Grid, useTheme, useMediaQuery, Typography } from "@mui/material";
+import { generalConstants } from "../../constants/general";
+import FilterCategory from "./FilterCategory";
+import Description from "./Description";
+import ImageShow from "./ImageShow";
+import React from "react";
+import { ProductContextProvider } from "./ProductContext";
 
 const Shop = () => {
-  const Theme = useTheme()
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
+  const Theme = useTheme();
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
 
   return (
     <>
-      <div>
-        <Typography style={{ height: "100vh", width: "100vw", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          Coming Soon
+      <div
+        style={{
+          marginLeft: generalConstants.PADDING,
+          marginRight: generalConstants.PADDING,
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center"
+        }}
+      >
+        <Typography fontSize="20px">
+          We're thrilled that our website is up and running, but we're sorry to
+          say that you're not able to shop just yet. We're working hard to put
+          the finishing touches on our online store so that you can have the
+          best shopping experience possible. We know you're excited to see what
+          we have in store, and we can't wait to show you! Thank you for your
+          patience and understanding, and we'll let you know as soon as our
+          store is ready for business!
         </Typography>
       </div>
       {/* <ProductContextProvider>
@@ -58,7 +71,7 @@ const Shop = () => {
 
         </Box></ProductContextProvider> */}
     </>
-  )
-}
+  );
+};
 
-export default Shop
+export default Shop;

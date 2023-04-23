@@ -1,4 +1,11 @@
-import { Box, Divider, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { i18n } from "../../translations/i18n";
 import { AiOutlineShopping } from "react-icons/ai";
 import { VscMenu } from "react-icons/vsc";
@@ -53,6 +60,18 @@ const MenuBar = () => {
     }, 200);
   };
 
+  const handleInstagram = () => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = 'instagram://user?username=octo.mistic';
+      setTimeout(() => {
+        window.location.href = 'https://instagram.com/octo.mistic?igshid=YmMyMTA2M2Y=';
+      }, 1000);
+    } else {
+      window.open('https://instagram.com/octo.mistic?igshid=YmMyMTA2M2Y=', '_blank');
+    }
+  }
+
   const renderLaptop = () => {
     return (
       <div
@@ -96,31 +115,31 @@ const MenuBar = () => {
               columnGap='40px'
               alignItems='center'
             >
-              {location.pathname === ROUTE_PATHS.HOME && (
-                <>
-                  <Button
-                    color={MENU_COLOR}
-                    title={i18n.t("menuBar.about")}
-                    onClick={() => navigate(ROUTE_PATHS.ABOUT)}
-                  />
-                  <Button
-                    color={MENU_COLOR}
-                    title={i18n.t("menuBar.manifest")}
-                    onClick={() => navigate(ROUTE_PATHS.MANIFEST)}
-                  />
-                  <Button
-                    color={MENU_COLOR}
-                    title={i18n.t("menuBar.collection")}
-                    onClick={() => navigate(ROUTE_PATHS.COLLECTION)}
-                  />
 
-                  <Button
-                    color={MENU_COLOR}
-                    title={i18n.t("menuBar.store")}
-                    onClick={() => navigate(ROUTE_PATHS.SHOP)}
-                  />
-                </>
-              )}
+              <>
+                <Button
+                  color={MENU_COLOR}
+                  title={i18n.t("menuBar.about")}
+                  onClick={() => navigate(ROUTE_PATHS.ABOUT)}
+                />
+                <Button
+                  color={MENU_COLOR}
+                  title={i18n.t("menuBar.manifest")}
+                  onClick={() => navigate(ROUTE_PATHS.MANIFEST)}
+                />
+                <Button
+                  color={MENU_COLOR}
+                  title={i18n.t("menuBar.collection")}
+                  onClick={() => navigate(ROUTE_PATHS.COLLECTION)}
+                />
+
+                <Button
+                  color={MENU_COLOR}
+                  title={i18n.t("menuBar.store")}
+                  onClick={() => navigate(ROUTE_PATHS.SHOP)}
+                />
+              </>
+
 
               <Box
                 display='flex'
@@ -128,24 +147,25 @@ const MenuBar = () => {
                 alignItems='center'
                 justifyContent='center'
               >
-                {location.pathname === ROUTE_PATHS.HOME && (
-                  <>
-                    <Typography
-                      color={MENU_COLOR}
-                      className='icon'
-                      style={{ cursor: "pointer" }}
-                      onClick={() => handleChangeLang()}
-                    >
-                      {lang}
-                    </Typography>
-                    <BsInstagram
-                      className='icon'
-                      size='1.4rem'
-                      color={MENU_COLOR}
-                      style={{ cursor: "pointer" }}
-                    />
-                  </>
-                )}
+
+                <>
+                  <Typography
+                    color={MENU_COLOR}
+                    className='icon'
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handleChangeLang()}
+                  >
+                    {lang}
+                  </Typography>
+                  <BsInstagram
+                    onClick={() => handleInstagram()}
+                    className='icon'
+                    size='1.4rem'
+                    color={MENU_COLOR}
+                    style={{ cursor: "pointer" }}
+                  />
+                </>
+
                 {location.pathname !== ROUTE_PATHS.HOME && (
                   <BiHomeAlt2
                     onClick={() => navigate(ROUTE_PATHS.HOME)}
@@ -234,7 +254,15 @@ const MenuBar = () => {
           openDrawer={mobileDrawer}
           setOpenDrawer={setMobileDrawer}
         >
-          <Box mt="20px" padding='20px' display="flex" flexDirection="column" rowGap={4} justifyContent="center" alignItems="center">
+          <Box
+            mt='20px'
+            padding='20px'
+            display='flex'
+            flexDirection='column'
+            rowGap={4}
+            justifyContent='center'
+            alignItems='center'
+          >
             <Divider style={{ width: "80%" }} />
             {location.pathname !== ROUTE_PATHS.HOME && (
               <Typography
@@ -314,8 +342,11 @@ const MenuBar = () => {
                 </Box>
               )}
               <AiOutlineShopping
-                onClick={(e) => { e.preventDefault(); setMobileDrawer(false); setCartDrawer(true); }}
-
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMobileDrawer(false);
+                  setCartDrawer(true);
+                }}
                 className='icon'
                 size={ICON_SIZE}
                 color={Colors.BLACKISH}
@@ -340,11 +371,8 @@ const MenuBar = () => {
               {lang}
             </Typography>
           </Box>
-
         </DrawerMine>
         <DrawerMine
-
-
           fullHeight
           position='left'
           openDrawer={cartDrawer}

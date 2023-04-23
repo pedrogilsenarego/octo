@@ -18,6 +18,7 @@ export const MainLayout = ({ noMarginBottom, children }: Props) => {
 
         <SideBar />
         {children}
+
       </div>
     </>
   );

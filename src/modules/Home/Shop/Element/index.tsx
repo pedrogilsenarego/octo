@@ -84,12 +84,13 @@ const Element = ({ item }: Props) => {
       <Typography
         style={{
           color: "#ffffff",
-          fontSize: "0.7rem",
+          fontSize: "0.6rem",
           display: "inline-block",
           verticalAlign: "bottom",
           textTransform: "uppercase",
           bottom: "-7px",
           textAlign: "center",
+          fontWeight: 800,
           left: 0,
           right: 0,
           lineHeight: "13px",

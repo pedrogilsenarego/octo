@@ -30,7 +30,7 @@ const Initial = () => {
           dangerouslySetInnerHTML={{
             __html: `<video  playsinline autoBuffer autoPlay loop muted width="100%" height="100%" >
             <source
-              src="https://res.cloudinary.com/daantetcr/video/upload/v1682079986/Octo/octo_site_20_04_wunsb6.mov"
+              src="https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov"
               type='video/mp4'
             />
           </video>`,
@@ -127,7 +127,7 @@ const Initial = () => {
             dangerouslySetInnerHTML={{
               __html: `<video  playsinline autoBuffer autoPlay loop muted width="100%" height="100%" >
             <source
-              src="https://res.cloudinary.com/daantetcr/video/upload/v1682079986/Octo/octo_site_20_04_wunsb6.mov"
+              src="https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov"
               type='video/mp4'
             />
           </video>`,
