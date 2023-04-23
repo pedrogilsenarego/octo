@@ -10,6 +10,7 @@ import {
 import Snackbar from "./components/SnackBar";
 import { Colors } from "./constants/pallete";
 import CookiePolicy from "./presentional/CookiePopup";
+import ScrollLock from "./hoc";
 
 const theme = createTheme({
   typography: {
@@ -29,11 +30,14 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <StyledEngineProvider injectFirst>
+
           <CookiePolicy />
           <Snackbar />
           <CssBaseline />
           <ScrollToTop />
-          <AppRoutes />
+          <ScrollLock>
+            <AppRoutes />
+          </ScrollLock>
         </StyledEngineProvider>
       </ThemeProvider>
     </BrowserRouter>

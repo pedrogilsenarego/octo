@@ -23,12 +23,11 @@ const Home = () => {
 
     <ReactPageScroller
 
-      animationTimer={400}
+      animationTimer={800}
       customPageNumber={scrollToL}
       pageOnChange={(e) => handlePageChange(e)}
     >
       <Initial />
-
       <Collections />
       <About />
       <Shop />
