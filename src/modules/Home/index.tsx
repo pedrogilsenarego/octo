@@ -28,10 +28,10 @@ const Home = () => {
       customPageNumber={scrollToL}
       pageOnChange={(e) => handlePageChange(e)}
     >
-      <Initial />
+      {/* //<Initial /> */}
       <Collections />
       <About />
-      <Shop />
+      {/* <Shop /> */}
       {/* <div style={{ display: "flex", alignItems: "end", height: window.innerHeight }}>
         <Footer noMarginTop />
       </div> */}

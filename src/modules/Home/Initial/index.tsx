@@ -17,22 +17,8 @@ const Initial = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const navigate = useNavigate()
   const theme = useTheme();
-  const scrollTo = useSelector<State, number>((state) => state.general.scrollTo)
 
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowHeight(window.innerHeight);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [scrollTo]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -117,7 +103,7 @@ const Initial = () => {
     return (
       <div style={{
         width: "100vw",
-        height: windowHeight,
+        height: "100vh",
       }}>
         <div style={{
           position: "absolute",

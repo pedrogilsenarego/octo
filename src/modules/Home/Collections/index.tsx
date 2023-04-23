@@ -17,138 +17,134 @@ const Collections = () => {
 
 
   return (
-    <>
+    <div style={{ height: "100vh", backgroundColor: "blue" }}>
       <Box
         style={{
-
-
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "red",
           width: "100vw",
-          height: "100vh",
+          height: window.innerHeight,
           paddingLeft: mobile ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
           paddingRight: mobile ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
         }}
       >
-        <div style={{
-          height: window.innerHeight, display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}>
-          <Box
-            style={{
+        <Box
+          style={{
 
-              rowGap: "100px",
-              width: "100%",
-              height: "35%",
-              flexDirection: "column",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+            rowGap: "100px",
+            width: "100%",
+            height: "35vw",
+            flexDirection: "column",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Grid
+            onClick={() => navigate(ROUTE_PATHS.COLLECTION)}
+            container
+            columnSpacing="5px"
+            width='100%'
+            style={{ position: "relative", cursor: "pointer", }}
           >
-            <Grid
-              onClick={() => navigate(ROUTE_PATHS.COLLECTION)}
-              container
-              columnSpacing="5px"
-              width='100%'
-              style={{ position: "relative", cursor: "pointer", }}
-            >
+            <img
+              draggable={false}
+              style={{
+
+                position: "absolute",
+                bottom: mobile ? "-15%" : "-28%",
+                left: mobile ? "13%" : "10%",
+                width: mobile ? "45vw" : "500px",
+                cursor: "pointer",
+
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+              src={firstCollection}
+              alt=''
+            />
+            <Grid item xs={6} md={3}>
               <img
                 draggable={false}
                 style={{
+                  borderBottom: mobile ? `solid 20px ${Colors.BLACKISH}` : `solid 60px ${Colors.BLACKISH}`,
+                  paddingBottom: "5px",
 
-                  position: "absolute",
-                  bottom: mobile ? "-15%" : "-28%",
-                  left: mobile ? "13%" : "10%",
-                  width: mobile ? "45vw" : "500px",
-                  cursor: "pointer",
+                  width: "100%",
+                  height: mobile ? "25vh" : "60vh",
 
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
-                src={firstCollection}
+                src="https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_256a_a2edk9.webp"
                 alt=''
               />
-              <Grid item xs={6} md={3}>
-                <img
-                  draggable={false}
-                  style={{
-                    borderBottom: mobile ? `solid 20px ${Colors.BLACKISH}` : `solid 60px ${Colors.BLACKISH}`,
-                    paddingBottom: "5px",
-
-                    width: "100%",
-                    height: mobile ? "25vh" : "60vh",
-
-                    objectFit: "cover",
-                    objectPosition: "center",
-                  }}
-                  src="https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_256a_a2edk9.webp"
-                  alt=''
-                />
-              </Grid>
-              <Grid item xs={6} md={3}>
-                <img
-                  draggable={false}
-                  style={{
-                    borderBottom: mobile ? `solid 20px ${Colors.TAUPE}` : `solid 60px ${Colors.TAUPE}`,
-                    paddingBottom: "5px",
-                    width: "100%",
-                    height: mobile ? "25vh" : "60vh",
-
-                    objectFit: "cover",
-                    objectPosition: "center",
-                  }}
-                  src="https://res.cloudinary.com/daantetcr/image/upload/v1681822112/Octo/collections/Taupe/OCTO_SS23_482a_qhurtx.webp"
-                  alt=''
-                />
-              </Grid>{" "}
-              <Grid item xs={6} md={3}>
-                <img
-                  draggable={false}
-                  style={{
-                    borderBottom: mobile ? `solid 20px ${Colors.SOFT_PINK}` : `solid 60px ${Colors.SOFT_PINK}`,
-                    paddingBottom: "5px",
-                    width: "100%",
-                    height: mobile ? "25vh" : "60vh",
-
-                    objectFit: "cover",
-                    objectPosition: "center",
-                  }}
-                  src="https://res.cloudinary.com/daantetcr/image/upload/v1681808237/Octo/collections/SoftPink/OCTO_SS23_606a_bmxgb7.webp"
-                  alt=''
-                />
-              </Grid>{" "}
-              <Grid item xs={6} md={3}>
-                <img
-                  draggable={false}
-                  style={{
-                    borderBottom: mobile ? `solid 20px ${Colors.PRETTY_CREAM}` : `solid 60px ${Colors.PRETTY_CREAM}`,
-                    paddingBottom: "5px",
-                    width: "100%",
-                    height: mobile ? "25vh" : "60vh",
-
-                    objectFit: "cover",
-                    objectPosition: "center",
-                  }}
-                  src="https://res.cloudinary.com/daantetcr/image/upload/v1681821797/Octo/collections/PrettyCream/OCTO_SS23_109a_oz8yqj.webp"
-                  alt=''
-                />
-              </Grid>
             </Grid>
-            <Box
-              display='flex'
-              justifyContent='end'
-              flexDirection='row'
-              alignItems='center'
-              mt='-100px'
-              width='100%'
-            >
+            <Grid item xs={6} md={3}>
+              <img
+                draggable={false}
+                style={{
+                  borderBottom: mobile ? `solid 20px ${Colors.TAUPE}` : `solid 60px ${Colors.TAUPE}`,
+                  paddingBottom: "5px",
+                  width: "100%",
+                  height: mobile ? "25vh" : "60vh",
 
-            </Box>
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+                src="https://res.cloudinary.com/daantetcr/image/upload/v1681822112/Octo/collections/Taupe/OCTO_SS23_482a_qhurtx.webp"
+                alt=''
+              />
+            </Grid>{" "}
+            <Grid item xs={6} md={3}>
+              <img
+                draggable={false}
+                style={{
+                  borderBottom: mobile ? `solid 20px ${Colors.SOFT_PINK}` : `solid 60px ${Colors.SOFT_PINK}`,
+                  paddingBottom: "5px",
+                  width: "100%",
+                  height: mobile ? "25vh" : "60vh",
+
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+                src="https://res.cloudinary.com/daantetcr/image/upload/v1681808237/Octo/collections/SoftPink/OCTO_SS23_606a_bmxgb7.webp"
+                alt=''
+              />
+            </Grid>{" "}
+            <Grid item xs={6} md={3}>
+              <img
+                draggable={false}
+                style={{
+                  borderBottom: mobile ? `solid 20px ${Colors.PRETTY_CREAM}` : `solid 60px ${Colors.PRETTY_CREAM}`,
+                  paddingBottom: "5px",
+                  width: "100%",
+                  height: mobile ? "25vh" : "60vh",
+
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+                src="https://res.cloudinary.com/daantetcr/image/upload/v1681821797/Octo/collections/PrettyCream/OCTO_SS23_109a_oz8yqj.webp"
+                alt=''
+              />
+            </Grid>
+          </Grid>
+          <Box
+            display='flex'
+            justifyContent='end'
+            flexDirection='row'
+            alignItems='center'
+            mt='-100px'
+            width='100%'
+          >
+
           </Box>
-        </div>
+        </Box>
       </Box>
-    </>
+    </div>
   );
 };
 

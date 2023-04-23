@@ -13,22 +13,9 @@ const About = () => {
 
   const scrollTo = useSelector<State, number>((state) => state.general.scrollTo)
 
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowHeight(window.innerHeight);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [scrollTo]);
 
   return (
-    <>
+    <div style={{ height: "100vh" }}>
       <Box
         columnGap={2}
         style={{
@@ -38,7 +25,7 @@ const About = () => {
           backgroundSize: "cover",
           backgroundImage: `url(https://res.cloudinary.com/daantetcr/image/upload/v1681847724/Octo/Home/Story/WhatsApp_Image_2023-04-18_at_20.46.00_1_igtblc.jpg)`,
           width: "100vw",
-          height: windowHeight,
+          height: window.innerHeight,
         }}
       >
         <div
@@ -71,7 +58,7 @@ const About = () => {
           </Typography>
         </div>
       </Box>
-    </>
+    </div>
   );
 };
 
