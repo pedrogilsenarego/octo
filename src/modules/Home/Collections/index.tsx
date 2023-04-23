@@ -17,16 +17,16 @@ const Collections = () => {
 
 
   return (
-    <div style={{ height: "100vh", backgroundColor: "blue" }}>
+    <div>
       <Box
         style={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "red",
+
           width: "100vw",
-          height: window.innerHeight,
+          height: "100vh",
           paddingLeft: mobile ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
           paddingRight: mobile ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
         }}

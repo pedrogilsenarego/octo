@@ -11,11 +11,10 @@ const About = () => {
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const navigate = useNavigate();
 
-  const scrollTo = useSelector<State, number>((state) => state.general.scrollTo)
 
 
   return (
-    <div style={{ height: "100vh" }}>
+    <>
       <Box
         columnGap={2}
         style={{
@@ -25,14 +24,14 @@ const About = () => {
           backgroundSize: "cover",
           backgroundImage: `url(https://res.cloudinary.com/daantetcr/image/upload/v1681847724/Octo/Home/Story/WhatsApp_Image_2023-04-18_at_20.46.00_1_igtblc.jpg)`,
           width: "100vw",
-          height: window.innerHeight,
+          height: "100vh",
         }}
       >
         <div
           style={{
             position: "absolute",
             left: mobile ? "10vw" : "3vw",
-            bottom: mobile ? "6vh" : "8vh",
+            bottom: mobile ? "8vh" : "8vh",
             cursor: "pointer",
 
             backgroundColor: mobile ? "#0c0b0b49" : "transparent",
@@ -58,7 +57,7 @@ const About = () => {
           </Typography>
         </div>
       </Box>
-    </div>
+    </>
   );
 };
 
