@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { generalConstants } from "../../constants/general";
 import { Colors } from "../../constants/pallete";
 import Carousel from "../../components/Carousel";
@@ -12,6 +12,8 @@ const About = () => {
     "https://res.cloudinary.com/daantetcr/image/upload/v1681930756/Octo/story/OCTO_SS23_007a_d1mya4.webp",
     "https://res.cloudinary.com/daantetcr/image/upload/v1681930755/Octo/story/OCTO_SS23_287a_hdr3ca.webp",
   ];
+  const theme = useTheme()
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"))
 
   return (
     <div
@@ -28,24 +30,24 @@ const About = () => {
     >
       <div style={{ zIndex: 1000 }}></div>
 
-      <Grid container columnSpacing='3vw' style={{ display: "flex" }}>
-        <Grid item xs={5}>
+      <Grid container columnSpacing='3vw' style={{ display: "flex", }}>
+        <Grid item xs={12} md={5} style={{ display: "flex", justifyContent: "center" }}>
           <Carousel
             gap={5}
             images={firstRowImages}
-            width={"35vw"}
+            width={mobile ? "83vw" : "35vw"}
             heightImage={0.8}
             numberSlides={1}
             colorBgArrow={Colors.NEON_YELLOW_TRANSPARENT}
           />
         </Grid>
-        <Grid item xs={7} style={{ position: "relative" }}>
+        <Grid item xs={12} md={7} style={{ position: "relative" }}>
           <Typography
-            fontSize={"5vw"}
+            fontSize={mobile ? "8vw" : "5vw"}
             fontWeight={500}
             fontFamily='Avalanche'
             color={Colors.NEON_YELLOW}
-            style={{ position: "absolute", left: "-4vw", top: "5vh" }}
+            style={{ position: "absolute", left: mobile ? 0 : "-4vw", right: mobile ? 0 : undefined, top: "5vh" }}
           >
             We are Octomistic.
           </Typography>
@@ -86,11 +88,11 @@ const About = () => {
             </Typography>
             <Typography
               fontFamily='Avalanche'
-              fontSize={"2.5vw"}
+              fontSize={mobile ? "5vw" : "2.5vw"}
               color={Colors.TAUPE}
               style={{
                 textAlign: "start",
-                lineHeight: "5vh",
+                lineHeight: mobile ? "4vh" : "5vh",
                 marginTop: "20px",
               }}
             >

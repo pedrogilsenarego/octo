@@ -17,7 +17,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Label from "../../assets/images/label.png";
 import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
-import { scrollTo, updateLang } from "../../slicer/general/general.actions";
+import { scrollTo, setScrollCollections, updateLang } from "../../slicer/general/general.actions";
 import { generalConstants } from "../../constants/general";
 import { useState } from "react";
 import Cart from "./Cart";
@@ -130,7 +130,7 @@ const MenuBar = () => {
                 <Button
                   color={MENU_COLOR}
                   title={i18n.t("menuBar.collection")}
-                  onClick={() => navigate(ROUTE_PATHS.COLLECTION)}
+                  onClick={() => { navigate(ROUTE_PATHS.COLLECTION); dispatch(setScrollCollections("NEON_YELLOW")) }}
                 />
 
                 <Button

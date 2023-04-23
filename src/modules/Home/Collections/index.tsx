@@ -6,13 +6,15 @@ import { ROUTE_PATHS } from "../../../constants/routes";
 import { useNavigate } from "react-router";
 import { Colors } from "../../../constants/pallete";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { State } from "../../../slicer/types";
+import { setScrollCollections } from "../../../slicer/general/general.actions";
 
 const Collections = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
 
 
@@ -44,7 +46,7 @@ const Collections = () => {
           }}
         >
           <Grid
-            onClick={() => navigate(ROUTE_PATHS.COLLECTION)}
+            onClick={() => { navigate(ROUTE_PATHS.COLLECTION); dispatch(setScrollCollections("NEON_YELLOW")) }}
             container
             columnSpacing="5px"
             width='100%'

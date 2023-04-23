@@ -10,13 +10,15 @@ import { useEffect, useState } from "react";
 import { Ellipsis } from "react-spinners-css";
 import { ROUTE_PATHS } from "../../../constants/routes";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { State } from "../../../slicer/types";
+import { setScrollCollections } from "../../../slicer/general/general.actions";
 
 const Initial = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const navigate = useNavigate()
   const theme = useTheme();
+  const dispatch = useDispatch()
 
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -77,7 +79,7 @@ const Initial = () => {
             {i18n.t("modules.home.mainText")}
           </Typography>
           <Box
-            onClick={() => navigate(ROUTE_PATHS.COLLECTION)}
+            onClick={() => { navigate(ROUTE_PATHS.COLLECTION); dispatch(setScrollCollections("NEON_YELLOW")) }}
             marginLeft='10px'
             marginTop='1.6rem'
             display='flex'

@@ -1,5 +1,5 @@
 import { Typography, Box, useTheme, useMediaQuery, Grid } from "@mui/material";
-import { Colors } from "../../constants/pallete";
+
 import { generalConstants } from "../../constants/general";
 
 const Manifest = () => {
@@ -13,19 +13,25 @@ const Manifest = () => {
         marginRight: generalConstants.PADDING,
         marginTop: "150px",
         display: "flex",
-        justifyContent: "center"
+        justifyContent: "center",
+
       }}
     >
       <Grid container rowSpacing={"40px"}>
         <Grid item xs={12}>
           <div
             dangerouslySetInnerHTML={{
-              __html: `<video  playsinline autoBuffer autoPlay loop muted width="80%" height="100%" >
+              __html: mobile ? `<video  playsinline autoBuffer autoPlay loop muted width="95%" height="100%" >
             <source
               src="https://res.cloudinary.com/dmrll3fnf/video/upload/v1682213158/octo_master_22_04_hoowd9.mov"
               type='video/mp4'
             />
-          </video>`,
+          </video>`: `<video  playsinline autoBuffer autoPlay loop muted width="80%" height="100%" >
+          <source
+            src="https://res.cloudinary.com/dmrll3fnf/video/upload/v1682213158/octo_master_22_04_hoowd9.mov"
+            type='video/mp4'
+          />
+        </video>`,
             }}
             style={{ display: "flex", justifyContent: "center" }}
           ></div>
@@ -56,7 +62,9 @@ const Manifest = () => {
             We are moms, dads and kids with no strings attached.
           </Typography>
         </Grid>
-      </Grid>
+        <div style={{ display: "flex", justifyContent: "center", width: "100%", marginTop: "20px" }}>
+          <img src="https://res.cloudinary.com/dmrll3fnf/image/upload/v1682247803/TeresaePedro_qa5kvl.webp" alt="" style={{ height: "50px" }} />
+        </div> </Grid>
     </div>
   );
 };
