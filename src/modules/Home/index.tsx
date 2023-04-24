@@ -8,6 +8,7 @@ import ReactPageScroller from "react-page-scroller";
 import { scrollTo } from "../../slicer/general/general.actions";
 import Footer from "../../presentional/Footer";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { Colors } from "../../constants/pallete";
 
 
 const Home = () => {
@@ -34,9 +35,9 @@ const Home = () => {
         <Collections />
         <About />
         <Shop />
-        {/* <div style={{ display: "flex", alignItems: "end", height: window.innerHeight }}>
-<Footer noMarginTop />
-</div> */}
+        <div style={{ display: "flex", alignItems: "end", height: window.innerHeight, backgroundColor: Colors.TAUPE }}>
+          <Footer noMarginTop />
+        </div>
 
       </ReactPageScroller>)
   }

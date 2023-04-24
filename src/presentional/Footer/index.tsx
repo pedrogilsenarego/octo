@@ -21,6 +21,7 @@ const Footer = ({ noMarginTop }: Props) => {
       style={{
         marginTop: noMarginTop ? "0px" : "100px",
         width: "100vw",
+
         backgroundColor: Colors.TAUPE,
         paddingTop: "50px",
         paddingLeft: generalConstants.PADDING,
@@ -155,6 +156,7 @@ const Footer = ({ noMarginTop }: Props) => {
         </Typography>
 
         <Typography
+          onClick={() => navigate(ROUTE_PATHS.CONTACT_US)}
           fontSize={mobile ? iconTextSize : "16px"}
           style={{ cursor: "pointer", opacity: 0.8 }}
           color='white'

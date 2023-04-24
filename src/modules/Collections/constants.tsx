@@ -57,20 +57,65 @@ export const configBlackish: BlockProps = {
     image:
       "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_223a_dchn4k.webp",
     jsx: (
-      <div style={{ overflow: "hidden", height: window.innerHeight * 0.55, display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <img
-          draggable={false}
-          style={{
-            height: "140%",
-            cursor: "pointer",
+      <img
+        draggable={false}
+        style={{
+          marginTop: "-30vh",
+          marginBottom: "-30vh",
+          height: "100%",
+          cursor: "pointer",
 
-            objectFit: "cover",
-            objectPosition: "center",
-          }}
-          src="https://res.cloudinary.com/daantetcr/image/upload/v1681751224/Octo/collections/Blackish/OCTO_Logotipo_transp-octo_ixffst.png"
-          alt=''
-        />
-      </div>
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+        src="https://res.cloudinary.com/daantetcr/image/upload/v1681751224/Octo/collections/Blackish/OCTO_Logotipo_transp-octo_ixffst.png"
+        alt=''
+      />
+
+    ),
+  },
+  thirdRow: [
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_040a_alqvpf.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_365a_s3dia6.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_396a_w6uu6x.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_267a_r9p0xz.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_178a_qjqshy.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_537a_bat7e3.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_676a_uegbrh.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_464a_amlggx.webp"
+  ],
+};
+
+export const configBlackishMobile: BlockProps = {
+  pantoneProps: {
+    title: "Blackish",
+    pantoneNumber: "7547 C",
+    rgb: [26, 32, 50],
+    cymk: [87, 78, 52, 62],
+  },
+  firstRow: [
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_264a_of1g4a.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_256a_a2edk9.webp",
+  ],
+  secondRow: {
+    image:
+      "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_223a_dchn4k.webp",
+    jsx: (
+      <img
+        draggable={false}
+        style={{
+          marginTop: "-70vh",
+          marginBottom: "-70vh",
+          height: "70%",
+          cursor: "pointer",
+
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+        src="https://res.cloudinary.com/daantetcr/image/upload/v1681751224/Octo/collections/Blackish/OCTO_Logotipo_transp-octo_ixffst.png"
+        alt=''
+      />
+
     ),
   },
   thirdRow: [
@@ -235,17 +280,17 @@ export const configPrettyCream: BlockProps = {
     jsx: (
       <div>
         <Typography
-          fontSize='6rem'
+          fontSize='5vw'
           color={Colors.PRETTY_CREAM}
           fontFamily='Avalanche'
         >
           Proudly made
         </Typography>
         <Typography
-          fontSize='6rem'
+          fontSize='5vw'
           color={Colors.PRETTY_CREAM}
           fontFamily='Avalanche'
-          lineHeight='40px'
+          lineHeight="3vh"
         >
           in Portugal
         </Typography>

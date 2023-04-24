@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, useMediaQuery, useTheme } from "@mui/material";
 import Pantone, { PantoneProps } from "./Pantone";
 import Carousel from "../../../components/Carousel";
 import { Colors } from "../../../constants/pallete";
@@ -14,6 +14,8 @@ export interface BlockProps {
 }
 
 const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
+  const theme = useTheme()
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"))
   return (
     <div
       style={{
@@ -81,13 +83,14 @@ const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
       </Grid>
       <div>
         <Carousel
+          numberSlides={mobile ? 1 : 4}
           width='100vw'
           images={thirdRow}
           gap={5}
           colorBgArrow={Colors.NEON_YELLOW}
           padding='7vw'
           heightImage={0.55}
-          noArrows={pantoneProps.title !== "Neon Yellow" ? false : true}
+          noArrows={pantoneProps.title !== "Neon Yellow" ? false : mobile ? false : true}
         />
       </div>
     </div>

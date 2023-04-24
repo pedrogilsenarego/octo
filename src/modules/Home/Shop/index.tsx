@@ -33,11 +33,13 @@ const Shop = () => {
   const firstObjectCopy = { ...newCategories[0] };
   newCategories.unshift(firstObjectCopy);
   newCategories.push(firstObjectCopy);
+  newCategories.push(firstObjectCopy);
 
 
   const newPatterns = [...fabrics];
   const firstObjectCopy2 = { ...newPatterns[0] };
   newPatterns.unshift(firstObjectCopy2);
+  newPatterns.push(firstObjectCopy2);
   newPatterns.push(firstObjectCopy2);
 
 

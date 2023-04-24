@@ -14,6 +14,7 @@ const TermsOfService = lazyWithRetryAndLoader(() => import("../modules/TermsOfSe
 const CostumerService = lazyWithRetryAndLoader(() => import("../modules/CostumerService"))
 const RefundsExchanges = lazyWithRetryAndLoader(() => import("../modules/RefundsExchanges"))
 const PrivacyPolicy = lazyWithRetryAndLoader(() => import("../modules/PrivacyPolicy"))
+const ContactUs = lazyWithRetryAndLoader(() => import("../modules/ContactUs"))
 const Manifest = lazyWithRetryAndLoader(() => import("../modules/Manifest"))
 const BuySuccess = lazyWithRetryAndLoader(() => import("../modules/BuySuccess"))
 const Admin = lazyWithRetryAndLoader(() => import("../modules/Admin/ManageProducts"))
@@ -54,6 +55,12 @@ export const routes: AppRoute[] = [
     path: ROUTE_PATHS.TERMS_OF_SERVICE,
     component: <PagesLayout noMarginBottom>
       <TermsOfService />
+    </PagesLayout>,
+  },
+  {
+    path: ROUTE_PATHS.CONTACT_US,
+    component: <PagesLayout noMarginBottom>
+      <ContactUs />
     </PagesLayout>,
   },
   {

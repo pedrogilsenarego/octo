@@ -23,12 +23,12 @@ const Shop = () => {
           textAlign: "center"
         }}
       >
-        <Typography fontSize="20px">
+        <Typography fontSize="20px" style={{ marginTop: mobile ? "150px" : "0px" }}>
           We're thrilled that our website is up and running, but we're sorry to say that you're not able to shop just yet. We're working hard to put the finishing touches on our online store so that you can have the best shopping experience possible.<br />
           We know you're excited to see what we have in store, and we can't wait to show you!<br />
           Thank you for your patience and understanding, and we'll let you know as soon as our store is ready for business!
         </Typography>
-      </div>
+      </div >
       {/* <ProductContextProvider>
         <Box
           display='flex'

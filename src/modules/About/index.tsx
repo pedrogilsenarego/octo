@@ -74,7 +74,7 @@ const About = () => {
             <Typography>
               Nevertheless, despite the founder's departure, her commitment to
               the Octo brand persisted, and she had a clear vision for its{" "}
-              future . Following the birth of her second daughter in 2021,
+              future . Following the birth of their second daughter in 2021,
               Teresa and Pedro decided to revive the brand .
             </Typography>
             <Typography>

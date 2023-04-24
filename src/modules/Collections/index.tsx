@@ -3,6 +3,7 @@ import { generalConstants } from "../../constants/general";
 import {
   configAnthracite,
   configBlackish,
+  configBlackishMobile,
   configNeonYellow,
   configPrettyCream,
   configSoftPink,
@@ -28,6 +29,7 @@ const Collections = () => {
   );
 
   const handleMoveToPos = (positionScroll: CollectionPositions) => {
+
     switch (positionScroll) {
       case "NEON_YELLOW":
         window.scrollTo({
@@ -62,6 +64,8 @@ const Collections = () => {
     }
   }, [positionScroll]);
 
+  const configB = mobile ? { ...configBlackishMobile } : { ...configBlackish }
+
   return (
     <>
       <div
@@ -79,8 +83,8 @@ const Collections = () => {
             style={{
               textAlign: "right",
               fontFamily: "Avalanche",
-              fontSize: "60px",
-              marginTop: "70px",
+              fontSize: "5vw",
+              marginTop: "6vw",
             }}
           >
             Cool moms, easy dads,
@@ -89,23 +93,23 @@ const Collections = () => {
             style={{
               textAlign: "right",
               fontFamily: "Avalanche",
-              fontSize: "80px",
-              marginTop: "-25px",
-              marginBottom: "70px",
+              fontSize: "6vw",
+              marginTop: mobile ? "0px" : "-25px",
+              marginBottom: "6vw",
               paddingBottom: "-10px",
             }}
           >
             happy kids!
           </Typography>
         </div>
-        <Block {...configBlackish} />
+        <Block {...configB} />
         <div ref={SoftPinkRef as React.RefObject<HTMLDivElement>}>
           <Typography
             style={{
               textAlign: "right",
               fontFamily: "Avalanche",
-              fontSize: "60px",
-              marginTop: "70px",
+              fontSize: "5vw",
+              marginTop: "6vw",
             }}
           >
             Be Joy!
@@ -114,9 +118,9 @@ const Collections = () => {
             style={{
               textAlign: "right",
               fontFamily: "Avalanche",
-              fontSize: "80px",
-              marginTop: "-25px",
-              marginBottom: "70px",
+              fontSize: "6vw",
+              marginTop: mobile ? "0px" : "-25px",
+              marginBottom: "6vw",
               paddingBottom: "-10px",
             }}
           >
@@ -129,8 +133,8 @@ const Collections = () => {
             style={{
               textAlign: "right",
               fontFamily: "Avalanche",
-              fontSize: "60px",
-              marginTop: "70px",
+              fontSize: "5vw",
+              marginTop: "6vw",
             }}
           >
             Empower
@@ -139,9 +143,9 @@ const Collections = () => {
             style={{
               textAlign: "right",
               fontFamily: "Avalanche",
-              fontSize: "80px",
-              marginTop: "-25px",
-              marginBottom: "70px",
+              fontSize: "6vw",
+              marginTop: mobile ? "0px" : "-25px",
+              marginBottom: "6vw",
               paddingBottom: "-10px",
             }}
           >
@@ -154,8 +158,8 @@ const Collections = () => {
             style={{
               textAlign: "right",
               fontFamily: "Avalanche",
-              fontSize: "60px",
-              marginTop: "70px",
+              fontSize: "5vw",
+              marginTop: "6vw",
             }}
           >
             Enjoy,
@@ -164,9 +168,9 @@ const Collections = () => {
             style={{
               textAlign: "right",
               fontFamily: "Avalanche",
-              fontSize: "80px",
-              marginTop: "-25px",
-              marginBottom: "70px",
+              fontSize: "6vw",
+              marginTop: mobile ? "0px" : "-25px",
+              marginBottom: "6vw",
               paddingBottom: "-10px",
             }}
           >
@@ -179,8 +183,8 @@ const Collections = () => {
             style={{
               textAlign: "right",
               fontFamily: "Avalanche",
-              fontSize: "60px",
-              marginTop: "70px",
+              fontSize: "5vw",
+              marginTop: "6vw",
             }}
           >
             We are moms, dads and kids
@@ -189,9 +193,9 @@ const Collections = () => {
             style={{
               textAlign: "right",
               fontFamily: "Avalanche",
-              fontSize: "80px",
-              marginTop: "-25px",
-              marginBottom: "70px",
+              fontSize: "6vw",
+              marginTop: mobile ? "0px" : "-25px",
+              marginBottom: "6vw",
               paddingBottom: "-10px",
             }}
           >
@@ -199,7 +203,7 @@ const Collections = () => {
           </Typography>
         </div>
         <Block {...configPrettyCream} />
-      </div>
+      </div >
     </>
   );
 };

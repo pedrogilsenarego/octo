@@ -11,5 +11,6 @@ export const ROUTE_PATHS = {
   PRIVACY_POLICY:"/privacy-policy",
   REFUNDS_EXCHANGES:"/refunds-exchanges",
   BUY_SUCCESS:"/success",
-  MANIFEST:"/manifest"
+  MANIFEST:"/manifest",
+  CONTACT_US:"/contact-us"
 }
