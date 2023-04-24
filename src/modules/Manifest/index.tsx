@@ -3,11 +3,14 @@ import { Typography, Box, useTheme, useMediaQuery, Grid } from "@mui/material";
 import { generalConstants } from "../../constants/general";
 import { useState } from "react";
 import { MdOutlineMusicOff, MdOutlineMusicNote } from "react-icons/md";
+import Loader from "../../components/Loader";
 
 const Manifest = () => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const [muted, setMuted] = useState(true);
+  const [loading, setLoading] = useState(true)
+
 
   return (
     <div
@@ -21,41 +24,60 @@ const Manifest = () => {
     >
       <Grid container rowSpacing={"40px"}>
         <Grid item xs={12} style={{ position: "relative" }}>
-          <video
-            playsInline
-            autoPlay
-            loop
-            muted={muted}
-            width='100%'
-            height='100%'
-          >
-            <source
-              src='https://res.cloudinary.com/dmrll3fnf/video/upload/v1682213158/octo_master_22_04_hoowd9.mov'
-              type='video/mp4'
-            />
-          </video>
-          <div
-            onClick={() => setMuted(!muted)}
-            style={{
-              position: "absolute",
-              zIndex: 4000,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              right: "1%",
-              bottom: mobile ? "-19%" : "8%",
-              padding: "6px",
-              borderRadius: "4px",
-              cursor: "pointer",
-              backgroundColor: "#00000066",
-            }}
-          >
-            {" "}
-            {muted ? (
-              <MdOutlineMusicNote size={mobile ? "1.5rem" : '2rem'} color="white" />
-            ) : (
-              <MdOutlineMusicOff size={mobile ? "1.5rem" : '2rem'} color="white" />
-            )}
+          <div style={{
+            position: "absolute",
+            opacity: loading ? 1 : 0,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            height: "100%"
+          }}>
+
+            <Loader size={70} />
+          </div>
+          <div style={{ opacity: loading ? 0 : 1 }}>
+            <video
+              onPlay={() => { setLoading(false) }}
+              playsInline
+              autoPlay
+              loop
+              muted={muted}
+              width='100%'
+              height='100%'
+            >
+              <source
+                src='https://res.cloudinary.com/dmrll3fnf/video/upload/v1682213158/octo_master_22_04_hoowd9.mov'
+                type='video/mp4'
+              />
+            </video>
+            <div
+              onClick={() => setMuted(!muted)}
+              style={{
+                position: "absolute",
+                zIndex: 4000,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                right: "1%",
+                bottom: mobile ? "-19%" : "8%",
+                padding: "6px",
+                borderRadius: "4px",
+                cursor: "pointer",
+                backgroundColor: "#00000066",
+              }}
+            >
+              {" "}
+              {muted ? (
+                <MdOutlineMusicNote size={mobile ? "1.5rem" : '2rem'} color="white" />
+              ) : (
+                <MdOutlineMusicOff size={mobile ? "1.5rem" : '2rem'} color="white" />
+              )}
+            </div>
           </div>
         </Grid>
 
