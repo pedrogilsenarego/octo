@@ -53,7 +53,7 @@ const Initial = () => {
               opacity: loading ? 0 : 1,
             }}
           >
-            <video playsInline autoPlay loop muted width="100%" height="100%" onPlay={() => setLoading(false)}>
+            <video playsInline autoPlay preload="auto" loop muted width="100%" height="100%" onPlay={() => setLoading(false)}>
               <source
                 src="https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov"
                 type='video/mp4'
@@ -145,7 +145,7 @@ const Initial = () => {
             opacity: loading ? 0 : 1,
           }}
         >
-          <video playsInline autoPlay loop muted width="100%" height="100%" onPlay={() => setLoading(false)}>
+          <video playsInline autoPlay preload="auto" loop muted width="100%" height="100%" onPlay={() => setLoading(false)}>
             <source
               src="https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov"
               type='video/mp4'
