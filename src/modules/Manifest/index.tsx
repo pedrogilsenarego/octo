@@ -17,10 +17,10 @@ const Manifest = () => {
   // useEffect(() => {
   //   setTimeout(() => {
   //     setLoading(false);
-  //     setPlay(true);
-  //   }, 5000);
+
+  //   }, 2000);
   // });
-  // console.log(play);
+
 
   const handlePlayClick = () => {
     if (videoRef.current) {
@@ -63,7 +63,7 @@ const Manifest = () => {
           >
             <Loader size={70} />
           </div>
-          <div style={{ opacity: loading ? 0 : 1 }}>
+          <div style={{ opacity: loading ? 0 : 1, display: "flex", justifyContent: "center", position: "relative" }}>
 
             <video
               ref={videoRef}
@@ -71,12 +71,14 @@ const Manifest = () => {
               playsInline
               loop
               muted={muted}
-              width='100%'
+              width={mobile ? '100%' : "80%"}
               height='100%'
+              onLoadedMetadata={() => setLoading(false)}
+              onLoad={() => setLoading(false)}
               onCanPlayThrough={() => setLoading(false)}
             >
               <source
-                src='https://res.cloudinary.com/dmrll3fnf/video/upload/v1682213158/octo_master_22_04_hoowd9.mov'
+                src='https://res.cloudinary.com/dmrll3fnf/video/upload/v1682334199/octo_master_24_04_koiful.mov'
                 type='video/mp4'
               />
             </video>
@@ -87,9 +89,9 @@ const Manifest = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                right: "1%",
+                right: mobile ? "1%" : "12%",
                 columnGap: "5px",
-                bottom: mobile ? "-19%" : "8%",
+                bottom: mobile ? "-19%" : "7%",
                 padding: "6px",
                 borderRadius: "4px",
                 cursor: "pointer",

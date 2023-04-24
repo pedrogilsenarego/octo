@@ -6,50 +6,52 @@ import labelEsq from "../../../assets/images/labelEsq.png";
 import { generalConstants } from "../../../constants/general";
 import MenuBar from "../../../presentional/MenuBar";
 import "./index.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ROUTE_PATHS } from "../../../constants/routes";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setScrollCollections } from "../../../slicer/general/general.actions";
 import Loader from "../../../components/Loader";
+import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 
 const Initial = () => {
   const [loading, setLoading] = useState<boolean>(true);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const theme = useTheme();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  useEffect(() => {
-    setTimeout(() => { setLoading(false); }, 5000)
 
-  })
 
-  const videoHtml = `
-    <video src="path/to/video.mp4" preload="auto" playsinline autoplay muted loop width="100%" height="100%">
-      <source src="path/to/video.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  `;
 
   const renderLaptop = () => {
-    return (
-      <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
-        <>
-          <div style={{
-            position: "absolute",
-            opacity: loading ? 1 : 0,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0
-          }}>
+    const handlePlayClick = () => {
+      console.log("teste")
+      if (videoRef.current) {
 
+        videoRef.current.play();
+
+      }
+    };
+    return (
+      <div onClick={handlePlayClick} style={{ position: "relative", width: "100vw", height: "100vh" }}>
+        <>
+          <div
+            style={{
+              position: "absolute",
+              opacity: loading ? 1 : 0,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0,
+            }}
+          >
             <Loader />
           </div>
           <div
@@ -60,12 +62,25 @@ const Initial = () => {
               opacity: loading ? 0 : 1,
             }}
           >
-            <video playsInline autoPlay preload="auto" loop muted width="100%" height="100%" onPlay={() => setLoading(false)}>
+            <video
+              ref={videoRef}
+              playsInline
+              autoPlay
+              preload='auto'
+              loop
+              muted
+              width='100%'
+              height='100%'
+              onLoadedMetadata={() => setLoading(false)}
+              onLoad={() => setLoading(false)}
+              onCanPlayThrough={() => setLoading(false)}
+            >
               <source
-                src="https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov"
+                src='https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov'
                 type='video/mp4'
               />
             </video>
+
           </div>
           <MenuBar />
           <Box
@@ -96,7 +111,10 @@ const Initial = () => {
               {i18n.t("modules.home.mainText")}
             </Typography>
             <Box
-              onClick={() => { navigate(ROUTE_PATHS.COLLECTION); dispatch(setScrollCollections("NEON_YELLOW")) }}
+              onClick={() => {
+                navigate(ROUTE_PATHS.COLLECTION);
+                dispatch(setScrollCollections("NEON_YELLOW"));
+              }}
               marginLeft='10px'
               marginTop='1.6rem'
               display='flex'
@@ -115,32 +133,35 @@ const Initial = () => {
             </Box>
           </Box>
         </>
-      </div >
+      </div>
     );
   };
 
   const renderMobile = () => {
     return (
-      <div style={{
-        width: window.innerWidth,
-        height: window.innerHeight,
-      }}>
-        <div style={{
-          position: "absolute",
-          opacity: loading ? 1 : 0,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
-          height: "100%",
-          overflow: "hidden",
-          width: window.innerWidth
-        }}>
-
+      <div
+        style={{
+          width: window.innerWidth,
+          height: window.innerHeight,
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            opacity: loading ? 1 : 0,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            height: "100%",
+            overflow: "hidden",
+            width: window.innerWidth,
+          }}
+        >
           <Loader />
         </div>
 
@@ -152,13 +173,24 @@ const Initial = () => {
             opacity: loading ? 0 : 1,
           }}
         >
-          <video playsInline autoPlay preload="auto" loop muted width="100%" height="100%" onPlay={() => setLoading(false)}>
+          <video
+            playsInline
+            autoPlay
+            preload='auto'
+            loop
+            muted
+            width='100%'
+            height='100%'
+            onLoadedMetadata={() => setLoading(false)}
+            onLoad={() => setLoading(false)}
+            onCanPlayThrough={() => setLoading(false)}
+          >
             <source
-              src="https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov"
+              src='https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov'
               type='video/mp4'
             />
-          </video>`
-
+          </video>
+          `
         </div>
 
         <MenuBar />
@@ -176,14 +208,19 @@ const Initial = () => {
             backgroundRepeat: "no-repeat",
             backgroundImage: `url(${labelEsq})`,
             backgroundSize: "cover",
-            transform: loading
-              ? "translate(-120px,0px)"
-              : "translate(0px,0px)",
+            transform: loading ? "translate(-120px,0px)" : "translate(0px,0px)",
             transition: "all 0.7s ease-in-out",
           }}
         ></Box>
 
-        <Box style={{ bottom: "10vh", position: "absolute", zIndex: 500, opacity: loading ? 0 : 1 }}>
+        <Box
+          style={{
+            bottom: "10vh",
+            position: "absolute",
+            zIndex: 500,
+            opacity: loading ? 0 : 1,
+          }}
+        >
           <Typography
             fontSize='40px'
             color={Colors.PRETTY_CREAM}
@@ -216,7 +253,6 @@ const Initial = () => {
           </Box>
         </Box>
       </div>
-
     );
   };
   return mobile ? renderMobile() : renderLaptop();
