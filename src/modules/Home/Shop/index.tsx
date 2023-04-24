@@ -1,4 +1,4 @@
-import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Button from "../../../components/Buttons/Button";
 import { categories } from "../../../constants/category";
 import { fabrics } from "../../../constants/fabrics";
@@ -39,11 +39,13 @@ const Shop = () => {
   newCategories.push(firstObjectCopy);
 
 
+
   const newPatterns = [...fabrics];
   const firstObjectCopy2 = { ...newPatterns[0] };
   newPatterns.unshift(firstObjectCopy2);
   newPatterns.push(firstObjectCopy2);
   newPatterns.push(firstObjectCopy2);
+
 
 
 
@@ -56,21 +58,23 @@ const Shop = () => {
         flexDirection: "column",
         justifyContent: "center",
         rowGap: "5px",
+
         paddingLeft: generalConstants.PADDING,
         paddingRight: generalConstants.PADDING,
         paddingTop: "4vh",
         paddingBottom: "4vh",
-        width: "100vw",
         height: mobile ? window.innerHeight * 1.2 : "100vh",
       }}
     >
+
       <div
         style={{
           display: "flex",
+          width: "100%",
           flexDirection: mobile ? "column" : "row",
           columnGap: "20px",
           backgroundColor: Colors.PRETTY_CREAM,
-          padding: "30px",
+          padding: mobile ? "10px" : "30px",
         }}
       >
         <div
@@ -85,26 +89,27 @@ const Shop = () => {
         >
           <Typography
             fontFamily='Avalanche'
-            fontSize='1.6vw'
+            fontSize={mobile ? "5vw" : '1.6vw'}
             color={Colors.BLACKISH}
           >
             Products
           </Typography>
           <div >
             <Carousel
-              ghostEdges
+
               numberSlides={3}
+              ghostEdges
               focusCentral
               outsideButtons
-              width={mobile ? "69vw" : '23vw'}
+              width={mobile ? "80vw" : '26vw'}
               colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
               colorBgArrow='#00000000'
               gap={0}
               images={newCategories.map((category, pos) => (
                 <Element key={pos} item={category} />
               ))}
-              padding='3vw'
-              heightImage={0.35}
+
+              heightImage={mobile ? 0.20 : 0.20}
             />
           </div>
         </div>
@@ -120,7 +125,7 @@ const Shop = () => {
         >
           <Typography
             fontFamily='Avalanche'
-            fontSize='1.6vw'
+            fontSize={mobile ? "5vw" : '1.6vw'}
             color={Colors.BLACKISH}
           >
             Patterns
@@ -131,38 +136,40 @@ const Shop = () => {
               ghostEdges
               focusCentral
               outsideButtons
-              width={mobile ? "60vw" : '26vw'}
+              width={mobile ? "80vw" : '26vw'}
               colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
               colorBgArrow='#00000000'
               gap={0}
               images={newPatterns.map((category, pos) => (
                 <Element key={pos} item={category} />
               ))}
-              padding='3vw'
-              heightImage={0.25}
+
+              heightImage={mobile ? 0.20 : 0.20}
             />
           </div>
         </div>
       </div>
 
-      <div style={{ display: "flex", columnGap: "5px" }}>
+      <Grid container columnSpacing="5px" >
         {listOfImages.map((item, pos) => {
           return (
-            <img
-              key={pos}
-              draggable={false}
-              style={{
-                height: mobile ? "25vh" : "45vh",
-                width: mobile ? "50%" : "25%",
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-              src={item}
-              alt=''
-            />
+            <Grid item xs={6} md={3} >
+              <img
+                key={pos}
+                draggable={false}
+                style={{
+                  width: "100%",
+                  height: mobile ? "40vh" : "50vh",
+                  objectFit: "cover",
+
+                }}
+                src={item}
+                alt=''
+              />
+            </Grid>
           );
         })}
-      </div>
+      </Grid>
       <div
         style={{
           display: "flex",
@@ -170,9 +177,6 @@ const Shop = () => {
           marginTop: "40px",
         }}
       >
-        {/* <Typography fontFamily='Avalanche' fontSize='2vw'>
-          Endless combinations
-        </Typography> */}
         <Button
 
           onClick={() => navigate(ROUTE_PATHS.SHOP)}
@@ -181,6 +185,7 @@ const Shop = () => {
         />
       </div>
     </div>
+
   );
 };
 

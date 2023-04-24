@@ -20,10 +20,12 @@ const Element = ({ item }: Props) => {
         flexDirection: "column",
         textAlign: "center",
         justifyContent: "center",
+        alignItems: "center",
         rowGap: "7px",
         position: "relative",
         paddingBottom: "0px",
         paddingTop: "0px",
+
 
       }}
     >
@@ -42,7 +44,8 @@ const Element = ({ item }: Props) => {
           border: hover
             ? `solid 2px ${Colors.NEON_YELLOW}`
             : "solid 0px transparent",
-          width: "95%",
+          width: "100%",
+          overflow: "hidden",
           boxShadow: loading ? "0px 0px 0px 0px" : "0px 0px 10px 0px #0000001e",
           aspectRatio: 1,
         }}

@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import type { LazyExoticComponent, ComponentType } from 'react'
 import { Box, Grid, LinearProgress } from '@mui/material'
+import Loader from '../components/Loader'
 
 type LazyComponentType = LazyExoticComponent<ComponentType<any>>
 
@@ -9,8 +10,9 @@ const loader = (Component: LazyComponentType) => (props: any) =>
   <Suspense
     fallback={
       <Grid item xs={12} display="flex" justifyContent="center">
-        <Box sx={{ width: '100%', position: 'absolute', top: '2px' }}>
-          <LinearProgress />
+        <Box sx={{ width: '100vw', height: "100vh", top: '2px', marginBottom: "90vh" }}>
+          <Loader />
+          {/* <LinearProgress /> */}
         </Box>
       </Grid>
     }

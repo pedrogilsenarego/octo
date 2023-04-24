@@ -187,13 +187,16 @@ const Carousel = ({
             } else {
               return (
                 <div
+                  draggable={false}
+                  key={pos}
                   style={{
+
                     padding: "5px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     flex: `0 0 ${childWidthVW}vw`,
-
+                    height: window.innerHeight * heightImage,
                     transition: "all 0.4s ease-in-out",
 
                     opacity:
