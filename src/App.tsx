@@ -12,6 +12,7 @@ import { Colors } from "./constants/pallete";
 import CookiePolicy from "./presentional/CookiePopup";
 import ScrollLock from "./hoc";
 
+
 const theme = createTheme({
   typography: {
     allVariants: {
@@ -25,14 +26,17 @@ const theme = createTheme({
   },
 });
 
+
+
 function App() {
+
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <StyledEngineProvider injectFirst>
 
           <CookiePolicy />
-          <Snackbar />
+          {/* //<Snackbar /> */}
           <CssBaseline />
           <ScrollToTop />
           <ScrollLock>

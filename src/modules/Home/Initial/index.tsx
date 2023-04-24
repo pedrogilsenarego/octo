@@ -12,7 +12,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setScrollCollections } from "../../../slicer/general/general.actions";
 import Loader from "../../../components/Loader";
-import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 
 const Initial = () => {
   const [loading, setLoading] = useState<boolean>(true);

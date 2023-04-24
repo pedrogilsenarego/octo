@@ -23,7 +23,7 @@ const About = () => {
           backgroundPosition: "center center",
           backgroundSize: "cover",
           backgroundImage: `url(https://res.cloudinary.com/daantetcr/image/upload/v1681847724/Octo/Home/Story/WhatsApp_Image_2023-04-18_at_20.46.00_1_igtblc.jpg)`,
-          width: mobile ? window.innerWidth : "100vw",
+          width: "100vw",
           height: mobile ? window.innerHeight : "100vh",
         }}
       >

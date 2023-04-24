@@ -75,6 +75,7 @@ const Element = ({ item }: Props) => {
           bottom: "-7px",
           textAlign: "center",
           fontWeight: 800,
+          letterSpacing: "3px",
           left: 0,
           right: 0,
           lineHeight: "13px",

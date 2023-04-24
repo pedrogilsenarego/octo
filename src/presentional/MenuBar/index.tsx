@@ -149,14 +149,14 @@ const MenuBar = () => {
               >
 
                 <>
-                  <Typography
+                  {/* <Typography
                     color={MENU_COLOR}
                     className='icon'
                     style={{ cursor: "pointer" }}
                     onClick={() => handleChangeLang()}
                   >
                     {lang}
-                  </Typography>
+                  </Typography> */}
                   <BsInstagram
                     onClick={() => handleInstagram()}
                     className='icon'
@@ -363,14 +363,14 @@ const MenuBar = () => {
               style={{ cursor: "pointer" }}
             />
             <Divider style={{ width: "80%" }} />
-            <Typography
+            {/* <Typography
               color={Colors.BLACKISH}
               className='icon'
               style={{ cursor: "pointer" }}
               onClick={() => handleChangeLang()}
             >
               {lang}
-            </Typography>
+            </Typography> */}
           </Box>
         </DrawerMine>
         <DrawerMine
