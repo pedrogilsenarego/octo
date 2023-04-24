@@ -1,21 +1,38 @@
 import { Typography, useTheme, useMediaQuery, Grid } from "@mui/material";
 
 import { generalConstants } from "../../constants/general";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MdOutlineMusicOff, MdOutlineMusicNote } from "react-icons/md";
 import Loader from "../../components/Loader";
+import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 
 const Manifest = () => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const [muted, setMuted] = useState(true);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [play, setPlay] = useState<boolean>(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  useEffect(() => {
-    setTimeout(() => { setLoading(false); }, 5000)
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //     setPlay(true);
+  //   }, 5000);
+  // });
+  // console.log(play);
 
-  })
-
+  const handlePlayClick = () => {
+    if (videoRef.current) {
+      if (!play) {
+        videoRef.current.play();
+        setPlay(true);
+      } else {
+        videoRef.current.pause();
+        setPlay(false);
+      }
+    }
+  };
 
   return (
     <div
@@ -29,31 +46,33 @@ const Manifest = () => {
     >
       <Grid container rowSpacing={"40px"}>
         <Grid item xs={12} style={{ position: "relative" }}>
-          <div style={{
-            position: "absolute",
-            opacity: loading ? 1 : 0,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0,
-            height: "100%"
-          }}>
-
+          <div
+            style={{
+              position: "absolute",
+              opacity: loading ? 1 : 0,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0,
+              height: "100%",
+            }}
+          >
             <Loader size={70} />
           </div>
           <div style={{ opacity: loading ? 0 : 1 }}>
             <video
-              onPlay={() => { setLoading(false) }}
+              ref={videoRef}
+              onPlay={() => setPlay(true)}
               playsInline
-              autoPlay
               loop
               muted={muted}
               width='100%'
               height='100%'
+              onCanPlayThrough={() => setLoading(false)}
             >
               <source
                 src='https://res.cloudinary.com/dmrll3fnf/video/upload/v1682213158/octo_master_22_04_hoowd9.mov'
@@ -61,7 +80,6 @@ const Manifest = () => {
               />
             </video>
             <div
-              onClick={() => setMuted(!muted)}
               style={{
                 position: "absolute",
                 zIndex: 4000,
@@ -69,6 +87,7 @@ const Manifest = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 right: "1%",
+                columnGap: "5px",
                 bottom: mobile ? "-19%" : "8%",
                 padding: "6px",
                 borderRadius: "4px",
@@ -77,15 +96,41 @@ const Manifest = () => {
               }}
             >
               {" "}
-              {muted ? (
-                <MdOutlineMusicNote size={mobile ? "1.5rem" : '2rem'} color="white" />
+              {play ? (
+                <BsPauseFill
+                  size={mobile ? "1.5rem" : "2rem"}
+                  color='white'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handlePlayClick();
+                  }}
+                />
               ) : (
-                <MdOutlineMusicOff size={mobile ? "1.5rem" : '2rem'} color="white" />
+                <BsPlayFill
+                  size={mobile ? "1.5rem" : "2rem"}
+                  color='white'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handlePlayClick();
+                  }}
+                />
+              )}
+              {muted ? (
+                <MdOutlineMusicNote
+                  onClick={() => setMuted(!muted)}
+                  size={mobile ? "1.5rem" : "2rem"}
+                  color='white'
+                />
+              ) : (
+                <MdOutlineMusicOff
+                  onClick={() => setMuted(!muted)}
+                  size={mobile ? "1.5rem" : "2rem"}
+                  color='white'
+                />
               )}
             </div>
           </div>
         </Grid>
-
         <Grid item xs={12} style={{ textAlign: "center" }}>
           <Typography>
             Cool Moms,
