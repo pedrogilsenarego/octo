@@ -92,7 +92,7 @@ const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
           gap={5}
           colorBgArrow={Colors.NEON_YELLOW}
           padding='7vw'
-          heightImage={0.55}
+
           noArrows={pantoneProps.title !== "Neon Yellow" ? false : mobile ? false : true}
         />
       </div>

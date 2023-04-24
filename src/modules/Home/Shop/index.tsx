@@ -109,7 +109,7 @@ const Shop = () => {
                 <Element key={pos} item={category} />
               ))}
 
-              heightImage={mobile ? 0.20 : 0.20}
+
             />
           </div>
         </div>
@@ -145,7 +145,7 @@ const Shop = () => {
                 <Element key={pos} item={category} />
               ))}
 
-              heightImage={mobile ? 0.20 : 0.20}
+
             />
           </div>
         </div>

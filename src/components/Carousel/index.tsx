@@ -8,7 +8,7 @@ interface Props {
   colorArrow?: string;
   gap: number;
   padding?: string;
-  heightImage: number;
+
   width: string;
   outsideButtons?: boolean;
   numberSlides?: number;
@@ -23,7 +23,7 @@ const Carousel = ({
   colorBgArrow,
   gap,
   padding,
-  heightImage,
+
   width,
   outsideButtons,
   numberSlides = 4,
@@ -36,23 +36,23 @@ const Carousel = ({
   const [slideIndex, setSlideIndex] = useState(0);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
-    height: window.innerHeight,
+
   });
   const [startX, setStartX] = useState(0);
   const [isMoving, setIsMoving] = useState(false);
 
 
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+  //   };
 
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
 
   const handleNextClick = (direction: number) => {
     if (slideIndex === 0 && direction === -1) return;
@@ -75,7 +75,7 @@ const Carousel = ({
     event.preventDefault();
     const touch = event.touches[0];
     const diff = touch.clientX - startX;
-    const threshold = window.innerWidth / 4;
+    const threshold = window.innerWidth / 8;
     if (diff < -threshold) {
 
       handleNextClick(1);
@@ -192,7 +192,7 @@ const Carousel = ({
                   style={{
                     flex: `0 0 ${childWidthVW}vw`,
                     overflow: "hidden",
-                    height: window.innerHeight * heightImage,
+
                   }}
                 >
                   <img
@@ -219,7 +219,7 @@ const Carousel = ({
                     alignItems: "center",
                     justifyContent: "center",
                     flex: `0 0 ${childWidthVW}vw`,
-                    height: window.innerHeight * heightImage,
+
                     transition: "all 0.4s ease-in-out",
 
                     opacity:

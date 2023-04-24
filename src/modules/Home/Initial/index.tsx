@@ -140,8 +140,8 @@ const Initial = () => {
     return (
       <div
         style={{
-          width: window.innerWidth,
-          height: window.innerHeight,
+          width: "100vw",
+          height: "100vh",
         }}
       >
         <div
@@ -158,7 +158,7 @@ const Initial = () => {
             bottom: 0,
             height: "100%",
             overflow: "hidden",
-            width: window.innerWidth,
+            width: "100vw",
           }}
         >
           <Loader />
