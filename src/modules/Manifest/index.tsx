@@ -85,7 +85,7 @@ const Manifest = () => {
             <div
               style={{
                 position: "absolute",
-                zIndex: 4000,
+                zIndex: 500,
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",

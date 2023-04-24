@@ -15,7 +15,7 @@ export interface BlockProps {
 
 const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
   const theme = useTheme()
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"))
+  const mobile = useMediaQuery(theme.breakpoints.down("md"))
   return (
     <div
       style={{

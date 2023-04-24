@@ -20,7 +20,7 @@ const Initial = () => {
   const theme = useTheme();
   const dispatch = useDispatch();
 
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
 

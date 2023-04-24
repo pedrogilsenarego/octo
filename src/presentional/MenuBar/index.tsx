@@ -34,7 +34,7 @@ const MenuBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const ICON_SIZE = "1.6rem";
   const MENU_COLOR =
     location.pathname === ROUTE_PATHS.HOME

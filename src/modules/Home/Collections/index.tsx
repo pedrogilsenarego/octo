@@ -7,7 +7,6 @@ import { useNavigate } from "react-router";
 import { Colors } from "../../../constants/pallete";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { State } from "../../../slicer/types";
 import { setScrollCollections } from "../../../slicer/general/general.actions";
 
 const Collections = () => {
@@ -28,7 +27,7 @@ const Collections = () => {
           alignItems: "center",
 
           width: "100vw",
-          height: window.innerHeight * (mobile ? 1.1 : 1.4),
+          height: mobile ? window.innerHeight * 1.1 : "100vh",
           paddingLeft: mobile ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
           paddingRight: mobile ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
         }}

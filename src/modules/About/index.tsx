@@ -31,7 +31,7 @@ const About = () => {
       <div style={{ zIndex: 1000 }}></div>
 
       <Grid container columnSpacing='3vw' style={{ display: "flex", }}>
-        <Grid item xs={12} md={5} style={{ display: "flex", justifyContent: "center" }}>
+        <Grid item xs={12} sm={5} style={{ display: "flex", justifyContent: "center" }}>
           <Carousel
             gap={5}
             images={firstRowImages}
@@ -41,7 +41,7 @@ const About = () => {
             colorBgArrow={Colors.NEON_YELLOW_TRANSPARENT}
           />
         </Grid>
-        <Grid item xs={12} md={7} style={{ position: "relative" }}>
+        <Grid item xs={12} sm={7} style={{ position: "relative" }}>
           <Typography
             fontSize={mobile ? "8vw" : "5vw"}
             fontWeight={500}

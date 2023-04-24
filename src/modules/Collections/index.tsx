@@ -23,7 +23,7 @@ const Collections = () => {
   const AnthraciteRef = useRef<null | HTMLElement>(null);
   const TaupeRef = useRef<null | HTMLElement>(null);
   const PrettyCreamRef = useRef<null | HTMLElement>(null);
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const positionScroll = useSelector<State, CollectionPositions | null>(
     (state) => state.general.scrollCollections
   );

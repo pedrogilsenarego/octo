@@ -15,7 +15,7 @@ import { useSelector } from "react-redux";
 
 const Shop = () => {
   const Theme = useTheme();
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   const navigate = useNavigate();
 
 
@@ -61,7 +61,7 @@ const Shop = () => {
         paddingTop: "4vh",
         paddingBottom: "4vh",
         width: "100vw",
-        height: window.innerHeight * 1.2,
+        height: mobile ? window.innerHeight * 1.2 : "100vh",
       }}
     >
       <div

@@ -14,7 +14,7 @@ import { Colors } from "../../constants/pallete";
 const Home = () => {
   const dispatch = useDispatch();
   const theme = useTheme()
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"))
+  const mobile = useMediaQuery(theme.breakpoints.down("md"))
   const scrollToL = useSelector<State, number>(
     (state) => state.general.scrollTo
   );
@@ -25,13 +25,13 @@ const Home = () => {
 
   const renderLaptop = () => {
     return (
-      // <ReactPageScroller
+      <ReactPageScroller
 
-      //   animationTimer={800}
-      //   customPageNumber={scrollToL}
-      //   pageOnChange={(e) => handlePageChange(e)}
-      // >
-      <>
+        animationTimer={800}
+        customPageNumber={scrollToL}
+        pageOnChange={(e) => handlePageChange(e)}
+      >
+
         <Initial />
         <Collections />
         <About />
@@ -39,9 +39,9 @@ const Home = () => {
         <div style={{ display: "flex", alignItems: "end", backgroundColor: Colors.TAUPE }}>
           <Footer noMarginTop />
         </div>
-      </>
-      // </ReactPageScroller>)
-    )
+
+      </ReactPageScroller>)
+
   }
 
   const renderMobile = () => {
