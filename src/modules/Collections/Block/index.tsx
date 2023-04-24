@@ -25,17 +25,17 @@ const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
         width: "100%",
       }}
     >
-      <Grid container columnSpacing='5px' style={{}}>
+      <Grid container columnSpacing='5px' rowSpacing="5px" style={{}}>
         <Grid
           item
-          xs={3}
+          xs={12} md={3}
           style={{ overflow: "hidden", height: window.innerHeight * 0.55 }}
         >
           <Pantone {...pantoneProps} />
         </Grid>
         <Grid
           item
-          xs={6}
+          xs={12} md={6}
           style={{ overflow: "hidden", height: window.innerHeight * 0.55 }}
         >
           <img
@@ -44,7 +44,7 @@ const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
             style={{ objectFit: "cover", height: "100%", width: "100%" }}
           />
         </Grid>
-        <Grid
+        {!mobile && (<Grid
           item
           xs={3}
           style={{ overflow: "hidden", height: window.innerHeight * 0.55 }}
@@ -54,33 +54,36 @@ const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
             alt=''
             style={{ objectFit: "cover", height: "100%", width: "100%" }}
           />
-        </Grid>
-      </Grid>
+        </Grid>)}
 
-      <Grid container columnSpacing='5px' style={{}}>
-        <Grid
-          item
-          xs={6}
-          style={{ overflow: "hidden", height: window.innerHeight * 0.55 }}
-        >
-          <img
-            src={secondRow.image}
-            alt=''
-            style={{ objectFit: "cover", height: "100%", width: "100%" }}
-          />
-        </Grid>
-
-        <Grid
-          xs={6}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {secondRow.jsx}
-        </Grid>
       </Grid>
+      {!mobile && (
+        <Grid container columnSpacing='5px' style={{}}>
+          <Grid
+            item
+            xs={6}
+            style={{ overflow: "hidden", height: window.innerHeight * 0.55 }}
+          >
+            <img
+              src={secondRow.image}
+              alt=''
+              style={{ objectFit: "cover", height: "100%", width: "100%" }}
+            />
+          </Grid>
+
+
+          <Grid
+            xs={12}
+            md={6}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {secondRow.jsx}
+          </Grid>
+        </Grid>)}
       <div>
         <Carousel
           numberSlides={mobile ? 1 : 4}
@@ -93,7 +96,7 @@ const Block = ({ pantoneProps, firstRow, secondRow, thirdRow }: BlockProps) => {
           noArrows={pantoneProps.title !== "Neon Yellow" ? false : mobile ? false : true}
         />
       </div>
-    </div>
+    </div >
   );
 };
 

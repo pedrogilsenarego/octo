@@ -1,7 +1,7 @@
-import { Typography, Box, useTheme, useMediaQuery, Grid } from "@mui/material";
+import { Typography, useTheme, useMediaQuery, Grid } from "@mui/material";
 
 import { generalConstants } from "../../constants/general";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdOutlineMusicOff, MdOutlineMusicNote } from "react-icons/md";
 import Loader from "../../components/Loader";
 
@@ -10,6 +10,11 @@ const Manifest = () => {
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const [muted, setMuted] = useState(true);
   const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => { setLoading(false); }, 5000)
+
+  })
 
 
   return (

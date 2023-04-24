@@ -22,7 +22,10 @@ const Shop = () => {
 
 
 
-  const listOfImages = [
+  const listOfImages = mobile ? [
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_365a_s3dia6.webp",
+    "https://res.cloudinary.com/daantetcr/image/upload/v1681822111/Octo/collections/Taupe/OCTO_SS23_721a_ifo4p7.webp",
+  ] : [
     "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_365a_s3dia6.webp",
     "https://res.cloudinary.com/daantetcr/image/upload/v1681822111/Octo/collections/Taupe/OCTO_SS23_721a_ifo4p7.webp",
     "https://res.cloudinary.com/daantetcr/image/upload/v1681808237/Octo/collections/SoftPink/OCTO_SS23_386a_y7chmt.webp",
@@ -58,12 +61,13 @@ const Shop = () => {
         paddingTop: "4vh",
         paddingBottom: "4vh",
         width: "100vw",
-        height: window.innerHeight,
+        height: window.innerHeight * 1.2,
       }}
     >
       <div
         style={{
           display: "flex",
+          flexDirection: mobile ? "column" : "row",
           columnGap: "20px",
           backgroundColor: Colors.PRETTY_CREAM,
           padding: "30px",
@@ -71,7 +75,7 @@ const Shop = () => {
       >
         <div
           style={{
-            width: "50%",
+            width: mobile ? "100%" : "50%",
             display: "flex",
 
             flexDirection: "column",
@@ -92,7 +96,7 @@ const Shop = () => {
               numberSlides={3}
               focusCentral
               outsideButtons
-              width='26vw'
+              width={mobile ? "60vw" : '26vw'}
               colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
               colorBgArrow='#00000000'
               gap={0}
@@ -106,7 +110,7 @@ const Shop = () => {
         </div>
         <div
           style={{
-            width: "50%",
+            width: mobile ? "100%" : "50%",
             display: "flex",
 
             flexDirection: "column",
@@ -127,7 +131,7 @@ const Shop = () => {
               ghostEdges
               focusCentral
               outsideButtons
-              width='26vw'
+              width={mobile ? "60vw" : '26vw'}
               colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
               colorBgArrow='#00000000'
               gap={0}
@@ -149,7 +153,7 @@ const Shop = () => {
               draggable={false}
               style={{
                 height: mobile ? "25vh" : "45vh",
-                width: "25%",
+                width: mobile ? "50%" : "25%",
                 objectFit: "cover",
                 objectPosition: "center",
               }}

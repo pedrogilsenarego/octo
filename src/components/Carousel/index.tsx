@@ -36,29 +36,7 @@ const Carousel = ({
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  // const [newImages, setNewImages] = useState<any>([])
 
-  // const handleGhostEdges = (images: string[] | JSX.Element[]) => {
-  //   const newImages = [...images];
-
-  //   let firstObjectCopy = null;
-  //   if (typeof newImages[0] === "object" && newImages[0] instanceof Object) {
-  //     firstObjectCopy = { ...newImages[0] };
-  //   } else {
-  //     firstObjectCopy = newImages[0];
-  //   }
-  //   newImages.unshift(firstObjectCopy);
-  //   newImages.push(firstObjectCopy);
-  //   newImages.push(firstObjectCopy);
-  //   return newImages
-  // }
-
-
-
-  // useEffect(() => {
-  //   if (!ghostEdges) setNewImages(images)
-  //   else setNewImages(images)
-  // }, [ghostEdges, images])
 
 
   useEffect(() => {
@@ -187,12 +165,13 @@ const Carousel = ({
             } else {
               return (
                 <div
+                  key={pos}
                   style={{
                     padding: "5px",
                     display: "flex",
                     alignItems: "center",
                     flex: `0 0 ${childWidthVW}vw`,
-
+                    overflow: "hidden",
                     transition: "all 0.4s ease-in-out",
 
                     opacity:

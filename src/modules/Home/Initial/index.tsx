@@ -21,6 +21,10 @@ const Initial = () => {
 
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
 
+  useEffect(() => {
+    setTimeout(() => { setLoading(false); }, 5000)
+
+  })
 
   const renderLaptop = () => {
     return (
@@ -63,7 +67,7 @@ const Initial = () => {
             style={{
               opacity: loading ? 0 : 1,
               top: 0,
-              zIndex: 10000,
+              zIndex: 500,
               position: "absolute",
               paddingLeft: generalConstants.PADDING,
               paddingRight: generalConstants.PADDING,
@@ -111,7 +115,7 @@ const Initial = () => {
   const renderMobile = () => {
     return (
       <div style={{
-        width: "100vw",
+        width: window.innerWidth,
         height: window.innerHeight,
       }}>
         <div style={{
@@ -125,7 +129,9 @@ const Initial = () => {
           right: 0,
           top: 0,
           bottom: 0,
-          height: "100%"
+          height: "100%",
+          overflow: "hidden",
+          width: window.innerWidth
         }}>
 
           <Loader />

@@ -18,9 +18,10 @@ const ContactUs = () => {
       display='flex'
       style={{
         textAlign: "center",
-        alignItems: "center",
-        justifyContent: "center",
+
+
         width: "100vw",
+        minHeight: window.innerHeight * 0.9,
         paddingTop: mobile ? "100px" : "140px",
         paddingBottom: "100px",
         paddingLeft: generalConstants.PADDING,
@@ -30,13 +31,10 @@ const ContactUs = () => {
     >
 
       <Typography fontSize={mobile ? "1.5rem" : "2rem"} style={{ fontWeight: 800 }}>
-        {i18n.t("footer.customerService")}
-      </Typography>
-      <Typography style={{ fontWeight: 800 }} mt={mobile ? "40px" : "80px"}>
-        {i18n.t("policies.costumerService.orders")}
+        Contact Us
       </Typography>
       <Typography mt={mobile ? "20px" : "40px"} style={{ float: "left", width: "100%" }}>
-        {i18n.t("policies.costumerService.cancelOrder")}
+        We are delighted to help you! Contact us through the email <b>hello@octo-mistic.com</b> and we will respond as quickly as possible!
       </Typography>
 
 

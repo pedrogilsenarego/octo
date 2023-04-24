@@ -41,28 +41,11 @@ const Element = ({ item }: Props) => {
           border: hover
             ? `solid 2px ${Colors.NEON_YELLOW}`
             : "solid 0px transparent",
-          width: "100%",
+          width: "95%",
           boxShadow: loading ? "0px 0px 0px 0px" : "0px 0px 10px 0px #0000001e",
           aspectRatio: 1,
         }}
       >
-        {/* {loading && (
-        <Ellipsis
-          size={30}
-          color={item.title === "Sample Fabric" || item.title === "Sample Category" ? "transparent" : Colors.NEON_YELLOW_TRANSPARENT}
-          style={{
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            marginTop: "auto",
-            marginBottom: "auto",
-            left: 0,
-            right: 0,
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        />
-      )} */}
         <img
           src={item.icon}
           alt=''
@@ -72,7 +55,7 @@ const Element = ({ item }: Props) => {
             borderRadius: "50%",
             opacity: loading ? 0 : 1,
 
-            objectFit: "cover",
+            objectFit: "contain",
             top: 0,
             left: 0,
             width: "100%",

@@ -25,21 +25,23 @@ const Home = () => {
 
   const renderLaptop = () => {
     return (
-      <ReactPageScroller
+      // <ReactPageScroller
 
-        animationTimer={800}
-        customPageNumber={scrollToL}
-        pageOnChange={(e) => handlePageChange(e)}
-      >
+      //   animationTimer={800}
+      //   customPageNumber={scrollToL}
+      //   pageOnChange={(e) => handlePageChange(e)}
+      // >
+      <>
         <Initial />
         <Collections />
         <About />
         <Shop />
-        <div style={{ display: "flex", alignItems: "end", height: window.innerHeight, backgroundColor: Colors.TAUPE }}>
+        <div style={{ display: "flex", alignItems: "end", backgroundColor: Colors.TAUPE }}>
           <Footer noMarginTop />
         </div>
-
-      </ReactPageScroller>)
+      </>
+      // </ReactPageScroller>)
+    )
   }
 
   const renderMobile = () => {

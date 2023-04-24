@@ -28,7 +28,7 @@ const Collections = () => {
           alignItems: "center",
 
           width: "100vw",
-          height: window.innerHeight,
+          height: window.innerHeight * (mobile ? 1.1 : 1.4),
           paddingLeft: mobile ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
           paddingRight: mobile ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
         }}
