@@ -64,6 +64,7 @@ const Manifest = () => {
             <Loader size={70} />
           </div>
           <div style={{ opacity: loading ? 0 : 1 }}>
+
             <video
               ref={videoRef}
               onPlay={() => setPlay(true)}

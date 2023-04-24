@@ -96,7 +96,7 @@ const Shop = () => {
               numberSlides={3}
               focusCentral
               outsideButtons
-              width={mobile ? "60vw" : '26vw'}
+              width={mobile ? "69vw" : '23vw'}
               colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
               colorBgArrow='#00000000'
               gap={0}

@@ -35,7 +35,7 @@ const About = () => {
           <Carousel
             gap={5}
             images={firstRowImages}
-            width={mobile ? "83vw" : "35vw"}
+            width={mobile ? "83vw" : "30vw"}
             heightImage={0.8}
             numberSlides={1}
             colorBgArrow={Colors.NEON_YELLOW_TRANSPARENT}

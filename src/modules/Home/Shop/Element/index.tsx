@@ -24,6 +24,7 @@ const Element = ({ item }: Props) => {
         position: "relative",
         paddingBottom: "0px",
         paddingTop: "0px",
+
       }}
     >
       <Box
