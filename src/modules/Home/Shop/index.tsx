@@ -61,9 +61,9 @@ const Shop = () => {
 
         paddingLeft: generalConstants.PADDING,
         paddingRight: generalConstants.PADDING,
-        paddingTop: "4vh",
-        paddingBottom: "4vh",
-        height: mobile ? window.innerHeight * 1.2 : "100vh",
+        paddingTop: mobile ? "7vh" : "4vh",
+        paddingBottom: mobile ? "7vh" : "4vh",
+        height: mobile ? "130vh" : "100vh",
       }}
     >
 
@@ -96,7 +96,7 @@ const Shop = () => {
           </Typography>
           <div >
             <Carousel
-              noArrows
+              noArrows={mobile ? true : false}
               numberSlides={3}
               ghostEdges
               focusCentral
@@ -134,7 +134,7 @@ const Shop = () => {
             <Carousel
               numberSlides={3}
               ghostEdges
-              noArrows
+              noArrows={mobile ? true : false}
               focusCentral
               outsideButtons
               width={mobile ? "80vw" : '26vw'}

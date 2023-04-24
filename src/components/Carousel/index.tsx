@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { Colors } from "../../constants/pallete";
 
@@ -65,11 +65,14 @@ const Carousel = ({
     const touch = event.touches[0];
     setStartX(touch.clientX);
     setIsMoving(true);
+    if (containerRef.current) {
+      containerRef.current.style.overflowY = "hidden";
+    }
   };
 
   const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
     if (!isMoving) return;
-
+    event.preventDefault();
     const touch = event.touches[0];
     const diff = touch.clientX - startX;
     const threshold = window.innerWidth / 4;
@@ -86,8 +89,12 @@ const Carousel = ({
 
   const handleTouchEnd = () => {
     setIsMoving(false);
+    if (containerRef.current) {
+      containerRef.current.style.overflowY = "auto";
+    }
   };
 
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const containerWidth = width;
   const paddingVW = padding;
@@ -101,7 +108,7 @@ const Carousel = ({
 
   return (
     <div
-
+      ref={containerRef}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
