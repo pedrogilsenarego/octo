@@ -15,6 +15,7 @@ interface Props {
   focusCentral?: boolean;
   ghostEdges?: boolean
   noArrows?: boolean
+
 }
 
 const Carousel = ({
@@ -29,36 +30,17 @@ const Carousel = ({
   focusCentral,
   ghostEdges,
   colorArrow,
-  noArrows
+  noArrows,
+
 }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  // const [newImages, setNewImages] = useState<any>([])
+  const [startX, setStartX] = useState(0);
+  const [isMoving, setIsMoving] = useState(false);
 
-  // const handleGhostEdges = (images: string[] | JSX.Element[]) => {
-  //   const newImages = [...images];
-
-  //   let firstObjectCopy = null;
-  //   if (typeof newImages[0] === "object" && newImages[0] instanceof Object) {
-  //     firstObjectCopy = { ...newImages[0] };
-  //   } else {
-  //     firstObjectCopy = newImages[0];
-  //   }
-  //   newImages.unshift(firstObjectCopy);
-  //   newImages.push(firstObjectCopy);
-  //   newImages.push(firstObjectCopy);
-  //   return newImages
-  // }
-
-
-
-  // useEffect(() => {
-  //   if (!ghostEdges) setNewImages(images)
-  //   else setNewImages(images)
-  // }, [ghostEdges, images])
 
 
   useEffect(() => {
@@ -78,6 +60,35 @@ const Carousel = ({
 
     setSlideIndex((prevIndex) => (prevIndex + 1 * direction) % images.length);
   };
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    const touch = event.touches[0];
+    setStartX(touch.clientX);
+    setIsMoving(true);
+  };
+
+  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (!isMoving) return;
+
+    const touch = event.touches[0];
+    const diff = touch.clientX - startX;
+    const threshold = window.innerWidth / 4;
+    if (diff < -threshold) {
+
+      handleNextClick(1);
+      setIsMoving(false);
+    } else if (diff > threshold) {
+
+      handleNextClick(-1);
+      setIsMoving(false);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsMoving(false);
+  };
+
+
   const containerWidth = width;
   const paddingVW = padding;
   const containerWidthVW =
@@ -90,9 +101,14 @@ const Carousel = ({
 
   return (
     <div
+
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
       style={{
         width: `${containerWidthVW}vw`,
         position: "relative",
+
       }}
     >
       {!noArrows && (

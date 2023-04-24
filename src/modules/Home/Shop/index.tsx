@@ -96,7 +96,7 @@ const Shop = () => {
           </Typography>
           <div >
             <Carousel
-
+              noArrows
               numberSlides={3}
               ghostEdges
               focusCentral
@@ -134,6 +134,7 @@ const Shop = () => {
             <Carousel
               numberSlides={3}
               ghostEdges
+              noArrows
               focusCentral
               outsideButtons
               width={mobile ? "80vw" : '26vw'}
