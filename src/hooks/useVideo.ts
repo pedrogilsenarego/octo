@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
-const fetchAndCacheVideo = async (videoUrl: string, cacheName:string) => {
- 
+const fetchAndCacheVideo = async (videoUrl: string, cacheName: string) => {
   const cache = await caches.open(cacheName);
 
   const cachedResponse = await cache.match(videoUrl);
   if (cachedResponse) {
-    return { url: cachedResponse.url, isCached: true };
+    const videoBlob = await cachedResponse.blob();
+    const videoObjectUrl = URL.createObjectURL(videoBlob);
+    return { url: videoObjectUrl, isCached: true };
   }
 
   // Cache the video in the background
@@ -14,12 +15,23 @@ const fetchAndCacheVideo = async (videoUrl: string, cacheName:string) => {
     await cache.put(videoUrl, response.clone());
   });
 
+  // Return the cached URL from the Cache API
+  const cachedVideoResponse = await cache.match(videoUrl);
+  if (cachedVideoResponse) {
+    const videoBlob = await cachedVideoResponse.blob();
+    const videoObjectUrl = URL.createObjectURL(videoBlob);
+    return { url: videoObjectUrl, isCached: false };
+  }
+
+  // Fallback to the original URL if cache.match fails
   return { url: videoUrl, isCached: false };
 };
 
+
+
 export const useVideo = (videoUrl: string, cacheName:string) => {
   const [urlData, setUrlData] = useState({ url: '', isCached: false });
-  console.log(urlData)
+  
 
   useEffect(() => {
     fetchAndCacheVideo(videoUrl, cacheName).then((data) => setUrlData(data));

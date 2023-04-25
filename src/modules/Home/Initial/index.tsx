@@ -33,6 +33,7 @@ const Initial = () => {
     if (!video || !videoUrl) return;
 
     video.src = videoUrl;
+    console.log("Video src:", video.src);
   }, [videoUrl]);
 
   const renderLaptop = () => {
@@ -42,31 +43,33 @@ const Initial = () => {
 
       }
     };
+
+    if (!videoUrl) return (<div
+      style={{
+        position: "absolute",
+
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      }}
+    >
+      <Loader />
+    </div>)
+
     return (
       <div onClick={handlePlayClick} style={{ position: "relative", width: "100vw", height: "100vh" }}>
         <>
-          <div
-            style={{
-              position: "absolute",
-              opacity: loading ? 1 : 0,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              left: 0,
-              right: 0,
-              top: 0,
-              bottom: 0,
-            }}
-          >
-            <Loader />
-          </div>
+
           <div
             style={{
               position: "relative",
               height: "100%",
               width: "100%",
-              opacity: loading ? 0 : 1,
             }}
           >
             <video
@@ -91,7 +94,7 @@ const Initial = () => {
             display='flex'
             flexDirection='column'
             style={{
-              opacity: loading ? 0 : 1,
+
               top: 0,
               zIndex: 500,
               position: "absolute",
