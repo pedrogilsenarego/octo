@@ -25,7 +25,7 @@ const Initial = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const { url: videoUrl, isCached } = useVideo('https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov', "initial-video");
+  const { url: videoUrl, isCached } = useVideo('https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov', "initial-video", 15);
 
 
   useEffect(() => {
