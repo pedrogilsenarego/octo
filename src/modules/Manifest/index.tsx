@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { MdOutlineMusicOff, MdOutlineMusicNote } from "react-icons/md";
 import Loader from "../../components/Loader";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
+import { useVideo } from "../../hooks/useVideo";
 
 const Manifest = () => {
   const Theme = useTheme();
@@ -14,12 +15,13 @@ const Manifest = () => {
   const [play, setPlay] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setLoading(false);
+  const { url: videoUrl } = useVideo('https://res.cloudinary.com/dmrll3fnf/video/upload/v1682334199/octo_master_24_04_koiful.mov', "manifest-video", 365);
 
-  //   }, 2000);
-  // });
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !videoUrl) return;
+    video.src = videoUrl;
+  }, [videoUrl]);
 
 
   const handlePlayClick = () => {
@@ -77,10 +79,7 @@ const Manifest = () => {
               onLoad={() => setLoading(false)}
               onCanPlayThrough={() => setLoading(false)}
             >
-              <source
-                src='https://res.cloudinary.com/dmrll3fnf/video/upload/v1682334199/octo_master_24_04_koiful.mov'
-                type='video/mp4'
-              />
+
             </video>
             <div
               style={{

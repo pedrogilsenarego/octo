@@ -116,16 +116,16 @@ export function* emailSignIn({ payload: { email, password } }) {
   try {
     const { user } = yield auth.signInWithEmailAndPassword(email, password);
 
-    if (user.emailVerified) {
-      yield getSnapshotFromUserAuth(user);
-      yield put(
-        updateSuccessNotification(i18n.t("notifications.success.loginUser"))
-      );
-    } else {
-      yield put(
-        updateFailNotification(i18n.t("notifications.fail.emailNotVerified"))
-      );
-    }
+    // if (user.emailVerified) {
+    yield getSnapshotFromUserAuth(user);
+    yield put(
+      updateSuccessNotification(i18n.t("notifications.success.loginUser"))
+    );
+    // } else {
+    //   yield put(
+    //     updateFailNotification(i18n.t("notifications.fail.emailNotVerified"))
+    //   );
+    // }
   } catch (err) {
     console.log(err);
     if (err) yield put(updateFailNotification(`${err.message}`));

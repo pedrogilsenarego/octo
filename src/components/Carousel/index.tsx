@@ -8,7 +8,7 @@ interface Props {
   colorArrow?: string;
   gap: number;
   padding?: string;
-
+  noSlide?: boolean;
   width: string;
   outsideButtons?: boolean;
   numberSlides?: number;
@@ -23,7 +23,7 @@ const Carousel = ({
   colorBgArrow,
   gap,
   padding,
-
+  noSlide,
   width,
   outsideButtons,
   numberSlides = 4,
@@ -65,9 +65,7 @@ const Carousel = ({
     const touch = event.touches[0];
     setStartX(touch.clientX);
     setIsMoving(true);
-    if (containerRef.current) {
-      containerRef.current.style.overflowY = "hidden";
-    }
+    document.body.classList.add("touch-scroll-lock");
   };
 
   const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
@@ -77,11 +75,9 @@ const Carousel = ({
     const diff = touch.clientX - startX;
     const threshold = window.innerWidth / 8;
     if (diff < -threshold) {
-
       handleNextClick(1);
       setIsMoving(false);
     } else if (diff > threshold) {
-
       handleNextClick(-1);
       setIsMoving(false);
     }
@@ -89,9 +85,7 @@ const Carousel = ({
 
   const handleTouchEnd = () => {
     setIsMoving(false);
-    if (containerRef.current) {
-      containerRef.current.style.overflowY = "auto";
-    }
+    document.body.classList.remove("touch-scroll-lock");
   };
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -109,9 +103,9 @@ const Carousel = ({
   return (
     <div
       ref={containerRef}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+      onTouchStart={noSlide ? undefined : handleTouchStart}
+      onTouchMove={noSlide ? undefined : handleTouchMove}
+      onTouchEnd={noSlide ? undefined : handleTouchEnd}
       style={{
         width: `${containerWidthVW}vw`,
         position: "relative",
