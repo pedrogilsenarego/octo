@@ -10,10 +10,12 @@ const fetchAndCacheVideo = async (videoUrl: string, cacheName: string) => {
     return { url: videoObjectUrl, isCached: true };
   }
 
-  // Cache the video in the background
-  fetch(videoUrl).then(async (response) => {
-    await cache.put(videoUrl, response.clone());
-  });
+ // Cache the video in the background if it's not already cached
+ const fetchPromise = fetch(videoUrl).then(async (response) => {
+  await cache.put(videoUrl, response.clone());
+  console.log(`Video ${videoUrl} cached in the background`);
+});
+fetchPromise.catch(() => {}); // Ignore errors
 
   // Return the cached URL from the Cache API
   const cachedVideoResponse = await cache.match(videoUrl);
