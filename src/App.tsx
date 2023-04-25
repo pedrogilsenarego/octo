@@ -11,7 +11,12 @@ import Snackbar from "./components/SnackBar";
 import { Colors } from "./constants/pallete";
 import CookiePolicy from "./presentional/CookiePopup";
 import ScrollLock from "./hoc";
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools'
 
+
+
+const queryClient = new QueryClient();
 
 const theme = createTheme({
   typography: {
@@ -34,14 +39,16 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <StyledEngineProvider injectFirst>
-
-          <CookiePolicy />
-          {/* //<Snackbar /> */}
-          <CssBaseline />
-          <ScrollToTop />
-          <ScrollLock>
-            <AppRoutes />
-          </ScrollLock>
+          <QueryClientProvider client={queryClient}>
+            <CookiePolicy />
+            {/* //<Snackbar /> */}
+            <CssBaseline />
+            <ScrollToTop />
+            <ScrollLock>
+              <AppRoutes />
+            </ScrollLock>
+            {/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
+          </QueryClientProvider>
         </StyledEngineProvider>
       </ThemeProvider>
     </BrowserRouter>

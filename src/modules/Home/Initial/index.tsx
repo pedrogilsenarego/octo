@@ -12,6 +12,9 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setScrollCollections } from "../../../slicer/general/general.actions";
 import Loader from "../../../components/Loader";
+import { useVideo } from "../../../hooks/useVideo";
+
+
 
 const Initial = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -22,14 +25,19 @@ const Initial = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
+  const { url: videoUrl, isCached } = useVideo('https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov', "initial-video");
+  console.log(isCached)
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !videoUrl) return;
 
+    video.src = videoUrl;
+  }, [videoUrl]);
 
   const renderLaptop = () => {
     const handlePlayClick = () => {
-      console.log("teste")
       if (videoRef.current) {
-
         videoRef.current.play();
 
       }
@@ -74,10 +82,7 @@ const Initial = () => {
               onLoad={() => setLoading(false)}
               onCanPlayThrough={() => setLoading(false)}
             >
-              <source
-                src='https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov'
-                type='video/mp4'
-              />
+
             </video>
 
           </div>
