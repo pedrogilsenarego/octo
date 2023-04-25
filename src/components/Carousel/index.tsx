@@ -13,9 +13,8 @@ interface Props {
   outsideButtons?: boolean;
   numberSlides?: number;
   focusCentral?: boolean;
-  ghostEdges?: boolean
-  noArrows?: boolean
-
+  ghostEdges?: boolean;
+  noArrows?: boolean;
 }
 
 const Carousel = ({
@@ -31,32 +30,32 @@ const Carousel = ({
   ghostEdges,
   colorArrow,
   noArrows,
-
 }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
-
   });
   const [startX, setStartX] = useState(0);
   const [isMoving, setIsMoving] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({ width: window.innerWidth });
+    };
 
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-  //   };
-
-  //   window.addEventListener("resize", handleResize);
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleNextClick = (direction: number) => {
     if (slideIndex === 0 && direction === -1) return;
-    if (direction === 1 && slideIndex > images.length - (numberSlides + (ghostEdges ? 2 : 1))) return;
+    if (
+      direction === 1 &&
+      slideIndex > images.length - (numberSlides + (ghostEdges ? 2 : 1))
+    )
+      return;
 
     setSlideIndex((prevIndex) => (prevIndex + 1 * direction) % images.length);
   };
@@ -65,12 +64,12 @@ const Carousel = ({
     const touch = event.touches[0];
     setStartX(touch.clientX);
     setIsMoving(true);
-    document.body.classList.add("touch-scroll-lock");
+
   };
 
   const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
     if (!isMoving) return;
-    event.preventDefault();
+
     const touch = event.touches[0];
     const diff = touch.clientX - startX;
     const threshold = window.innerWidth / 8;
@@ -85,7 +84,6 @@ const Carousel = ({
 
   const handleTouchEnd = () => {
     setIsMoving(false);
-    document.body.classList.remove("touch-scroll-lock");
   };
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -109,7 +107,6 @@ const Carousel = ({
       style={{
         width: `${containerWidthVW}vw`,
         position: "relative",
-
       }}
     >
       {!noArrows && (
@@ -135,7 +132,8 @@ const Carousel = ({
               style={{ position: "absolute", left: "9px", top: "7px" }}
               size='1.7rem'
               color={
-                slideIndex !== images.length - (ghostEdges ? numberSlides + 1 : numberSlides)
+                slideIndex !==
+                  images.length - (ghostEdges ? numberSlides + 1 : numberSlides)
                   ? colorArrow || Colors.BLACKISH
                   : "transparent"
               }
@@ -160,7 +158,9 @@ const Carousel = ({
             <BiLeftArrow
               style={{ position: "absolute", left: "4px", top: "7px" }}
               size='1.7rem'
-              color={slideIndex !== 0 ? colorArrow || Colors.BLACKISH : "transparent"}
+              color={
+                slideIndex !== 0 ? colorArrow || Colors.BLACKISH : "transparent"
+              }
             />
           </div>
         </>
@@ -186,7 +186,6 @@ const Carousel = ({
                   style={{
                     flex: `0 0 ${childWidthVW}vw`,
                     overflow: "hidden",
-
                   }}
                 >
                   <img
@@ -204,10 +203,14 @@ const Carousel = ({
             } else {
               return (
                 <div
+                  onClick={() => {
+                    console.log("here", pos, slideIndex);
+                    if (pos - slideIndex === 2) handleNextClick(1);
+                    if (pos === slideIndex) handleNextClick(-1);
+                  }}
                   draggable={false}
                   key={pos}
                   style={{
-
                     padding: "5px",
                     display: "flex",
                     alignItems: "center",
@@ -217,8 +220,9 @@ const Carousel = ({
                     transition: "all 0.4s ease-in-out",
 
                     opacity:
-                      ghostEdges && (pos === 0 || pos === images.length - 2) ? 0 :
-                        focusCentral &&
+                      ghostEdges && (pos === 0 || pos === images.length - 2)
+                        ? 0
+                        : focusCentral &&
                           pos !== slideIndex + Math.floor(numberSlides / 2)
                           ? 0.4
                           : 1,
