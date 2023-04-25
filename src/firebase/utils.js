@@ -4,13 +4,13 @@ import "firebase/auth";
 import "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGE_SENDER_ID,
-  appId: process.env.APP_ID,
-  measurementId: process.env.MEASUREMENT_ID,
+  apiKey: "AIzaSyBO1w8_Jk3tWNDSOTEHMdtjst_ejrWXj54",
+  authDomain: "octo-29041.firebaseapp.com",
+  projectId: "octo-29041",
+  storageBucket: "octo-29041.appspot.com",
+  messagingSenderId: "392475059980",
+  appId: "1:392475059980:web:8766245a3828d39b824b29",
+  measurementId: "G-C2M4TKVD85",
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -21,6 +21,9 @@ export const storage = firebase.storage();
 
 export const GoogleProvider = new firebase.auth.GoogleAuthProvider();
 GoogleProvider.setCustomParameters({ prompt: "select_account" });
+
+export const FacebookProvider = new firebase.auth.FacebookAuthProvider();
+FacebookProvider.setCustomParameters({ prompt: "select_account" });
 
 export const handleUserProfile = async ({ userAuth, additionalData }) => {
   if (!userAuth) return;

@@ -12,5 +12,6 @@ export const ROUTE_PATHS = {
   REFUNDS_EXCHANGES:"/refunds-exchanges",
   BUY_SUCCESS:"/success",
   MANIFEST:"/manifest",
-  CONTACT_US:"/contact-us"
+  CONTACT_US:"/contact-us",
+  LOGIN:"/login",
 }

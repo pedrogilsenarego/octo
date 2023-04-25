@@ -19,6 +19,7 @@ const Manifest = lazyWithRetryAndLoader(() => import("../modules/Manifest"))
 const BuySuccess = lazyWithRetryAndLoader(() => import("../modules/BuySuccess"))
 const Admin = lazyWithRetryAndLoader(() => import("../modules/Admin/ManageProducts"))
 const About = lazyWithRetryAndLoader(() => import("../modules/About"))
+const Login = lazyWithRetryAndLoader(() => import("../modules/Login"))
 
 
 export const routes: AppRoute[] = [
@@ -35,6 +36,14 @@ export const routes: AppRoute[] = [
     component: (
       <PagesLayout noMarginBottom>
         <Shop />
+      </PagesLayout>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.LOGIN,
+    component: (
+      <PagesLayout noMarginBottom>
+        <Login />
       </PagesLayout>
     ),
   },

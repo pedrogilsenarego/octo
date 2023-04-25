@@ -6,15 +6,18 @@ import labelEsq from "../../../assets/images/labelEsq.png";
 import { generalConstants } from "../../../constants/general";
 import MenuBar from "../../../presentional/MenuBar";
 import "./index.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { ROUTE_PATHS } from "../../../constants/routes";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setScrollCollections } from "../../../slicer/general/general.actions";
 import Loader from "../../../components/Loader";
+import { useVideo } from "../../../hooks/useVideo";
+
+
 
 const Initial = () => {
-  const [loading, setLoading] = useState<boolean>(true);
+
   const navigate = useNavigate();
   const theme = useTheme();
   const dispatch = useDispatch();
@@ -22,43 +25,52 @@ const Initial = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
+  const { url: videoUrl } = useVideo('https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov', "initial-video", 365);
 
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !videoUrl) return;
+    video.src = videoUrl;
+  }, [videoUrl]);
+
+  const handlePlayClick = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+
+    }
+  };
 
   const renderLaptop = () => {
-    const handlePlayClick = () => {
-      console.log("teste")
-      if (videoRef.current) {
 
-        videoRef.current.play();
 
-      }
-    };
+    if (!videoUrl) return (
+      <div
+        style={{
+          position: "absolute",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+        }}
+      >
+        <Loader />
+      </div>
+    )
     return (
       <div onClick={handlePlayClick} style={{ position: "relative", width: "100vw", height: "100vh" }}>
         <>
-          <div
-            style={{
-              position: "absolute",
-              opacity: loading ? 1 : 0,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              left: 0,
-              right: 0,
-              top: 0,
-              bottom: 0,
-            }}
-          >
-            <Loader />
-          </div>
+
           <div
             style={{
               position: "relative",
               height: "100%",
               width: "100%",
-              opacity: loading ? 0 : 1,
+
             }}
           >
             <video
@@ -70,14 +82,9 @@ const Initial = () => {
               muted
               width='100%'
               height='100%'
-              onLoadedMetadata={() => setLoading(false)}
-              onLoad={() => setLoading(false)}
-              onCanPlayThrough={() => setLoading(false)}
+
             >
-              <source
-                src='https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov'
-                type='video/mp4'
-              />
+
             </video>
 
           </div>
@@ -86,7 +93,7 @@ const Initial = () => {
             display='flex'
             flexDirection='column'
             style={{
-              opacity: loading ? 0 : 1,
+
               top: 0,
               zIndex: 500,
               position: "absolute",
@@ -137,6 +144,28 @@ const Initial = () => {
   };
 
   const renderMobile = () => {
+    if (!videoUrl) return (
+      <div
+        style={{
+          position: "absolute",
+
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+          height: "100%",
+          overflow: "hidden",
+          width: "100vw",
+        }}
+      >
+        <Loader />
+      </div>
+    )
+
     return (
       <div
         style={{
@@ -147,7 +176,7 @@ const Initial = () => {
         <div
           style={{
             position: "absolute",
-            opacity: loading ? 1 : 0,
+
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -169,10 +198,11 @@ const Initial = () => {
             position: "relative",
             height: "100%",
             width: "100%",
-            opacity: loading ? 0 : 1,
+
           }}
         >
           <video
+            ref={videoRef}
             playsInline
             autoPlay
             preload='auto'
@@ -180,16 +210,11 @@ const Initial = () => {
             muted
             width='100%'
             height='100%'
-            onLoadedMetadata={() => setLoading(false)}
-            onLoad={() => setLoading(false)}
-            onCanPlayThrough={() => setLoading(false)}
+
           >
-            <source
-              src='https://res.cloudinary.com/dmrll3fnf/video/upload/v1682212485/octo_site_22_04_vzr6o7.mov'
-              type='video/mp4'
-            />
+
           </video>
-          `
+
         </div>
 
         <MenuBar />
@@ -207,7 +232,7 @@ const Initial = () => {
             backgroundRepeat: "no-repeat",
             backgroundImage: `url(${labelEsq})`,
             backgroundSize: "cover",
-            transform: loading ? "translate(-120px,0px)" : "translate(0px,0px)",
+            transform: !videoUrl ? "translate(-120px,0px)" : "translate(0px,0px)",
             transition: "all 0.7s ease-in-out",
           }}
         ></Box>
@@ -217,7 +242,7 @@ const Initial = () => {
             bottom: "10vh",
             position: "absolute",
             zIndex: 500,
-            opacity: loading ? 0 : 1,
+
           }}
         >
           <Typography

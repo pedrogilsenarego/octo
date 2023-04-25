@@ -50,6 +50,7 @@ const Shop = () => {
 
 
 
+
   return (
     <div
       style={{
@@ -96,6 +97,7 @@ const Shop = () => {
           </Typography>
           <div >
             <Carousel
+              noSlide={mobile ? true : false}
               noArrows={mobile ? true : false}
               numberSlides={3}
               ghostEdges
@@ -132,6 +134,7 @@ const Shop = () => {
           </Typography>
           <div >
             <Carousel
+              noSlide={mobile ? true : false}
               numberSlides={3}
               ghostEdges
               noArrows={mobile ? true : false}
