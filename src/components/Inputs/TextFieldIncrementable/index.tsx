@@ -92,7 +92,7 @@ const TextfieldIncrementable = ({
 
         {Array.isArray(field.value) && field?.value?.map((item: string, pos: number) => {
           return (
-            <Box display='flex' columnGap={2} key={pos}>
+            <Box display='flex' columnGap={2} key={pos} justifyContent="center" alignItems="center">
               <Box
                 key={pos}
                 style={{
@@ -113,6 +113,7 @@ const TextfieldIncrementable = ({
                   backgroundColor: Colors.BLACKISH,
                   borderRadius: "4px",
                   cursor: "pointer",
+                  padding: "10px"
                 }}
                 onClick={() => {
                   const newArray = [...field.value]
@@ -120,7 +121,7 @@ const TextfieldIncrementable = ({
                   helper.setValue(newArray);
                 }}
               >
-                <Typography color='white' fontWeight={800} fontSize='1.5rem'>
+                <Typography color='white' fontSize='1.5rem'>
                   x
                 </Typography>
               </Box>

@@ -13,8 +13,18 @@ export const FORM_VALIDATION = Yup.object().shape({
   })
   .required(`${i18n.t('forms.required')}`)
   .label('Fotos'))
-  .min(1, 'At least one foto is required')
-
+  .min(1, 'At least one foto is required'),
+  price: Yup.number().required(`${i18n.t("forms.required")}`),
+  icon: Yup.string()
+  .test('isValid', 'The foto is invalid. Should start as https:// and finish as .webp', (value) => {
+    if (typeof value !== 'string') return false; // check if value is a string
+    if (!value.startsWith('https://')) return false; // check if value starts with https://
+    if (!value.endsWith('.webp')) return false; // check if value ends with .webp
+    return true;
+  })
+  .required(`${i18n.t('forms.required')}`)
+  
+  
   
   
   

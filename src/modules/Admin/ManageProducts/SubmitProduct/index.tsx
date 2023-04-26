@@ -1,7 +1,7 @@
 
 import { i18n } from "../../../../translations/i18n";
 import { Box, Divider, Grid, Typography } from "@mui/material";
-import Textfield from "../../../../components/Inputs/TextField";
+import Textfield from "../../../../components/Inputs/TextFieldForm";
 import { Form, Formik } from "formik";
 import { FORM_VALIDATION } from "./validation";
 import ButtonForm from "../../../../components/Buttons/ButtonFormik";
@@ -19,22 +19,26 @@ const SubmitStory = () => {
     category: "",
     pattern: "",
     fotos: [],
+    price: 0,
+    icon: ""
 
 
   };
   const dispatch = useDispatch();
-  const loading = useSelector<State, boolean>((state) => state.general.loading);
+  //const loading = useSelector<State, boolean>((state) => state.general.loading);
   const handleSubmit = (values: any) => {
     console.log("values", values)
     //dispatch(addProduct({ ...values }));
   };
 
+  let loading = false
+
   return (
-    <>
+    <div style={{ paddingLeft: "40px", paddingRight: "40px" }}>
       <Typography fontSize='16px'>
         products / create-product
       </Typography>
-      <Divider />
+      <Divider style={{ marginBottom: "40px" }} />
 
       <Formik
         initialValues={{ ...INITIAL_FORM_STATE }}
@@ -87,20 +91,34 @@ const SubmitStory = () => {
                       label="Pattern"
                     />
                   </Grid>
-                  <Grid item xs={6}>
-                    <Box>
+                  <Grid item xs={12}>
+                    <Box style={{ width: "50%" }}>
                       <TextfieldIncrementable
                         label="Fotos of Product"
                         name='fotos'
                       />
                     </Box>
                   </Grid>
+                  <Grid item xs={12}>
+                    <Box style={{ width: "25%" }}>
+                      <Textfield
+                        label="Price €"
+                        name='price'
+                      />
+                    </Box>
 
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box style={{ width: "25%" }}>
+                      <Textfield
+                        label="Icon"
+                        name='icon'
+                      />
+                    </Box>
 
-
+                  </Grid>
                 </Grid>
               </Box>
-
               <Box
                 display='flex'
                 justifyContent='start'
@@ -117,7 +135,7 @@ const SubmitStory = () => {
           )}
         </Form>
       </Formik>
-    </>
+    </div>
   );
 };
 
