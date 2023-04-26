@@ -10,10 +10,10 @@ import {
 import Snackbar from "./components/SnackBar";
 import { Colors } from "./constants/pallete";
 import CookiePolicy from "./presentional/CookiePopup";
-import ScrollLock from "./hoc";
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools'
 import usePosition from "./hooks/usePosition";
+import { useEffect } from "react";
 
 
 
@@ -39,6 +39,11 @@ function App() {
 
   usePosition()
 
+
+
+
+
+
   return (
     <BrowserRouter>
 
@@ -46,12 +51,10 @@ function App() {
         <StyledEngineProvider injectFirst>
           <QueryClientProvider client={queryClient}>
             <CookiePolicy />
-            {/* //<Snackbar /> */}
+            <Snackbar />
             <CssBaseline />
             <ScrollToTop />
-            <ScrollLock>
-              <AppRoutes />
-            </ScrollLock>
+            <AppRoutes />
             {/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
           </QueryClientProvider>
         </StyledEngineProvider>

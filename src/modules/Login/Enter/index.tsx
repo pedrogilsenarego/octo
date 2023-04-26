@@ -70,11 +70,11 @@ const Enter = () => {
           </Typography>
         </Button>
       </div> */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      {/* <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ height: "1px", width: "45%", backgroundColor: "#00000066" }} />
         <Typography>{i18n.t("modules.login.or")}</Typography>
         <div style={{ height: "1px", width: "45%", backgroundColor: "#00000066" }} />
-      </div>
+      </div> */}
       <EmailPass />
     </div>
   );

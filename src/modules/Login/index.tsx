@@ -16,7 +16,8 @@ const Login = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        rowGap: "40px"
+        rowGap: "40px",
+        minHeight: "100vh"
       }}
     >
       <Typography

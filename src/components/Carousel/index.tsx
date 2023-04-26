@@ -17,6 +17,8 @@ interface Props {
   noArrows?: boolean;
 }
 
+
+
 const Carousel = ({
   images = [],
   colorBgArrow,
@@ -38,6 +40,9 @@ const Carousel = ({
   const [startX, setStartX] = useState(0);
   const [isMoving, setIsMoving] = useState(false);
 
+
+
+
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({ width: window.innerWidth });
@@ -47,7 +52,10 @@ const Carousel = ({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+
   }, []);
+
+
 
   const handleNextClick = (direction: number) => {
     if (slideIndex === 0 && direction === -1) return;
@@ -84,6 +92,7 @@ const Carousel = ({
 
   const handleTouchEnd = () => {
     setIsMoving(false);
+
   };
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -100,8 +109,10 @@ const Carousel = ({
 
 
   return (
+
     <div
       ref={containerRef}
+
       onTouchStart={noSlide ? undefined : handleTouchStart}
       onTouchMove={noSlide ? undefined : handleTouchMove}
       onTouchEnd={noSlide ? undefined : handleTouchEnd}
@@ -247,6 +258,7 @@ const Carousel = ({
         </div>
       </div>
     </div>
+
   );
 };
 

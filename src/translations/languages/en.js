@@ -172,7 +172,20 @@ export const content = {
           title: "PATTERNS",
           nextButton: "Next",
         },
-
+        login: {
+          title: "My Account",
+          startSession: "Start Session",
+          register: "Create Account",
+          google: "Login with Google",
+          facebook: "Login with Facebook",
+          or: "or",
+          email: "E-mail*",
+          password: "Password*",
+          confirmPassword: "Confirm Password*",
+          name: "Name*",
+          createAccount: "Create Account",
+          acceptTerms: "Accept terms and conditions",
+        },
         product: {
           fabrics: "Fabrics Available",
           products: "Products Available",
@@ -189,6 +202,7 @@ export const content = {
       notifications: {
         success: {
           updateCart: "The cart was updated",
+          loginUser: "You are login",
         },
         fail: {},
       },

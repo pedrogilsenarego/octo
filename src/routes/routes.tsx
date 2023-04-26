@@ -5,6 +5,7 @@ import { lazyWithRetryAndLoader } from "../utils/lazyWithRetry";
 import { MainLayout } from "../layouts/MainLayout";
 import { PagesLayout } from "../layouts/PagesLayout";
 import AdminLayout from "../layouts/AdminLayout"
+import WithAdminAuth from "../hoc/withAdminAuth";
 
 const Home = lazyWithRetryAndLoader(() => import("../modules/Home"));
 const Shop = lazyWithRetryAndLoader(() => import("../modules/Shop"));
@@ -18,6 +19,7 @@ const ContactUs = lazyWithRetryAndLoader(() => import("../modules/ContactUs"))
 const Manifest = lazyWithRetryAndLoader(() => import("../modules/Manifest"))
 const BuySuccess = lazyWithRetryAndLoader(() => import("../modules/BuySuccess"))
 const Admin = lazyWithRetryAndLoader(() => import("../modules/Admin/ManageProducts"))
+const AdminCreateProduct = lazyWithRetryAndLoader(() => import("../modules/Admin/ManageProducts/SubmitProduct"))
 const About = lazyWithRetryAndLoader(() => import("../modules/About"))
 const Login = lazyWithRetryAndLoader(() => import("../modules/Login"))
 
@@ -104,9 +106,21 @@ export const routes: AppRoute[] = [
   },
   {
     path: ROUTE_PATHS.ADMIN,
-    component: <AdminLayout>
-      <Admin />
-    </AdminLayout>,
+    component:
+      <WithAdminAuth>
+        <AdminLayout>
+          <Admin />
+        </AdminLayout>
+      </WithAdminAuth>,
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_PRODUCT_CREATE,
+    component:
+      <WithAdminAuth>
+        <AdminLayout>
+          <AdminCreateProduct />
+        </AdminLayout>
+      </WithAdminAuth>,
   },
   // {
   //   path: ROUTE_PATHS.PRODUCT,

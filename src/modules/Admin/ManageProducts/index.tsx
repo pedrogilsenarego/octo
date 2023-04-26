@@ -22,14 +22,14 @@ const ManageStorys = () => {
   return (
     <>
 
-      <Typography fontSize="16px">{i18n.t("adminSideBar.submitBook")}</Typography>
+      <Typography fontSize="16px">Products</Typography>
       <Divider />
 
       <Box style={{ marginTop: "60px" }}>
         <Box display='flex' justifyContent='start' style={{ marginBottom: "40px" }}>
           <Button
             borderRadius="6px"
-            label={i18n.t("modules.admin.manageBooks.createButton")}
+            label="Submit new Product"
             onClick={() => navigate(ROUTE_PATHS.ADMIN_PRODUCT_CREATE)}
           />
         </Box>

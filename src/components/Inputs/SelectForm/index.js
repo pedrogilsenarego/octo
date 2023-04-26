@@ -4,8 +4,7 @@ import * as Styled from "./styles";
 
 const SelectWrapper = ({ name, options, label, ...otherProps }) => {
   const { setFieldValue } = useFormikContext();
-  const [field, meta] = useField(name);
-
+  const [field, meta] = useField(name || "name");
   const handleChange = (evt) => {
     const { value } = evt.target;
     setFieldValue(name, value);
@@ -34,7 +33,7 @@ const SelectWrapper = ({ name, options, label, ...otherProps }) => {
       <Styled.TextField {...configSelect} InputLabelProps={{ shrink: false }}>
         {Object.keys(options).map((item, pos) => {
           return (
-            <MenuItem key={pos} value={item}>
+            <MenuItem key={pos} value={options[item]}>
               {options[item]}
             </MenuItem>
           );

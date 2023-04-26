@@ -121,6 +121,7 @@ export function* emailSignIn({ payload: { email, password } }) {
     yield put(
       updateSuccessNotification(i18n.t("notifications.success.loginUser"))
     );
+
     // } else {
     //   yield put(
     //     updateFailNotification(i18n.t("notifications.fail.emailNotVerified"))

@@ -22,7 +22,7 @@ interface Config {
 }
 
 const TextfieldIncrementable = ({
-  maxWidth = "auto",
+
   placeholder = "",
   name,
   label,
@@ -31,7 +31,7 @@ const TextfieldIncrementable = ({
   getvalue,
   ...otherProps
 }: Props) => {
-  const [field, meta, helper] = useField(name);
+  const [field, meta, helper] = useField(name || "name");
   const [newValue, setNewValue] = useState<string>("");
 
   const configTextField: Config = {
@@ -56,7 +56,7 @@ const TextfieldIncrementable = ({
       </Box>
       <Box display='flex' columnGap={2}>
         <Styled.TextField
-          maxWidth={maxWidth}
+
           multiline={multiline}
           rows={rows ? rows : undefined}
           size='small'
@@ -92,7 +92,7 @@ const TextfieldIncrementable = ({
 
         {Array.isArray(field.value) && field?.value?.map((item: string, pos: number) => {
           return (
-            <Box display='flex' columnGap={2}>
+            <Box display='flex' columnGap={2} key={pos}>
               <Box
                 key={pos}
                 style={{

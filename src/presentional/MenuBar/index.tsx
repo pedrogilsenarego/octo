@@ -35,6 +35,8 @@ const MenuBar = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const vertical = useSelector<State, boolean>((state) => state.general.positionVertical)
+
   const ICON_SIZE = "1.6rem";
   const MENU_COLOR =
     location.pathname === ROUTE_PATHS.HOME
@@ -91,7 +93,7 @@ const MenuBar = () => {
           alignItems='start'
         >
           <Grid item>
-            {location.pathname === ROUTE_PATHS.HOME && (
+            {location.pathname === ROUTE_PATHS.HOME && !mobile && (
               <Box
                 onClick={() => navigate(ROUTE_PATHS.HOME)}
                 width={LABEL_SIZE}
@@ -385,7 +387,7 @@ const MenuBar = () => {
     );
   };
 
-  return mobile ? renderMobile() : renderLaptop();
+  return vertical || mobile ? renderMobile() : renderLaptop();
 };
 
 export default MenuBar;
