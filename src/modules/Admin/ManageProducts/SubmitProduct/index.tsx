@@ -12,10 +12,12 @@ import Loader from "../../../../components/Loader";
 import TextfieldIncrementable from "../../../../components/Inputs/TextFieldIncrementable";
 import { categories } from "../../../../constants/category";
 import { fabrics } from "../../../../constants/fabrics";
+import { Product } from "../../../../slicer/products/products.types";
+import { addProduct } from "../../../../slicer/products/products.actions";
 
 
 const SubmitStory = () => {
-  const INITIAL_FORM_STATE = {
+  const INITIAL_FORM_STATE: Product = {
     category: "",
     pattern: "",
     fotos: [],
@@ -25,13 +27,11 @@ const SubmitStory = () => {
 
   };
   const dispatch = useDispatch();
-  //const loading = useSelector<State, boolean>((state) => state.general.loading);
-  const handleSubmit = (values: any) => {
-    console.log("values", values)
-    //dispatch(addProduct({ ...values }));
+  const loading = useSelector<State, boolean>((state) => state.general.loading);
+  const handleSubmit = (values: Product) => {
+    dispatch(addProduct({ ...values }));
   };
 
-  let loading = false
 
   return (
     <div style={{ paddingLeft: "40px", paddingRight: "40px" }}>
@@ -53,20 +53,17 @@ const SubmitStory = () => {
             <Box
               style={{
                 position: "relative",
-                width: "100%",
-                height: "100vh",
+                width: "400px",
+                height: "400px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              {/* <Loader
+              <Loader
 
-                size={200}
-                color='darkGrey'
-                customMessage='Your Data is being send'
-                progress={progress}
-              /> */}
+
+              />
             </Box>
           ) : (
             <>
@@ -97,6 +94,7 @@ const SubmitStory = () => {
                         label="Fotos of Product"
                         name='fotos'
                       />
+                      <Typography mt="20px">Adicionar fotos em <b>webp</b>, do cloudinary, tamanho <b>1080*720px</b>, confirmar que eu nao tenho validação ainda para isso</Typography>
                     </Box>
                   </Grid>
                   <Grid item xs={12}>
@@ -114,6 +112,8 @@ const SubmitStory = () => {
                         label="Icon"
                         name='icon'
                       />
+                      <Typography mt="20px">Adicionar foto em <b>webp</b>, do cloudinary, tamanho <b>200*200px</b>, confirmar que eu nao tenho validação ainda para isso</Typography>
+
                     </Box>
 
                   </Grid>
@@ -122,7 +122,7 @@ const SubmitStory = () => {
               <Box
                 display='flex'
                 justifyContent='start'
-                sx={{ mt: "20px" }}
+                sx={{ mt: "50px" }}
                 columnGap={2}
               >
 
