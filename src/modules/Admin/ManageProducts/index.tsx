@@ -12,12 +12,12 @@ import useList from "./useList";
 
 const ManageStorys = () => {
   const navigate = useNavigate();
-  const tableData = useSelector<State, any>(
-    (state) => state?.products?.products?.data || []
-  );
+  // const tableData = useSelector<State, any>(
+  //   (state) => state?.products?.products?.data || []
+  // );
 
 
-  const { handleAction } = useList({ tableData })
+  // const { handleAction } = useList({ tableData })
 
   return (
     <>
@@ -33,9 +33,9 @@ const ManageStorys = () => {
             onClick={() => navigate(ROUTE_PATHS.ADMIN_PRODUCT_CREATE)}
           />
         </Box>
-        {tableData.length > 0 && (<Card style={{ padding: "20px" }}>
+        {/* {tableData.length > 0 && (<Card style={{ padding: "20px" }}>
           <TableList columns={tableColumns} rows={tableData.rows} onAction={handleAction} />
-        </Card>)}
+        </Card>)} */}
 
       </Box >
     </>

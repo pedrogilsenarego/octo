@@ -6,7 +6,6 @@ import { Form, Formik } from "formik";
 import { FORM_VALIDATION } from "./validation";
 import ButtonForm from "../../../../components/Buttons/ButtonFormik";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct } from "../../../../slicer/products/products.actions";
 import SelectWrapper from "../../../../components/Inputs/SelectForm";
 import { State } from "../../../../slicer/types";
 import Loader from "../../../../components/Loader";
@@ -25,8 +24,6 @@ const SubmitStory = () => {
   };
   const dispatch = useDispatch();
   const loading = useSelector<State, boolean>((state) => state.general.loading);
-  const progress = useSelector<State, number>((state) => state.products.progress);
-
   const handleSubmit = (values: any) => {
     console.log("values", values)
     //dispatch(addProduct({ ...values }));
@@ -59,13 +56,13 @@ const SubmitStory = () => {
                 alignItems: "center",
               }}
             >
-              <Loader
+              {/* <Loader
 
                 size={200}
                 color='darkGrey'
                 customMessage='Your Data is being send'
                 progress={progress}
-              />
+              /> */}
             </Box>
           ) : (
             <>
