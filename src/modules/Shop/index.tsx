@@ -43,7 +43,7 @@ const Shop = () => {
           In any case, if you wish to purchase any of our products, you can do so by reaching out to us via email at <b>hello@octo-mistic.com</b> or by sending us a direct message on Instagram <b style={{ cursor: "pointer" }} onClick={handleInstagram}>@octo.mistic</b>, and we will assist you throughout the process
         </Typography>
       </div >
-      {/* <ProductContextProvider>
+      <ProductContextProvider>
         <Box
           display='flex'
           style={{
@@ -79,8 +79,8 @@ const Shop = () => {
 
 
 
-        </Box></ProductContextProvider> */}
-    </>
+        </Box></ProductContextProvider>
+    // </>
   );
 };
 

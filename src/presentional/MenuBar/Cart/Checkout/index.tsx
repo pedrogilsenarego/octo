@@ -54,14 +54,14 @@ const Checkout = ({ closeCart }: Props) => {
       quantity: number;
     }[] = [];
 
-    cartProducts.forEach((item) => {
-      items.push({
-        title: `${categories[item.product.category].title}-${fabrics[item.product.pattern].title
-          }`,
-        amount: item.product.price * 100,
-        quantity: item.value,
-      });
-    });
+    // cartProducts.forEach((item) => {
+    //   items.push({
+    //     title: `${categories[item.product.category].title}-${fabrics[item.product.pattern].title
+    //       }`,
+    //     amount: item.product.price * 100,
+    //     quantity: item.value,
+    //   });
+    // });
     await fetch(
       stripeProduction,
       {

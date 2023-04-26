@@ -7,16 +7,16 @@ import { Colors } from "../../../constants/pallete";
 import { ProductContext } from "../ProductContext";
 
 const ImageShow = () => {
-  const { product, setInfoPopup, fabric } = useContext(ProductContext);
+  const { } = useContext(ProductContext);
 
   return (
     <Box style={{ borderRadius: "5px", backgroundColor: Colors.PRETTY_CREAM }}>
-      {product !== null && (
-        <CardMedia
-          image={categories[product].image}
-          height='500px'
-          onClick={() => setInfoPopup(true)}
-        />
+      {/* {product !== null && (
+        // <CardMedia
+        //   image={categories[product].image}
+        //   height='500px'
+        //   onClick={() => setInfoPopup(true)}
+        // />
       )}{" "}
       {fabric !== null && (
         <CardMedia
@@ -24,7 +24,7 @@ const ImageShow = () => {
           height='500px'
           onClick={() => setInfoPopup(true)}
         />
-      )}
+      )} */}
     </Box>
   );
 };

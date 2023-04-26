@@ -21,7 +21,7 @@ const CookiePolicy = () => {
   return cookiePolicySignal ? (
     <div
       style={{
-        width: window.innerWidth,
+        width: "100vw",
         position: "fixed",
         bottom: 0,
         zIndex: 5000,

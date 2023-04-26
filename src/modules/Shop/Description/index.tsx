@@ -8,9 +8,10 @@ import MoreInfoPopup from "./MoreInfoPopup";
 import { fabrics } from "../../../constants/fabrics";
 import Detail from "../../Shop/Description/Detail"
 import { categories } from "../../../constants/category";
+import { Colors } from "../../../constants/pallete";
 
 const Description = () => {
-  const { product, fabric, infoPopup, setInfoPopup, selectedFabrics } =
+  const { category, pattern, infoPopup, setInfoPopup, selectedFabrics, products } =
     useContext(ProductContext);
   const [moreInfo, setMoreInfo] = useState(false);
   const Theme = useTheme()
@@ -21,7 +22,7 @@ const Description = () => {
     <Box
       style={{
         padding: "20px",
-        //backgroundColor: Colors.PRETTY_CREAM,
+        backgroundColor: Colors.PRETTY_CREAM,
         borderRadius: "5px",
         minHeight: "500px",
       }}
@@ -29,28 +30,28 @@ const Description = () => {
       flexDirection='column'
       justifyContent='space-between'
     >
-      {product !== null && (
+      {category !== null && (
         <Box
           display='flex'
           flexDirection='column'
           justifyContent='space-between'
         >
           <Typography style={{ textTransform: "uppercase" }} fontWeight={800}>
-            {categories[product].title}
+            {category}
           </Typography>
-          <Typography fontWeight={800}>
+          {/* <Typography fontWeight={800}>
             {categories[product].price}&nbsp;€
-          </Typography>
+          </Typography> */}
         </Box>
       )}
-      {fabric !== null && (
+      {pattern !== null && (
         <Box
           display='flex'
           flexDirection='column'
           justifyContent='space-between'
         >
           <Typography style={{ textTransform: "uppercase" }} fontWeight={800}>
-            {fabrics[fabric].title}
+            {pattern}
           </Typography>
           <Box display='flex' alignItems='center'>
             {selectedFabrics.map((item, pos) => {
@@ -69,7 +70,7 @@ const Description = () => {
         </div>
       </div>
       <Divider style={{ marginTop: "20px" }} />
-      {product !== null && (
+      {category !== null && (
         <>
           <div
             style={{ marginTop: "20px", cursor: "pointer" }}
@@ -79,7 +80,7 @@ const Description = () => {
           </div>
           {moreInfo && (
             <>
-              <Detail
+              {/* <Detail
                 detail={categories[product].moreInfo.description}
                 title={i18n.t("modules.product.detail.description")}
               />
@@ -90,24 +91,24 @@ const Description = () => {
               <Detail
                 detail={categories[product].moreInfo.washing}
                 title={i18n.t("modules.product.detail.washing")}
-              />
+              /> */}
             </>
           )}
         </>
       )}
 
-      {product !== null && (
-        <Popup
-          closeButton={mobile ? true : false}
-          openPopup={infoPopup}
-          title={`${categories[product].title}&nbsp;&#183;&nbsp;${categories[product].price}€`}
-          setOpenPopup={setInfoPopup}
-          onClose={() => setInfoPopup(false)}
-        >
-          <MoreInfoPopup />
-        </Popup>
+      {/* {category !== null && (
+        // <Popup
+        //   closeButton={mobile ? true : false}
+        //   openPopup={infoPopup}
+        //   title={`${categories[product].title}&nbsp;&#183;&nbsp;${categories[product].price}€`}
+        //   setOpenPopup={setInfoPopup}
+        //   onClose={() => setInfoPopup(false)}
+        // >
+        //   <MoreInfoPopup />
+        // </Popup>
       )}
-      {fabric !== null && (
+      {pattern !== null && (
         <Popup
           closeButton={mobile ? true : false}
           openPopup={infoPopup}
@@ -117,7 +118,7 @@ const Description = () => {
         >
           <MoreInfoPopup />
         </Popup>
-      )}
+      )} */}
     </Box>
   );
 };

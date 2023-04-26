@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Category } from "../../../../constants/category";
 import { ProductContext } from "../../ProductContext";
 import { FabricsType } from "../../../../constants/fabrics";
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const Element = ({ item, setText }: Props) => {
-  const { setFabric, setProduct, fabric, product } = useContext(ProductContext);
+  const { setPattern, setCategory, pattern, category } = useContext(ProductContext);
   const [loading, setLoading] = useState<boolean>(true);
 
 
@@ -23,11 +23,11 @@ const Element = ({ item, setText }: Props) => {
       key={item.title}
       onClick={() => {
         if ("price" in item) {
-          setProduct(item.id);
-          setFabric(null);
+          setCategory(item.title);
+          setPattern(null);
         } else {
-          setProduct(null);
-          setFabric(item.id);
+          setCategory(null);
+          setPattern(item.title);
         }
 
       }}
@@ -41,7 +41,7 @@ const Element = ({ item, setText }: Props) => {
         position: "relative",
         borderRadius: "50%",
         width: "100%",
-        border: item.id === ("price" in item ? product : fabric) ? `solid 2px ${Colors.NEON_YELLOW}` : `solid 0px black`,
+        border: item.title === ("price" in item ? category : pattern) ? `solid 2px ${Colors.NEON_YELLOW}` : `solid 0px black`,
         boxShadow: "0px 0px 10px 0px #0000001e",
         aspectRatio: 1,
       }}
@@ -70,10 +70,10 @@ const Element = ({ item, setText }: Props) => {
           borderRadius: "50%",
           opacity: loading ? 0 : 1,
           position: "absolute",
-          top: product !== null ? "-2.5%" : 0,
-          left: product !== null ? "-2.5%" : 0,
-          width: product !== null ? "105%" : "100%",
-          height: product !== null ? "105%" : "100%",
+          top: category !== null ? "-2.5%" : 0,
+          left: category !== null ? "-2.5%" : 0,
+          width: category !== null ? "105%" : "100%",
+          height: category !== null ? "105%" : "100%",
         }}
         onLoad={() => setLoading(false)}
       />

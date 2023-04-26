@@ -1,5 +1,3 @@
-
-import { i18n } from "../../../../translations/i18n";
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import Textfield from "../../../../components/Inputs/TextFieldForm";
 import { Form, Formik } from "formik";
@@ -15,16 +13,13 @@ import { fabrics } from "../../../../constants/fabrics";
 import { Product } from "../../../../slicer/products/products.types";
 import { addProduct } from "../../../../slicer/products/products.actions";
 
-
 const SubmitStory = () => {
   const INITIAL_FORM_STATE: Product = {
     category: "",
     pattern: "",
     fotos: [],
     price: 0,
-    icon: ""
-
-
+    icon: "",
   };
   const dispatch = useDispatch();
   const loading = useSelector<State, boolean>((state) => state.general.loading);
@@ -32,12 +27,9 @@ const SubmitStory = () => {
     dispatch(addProduct({ ...values }));
   };
 
-
   return (
     <div style={{ paddingLeft: "40px", paddingRight: "40px" }}>
-      <Typography fontSize='16px'>
-        products / create-product
-      </Typography>
+      <Typography fontSize='16px'>products / create-product</Typography>
       <Divider style={{ marginBottom: "40px" }} />
 
       <Formik
@@ -60,10 +52,7 @@ const SubmitStory = () => {
                 alignItems: "center",
               }}
             >
-              <Loader
-
-
-              />
+              <Loader />
             </Box>
           ) : (
             <>
@@ -77,45 +66,44 @@ const SubmitStory = () => {
                   <Grid item xs={6}>
                     <SelectWrapper
                       name='category'
-                      options={categories.map(category => category.title)}
-                      label="Category"
+                      options={categories.map((category) => category.title)}
+                      label='Category'
                     />
                   </Grid>
                   <Grid item xs={6}>
                     <SelectWrapper
                       name='pattern'
-                      options={fabrics.map(fabric => fabric.title)}
-                      label="Pattern"
+                      options={fabrics.map((fabric) => fabric.title)}
+                      label='Pattern'
                     />
                   </Grid>
                   <Grid item xs={12}>
                     <Box style={{ width: "50%" }}>
                       <TextfieldIncrementable
-                        label="Fotos of Product"
+                        label='Fotos of Product'
                         name='fotos'
                       />
-                      <Typography mt="20px">Adicionar fotos em <b>webp</b>, do cloudinary, tamanho <b>1080*720px</b>, confirmar que eu nao tenho validação ainda para isso</Typography>
+                      <Typography mt='20px'>
+                        Adicionar fotos em <b>webp</b>, do cloudinary, tamanho{" "}
+                        <b>1080*720px</b>, confirmar que eu nao tenho validação
+                        ainda para isso
+                      </Typography>
                     </Box>
                   </Grid>
                   <Grid item xs={12}>
                     <Box style={{ width: "25%" }}>
-                      <Textfield
-                        label="Price €"
-                        name='price'
-                      />
+                      <Textfield label='Price €' name='price' />
                     </Box>
-
                   </Grid>
                   <Grid item xs={12}>
                     <Box style={{ width: "25%" }}>
-                      <Textfield
-                        label="Icon"
-                        name='icon'
-                      />
-                      <Typography mt="20px">Adicionar foto em <b>webp</b>, do cloudinary, tamanho <b>200*200px</b>, confirmar que eu nao tenho validação ainda para isso</Typography>
-
+                      <Textfield label='Icon' name='icon' />
+                      <Typography mt='20px'>
+                        Adicionar foto em <b>webp</b>, do cloudinary, tamanho{" "}
+                        <b>200*200px</b>, confirmar que eu nao tenho validação
+                        ainda para isso
+                      </Typography>
                     </Box>
-
                   </Grid>
                 </Grid>
               </Box>
@@ -125,11 +113,7 @@ const SubmitStory = () => {
                 sx={{ mt: "50px" }}
                 columnGap={2}
               >
-
-                <ButtonForm
-                  label="Submit"
-                  disabled={loading}
-                />
+                <ButtonForm label='Submit' disabled={loading} />
               </Box>
             </>
           )}

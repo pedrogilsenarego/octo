@@ -49,7 +49,7 @@ const Cart = ({ closeCart }: Props) => {
       rowGap={mobile ? 0 : 1}
       padding={mobile ? "1rem" : "2rem"}
     >
-      <Box display='flex' justifyContent='space-between' alignItems='center' >
+      {/* <Box display='flex' justifyContent='space-between' alignItems='center' >
         <Typography
 
           mb={mobile ? "0px" : '20px'}
@@ -142,7 +142,7 @@ const Cart = ({ closeCart }: Props) => {
             />
           </>
         )}
-      </div>
+      </div> */}
     </Box>
   );
 };

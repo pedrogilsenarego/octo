@@ -16,15 +16,15 @@ interface Props {
 const Element = ({ valuee, stateHighLightStatus }: Props) => {
   const [click, setClick] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
-  const { product, fabric } =
-    useContext(ProductContext);
+  //  // const { product, fabric } =
+  //     useContext(ProductContext);
   const cartProducts = useSelector<State, CartProduct[]>(
     (state) => state.cart.cartItems
   );
 
-  useEffect(() => {
-    setClick(false);
-  }, [cartProducts, product, fabric]);
+  // useEffect(() => {
+  //   setClick(false);
+  // }, [cartProducts, product, fabric]);
 
   return (
     <Box

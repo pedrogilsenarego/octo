@@ -12,14 +12,14 @@ interface Action {
 
 const cartReducer = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
-    case cartTypes.ADD_PRODUCT_TO_CART:
-      return {
-        ...state,
-        cartItems: handleAddToCart({
-          prevCartItems: state.cartItems,
-          nextCartItems: action.payload,
-        }),
-      };
+    // case cartTypes.ADD_PRODUCT_TO_CART:
+    //   return {
+    //     ...state,
+    //     cartItems: handleAddToCart({
+    //       prevCartItems: state.cartItems,
+    //       nextCartItems: action.payload,
+    //     }),
+    //   };
     case cartTypes.DELETE_PRODUCT:
       return {
         ...state,

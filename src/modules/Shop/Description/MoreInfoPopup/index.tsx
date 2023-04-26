@@ -2,7 +2,7 @@ import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useContext } from "react";
 import { useDispatch } from "react-redux";
 import Button from "../../../../components/Buttons/Button";
-import { Product, products } from "../../../../constants/category";
+//import { Product, products } from "../../../../constants/category";
 import { Colors } from "../../../../constants/pallete";
 import { addProductToCart } from "../../../../slicer/cart/cart.actions";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
@@ -12,20 +12,20 @@ import Carrousell from "./Carousell";
 
 const MoreInfoPopup = () => {
   const dispatch = useDispatch();
-  const { product, fabric } = useContext(ProductContext);
+  //const { product, fabric } = useContext(ProductContext);
   const Theme = useTheme()
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
 
 
-  const productsAvailable: Product[] = products.filter(
-    (value) =>
-      value[product !== null ? "category" : "pattern"] ===
-      (product !== null ? product : fabric)
-  );
+  // const productsAvailable: Product[] = products.filter(
+  //   (value) =>
+  //     value[product !== null ? "category" : "pattern"] ===
+  //     (product !== null ? product : fabric)
+  // );
 
   return (
     <Box width='100%' display='flex' flexDirection='column' gap={0.5}>
-      {productsAvailable.map((item, pos) => {
+      {/* {productsAvailable.map((item, pos) => {
         return (
           <Grid
             container
@@ -98,7 +98,7 @@ const MoreInfoPopup = () => {
             </Grid>
           </Grid>
         );
-      })}
+      })} */}
     </Box>
   );
 };
