@@ -76,4 +76,8 @@ export const setScrollCollections = (position:CollectionPositions) => ({
   payload: position
 })
 
+export const setPositionVertical = (position:boolean) => ({
+  type: generalTypes.POSITION_VERTICAL,
+  payload: position
+})
 

@@ -8,6 +8,7 @@ import { Colors } from "../../../constants/pallete";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setScrollCollections } from "../../../slicer/general/general.actions";
+import { State } from "../../../slicer/types";
 
 const Collections = () => {
   const theme = useTheme();
@@ -15,6 +16,8 @@ const Collections = () => {
   const ipad = useMediaQuery(theme.breakpoints.down("sm"));
   const navigate = useNavigate()
   const dispatch = useDispatch()
+
+  const vertical = useSelector<State, boolean>((state) => state.general.positionVertical)
 
 
 
@@ -28,9 +31,9 @@ const Collections = () => {
           alignItems: "center",
 
           width: "100vw",
-          height: mobile || ipad ? "110vh" : "100vh",
-          paddingLeft: mobile || ipad ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
-          paddingRight: mobile || ipad ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
+          height: vertical ? "110vh" : "100vh",
+          paddingLeft: vertical ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
+          paddingRight: vertical ? generalConstants.PADDING_MOBILE : generalConstants.PADDING,
         }}
       >
         <Box
@@ -57,9 +60,9 @@ const Collections = () => {
               style={{
 
                 position: "absolute",
-                bottom: mobile || ipad ? "-15%" : "-20%",
-                left: mobile || ipad ? "9%" : "8%",
-                width: mobile || ipad ? "45vw" : "30vw",
+                bottom: vertical ? "-12%" : "-26%",
+                left: vertical ? "9%" : "8%",
+                width: vertical ? "45vw" : "25vw",
                 cursor: "pointer",
 
                 objectFit: "cover",
@@ -68,15 +71,15 @@ const Collections = () => {
               src={firstCollection}
               alt=''
             />
-            <Grid item xs={6} sm={3}  >
+            <Grid item xs={vertical ? 6 : 3}   >
               <img
                 draggable={false}
                 style={{
-                  borderBottom: mobile || ipad ? `solid 20px ${Colors.BLACKISH}` : `solid 60px ${Colors.BLACKISH}`,
+                  borderBottom: vertical ? `solid 20px ${Colors.BLACKISH}` : `solid 60px ${Colors.BLACKISH}`,
                   paddingBottom: "5px",
 
                   width: "100%",
-                  height: mobile || ipad ? "25vh" : "60vh",
+                  height: vertical ? "30vh" : "60vh",
 
                   objectFit: "cover",
                   objectPosition: "center",
@@ -85,14 +88,14 @@ const Collections = () => {
                 alt=''
               />
             </Grid>
-            <Grid item xs={6} sm={3}  >
+            <Grid item xs={vertical ? 6 : 3}   >
               <img
                 draggable={false}
                 style={{
-                  borderBottom: mobile || ipad ? `solid 20px ${Colors.TAUPE}` : `solid 60px ${Colors.TAUPE}`,
+                  borderBottom: vertical ? `solid 20px ${Colors.TAUPE}` : `solid 60px ${Colors.TAUPE}`,
                   paddingBottom: "5px",
                   width: "100%",
-                  height: mobile || ipad ? "25vh" : "60vh",
+                  height: vertical ? "30vh" : "60vh",
 
                   objectFit: "cover",
                   objectPosition: "center",
@@ -101,14 +104,14 @@ const Collections = () => {
                 alt=''
               />
             </Grid>{" "}
-            <Grid item xs={6} sm={3}>
+            <Grid item xs={vertical ? 6 : 3} >
               <img
                 draggable={false}
                 style={{
-                  borderBottom: mobile || ipad ? `solid 20px ${Colors.SOFT_PINK}` : `solid 60px ${Colors.SOFT_PINK}`,
+                  borderBottom: vertical ? `solid 20px ${Colors.SOFT_PINK}` : `solid 60px ${Colors.SOFT_PINK}`,
                   paddingBottom: "5px",
                   width: "100%",
-                  height: mobile || ipad ? "25vh" : "60vh",
+                  height: vertical ? "30vh" : "60vh",
 
                   objectFit: "cover",
                   objectPosition: "center",
@@ -117,14 +120,14 @@ const Collections = () => {
                 alt=''
               />
             </Grid>{" "}
-            <Grid item xs={6} sm={3}  >
+            <Grid item xs={vertical ? 6 : 3}   >
               <img
                 draggable={false}
                 style={{
-                  borderBottom: mobile || ipad ? `solid 20px ${Colors.PRETTY_CREAM}` : `solid 60px ${Colors.PRETTY_CREAM}`,
+                  borderBottom: vertical ? `solid 20px ${Colors.PRETTY_CREAM}` : `solid 60px ${Colors.PRETTY_CREAM}`,
                   paddingBottom: "5px",
                   width: "100%",
-                  height: mobile || ipad ? "25vh" : "60vh",
+                  height: vertical ? "30vh" : "60vh",
 
                   objectFit: "cover",
                   objectPosition: "center",

@@ -72,7 +72,7 @@ const Carousel = ({
 
     const touch = event.touches[0];
     const diff = touch.clientX - startX;
-    const threshold = window.innerWidth / 8;
+    const threshold = windowSize.width / 8;
     if (diff < -threshold) {
       handleNextClick(1);
       setIsMoving(false);
@@ -98,6 +98,7 @@ const Carousel = ({
   const slideWidthVW = childWidthVW + gapVW;
   const slideWidthPercentage = (slideWidthVW / containerWidthVW) * 100;
 
+
   return (
     <div
       ref={containerRef}
@@ -110,135 +111,139 @@ const Carousel = ({
 
       }}
     >
-      {!noArrows && (
-        <>
+      <div style={{ position: "relative" }}>
+        {!noArrows && (
+          <>
+            <div
+              onClick={() => handleNextClick(1)}
+              style={{
+                zIndex: 1000,
+                position: "absolute",
+                right: outsideButtons ? "-30px" : "20px",
+                cursor: "pointer",
+                top: "50%",
+                transform: "translateY(-50%)",
+                bottom: 0,
+                width: "40px",
+                height: "40px",
+                borderRadius: "50%",
+                backgroundColor: colorBgArrow || Colors.NEON_YELLOW,
+              }}
+            >
+              {" "}
+              <BiRightArrow
+                style={{ position: "absolute", left: "9px", top: "7px" }}
+                size='1.7rem'
+                color={
+                  slideIndex !==
+                    images.length - (ghostEdges ? numberSlides + 1 : numberSlides)
+                    ? colorArrow || Colors.BLACKISH
+                    : "transparent"
+                }
+              />
+            </div>
+            <div
+              onClick={() => handleNextClick(-1)}
+              style={{
+                zIndex: 1000,
+                position: "absolute",
+                left: outsideButtons ? "-30px" : "20px",
+                cursor: "pointer",
+                top: "50%",
+                transform: "translateY(-50%)",
+                bottom: 0,
+                width: "40px",
+                height: "40px",
+                borderRadius: "50%",
+                backgroundColor: colorBgArrow || Colors.NEON_YELLOW,
+              }}
+            >
+              <BiLeftArrow
+                style={{ position: "absolute", left: "4px", top: "7px" }}
+                size='1.7rem'
+                color={
+                  slideIndex !== 0 ? colorArrow || Colors.BLACKISH : "transparent"
+                }
+              />
+            </div>
+          </>
+        )}
+        <div style={{ overflow: "hidden", position: "relative" }}>
+
           <div
-            onClick={() => handleNextClick(1)}
             style={{
-              zIndex: 1000,
-              position: "absolute",
-              right: outsideButtons ? "-30px" : "20px",
-              cursor: "pointer",
-              top: "50%",
-              transform: "translateY(-50%)",
-              bottom: 0,
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              backgroundColor: colorBgArrow || Colors.NEON_YELLOW,
+              columnGap: `${gap}px`,
+              position: "relative",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              transform: `translateX(-${slideIndex * slideWidthPercentage}%)`,
+              transition: "transform 0.5s",
             }}
           >
-            {" "}
-            <BiRightArrow
-              style={{ position: "absolute", left: "9px", top: "7px" }}
-              size='1.7rem'
-              color={
-                slideIndex !==
-                  images.length - (ghostEdges ? numberSlides + 1 : numberSlides)
-                  ? colorArrow || Colors.BLACKISH
-                  : "transparent"
-              }
-            />
-          </div>
-          <div
-            onClick={() => handleNextClick(-1)}
-            style={{
-              zIndex: 1000,
-              position: "absolute",
-              left: outsideButtons ? "-30px" : "20px",
-              cursor: "pointer",
-              top: "50%",
-              transform: "translateY(-50%)",
-              bottom: 0,
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              backgroundColor: colorBgArrow || Colors.NEON_YELLOW,
-            }}
-          >
-            <BiLeftArrow
-              style={{ position: "absolute", left: "4px", top: "7px" }}
-              size='1.7rem'
-              color={
-                slideIndex !== 0 ? colorArrow || Colors.BLACKISH : "transparent"
-              }
-            />
-          </div>
-        </>
-      )}
-      <div style={{ overflow: "hidden" }}>
-        <div
-          style={{
-            columnGap: `${gap}px`,
-            position: "relative",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            transform: `translateX(-${slideIndex * slideWidthPercentage}%)`,
-            transition: "transform 0.5s",
-          }}
-        >
-          {images.map((item: string | JSX.Element, pos: number) => {
-            if (typeof item === "string") {
-              return (
-                <div
-                  draggable={false}
-                  key={pos}
-                  style={{
-                    flex: `0 0 ${childWidthVW}vw`,
-                    overflow: "hidden",
-                  }}
-                >
-                  <img
+
+            {images.map((item: string | JSX.Element, pos: number) => {
+              if (typeof item === "string") {
+                return (
+                  <div
                     draggable={false}
-                    src={item}
-                    alt=''
+                    key={pos}
                     style={{
-                      objectFit: "cover",
-                      height: "100%",
-                      width: "100%",
+                      flex: `0 0 ${childWidthVW}vw`,
+                      overflow: "hidden",
                     }}
-                  />
-                </div>
-              );
-            } else {
-              return (
-                <div
-                  onClick={() => {
-                    console.log("here", pos, slideIndex);
-                    if (pos - slideIndex === 2) handleNextClick(1);
-                    if (pos === slideIndex) handleNextClick(-1);
-                  }}
-                  draggable={false}
-                  key={pos}
-                  style={{
-                    padding: "5px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flex: `0 0 ${childWidthVW}vw`,
+                  >
+                    <img
+                      draggable={false}
+                      src={item}
+                      alt=''
+                      style={{
+                        objectFit: "cover",
+                        height: "100%",
+                        width: "100%",
+                      }}
+                    />
+                  </div>
+                );
+              } else {
+                return (
+                  <div
+                    onClick={() => {
+                      console.log("here", pos, slideIndex);
+                      if (pos - slideIndex === 2) handleNextClick(1);
+                      if (pos === slideIndex) handleNextClick(-1);
+                    }}
+                    draggable={false}
+                    key={pos}
+                    style={{
+                      padding: "5px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flex: `0 0 ${childWidthVW}vw`,
 
-                    transition: "all 0.4s ease-in-out",
+                      transition: "all 0.4s ease-in-out",
 
-                    opacity:
-                      ghostEdges && (pos === 0 || pos === images.length - 2)
-                        ? 0
-                        : focusCentral &&
+                      opacity:
+                        ghostEdges && (pos === 0 || pos === images.length - 2)
+                          ? 0
+                          : focusCentral &&
+                            pos !== slideIndex + Math.floor(numberSlides / 2)
+                            ? 0.4
+                            : 1,
+                      transform:
+                        focusCentral &&
                           pos !== slideIndex + Math.floor(numberSlides / 2)
-                          ? 0.4
-                          : 1,
-                    transform:
-                      focusCentral &&
-                        pos !== slideIndex + Math.floor(numberSlides / 2)
-                        ? `scale(0.6)`
-                        : "none",
-                  }}
-                >
-                  {item}
-                </div>
-              );
-            }
-          })}
+                          ? `scale(0.6)`
+                          : "none",
+                    }}
+                  >
+                    {item}
+                  </div>
+                );
+              }
+            })}
+          </div>
         </div>
       </div>
     </div>

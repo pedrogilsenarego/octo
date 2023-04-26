@@ -15,15 +15,16 @@ import { useSelector } from "react-redux";
 
 const Shop = () => {
   const Theme = useTheme();
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
-  const ipad = useMediaQuery(Theme.breakpoints.down("md"));
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"))
   const navigate = useNavigate();
 
+  const vertical = useSelector<State, boolean>((state) => state.general.positionVertical)
 
 
 
 
-  const listOfImages = mobile ? [
+
+  const listOfImages = vertical ? [
     "https://res.cloudinary.com/daantetcr/image/upload/v1681805638/Octo/collections/Blackish/OCTO_SS23_365a_s3dia6.webp",
     "https://res.cloudinary.com/daantetcr/image/upload/v1681822111/Octo/collections/Taupe/OCTO_SS23_721a_ifo4p7.webp",
   ] : [
@@ -59,13 +60,13 @@ const Shop = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        alignItems: "center",
         rowGap: "5px",
-
         paddingLeft: generalConstants.PADDING,
         paddingRight: generalConstants.PADDING,
-        paddingTop: mobile ? "7vh" : "2vh",
-        paddingBottom: mobile ? "7vh" : "2vh",
-        height: mobile ? "130vh" : "100vh",
+        paddingTop: vertical ? "7vh" : "2vh",
+        paddingBottom: vertical ? "7vh" : "2vh",
+        height: vertical ? "130vh" : "100vh",
       }}
     >
 
@@ -73,15 +74,15 @@ const Shop = () => {
         style={{
           display: "flex",
           width: "100%",
-          flexDirection: mobile ? "column" : "row",
+          flexDirection: vertical ? "column" : "row",
           columnGap: "20px",
           backgroundColor: Colors.PRETTY_CREAM,
-          padding: mobile ? "10px" : "10px",
+          padding: vertical ? "10px" : "10px",
         }}
       >
         <div
           style={{
-            width: mobile ? "100%" : "50%",
+            width: vertical ? "100%" : "50%",
             display: "flex",
 
             flexDirection: "column",
@@ -91,20 +92,20 @@ const Shop = () => {
         >
           <Typography
             fontFamily='Avalanche'
-            fontSize={mobile ? "5vw" : '1.6vw'}
+            fontSize={vertical ? "5vw" : '1.6vw'}
             color={Colors.BLACKISH}
           >
             Products
           </Typography>
           <div >
             <Carousel
-              //noSlide={mobile ? true : false}
-              noArrows={mobile ? true : false}
+              //noSlide={vertical ? true : false}
+              noArrows={vertical ? true : false}
               numberSlides={3}
               ghostEdges
               focusCentral
               outsideButtons
-              width={mobile ? "80vw" : '26vw'}
+              width={vertical ? "80vw" : '26vw'}
               colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
               colorBgArrow='#00000000'
               gap={0}
@@ -118,7 +119,7 @@ const Shop = () => {
         </div>
         <div
           style={{
-            width: mobile ? "100%" : "50%",
+            width: vertical ? "100%" : "50%",
             display: "flex",
 
             flexDirection: "column",
@@ -128,20 +129,20 @@ const Shop = () => {
         >
           <Typography
             fontFamily='Avalanche'
-            fontSize={mobile ? "5vw" : '1.6vw'}
+            fontSize={vertical ? "5vw" : '1.6vw'}
             color={Colors.BLACKISH}
           >
             Patterns
           </Typography>
           <div >
             <Carousel
-              // noSlide={mobile ? true : false}
+              // noSlide={vertical ? true : false}
               numberSlides={3}
               ghostEdges
-              noArrows={mobile ? true : false}
+              noArrows={vertical ? true : false}
               focusCentral
               outsideButtons
-              width={mobile ? "80vw" : '26vw'}
+              width={vertical ? "80vw" : '26vw'}
               colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
               colorBgArrow='#00000000'
               gap={0}
@@ -158,13 +159,13 @@ const Shop = () => {
       <Grid container columnSpacing="5px" >
         {listOfImages.map((item, pos) => {
           return (
-            <Grid item xs={6} sm={3} >
+            <Grid item xs={vertical ? 6 : 3} >
               <img
                 key={pos}
                 draggable={false}
                 style={{
                   width: "100%",
-                  height: mobile ? "40vh" : ipad ? "30vh" : "50vh",
+                  height: vertical ? "40vh" : mobile ? "30vh" : "50vh",
                   objectFit: "cover",
 
                 }}
@@ -179,7 +180,7 @@ const Shop = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginTop: mobile || ipad ? "10px" : "40px",
+          marginTop: vertical ? "10px" : mobile ? "10px" : "40px",
         }}
       >
         <Button

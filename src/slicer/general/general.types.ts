@@ -16,7 +16,9 @@ const generalTypes = {
   SCROLL: "SCROLL",
   SET_COOKIE_POLICY: "SET_COOKIE_POLICY",
 
-  SCROLL_COLLECTIONS:"SCROLL_COLLECTIONS"
+  SCROLL_COLLECTIONS:"SCROLL_COLLECTIONS",
+
+  POSITION_VERTICAL: "POSITION_VERTICAL"
 
   
 };
@@ -29,6 +31,7 @@ export interface GeneralState {
   cookiePolicy:boolean
   loading:boolean
   scrollCollections:CollectionPositions|null
+  positionVertical:boolean
 
 }
 

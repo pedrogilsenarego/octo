@@ -2,6 +2,8 @@ import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { generalConstants } from "../../constants/general";
 import { Colors } from "../../constants/pallete";
 import Carousel from "../../components/Carousel";
+import { useSelector } from "react-redux";
+import { State } from "../../slicer/types";
 
 const About = () => {
   const firstRowImages = [
@@ -14,6 +16,8 @@ const About = () => {
   ];
   const theme = useTheme()
   const mobile = useMediaQuery(theme.breakpoints.down("sm"))
+
+  const vertical = useSelector<State, boolean>((state) => state.general.positionVertical)
 
   return (
     <div
@@ -31,22 +35,22 @@ const About = () => {
       <div style={{ zIndex: 1000 }}></div>
 
       <Grid container columnSpacing='3vw' style={{ display: "flex", }}>
-        <Grid item xs={12} sm={5} style={{ display: "flex", justifyContent: "center" }}>
+        <Grid item xs={vertical ? 12 : 5} style={{ display: "flex", justifyContent: "center" }}>
           <Carousel
             gap={5}
             images={firstRowImages}
-            width={mobile ? "83vw" : "30vw"}
+            width={vertical ? "83vw" : "30vw"}
             numberSlides={1}
             colorBgArrow={Colors.NEON_YELLOW_TRANSPARENT}
           />
         </Grid>
-        <Grid item xs={12} sm={7} style={{ position: "relative" }}>
+        <Grid item xs={vertical ? 12 : 7} style={{ position: "relative" }}>
           <Typography
-            fontSize={mobile ? "8vw" : "5vw"}
+            fontSize={vertical ? "8vw" : "5vw"}
             fontWeight={500}
             fontFamily='Avalanche'
             color={Colors.NEON_YELLOW}
-            style={{ position: "absolute", left: mobile ? 0 : "-4vw", right: mobile ? 0 : undefined, top: "5vh" }}
+            style={{ position: "absolute", left: vertical ? 0 : "-4vw", right: vertical ? 0 : undefined, top: "5vh" }}
           >
             We are Octomistic.
           </Typography>
@@ -87,11 +91,11 @@ const About = () => {
             </Typography>
             <Typography
               fontFamily='Avalanche'
-              fontSize={mobile ? "5vw" : "2.5vw"}
+              fontSize={vertical ? "5vw" : "2.5vw"}
               color={Colors.TAUPE}
               style={{
                 textAlign: "start",
-                lineHeight: mobile ? "4vh" : "5vh",
+                lineHeight: vertical ? "4vh" : "5vh",
                 marginTop: "20px",
               }}
             >

@@ -13,6 +13,7 @@ import CookiePolicy from "./presentional/CookiePopup";
 import ScrollLock from "./hoc";
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools'
+import usePosition from "./hooks/usePosition";
 
 
 
@@ -35,6 +36,8 @@ const theme = createTheme({
 
 
 function App() {
+
+  usePosition()
 
   return (
     <BrowserRouter>
