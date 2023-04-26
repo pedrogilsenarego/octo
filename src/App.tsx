@@ -13,7 +13,7 @@ import CookiePolicy from "./presentional/CookiePopup";
 import ScrollLock from "./hoc";
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools'
-import { Helmet } from "react-helmet"
+
 
 
 
@@ -38,10 +38,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Helmet>
-        <title>OCTO • Born Octomistic </title>
-        <meta name="description" content="Baby Brand • We are moms, dads and kids with no strings attached." />
-      </Helmet>
+
       <ThemeProvider theme={theme}>
         <StyledEngineProvider injectFirst>
           <QueryClientProvider client={queryClient}>

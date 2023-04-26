@@ -15,7 +15,8 @@ import { useSelector } from "react-redux";
 
 const Shop = () => {
   const Theme = useTheme();
-  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
+  const ipad = useMediaQuery(Theme.breakpoints.down("md"));
   const navigate = useNavigate();
 
 
@@ -62,8 +63,8 @@ const Shop = () => {
 
         paddingLeft: generalConstants.PADDING,
         paddingRight: generalConstants.PADDING,
-        paddingTop: mobile ? "7vh" : "4vh",
-        paddingBottom: mobile ? "7vh" : "4vh",
+        paddingTop: mobile ? "7vh" : "2vh",
+        paddingBottom: mobile ? "7vh" : "2vh",
         height: mobile ? "130vh" : "100vh",
       }}
     >
@@ -75,7 +76,7 @@ const Shop = () => {
           flexDirection: mobile ? "column" : "row",
           columnGap: "20px",
           backgroundColor: Colors.PRETTY_CREAM,
-          padding: mobile ? "10px" : "30px",
+          padding: mobile ? "10px" : "10px",
         }}
       >
         <div
@@ -157,13 +158,13 @@ const Shop = () => {
       <Grid container columnSpacing="5px" >
         {listOfImages.map((item, pos) => {
           return (
-            <Grid item xs={6} md={3} >
+            <Grid item xs={6} sm={3} >
               <img
                 key={pos}
                 draggable={false}
                 style={{
                   width: "100%",
-                  height: mobile ? "40vh" : "50vh",
+                  height: mobile ? "40vh" : ipad ? "30vh" : "50vh",
                   objectFit: "cover",
 
                 }}
@@ -178,7 +179,7 @@ const Shop = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginTop: "40px",
+          marginTop: mobile || ipad ? "10px" : "40px",
         }}
       >
         <Button

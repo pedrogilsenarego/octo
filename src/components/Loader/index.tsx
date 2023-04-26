@@ -10,7 +10,7 @@ interface Props {
 
 const Loader = ({ size = 100, color, customMessage, progress }: Props) => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%", alignItems: "center", justifyContent: "center" }}>
+    <div style={{ display: "flex", flexDirection: "column", height: "100%", alignItems: "center", justifyContent: "center", width: "100%" }}>
       <img
         draggable={false}
         style={{

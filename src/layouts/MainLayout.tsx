@@ -12,7 +12,7 @@ export const MainLayout = ({ noMarginBottom, children }: Props) => {
   return (
     <>
 
-      <div style={{ marginBottom: noMarginBottom ? "0px" : "100px" }}>
+      <div style={{ marginBottom: noMarginBottom ? "0px" : "100px", overflowX: "hidden" }}>
 
 
 

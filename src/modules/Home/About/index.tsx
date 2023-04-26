@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 const About = () => {
   const Theme = useTheme();
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   const navigate = useNavigate();
 
 

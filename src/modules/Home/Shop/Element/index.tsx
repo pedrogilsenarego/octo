@@ -23,7 +23,7 @@ const Element = ({ item }: Props) => {
         alignItems: "center",
         rowGap: "7px",
         position: "relative",
-        paddingBottom: "0px",
+        paddingBottom: "30px",
         paddingTop: "0px",
 
 
@@ -45,9 +45,10 @@ const Element = ({ item }: Props) => {
             ? `solid 2px ${Colors.NEON_YELLOW}`
             : "solid 0px transparent",
           width: "100%",
-          overflow: "hidden",
+
           boxShadow: loading ? "0px 0px 0px 0px" : "0px 0px 10px 0px #0000001e",
           aspectRatio: 1,
+
         }}
       >
         <img
@@ -58,7 +59,6 @@ const Element = ({ item }: Props) => {
             backgroundColor: loading ? "transparent" : "#F5F5F5",
             borderRadius: "50%",
             opacity: loading ? 0 : 1,
-
             objectFit: "contain",
             top: 0,
             left: 0,
@@ -67,25 +67,35 @@ const Element = ({ item }: Props) => {
           }}
           onLoad={() => setLoading(false)}
         />
+        <div style={{
+          position: "absolute",
+          bottom: "0",
+          left: "0",
+          right: "0",
+          top: "104%",
+          transform: "translateY(-110%)"
+        }}>
+          <Typography
+            style={{
+
+              color: "#ffffff",
+              fontSize: "45%",
+
+              textTransform: "uppercase",
+
+              textAlign: "center",
+              fontWeight: 800,
+              letterSpacing: "3px",
+
+              lineHeight: "9px",
+            }}
+          >
+
+            {item.title}
+          </Typography>
+        </div>
       </Box>
-      <Typography
-        style={{
-          color: "#ffffff",
-          fontSize: "0.6rem",
-          display: "inline-block",
-          verticalAlign: "bottom",
-          textTransform: "uppercase",
-          bottom: "-7px",
-          textAlign: "center",
-          fontWeight: 800,
-          letterSpacing: "3px",
-          left: 0,
-          right: 0,
-          lineHeight: "13px",
-        }}
-      >
-        {item.title}
-      </Typography>
+
     </div>
   );
 };

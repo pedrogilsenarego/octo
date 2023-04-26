@@ -9,7 +9,7 @@ import { scrollTo } from "../../slicer/general/general.actions";
 import Footer from "../../presentional/Footer";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { Colors } from "../../constants/pallete";
-//import firebase from '../../firebase/utils';
+
 
 
 const Home = () => {
@@ -23,10 +23,6 @@ const Home = () => {
   const handlePageChange = (e: number) => {
     dispatch(scrollTo(e))
   }
-
-  // useEffect(() => {
-  //   firebase.analytics().logEvent('landing_page_opened');
-  // }, []);
 
   const renderLaptop = () => {
     return (

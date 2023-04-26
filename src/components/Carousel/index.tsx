@@ -107,6 +107,7 @@ const Carousel = ({
       style={{
         width: `${containerWidthVW}vw`,
         position: "relative",
+
       }}
     >
       {!noArrows && (

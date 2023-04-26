@@ -11,7 +11,7 @@ const SideBar = () => {
     (state) => state.general.scrollTo
   );
   const Theme = useTheme()
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"))
 
 
   const renderLaptop = () => {
