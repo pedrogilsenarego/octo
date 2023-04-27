@@ -16,6 +16,8 @@ interface Props {
   ghostEdges?: boolean;
   noArrows?: boolean;
   setValue?: (item: any) => void
+  height?: string
+
 }
 
 
@@ -33,6 +35,7 @@ const Carousel = ({
   ghostEdges,
   colorArrow,
   noArrows,
+  height,
   setValue,
 }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -52,12 +55,10 @@ const Carousel = ({
     const handleResize = () => {
       setWindowSize({ width: window.innerWidth });
     };
-
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-
   }, []);
 
 
@@ -69,7 +70,6 @@ const Carousel = ({
       slideIndex > images.length - (numberSlides + (ghostEdges ? 2 : 1))
     )
       return;
-
     setSlideIndex((prevIndex) => (prevIndex + 1 * direction) % images.length);
   };
 
@@ -77,7 +77,6 @@ const Carousel = ({
     const touch = event.touches[0];
     setStartX(touch.clientX);
     setIsMoving(true);
-
   };
 
   const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
@@ -97,7 +96,6 @@ const Carousel = ({
 
   const handleTouchEnd = () => {
     setIsMoving(false);
-
   };
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -207,6 +205,7 @@ const Carousel = ({
                     style={{
                       flex: `0 0 ${childWidthVW}vw`,
                       overflow: "hidden",
+                      height: height || "auto"
                     }}
                   >
                     <img

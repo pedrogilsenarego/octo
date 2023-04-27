@@ -7,9 +7,10 @@ import { Colors } from "../../constants/pallete";
 
 interface Props {
   item: Category | FabricsType;
+  selected?: boolean
 }
 
-const Element = ({ item }: Props) => {
+const Element = ({ item, selected }: Props) => {
   const [hover, setHover] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -41,7 +42,7 @@ const Element = ({ item }: Props) => {
           cursor: "pointer",
           position: "relative",
           borderRadius: "50%",
-          border: hover
+          border: hover || selected
             ? `solid 2px ${Colors.NEON_YELLOW}`
             : "solid 0px transparent",
           width: "100%",

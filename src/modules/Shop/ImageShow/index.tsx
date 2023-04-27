@@ -1,19 +1,24 @@
 import { Box } from "@mui/material";
 import { useContext } from "react";
-import CardMedia from "../../../components/CardMedia";
-import { categories } from "../../../constants/category";
-import { fabrics } from "../../../constants/fabrics";
-import { Colors } from "../../../constants/pallete";
+
 import { ProductContext } from "../ProductContext";
 import Carousel from "../../../components/Carousel";
 
 const ImageShow = () => {
-  const { category, pattern, setInfoPopup, product } = useContext(ProductContext);
+  const { product } = useContext(ProductContext);
 
   return (
-    <Box style={{ borderRadius: "5px", display: "flex", justifyContent: "center" }}>
-      {product && (<Carousel images={product?.fotos || []} gap={5} width="40vw" numberSlides={1} />)}
-
+    <Box style={{ display: "flex", justifyContent: "center" }}>
+      {product && (
+        <Carousel
+          key={product.icon}
+          images={product?.fotos || []}
+          gap={5}
+          width='40vw'
+          numberSlides={1}
+          height={"500px"}
+        />
+      )}
     </Box>
   );
 };

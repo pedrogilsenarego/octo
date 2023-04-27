@@ -81,8 +81,6 @@ const FilterCategory = () => {
         <div >
           <Carousel
             setValue={handleSetCategory}
-
-            //noSlide={vertical ? true : false}
             noArrows={vertical ? true : false}
             numberSlides={3}
             ghostEdges
@@ -92,8 +90,8 @@ const FilterCategory = () => {
             colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
             colorBgArrow='#00000000'
             gap={0}
-            images={newCategories.map((category, pos) => (
-              <Element key={pos} item={category} />
+            images={newCategories.map((item, pos) => (
+              <Element key={pos} item={item} selected={category === item.title} />
             ))}
           />
         </div>
@@ -128,8 +126,8 @@ const FilterCategory = () => {
             colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
             colorBgArrow='#00000000'
             gap={0}
-            images={newPatterns.map((category, pos) => (
-              <Element key={pos} item={category} />
+            images={newPatterns.map((item, pos) => (
+              <Element key={pos} item={item} selected={pattern === item.title} />
             ))}
 
 
