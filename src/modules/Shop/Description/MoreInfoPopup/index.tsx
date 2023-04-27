@@ -8,24 +8,23 @@ import { addProductToCart } from "../../../../slicer/cart/cart.actions";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
 import { i18n } from "../../../../translations/i18n";
 import { ProductContext } from "../../ProductContext";
-import Carrousell from "./Carousell";
+import Carousel from "../../../../components/Carousel";
+
 
 const MoreInfoPopup = () => {
   const dispatch = useDispatch();
-  //const { product, fabric } = useContext(ProductContext);
+
   const Theme = useTheme()
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
 
+  const { pattern, products } =
+    useContext(ProductContext);
 
-  // const productsAvailable: Product[] = products.filter(
-  //   (value) =>
-  //     value[product !== null ? "category" : "pattern"] ===
-  //     (product !== null ? product : fabric)
-  // );
 
   return (
     <Box width='100%' display='flex' flexDirection='column' gap={0.5}>
-      {/* {productsAvailable.map((item, pos) => {
+      {products.map((item, pos) => {
+
         return (
           <Grid
             container
@@ -39,7 +38,7 @@ const MoreInfoPopup = () => {
             }}
           >
             <Grid item xs={12} sm={7} >
-              <Carrousell images={item.images} />
+              <Carousel images={item.fotos} gap={5} width="40vw" numberSlides={1} />
             </Grid>
             <Grid item xs={12} sm={5}>
               {" "}
@@ -78,7 +77,7 @@ const MoreInfoPopup = () => {
                     flexDirection: "column",
                   }}
                 >
-                  {fabric !== null && (
+                  {pattern !== null && (
                     <Typography>{item.price}&nbsp;&#183;&nbsp;€</Typography>
                   )}
                   <Button
@@ -98,7 +97,7 @@ const MoreInfoPopup = () => {
             </Grid>
           </Grid>
         );
-      })} */}
+      })}
     </Box>
   );
 };

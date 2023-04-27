@@ -97,28 +97,28 @@ const Description = () => {
         </>
       )}
 
-      {/* {category !== null && (
-        // <Popup
-        //   closeButton={mobile ? true : false}
-        //   openPopup={infoPopup}
-        //   title={`${categories[product].title}&nbsp;&#183;&nbsp;${categories[product].price}€`}
-        //   setOpenPopup={setInfoPopup}
-        //   onClose={() => setInfoPopup(false)}
-        // >
-        //   <MoreInfoPopup />
-        // </Popup>
-      )}
-      {pattern !== null && (
+      {category !== null && (
         <Popup
           closeButton={mobile ? true : false}
           openPopup={infoPopup}
-          title={fabrics[fabric].title}
+          title={`${category}&nbsp;&#183;&nbsp;is this correct?€`}
           setOpenPopup={setInfoPopup}
           onClose={() => setInfoPopup(false)}
         >
           <MoreInfoPopup />
         </Popup>
-      )} */}
+      )}
+      {pattern !== null && (
+        <Popup
+          closeButton={mobile ? true : false}
+          openPopup={infoPopup}
+          title={pattern}
+          setOpenPopup={setInfoPopup}
+          onClose={() => setInfoPopup(false)}
+        >
+          <MoreInfoPopup />
+        </Popup>
+      )}
     </Box>
   );
 };

@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { memo, useContext } from "react";
+import { useContext } from "react";
 import Button from "../../../../components/Buttons/Button";
 import { i18n } from "../../../../translations/i18n";
 import { ProductContext } from "../../ProductContext";
@@ -10,7 +10,7 @@ import { addProductToCart } from "../../../../slicer/cart/cart.actions";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
 import Loader from "../../../../components/Loader";
 
-const FabricSelector = memo(() => {
+const FabricSelector = () => {
   const { category, pattern, selectedFabrics, setSelectedFabrics, products, isLoading } =
     useContext(ProductContext);
   const dispatch = useDispatch();
@@ -101,6 +101,6 @@ const FabricSelector = memo(() => {
       </div>
     </Box>
   );
-});
+};
 
 export default FabricSelector;

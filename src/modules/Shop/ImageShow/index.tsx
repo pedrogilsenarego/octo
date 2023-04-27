@@ -7,24 +7,24 @@ import { Colors } from "../../../constants/pallete";
 import { ProductContext } from "../ProductContext";
 
 const ImageShow = () => {
-  const { } = useContext(ProductContext);
+  const { category, pattern, setInfoPopup } = useContext(ProductContext);
 
   return (
     <Box style={{ borderRadius: "5px", backgroundColor: Colors.PRETTY_CREAM }}>
-      {/* {product !== null && (
-        // <CardMedia
-        //   image={categories[product].image}
-        //   height='500px'
-        //   onClick={() => setInfoPopup(true)}
-        // />
-      )}{" "}
-      {fabric !== null && (
+      {category !== null && (
         <CardMedia
-          image={fabrics[fabric].image}
+          image={categories?.find((categoryItem) => categoryItem.title === category)?.image}
           height='500px'
           onClick={() => setInfoPopup(true)}
         />
-      )} */}
+      )}{" "}
+      {pattern !== null && (
+        <CardMedia
+          image={fabrics?.find((categoryItem) => categoryItem.title === pattern)?.image}
+          height='500px'
+          onClick={() => setInfoPopup(true)}
+        />
+      )}
     </Box>
   );
 };

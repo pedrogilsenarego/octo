@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { Colors } from "../../../../../constants/pallete";
-import { memo, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { State } from "../../../../../slicer/types";
 import { CartProduct } from "../../../../../slicer/cart/cart.types";
@@ -14,7 +14,7 @@ interface Props {
   pos?: number
 }
 
-const Element = memo(({ valuee, stateHighLightStatus, pos }: Props) => {
+const Element = ({ valuee, stateHighLightStatus, pos }: Props) => {
   const [click, setClick] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
   //  // const { product, fabric } =
@@ -79,6 +79,6 @@ const Element = memo(({ valuee, stateHighLightStatus, pos }: Props) => {
       />
     </Box>
   );
-});
+};
 
 export default Element;

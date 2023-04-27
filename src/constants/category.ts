@@ -45,6 +45,7 @@ export type Product = {
   category:string
   title?:string
   images: string[]
+  fotos:string[]
   price: number
   pattern:string
   icon:string

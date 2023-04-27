@@ -38,7 +38,7 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
   const [infoPopup, setInfoPopup] = useState<boolean>(false);
   const [selectedFabrics, setSelectedFabrics] = useState<Product[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
-
+  console.log(infoPopup)
   console.log(products)
 
 
