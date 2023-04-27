@@ -3,13 +3,13 @@ import { generalConstants } from "../../constants/general";
 import FilterCategory from "./FilterCategory";
 import Description from "./Description";
 import ImageShow from "./ImageShow";
-import React from "react";
+import React, { memo } from "react";
 import { ProductContextProvider } from "./ProductContext";
 
 interface Props {
   show?: boolean
 }
-const Shop = ({ show }: Props) => {
+const Shop = memo(({ show = false }: Props) => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
 
@@ -86,6 +86,6 @@ const Shop = ({ show }: Props) => {
 
     </>
   );
-};
+});
 
 export default Shop;

@@ -15,7 +15,7 @@ export const handleFetchProducts = ({
 }:Filters) => {
   return new Promise((resolve, reject) => {
     let ref = firestore.collection("products").limit(pageSize);
-    //ref = ref.where(typeFilter, "==", filter);
+    if(filter && typeFilter) ref = ref.where(typeFilter, "==", filter);
     ref
       .get()
       .then((snapshot: any) => {
@@ -37,6 +37,7 @@ export const handleFetchProducts = ({
         });
       })
       .catch((err: any) => {
+        console.log(err)
         reject(err);
       });
   });

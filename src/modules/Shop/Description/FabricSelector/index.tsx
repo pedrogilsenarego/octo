@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import Button from "../../../../components/Buttons/Button";
 import { i18n } from "../../../../translations/i18n";
 import { ProductContext } from "../../ProductContext";
@@ -10,7 +10,7 @@ import { addProductToCart } from "../../../../slicer/cart/cart.actions";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
 import Loader from "../../../../components/Loader";
 
-const FabricSelector = () => {
+const FabricSelector = memo(() => {
   const { category, pattern, selectedFabrics, setSelectedFabrics, products, isLoading } =
     useContext(ProductContext);
   const dispatch = useDispatch();
@@ -52,7 +52,7 @@ const FabricSelector = () => {
                     handleSelectFabrics(item);
                   }}
                 >
-                  <Element valuee={item.icon} />
+                  <Element valuee={item.icon} pos={pos} />
                 </Grid>
               );
             })}
@@ -69,7 +69,7 @@ const FabricSelector = () => {
                       handleSelectFabrics(item);
                     }}
                   >
-                    <Element valuee={item.icon} />
+                    <Element valuee={item.icon} pos={pos} />
                     <Box
                       display='flex'
                       justifyContent='center'
@@ -101,6 +101,6 @@ const FabricSelector = () => {
       </div>
     </Box>
   );
-};
+});
 
 export default FabricSelector;

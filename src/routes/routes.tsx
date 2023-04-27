@@ -37,7 +37,7 @@ export const routes: AppRoute[] = [
     path: ROUTE_PATHS.SHOP,
     component: (
       <PagesLayout noMarginBottom>
-        <Shop />
+        <Shop show />
       </PagesLayout>
     ),
   },
