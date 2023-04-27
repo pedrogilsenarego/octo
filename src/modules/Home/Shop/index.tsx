@@ -4,7 +4,7 @@ import { categories } from "../../../constants/category";
 import { fabrics } from "../../../constants/fabrics";
 import { Colors } from "../../../constants/pallete";
 import { i18n } from "../../../translations/i18n";
-import Element from "./Element";
+import Element from "../../../sharedComponents/Element";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../constants/routes";
 import { generalConstants } from "../../../constants/general";

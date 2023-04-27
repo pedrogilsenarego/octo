@@ -11,11 +11,17 @@ import { updateSuccessNotification } from "../../../../slicer/general/general.ac
 import Loader from "../../../../components/Loader";
 
 const FabricSelector = () => {
-  const { category, pattern, selectedFabrics, setSelectedFabrics, products, isLoading } =
-    useContext(ProductContext);
+  const {
+    category,
+    pattern,
+    selectedFabrics,
+    setSelectedFabrics,
+    products,
+    isLoading,
+  } = useContext(ProductContext);
   const dispatch = useDispatch();
-  const Theme = useTheme()
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
+  const Theme = useTheme();
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
 
   const productsAvailable: Product[] = products?.filter(
     (product: Product) => product.category === category
@@ -38,8 +44,29 @@ const FabricSelector = () => {
   };
 
   return (
-    <Box mt='10px' style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}>
-      {isLoading ? <div style={{ width: "300px", height: "300px", display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}><Loader customMessage="Getting your products" /></div> :
+    <Box
+      mt='10px'
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      {isLoading ? (
+        <div
+          style={{
+            width: "300px",
+            height: "300px",
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Loader customMessage='Getting your products' />
+        </div>
+      ) : (
         <Grid container rowGap={3} columnSpacing={2}>
           {category !== null &&
             productsAvailable?.map((item, pos: number) => {
@@ -81,9 +108,16 @@ const FabricSelector = () => {
                 </>
               );
             })}
-        </Grid>}
+        </Grid>
+      )}
 
-      <div style={{ marginTop: "60px", display: "flex", justifyContent: mobile ? "center" : "start" }} >
+      <div
+        style={{
+          marginTop: "60px",
+          display: "flex",
+          justifyContent: mobile ? "center" : "start",
+        }}
+      >
         <Button
           onClick={() => {
             dispatch(addProductToCart(selectedFabrics));

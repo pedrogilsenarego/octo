@@ -34,7 +34,6 @@ const ManageStorys = () => {
             onClick={() => navigate(ROUTE_PATHS.ADMIN_PRODUCT_CREATE)}
           />
         </Box>
-        <Shop show />
         {/* {tableData.length > 0 && (<Card style={{ padding: "20px" }}>
           <TableList columns={tableColumns} rows={tableData.rows} onAction={handleAction} />
         </Card>)} */}

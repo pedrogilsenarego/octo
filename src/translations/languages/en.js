@@ -16,7 +16,7 @@ export const content = {
         certified: "Most Octomistic brand",
         privacyPolicy: "Privacy Policy",
         refunds: "Refunds & Exchanges",
-        customerService: "Costumer Service",
+        customerService: "Customer Service",
         contact: "Contact Us",
       },
       policies: {
@@ -33,7 +33,7 @@ export const content = {
           paymentOption: "Payment Option",
           paymentOptionText:
             "At Octo, the process of purchasing items is straightforward. Users simply need to add the items they want to their shopping cart and complete the checkout process. Shoppers have the flexibility to choose their preferred method of payment from the following options: Visa or Mastercard credit cards, PayPal, MBWay or Multibanco.",
-          costumerCare: "Costumer Care",
+          costumerCare: "Customer Care",
           costumerCareText:
             "At Octo, we're always available to address any concerns or questions you may have. If you have any inquiries or requests for information, feel free to reach out to us at our designated email address: hello@octo-mistic.com. We're here to help and will promptly respond to any emails we receive.",
           responsability: "Responsability",

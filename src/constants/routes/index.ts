@@ -14,4 +14,5 @@ export const ROUTE_PATHS = {
   MANIFEST:"/manifest",
   CONTACT_US:"/contact-us",
   LOGIN:"/login",
+  TEST:"/test-env"
 }

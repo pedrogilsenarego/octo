@@ -1,9 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
-import { Category } from "../../../../constants/category";
-import { FabricsType } from "../../../../constants/fabrics";
+import { Category } from "../../constants/category";
+import { FabricsType } from "../../constants/fabrics";
 
-import { Colors } from "../../../../constants/pallete";
+import { Colors } from "../../constants/pallete";
 
 interface Props {
   item: Category | FabricsType;

@@ -1,100 +1,143 @@
-import { Grid, Box, Typography, useTheme, useMediaQuery } from "@mui/material";
-import { i18n } from "../../../translations/i18n";
-import { categories } from "../../../constants/category";
+import { Typography, useTheme, useMediaQuery } from "@mui/material";
+import { Product, categories } from "../../../constants/category";
 import { fabrics } from "../../../constants/fabrics";
-import Element from "./Element";
-import { useState } from "react";
+import Element from "../../../sharedComponents/Element";
+
 import { Colors } from "../../../constants/pallete";
+import { useSelector } from "react-redux";
+import { State } from "../../../slicer/types";
+import Carousel from "../../../components/Carousel";
+import { useContext, useState } from "react";
+import { ProductContext } from "../ProductContext";
 
 const FilterCategory = () => {
-  const [categoryText, setCategoryText] = useState("");
-  const [filterText, setFilterText] = useState("");
+
   const Theme = useTheme()
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
+  const { category, pattern, setCategory, setPattern } = useContext(ProductContext);
+  const vertical = useSelector<State, boolean>((state) => state.general.positionVertical)
+  const [mounted, setMounted] = useState(false);
+
+
+  const newCategories = [...categories];
+  const firstObjectCopy = { ...newCategories[0] };
+  newCategories.unshift(firstObjectCopy);
+  newCategories.push(firstObjectCopy);
+  newCategories.push(firstObjectCopy);
+
+  const newPatterns = [...fabrics];
+  const firstObjectCopy2 = { ...newPatterns[0] };
+  newPatterns.unshift(firstObjectCopy2);
+  newPatterns.push(firstObjectCopy2);
+  newPatterns.push(firstObjectCopy2);
+
+  const handleSetCategory = (value: any) => {
+    if (mounted) {
+
+      setPattern(null)
+      setCategory(value.props.item.title)
+    }
+    setMounted(true)
+  }
+
+  const handleSetPattern = (value: any) => {
+    if (mounted) {
+
+      setCategory(null)
+      setPattern(value.props.item.title)
+    }
+    setMounted(true)
+  }
 
 
   return (
+
     <div
       style={{
-        borderBottom: `solid 2px ${Colors.PRETTY_CREAM}`,
-        paddingLeft: mobile ? "0vw" : "18vw",
-        paddingRight: mobile ? "0vw" : "18vw",
-        paddingTop: "10px",
-        paddingBottom: "60px",
-        marginBottom: "10px"
+        display: "flex",
+        width: "100%",
+        flexDirection: vertical ? "column" : "row",
+        columnGap: "20px",
+        backgroundColor: Colors.PRETTY_CREAM,
+        padding: vertical ? "10px" : "10px",
       }}
     >
-      <Grid container columnSpacing='30px' rowGap={3} style={{ marginTop: "20px" }}>
-        <Grid item xs={12}>
-          <Box display='flex' flexDirection='column' rowGap={2}>
-            <Box display='flex' columnGap={0} alignItems='center' justifyContent="center">
-              <Typography fontWeight={800}>
-                {i18n.t("modules.shopCategory.title")}&nbsp;&#183;&nbsp;
-              </Typography>
-              <Typography style={{ textTransform: "uppercase" }}>
-                {categoryText}
-              </Typography>
-            </Box>
-            <Grid
-              container
-              style={{ borderRadius: "10px" }}
-              columnSpacing={2}
-              rowSpacing={1}
-            >
-              {categories.map((item, pos) => {
-                return (
-                  <Grid
-                    key={pos}
-                    item
-                    justifyContent='center'
-                    alignItems='center'
-                    xs={12 / 5}
-                    sm={12 / 10}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <Element key={pos} setText={setCategoryText} item={item} />
-                  </Grid>
-                );
-              })}
-            </Grid>
-          </Box>
-        </Grid>
-        <Grid item xs={12} mt={mobile ? "0px" : "20px"}>
-          <Box display='flex' flexDirection='column' rowGap={2} >
-            <Box display='flex' columnGap={0} alignItems='center' justifyContent="center">
-              <Typography fontWeight={800}>
-                {i18n.t("modules.shopFabric.title")}&nbsp;&#183;&nbsp;
-              </Typography>
-              <Typography style={{ textTransform: "uppercase" }}>
-                {filterText}
-              </Typography>
-            </Box>
-            <Grid
-              container
-              style={{ borderRadius: "10px", marginTop: "5px" }}
-              columnSpacing="30px"
-              rowGap={2}
-            >
-              {fabrics.map((item, pos) => {
-                return (
-                  <Grid
-                    key={pos}
-                    item
-                    justifyContent='center'
-                    alignItems='center'
-                    xs={12 / 4}
-                    sm={12 / 8}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <Element key={pos} setText={setFilterText} item={item} />
-                  </Grid>
-                );
-              })}
-            </Grid>
-          </Box>
-        </Grid>
-      </Grid>
+      <div
+        style={{
+          width: vertical ? "100%" : "50%",
+          display: "flex",
+
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Typography
+          fontFamily='Avalanche'
+          fontSize={vertical ? "5vw" : '1.6vw'}
+          color={Colors.BLACKISH}
+        >
+          Products
+        </Typography>
+        <div >
+          <Carousel
+            setValue={handleSetCategory}
+
+            //noSlide={vertical ? true : false}
+            noArrows={vertical ? true : false}
+            numberSlides={3}
+            ghostEdges
+            focusCentral
+            outsideButtons
+            width={vertical ? "80vw" : '26vw'}
+            colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
+            colorBgArrow='#00000000'
+            gap={0}
+            images={newCategories.map((category, pos) => (
+              <Element key={pos} item={category} />
+            ))}
+          />
+        </div>
+      </div>
+      <div
+        style={{
+          width: vertical ? "100%" : "50%",
+          display: "flex",
+
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Typography
+          fontFamily='Avalanche'
+          fontSize={vertical ? "5vw" : '1.6vw'}
+          color={Colors.BLACKISH}
+        >
+          Patterns
+        </Typography>
+        <div >
+          <Carousel
+            setValue={handleSetPattern}
+            // noSlide={vertical ? true : false}
+            numberSlides={3}
+            ghostEdges
+            noArrows={vertical ? true : false}
+            focusCentral
+            outsideButtons
+            width={vertical ? "80vw" : '26vw'}
+            colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
+            colorBgArrow='#00000000'
+            gap={0}
+            images={newPatterns.map((category, pos) => (
+              <Element key={pos} item={category} />
+            ))}
+
+
+          />
+        </div>
+      </div>
     </div>
+
   );
 };
 

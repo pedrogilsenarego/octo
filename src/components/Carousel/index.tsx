@@ -15,6 +15,7 @@ interface Props {
   focusCentral?: boolean;
   ghostEdges?: boolean;
   noArrows?: boolean;
+  setValue?: (item: any) => void
 }
 
 
@@ -32,6 +33,7 @@ const Carousel = ({
   ghostEdges,
   colorArrow,
   noArrows,
+  setValue,
 }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [windowSize, setWindowSize] = useState({
@@ -40,7 +42,10 @@ const Carousel = ({
   const [startX, setStartX] = useState(0);
   const [isMoving, setIsMoving] = useState(false);
 
-
+  useEffect(() => {
+    if (setValue) setValue(images[slideIndex + 1])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slideIndex])
 
 
   useEffect(() => {
@@ -220,7 +225,7 @@ const Carousel = ({
                 return (
                   <div
                     onClick={() => {
-                      console.log("here", pos, slideIndex);
+                      if (setValue) setValue(item)
                       if (pos - slideIndex === 2) handleNextClick(1);
                       if (pos === slideIndex) handleNextClick(-1);
                     }}

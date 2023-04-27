@@ -37,8 +37,18 @@ export const routes: AppRoute[] = [
     path: ROUTE_PATHS.SHOP,
     component: (
       <PagesLayout noMarginBottom>
-        <Shop show />
+        <Shop />
       </PagesLayout>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.TEST,
+    component: (
+      <WithAdminAuth>
+        <PagesLayout noMarginBottom>
+          <Shop show />
+        </PagesLayout>
+      </WithAdminAuth>
     ),
   },
   {
