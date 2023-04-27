@@ -51,7 +51,7 @@ const CardMedia = ({
         draggable={false}
         onLoad={() => setImageLoading(false)}
         style={{
-          borderRadius: borderRadius ?? "4px",
+          borderRadius: borderRadius ?? "0px",
           cursor: "pointer",
           opacity: imageLoading ? 0 : 1,
           objectFit: "cover",

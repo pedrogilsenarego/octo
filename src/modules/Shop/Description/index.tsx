@@ -5,13 +5,10 @@ import { useContext, useState } from "react";
 import Popup from "../../../components/Popup";
 import { ProductContext } from "../ProductContext";
 import MoreInfoPopup from "./MoreInfoPopup";
-import { fabrics } from "../../../constants/fabrics";
-import Detail from "../../Shop/Description/Detail"
-import { categories } from "../../../constants/category";
-import { Colors } from "../../../constants/pallete";
+
 
 const Description = () => {
-  const { category, pattern, infoPopup, setInfoPopup, selectedFabrics, products } =
+  const { category, pattern, infoPopup, setInfoPopup, } =
     useContext(ProductContext);
   const [moreInfo, setMoreInfo] = useState(false);
   const Theme = useTheme()
@@ -22,8 +19,7 @@ const Description = () => {
     <Box
       style={{
         padding: "20px",
-        backgroundColor: Colors.PRETTY_CREAM,
-        borderRadius: "5px",
+
         minHeight: "500px",
       }}
       display='flex'
@@ -53,13 +49,7 @@ const Description = () => {
           <Typography style={{ textTransform: "uppercase" }} fontWeight={800}>
             {pattern}
           </Typography>
-          <Box display='flex' alignItems='center'>
-            {selectedFabrics.map((item, pos) => {
-              return <Typography key={pos}>&nbsp;{item.price} | </Typography>;
-            })}
 
-            <Typography fontWeight={800}>&nbsp;€</Typography>
-          </Box>
         </Box>
       )}
 

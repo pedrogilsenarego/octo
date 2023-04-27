@@ -12,10 +12,11 @@ interface ProductContextType {
   setPattern: (value: string | null) => void;
   infoPopup: boolean
   setInfoPopup: (value: boolean) => void
-  selectedFabrics: Product[];
-  setSelectedFabrics: (selectedFabrics: Product[]) => void
+
   products: [] | Product[]
   isLoading: boolean
+  product: Product | null;
+  setProduct: (product: Product | null) => void
 
 }
 
@@ -27,10 +28,11 @@ export const ProductContext = createContext<ProductContextType>({
   setPattern: () => { },
   infoPopup: false,
   setInfoPopup: (value) => { },
-  selectedFabrics: [],
-  setSelectedFabrics: (value) => { },
+
   products: [],
-  isLoading: true
+  isLoading: true,
+  product: null,
+  setProduct: () => { }
 
 });
 
@@ -38,16 +40,12 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
   const [category, setCategory] = useState<string | null>("Sleeping Bag");
   const [pattern, setPattern] = useState<string | null>(null);
   const [infoPopup, setInfoPopup] = useState<boolean>(false);
-  const [selectedFabrics, setSelectedFabrics] = useState<Product[]>([]);
-  const [products, setProducts] = useState<Product[]>([]);
 
-  useEffect(() => {
-    setSelectedFabrics([])
-  }, [category, pattern])
+  const [products, setProducts] = useState<Product[]>([]);
+  const [product, setProduct] = useState<Product | null>(null)
 
   const filter = useDebounce((category ? category : pattern || "sleeping Bag"), 500)
   const typeFilter = useDebounce((category ? "category" : "pattern" || "category"), 500)
-
 
   const { isLoading, error, data: productsQuery, refetch } = useQuery(['products', { filter, typeFilter }], fetchProducts, {
     staleTime: 3600000, // 1 hour in milliseconds
@@ -59,6 +57,7 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
   useEffect(() => {
     if (productsQuery?.data && productsQuery.data !== products) {
       setProducts(productsQuery.data);
+      setProduct(productsQuery.data[0])
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productsQuery])
@@ -70,10 +69,11 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
     setPattern,
     infoPopup,
     setInfoPopup,
-    selectedFabrics,
-    setSelectedFabrics,
+
     products,
-    isLoading
+    isLoading,
+    product,
+    setProduct
 
   };
 

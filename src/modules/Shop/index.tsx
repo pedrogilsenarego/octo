@@ -1,10 +1,9 @@
 import { Box, Grid, useTheme, useMediaQuery, Typography } from "@mui/material";
 import { generalConstants } from "../../constants/general";
 import FilterCategory from "./FilterCategory";
-import Description from "./Description";
-import ImageShow from "./ImageShow";
 import React from "react";
 import { ProductContextProvider } from "./ProductContext";
+import ImageDescComp from "./ImageDescComp";
 
 interface Props {
   show?: boolean
@@ -63,17 +62,11 @@ const Shop = ({ show }: Props) => {
 
 
 
-          <Grid mt={mobile ? "0px" : "40px"} container columnSpacing={2} rowSpacing="40px" alignItems="spaceBetween" >
+          <Grid mt={mobile ? "0px" : "40px"} container columnSpacing={2} rowSpacing="40px" alignItems="spaceBetween" justifyContent="center" >
             <Grid item xs={12}>
               <FilterCategory />
             </Grid>
-
-            <Grid item xs={12} sm={6}>
-              <ImageShow />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Description />
-            </Grid>
+            <ImageDescComp />
           </Grid>
 
 

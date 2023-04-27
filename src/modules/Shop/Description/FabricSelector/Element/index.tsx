@@ -1,11 +1,9 @@
 import { Box } from "@mui/material";
 import { Colors } from "../../../../../constants/pallete";
-import { useContext, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { State } from "../../../../../slicer/types";
-import { CartProduct } from "../../../../../slicer/cart/cart.types";
+import { useState } from "react";
+
 import { Ellipsis } from "react-spinners-css";
-import { ProductContext } from "../../../ProductContext";
+
 
 interface Props {
   size?: string;
@@ -15,24 +13,14 @@ interface Props {
 }
 
 const Element = ({ valuee, stateHighLightStatus, pos }: Props) => {
-  const [click, setClick] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(true);
-  //  // const { product, fabric } =
-  //     useContext(ProductContext);
-  const cartProducts = useSelector<State, CartProduct[]>(
-    (state) => state.cart.cartItems
-  );
 
-  // useEffect(() => {
-  //   setClick(false);
-  // }, [cartProducts, product, fabric]);
+  const [loading, setLoading] = useState<boolean>(true);
+
 
   return (
     <Box
       key={pos}
-      onClick={() => {
-        setClick(!click);
-      }}
+
       style={{
         cursor: "pointer",
         height: "100%",
@@ -40,7 +28,7 @@ const Element = ({ valuee, stateHighLightStatus, pos }: Props) => {
         position: "relative",
 
         border:
-          click || stateHighLightStatus
+          stateHighLightStatus
             ? `solid 3px ${Colors.NEON_YELLOW}`
             : `solid 3px transparent`,
         borderRadius: "50%",
@@ -48,6 +36,7 @@ const Element = ({ valuee, stateHighLightStatus, pos }: Props) => {
     >
       {loading && (
         <Ellipsis
+
           size={40}
           color={Colors.NEON_YELLOW}
           style={{
@@ -67,7 +56,7 @@ const Element = ({ valuee, stateHighLightStatus, pos }: Props) => {
         onLoad={() => setLoading(false)}
         src={valuee}
         alt=''
-
+        key={pos}
         style={{
           position: "absolute",
           top: "-2.5%",
