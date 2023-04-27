@@ -2,6 +2,8 @@ import { createContext, useEffect, useState } from "react";
 import { Product } from "../../constants/category";
 import { fetchProducts } from "../../services/shop/services";
 import { useQuery } from "react-query";
+import useDebounce from "../../hooks/useDebounce";
+
 
 interface ProductContextType {
   category: string | null;
@@ -43,14 +45,16 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
     setSelectedFabrics([])
   }, [category, pattern])
 
-  const filter = category ? category : pattern || "sleeping Bag"
-  const typeFilter = category ? "category" : "pattern" || "category"
+  const filter = useDebounce((category ? category : pattern || "sleeping Bag"), 500)
+  const typeFilter = useDebounce((category ? "category" : "pattern" || "category"), 500)
 
 
   const { isLoading, error, data: productsQuery, refetch } = useQuery(['products', { filter, typeFilter }], fetchProducts, {
     staleTime: 3600000, // 1 hour in milliseconds
-    cacheTime: 600000, // 10 minutes in milliseconds
+    cacheTime: 3600000, // 10 minutes in milliseconds
   })
+
+
 
   useEffect(() => {
     if (productsQuery?.data && productsQuery.data !== products) {
@@ -58,11 +62,6 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productsQuery])
-
-  useEffect(() => {
-    refetch();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [category, pattern]);
 
   const contextValue: ProductContextType = {
     category,
