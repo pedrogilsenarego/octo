@@ -20,7 +20,7 @@ export type Category = {
 id:number
 title:string
 icon:string
-image:string
+
 price: number
 moreInfo: {
   description: string
@@ -41,7 +41,7 @@ export const categories:Category[] = [
       washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
     
      },
-    image: "https://res.cloudinary.com/dmrll3fnf/image/upload/v1682601761/saco_cama_jdkr7o.webp"
+   
  },
  {
   id: 1,
@@ -54,8 +54,7 @@ export const categories:Category[] = [
     washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
   
    },
-  image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
-
+ 
 },
 {
   id: 2,
@@ -68,8 +67,7 @@ export const categories:Category[] = [
     washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
   
    },
-  image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
-  },
+   },
   {
     id: 3,
     price: 34,
@@ -81,8 +79,7 @@ export const categories:Category[] = [
       washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
     
      },
-    image: "https://res.cloudinary.com/daantetcr/image/upload/v1681157429/Octo/strollerPocket/OCTO_Icones-06_pquc35.png"
-     },
+       },
   
   {
     id: 4,
@@ -95,8 +92,7 @@ export const categories:Category[] = [
       washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
     
      },
-    image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
-  },
+    },
   {
     id: 5,
     title: i18n.t("constants.categories.10"),
@@ -107,8 +103,7 @@ export const categories:Category[] = [
       dimensions: "DIM",
       washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
      },
-    image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
-  },
+    },
  
    {
     id: 6,
@@ -121,8 +116,7 @@ export const categories:Category[] = [
       washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
     
      },
-    image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
-  },
+    },
 
 
   {
@@ -135,8 +129,7 @@ export const categories:Category[] = [
       dimensions: "N.A.",
       washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
      },
-    image: "https://res.cloudinary.com/daantetcr/image/upload/v1680907360/Octo/ProductBandana/WhatsApp_Image_2023-04-07_at_23.41.06_r9zoev.jpg"
-  },
+   },
   
   
  
@@ -155,8 +148,7 @@ export const categories:Category[] = [
       washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
     
      },
-    image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
-  },
+     },
   {
     id: 9,
       title: i18n.t("constants.categories.6"),
@@ -168,7 +160,6 @@ export const categories:Category[] = [
       washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
     
      },
-    image: "https://www.manfrottoschoolofxcellence.com/wp-content/uploads/2017/09/20-sarah-and-olivers-4.jpg"
-   },
+     },
  
 ]

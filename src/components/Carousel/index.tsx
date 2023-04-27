@@ -16,7 +16,8 @@ interface Props {
   ghostEdges?: boolean;
   noArrows?: boolean;
   setValue?: (item: any) => void
-  height?: string
+  height?: string,
+  objectFi?: "cover" | "contain"
 
 }
 
@@ -36,6 +37,7 @@ const Carousel = ({
   colorArrow,
   noArrows,
   height,
+  objectFi = "cover",
   setValue,
 }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -213,7 +215,7 @@ const Carousel = ({
                       src={item}
                       alt=''
                       style={{
-                        objectFit: "cover",
+                        objectFit: objectFi,
                         height: "100%",
                         width: "100%",
                       }}

@@ -15,7 +15,7 @@ const Element = ({ size, valuee, noClick, stateHighLightStatus }: Props) => {
 
   const findElement = () => {
     const result = fabrics[valuee];
-    return result?.image
+    return result?.icon
   }
   return (
     <Box

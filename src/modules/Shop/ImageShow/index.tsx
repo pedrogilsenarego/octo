@@ -17,6 +17,7 @@ const ImageShow = () => {
           width='40vw'
           numberSlides={1}
           height={"500px"}
+          objectFi="contain"
         />
       )}
     </Box>
