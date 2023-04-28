@@ -217,7 +217,7 @@ export const content = {
           7: "Bed Pocket",
           8: "Bed Bumper",
           9: "Collar Bib",
-          10: "Stroller Pocket",
+          10: "Laundry Kit",
         },
         fabrics: {
           1: "Vichy Powder Pink",

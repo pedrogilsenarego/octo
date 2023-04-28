@@ -13,8 +13,14 @@ import { Colors } from "../../../../constants/pallete";
 import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs";
 
 const FabricSelector = () => {
-  const { category, pattern, setProduct, products, productSelected, setProductSelected } =
-    useContext(ProductContext);
+  const {
+    category,
+    pattern,
+    setProduct,
+    products,
+    productSelected,
+    setProductSelected,
+  } = useContext(ProductContext);
 
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
@@ -53,18 +59,29 @@ const FabricSelector = () => {
         justifyContent: "center",
         flexDirection: "column",
         alignItems: "center",
-        rowGap: "90px",
+        rowGap: "60px",
       }}
     >
-      <Grid container rowGap="65px" columnGap='45px' justifyContent='start' marginTop="20px">
+      <Grid
+        container
+        rowGap='25px'
+        columnGap='45px'
+        justifyContent='start'
+        marginTop='20px'
+      >
         {category !== null &&
           productsAvailable?.map((item, pos: number) => {
             return (
               <Grid
                 item
                 xs={2}
-                style={{ display: "flex", justifyContent: "center", flexDirection: "column", textAlign: "center" }}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  textAlign: "center",
 
+                }}
                 key={pos}
                 onClick={() => handleSelectProduct(pos)}
               >
@@ -75,20 +92,31 @@ const FabricSelector = () => {
                 />
                 <Box
                   display='flex'
-                  justifyContent='start'
+                  justifyContent='center'
                   alignItems='center'
                   flexDirection='column'
-                  style={{ height: '100%', flex: 1 }}
+                  style={{ height: "70px" }}
                 >
-                  <Typography style={{
-                    textTransform: "uppercase",
-                    textAlign: "center",
+                  <Typography
+                    style={{
+                      textTransform: "uppercase",
+                      textAlign: "center",
 
-                    letterSpacing: "2px",
+                      letterSpacing: "2px",
 
-                    lineHeight: "11px",
-                  }} fontWeight={pos === productSelected ? 800 : 500} fontSize="0.6rem">{item.pattern}</Typography>
-                  <Typography fontWeight={pos === productSelected ? 800 : 500} fontSize="0.9rem">{item.price}&nbsp;•&nbsp;€</Typography>
+                      lineHeight: "11px",
+                    }}
+                    fontWeight={pos === productSelected ? 800 : 500}
+                    fontSize='0.6rem'
+                  >
+                    {item.pattern}
+                  </Typography>
+                  <Typography
+                    fontWeight={pos === productSelected ? 800 : 500}
+                    fontSize='0.9rem'
+                  >
+                    {item.price}&nbsp;€
+                  </Typography>
                 </Box>
               </Grid>
             );
@@ -100,7 +128,12 @@ const FabricSelector = () => {
                 <Grid
                   item
                   xs={2}
-                  style={{ display: "flex", justifyContent: "center", flexDirection: "column", textAlign: "center" }}
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    textAlign: "center",
+                  }}
                   key={pos}
                   onClick={() => handleSelectProduct(pos)}
                 >
@@ -111,20 +144,33 @@ const FabricSelector = () => {
                   />
                   <Box
                     display='flex'
-                    justifyContent='start'
+                    justifyContent='center'
                     alignItems='center'
                     flexDirection='column'
-                    style={{ height: '100%', flex: 1 }}
+                    style={{ height: "70px" }}
+
                   >
-                    <Typography style={{
-                      textTransform: "uppercase",
-                      textAlign: "center",
+                    <Typography
+                      style={{
+                        textTransform: "uppercase",
+                        textAlign: "center",
 
-                      letterSpacing: "2px",
+                        letterSpacing: "2px",
 
-                      lineHeight: "11px",
-                    }} fontWeight={pos === productSelected ? 800 : 500} fontSize="0.6rem">{item.category}</Typography>
-                    <Typography fontWeight={pos === productSelected ? 800 : 500} fontFamily="cursive" fontSize="0.9rem">{item.price}&nbsp;•&nbsp;€</Typography>
+                        lineHeight: "11px",
+                      }}
+                      fontWeight={pos === productSelected ? 800 : 500}
+                      fontSize='0.6rem'
+                    >
+                      {item.category}
+                    </Typography>
+                    <Typography
+                      fontWeight={pos === productSelected ? 800 : 500}
+                      fontFamily='cursive'
+                      fontSize='0.9rem'
+                    >
+                      {item.price}&nbsp;€
+                    </Typography>
                   </Box>
                 </Grid>
               </>
@@ -140,7 +186,7 @@ const FabricSelector = () => {
             display: "flex",
             alignItems: "center",
             padding: "5px 10px 5px 10px",
-            columnGap: "10px"
+            columnGap: "10px",
           }}
         >
           <BsInstagram

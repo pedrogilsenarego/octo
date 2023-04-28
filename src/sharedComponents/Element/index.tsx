@@ -73,7 +73,7 @@ const Element = ({ item, selected }: Props) => {
           bottom: "0",
           left: "0",
           right: "0",
-          top: "104%",
+          top: "107%",
           transform: "translateY(-110%)"
         }}>
           <Typography

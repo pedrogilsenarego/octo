@@ -1,7 +1,7 @@
 import { Typography, Divider, Box, useTheme, useMediaQuery } from "@mui/material";
 import { i18n } from "../../../translations/i18n";
 import FabricSelector from "./FabricSelector";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { ProductContext } from "../ProductContext";
 import Detail from "./Detail";
@@ -14,6 +14,10 @@ const Description = () => {
   const [moreInfo, setMoreInfo] = useState(false);
   const Theme = useTheme()
   //const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
+
+  useEffect(() => {
+    setMoreInfo(false)
+  }, [category, pattern])
 
 
   return (
@@ -62,24 +66,27 @@ const Description = () => {
       <Divider style={{ marginTop: "10px" }} />
 
       <>
-        <div
-          style={{ marginTop: "20px", cursor: "pointer" }}
-          onClick={() => setMoreInfo(!moreInfo)}
-        >
-          <Typography>{i18n.t("modules.product.moreInfo")}</Typography>
-        </div>
-        {moreInfo && product && (
+        {category !== null && (
+          <div
+            style={{ marginTop: "20px", cursor: "pointer" }}
+            onClick={() => setMoreInfo(!moreInfo)}
+          >
+            <Typography>{i18n.t("modules.product.moreInfo")}</Typography>
+          </div>
+        )}
+
+        {moreInfo && product && category !== null && (
           <>
             <Detail
-              detail={categories?.find((item) => item?.title === product?.title)?.moreInfo?.description}
+              detail={categories?.find((item) => item?.title === category)?.moreInfo?.description}
               title={i18n.t("modules.product.detail.description")}
             />
             <Detail
-              detail={categories?.find((item) => item?.title === product?.title)?.moreInfo?.dimensions}
+              detail={categories?.find((item) => item?.title === category)?.moreInfo?.dimensions}
               title={i18n.t("modules.product.detail.dimensions")}
             />
             <Detail
-              detail={categories?.find((item) => item?.title === product?.title)?.moreInfo?.washing}
+              detail={categories?.find((item) => item?.title === category)?.moreInfo?.washing}
               title={i18n.t("modules.product.detail.washing")}
             />
           </>
