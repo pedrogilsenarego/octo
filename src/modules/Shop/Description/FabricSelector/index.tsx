@@ -20,6 +20,7 @@ const FabricSelector = () => {
     products,
     productSelected,
     setProductSelected,
+    vertical
   } = useContext(ProductContext);
 
   const Theme = useTheme();
@@ -65,7 +66,8 @@ const FabricSelector = () => {
       <Grid
         container
         rowGap='25px'
-        columnGap='45px'
+        columnGap={vertical ? "0px" : '45px'}
+        columnSpacing={vertical ? "10px" : "0px"}
         justifyContent='start'
         marginTop='20px'
       >
@@ -74,7 +76,7 @@ const FabricSelector = () => {
             return (
               <Grid
                 item
-                xs={2}
+                xs={vertical ? 6 : 2}
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -127,7 +129,7 @@ const FabricSelector = () => {
               <>
                 <Grid
                   item
-                  xs={2}
+                  xs={vertical ? 6 : 2}
                   style={{
                     display: "flex",
                     justifyContent: "center",

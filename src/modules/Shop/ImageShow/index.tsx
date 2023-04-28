@@ -5,7 +5,9 @@ import { ProductContext } from "../ProductContext";
 import Carousel from "../../../components/Carousel";
 
 const ImageShow = () => {
-  const { product } = useContext(ProductContext);
+  const { product, vertical } = useContext(ProductContext);
+
+
 
   return (
     <Box style={{ display: "flex", justifyContent: "center" }}>
@@ -15,7 +17,7 @@ const ImageShow = () => {
           images={product?.fotos || []}
 
           gap={5}
-          width='40vw'
+          width={vertical ? "88vw" : '40vw'}
           numberSlides={1}
           height={"500px"}
           objectFi="contain"
