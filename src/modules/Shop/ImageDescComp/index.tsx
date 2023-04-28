@@ -6,7 +6,7 @@ import { ProductContext } from "../ProductContext";
 import Loader from "../../../components/Loader";
 
 const ImageDescComp = () => {
-  const { category, pattern, setCategory, setPattern, isLoading } =
+  const { isLoading } =
     useContext(ProductContext);
   return (
     <>

@@ -233,7 +233,7 @@ const Carousel = ({
             </div>
           </>
         )}
-        <div style={{ overflow: "hidden", position: "relative" }}>
+        <div style={{ overflow: "hidden", position: "relative", cursor: "pointer" }}>
           <div
             style={{
               columnGap: `${gap}px`,

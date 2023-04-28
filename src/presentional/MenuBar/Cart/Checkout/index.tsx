@@ -11,8 +11,6 @@ import { State } from "../../../../slicer/types";
 import { CartProduct } from "../../../../slicer/cart/cart.types";
 
 import Button from "../../../../components/Buttons/Button";
-import { categories } from "../../../../constants/category";
-import { fabrics } from "../../../../constants/fabrics";
 import { clearCart } from "../../../../slicer/cart/cart.actions";
 import { stripeLocal, stripeProduction } from "../../../../constants/stripe";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
@@ -54,14 +52,13 @@ const Checkout = ({ closeCart }: Props) => {
       quantity: number;
     }[] = [];
 
-    // cartProducts.forEach((item) => {
-    //   items.push({
-    //     title: `${categories[item.product.category].title}-${fabrics[item.product.pattern].title
-    //       }`,
-    //     amount: item.product.price * 100,
-    //     quantity: item.value,
-    //   });
-    // });
+    cartProducts.forEach((item: CartProduct) => {
+      items.push({
+        title: `${item.product.category}-${item.product.pattern}`,
+        amount: item.product.price * 100,
+        quantity: item.value,
+      });
+    });
     await fetch(
       stripeProduction,
       {

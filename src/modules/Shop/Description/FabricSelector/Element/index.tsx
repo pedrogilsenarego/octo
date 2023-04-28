@@ -27,11 +27,8 @@ const Element = ({ valuee, stateHighLightStatus, pos }: Props) => {
         aspectRatio: 1,
         position: "relative",
         borderRadius: "4px",
-        boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
-        border:
-          stateHighLightStatus
-            ? `solid 3px ${Colors.BLACKISH}`
-            : `solid 3px transparent`,
+
+
 
       }}
     >

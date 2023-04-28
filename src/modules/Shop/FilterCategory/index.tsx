@@ -86,7 +86,7 @@ const FilterCategory = () => {
             ghostEdges
             focusCentral
             outsideButtons
-            width={vertical ? "80vw" : '20vw'}
+            width={vertical ? "80vw" : '26vw'}
             colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
             colorBgArrow='#00000000'
             gap={0}
@@ -122,7 +122,7 @@ const FilterCategory = () => {
             noArrows={vertical ? true : false}
             focusCentral
             outsideButtons
-            width={vertical ? "80vw" : '20vw'}
+            width={vertical ? "80vw" : '26vw'}
             colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
             colorBgArrow='#00000000'
             gap={0}

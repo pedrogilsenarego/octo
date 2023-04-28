@@ -51,6 +51,7 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
   const [product, setProduct] = useState<Product | null>(null)
   const [productSelected, setProductSelected] = useState<number>(0);
 
+
   const filter = useDebounce((category ? category : pattern || "sleeping Bag"), 500)
   const typeFilter = useDebounce((category ? "category" : "pattern" || "category"), 500)
 
@@ -58,6 +59,10 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
     staleTime: 3600000, // 1 hour in milliseconds
     cacheTime: 3600000, // 10 minutes in milliseconds
   })
+
+  useEffect(() => {
+    setProductSelected(0)
+  }, [category, pattern])
 
 
 
