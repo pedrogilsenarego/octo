@@ -12,19 +12,19 @@ interface Action {
 
 const cartReducer = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
-    // case cartTypes.ADD_PRODUCT_TO_CART:
-    //   return {
-    //     ...state,
-    //     cartItems: handleAddToCart({
-    //       prevCartItems: state.cartItems,
-    //       nextCartItems: action.payload,
-    //     }),
-    //   };
+    case cartTypes.ADD_PRODUCT_TO_CART:
+      return {
+        ...state,
+        cartItems: handleAddToCart({
+          prevCartItems: state.cartItems,
+          nextCartItems: action.payload,
+        }),
+      };
     case cartTypes.DELETE_PRODUCT:
       return {
         ...state,
         cartItems: state.cartItems.filter(
-          (item, id) => item.product.uid !== action.payload
+          (item, id) => item.product.documentID !== action.payload
         ),
       };
       case cartTypes.CHANGE_VALUE:
@@ -32,7 +32,7 @@ const cartReducer = (state = INITIAL_STATE, action: Action) => {
         return {
           ...state,
           cartItems: state.cartItems.map((item) => {
-            if (item.product.uid === id) {
+            if (item.product.documentID === id) {
               // Return a new object with the updated value property
               return {
                 ...item,

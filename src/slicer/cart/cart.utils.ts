@@ -1,13 +1,6 @@
- type Product = {
-  uid: string
-  category:number
-  title?:string
-  images: string[]
-  price: number
-  pattern:number
-  icon:string
-  
-}
+import { Product } from "../../constants/category";
+
+ 
 
 
  interface CartProduct {
@@ -30,7 +23,7 @@ export const handleAddToCart = ({ prevCartItems, nextCartItems }: Props) => {
   for (let i = 0; i < nextCartItems.length; i++) {
     const nextCartItem = nextCartItems[i];
     const existingCartItemIndex = updatedCartItems.findIndex(
-      (cartItem) => cartItem.product.uid === nextCartItem.uid
+      (cartItem) => cartItem.product.documentID === nextCartItem.documentID
     );
     if (existingCartItemIndex !== -1) {
       // item already exists in cart, increment the value

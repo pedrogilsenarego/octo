@@ -8,8 +8,6 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../../../components/Buttons/Button";
 import Incrementor from "../../../components/Incrementor";
-import { categories } from "../../../constants/category";
-import { fabrics } from "../../../constants/fabrics";
 import { Colors } from "../../../constants/pallete";
 import { clearCart, updateCart } from "../../../slicer/cart/cart.actions";
 import { CartProduct } from "../../../slicer/cart/cart.types";
@@ -49,7 +47,7 @@ const Cart = ({ closeCart }: Props) => {
       rowGap={mobile ? 0 : 1}
       padding={mobile ? "1rem" : "2rem"}
     >
-      {/* <Box display='flex' justifyContent='space-between' alignItems='center' >
+      <Box display='flex' justifyContent='space-between' alignItems='center' >
         <Typography
 
           mb={mobile ? "0px" : '20px'}
@@ -90,14 +88,14 @@ const Cart = ({ closeCart }: Props) => {
                   fontSize={mobile ? "0.7rem" : "1rem"}
                   style={{ textTransform: "uppercase" }}
                 >
-                  {categories[item.product.category]?.title}-
-                  {fabrics[item.product.pattern]?.title}
+                  {item?.product?.category}-
+                  {item?.product?.pattern}
                 </Typography>
               </Box>
               <Incrementor
-                key={item.product.uid}
+                key={item.product.documentID}
                 updateValue={(value: number) => {
-                  dispatch(updateCart(value, item.product.uid));
+                  dispatch(updateCart(value, item.product.documentID));
                 }}
                 initialValue={item.value}
               />
@@ -142,7 +140,7 @@ const Cart = ({ closeCart }: Props) => {
             />
           </>
         )}
-      </div> */}
+      </div>
     </Box>
   );
 };

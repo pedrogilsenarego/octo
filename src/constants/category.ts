@@ -5,7 +5,7 @@ import { i18n } from "../translations/i18n";
 
 
 export type Product = {
-  uid: string
+  documentID:string
   category:string
   title?:string
   images: string[]
