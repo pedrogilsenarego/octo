@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { Colors } from "../../constants/pallete";
+import usePreventScroll from "../../hooks/usePreventScrollY";
 
 interface Props {
   images: string[] | JSX.Element[];
@@ -15,13 +16,10 @@ interface Props {
   focusCentral?: boolean;
   ghostEdges?: boolean;
   noArrows?: boolean;
-  setValue?: (item: any) => void
-  height?: string,
-  objectFi?: "cover" | "contain"
-
+  setValue?: (item: any) => void;
+  height?: string;
+  objectFi?: "cover" | "contain";
 }
-
-
 
 const Carousel = ({
   images = [],
@@ -46,15 +44,17 @@ const Carousel = ({
   });
   const [startX, setStartX] = useState(0);
   const [isMoving, setIsMoving] = useState(false);
-  const [addSlide, setAddSlide] = useState(0)
+  const [addSlide, setAddSlide] = useState(0);
+  const [touch, setTouch] = useState(false)
 
-  console.log(addSlide)
+
+
+  usePreventScroll(touch)
 
   useEffect(() => {
-    if (setValue) setValue(images[slideIndex + 1])
+    if (setValue) setValue(images[slideIndex + 1]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [slideIndex])
-
+  }, [slideIndex]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -66,8 +66,6 @@ const Carousel = ({
     };
   }, []);
 
-
-
   const handleNextClick = (direction: number) => {
     if (slideIndex === 0 && direction === -1) return;
     if (
@@ -76,11 +74,12 @@ const Carousel = ({
     )
       return;
     setSlideIndex((prevIndex) => (prevIndex + 1 * direction) % images.length);
-    setAddSlide(0)
+    setAddSlide(0);
   };
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     const touch = event.touches[0];
+    setTouch(true)
     setStartX(touch.clientX);
     setIsMoving(true);
   };
@@ -90,9 +89,9 @@ const Carousel = ({
 
     const touch = event.touches[0];
     const diff = touch.clientX - startX;
-    setAddSlide(diff)
+    setAddSlide(diff);
 
-    const threshold = windowSize.width / 3;
+    const threshold = windowSize.width / (focusCentral ? 10 : 3);
     if (diff < -threshold) {
       handleNextClick(1);
       setIsMoving(false);
@@ -103,8 +102,9 @@ const Carousel = ({
   };
 
   const handleTouchEnd = () => {
+    setTouch(false)
     setIsMoving(false);
-    setAddSlide(0)
+    setAddSlide(0);
   };
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -119,19 +119,15 @@ const Carousel = ({
   const slideWidthVW = childWidthVW + gapVW;
   const slideWidthPercentage = (slideWidthVW / containerWidthVW) * 100;
 
-
   return (
-
     <div
       ref={containerRef}
-
       onTouchStart={noSlide ? undefined : handleTouchStart}
       onTouchMove={noSlide ? undefined : handleTouchMove}
       onTouchEnd={noSlide ? undefined : handleTouchEnd}
       style={{
         width: `${containerWidthVW}vw`,
         position: "relative",
-
       }}
     >
       <div style={{ position: "relative" }}>
@@ -185,14 +181,15 @@ const Carousel = ({
                 style={{ position: "absolute", left: "4px", top: "7px" }}
                 size='1.7rem'
                 color={
-                  slideIndex !== 0 ? colorArrow || Colors.BLACKISH : "transparent"
+                  slideIndex !== 0
+                    ? colorArrow || Colors.BLACKISH
+                    : "transparent"
                 }
               />
             </div>
           </>
         )}
         <div style={{ overflow: "hidden", position: "relative" }}>
-
           <div
             style={{
               columnGap: `${gap}px`,
@@ -200,11 +197,11 @@ const Carousel = ({
               display: "flex",
               alignItems: "center",
               justifyContent: "flex-start",
-              transform: `translateX(calc(-${slideIndex * slideWidthPercentage}% + ${addSlide}px))`,
+              transform: `translateX(calc(-${slideIndex * slideWidthPercentage
+                }% + ${addSlide}px))`,
               transition: addSlide !== 0 ? "transform 0s" : "transform 0.5s",
             }}
           >
-
             {images.map((item: string | JSX.Element, pos: number) => {
               if (typeof item === "string") {
                 return (
@@ -214,7 +211,7 @@ const Carousel = ({
                     style={{
                       flex: `0 0 ${childWidthVW}vw`,
                       overflow: "hidden",
-                      height: height || "auto"
+                      height: height || "auto",
                     }}
                   >
                     <img
@@ -233,7 +230,7 @@ const Carousel = ({
                 return (
                   <div
                     onClick={() => {
-                      if (setValue) setValue(item)
+                      if (setValue) setValue(item);
                       if (pos - slideIndex === 2) handleNextClick(1);
                       if (pos === slideIndex) handleNextClick(-1);
                     }}
@@ -271,7 +268,6 @@ const Carousel = ({
         </div>
       </div>
     </div>
-
   );
 };
 

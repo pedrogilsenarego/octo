@@ -158,7 +158,7 @@ const Initial = () => {
           top: 0,
           bottom: 0,
           height: "100%",
-          overflow: "hidden",
+          overflowX: "hidden",
           width: "100vw",
         }}
       >
@@ -186,7 +186,7 @@ const Initial = () => {
             top: 0,
             bottom: 0,
             height: "100%",
-            overflow: "hidden",
+            overflowX: "hidden",
             width: "100vw",
           }}
         >

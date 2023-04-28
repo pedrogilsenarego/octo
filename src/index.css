@@ -34,7 +34,8 @@ html,body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  overflow-x: hidden !important;
+  overflow-y: scroll;
+  
   background-color: #F5F5F5 !important;
   
 }
@@ -53,20 +54,6 @@ body::-webkit-scrollbar-thumb {
   
 }
 
-@media (max-width: 900px) {
-  body {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    overflow-x: hidden !important;
-    /* hide scrollbar */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  body::-webkit-scrollbar {
-    display: none;
-  }
-}
 
 
 code {

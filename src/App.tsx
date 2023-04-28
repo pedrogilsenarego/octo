@@ -13,7 +13,7 @@ import CookiePolicy from "./presentional/CookiePopup";
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools'
 import usePosition from "./hooks/usePosition";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 
 
 
@@ -43,23 +43,24 @@ function App() {
 
 
 
-
   return (
-    <BrowserRouter>
+    <div >
+      <BrowserRouter>
 
-      <ThemeProvider theme={theme}>
-        <StyledEngineProvider injectFirst>
-          <QueryClientProvider client={queryClient}>
-            <CookiePolicy />
-            <Snackbar />
-            <CssBaseline />
-            <ScrollToTop />
-            <AppRoutes />
-            {/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
-          </QueryClientProvider>
-        </StyledEngineProvider>
-      </ThemeProvider>
-    </BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <StyledEngineProvider injectFirst>
+            <QueryClientProvider client={queryClient}>
+              <CookiePolicy />
+              <Snackbar />
+              <CssBaseline />
+              <ScrollToTop />
+              <AppRoutes />
+              {/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
+            </QueryClientProvider>
+          </StyledEngineProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+    </div>
   );
 }
 
