@@ -46,6 +46,9 @@ const Carousel = ({
   });
   const [startX, setStartX] = useState(0);
   const [isMoving, setIsMoving] = useState(false);
+  const [addSlide, setAddSlide] = useState(0)
+
+  console.log(addSlide)
 
   useEffect(() => {
     if (setValue) setValue(images[slideIndex + 1])
@@ -73,6 +76,7 @@ const Carousel = ({
     )
       return;
     setSlideIndex((prevIndex) => (prevIndex + 1 * direction) % images.length);
+    setAddSlide(0)
   };
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
@@ -86,7 +90,9 @@ const Carousel = ({
 
     const touch = event.touches[0];
     const diff = touch.clientX - startX;
-    const threshold = windowSize.width / 8;
+    setAddSlide(diff)
+
+    const threshold = windowSize.width / 3;
     if (diff < -threshold) {
       handleNextClick(1);
       setIsMoving(false);
@@ -98,6 +104,7 @@ const Carousel = ({
 
   const handleTouchEnd = () => {
     setIsMoving(false);
+    setAddSlide(0)
   };
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -193,8 +200,8 @@ const Carousel = ({
               display: "flex",
               alignItems: "center",
               justifyContent: "flex-start",
-              transform: `translateX(-${slideIndex * slideWidthPercentage}%)`,
-              transition: "transform 0.5s",
+              transform: `translateX(calc(-${slideIndex * slideWidthPercentage}% + ${addSlide}px))`,
+              transition: addSlide !== 0 ? "transform 0s" : "transform 0.5s",
             }}
           >
 

@@ -2,9 +2,8 @@ import { Typography, Divider, Box, useTheme, useMediaQuery } from "@mui/material
 import { i18n } from "../../../translations/i18n";
 import FabricSelector from "./FabricSelector";
 import { useContext, useState } from "react";
-import Popup from "../../../components/Popup";
+
 import { ProductContext } from "../ProductContext";
-import MoreInfoPopup from "./MoreInfoPopup";
 
 
 const Description = () => {
@@ -12,7 +11,7 @@ const Description = () => {
     useContext(ProductContext);
   const [moreInfo, setMoreInfo] = useState(false);
   const Theme = useTheme()
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
+  //const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
 
 
   return (
@@ -85,29 +84,6 @@ const Description = () => {
             </>
           )}
         </>
-      )}
-
-      {category !== null && (
-        <Popup
-          closeButton={mobile ? true : false}
-          openPopup={infoPopup}
-          title={`${category}&nbsp;&#183;&nbsp;is this correct?€`}
-          setOpenPopup={setInfoPopup}
-          onClose={() => setInfoPopup(false)}
-        >
-          <MoreInfoPopup />
-        </Popup>
-      )}
-      {pattern !== null && (
-        <Popup
-          closeButton={mobile ? true : false}
-          openPopup={infoPopup}
-          title={pattern}
-          setOpenPopup={setInfoPopup}
-          onClose={() => setInfoPopup(false)}
-        >
-          <MoreInfoPopup />
-        </Popup>
       )}
     </Box>
   );
