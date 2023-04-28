@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { Colors } from "../../constants/pallete";
 import usePreventScroll from "../../hooks/usePreventScrollY";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setStopScroll } from "../../slicer/general/general.actions";
+import { State } from "../../slicer/types";
 
 interface Props {
   images: string[] | JSX.Element[];
@@ -49,6 +50,7 @@ const Carousel = ({
   const [addSlide, setAddSlide] = useState(0);
   const [touch, setTouch] = useState(false)
   const dispatch = useDispatch()
+  const vertical = useSelector<State, boolean>((state) => state.general.positionVertical)
 
 
 
@@ -91,6 +93,14 @@ const Carousel = ({
     setIsMoving(true);
   };
 
+  const handleMouseStart: React.MouseEventHandler<HTMLDivElement> = (
+    event: React.MouseEvent<HTMLDivElement>
+  ) => {
+    setTouch(true);
+    setStartX(event.clientX);
+    setIsMoving(true);
+  };
+
   const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
     if (!isMoving) return;
 
@@ -98,7 +108,7 @@ const Carousel = ({
     const diff = touch.clientX - startX;
     setAddSlide(diff);
 
-    const threshold = windowSize.width / (focusCentral ? 10 : 3);
+    const threshold = windowSize.width / (focusCentral ? !vertical ? 80 : 10 : vertical ? 3 : 20);
     if (diff < -threshold) {
       handleNextClick(1);
       setIsMoving(false);
@@ -107,6 +117,30 @@ const Carousel = ({
       setIsMoving(false);
     }
   };
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+    if (!isMoving) return;
+
+    const touch = isTouchEvent(event) ? event.touches[0] : event;
+    const diff = touch.clientX - startX;
+    setAddSlide(diff);
+
+    const threshold = windowSize.width / (focusCentral ? !vertical ? 100 : 10 : vertical ? 3 : 20);
+
+
+    if (diff < -threshold) {
+      handleNextClick(1);
+      setIsMoving(false);
+    } else if (diff > threshold) {
+      handleNextClick(-1);
+      setIsMoving(false);
+    }
+  };
+
+  const isTouchEvent = (event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>): event is React.TouchEvent<HTMLDivElement> => {
+    return (event as React.TouchEvent<HTMLDivElement>).touches !== undefined;
+  };
+
 
   const handleTouchEnd = () => {
     setTouch(false)
@@ -132,6 +166,9 @@ const Carousel = ({
       onTouchStart={noSlide ? undefined : handleTouchStart}
       onTouchMove={noSlide ? undefined : handleTouchMove}
       onTouchEnd={noSlide ? undefined : handleTouchEnd}
+      onMouseDown={noSlide ? undefined : handleMouseStart}
+      onMouseMove={noSlide ? undefined : handleMouseMove}
+      onMouseUp={noSlide ? undefined : handleTouchEnd}
       style={{
         width: `${containerWidthVW}vw`,
         position: "relative",
