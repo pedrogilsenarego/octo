@@ -125,7 +125,7 @@ const Carousel = ({
     const diff = touch.clientX - startX;
     setAddSlide(diff);
 
-    const threshold = windowSize.width / (focusCentral ? !vertical ? 100 : 10 : vertical ? 3 : 20);
+    const threshold = windowSize.width / (focusCentral ? !vertical ? 200 : 10 : vertical ? 3 : 20);
 
 
     if (diff < -threshold) {

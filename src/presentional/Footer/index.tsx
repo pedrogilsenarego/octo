@@ -21,7 +21,7 @@ const Footer = ({ noMarginTop }: Props) => {
       style={{
         marginTop: noMarginTop ? "0px" : "100px",
         width: "100vw",
-        height: mobile ? window.innerHeight : "auto",
+        height: mobile ? "100vh" : "auto",
         backgroundColor: Colors.TAUPE,
         paddingTop: "50px",
         paddingLeft: generalConstants.PADDING,
