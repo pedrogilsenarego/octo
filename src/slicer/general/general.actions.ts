@@ -81,3 +81,8 @@ export const setPositionVertical = (position:boolean) => ({
   payload: position
 })
 
+export const setStopScroll = (signal:boolean) => ({
+  type: generalTypes.STOP_SCROLL,
+  payload: signal
+})
+

@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { Colors } from "../../constants/pallete";
 import usePreventScroll from "../../hooks/usePreventScrollY";
+import { useDispatch } from "react-redux";
+import { setStopScroll } from "../../slicer/general/general.actions";
 
 interface Props {
   images: string[] | JSX.Element[];
@@ -46,10 +48,15 @@ const Carousel = ({
   const [isMoving, setIsMoving] = useState(false);
   const [addSlide, setAddSlide] = useState(0);
   const [touch, setTouch] = useState(false)
+  const dispatch = useDispatch()
 
 
 
   usePreventScroll(touch)
+  useEffect(() => {
+    dispatch(setStopScroll(touch))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [touch])
 
   useEffect(() => {
     if (setValue) setValue(images[slideIndex + 1]);

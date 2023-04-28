@@ -12,7 +12,8 @@ const INITIAL_STATE = {
   scrollTo: 0,
   cookiePolicy: true,
   scrollCollections:null,
-  positionVertical:false
+  positionVertical:false,
+  scrollLock:false
 
   
   
@@ -112,6 +113,11 @@ const generalReducer = (state = INITIAL_STATE, action: Action) => {
               ...state,
               positionVertical: action.payload
             };
+            case generalTypes.STOP_SCROLL:
+              return {
+                ...state,
+                scrollLock: action.payload
+              };
 
     default:
       return state;

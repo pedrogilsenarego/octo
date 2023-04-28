@@ -18,7 +18,8 @@ const generalTypes = {
 
   SCROLL_COLLECTIONS:"SCROLL_COLLECTIONS",
 
-  POSITION_VERTICAL: "POSITION_VERTICAL"
+  POSITION_VERTICAL: "POSITION_VERTICAL",
+  STOP_SCROLL:"STOP_SCROLL"
 
   
 };
@@ -32,6 +33,7 @@ export interface GeneralState {
   loading:boolean
   scrollCollections:CollectionPositions|null
   positionVertical:boolean
+  scrollLock:boolean
 
 }
 
