@@ -5,6 +5,8 @@ import usePreventScroll from "../../hooks/usePreventScrollY";
 import { useDispatch, useSelector } from "react-redux";
 import { setStopScroll } from "../../slicer/general/general.actions";
 import { State } from "../../slicer/types";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { BsZoomIn, BsZoomOut } from "react-icons/bs";
 
 
 interface Props {
@@ -23,6 +25,7 @@ interface Props {
   setValue?: (item: any) => void;
   height?: string;
   objectFi?: "cover" | "contain";
+  zoom?: boolean
 
 }
 
@@ -40,6 +43,7 @@ const Carousel = ({
   colorArrow,
   noArrows,
   height,
+  zoom,
   objectFi = "cover",
 
   setValue,
@@ -52,6 +56,7 @@ const Carousel = ({
   const [isMoving, setIsMoving] = useState(false);
   const [addSlide, setAddSlide] = useState(0);
   const [touch, setTouch] = useState(false)
+  const [zoomOn, setZoomOn] = useState(false)
   const dispatch = useDispatch()
   const vertical = useSelector<State, boolean>((state) => state.general.positionVertical)
 
@@ -151,6 +156,10 @@ const Carousel = ({
     setAddSlide(0);
   };
 
+  const handleZoom = () => {
+    setZoomOn(!zoomOn)
+  }
+
   const containerRef = useRef<HTMLDivElement>(null);
 
   const containerWidth = width;
@@ -166,19 +175,19 @@ const Carousel = ({
   return (
     <div
       ref={containerRef}
-      onTouchStart={noSlide ? undefined : handleTouchStart}
-      onTouchMove={noSlide ? undefined : handleTouchMove}
-      onTouchEnd={noSlide ? undefined : handleTouchEnd}
-      onMouseDown={noSlide ? undefined : handleMouseStart}
-      onMouseMove={noSlide ? undefined : handleMouseMove}
-      onMouseUp={noSlide ? undefined : handleTouchEnd}
+      onTouchStart={noSlide || zoomOn ? undefined : handleTouchStart}
+      onTouchMove={noSlide || zoomOn ? undefined : handleTouchMove}
+      onTouchEnd={noSlide || zoomOn ? undefined : handleTouchEnd}
+      onMouseDown={noSlide || zoomOn ? undefined : handleMouseStart}
+      onMouseMove={noSlide || zoomOn ? undefined : handleMouseMove}
+      onMouseUp={noSlide || zoomOn ? undefined : handleTouchEnd}
       style={{
         width: `${containerWidthVW}vw`,
         position: "relative",
       }}
     >
       <div style={{ position: "relative" }}>
-        {!noArrows && (
+        {!noArrows && !zoomOn && (
           <>
             <div
               onClick={() => handleNextClick(1)}
@@ -236,6 +245,37 @@ const Carousel = ({
             </div>
           </>
         )}
+        {zoom && (
+          <div
+            onClick={handleZoom}
+            style={{
+              zIndex: 1000,
+              position: "absolute",
+              right: "calc(50% - 17px)",
+
+              cursor: "pointer",
+              bottom: "-40px",
+
+
+              width: "35px",
+              height: "35px",
+              borderRadius: "50%",
+              backgroundColor: "#00000047",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            {zoomOn ? <BsZoomOut size='1.2rem'
+              color="white"
+            /> : <BsZoomIn
+
+              size='1.2rem'
+              color="white"
+            />}
+
+          </div>
+        )}
         <div style={{ overflow: "hidden", position: "relative", cursor: "pointer" }}>
           <div
             style={{
@@ -261,18 +301,36 @@ const Carousel = ({
                       height: height || "auto",
                     }}
                   >
-                    <img
+                    {zoomOn ? <TransformWrapper initialScale={2}>
+                      <TransformComponent>
+                        <img
 
-                      draggable={false}
-                      src={item}
-                      alt=''
-                      style={{
-                        objectFit: objectFi,
-                        height: "100%",
-                        width: "100%",
+                          draggable={false}
+                          src={item}
+                          alt=''
+                          style={{
+                            objectFit: objectFi,
+                            height: "100%",
+                            width: "100%",
 
-                      }}
-                    />
+                          }}
+                        />
+                      </TransformComponent>
+                    </TransformWrapper> :
+                      <img
+
+                        draggable={false}
+                        src={item}
+                        alt=''
+                        style={{
+                          objectFit: objectFi,
+                          height: "100%",
+                          width: "100%",
+
+                        }}
+                      />
+                    }
+
 
 
 

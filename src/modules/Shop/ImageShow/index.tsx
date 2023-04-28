@@ -13,7 +13,7 @@ const ImageShow = () => {
         <Carousel
           key={product.icon}
           images={product?.fotos || []}
-
+          zoom
           gap={5}
           width='40vw'
           numberSlides={1}
