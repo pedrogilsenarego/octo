@@ -53,7 +53,7 @@ const FabricSelector = () => {
         justifyContent: "center",
         flexDirection: "column",
         alignItems: "center",
-        rowGap: "40px"
+        rowGap: "90px"
       }}
     >
 
@@ -64,10 +64,18 @@ const FabricSelector = () => {
               <Grid
                 item
                 xs={2}
+                style={{ position: "relative" }}
                 key={pos}
                 onClick={() => handleSelectProduct(pos)}
               >
                 <Element valuee={item.icon} pos={pos} stateHighLightStatus={pos === productSelected} />
+                <Box
+                  display='flex'
+                  justifyContent='center'
+                  style={{ position: "absolute", left: 0, right: 0 }}
+                >
+                  <Typography>&nbsp;&nbsp;&nbsp;{item.price}€</Typography>
+                </Box>
               </Grid>
             );
           })}
