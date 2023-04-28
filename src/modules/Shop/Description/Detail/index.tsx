@@ -3,14 +3,14 @@ import { useState } from "react";
 
 interface Props {
   title: string;
-  detail: string;
+  detail: string | undefined;
 }
 
 const Detail = ({ title, detail }: Props) => {
-  const [click, setClick] = useState<boolean>(false);
+  const [click, setClick] = useState<boolean>(true);
   return (
     <>
-      <Divider style={{ marginTop: "10px" }} />
+
       <Typography
         style={{ marginTop: "10px", fontWeight: 800, cursor: "pointer" }}
         onClick={() => setClick(!click)}

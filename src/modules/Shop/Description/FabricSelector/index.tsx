@@ -8,22 +8,18 @@ import { useDispatch } from "react-redux";
 import Button from "../../../../components/Buttons/Button";
 import { addProductToCart } from "../../../../slicer/cart/cart.actions";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
+import { Colors } from "../../../../constants/pallete";
 
-
+import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs";
 
 const FabricSelector = () => {
-  const {
-    category,
-    pattern,
-    setProduct,
-    products,
-
-  } = useContext(ProductContext);
+  const { category, pattern, setProduct, products, productSelected, setProductSelected } =
+    useContext(ProductContext);
 
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
-  const [productSelected, setProductSelected] = useState<number>(0)
-  const dispatch = useDispatch()
+
+  const dispatch = useDispatch();
 
   const productsAvailable: Product[] = products?.filter(
     (product: Product) => product.category === category
@@ -34,16 +30,20 @@ const FabricSelector = () => {
   );
 
   const handleSelectProduct = (pos: number) => {
-    setProductSelected(pos)
-    setProduct(products[pos])
+    setProductSelected(pos);
+    setProduct(products[pos]);
   };
 
   const handleAddCart = () => {
-    dispatch(addProductToCart(category !== null ? [productsAvailable[productSelected]] : [fabricsAvailable[productSelected]]))
-    dispatch(updateSuccessNotification("Product Added to Cart"))
-  }
-
-
+    dispatch(
+      addProductToCart(
+        category !== null
+          ? [productsAvailable[productSelected]]
+          : [fabricsAvailable[productSelected]]
+      )
+    );
+    dispatch(updateSuccessNotification("Product Added to Cart"));
+  };
 
   return (
     <Box
@@ -53,11 +53,10 @@ const FabricSelector = () => {
         justifyContent: "center",
         flexDirection: "column",
         alignItems: "center",
-        rowGap: "90px"
+        rowGap: "90px",
       }}
     >
-
-      <Grid container rowGap={3} columnSpacing="10px">
+      <Grid container rowGap="65px" columnSpacing='15px' justifyContent='start' marginTop="20px">
         {category !== null &&
           productsAvailable?.map((item, pos: number) => {
             return (
@@ -68,11 +67,20 @@ const FabricSelector = () => {
                 key={pos}
                 onClick={() => handleSelectProduct(pos)}
               >
-                <Element valuee={item.icon} pos={pos} stateHighLightStatus={pos === productSelected} />
+                <Element
+                  valuee={item.icon}
+                  pos={pos}
+                  stateHighLightStatus={pos === productSelected}
+                />
                 <Box
                   display='flex'
                   justifyContent='center'
-                  style={{ position: "absolute", left: 0, right: 0 }}
+                  style={{
+                    position: "absolute",
+                    left: 0,
+                    right: 0,
+                    bottom: "-30px",
+                  }}
                 >
                   <Typography>&nbsp;&nbsp;&nbsp;{item.price}€</Typography>
                 </Box>
@@ -90,11 +98,20 @@ const FabricSelector = () => {
                   key={pos}
                   onClick={() => handleSelectProduct(pos)}
                 >
-                  <Element valuee={item.icon} pos={pos} stateHighLightStatus={pos === productSelected} />
+                  <Element
+                    valuee={item.icon}
+                    pos={pos}
+                    stateHighLightStatus={pos === productSelected}
+                  />
                   <Box
                     display='flex'
                     justifyContent='center'
-                    style={{ position: "absolute", left: 0, right: 0 }}
+                    style={{
+                      position: "absolute",
+                      left: 0,
+                      right: 0,
+                      bottom: "-30px",
+                    }}
                   >
                     <Typography>&nbsp;&nbsp;&nbsp;{item.price}€</Typography>
                   </Box>
@@ -104,10 +121,35 @@ const FabricSelector = () => {
           })}
       </Grid>
       <div style={{ width: "100%", display: "flex", justifyContent: "start" }}>
-        <Button onClick={handleAddCart} label="Add To Cart" borderRadiusRight />
+        <div
+          style={{
+            borderTopLeftRadius: "6px",
+            borderBottomLeftRadius: "6px",
+            border: `solid 2px ${Colors.BLACKISH}`,
+            display: "flex",
+            alignItems: "center",
+            padding: "5px 10px 5px 10px",
+            columnGap: "10px"
+          }}
+        >
+          <BsInstagram
+            size='1.4rem'
+            color={Colors.BLACKIST_TRANSPARENT}
+            style={{ cursor: "default" }}
+          />
+          <BsFacebook
+            size='1.4rem'
+            color={Colors.BLACKIST_TRANSPARENT}
+            style={{ cursor: "default" }}
+          />
+          <BsWhatsapp
+            size='1.4rem'
+            color={Colors.BLACKIST_TRANSPARENT}
+            style={{ cursor: "default" }}
+          />
+        </div>
+        <Button onClick={handleAddCart} label='Add To Cart' borderRadiusRight />
       </div>
-
-
     </Box>
   );
 };

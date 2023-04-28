@@ -4,10 +4,12 @@ import FabricSelector from "./FabricSelector";
 import { useContext, useState } from "react";
 
 import { ProductContext } from "../ProductContext";
+import Detail from "./Detail";
+import { categories } from "../../../constants/category";
 
 
 const Description = () => {
-  const { category, pattern, infoPopup, setInfoPopup, } =
+  const { category, pattern, product } =
     useContext(ProductContext);
   const [moreInfo, setMoreInfo] = useState(false);
   const Theme = useTheme()
@@ -23,7 +25,8 @@ const Description = () => {
       }}
       display='flex'
       flexDirection='column'
-      justifyContent='space-between'
+      justifyContent='center'
+      rowGap="10px"
     >
       {category !== null && (
         <Box
@@ -34,9 +37,7 @@ const Description = () => {
           <Typography style={{ textTransform: "uppercase" }} fontWeight={800}>
             {category}
           </Typography>
-          {/* <Typography fontWeight={800}>
-            {categories[product].price}&nbsp;€
-          </Typography> */}
+
         </Box>
       )}
       {pattern !== null && (
@@ -58,33 +59,33 @@ const Description = () => {
           <FabricSelector />
         </div>
       </div>
-      <Divider style={{ marginTop: "20px" }} />
-      {category !== null && (
-        <>
-          <div
-            style={{ marginTop: "20px", cursor: "pointer" }}
-            onClick={() => setMoreInfo(!moreInfo)}
-          >
-            <Typography>{i18n.t("modules.product.moreInfo")}</Typography>
-          </div>
-          {moreInfo && (
-            <>
-              {/* <Detail
-                detail={categories[product].moreInfo.description}
-                title={i18n.t("modules.product.detail.description")}
-              />
-              <Detail
-                detail={categories[product].moreInfo.dimensions}
-                title={i18n.t("modules.product.detail.dimensions")}
-              />
-              <Detail
-                detail={categories[product].moreInfo.washing}
-                title={i18n.t("modules.product.detail.washing")}
-              /> */}
-            </>
-          )}
-        </>
-      )}
+      <Divider style={{ marginTop: "10px" }} />
+
+      <>
+        <div
+          style={{ marginTop: "20px", cursor: "pointer" }}
+          onClick={() => setMoreInfo(!moreInfo)}
+        >
+          <Typography>{i18n.t("modules.product.moreInfo")}</Typography>
+        </div>
+        {moreInfo && product && (
+          <>
+            <Detail
+              detail={categories?.find((item) => item?.title === product?.title)?.moreInfo?.description}
+              title={i18n.t("modules.product.detail.description")}
+            />
+            <Detail
+              detail={categories?.find((item) => item?.title === product?.title)?.moreInfo?.dimensions}
+              title={i18n.t("modules.product.detail.dimensions")}
+            />
+            <Detail
+              detail={categories?.find((item) => item?.title === product?.title)?.moreInfo?.washing}
+              title={i18n.t("modules.product.detail.washing")}
+            />
+          </>
+        )}
+      </>
+
     </Box>
   );
 };

@@ -17,7 +17,8 @@ interface ProductContextType {
   isLoading: boolean
   product: Product | null;
   setProduct: (product: Product | null) => void
-
+  productSelected: number
+  setProductSelected: (productSelected: number) => void
 }
 
 
@@ -32,9 +33,14 @@ export const ProductContext = createContext<ProductContextType>({
   products: [],
   isLoading: true,
   product: null,
-  setProduct: () => { }
+  setProduct: () => { },
+  productSelected: 0,
+  setProductSelected: () => { }
 
-});
+},
+
+
+);
 
 export const ProductContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [category, setCategory] = useState<string | null>("Sleeping Bag");
@@ -43,11 +49,12 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
 
   const [products, setProducts] = useState<Product[]>([]);
   const [product, setProduct] = useState<Product | null>(null)
+  const [productSelected, setProductSelected] = useState<number>(0);
 
   const filter = useDebounce((category ? category : pattern || "sleeping Bag"), 500)
   const typeFilter = useDebounce((category ? "category" : "pattern" || "category"), 500)
 
-  const { isLoading, error, data: productsQuery, refetch } = useQuery(['products', { filter, typeFilter }], fetchProducts, {
+  const { isLoading, error, data: productsQuery, } = useQuery(['products', { filter, typeFilter }], fetchProducts, {
     staleTime: 3600000, // 1 hour in milliseconds
     cacheTime: 3600000, // 10 minutes in milliseconds
   })
@@ -73,7 +80,9 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
     products,
     isLoading,
     product,
-    setProduct
+    setProduct,
+    productSelected,
+    setProductSelected
 
   };
 

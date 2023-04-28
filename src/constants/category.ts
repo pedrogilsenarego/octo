@@ -7,7 +7,7 @@ import { i18n } from "../translations/i18n";
 export type Product = {
   documentID:string
   category:string
-  title?:string
+  title:string
   images: string[]
   fotos:string[]
   price: number
