@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setStopScroll } from "../../slicer/general/general.actions";
 import { State } from "../../slicer/types";
 
+
 interface Props {
   images: string[] | JSX.Element[];
   colorBgArrow?: string;
@@ -22,6 +23,7 @@ interface Props {
   setValue?: (item: any) => void;
   height?: string;
   objectFi?: "cover" | "contain";
+
 }
 
 const Carousel = ({
@@ -39,6 +41,7 @@ const Carousel = ({
   noArrows,
   height,
   objectFi = "cover",
+
   setValue,
 }: Props) => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -259,6 +262,7 @@ const Carousel = ({
                     }}
                   >
                     <img
+
                       draggable={false}
                       src={item}
                       alt=''
@@ -266,8 +270,13 @@ const Carousel = ({
                         objectFit: objectFi,
                         height: "100%",
                         width: "100%",
+
                       }}
                     />
+
+
+
+
                   </div>
                 );
               } else {

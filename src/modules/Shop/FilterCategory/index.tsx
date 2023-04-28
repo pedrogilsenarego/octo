@@ -55,9 +55,11 @@ const FilterCategory = () => {
       style={{
         display: "flex",
         width: "100%",
+
         flexDirection: vertical ? "column" : "row",
         columnGap: "20px",
-        backgroundColor: Colors.PRETTY_CREAM,
+        backgroundColor: Colors.BLACKISH,
+
         padding: vertical ? "10px" : "10px",
       }}
     >
@@ -74,13 +76,14 @@ const FilterCategory = () => {
         <Typography
           fontFamily='Avalanche'
           fontSize={vertical ? "5vw" : '1.6vw'}
-          color={Colors.BLACKISH}
+          color={Colors.PRETTY_CREAM}
         >
           Products
         </Typography>
         <div >
           <Carousel
             setValue={handleSetCategory}
+
             noArrows={vertical ? true : false}
             numberSlides={3}
             ghostEdges
@@ -109,7 +112,7 @@ const FilterCategory = () => {
         <Typography
           fontFamily='Avalanche'
           fontSize={vertical ? "5vw" : '1.6vw'}
-          color={Colors.BLACKISH}
+          color={Colors.PRETTY_CREAM}
         >
           Patterns
         </Typography>

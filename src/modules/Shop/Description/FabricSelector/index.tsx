@@ -88,7 +88,7 @@ const FabricSelector = () => {
 
                     lineHeight: "11px",
                   }} fontWeight={pos === productSelected ? 800 : 500} fontSize="0.6rem">{item.pattern}</Typography>
-                  <Typography fontWeight={pos === productSelected ? 800 : 500} fontSize="0.9rem">{item.price}€</Typography>
+                  <Typography fontWeight={pos === productSelected ? 800 : 500} fontSize="0.9rem">{item.price}&nbsp;•&nbsp;€</Typography>
                 </Box>
               </Grid>
             );
@@ -124,7 +124,7 @@ const FabricSelector = () => {
 
                       lineHeight: "11px",
                     }} fontWeight={pos === productSelected ? 800 : 500} fontSize="0.6rem">{item.category}</Typography>
-                    <Typography fontWeight={pos === productSelected ? 800 : 500} fontSize="0.9rem">{item.price}€</Typography>
+                    <Typography fontWeight={pos === productSelected ? 800 : 500} fontFamily="cursive" fontSize="0.9rem">{item.price}&nbsp;•&nbsp;€</Typography>
                   </Box>
                 </Grid>
               </>
