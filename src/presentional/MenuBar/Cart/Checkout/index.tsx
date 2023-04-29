@@ -1,6 +1,6 @@
 import { Form, Formik } from "formik";
 import { FORM_VALIDATION } from "./validation";
-import { Box } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
 import ButtonForm from "../../../../components/Buttons/ButtonFormik";
 import Textfield from "../../../../components/Inputs/TextField";
@@ -16,9 +16,11 @@ import { stripeLocal, stripeProduction } from "../../../../constants/stripe";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
 import SelectWrapper from "../../../../components/Inputs/SelectFormValue";
 import { countryList } from "../../../../constants/forms";
+import { useState } from "react";
+import { getTotalValue } from "../Utils/totalValue";
 
 interface Props {
-  closeCart: (signal: boolean) => void
+  closeCart: (signal: boolean) => void;
 }
 
 interface FormProps {
@@ -44,12 +46,14 @@ const Checkout = ({ closeCart }: Props) => {
     phone: "",
   };
 
-
   //const [details, setDetails] = useState({ ...INITIAL_FORM_STATE });
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const cartProducts = useSelector<State, CartProduct[]>(
     (state) => state.cart.cartItems
   );
+  const [country, setCountry] = useState<string>("");
+  const shippingFees = countryList?.filter((item) => item.value === country)[0]
+    ?.shippingPrice || 0;
 
   const handleSubmitCard = async (values: FormProps) => {
     let items: {
@@ -65,26 +69,22 @@ const Checkout = ({ closeCart }: Props) => {
         quantity: item.value,
       });
     });
-    await fetch(
-      stripeLocal,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ items }),
-      }
-    )
+    await fetch(stripeLocal, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ items }),
+    })
       .then((res) => {
         return res.json();
       })
       .then((res) => {
         if (res.url) {
-          dispatch(clearCart())
-          dispatch(updateSuccessNotification(i18n.t("cartDrawer.successBuy")))
-          closeCart(false)
+          dispatch(clearCart());
+          dispatch(updateSuccessNotification(i18n.t("cartDrawer.successBuy")));
+          closeCart(false);
           window.location.assign(res.url);
-
         }
       });
   };
@@ -126,10 +126,26 @@ const Checkout = ({ closeCart }: Props) => {
 
   return (
     <>
+      <Box
+        display='flex'
+        alignItems='end'
+        width='100%'
+        mt='10px'
+        style={{ flexDirection: "column", rowGap: "10px" }}
+      >
+        <Typography>
+          Product Price {getTotalValue(cartProducts)} €
+        </Typography>
+        <Typography>+ Shipping Fee {shippingFees} €</Typography>
+        <Divider style={{ backgroundColor: Colors.BLACKISH, width: "40%" }} />
+        <Typography>
+          {i18n.t("cartDrawer.totalPrice")} {getTotalValue(cartProducts) + shippingFees} €
+        </Typography>
+      </Box>
       <Formik
         initialValues={{ ...INITIAL_FORM_STATE }}
         onSubmit={(values, { resetForm }) => {
-          console.log(values)
+          console.log(values);
           // handleSubmitCard(values);
           // resetForm();
         }}
@@ -143,24 +159,30 @@ const Checkout = ({ closeCart }: Props) => {
               flexDirection='column'
               sx={{ mt: "20px", pb: "20px" }}
             >
-              <SelectWrapper options={countryList} name="country" label="country" />
+              <SelectWrapper
+                options={countryList}
+                name='country'
+                label='country'
+                getvalue={setCountry}
+              />
               <Textfield label={i18n.t("forms.name")} name='name' />
-              <Textfield label="Line 1" name='address' />
-              <Textfield label="Line 2" name='address2' />
+              <Textfield label='Line 1' name='address' />
+              <Textfield label='Line 2' name='address2' />
               <Textfield label={i18n.t("forms.city")} name='city' />
               <Textfield label={i18n.t("forms.postCode")} name='postCode' />
               <Textfield label={i18n.t("forms.email")} name='email' />
               <Textfield label={i18n.t("forms.phone")} name='phone' />
-
             </Box>
           </>
-          <Box display="flex" flexDirection="column" rowGap={2}>
+          <Box display='flex' flexDirection='column' rowGap={2}>
             {/* <CardElement options={
               cardElementOptions
             } /> */}
           </Box>
-          <ButtonForm colorHover={Colors.NEON_YELLOW_TRANSPARENT}
-            label={i18n.t("cartDrawer.buyNow")} />
+          <ButtonForm
+            colorHover={Colors.NEON_YELLOW_TRANSPARENT}
+            label={i18n.t("cartDrawer.buyNow")}
+          />
         </Form>
       </Formik>
       {/* <Button

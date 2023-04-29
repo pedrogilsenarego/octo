@@ -16,7 +16,7 @@ export const TextField = styled(MuiTextField)(({maxWidth}:Props) => ({
   },
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
-      borderColor: Colors.PRETTY_CREAM,
+      borderColor: Colors.BLACKISH,
       borderRadius: "4px",
       borderWidth: "1px",
     },

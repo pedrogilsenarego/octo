@@ -107,11 +107,12 @@ const Cart = ({ closeCart }: Props) => {
       )}
 
       <Divider />
-      <Box display='flex' justifyContent='end' width='100%' mt='10px'>
+      {!checkoutInfo && (<Box display='flex' justifyContent='end' width='100%' mt='10px'>
         <Typography>
           {i18n.t("cartDrawer.totalPrice")} {getTotalValue(cartProducts)} €
         </Typography>
-      </Box>
+      </Box>)}
+
 
       <div
         style={{
