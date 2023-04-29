@@ -95,12 +95,12 @@ export const categories:Category[] = [
     },
   {
     id: 5,
-    title: i18n.t("constants.categories.10"),
+    title: i18n.t("constants.categories.6"),
     icon: "https://res.cloudinary.com/daantetcr/image/upload/v1682061599/Octo/strollerBag/OCTO_Icon_stroller_bag_oujqtc_e1tfe9.webp",
     price: 34,
     moreInfo: {
-      description: "Our Laundry Kit is the perfect solution for storing clean and dirty clothes when you're on the go. Our kit includes two bags: one that have the interior made of waterproof material to keep dirty clothes separate from clean ones, and the other is made of soft, breathable material to store clean clothes. Ideal for travel, daycare, or trips to the park. <br/>Crafted in cotton.",
-      dimensions: "35 x 35 cm",
+      description: "This is our Stroller Pocket, designed to be lightweight and easy to carry. With a detachable shoulder strap and our signature yellow zip closure, it's padded to protect your belongings inside. The bag can be attached to your pram's handlebars with snaps or used as a compact walking bag. It’s perfect for daily use! <br/> Crafted in cotton. ",
+      dimensions: "30 x 20 x 10 cm",
       washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
      },
     },

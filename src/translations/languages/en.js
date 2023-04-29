@@ -213,7 +213,7 @@ export const content = {
           3: "Maternity Bag",
           4: "Sleeping Bag",
           5: "Blanket",
-          6: "Laundry Kit",
+          6: "Stroller Pocket",
           7: "Bed Pocket",
           8: "Bed Bumper",
           9: "Collar Bib",

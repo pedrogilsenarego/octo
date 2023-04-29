@@ -21,7 +21,10 @@ const BuySuccess = () => {
         flexDirection: "column",
       }}
     ><Typography color={Colors.BLACKISH} fontSize="3rem" fontWeight={800} mt="80px">
-        Congratulations, you are now part of the Octomistic Family!!</Typography></Box>
+        Welcome Octomistyc</Typography>
+      <Typography color={Colors.BLACKISH} fontSize="3rem" fontWeight={800} mt="80px">As a new member of the Octo Fam, share with the world some of your favorite and special products.</Typography>
+
+    </Box>
   )
 }
 

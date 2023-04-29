@@ -60,7 +60,7 @@ const Checkout = ({ closeCart }: Props) => {
       });
     });
     await fetch(
-      stripeProduction,
+      stripeLocal,
       {
         method: "POST",
         headers: {

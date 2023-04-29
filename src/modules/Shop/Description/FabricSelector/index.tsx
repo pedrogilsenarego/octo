@@ -179,7 +179,7 @@ const FabricSelector = () => {
             );
           })}
       </Grid>
-      <div style={{ width: "100%", display: "flex", justifyContent: "start" }}>
+      <div style={{ width: "100%", display: "flex", justifyContent: "start", columnGap: "5px" }}>
         <div
           style={{
             borderTopLeftRadius: "6px",
