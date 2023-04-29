@@ -89,12 +89,12 @@ const FilterCategory = () => {
             ghostEdges
             focusCentral
             outsideButtons
-            width={vertical ? "80vw" : '26vw'}
+            width={vertical ? "60vw" : '26vw'}
             colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
             colorBgArrow='#00000000'
-            gap={0}
+            gap={10}
             images={newCategories.map((item, pos) => (
-              <Element key={pos} item={item} selected={category === item.title} />
+              <Element key={pos} item={item} selected={category === item.title} marginText={vertical ? "115%" : undefined} />
             ))}
           />
         </div>
@@ -125,12 +125,12 @@ const FilterCategory = () => {
             noArrows={vertical ? true : false}
             focusCentral
             outsideButtons
-            width={vertical ? "80vw" : '26vw'}
+            width={vertical ? "60vw" : '26vw'}
             colorArrow={Colors.NEON_YELLOW_TRANSPARENT}
             colorBgArrow='#00000000'
-            gap={0}
+            gap={10}
             images={newPatterns.map((item, pos) => (
-              <Element key={pos} item={item} selected={pattern === item.title} />
+              <Element key={pos} item={item} selected={pattern === item.title} marginText={vertical ? "115%" : undefined} />
             ))}
 
 

@@ -6,6 +6,8 @@ import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../ProductContext";
 import Detail from "./Detail";
 import { categories } from "../../../constants/category";
+import { useSelector } from "react-redux";
+import { State } from "../../../slicer/types";
 
 
 const Description = () => {
@@ -13,6 +15,8 @@ const Description = () => {
     useContext(ProductContext);
   const [moreInfo, setMoreInfo] = useState(false);
   const Theme = useTheme()
+  const vertical = useSelector<State, boolean>((state) => state.general.positionVertical)
+
   //const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
 
   useEffect(() => {
@@ -23,6 +27,7 @@ const Description = () => {
   return (
     <Box
       style={{
+        marginTop: vertical ? "-40px" : "0px",
         padding: "20px",
 
         minHeight: "500px",

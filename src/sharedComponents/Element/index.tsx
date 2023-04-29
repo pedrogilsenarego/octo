@@ -8,9 +8,10 @@ import { Colors } from "../../constants/pallete";
 interface Props {
   item: Category | FabricsType;
   selected?: boolean
+  marginText?: string
 }
 
-const Element = ({ item, selected }: Props) => {
+const Element = ({ item, selected, marginText }: Props) => {
   const [hover, setHover] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -73,7 +74,7 @@ const Element = ({ item, selected }: Props) => {
           bottom: "0",
           left: "0",
           right: "0",
-          top: "107%",
+          top: marginText || "107%",
           transform: "translateY(-110%)"
         }}>
           <Typography

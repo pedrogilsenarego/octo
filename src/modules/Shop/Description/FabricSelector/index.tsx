@@ -21,7 +21,8 @@ const FabricSelector = () => {
     products,
     productSelected,
     setProductSelected,
-    vertical
+    vertical,
+
   } = useContext(ProductContext);
 
   const Theme = useTheme();
@@ -29,46 +30,9 @@ const FabricSelector = () => {
 
   const dispatch = useDispatch();
 
-  const productsAvailable: Product[] = products?.filter(
-    (product: Product) => product.category === category
-  );
-
-  // const patternPriority: {
-  //   [key: string]: string;
-  // } = {
-  //   "Sleeping Bag": fabricsX[3],
-  //   "Bed Bumper": fabricsX[0],
-  //   "Bed Pocket": fabricsX[2],
-  //   "Blanket": fabricsX[3],
-  //   "Pacifier Clip": fabricsX[4],
-  //   "Bandana Bib": fabricsX[1],
-  //   "Collar Bib": fabricsX[2],
-  // };
-
-  // const productsAvailableFiltered = () => {
-  //   let finalOrder: Product[] = [];
-
-  //   if (category === null) {
-  //     return productsAvailable;
-  //   }
-
-  //   const matchingProduct = productsAvailable.find(
-  //     product => product.pattern === patternPriority[category]
-  //   );
-  //   if (matchingProduct) {
-  //     finalOrder.push(matchingProduct);
-  //   }
-  //   finalOrder.push(...productsAvailable.filter(product => product !== matchingProduct));
-  //   if (!finalOrder.length) {
-  //     return productsAvailable;
-  //   }
-  //   return finalOrder;
-  // };
 
 
-  const fabricsAvailable: Product[] = products?.filter(
-    (product: Product) => product.pattern === pattern
-  );
+
 
   const handleSelectProduct = (pos: number) => {
     setProductSelected(pos);
@@ -78,9 +42,8 @@ const FabricSelector = () => {
   const handleAddCart = () => {
     dispatch(
       addProductToCart(
-        category !== null
-          ? [productsAvailable[productSelected]]
-          : [fabricsAvailable[productSelected]]
+        [products[productSelected]]
+
       )
     );
     dispatch(updateSuccessNotification("Product Added to Cart"));
@@ -105,12 +68,12 @@ const FabricSelector = () => {
         justifyContent='start'
         marginTop='20px'
       >
-        {category !== null &&
-          productsAvailable?.map((item: Product, pos: number) => {
+        {
+          products?.map((item: Product, pos: number) => {
             return (
               <Grid
                 item
-                xs={vertical ? 6 : 2}
+                xs={vertical ? 4 : 2}
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -157,13 +120,13 @@ const FabricSelector = () => {
               </Grid>
             );
           })}
-        {pattern !== null &&
+        {/* {pattern !== null &&
           fabricsAvailable?.map((item, pos) => {
             return (
               <>
                 <Grid
                   item
-                  xs={vertical ? 6 : 2}
+                  xs={vertical ? 4 : 2}
                   style={{
                     display: "flex",
                     justifyContent: "center",
@@ -211,7 +174,7 @@ const FabricSelector = () => {
                 </Grid>
               </>
             );
-          })}
+          })} */}
       </Grid>
       <div style={{ width: "100%", display: "flex", justifyContent: "start", columnGap: "5px" }}>
         <div

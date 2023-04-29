@@ -5,6 +5,8 @@ import { useQuery } from "react-query";
 import useDebounce from "../../hooks/useDebounce";
 import { useSelector } from "react-redux";
 import { State } from "../../slicer/types";
+import { fabricsX } from "../../constants/fabrics";
+import { productsMapper } from "./productsQueryMapper";
 
 
 interface ProductContextType {
@@ -22,6 +24,7 @@ interface ProductContextType {
   productSelected: number
   setProductSelected: (productSelected: number) => void
   vertical: boolean
+
 }
 
 
@@ -39,7 +42,8 @@ export const ProductContext = createContext<ProductContextType>({
   setProduct: () => { },
   productSelected: 0,
   setProductSelected: () => { },
-  vertical: false
+  vertical: false,
+
 },
 
 
@@ -69,13 +73,21 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
 
 
 
+
   useEffect(() => {
     if (productsQuery?.data && productsQuery.data !== products) {
-      setProducts(productsQuery.data);
-      setProduct(productsQuery.data[0])
+
+      const mappedProducts = productsMapper(productsQuery.data, typeFilter, filter)
+      console.log(mappedProducts)
+      setProducts(mappedProducts);
+      setProduct(mappedProducts[0])
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productsQuery])
+
+
+
+
 
   const contextValue: ProductContextType = {
     category,
@@ -91,7 +103,8 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
     setProduct,
     productSelected,
     setProductSelected,
-    vertical
+    vertical,
+
   };
 
   return <ProductContext.Provider value={contextValue}>{children}</ProductContext.Provider>;
