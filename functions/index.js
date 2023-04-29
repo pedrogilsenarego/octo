@@ -1,3 +1,4 @@
+const { sendEmail } = require("./sendEmail");
 const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
@@ -61,11 +62,64 @@ app.post("/payments/creditCard", async (req, res) => {
     // ],
   });
 
-  res.send(
+  res.status(200).send(
     JSON.stringify({
       url: session.url,
     })
   );
 });
+
+app.post(
+  "/webhook-test",
+  express.raw({ type: "application/json" }),
+  (request, response) => {
+    const sig = request.headers["stripe-signature"];
+
+    let event;
+
+    try {
+      event = stripe.webhooks.constructEvent(
+        request.rawBody,
+        sig,
+        process.env.STRIPE_WEBHOOK_SECRET_TEST
+      );
+    } catch (err) {
+      response.status(400).send(`Webhook Error: ${err.message}`);
+      return;
+    }
+
+    const dataObject = event.data.object;
+
+    sendEmail(dataObject.metadata.email, dataObject.metadata);
+
+    // // Handle the event
+    // switch (event.type) {
+    //   case "payment_intent.succeeded":
+    //     //const session = event.data.object;
+
+    //     //const customerEmail = session.receipt_email;
+    //     sendEmail("pedrogilsenarego@gmail.com");
+    //     break;
+    //   case "checkout.session.completed":
+    //     //const session = event.data.object;
+
+    //     //const customerEmail = session.receipt_email;
+    //     sendEmail("pedrogilsenarego@gmail.com");
+    //     break;
+    //   case "payment_intent.checkout.session.completed":
+    //     //const session = event.data.object;
+
+    //     //const customerEmail = session.receipt_email;
+    //     sendEmail("pedrogilsenarego@gmail.com");
+    //     break;
+    //   default:
+    //     sendEmail("pedrogilsenarego@gmail.com");
+    //     console.log(`Unhandled event type ${event.type}`);
+    // }
+
+    // Return a 200 response to acknowledge receipt of the event
+    response.send();
+  }
+);
 
 exports.api = functions.https.onRequest(app);

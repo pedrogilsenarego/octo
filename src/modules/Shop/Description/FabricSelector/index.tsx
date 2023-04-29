@@ -88,12 +88,16 @@ const FabricSelector = () => {
                   stateHighLightStatus={pos === productSelected}
                 />
                 <Box
-                  display='flex'
-                  justifyContent='start'
-                  alignItems='center'
-                  flexDirection='column'
-
-                  style={{ height: "80px", }}
+                  display="flex"
+                  justifyContent="center" // Changed from 'start' to 'center' for better alignment
+                  alignItems="center"
+                  flexDirection="column"
+                  style={{
+                    height: "80px",
+                    WebkitBoxAlign: "center", // Added vendor prefix for Safari
+                    WebkitBoxOrient: "vertical", // Added vendor prefix for Safari
+                    WebkitBoxDirection: "normal", // Added vendor prefix for Safari
+                  }}
                 >
                   <Typography
                     style={{
@@ -103,18 +107,19 @@ const FabricSelector = () => {
                       lineHeight: "11px",
                     }}
                     fontWeight={pos === productSelected ? 800 : 500}
-                    fontSize='0.6rem'
+                    fontSize="0.6rem"
                   >
                     {typeFilter === "category" ? item.pattern : item.category}
                   </Typography>
                   <Typography
                     fontWeight={pos === productSelected ? 800 : 500}
-                    fontSize='0.8rem'
+                    fontSize="0.8rem"
                     fontFamily="MontSerrat"
                   >
                     {item.price}&nbsp;€
                   </Typography>
                 </Box>
+
               </Grid>
             );
           })}

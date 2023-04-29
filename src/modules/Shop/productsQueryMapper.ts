@@ -13,6 +13,7 @@ export const productsMapper = (products:Product[], typeFilter:"pattern"|"categor
     "Pacifier Clip": "Octo's",
     "Bandana Bib": fabricsX[1],
     "Collar Bib": fabricsX[2],
+    "Stroller Pocket":fabricsX[3]
   };
 
   const categoryPriority: {
@@ -20,7 +21,7 @@ export const productsMapper = (products:Product[], typeFilter:"pattern"|"categor
   } = {
      "Vichy Powder Pink": "Bed Bumper",
      "Vichy Classic": "Bed Bumper",
-     "Floral Powder Pink": "Pacifier Clip",
+     "Floral Powder Pink": "Stroller Pocket",
      "Floral Classic": "Stroller Pocket",
      "Octo's": "Blanket",
      "Pure White": "Collar Bib",
@@ -32,6 +33,8 @@ export const productsMapper = (products:Product[], typeFilter:"pattern"|"categor
   const listToUse = typeFilter === "category" ? patternPriority : categoryPriority
   const patternOrCategory = typeFilter === "category" ? "pattern" : "category";
 
+  console.log("products",products)
+  console.log("filter",filter)
   
   
 
@@ -45,7 +48,7 @@ export const productsMapper = (products:Product[], typeFilter:"pattern"|"categor
     const matchingProduct = products.find(
       product => product[patternOrCategory] === listToUse[filter]
     );
-    
+    console.log(matchingProduct)
     if (matchingProduct) {
       finalOrder.push(matchingProduct);
       

@@ -60,7 +60,7 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
   const [productSelected, setProductSelected] = useState<number>(0);
 
 
-  const filter = useDebounce((category ? category : pattern || "sleeping Bag"), 500)
+  const filter = useDebounce((category ? category : pattern || "sleconsole.log(mappedProducts)eping Bag"), 500)
   const typeFilter = useDebounce((category ? "category" : "pattern" || "category"), 500)
   const vertical = useSelector<State, boolean>((state) => state.general.positionVertical)
   const { isLoading, error, data: productsQuery, } = useQuery(['products', { filter, typeFilter }], fetchProducts, {
@@ -79,7 +79,7 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
     if (productsQuery?.data && productsQuery.data !== products) {
 
       const mappedProducts = productsMapper(productsQuery.data, typeFilter, filter)
-      console.log(mappedProducts)
+
       setProducts(mappedProducts);
       setProduct(mappedProducts[0])
     }

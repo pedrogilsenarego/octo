@@ -209,7 +209,7 @@ export const content = {
       constants: {
         categories: {
           1: "Bandana Bib",
-          2: "Pacifier clip",
+          2: "Pacifier Clip",
           3: "Maternity Bag",
           4: "Sleeping Bag",
           5: "Blanket",

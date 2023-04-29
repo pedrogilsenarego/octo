@@ -74,7 +74,7 @@ const Checkout = ({ closeCart }: Props) => {
       amount: shippingFees * 100,
       quantity: 1
     })
-    await fetch(stripeLocal, {
+    await fetch(stripeProduction, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
