@@ -90,32 +90,15 @@ app.post(
 
     const dataObject = event.data.object;
 
-    sendEmail(dataObject.metadata.email, dataObject.metadata);
+    // Handle the event
+    switch (event.type) {
+      case "checkout.session.completed":
+        sendEmail(dataObject.metadata.email);
+        break;
 
-    // // Handle the event
-    // switch (event.type) {
-    //   case "payment_intent.succeeded":
-    //     //const session = event.data.object;
-
-    //     //const customerEmail = session.receipt_email;
-    //     sendEmail("pedrogilsenarego@gmail.com");
-    //     break;
-    //   case "checkout.session.completed":
-    //     //const session = event.data.object;
-
-    //     //const customerEmail = session.receipt_email;
-    //     sendEmail("pedrogilsenarego@gmail.com");
-    //     break;
-    //   case "payment_intent.checkout.session.completed":
-    //     //const session = event.data.object;
-
-    //     //const customerEmail = session.receipt_email;
-    //     sendEmail("pedrogilsenarego@gmail.com");
-    //     break;
-    //   default:
-    //     sendEmail("pedrogilsenarego@gmail.com");
-    //     console.log(`Unhandled event type ${event.type}`);
-    // }
+      default:
+        console.log(`Unhandled event type ${event.type}`);
+    }
 
     // Return a 200 response to acknowledge receipt of the event
     response.send();

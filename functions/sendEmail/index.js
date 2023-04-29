@@ -1,5 +1,5 @@
 require("dotenv").config();
-const sendEmail = (customerEmail, dataObject) => {
+const sendEmail = (customerEmail) => {
   const nodemailer = require("nodemailer");
 
   // create reusable transporter object using the default SMTP transport
@@ -22,7 +22,7 @@ const sendEmail = (customerEmail, dataObject) => {
     <p style={{fontSize:"40px"}}>Your order in Octo-mistic is complete!</p>
     <p style={{fontSize:"40px"}}>Thank you for purchasing with us!</p>
     <p style={{fontSize:"40px"}}>Thank you for purchasing with us!</p>
-    <p>${JSON.stringify(dataObject)}}</p>
+    
     </div>`, // html body
   };
 
