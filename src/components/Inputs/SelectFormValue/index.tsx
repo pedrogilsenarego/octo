@@ -46,12 +46,13 @@ const SelectWrapper = ({ name, options, label, getvalue, ...otherProps }: Props)
         {...configSelect}
         variant='outlined'
         InputLabelProps={{ shrink: false }}
+
       >
         {options.map((item: Option, pos: number) => {
           return (
             <MenuItem
               key={pos}
-              value={item.title}
+              value={item.title || ""}
               onClick={(e: any) => helper.setValue(item.value)}
             >
               {item.title}

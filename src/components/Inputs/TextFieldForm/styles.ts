@@ -2,7 +2,7 @@ import { styled, TextField as MuiTextField } from "@mui/material";
 import { Colors } from "../../../constants/pallete";
 
 interface Props {
-  maxWidth: string
+  maxWidth?: string
 }
 
 export const TextField = styled(MuiTextField)(({maxWidth}:Props) => ({
@@ -25,6 +25,11 @@ export const TextField = styled(MuiTextField)(({maxWidth}:Props) => ({
     },
     "&.Mui-focused fieldset": {
       borderColor: Colors.NEON_YELLOW,
+      backgroundColor: "transparent",
     },
+    "& .MuiInputBase-root.Mui-focused": {
+      backgroundColor: "transparent",
+    },
+    
   },
 }));

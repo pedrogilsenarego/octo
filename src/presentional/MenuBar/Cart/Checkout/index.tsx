@@ -9,8 +9,6 @@ import { Colors } from "../../../../constants/pallete";
 import { useDispatch, useSelector } from "react-redux";
 import { State } from "../../../../slicer/types";
 import { CartProduct } from "../../../../slicer/cart/cart.types";
-
-import Button from "../../../../components/Buttons/Button";
 import { clearCart } from "../../../../slicer/cart/cart.actions";
 import { stripeLocal, stripeProduction } from "../../../../constants/stripe";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
@@ -60,6 +58,7 @@ const Checkout = ({ closeCart }: Props) => {
       title: string;
       amount: number;
       quantity: number;
+
     }[] = [];
 
     cartProducts.forEach((item: CartProduct) => {
@@ -67,14 +66,20 @@ const Checkout = ({ closeCart }: Props) => {
         title: `${item.product.category}-${item.product.pattern}`,
         amount: item.product.price * 100,
         quantity: item.value,
+
       });
     });
+    if (shippingFees !== 0) items.push({
+      title: `Shipping to ${countryList?.filter(item => item.value === country)[0]?.title || ""}`,
+      amount: shippingFees * 100,
+      quantity: 1
+    })
     await fetch(stripeLocal, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ items }),
+      body: JSON.stringify({ items, values }),
     })
       .then((res) => {
         return res.json();
@@ -141,13 +146,15 @@ const Checkout = ({ closeCart }: Props) => {
         <Typography>
           {i18n.t("cartDrawer.totalPrice")} {getTotalValue(cartProducts) + shippingFees} €
         </Typography>
+        <Typography mt="20px" fontSize="0.6rem">
+          * Free shipping until 12 of May 2023
+        </Typography>
       </Box>
       <Formik
         initialValues={{ ...INITIAL_FORM_STATE }}
         onSubmit={(values, { resetForm }) => {
-          console.log(values);
-          // handleSubmitCard(values);
-          // resetForm();
+          handleSubmitCard(values);
+          resetForm();
         }}
         validationSchema={FORM_VALIDATION}
       >
@@ -162,7 +169,7 @@ const Checkout = ({ closeCart }: Props) => {
               <SelectWrapper
                 options={countryList}
                 name='country'
-                label='country'
+                label='Country'
                 getvalue={setCountry}
               />
               <Textfield label={i18n.t("forms.name")} name='name' />

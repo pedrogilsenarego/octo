@@ -11,6 +11,7 @@ import { updateSuccessNotification } from "../../../../slicer/general/general.ac
 import { Colors } from "../../../../constants/pallete";
 
 import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { fabricsX } from "../../../../constants/fabrics";
 
 const FabricSelector = () => {
   const {
@@ -31,6 +32,31 @@ const FabricSelector = () => {
   const productsAvailable: Product[] = products?.filter(
     (product: Product) => product.category === category
   );
+
+  const productsAvailableFiltered = () => {
+    let finalOrder: Product[] = [];
+
+    switch (category) {
+      case "Sleeping Bag": {
+        const index = productsAvailable.findIndex(product => product.pattern === fabricsX[3]);
+        if (index !== -1) {
+          finalOrder = productsAvailable.splice(index, 1);
+          finalOrder.unshift(finalOrder[0]);
+        }
+        break;
+      }
+      default:
+        finalOrder = productsAvailable;
+        break;
+    }
+
+    return finalOrder;
+  };
+
+  console.log(productsAvailableFiltered())
+  console.log(productsAvailableFiltered())
+
+
 
   const fabricsAvailable: Product[] = products?.filter(
     (product: Product) => product.pattern === pattern
@@ -72,7 +98,7 @@ const FabricSelector = () => {
         marginTop='20px'
       >
         {category !== null &&
-          productsAvailable?.map((item, pos: number) => {
+          productsAvailableFiltered()?.map((item: Product, pos: number) => {
             return (
               <Grid
                 item

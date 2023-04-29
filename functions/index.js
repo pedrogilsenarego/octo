@@ -17,6 +17,7 @@ app.use(express.json());
 app.post("/payments/creditCard", async (req, res) => {
   let lineItems = [];
   const items = req.body.items;
+  const values = req.body.values;
 
   if (typeof items !== "undefined") {
     items.forEach((item) => {
@@ -37,25 +38,27 @@ app.post("/payments/creditCard", async (req, res) => {
     mode: "payment",
     success_url: "https://octo-mistic.com/success",
     cancel_url: "https://octo-mistic.com/cancel",
-    phone_number_collection: {
-      enabled: true,
-    },
-    shipping_address_collection: {
-      allowed_countries: ["PT"],
-    },
-    shipping_options: [
-      {
-        shipping_rate_data: {
-          type: "fixed_amount",
-          fixed_amount: { amount: 500, currency: "eur" },
-          display_name: "Express",
-          delivery_estimate: {
-            minimum: { unit: "business_day", value: 2 },
-            maximum: { unit: "business_day", value: 3 },
-          },
-        },
-      },
-    ],
+    metadata: values,
+    // phone_number_collection: {
+    //   enabled: true,
+    // },
+
+    // shipping_address_collection: {
+    //   allowed_countries: ["PT"],
+    // },
+    // shipping_options: [
+    //   {
+    //     shipping_rate_data: {
+    //       type: "fixed_amount",
+    //       fixed_amount: { amount: 500, currency: "eur" },
+    //       display_name: "Express",
+    //       delivery_estimate: {
+    //         minimum: { unit: "business_day", value: 2 },
+    //         maximum: { unit: "business_day", value: 3 },
+    //       },
+    //     },
+    //   },
+    // ],
   });
 
   res.send(
