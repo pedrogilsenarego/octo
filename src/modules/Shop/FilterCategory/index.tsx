@@ -94,7 +94,7 @@ const FilterCategory = () => {
             colorBgArrow='#00000000'
             gap={10}
             images={newCategories.map((item, pos) => (
-              <Element key={pos} item={item} selected={category === item.title} marginText={vertical ? "115%" : undefined} />
+              <Element key={pos} item={item} selected={category === item.title} marginText={vertical ? "119%" : undefined} />
             ))}
           />
         </div>
@@ -130,7 +130,7 @@ const FilterCategory = () => {
             colorBgArrow='#00000000'
             gap={10}
             images={newPatterns.map((item, pos) => (
-              <Element key={pos} item={item} selected={pattern === item.title} marginText={vertical ? "115%" : undefined} />
+              <Element key={pos} item={item} selected={pattern === item.title} marginText={vertical ? "126%" : undefined} />
             ))}
 
 

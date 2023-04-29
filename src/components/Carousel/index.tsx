@@ -8,7 +8,6 @@ import { State } from "../../slicer/types";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { BsZoomIn, BsZoomOut } from "react-icons/bs";
 
-
 interface Props {
   images: string[] | JSX.Element[];
   colorBgArrow?: string;
@@ -25,8 +24,7 @@ interface Props {
   setValue?: (item: any) => void;
   height?: string;
   objectFi?: "cover" | "contain";
-  zoom?: boolean
-
+  zoom?: boolean;
 }
 
 const Carousel = ({
@@ -55,18 +53,18 @@ const Carousel = ({
   const [startX, setStartX] = useState(0);
   const [isMoving, setIsMoving] = useState(false);
   const [addSlide, setAddSlide] = useState(0);
-  const [touch, setTouch] = useState(false)
-  const [zoomOn, setZoomOn] = useState(false)
-  const dispatch = useDispatch()
-  const vertical = useSelector<State, boolean>((state) => state.general.positionVertical)
+  const [touch, setTouch] = useState(false);
+  const [zoomOn, setZoomOn] = useState(false);
+  const dispatch = useDispatch();
+  const vertical = useSelector<State, boolean>(
+    (state) => state.general.positionVertical
+  );
 
-
-
-  usePreventScroll(touch)
+  usePreventScroll(touch);
   useEffect(() => {
-    dispatch(setStopScroll(touch))
+    dispatch(setStopScroll(touch));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [touch])
+  }, [touch]);
 
   useEffect(() => {
     if (setValue) setValue(images[slideIndex + 1]);
@@ -96,7 +94,7 @@ const Carousel = ({
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     const touch = event.touches[0];
-    setTouch(true)
+    setTouch(true);
     setStartX(touch.clientX);
     setIsMoving(true);
   };
@@ -116,7 +114,9 @@ const Carousel = ({
     const diff = touch.clientX - startX;
     setAddSlide(diff);
 
-    const threshold = windowSize.width / (focusCentral ? !vertical ? 80 : 10 : vertical ? 3 : 20);
+    const threshold =
+      windowSize.width /
+      (focusCentral ? (!vertical ? 80 : 10) : vertical ? 3 : 20);
     if (diff < -threshold) {
       handleNextClick(1);
       setIsMoving(false);
@@ -126,15 +126,18 @@ const Carousel = ({
     }
   };
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+  const handleMouseMove = (
+    event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>
+  ) => {
     if (!isMoving) return;
 
     const touch = isTouchEvent(event) ? event.touches[0] : event;
     const diff = touch.clientX - startX;
     setAddSlide(diff);
 
-    const threshold = windowSize.width / (focusCentral ? !vertical ? 200 : 10 : vertical ? 3 : 20);
-
+    const threshold =
+      windowSize.width /
+      (focusCentral ? (!vertical ? 200 : 10) : vertical ? 3 : 20);
 
     if (diff < -threshold) {
       handleNextClick(1);
@@ -145,20 +148,21 @@ const Carousel = ({
     }
   };
 
-  const isTouchEvent = (event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>): event is React.TouchEvent<HTMLDivElement> => {
+  const isTouchEvent = (
+    event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>
+  ): event is React.TouchEvent<HTMLDivElement> => {
     return (event as React.TouchEvent<HTMLDivElement>).touches !== undefined;
   };
 
-
   const handleTouchEnd = () => {
-    setTouch(false)
+    setTouch(false);
     setIsMoving(false);
     setAddSlide(0);
   };
 
   const handleZoom = () => {
-    setZoomOn(!zoomOn)
-  }
+    setZoomOn(!zoomOn);
+  };
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -175,12 +179,6 @@ const Carousel = ({
   return (
     <div
       ref={containerRef}
-      onTouchStart={noSlide || zoomOn ? undefined : handleTouchStart}
-      onTouchMove={noSlide || zoomOn ? undefined : handleTouchMove}
-      onTouchEnd={noSlide || zoomOn ? undefined : handleTouchEnd}
-      onMouseDown={noSlide || zoomOn ? undefined : handleMouseStart}
-      onMouseMove={noSlide || zoomOn ? undefined : handleMouseMove}
-      onMouseUp={noSlide || zoomOn ? undefined : handleTouchEnd}
       style={{
         width: `${containerWidthVW}vw`,
         position: "relative",
@@ -196,7 +194,7 @@ const Carousel = ({
                 position: "absolute",
                 right: outsideButtons ? "-30px" : "20px",
                 cursor: "pointer",
-                top: "50%",
+                top: "46%",
                 transform: "translateY(-50%)",
                 bottom: 0,
                 width: "40px",
@@ -224,7 +222,7 @@ const Carousel = ({
                 position: "absolute",
                 left: outsideButtons ? "-30px" : "20px",
                 cursor: "pointer",
-                top: "50%",
+                top: "46%",
                 transform: "translateY(-50%)",
                 bottom: 0,
                 width: "40px",
@@ -256,28 +254,36 @@ const Carousel = ({
               cursor: "pointer",
               bottom: "-40px",
 
-
               width: "35px",
               height: "35px",
               borderRadius: "50%",
               backgroundColor: "#00000047",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
-            {zoomOn ? <BsZoomOut size='1.2rem'
-              color="white"
-            /> : <BsZoomIn
-
-              size='1.2rem'
-              color="white"
-            />}
-
+            {zoomOn ? (
+              <BsZoomOut size='1.2rem' color='white' />
+            ) : (
+              <BsZoomIn size='1.2rem' color='white' />
+            )}
           </div>
         )}
-        <div style={{ overflow: "hidden", position: "relative", cursor: "pointer" }}>
+        <div
+          style={{
+            overflow: "hidden",
+            position: "relative",
+            cursor: "pointer",
+          }}
+        >
           <div
+            onTouchStart={noSlide || zoomOn ? undefined : handleTouchStart}
+            onTouchMove={noSlide || zoomOn ? undefined : handleTouchMove}
+            onTouchEnd={noSlide || zoomOn ? undefined : handleTouchEnd}
+            onMouseDown={noSlide || zoomOn ? undefined : handleMouseStart}
+            onMouseMove={noSlide || zoomOn ? undefined : handleMouseMove}
+            onMouseUp={noSlide || zoomOn ? undefined : handleTouchEnd}
             style={{
               columnGap: `${gap}px`,
               position: "relative",
@@ -301,24 +307,23 @@ const Carousel = ({
                       height: height || "auto",
                     }}
                   >
-                    {zoomOn ? <TransformWrapper initialScale={2}>
-                      <TransformComponent>
-                        <img
-
-                          draggable={false}
-                          src={item}
-                          alt=''
-                          style={{
-                            objectFit: objectFi,
-                            height: "100%",
-                            width: "100%",
-
-                          }}
-                        />
-                      </TransformComponent>
-                    </TransformWrapper> :
+                    {zoomOn ? (
+                      <TransformWrapper initialScale={2}>
+                        <TransformComponent>
+                          <img
+                            draggable={false}
+                            src={item}
+                            alt=''
+                            style={{
+                              objectFit: objectFi,
+                              height: "100%",
+                              width: "100%",
+                            }}
+                          />
+                        </TransformComponent>
+                      </TransformWrapper>
+                    ) : (
                       <img
-
                         draggable={false}
                         src={item}
                         alt=''
@@ -326,15 +331,9 @@ const Carousel = ({
                           objectFit: objectFi,
                           height: "100%",
                           width: "100%",
-
                         }}
                       />
-                    }
-
-
-
-
-
+                    )}
                   </div>
                 );
               } else {

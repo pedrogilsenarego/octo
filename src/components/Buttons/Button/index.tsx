@@ -37,18 +37,19 @@ const Button = ({ label, onClick, borderRadius, children, borderRadiusRight, wid
           borderTopRightRadius: borderRadiusRight ? borderRadius || "40px" : "default",
           paddingTop: "10px",
           paddingBottom: "10px",
-          paddingLeft: "60px",
-          paddingRight: "60px",
+          paddingLeft: mobile ? "15px" : "60px",
+          paddingRight: mobile ? "15px" : "60px",
         }}
         onClick={() => !disabled && onClick ? onClick() : null}
       >
         {children}
         <Typography
           style={{
+
             fontSize: mobile ? "10px" : "12px",
-            marginLeft: "10px",
+
             textTransform: "uppercase",
-            letterSpacing: "5px",
+            letterSpacing: mobile ? "2px" : "5px",
             color: "white"
           }}
         >

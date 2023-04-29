@@ -5,7 +5,6 @@ import { useQuery } from "react-query";
 import useDebounce from "../../hooks/useDebounce";
 import { useSelector } from "react-redux";
 import { State } from "../../slicer/types";
-import { fabricsX } from "../../constants/fabrics";
 import { productsMapper } from "./productsQueryMapper";
 
 
@@ -24,6 +23,7 @@ interface ProductContextType {
   productSelected: number
   setProductSelected: (productSelected: number) => void
   vertical: boolean
+  typeFilter: string
 
 }
 
@@ -43,6 +43,7 @@ export const ProductContext = createContext<ProductContextType>({
   productSelected: 0,
   setProductSelected: () => { },
   vertical: false,
+  typeFilter: ""
 
 },
 
@@ -104,6 +105,7 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
     productSelected,
     setProductSelected,
     vertical,
+    typeFilter,
 
   };
 

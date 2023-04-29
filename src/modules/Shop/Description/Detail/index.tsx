@@ -1,4 +1,5 @@
 import { Divider, Typography } from "@mui/material";
+import React from "react";
 import { useState } from "react";
 
 interface Props {
@@ -19,7 +20,14 @@ const Detail = ({ title, detail }: Props) => {
       >
         {title}
       </Typography>
-      {click && <Typography style={{ marginTop: "10px" }}>{detail}</Typography>}
+      {click && <Typography style={{ marginTop: "10px" }}>
+        {detail?.split('<br />').map((line, index) => (
+          <React.Fragment key={index}>
+            {line}
+            <br />
+          </React.Fragment>
+        ))}
+      </Typography>}
     </>
   );
 };

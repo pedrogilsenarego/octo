@@ -110,7 +110,7 @@ const Shop = () => {
               colorBgArrow='#00000000'
               gap={0}
               images={newCategories.map((category, pos) => (
-                <Element key={pos} item={category} />
+                <Element key={pos} item={category} marginText={vertical ? "120%" : undefined} />
               ))}
 
 
@@ -147,7 +147,7 @@ const Shop = () => {
               colorBgArrow='#00000000'
               gap={0}
               images={newPatterns.map((category, pos) => (
-                <Element key={pos} item={category} />
+                <Element key={pos} item={category} marginText={vertical ? "120%" : undefined} />
               ))}
 
 

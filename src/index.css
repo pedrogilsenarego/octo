@@ -19,6 +19,13 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: "MontSerrat";
+  src: local("MontSerrat"),
+    url("./assets/fonts/MontSerrat.ttf") format("truetype");
+  font-weight: normal;
+}
+
 html,body {
   margin: 0;
   padding:0;

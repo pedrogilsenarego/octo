@@ -8,9 +8,8 @@ const ImageShow = () => {
   const { product, vertical } = useContext(ProductContext);
 
 
-
   return (
-    <Box style={{ display: "flex", justifyContent: "center" }}>
+    <Box style={{ display: "flex", justifyContent: "center", marginTop: vertical ? "-40px" : "0px" }}>
       {product && (
         <Carousel
           key={product.icon}

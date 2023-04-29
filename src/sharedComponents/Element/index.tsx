@@ -61,7 +61,7 @@ const Element = ({ item, selected, marginText }: Props) => {
             backgroundColor: loading ? "transparent" : "#F5F5F5",
             borderRadius: "50%",
             opacity: loading ? 0 : 1,
-            objectFit: "contain",
+            objectFit: "cover",
             top: 0,
             left: 0,
             width: "100%",
@@ -74,21 +74,21 @@ const Element = ({ item, selected, marginText }: Props) => {
           bottom: "0",
           left: "0",
           right: "0",
-          top: marginText || "107%",
-          transform: "translateY(-110%)"
+          top: marginText || "109%",
+          transform: "translateY(-110%)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
         }}>
           <Typography
             style={{
 
               color: "#ffffff",
               fontSize: "45%",
-
               textTransform: "uppercase",
-
               textAlign: "center",
               fontWeight: 800,
               letterSpacing: "3px",
-
               lineHeight: "9px",
             }}
           >

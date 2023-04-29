@@ -1,4 +1,4 @@
-import { Typography, Divider, Box, useTheme, useMediaQuery } from "@mui/material";
+import { Typography, Divider, Box } from "@mui/material";
 import { i18n } from "../../../translations/i18n";
 import FabricSelector from "./FabricSelector";
 import { useContext, useEffect, useState } from "react";
@@ -6,16 +6,14 @@ import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../ProductContext";
 import Detail from "./Detail";
 import { categories } from "../../../constants/category";
-import { useSelector } from "react-redux";
-import { State } from "../../../slicer/types";
+
 
 
 const Description = () => {
-  const { category, pattern, product } =
+  const { category, pattern, product, vertical } =
     useContext(ProductContext);
   const [moreInfo, setMoreInfo] = useState(false);
-  const Theme = useTheme()
-  const vertical = useSelector<State, boolean>((state) => state.general.positionVertical)
+
 
   //const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
 

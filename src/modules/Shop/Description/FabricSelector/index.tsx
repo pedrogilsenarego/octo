@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import { ProductContext } from "../../ProductContext";
 import Element from "./Element";
@@ -11,12 +11,10 @@ import { updateSuccessNotification } from "../../../../slicer/general/general.ac
 import { Colors } from "../../../../constants/pallete";
 
 import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs";
-import { fabricsX } from "../../../../constants/fabrics";
 
 const FabricSelector = () => {
   const {
-    category,
-    pattern,
+    typeFilter,
     setProduct,
     products,
     productSelected,
@@ -91,29 +89,28 @@ const FabricSelector = () => {
                 />
                 <Box
                   display='flex'
-                  justifyContent='center'
+                  justifyContent='start'
                   alignItems='center'
                   flexDirection='column'
-                  style={{ height: "70px" }}
+
+                  style={{ height: "80px", }}
                 >
                   <Typography
                     style={{
                       textTransform: "uppercase",
                       textAlign: "center",
-
                       letterSpacing: "2px",
-
                       lineHeight: "11px",
                     }}
                     fontWeight={pos === productSelected ? 800 : 500}
                     fontSize='0.6rem'
                   >
-                    {item.pattern}
+                    {typeFilter === "category" ? item.pattern : item.category}
                   </Typography>
                   <Typography
                     fontWeight={pos === productSelected ? 800 : 500}
-                    fontSize='0.9rem'
-                    fontFamily="sans-serif"
+                    fontSize='0.8rem'
+                    fontFamily="MontSerrat"
                   >
                     {item.price}&nbsp;€
                   </Typography>
@@ -121,61 +118,7 @@ const FabricSelector = () => {
               </Grid>
             );
           })}
-        {/* {pattern !== null &&
-          fabricsAvailable?.map((item, pos) => {
-            return (
-              <>
-                <Grid
-                  item
-                  xs={vertical ? 4 : 2}
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    textAlign: "center",
-                  }}
-                  key={pos}
-                  onClick={() => handleSelectProduct(pos)}
-                >
-                  <Element
-                    valuee={item.icon}
-                    pos={pos}
-                    stateHighLightStatus={pos === productSelected}
-                  />
-                  <Box
-                    display='flex'
-                    justifyContent='center'
-                    alignItems='center'
-                    flexDirection='column'
-                    style={{ height: "70px" }}
 
-                  >
-                    <Typography
-                      style={{
-                        textTransform: "uppercase",
-                        textAlign: "center",
-
-                        letterSpacing: "2px",
-
-                        lineHeight: "11px",
-                      }}
-                      fontWeight={pos === productSelected ? 800 : 500}
-                      fontSize='0.6rem'
-                    >
-                      {item.category}
-                    </Typography>
-                    <Typography
-                      fontWeight={pos === productSelected ? 800 : 500}
-                      fontFamily='cursive'
-                      fontSize='0.9rem'
-                    >
-                      {item.price}&nbsp;€
-                    </Typography>
-                  </Box>
-                </Grid>
-              </>
-            );
-          })} */}
       </Grid>
       <div style={{ width: "100%", display: "flex", justifyContent: "start", columnGap: "5px" }}>
         <div
@@ -207,7 +150,7 @@ const FabricSelector = () => {
         </div>
         <Button onClick={handleAddCart} label='Add To Cart' borderRadiusRight />
       </div>
-    </Box>
+    </Box >
   );
 };
 
