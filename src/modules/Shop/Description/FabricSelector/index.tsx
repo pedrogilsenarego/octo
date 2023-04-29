@@ -33,29 +33,37 @@ const FabricSelector = () => {
     (product: Product) => product.category === category
   );
 
-  const productsAvailableFiltered = () => {
-    let finalOrder: Product[] = [];
+  // const patternPriority: {
+  //   [key: string]: string;
+  // } = {
+  //   "Sleeping Bag": fabricsX[3],
+  //   "Bed Bumper": fabricsX[0],
+  //   "Bed Pocket": fabricsX[2],
+  //   "Blanket": fabricsX[3],
+  //   "Pacifier Clip": fabricsX[4],
+  //   "Bandana Bib": fabricsX[1],
+  //   "Collar Bib": fabricsX[2],
+  // };
 
-    switch (category) {
-      case "Sleeping Bag": {
-        const index = productsAvailable.findIndex(product => product.pattern === fabricsX[3]);
-        if (index !== -1) {
-          finalOrder = productsAvailable.splice(index, 1);
-          finalOrder.unshift(finalOrder[0]);
-        }
-        break;
-      }
-      default:
-        finalOrder = productsAvailable;
-        break;
-    }
+  // const productsAvailableFiltered = () => {
+  //   let finalOrder: Product[] = [];
 
-    return finalOrder;
-  };
+  //   if (category === null) {
+  //     return productsAvailable;
+  //   }
 
-  console.log(productsAvailableFiltered())
-  console.log(productsAvailableFiltered())
-
+  //   const matchingProduct = productsAvailable.find(
+  //     product => product.pattern === patternPriority[category]
+  //   );
+  //   if (matchingProduct) {
+  //     finalOrder.push(matchingProduct);
+  //   }
+  //   finalOrder.push(...productsAvailable.filter(product => product !== matchingProduct));
+  //   if (!finalOrder.length) {
+  //     return productsAvailable;
+  //   }
+  //   return finalOrder;
+  // };
 
 
   const fabricsAvailable: Product[] = products?.filter(
@@ -98,7 +106,7 @@ const FabricSelector = () => {
         marginTop='20px'
       >
         {category !== null &&
-          productsAvailableFiltered()?.map((item: Product, pos: number) => {
+          productsAvailable?.map((item: Product, pos: number) => {
             return (
               <Grid
                 item

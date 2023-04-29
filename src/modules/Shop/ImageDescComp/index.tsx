@@ -4,10 +4,15 @@ import Description from "../Description";
 import { useContext } from "react";
 import { ProductContext } from "../ProductContext";
 import Loader from "../../../components/Loader";
+import { State } from "../../../slicer/types";
+import { useSelector } from "react-redux";
 
 const ImageDescComp = () => {
-  const { isLoading } =
-    useContext(ProductContext);
+  const { isLoading } = useContext(ProductContext);
+  const vertical = useSelector<State, boolean>(
+    (state) => state.general.positionVertical
+  );
+
   return (
     <>
       {isLoading ? (
@@ -25,12 +30,25 @@ const ImageDescComp = () => {
         </div>
       ) : (
         <>
-          <Grid item xs={12} sm={6}>
-            <ImageShow />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <Description />
-          </Grid>
+          {vertical ? (
+            <>
+              <Grid item xs={12} sm={6}>
+                <Description />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <ImageShow />
+              </Grid>
+            </>
+          ) : (
+            <>
+              <Grid item xs={12} sm={6}>
+                <ImageShow />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Description />
+              </Grid>
+            </>
+          )}
         </>
       )}
     </>

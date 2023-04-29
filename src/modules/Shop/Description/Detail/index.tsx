@@ -12,12 +12,12 @@ const Detail = ({ title, detail }: Props) => {
     <>
 
       <Typography
-        style={{ marginTop: "10px", fontWeight: 800, cursor: "pointer" }}
-        onClick={() => setClick(!click)}
         component="div"
-        dangerouslySetInnerHTML={{ __html: title }}
-      >
+        style={{ marginTop: "10px", fontWeight: 800, cursor: "pointer", whiteSpace: "pre-line" }}
+        onClick={() => setClick(!click)}
 
+      >
+        {title}
       </Typography>
       {click && <Typography style={{ marginTop: "10px" }}>{detail}</Typography>}
     </>
