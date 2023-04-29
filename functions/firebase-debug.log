@@ -104,3 +104,20 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"api\" in ~1s"}}
 [debug] [2023-04-28T15:32:05.729Z] [worker-us-central1-api-eae8274a-3669-49a3-9e66-f2b48f523026]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-eae8274a-3669-49a3-9e66-f2b48f523026]: IDLE"}}
 [debug] [2023-04-28T15:32:05.730Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2023-04-29T05:49:00.261Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2023-04-29T05:49:00.262Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2023-04-29T05:49:00.262Z] Accepted request POST /octo-29041/us-central1/api/payments/creditCard --> us-central1-api
+[debug] [2023-04-29T05:49:00.262Z] [worker-pool] submitWork(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-api)"}}
+[debug] [2023-04-29T05:49:00.263Z] [worker-us-central1-api-eae8274a-3669-49a3-9e66-f2b48f523026]: Assigning socketPath: /tmp/fire_emu_7807.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-eae8274a-3669-49a3-9e66-f2b48f523026]: Assigning socketPath: /tmp/fire_emu_7807.sock"}}
+[debug] [2023-04-29T05:49:00.263Z] [worker-us-central1-api-eae8274a-3669-49a3-9e66-f2b48f523026]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-eae8274a-3669-49a3-9e66-f2b48f523026]: BUSY"}}
+[debug] [2023-04-29T05:49:00.268Z] [runtime-status] [7807] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [7807] Beginning invocation function api!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
+[debug] [2023-04-29T05:49:00.271Z] [runtime-status] [7807] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [7807] Running api in signature http"}}
+[debug] [2023-04-29T05:49:00.272Z] [runtime-status] [7807] Attempting to listen to socketPath: /tmp/fire_emu_7807.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [7807] Attempting to listen to socketPath: /tmp/fire_emu_7807.sock"}}
+[debug] [2023-04-29T05:49:00.279Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-04-29T05:49:00.280Z] [functions] Got req.url=/octo-29041/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/octo-29041/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard"}}
+[debug] [2023-04-29T05:49:00.287Z] [runtime-status] [7807] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [7807] Ephemeral server handling POST request"}}
+[debug] [2023-04-29T05:49:00.293Z] [runtime-status] [7807] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [7807] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"api\" in ~1s"}}
+[debug] [2023-04-29T05:49:01.399Z] [worker-us-central1-api-eae8274a-3669-49a3-9e66-f2b48f523026]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-eae8274a-3669-49a3-9e66-f2b48f523026]: IDLE"}}
+[debug] [2023-04-29T05:49:01.400Z] [work-queue] {"queueLength":0,"workRunningCount":0}

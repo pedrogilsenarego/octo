@@ -1,9 +1,9 @@
-// import { Form, Formik } from "formik";
-// import { FORM_VALIDATION } from "./validation";
-// import { Box } from "@mui/material";
+import { Form, Formik } from "formik";
+import { FORM_VALIDATION } from "./validation";
+import { Box } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
-// import ButtonForm from "../../../../components/Buttons/ButtonFormik";
-// import Textfield from "../../../../components/Inputs/TextField";
+import ButtonForm from "../../../../components/Buttons/ButtonFormik";
+import Textfield from "../../../../components/Inputs/TextField";
 import { Colors } from "../../../../constants/pallete";
 // import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +14,8 @@ import Button from "../../../../components/Buttons/Button";
 import { clearCart } from "../../../../slicer/cart/cart.actions";
 import { stripeLocal, stripeProduction } from "../../../../constants/stripe";
 import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
+import SelectWrapper from "../../../../components/Inputs/SelectFormValue";
+import { countryList } from "../../../../constants/forms";
 
 interface Props {
   closeCart: (signal: boolean) => void
@@ -22,21 +24,25 @@ interface Props {
 interface FormProps {
   name: string;
   address: string;
+  address2: string;
   city: string;
   postCode: string;
+  country: string;
   email: string;
   phone: string;
 }
 
 const Checkout = ({ closeCart }: Props) => {
-  // const INITIAL_FORM_STATE: FormProps = {
-  //   name: "",
-  //   address: "",
-  //   city: "",
-  //   postCode: "",
-  //   email: "",
-  //   phone: "",
-  // };
+  const INITIAL_FORM_STATE: FormProps = {
+    name: "",
+    address: "",
+    address2: "",
+    city: "",
+    postCode: "",
+    country: "",
+    email: "",
+    phone: "",
+  };
 
 
   //const [details, setDetails] = useState({ ...INITIAL_FORM_STATE });
@@ -45,7 +51,7 @@ const Checkout = ({ closeCart }: Props) => {
     (state) => state.cart.cartItems
   );
 
-  const handleSubmitCard = async () => {
+  const handleSubmitCard = async (values: FormProps) => {
     let items: {
       title: string;
       amount: number;
@@ -120,11 +126,12 @@ const Checkout = ({ closeCart }: Props) => {
 
   return (
     <>
-      {/* <Formik
+      <Formik
         initialValues={{ ...INITIAL_FORM_STATE }}
         onSubmit={(values, { resetForm }) => {
-          handleSubmitCard(values);
-          resetForm();
+          console.log(values)
+          // handleSubmitCard(values);
+          // resetForm();
         }}
         validationSchema={FORM_VALIDATION}
       >
@@ -136,8 +143,10 @@ const Checkout = ({ closeCart }: Props) => {
               flexDirection='column'
               sx={{ mt: "20px", pb: "20px" }}
             >
+              <SelectWrapper options={countryList} name="country" label="country" />
               <Textfield label={i18n.t("forms.name")} name='name' />
-              <Textfield label={i18n.t("forms.address")} name='address' />
+              <Textfield label="Line 1" name='address' />
+              <Textfield label="Line 2" name='address2' />
               <Textfield label={i18n.t("forms.city")} name='city' />
               <Textfield label={i18n.t("forms.postCode")} name='postCode' />
               <Textfield label={i18n.t("forms.email")} name='email' />
@@ -146,19 +155,19 @@ const Checkout = ({ closeCart }: Props) => {
             </Box>
           </>
           <Box display="flex" flexDirection="column" rowGap={2}>
-            <CardElement options={
+            {/* <CardElement options={
               cardElementOptions
-            } />
-
-
+            } /> */}
           </Box>
+          <ButtonForm colorHover={Colors.NEON_YELLOW_TRANSPARENT}
+            label={i18n.t("cartDrawer.buyNow")} />
         </Form>
-      </Formik> */}
-      <Button
+      </Formik>
+      {/* <Button
         onClick={handleSubmitCard}
         colorHover={Colors.NEON_YELLOW_TRANSPARENT}
         label={i18n.t("cartDrawer.buyNow")}
-      />
+      /> */}
       {/* <Button
 
               colorHover={Colors.NEON_YELLOW_TRANSPARENT}
