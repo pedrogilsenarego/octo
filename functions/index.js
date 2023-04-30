@@ -3,7 +3,7 @@ const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY_TEST);
 
 const app = express();
 

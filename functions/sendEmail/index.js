@@ -17,7 +17,7 @@ const sendEmail = (customerEmail) => {
   const mailOptions = {
     from: '"Octo-Mistic" <noreply@octo-mistic.com>', // sender address
     to: customerEmail, // list of receivers
-    subject: "Order Confirmation", // Subject line
+    subject: "OctoMistic - Order Confirmation", // Subject line
     html: `<div style={{display::flex, flexDirection:"column", rowGap:"30px"}}>
     <p style={{fontSize:"40px"}}>Your order in Octo-mistic is complete!</p>
     <p style={{fontSize:"40px"}}>Thank you for purchasing with us!</p>
