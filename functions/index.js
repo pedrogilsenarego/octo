@@ -3,7 +3,7 @@ const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY_TEST);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY_LIVE);
 
 const app = express();
 
@@ -81,7 +81,7 @@ app.post(
       event = stripe.webhooks.constructEvent(
         request.rawBody,
         sig,
-        process.env.STRIPE_WEBHOOK_SECRET_TEST
+        process.env.STRIPE_WEBHOOK_SECRET_LIVE
       );
     } catch (err) {
       response.status(400).send(`Webhook Error: ${err.message}`);

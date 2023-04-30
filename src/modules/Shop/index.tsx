@@ -27,7 +27,7 @@ const Shop = ({ show }: Props) => {
 
   return (
     <>
-      <div
+      {/* <div
         style={{
           marginLeft: generalConstants.PADDING,
           marginRight: generalConstants.PADDING,
@@ -45,11 +45,12 @@ const Shop = ({ show }: Props) => {
           Thank you for your patience and understanding, and we'll let you know as soon as our store is ready for business!<br />
           In any case, if you wish to purchase any of our products, you can do so by reaching out to us via email at <b>hello@octo-mistic.com</b> or by sending us a direct message on Instagram <b style={{ cursor: "pointer" }} onClick={handleInstagram}>@octo.mistic</b>, and we will assist you throughout the process
         </Typography>
-      </div >
-      {show && (<ProductContextProvider>
+      </div > */}
+      <ProductContextProvider>
         <Box
           display='flex'
           style={{
+            marginTop: mobile ? "50px" : "100px",
             alignItems: "center",
             justifyContent: "center",
             width: "100vw",
@@ -76,7 +77,7 @@ const Shop = ({ show }: Props) => {
 
 
 
-        </Box></ProductContextProvider>)}
+        </Box></ProductContextProvider>
 
     </>
   );

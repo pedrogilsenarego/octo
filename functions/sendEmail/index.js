@@ -25,6 +25,9 @@ const sendEmail = (customerEmail) => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Octo-mistic</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,800;1,200&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
         <style type="text/css">
           body {
             margin: 0;
@@ -38,12 +41,14 @@ const sendEmail = (customerEmail) => {
           }
           img {
             border: 0;
+          
+        pointer-events: none;
           }
           .wrapper {
             width: 100%;
             table-layout: fixed;
             background-color: #cccccc;
-            padding-bottom: 60px;
+            padding-bottom: 0px;
           }
           .main {
             background-color: #ffffff;
@@ -51,7 +56,7 @@ const sendEmail = (customerEmail) => {
             width: 100%;
             max-width: 600px;
             border-spacing: 0;
-            font-family: sans-serif;
+            font-family: Montserrat;
             color: #1a2032;
           }
           .two-columns {
@@ -71,10 +76,22 @@ const sendEmail = (customerEmail) => {
         <center class="wrapper">
           <table class="main" width="100%">
             <!-- TOP BORDER -->
-            <tr>
-              <td height="28px" style="background-color: #1a2032"></td>
-            </tr>
     
+            <tr>
+              <td height="28px" style="background-color:#D2E500"></td>
+            </tr>
+            <tr>
+              <td>
+                <a href=""
+                  ><img
+                  draggable="false"
+                    src="https://res.cloudinary.com/dmrll3fnf/image/upload/v1682856674/OCTO_SS23_574a_z3h2mr.webp"
+                    alt=""
+                    width="600"
+                    style="max-width: 100%"
+                /></a>
+              </td>
+            </tr>
             <!-- LOGO SECTION -->
             <tr>
               <td style="padding: 14px 0 4px">
@@ -88,7 +105,7 @@ const sendEmail = (customerEmail) => {
                               ><img
                                 src="https://res.cloudinary.com/daantetcr/image/upload/v1681751224/Octo/collections/Blackish/OCTO_Logotipo_transp-octo_ixffst.png"
                                 alt="www.octo-mistic.com"
-                                width="280px"
+                                width="250px"
                                 title="www.octo-mistic.com"
                             /></a>
                           </td>
@@ -102,25 +119,16 @@ const sendEmail = (customerEmail) => {
             </tr>
     
             <!-- BANNER IMAGE -->
-            <tr>
-              <td>
-                <a href=""
-                  ><img
-                    src="https://res.cloudinary.com/dmrll3fnf/image/upload/v1682856674/OCTO_SS23_574a_z3h2mr.webp"
-                    alt=""
-                    width="600"
-                    style="max-width: 100%"
-                /></a>
-              </td>
-            </tr>
+            
     
             <!-- THREE COLUMN SECTION -->
             <tr>
               <td
-                style="text-align: center; padding-left: 30px; padding-right: 30px"
+                style="text-align: center; padding-left: 30px; padding-right: 30px; padding-top:-20px"
               >
                 <p
                   style="
+                  margin-top: -40px;
                     font-weight: 800;
                     font-size: 40px;
                     color: #1a2032;
@@ -135,7 +143,7 @@ const sendEmail = (customerEmail) => {
                 <p style="font-weight: 800; font-size: 20px; color: #1a2032">
                   If you have any questions or concerns about your order, please don't hesitate to contact us.
                 </p>
-                <p style="font-weight: 800; font-size: 20px; color: #1a2032">
+                <p style="font-weight: 800; font-size: 20px; color: #1a2032; margin-bottom: 100px;">
                   Thank you for choosing us! We look forward to see you again in the future!
                 </p>
               </td>
@@ -146,7 +154,7 @@ const sendEmail = (customerEmail) => {
             <!-- TITLE, TEXT & BUTTON -->
     
             <!-- FOOTER SECTION -->
-            <tr style="background-color: #1a2032" style="padding-top: 40px;">
+            <tr style="background-color: #1a2032" style="margin-top: 400px;">
               <td
                 style="
                   text-align: center;
@@ -156,6 +164,9 @@ const sendEmail = (customerEmail) => {
                   padding-bottom: 30px;
                 "
               >
+              <p style=" font-size: 20px; font-weight: 800; color: #D2E500">
+                We are Octomistic!
+              </p>
                 <p style=" font-size: 20px; color: #D2E500">
                   We are moms, dads and kids with no strings attached.
                 </p>
@@ -177,6 +188,7 @@ const sendEmail = (customerEmail) => {
         </center>
       </body>
     </html>
+    
     
     `, // html body
   };
