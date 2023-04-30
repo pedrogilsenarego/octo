@@ -32,10 +32,6 @@ export const productsMapper = (products:Product[], typeFilter:"pattern"|"categor
  
   const listToUse = typeFilter === "category" ? patternPriority : categoryPriority
   const patternOrCategory = typeFilter === "category" ? "pattern" : "category";
-
-  console.log("products",products)
-  console.log("filter",filter)
-  
   
 
   const productsAvailableFiltered = () => {
@@ -48,7 +44,6 @@ export const productsMapper = (products:Product[], typeFilter:"pattern"|"categor
     const matchingProduct = products.find(
       product => product[patternOrCategory] === listToUse[filter]
     );
-    console.log(matchingProduct)
     if (matchingProduct) {
       finalOrder.push(matchingProduct);
       
