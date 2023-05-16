@@ -49,7 +49,7 @@ export const categories:Category[] = [
   icon: "https://res.cloudinary.com/daantetcr/image/upload/v1682061057/Octo/bedBumper/OCTO_Icones-08_xvw0tt_dwf439.webp",
   price: 34,
   moreInfo: {
-    description: "Our baby cot protectors are designed to provide a safe and comfortable sleeping environment for your little one. <br/>Crafted in cotton.",
+    description: "Our baby cot protectors are designed to provide a safe and comfortable sleeping environment for your little one. <br /><br />Crafted in cotton.",
     dimensions: "120 x 60 x 30 cm",
     washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
   
@@ -125,7 +125,7 @@ export const categories:Category[] = [
     icon: "https://res.cloudinary.com/daantetcr/image/upload/v1682061167/Octo/ProductBandana/OCTO_Icones-09_mgzqwg_pxvxsd.webp",
     price: 34,
     moreInfo: {
-      description: "Our washcloth is an excellent way to keep your baby's clothes dry from drool, ensuring maximum comfort and avoiding potential irritation. It fastens with a snap button and offers two different positions to adjust the size of the neck circumference. Crafted in cotton.",
+      description: "Our washcloth is an excellent way to keep your baby's clothes dry from drool, ensuring maximum comfort and avoiding potential irritation. It fastens with a snap button and offers two different positions to adjust the size of the neck circunference. Crafted in cotton.",
       dimensions: "N.A.",
       washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
      },
@@ -155,8 +155,8 @@ export const categories:Category[] = [
     icon: "https://res.cloudinary.com/daantetcr/image/upload/v1682061499/Octo/strollerPocket/OCTO_Icones-06_pquc35_ntxhtp.webp",
     price: 34,
     moreInfo: {
-      description: "This is our Stroller Pocket, designed to be lightweight and easy to carry. With a detachable shoulder strap and our signature yellow zip closure, it's padded to protect your belongings inside. The bag can be attached to your pram's handlebars with snaps or used as a compact walking bag. It’s perfect for daily use!<br /><br />  Crafted in cotton. ",
-      dimensions: "Size: 30 x 20 x 10 cm",
+      description: "Our Laundry Kit is the perfect solution for storing clean and dirty clothes when you're on the go. Our kit includes two bags: one that have the interior made of waterproof material to keep dirty clothes separate from clean ones, and the other is made of soft, breathable material to store clean clothes. Ideal for travel, daycare, or trips to the park.<br /><br /> Crafted in cotton. ",
+      dimensions: "Size: 35 x 35 cm",
       washing: "Suitable for washing in a washing machine. Do not exceed 30º to prevent damage to the fabric. Do not use a dryer"
     
      },
