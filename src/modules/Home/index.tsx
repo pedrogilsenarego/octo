@@ -9,7 +9,6 @@ import { scrollTo } from "../../slicer/general/general.actions";
 import Footer from "../../presentional/Footer";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { Colors } from "../../constants/pallete";
-import usePreventScroll from "../../hooks/usePreventScrollY";
 
 
 
