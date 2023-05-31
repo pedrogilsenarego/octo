@@ -30,7 +30,7 @@ const Cart = ({ closeCart }: Props) => {
   const cartProducts = useSelector<State, CartProduct[]>(
     (state) => state.cart.cartItems
   );
-
+  const discount = 10
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const dispatch = useDispatch();
@@ -107,9 +107,13 @@ const Cart = ({ closeCart }: Props) => {
       )}
 
       <Divider />
+      <Typography fontSize="0.6rem">
+        * Special discount 10%, Childrens Day
+      </Typography>
       {!checkoutInfo && (<Box display='flex' justifyContent='end' width='100%' mt='10px'>
-        <Typography>
-          {i18n.t("cartDrawer.totalPrice")} {getTotalValue(cartProducts)} €
+
+        <Typography style={{ textDecoration: discount ? "line-through" : "none" }}>
+          {i18n.t("cartDrawer.totalPrice")} {getTotalValue(cartProducts) * ((100 - discount) / 100)} €
         </Typography>
       </Box>)}
 
@@ -123,7 +127,7 @@ const Cart = ({ closeCart }: Props) => {
         }}
       >
         {checkoutInfo ? (
-          <Elements stripe={stripePromise}><Checkout closeCart={closeCart} /></Elements>
+          <Elements stripe={stripePromise}><Checkout closeCart={closeCart} discount={discount} /></Elements>
         ) : (
           <>
             <Button

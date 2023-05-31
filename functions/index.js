@@ -5,6 +5,8 @@ const cors = require("cors");
 require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY_LIVE);
 
+const sdk = require("api")("@eupago/v1.0#13h3bg2olbkstqy7");
+
 const app = express();
 
 app.use(
@@ -104,5 +106,18 @@ app.post(
     response.send();
   }
 );
+
+app.post("/payments/mbWay", async (req, res) => {
+  sdk
+    .mbWay({
+      chave: process.env.EU_PAGO_API_KEY,
+      valor: "12.95",
+      id: "Exemplo-em-JSON",
+      alias: "916312512",
+      descricao: "exemplo eupago",
+    })
+    .then(({ data }) => console.log(data))
+    .catch((err) => console.error(err));
+});
 
 exports.api = functions.https.onRequest(app);

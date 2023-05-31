@@ -19,6 +19,7 @@ import { getTotalValue } from "../Utils/totalValue";
 
 interface Props {
   closeCart: (signal: boolean) => void;
+  discount: number
 }
 
 interface FormProps {
@@ -32,7 +33,7 @@ interface FormProps {
   phone: string;
 }
 
-const Checkout = ({ closeCart }: Props) => {
+const Checkout = ({ closeCart, discount }: Props) => {
   const INITIAL_FORM_STATE: FormProps = {
     name: "",
     address: "",
@@ -46,6 +47,7 @@ const Checkout = ({ closeCart }: Props) => {
 
   //const [details, setDetails] = useState({ ...INITIAL_FORM_STATE });
   const dispatch = useDispatch();
+
   const cartProducts = useSelector<State, CartProduct[]>(
     (state) => state.cart.cartItems
   );
@@ -64,14 +66,14 @@ const Checkout = ({ closeCart }: Props) => {
     cartProducts.forEach((item: CartProduct) => {
       items.push({
         title: `${item.product.category}-${item.product.pattern}`,
-        amount: item.product.price * 100,
+        amount: item.product.price * 100 * ((100 - discount) / 100),
         quantity: item.value,
 
       });
     });
     if (shippingFees !== 0) items.push({
       title: `Shipping to ${countryList?.filter(item => item.value === country)[0]?.title || ""}`,
-      amount: shippingFees * 100,
+      amount: shippingFees * 100 * ((100 - discount) / 100),
       quantity: 1
     })
     await fetch(stripeProduction, {
@@ -143,12 +145,16 @@ const Checkout = ({ closeCart }: Props) => {
         </Typography>
         <Typography>+ Shipping Fee {shippingFees} €</Typography>
         <Divider style={{ backgroundColor: Colors.BLACKISH, width: "40%" }} />
-        <Typography>
+        <Typography style={{ textDecoration: discount ? "line-through" : "none" }}>
           {i18n.t("cartDrawer.totalPrice")} {getTotalValue(cartProducts) + shippingFees} €
         </Typography>
-        <Typography mt="20px" fontSize="0.6rem">
-          * Free shipping until 12 of May 2023
+
+        <Typography >
+          {i18n.t("cartDrawer.totalPrice")} {(getTotalValue(cartProducts) + shippingFees) * ((100 - discount) / 100)} €
         </Typography>
+        {/* <Typography mt="20px" fontSize="0.6rem">
+          * Free shipping until 12 of May 2023
+        </Typography> */}
       </Box>
       <Formik
         initialValues={{ ...INITIAL_FORM_STATE }}
