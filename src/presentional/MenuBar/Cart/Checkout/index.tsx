@@ -152,9 +152,12 @@ const Checkout = ({ closeCart, discount }: Props) => {
         <Typography >
           {i18n.t("cartDrawer.totalPrice")} {(getTotalValue(cartProducts) + shippingFees) * ((100 - discount) / 100)} €
         </Typography>
-        {/* <Typography mt="20px" fontSize="0.6rem">
-          * Free shipping until 12 of May 2023
-        </Typography> */}
+        {discount && (
+          <Typography fontSize="0.6rem">
+            * Special discount 10%, Childrens Day
+          </Typography>
+        )}
+
       </Box>
       <Formik
         initialValues={{ ...INITIAL_FORM_STATE }}

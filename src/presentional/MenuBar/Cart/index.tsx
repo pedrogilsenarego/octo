@@ -107,14 +107,23 @@ const Cart = ({ closeCart }: Props) => {
       )}
 
       <Divider />
-      <Typography fontSize="0.6rem">
-        * Special discount 10%, Childrens Day
-      </Typography>
-      {!checkoutInfo && (<Box display='flex' justifyContent='end' width='100%' mt='10px'>
+
+      {!checkoutInfo && (<Box display='flex' flexDirection="column" alignItems='end' width='100%' mt='10px'>
 
         <Typography style={{ textDecoration: discount ? "line-through" : "none" }}>
-          {i18n.t("cartDrawer.totalPrice")} {getTotalValue(cartProducts) * ((100 - discount) / 100)} €
+          {i18n.t("cartDrawer.totalPrice")} {getTotalValue(cartProducts)} €
         </Typography>
+        {discount && (
+          <>
+            <Typography >
+              {"Total with discount:"} {getTotalValue(cartProducts) * ((100 - discount) / 100)} €
+            </Typography>
+            <Typography fontSize="0.6rem">
+              * Special discount 10%, Childrens Day
+            </Typography>
+          </>
+        )}
+
       </Box>)}
 
 
