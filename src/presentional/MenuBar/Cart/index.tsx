@@ -30,7 +30,7 @@ const Cart = ({ closeCart }: Props) => {
   const cartProducts = useSelector<State, CartProduct[]>(
     (state) => state.cart.cartItems
   );
-  const discount = 10
+  const discount = null
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const dispatch = useDispatch();
@@ -136,7 +136,7 @@ const Cart = ({ closeCart }: Props) => {
         }}
       >
         {checkoutInfo ? (
-          <Elements stripe={stripePromise}><Checkout closeCart={closeCart} discount={discount} /></Elements>
+          <Elements stripe={stripePromise}><Checkout closeCart={closeCart} discount={discount && discount} /></Elements>
         ) : (
           <>
             <Button

@@ -19,7 +19,7 @@ import { getTotalValue } from "../Utils/totalValue";
 
 interface Props {
   closeCart: (signal: boolean) => void;
-  discount: number
+  discount?: number | null
 }
 
 interface FormProps {
@@ -66,14 +66,14 @@ const Checkout = ({ closeCart, discount }: Props) => {
     cartProducts.forEach((item: CartProduct) => {
       items.push({
         title: `${item.product.category}-${item.product.pattern}`,
-        amount: item.product.price * 100 * ((100 - discount) / 100),
+        amount: item.product.price * 100 * ((100 - (discount || 0)) / 100),
         quantity: item.value,
 
       });
     });
     if (shippingFees !== 0) items.push({
       title: `Shipping to ${countryList?.filter(item => item.value === country)[0]?.title || ""}`,
-      amount: shippingFees * 100 * ((100 - discount) / 100),
+      amount: shippingFees * 100 * ((100 - (discount || 0)) / 100),
       quantity: 1
     })
     await fetch(stripeProduction, {
@@ -150,7 +150,7 @@ const Checkout = ({ closeCart, discount }: Props) => {
         </Typography>
 
         <Typography >
-          {i18n.t("cartDrawer.totalPrice")} {(getTotalValue(cartProducts) + shippingFees) * ((100 - discount) / 100)} €
+          {i18n.t("cartDrawer.totalPrice")} {(getTotalValue(cartProducts) + shippingFees) * ((100 - (discount || 0)) / 100)} €
         </Typography>
         {discount && (
           <Typography fontSize="0.6rem">
