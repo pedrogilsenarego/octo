@@ -136,7 +136,7 @@ const Cart = ({ closeCart }: Props) => {
         }}
       >
         {checkoutInfo ? (
-          <Elements stripe={stripePromise}><Checkout closeCart={closeCart} discount={discount && discount} /></Elements>
+          <Elements stripe={stripePromise}><Checkout closeCart={closeCart} discount={discount} /></Elements>
         ) : (
           <>
             <Button
