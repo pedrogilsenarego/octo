@@ -57,6 +57,7 @@ const FabricSelector = () => {
         marginTop="20px"
       >
         {products?.map((item: Product, pos: number) => {
+          const available = item?.available === false ? false : true;
           return (
             <Grid
               item
@@ -93,9 +94,8 @@ const FabricSelector = () => {
                     textAlign: "center",
                     letterSpacing: "2px",
                     lineHeight: "11px",
-                    textDecoration:
-                      item.available === false ? "line-through" : "inherit",
-                    color: item.available === false ? "lightgray" : "inherit",
+                    textDecoration: !available ? "line-through" : "inherit",
+                    color: !available ? "lightgray" : "inherit",
                   }}
                   fontWeight={pos === productSelected ? 800 : 500}
                   fontSize="0.6rem"
@@ -107,9 +107,8 @@ const FabricSelector = () => {
                   fontSize="0.8rem"
                   fontFamily="MontSerrat"
                   style={{
-                    textDecoration:
-                      item.available === false ? "line-through" : "inherit",
-                    color: item.available === false ? "lightgray" : "inherit",
+                    textDecoration: !available ? "line-through" : "inherit",
+                    color: !available ? "lightgray" : "inherit",
                   }}
                 >
                   {item.price}&nbsp;€
@@ -155,7 +154,9 @@ const FabricSelector = () => {
           />
         </div>
         <Button
-          disabled={products[productSelected].available === false}
+          disabled={
+            products[productSelected]?.available === false ? true : false
+          }
           onClick={handleAddCart}
           label="Add To Cart"
           borderRadiusRight
