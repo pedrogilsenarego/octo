@@ -7,8 +7,8 @@ import { Colors } from "../../constants/pallete";
 
 interface Props {
   item: Category | FabricsType;
-  selected?: boolean
-  marginText?: string
+  selected?: boolean;
+  marginText?: string;
 }
 
 const Element = ({ item, selected, marginText }: Props) => {
@@ -27,35 +27,33 @@ const Element = ({ item, selected, marginText }: Props) => {
         position: "relative",
         paddingBottom: "30px",
         paddingTop: "0px",
-
-
       }}
     >
       <Box
         key={item.title}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        display='flex'
+        display="flex"
         onLoad={() => setLoading(false)}
-        justifyContent='center'
-        alignItems='center'
+        justifyContent="center"
+        alignItems="center"
         style={{
           cursor: "pointer",
           position: "relative",
           borderRadius: "50%",
-          border: hover || selected
-            ? `solid 2px ${Colors.NEON_YELLOW}`
-            : "solid 0px transparent",
+          border:
+            hover || selected
+              ? `solid 2px ${Colors.NEON_YELLOW}`
+              : "solid 0px transparent",
           width: "100%",
 
           boxShadow: loading ? "0px 0px 0px 0px" : "0px 0px 10px 0px #0000001e",
           aspectRatio: 1,
-
         }}
       >
         <img
           src={item.icon}
-          alt=''
+          alt=""
           draggable={false}
           style={{
             backgroundColor: loading ? "transparent" : "#F5F5F5",
@@ -69,20 +67,21 @@ const Element = ({ item, selected, marginText }: Props) => {
           }}
           onLoad={() => setLoading(false)}
         />
-        <div style={{
-          position: "absolute",
-          bottom: "0",
-          left: "0",
-          right: "0",
-          top: marginText || "109%",
-          transform: "translateY(-110%)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        }}>
+        <div
+          style={{
+            position: "absolute",
+            bottom: "0",
+            left: "0",
+            right: "0",
+            top: marginText || "109%",
+            transform: "translateY(-110%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <Typography
             style={{
-
               color: "#ffffff",
               fontSize: "45%",
               textTransform: "uppercase",
@@ -92,12 +91,10 @@ const Element = ({ item, selected, marginText }: Props) => {
               lineHeight: "9px",
             }}
           >
-
             {item.title}
           </Typography>
         </div>
       </Box>
-
     </div>
   );
 };

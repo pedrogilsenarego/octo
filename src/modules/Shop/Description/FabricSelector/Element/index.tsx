@@ -1,40 +1,32 @@
 import { Box } from "@mui/material";
-import { Colors } from "../../../../../constants/pallete";
 import { useState } from "react";
+import { Colors } from "../../../../../constants/pallete";
 
 import { Ellipsis } from "react-spinners-css";
-
 
 interface Props {
   size?: string;
   valuee: string;
   stateHighLightStatus?: boolean;
-  pos?: number
+  pos?: number;
 }
 
 const Element = ({ valuee, stateHighLightStatus, pos }: Props) => {
-
   const [loading, setLoading] = useState<boolean>(true);
-
 
   return (
     <Box
       key={pos}
-
       style={{
         cursor: "pointer",
         height: "100%",
         aspectRatio: 1,
         position: "relative",
         borderRadius: "4px",
-
-
-
       }}
     >
       {loading && (
         <Ellipsis
-
           size={40}
           color={Colors.NEON_YELLOW}
           style={{
@@ -53,7 +45,7 @@ const Element = ({ valuee, stateHighLightStatus, pos }: Props) => {
       <img
         onLoad={() => setLoading(false)}
         src={valuee}
-        alt=''
+        alt=""
         key={pos}
         style={{
           position: "absolute",
@@ -64,7 +56,6 @@ const Element = ({ valuee, stateHighLightStatus, pos }: Props) => {
           opacity: loading ? 0 : 1,
         }}
       />
-
     </Box>
   );
 };
