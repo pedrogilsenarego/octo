@@ -110,14 +110,20 @@ app.post(
 app.post("/payments/mbWay", async (req, res) => {
   sdk
     .mbWay({
-      chave: process.env.EU_PAGO_API_KEY,
+      chave: "2b97-3807-1c0e-37ed-287a",
       valor: "12.95",
       id: "Exemplo-em-JSON",
-      alias: "916312512",
+      alias: "999999999",
       descricao: "exemplo eupago",
     })
     .then(({ data }) => console.log(data))
     .catch((err) => console.error(err));
+});
+
+app.get("/test", (req, res) => {
+  const userData = [{ teste: "teste" }, { teste: "teste" }];
+
+  res.send(userData);
 });
 
 exports.api = functions.https.onRequest(app);
