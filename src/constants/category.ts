@@ -10,6 +10,7 @@ export type Product = {
   pattern: string;
   icon: string;
   available: boolean;
+  discount?: number;
 };
 
 export type Category = {

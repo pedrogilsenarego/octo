@@ -107,12 +107,26 @@ const FabricSelector = () => {
                   fontSize="0.8rem"
                   fontFamily="MontSerrat"
                   style={{
-                    textDecoration: !available ? "line-through" : "inherit",
+                    textDecoration:
+                      !available || item.discount ? "line-through" : "inherit",
                     color: !available ? "lightgray" : "inherit",
                   }}
                 >
-                  {item.price}&nbsp;€
+                  {item.price}&nbsp;€{" "}
                 </Typography>
+                {item?.discount && (
+                  <Typography
+                    fontSize="0.8rem"
+                    fontFamily="MontSerrat"
+                    style={{
+                      textDecoration: !available ? "line-through" : "inherit",
+                      color: !available ? "lightgray" : "inherit",
+                    }}
+                  >
+                    {(item.price * (1 - item.discount)).toFixed(1)}
+                    &nbsp;€
+                  </Typography>
+                )}
               </Box>
             </Grid>
           );

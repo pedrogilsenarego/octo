@@ -1,25 +1,25 @@
-import { Form, Formik } from "formik";
-import { FORM_VALIDATION } from "./validation";
 import { Box, Divider, Typography } from "@mui/material";
-import { i18n } from "../../../../translations/i18n";
+import { Form, Formik } from "formik";
 import ButtonForm from "../../../../components/Buttons/ButtonFormik";
 import Textfield from "../../../../components/Inputs/TextField";
 import { Colors } from "../../../../constants/pallete";
+import { i18n } from "../../../../translations/i18n";
+import { FORM_VALIDATION } from "./validation";
 // import { useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { State } from "../../../../slicer/types";
-import { CartProduct } from "../../../../slicer/cart/cart.types";
-import { clearCart } from "../../../../slicer/cart/cart.actions";
-import { stripeLocal, stripeProduction } from "../../../../constants/stripe";
-import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
 import SelectWrapper from "../../../../components/Inputs/SelectFormValue";
 import { countryList } from "../../../../constants/forms";
-import { useState } from "react";
+import { stripeLocal, stripeProduction } from "../../../../constants/stripe";
+import { clearCart } from "../../../../slicer/cart/cart.actions";
+import { CartProduct } from "../../../../slicer/cart/cart.types";
+import { updateSuccessNotification } from "../../../../slicer/general/general.actions";
+import { State } from "../../../../slicer/types";
 import { getTotalValue } from "../Utils/totalValue";
 
 interface Props {
   closeCart: (signal: boolean) => void;
-  discount?: number | null
+  discount?: number | null;
 }
 
 interface FormProps {
@@ -52,30 +52,36 @@ const Checkout = ({ closeCart, discount }: Props) => {
     (state) => state.cart.cartItems
   );
   const [country, setCountry] = useState<string>("");
-  const shippingFees = countryList?.filter((item) => item.value === country)[0]
-    ?.shippingPrice || 0;
+  const shippingFees =
+    countryList?.filter((item) => item.value === country)[0]?.shippingPrice ||
+    0;
 
   const handleSubmitCard = async (values: FormProps) => {
     let items: {
       title: string;
       amount: number;
       quantity: number;
-
     }[] = [];
 
     cartProducts.forEach((item: CartProduct) => {
       items.push({
         title: `${item.product.category}-${item.product.pattern}`,
-        amount: item.product.price * 100 * ((100 - (discount || 0)) / 100),
+        amount:
+          item.product.price *
+          (item.product.discount ? 1 - item.product.discount : 1) *
+          100 *
+          ((100 - (discount || 0)) / 100),
         quantity: item.value,
-
       });
     });
-    if (shippingFees !== 0) items.push({
-      title: `Shipping to ${countryList?.filter(item => item.value === country)[0]?.title || ""}`,
-      amount: shippingFees * 100 * ((100 - (discount || 0)) / 100),
-      quantity: 1
-    })
+    if (shippingFees !== 0)
+      items.push({
+        title: `Shipping to ${
+          countryList?.filter((item) => item.value === country)[0]?.title || ""
+        }`,
+        amount: shippingFees * 100 * ((100 - (discount || 0)) / 100),
+        quantity: 1,
+      });
     await fetch(stripeProduction, {
       method: "POST",
       headers: {
@@ -134,30 +140,33 @@ const Checkout = ({ closeCart, discount }: Props) => {
   return (
     <>
       <Box
-        display='flex'
-        alignItems='end'
-        width='100%'
-        mt='10px'
+        display="flex"
+        alignItems="end"
+        width="100%"
+        mt="10px"
         style={{ flexDirection: "column", rowGap: "10px" }}
       >
-        <Typography>
-          Product Price {getTotalValue(cartProducts)} €
-        </Typography>
+        <Typography>Product Price {getTotalValue(cartProducts)} €</Typography>
         <Typography>+ Shipping Fee {shippingFees} €</Typography>
         <Divider style={{ backgroundColor: Colors.BLACKISH, width: "40%" }} />
-        <Typography style={{ textDecoration: discount ? "line-through" : "none" }}>
-          {i18n.t("cartDrawer.totalPrice")} {getTotalValue(cartProducts) + shippingFees} €
+        <Typography
+          style={{ textDecoration: discount ? "line-through" : "none" }}
+        >
+          {i18n.t("cartDrawer.totalPrice")}{" "}
+          {getTotalValue(cartProducts) + shippingFees} €
         </Typography>
 
-        <Typography >
-          {i18n.t("cartDrawer.totalPrice")} {(getTotalValue(cartProducts) + shippingFees) * ((100 - (discount || 0)) / 100)} €
+        <Typography>
+          {i18n.t("cartDrawer.totalPrice")}{" "}
+          {(getTotalValue(cartProducts) + shippingFees) *
+            ((100 - (discount || 0)) / 100)}{" "}
+          €
         </Typography>
         {discount && (
           <Typography fontSize="0.6rem">
             * Special discount 10%, Childrens Day
           </Typography>
         )}
-
       </Box>
       <Formik
         initialValues={{ ...INITIAL_FORM_STATE }}
@@ -171,26 +180,26 @@ const Checkout = ({ closeCart, discount }: Props) => {
           <>
             <Box
               rowGap={2}
-              display='flex'
-              flexDirection='column'
+              display="flex"
+              flexDirection="column"
               sx={{ mt: "20px", pb: "20px" }}
             >
               <SelectWrapper
                 options={countryList}
-                name='country'
-                label='Country'
+                name="country"
+                label="Country"
                 getvalue={setCountry}
               />
-              <Textfield label={i18n.t("forms.name")} name='name' />
-              <Textfield label='Line 1' name='address' />
-              <Textfield label='Line 2' name='address2' />
-              <Textfield label={i18n.t("forms.city")} name='city' />
-              <Textfield label={i18n.t("forms.postCode")} name='postCode' />
-              <Textfield label={i18n.t("forms.email")} name='email' />
-              <Textfield label={i18n.t("forms.phone")} name='phone' />
+              <Textfield label={i18n.t("forms.name")} name="name" />
+              <Textfield label="Line 1" name="address" />
+              <Textfield label="Line 2" name="address2" />
+              <Textfield label={i18n.t("forms.city")} name="city" />
+              <Textfield label={i18n.t("forms.postCode")} name="postCode" />
+              <Textfield label={i18n.t("forms.email")} name="email" />
+              <Textfield label={i18n.t("forms.phone")} name="phone" />
             </Box>
           </>
-          <Box display='flex' flexDirection='column' rowGap={2}>
+          <Box display="flex" flexDirection="column" rowGap={2}>
             {/* <CardElement options={
               cardElementOptions
             } /> */}
