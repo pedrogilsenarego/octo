@@ -11,6 +11,7 @@ import { ProductContext } from "../../ProductContext";
 import Element from "./Element";
 
 import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { config } from "../../../../config/config";
 
 const FabricSelector = () => {
   const {
@@ -108,13 +109,15 @@ const FabricSelector = () => {
                   fontFamily="MontSerrat"
                   style={{
                     textDecoration:
-                      !available || item.discount ? "line-through" : "inherit",
+                      !available || (item.discount && config.discounts)
+                        ? "line-through"
+                        : "inherit",
                     color: !available ? "lightgray" : "inherit",
                   }}
                 >
                   {item.price}&nbsp;€{" "}
                 </Typography>
-                {item?.discount && (
+                {item?.discount && config.discounts && (
                   <Typography
                     fontSize="0.8rem"
                     fontFamily="MontSerrat"

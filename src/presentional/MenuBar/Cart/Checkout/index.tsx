@@ -9,6 +9,7 @@ import { FORM_VALIDATION } from "./validation";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SelectWrapper from "../../../../components/Inputs/SelectFormValue";
+import { config } from "../../../../config/config";
 import { countryList } from "../../../../constants/forms";
 import { stripeLocal, stripeProduction } from "../../../../constants/stripe";
 import { clearCart } from "../../../../slicer/cart/cart.actions";
@@ -68,7 +69,9 @@ const Checkout = ({ closeCart, discount }: Props) => {
         title: `${item.product.category}-${item.product.pattern}`,
         amount:
           item.product.price *
-          (item.product.discount ? 1 - item.product.discount : 1) *
+          (item.product.discount && config.discounts
+            ? 1 - item.product.discount
+            : 1) *
           100 *
           ((100 - (discount || 0)) / 100),
         quantity: item.value,
