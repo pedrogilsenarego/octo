@@ -1,6 +1,6 @@
+import { Typography } from "@mui/material";
 import { Ellipsis } from "react-spinners-css";
 import { Colors } from "../../constants/pallete";
-import { Typography } from "@mui/material";
 
 interface Props {
   size?: number;
@@ -24,21 +24,16 @@ const Loader = ({ size = 100, color, customMessage, progress }: Props) => {
       <img
         draggable={false}
         style={{
-
           height: "60%",
           cursor: "pointer",
           objectFit: "cover",
           objectPosition: "center",
         }}
-        src='https://res.cloudinary.com/daantetcr/image/upload/v1681751224/Octo/collections/Blackish/OCTO_Logotipo_transp-octo_ixffst.png'
-        alt=''
+        src="https://res.cloudinary.com/daantetcr/image/upload/v1681751224/Octo/collections/Blackish/OCTO_Logotipo_transp-octo_ixffst.png"
+        alt=""
       />
-      <Typography>{customMessage}</Typography>
-      <Ellipsis
-
-        size={size || 100}
-        color={Colors.BLACKISH}
-      />
+      <Typography style={{ textAlign: "center" }}>{customMessage}</Typography>
+      <Ellipsis size={size || 100} color={Colors.BLACKISH} />
     </div>
   );
 };
