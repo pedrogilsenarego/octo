@@ -149,20 +149,24 @@ const Checkout = ({ closeCart, discount }: Props) => {
         mt="10px"
         style={{ flexDirection: "column", rowGap: "10px" }}
       >
-        <Typography>Product Price {getTotalValue(cartProducts)} €</Typography>
+        <Typography>
+          Product Price {getTotalValue(cartProducts).toFixed(1)} €
+        </Typography>
         <Typography>+ Shipping Fee {shippingFees} €</Typography>
         <Divider style={{ backgroundColor: Colors.BLACKISH, width: "40%" }} />
         <Typography
           style={{ textDecoration: discount ? "line-through" : "none" }}
         >
           {i18n.t("cartDrawer.totalPrice")}{" "}
-          {getTotalValue(cartProducts) + shippingFees} €
+          {(getTotalValue(cartProducts) + shippingFees).toFixed(1)} €
         </Typography>
 
         <Typography>
           {i18n.t("cartDrawer.totalPrice")}{" "}
-          {(getTotalValue(cartProducts) + shippingFees) *
-            ((100 - (discount || 0)) / 100)}{" "}
+          {(
+            (getTotalValue(cartProducts) + shippingFees) *
+            ((100 - (discount || 0)) / 100)
+          ).toFixed(1)}{" "}
           €
         </Typography>
         {discount && (

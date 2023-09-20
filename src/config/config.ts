@@ -1,3 +1,3 @@
 export const config = {
-  discounts: false,
+  discounts: true,
 };
