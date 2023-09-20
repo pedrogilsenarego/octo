@@ -31,6 +31,7 @@ export const content = {
         updateCart: "Actualizar Carrinho",
         noProducts: "Não existem produtos no carrinho",
         totalPrice: "Preço Total:",
+        loader: "A sua ordem está a ser submetida por favor espere",
       },
       menuBar: {
         store: "Loja",

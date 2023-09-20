@@ -12,6 +12,7 @@ import { AiFillCloseSquare } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../../../components/Buttons/Button";
 import Incrementor from "../../../components/Incrementor";
+import Loader from "../../../components/Loader";
 import { Colors } from "../../../constants/pallete";
 import { clearCart, updateCart } from "../../../slicer/cart/cart.actions";
 import { CartProduct } from "../../../slicer/cart/cart.types";
@@ -30,6 +31,7 @@ const Cart = ({ closeCart }: Props) => {
   const cartProducts = useSelector<State, CartProduct[]>(
     (state) => state.cart.cartItems
   );
+  const [submitingOrder, setSubmitingOrder] = useState<boolean>(false);
   const discount = null;
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -147,7 +149,20 @@ const Cart = ({ closeCart }: Props) => {
       >
         {checkoutInfo ? (
           <Elements stripe={stripePromise}>
-            <Checkout closeCart={closeCart} discount={discount} />
+            {submitingOrder ? (
+              <div style={{ height: "300px" }}>
+                <Loader
+                  customMessage={`${i18n.t("cartDrawer.loader")}`}
+                  size={60}
+                />
+              </div>
+            ) : (
+              <Checkout
+                closeCart={closeCart}
+                discount={discount}
+                setSubmitingOrder={setSubmitingOrder}
+              />
+            )}
           </Elements>
         ) : (
           <>

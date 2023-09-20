@@ -126,6 +126,7 @@ export const content = {
         totalPrice: "Total Price:",
         buyNow: "Buy Now",
         successBuy: "Your order was placed",
+        loader: "Your order is being submited pls wait",
       },
       menuBar: {
         store: "Shop",

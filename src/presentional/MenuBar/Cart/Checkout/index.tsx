@@ -21,6 +21,7 @@ import { getTotalValue } from "../Utils/totalValue";
 interface Props {
   closeCart: (signal: boolean) => void;
   discount?: number | null;
+  setSubmitingOrder: (signal: boolean) => void;
 }
 
 interface FormProps {
@@ -34,7 +35,7 @@ interface FormProps {
   phone: string;
 }
 
-const Checkout = ({ closeCart, discount }: Props) => {
+const Checkout = ({ closeCart, discount, setSubmitingOrder }: Props) => {
   const INITIAL_FORM_STATE: FormProps = {
     name: "",
     address: "",
@@ -178,6 +179,7 @@ const Checkout = ({ closeCart, discount }: Props) => {
       <Formik
         initialValues={{ ...INITIAL_FORM_STATE }}
         onSubmit={(values, { resetForm }) => {
+          setSubmitingOrder(true);
           handleSubmitCard(values);
           resetForm();
         }}
