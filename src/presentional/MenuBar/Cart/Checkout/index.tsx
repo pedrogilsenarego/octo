@@ -66,15 +66,18 @@ const Checkout = ({ closeCart, discount, setSubmitingOrder }: Props) => {
     }[] = [];
 
     cartProducts.forEach((item: CartProduct) => {
+      const amount = (
+        item.product.price *
+        (item.product.discount && config.discounts
+          ? 1 - item.product.discount
+          : 1) *
+        100 *
+        ((100 - (discount || 0)) / 100)
+      ).toFixed(1);
+
       items.push({
         title: `${item.product.category}-${item.product.pattern}`,
-        amount:
-          item.product.price *
-          (item.product.discount && config.discounts
-            ? 1 - item.product.discount
-            : 1) *
-          100 *
-          ((100 - (discount || 0)) / 100),
+        amount: parseFloat(amount),
         quantity: item.value,
       });
     });
