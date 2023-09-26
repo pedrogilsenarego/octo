@@ -200,8 +200,8 @@ const Checkout = ({ closeCart, discount, setSubmitingOrder }: Props) => {
                 getvalue={setCountry}
               />
               <Textfield label={i18n.t("forms.name")} name="name" />
-              <Textfield label="Line 1" name="address" />
-              <Textfield label="Line 2" name="address2" />
+              <Textfield label="Address Line 1" name="address" />
+              <Textfield label="Address Line 2" name="address2" />
               <Textfield label={i18n.t("forms.city")} name="city" />
               <Textfield label={i18n.t("forms.postCode")} name="postCode" />
               <Textfield label={i18n.t("forms.email")} name="email" />
